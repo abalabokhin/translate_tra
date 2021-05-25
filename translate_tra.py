@@ -2,6 +2,7 @@
 
 import argparse
 import time
+import urllib.error
 
 from textblob import TextBlob
 
@@ -27,7 +28,7 @@ if __name__ == '__main__':
     outfile = args.out
     infile = args.infile
     if not outfile:
-        outfile = args.infile
+        outfile = infile
 
     with open(infile, mode='r') as file:
         text = file.read()
@@ -37,18 +38,21 @@ if __name__ == '__main__':
     pairs = list(zip(indexes[::2], indexes[1::2]))
     n_translated = 0
     n_processed = 0
-    for p in pairs:
-        n_processed += 1
-        print('processing {} from {}'.format(n_processed, len(pairs)))
-        time.sleep(1)
-        string = text[p[0] + 1: p[1]]
-        blob = TextBlob(string)
-        if blob.detect_language() == 'en':
+    try:
+        for p in pairs:
+            n_processed += 1
+            print('processing {} out of {}'.format(n_processed, len(pairs)))
             time.sleep(1)
-            n_translated += 1
-            translated_string = blob.translate(from_lang='en', to=args.lang)
-            print('"{}" translated into "{}"'.format(string, str(translated_string)))
-            out_text.replace(string, "NC: " + translated_string, 1)
+            string = text[p[0] + 1: p[1]]
+            blob = TextBlob(string)
+            if blob.detect_language() == 'en':
+                time.sleep(1)
+                n_translated += 1
+                translated_string = blob.translate(from_lang='en', to=args.lang)
+                print('"{}" translated into "{}"'.format(string, str(translated_string)))
+                out_text.replace(string, "NC: " + translated_string, 1)
+    except urllib.error.HTTPError:
+        print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
 
-    with open(infile, mode='w') as outfile:
+    with open(outfile, mode='w') as outfile:
         outfile.write(out_text)
