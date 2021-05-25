@@ -1,11 +1,50 @@
 #!/usr/bin/env python3
 
 import argparse
-import time
 import urllib.error
 
 from textblob import TextBlob
 from googletrans import Translator
+
+
+def translate_file(infile, outfile, lang, n_line_to_ignore, use_gt):
+    with open(infile, mode='r') as file:
+        text = file.read()
+    out_text = text
+
+    indexes = [i for i, ltr in enumerate(text) if ltr == '~']
+    pairs = list(zip(indexes[::2], indexes[1::2]))
+    n_translated = 0
+    n_processed = 0
+    translator = Translator()
+    out_text_offset = 0
+    try:
+        for p in pairs:
+            n_processed += 1
+            if n_processed < n_line_to_ignore:
+                continue
+            print('processing {} out of {}'.format(n_processed, len(pairs)))
+            string = text[p[0] + 1: p[1]]
+            translated_string = string
+            if not use_gt:
+                blob = TextBlob(string)
+                if blob.detect_language() == 'en':
+                    translated_string = str(blob.translate(from_lang='en', to=lang))
+            else:
+                if translator.detect(string).lang == 'en':
+                    translated_string = translator.translate(string, dest=lang).text
+            if string != translated_string:
+                n_translated +=1
+                print('"{}" translated into "{}"'.format(string, str(translated_string)))
+                translated_string = "NC: " + translated_string
+                out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
+                out_text_offset += (len(translated_string) - len(string))
+    except urllib.error.HTTPError:
+        print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
+
+    with open(outfile, mode='w') as outfile:
+        outfile.write(out_text)
+
 
 __desc__ = '''
 This program automatically translates (using google translate) one *.tra file.
@@ -28,43 +67,8 @@ if __name__ == '__main__':
                         action='store_true')
     args = parser.parse_args()
 
-    use_gt = args.experimental
-    outfile = args.out
-    infile = args.infile
-    if not outfile:
-        outfile = infile
+    out = args.out
+    if not out:
+        out = args.infile
 
-    with open(infile, mode='r') as file:
-        text = file.read()
-    out_text = text
-
-    indexes = [i for i, ltr in enumerate(text) if ltr == '~']
-    pairs = list(zip(indexes[::2], indexes[1::2]))
-    n_translated = 0
-    n_processed = 0
-    translator = Translator()
-    out_text_offset = 0
-    try:
-        for p in pairs:
-            n_processed += 1
-            print('processing {} out of {}'.format(n_processed, len(pairs)))
-            string = text[p[0] + 1: p[1]]
-            translated_string = string
-            if not use_gt:
-                blob = TextBlob(string)
-                if blob.detect_language() == 'en':
-                    translated_string = str(blob.translate(from_lang='en', to=args.lang))
-            else:
-                if translator.detect(string).lang == 'en':
-                    translated_string = translator.translate(string, dest=args.lang).text
-            if string != translated_string:
-                n_translated +=1
-                print('"{}" translated into "{}"'.format(string, str(translated_string)))
-                translated_string = "NC: " + translated_string
-                out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
-                out_text_offset += (len(translated_string) - len(string))
-    except urllib.error.HTTPError:
-        print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
-
-    with open(outfile, mode='w') as outfile:
-        outfile.write(out_text)
+    translate_file(args.infile, out, args.lang, 20, args.experimental)
