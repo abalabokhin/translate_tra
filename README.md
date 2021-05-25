@@ -2,9 +2,9 @@
 The script to translate one \*.tra file (a localization file for infinity engine modding) using google translate.
 
 The script should be used like this:
-'''
+```
 python3 translate_tra.py infile.tra
-'''
+```
 see usage for details
 
 Make sure you install argparse and textblob python libraries: pip install argparse, pip install textblob
