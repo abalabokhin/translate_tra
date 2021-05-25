@@ -5,7 +5,7 @@ The script should be used like this:
 ```
 python3 translate_tra.py infile.tra
 ```
-See usage (--usage) for details.
+See usage (--help) for details.
 
 Make sure you install argparse and textblob python libraries: 
 ```
