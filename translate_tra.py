@@ -5,6 +5,7 @@ import time
 import urllib.error
 
 from textblob import TextBlob
+from googletrans import Translator
 
 __desc__ = '''
 This program automatically translates (using google translate) one *.tra file.
@@ -23,8 +24,11 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
+    parser.add_argument('--experimental', help='Switch on experimental translation library with no request limits',
+                        action='store_true')
     args = parser.parse_args()
 
+    use_gt = args.experimental
     outfile = args.out
     infile = args.infile
     if not outfile:
@@ -38,19 +42,27 @@ if __name__ == '__main__':
     pairs = list(zip(indexes[::2], indexes[1::2]))
     n_translated = 0
     n_processed = 0
+    translator = Translator()
+    out_text_offset = 0
     try:
         for p in pairs:
             n_processed += 1
             print('processing {} out of {}'.format(n_processed, len(pairs)))
-            time.sleep(1)
             string = text[p[0] + 1: p[1]]
-            blob = TextBlob(string)
-            if blob.detect_language() == 'en':
-                time.sleep(1)
-                n_translated += 1
-                translated_string = blob.translate(from_lang='en', to=args.lang)
+            translated_string = string
+            if not use_gt:
+                blob = TextBlob(string)
+                if blob.detect_language() == 'en':
+                    translated_string = str(blob.translate(from_lang='en', to=args.lang))
+            else:
+                if translator.detect(string).lang == 'en':
+                    translated_string = translator.translate(string, dest=args.lang).text
+            if string != translated_string:
+                n_translated +=1
                 print('"{}" translated into "{}"'.format(string, str(translated_string)))
-                out_text.replace(string, "NC: " + translated_string, 1)
+                translated_string = "NC: " + translated_string
+                out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
+                out_text_offset += (len(translated_string) - len(string))
     except urllib.error.HTTPError:
         print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
 

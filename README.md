@@ -9,7 +9,12 @@ See usage (--help) for details.
 
 Make sure you install argparse and textblob python libraries: 
 ```
-pip install argparse
+pip install googletrans==4.0.0rc1
 pip install textblob
 ```
-Translating with google translate has some limitations for request number. To avoid them the delay is added (I am not sure it works, actually, more testing needs to be done). Anyway, now script works very slow (1 second delay between requests). If you see an exception: "Too Many Requests", you should stop using the script for a day (the requests limit is reset every day).
+Translating with Google Translate has some limitations for request number. To avoid them googletrans library can be used.
+To translate using this library you can use "--experimental" option. However, the translation seems to be
+worse with googletrans library (more comparisson needs to be done).
+
+If you use non-experimental mode, you can see an exception: "Too Many Requests".
+In this case you should stop using the script for a day (the requests limit is reset every day).
