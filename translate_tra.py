@@ -65,10 +65,12 @@ if __name__ == '__main__':
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
     parser.add_argument('--experimental', help='Switch on experimental translation library with no request limits',
                         action='store_true')
+    parser.add_argument('--skip', help='Skip given number of first lines', required=False, default=0,
+            type=int)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    translate_file(args.infile, out, args.lang, 20, args.experimental)
+    translate_file(args.infile, out, args.lang, args.skip, args.experimental)
