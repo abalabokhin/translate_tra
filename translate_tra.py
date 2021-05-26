@@ -5,9 +5,10 @@ import urllib.error
 
 from textblob import TextBlob
 from googletrans import Translator
+import pycld2 as cld2
 
 
-def translate_file(infile, outfile, lang, n_line_to_ignore, use_gt):
+def translate_file(infile, outfile, lang, use_gt):
     with open(infile, mode='r') as file:
         text = file.read()
     out_text = text
@@ -21,17 +22,15 @@ def translate_file(infile, outfile, lang, n_line_to_ignore, use_gt):
     try:
         for p in pairs:
             n_processed += 1
-            if n_processed < n_line_to_ignore:
-                continue
             print('processing {} out of {}'.format(n_processed, len(pairs)))
             string = text[p[0] + 1: p[1]]
             translated_string = string
-            if not use_gt:
-                blob = TextBlob(string)
-                if blob.detect_language() == 'en':
+            reliable, _, details = cld2.detect(string)
+            if reliable and details[0][1] == 'en':
+                if not use_gt:
+                    blob = TextBlob(string)
                     translated_string = str(blob.translate(from_lang='en', to=lang))
-            else:
-                if translator.detect(string).lang == 'en':
+                else:
                     translated_string = translator.translate(string, dest=lang).text
             if string != translated_string:
                 n_translated +=1
@@ -65,12 +64,10 @@ if __name__ == '__main__':
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
     parser.add_argument('--experimental', help='Switch on experimental translation library with no request limits',
                         action='store_true')
-    parser.add_argument('--skip', help='Skip given number of first lines', required=False, default=0,
-            type=int)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    translate_file(args.infile, out, args.lang, args.skip, args.experimental)
+    translate_file(args.infile, out, args.lang, args.experimental)
