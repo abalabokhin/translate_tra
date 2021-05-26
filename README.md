@@ -12,8 +12,15 @@ Make sure you install all the necessary python libraries:
 pip install googletrans==4.0.0rc1
 pip install textblob
 pip install pycld2
+pip install google-cloud-translate
 ```
-Translating with TextBlob has some limitations for request number, but it is much more accurate (as it is now) than 
-googletrans library. The language is detected offline with cld2 library to reduce number of requests to with TextBlob.
-If you see a message: "Too Many Requests. ...", you should probably wait for another day or a month or a year 
-before using the application again.
+
+There are 3 translation engine are used:
+* googletrans - free and no limitations per requests, but the translation quality is bad.
+* textblob - free, has a good translation quality but has some limited number of requests. 
+If you see a message: "Too Many Requests. ...", you should wait for another day before using this engine again.
+* googlecloud - official google cloud engine with the best possible translation quality 
+  (not a big difference with textblob engine though). To use this engine you should create 
+  a project in google cloud, be authenticated there and google can actually charge some money from you.
+
+You can select engine with e.g "--engine=googletrans". By default textblob is used.

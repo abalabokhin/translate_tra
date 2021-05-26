@@ -6,9 +6,10 @@ import urllib.error
 from textblob import TextBlob
 from googletrans import Translator
 import pycld2 as cld2
+from google.cloud import translate_v2 as translate
 
 
-def translate_file(infile, outfile, lang, use_gt):
+def translate_file(infile, outfile, lang, engine):
     with open(infile, mode='r') as file:
         text = file.read()
     out_text = text
@@ -19,6 +20,10 @@ def translate_file(infile, outfile, lang, use_gt):
     n_processed = 0
     translator = Translator()
     out_text_offset = 0
+
+    if engine == 'googlecloud':
+        translate_client = translate.Client()
+
     try:
         for p in pairs:
             n_processed += 1
@@ -27,15 +32,19 @@ def translate_file(infile, outfile, lang, use_gt):
             translated_string = string
             reliable, _, details = cld2.detect(string)
             if reliable and details[0][1] == 'en':
-                if not use_gt:
+                if engine == 'googletrans':
+                    translated_string = translator.translate(string, dest=lang).text
+                elif engine == 'googlecloud':
+                    result = translate_client.translate(string, target_language='ru')
+                    translated_string = result['translatedText']
+                else:
                     blob = TextBlob(string)
                     translated_string = str(blob.translate(from_lang='en', to=lang))
-                else:
-                    translated_string = translator.translate(string, dest=lang).text
+
             if string != translated_string:
                 n_translated +=1
                 print('"{}" translated into "{}"'.format(string, str(translated_string)))
-                translated_string = "NC: " + translated_string
+                translated_string = "НП: " + translated_string
                 out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
                 out_text_offset += (len(translated_string) - len(string))
     except urllib.error.HTTPError:
@@ -62,12 +71,12 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
-    parser.add_argument('--experimental', help='Switch on experimental translation library with no request limits',
-                        action='store_true')
+    parser.add_argument('--engine', help='Select one of three translation engines: googletrans, googlecloud, textblob.',
+                        required=False, default='textblob')
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    translate_file(args.infile, out, args.lang, args.experimental)
+    translate_file(args.infile, out, args.lang, args.engine)
