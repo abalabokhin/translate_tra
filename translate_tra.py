@@ -9,7 +9,7 @@ import pycld2 as cld2
 from google.cloud import translate_v2 as translate
 
 
-def translate_file(infile, outfile, lang, engine):
+def translate_file(infile, outfile, lang, engine, add_prefix):
     with open(infile, mode='r') as file:
         text = file.read()
     out_text = text
@@ -31,11 +31,11 @@ def translate_file(infile, outfile, lang, engine):
             string = text[p[0] + 1: p[1]]
             translated_string = string
             reliable, _, details = cld2.detect(string)
-            if reliable and details[0][1] == 'en':
+            if details[0][1] != lang:
                 if engine == 'googletrans':
                     translated_string = translator.translate(string, dest=lang).text
                 elif engine == 'googlecloud':
-                    result = translate_client.translate(string, target_language='ru')
+                    result = translate_client.translate(string, target_language=lang)
                     translated_string = result['translatedText']
                 else:
                     blob = TextBlob(string)
@@ -44,7 +44,8 @@ def translate_file(infile, outfile, lang, engine):
             if string != translated_string:
                 n_translated +=1
                 print('"{}" translated into "{}"'.format(string, str(translated_string)))
-                translated_string = "НП: " + translated_string
+                if add_prefix:
+                    translated_string = "НП: " + translated_string
                 out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
                 out_text_offset += (len(translated_string) - len(string))
     except urllib.error.HTTPError:
@@ -73,10 +74,14 @@ if __name__ == '__main__':
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
     parser.add_argument('--engine', help='Select one of three translation engines: googletrans, googlecloud, textblob.',
                         required=False, default='textblob')
+    parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
+    parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
+    parser.set_defaults(add_prefix=True)
+    # parser.add_argument('--add_prefix', action=argparse.BooleanOptionalAction, required=False, default=True)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    translate_file(args.infile, out, args.lang, args.engine)
+    translate_file(args.infile, out, args.lang, args.engine, args.add_prefix)
