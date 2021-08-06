@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
+import sys
 import urllib.error
+import chardet
 
 from textblob import TextBlob
 from googletrans import Translator
@@ -10,7 +12,12 @@ from google.cloud import translate_v2 as translate
 
 
 def translate_file(infile, outfile, lang, engine, add_prefix):
-    with open(infile, mode='r') as file:
+    with open(infile, mode='rb') as file:
+        raw_data = file.read()
+        result = chardet.detect(raw_data)
+
+    print("\n\nStarted processing file {} with encoding {}\n\n".format(args.infile, result['encoding']))
+    with open(infile, mode='r', encoding=result['encoding']) as file:
         text = file.read()
     out_text = text
 
@@ -39,7 +46,7 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                     translated_string = result['translatedText']
                 else:
                     blob = TextBlob(string)
-                    translated_string = str(blob.translate(from_lang='en', to=lang))
+                    translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
 
             if string != translated_string:
                 n_translated +=1
@@ -79,7 +86,6 @@ if __name__ == '__main__':
     parser.set_defaults(add_prefix=True)
     # parser.add_argument('--add_prefix', action=argparse.BooleanOptionalAction, required=False, default=True)
     args = parser.parse_args()
-    print("Started processing file {}\n\n".format(args.infile))
 
     out = args.out
     if not out:
