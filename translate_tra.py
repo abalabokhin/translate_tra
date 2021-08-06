@@ -40,7 +40,7 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
     try:
         r = True
         start_i = -1
-        while r:
+        while True:
             r = find_string_re.search(text, start_i + 1)
             if not r:
                 break
@@ -48,13 +48,10 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
             end_i = r.end() - 1
             if end_i == len(text) - 1:
                 end_i += 1
-            if n_processed > 320:
-                print(end_i, len(text))
             n_processed += 1
             print('processing {} out of {}'.format(n_processed, len(lines)))
-            # print("({0}, {1})".format(r.start(), r.end() - 1))
             line = text[start_i:end_i]
-            print(line)
+            translated_line = line
             delimiters = find_delimiter_re.findall(line)
             if len(delimiters) != 1 or (delimiters[0] != '~' and delimiters[0] != '"'):
                 print("Cannot process line: \"{}\", skipping".format(line))
@@ -65,27 +62,26 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                 find_replica_re = find_replica_re1
 
             strings = find_replica_re.findall(line)
-            if len(strings) != 1:
-                print("Cannot process line: \"{}\", skipping".format(line))
-                continue
-            string = strings[0]
-            translated_string = string
-            reliable, _, details = cld2.detect(string)
-            if details[0][1] != lang:
-                if engine == 'googletrans':
-                    translated_string = translator.translate(string, dest=lang).text
-                elif engine == 'googlecloud':
-                    result = translate_client.translate(string, target_language=lang)
-                    translated_string = result['translatedText']
-                else:
-                    blob = TextBlob(string)
-                    translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
+            for string in strings:
+                translated_string = string
+                reliable, _, details = cld2.detect(string)
+                if details[0][1] != lang:
+                    if engine == 'googletrans':
+                        translated_string = translator.translate(string, dest=lang).text
+                    elif engine == 'googlecloud':
+                        result = translate_client.translate(string, target_language=lang)
+                        translated_string = result['translatedText']
+                    else:
+                        blob = TextBlob(string)
+                        translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
 
-            if string != translated_string:
-                print('"{}" translated into "{}"'.format(string, str(translated_string)))
-                if add_prefix:
-                    translated_string = "НП: " + translated_string
-                translated_line = line.replace(string, translated_string)
+                if string != translated_string:
+                    if add_prefix:
+                        translated_string = "НП: " + translated_string
+                    translated_line = translated_line.replace(string, translated_string)
+
+            if line != translated_line:
+                print('"{}" translated into "{}"'.format(line, translated_line))
                 out_text = out_text[:(start_i + out_text_offset)] + translated_line + out_text[(end_i + out_text_offset):]
                 out_text_offset += (len(translated_line) - len(line))
 
