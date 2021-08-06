@@ -4,6 +4,7 @@ import argparse
 import sys
 import urllib.error
 import chardet
+import re
 
 from textblob import TextBlob
 from googletrans import Translator
@@ -21,9 +22,14 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
         text = file.read()
     out_text = text
 
-    indexes = [i for i, ltr in enumerate(text) if ltr == '~']
-    pairs = list(zip(indexes[::2], indexes[1::2]))
-    n_translated = 0
+    find_delimiter_re = re.compile('@[0-9]+[\\s]*=[\\s]*(.)')
+    find_string_re = re.compile('@[0-9]+[^@]*')
+    find_replica_re0 = re.compile('~([^~]*)~')
+    find_replica_re1 = re.compile('"([^"]*)"')
+
+    lines = find_string_re.findall(text)
+    # indexes = [i for i, ltr in enumerate(text) if ltr == '~']
+    # pairs = list(zip(indexes[::2], indexes[1::2]))
     n_processed = 0
     translator = Translator()
     out_text_offset = 0
@@ -32,10 +38,37 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
         translate_client = translate.Client()
 
     try:
-        for p in pairs:
+        r = True
+        start_i = -1
+        while r:
+            r = find_string_re.search(text, start_i + 1)
+            if not r:
+                break
+            start_i = r.start()
+            end_i = r.end() - 1
+            if end_i == len(text) - 1:
+                end_i += 1
+            if n_processed > 320:
+                print(end_i, len(text))
             n_processed += 1
-            print('processing {} out of {}'.format(n_processed, len(pairs)))
-            string = text[p[0] + 1: p[1]]
+            print('processing {} out of {}'.format(n_processed, len(lines)))
+            # print("({0}, {1})".format(r.start(), r.end() - 1))
+            line = text[start_i:end_i]
+            print(line)
+            delimiters = find_delimiter_re.findall(line)
+            if len(delimiters) != 1 or (delimiters[0] != '~' and delimiters[0] != '"'):
+                print("Cannot process line: \"{}\", skipping".format(line))
+                continue
+            if delimiters[0] == "~":
+                find_replica_re = find_replica_re0
+            else:
+                find_replica_re = find_replica_re1
+
+            strings = find_replica_re.findall(line)
+            if len(strings) != 1:
+                print("Cannot process line: \"{}\", skipping".format(line))
+                continue
+            string = strings[0]
             translated_string = string
             reliable, _, details = cld2.detect(string)
             if details[0][1] != lang:
@@ -49,12 +82,13 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                     translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
 
             if string != translated_string:
-                n_translated +=1
                 print('"{}" translated into "{}"'.format(string, str(translated_string)))
                 if add_prefix:
                     translated_string = "НП: " + translated_string
-                out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
-                out_text_offset += (len(translated_string) - len(string))
+                translated_line = line.replace(string, translated_string)
+                out_text = out_text[:(start_i + out_text_offset)] + translated_line + out_text[(end_i + out_text_offset):]
+                out_text_offset += (len(translated_line) - len(line))
+
     except urllib.error.HTTPError:
         print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
 
@@ -84,7 +118,6 @@ if __name__ == '__main__':
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
     parser.set_defaults(add_prefix=True)
-    # parser.add_argument('--add_prefix', action=argparse.BooleanOptionalAction, required=False, default=True)
     args = parser.parse_args()
 
     out = args.out
