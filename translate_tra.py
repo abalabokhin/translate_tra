@@ -79,6 +79,7 @@ if __name__ == '__main__':
     parser.set_defaults(add_prefix=True)
     # parser.add_argument('--add_prefix', action=argparse.BooleanOptionalAction, required=False, default=True)
     args = parser.parse_args()
+    print("Started processing file {}\n\n".format(args.infile))
 
     out = args.out
     if not out:
