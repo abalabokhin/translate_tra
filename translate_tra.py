@@ -10,6 +10,7 @@ from textblob import TextBlob
 from googletrans import Translator
 import pycld2 as cld2
 from google.cloud import translate_v2 as translate
+from yandex.Translater import Translater
 
 
 def translate_file(infile, outfile, lang, engine, add_prefix):
@@ -36,6 +37,12 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
 
     if engine == 'googlecloud':
         translate_client = translate.Client()
+    elif engine == 'yandex':
+        translate_client = Translater()
+        file = open('YANDEX_API_KEY', mode='r')
+        yandex_key = file.read()
+        translate_client.set_key(yandex_key)
+        translate_client.set_to_lang(lang)
 
     try:
         r = True
@@ -71,9 +78,14 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                     elif engine == 'googlecloud':
                         result = translate_client.translate(string, target_language=lang)
                         translated_string = result['translatedText']
-                    else:
+                    elif engine == 'textblob':
                         blob = TextBlob(string)
                         translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
+                    elif engine == 'yandex':
+                        translate_client.set_text(string)
+                        translated_string = translate_client.translate()
+                    else:
+                        sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob or yandex'.format(engine))
 
                 if string != translated_string:
                     if add_prefix:
@@ -99,7 +111,7 @@ E.g:
  @1    = ~This needs to be translated~
  @4    = ~This also needs to be translated~
 It is supposed that after automatic translation manual correction should be done, so to every translated 
-string, prefix 'NC: ' is added to mark that this string needs correction.
+string, prefix 'НП: ' can be added added to mark that this string needs correction.
 By default the language to translate is Russian (ru). Also by default the output file is the same as input file, 
 so the original file is exchanged with the translated one.
 '''
@@ -109,7 +121,7 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
-    parser.add_argument('--engine', help='Select one of three translation engines: googletrans, googlecloud, textblob.',
+    parser.add_argument('--engine', help='Select one of four translation engines: googletrans, googlecloud, textblob, yandex.',
                         required=False, default='textblob')
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
