@@ -1,0 +1,119 @@
+#!/usr/bin/env python3
+
+import argparse
+import urllib.error
+import os
+import sys
+import chardet
+import re
+
+def read_file1(infile):
+    print("\n\nStarted processing file {}".format(infile))
+    with open(infile, mode='rb') as file:
+        raw_data = file.read()
+        result = chardet.detect(raw_data)
+
+    print("\n\nStarted processing file {} with encoding {}\n\n".format(infile, result['encoding']))
+    try:
+        with open(infile, mode='r', encoding=result['encoding']) as file:
+            text = file.read()
+    except UnicodeDecodeError:
+        with open(infile, mode='r') as file:
+            text = file.read()
+
+    lines = re.findall('@[0-9]+[^@]*', text)
+    find_number_re = re.compile('@([0-9]+)')
+    find_replica_re = re.compile('~([^~]*)~')
+    find_replica_re1 = re.compile('"([^"]*)"')
+
+    lines_n = len(lines)
+    result = dict()
+    for num, line in enumerate(lines):
+        numbers = find_number_re.findall(line)
+        replicas = find_replica_re.findall(line)
+        if len(replicas) == 0:
+            replicas = find_replica_re1.findall(line)
+
+        if len(numbers) != 1 or len(replicas) == 0 or len(replicas) > 2:
+            sys.exit('Bad line in file {}: \n {}'.format(infile, line))
+        result[numbers[0]] = replicas
+    return result
+
+
+def build_dict_file(result, orig_file, tr_file):
+    print(orig_file, tr_file)
+    dfo = read_file1(orig_file)
+    dft = read_file1(tr_file)
+    common_keys = list(set(dfo.keys()) & set(dft.keys()))
+    for k in common_keys:
+        if dfo[k][0] not in result:
+            result[dfo[k][0]] = [dft[k]]
+        else:
+            result[dfo[k][0]].append(dft[k])
+
+
+def build_dict_dir(orig_dir, tr_dir):
+    result = dict()
+    orig_files = os.listdir(orig_dir)
+    tr_files = os.listdir(tr_dir)
+    common_files = list(set(orig_files) & set(tr_files))
+    for cf in common_files:
+        build_dict_file(result, os.path.join(orig_dir, cf), os.path.join(tr_dir, cf))
+    return result
+
+
+def update_file(infile, outfile, orig_dir, tr_dir):
+    tr_map = build_dict_dir(orig_dir, tr_dir)
+    if len(tr_map) == 0:
+        sys.exit("Cannot build translation dict from '{}' and '{}' dirs".format(orig_dir, tr_dir))
+
+    with open(infile, mode='r') as file:
+        text = file.read()
+    out_text = text
+
+    indexes = [i for i, ltr in enumerate(text) if ltr == '~']
+    pairs = list(zip(indexes[::2], indexes[1::2]))
+    n_translated = 0
+    n_processed = 0
+    out_text_offset = 0
+    for p in pairs:
+        n_processed += 1
+        print('processing {} out of {}'.format(n_processed, len(pairs)))
+        string = text[p[0] + 1: p[1]]
+        translated_string = string
+        check_me = True
+        if string in tr_map:
+            translated_string = tr_map[string][0][0]
+            check_me = False
+
+        n_translated +=1
+        if check_me:
+            translated_string = "НП: " + translated_string
+        out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
+        out_text_offset += (len(translated_string) - len(string))
+
+    with open(outfile, mode='w') as outf:
+        outf.write(out_text)
+
+
+__desc__ = '''
+This program ausomatically update one *.tra file translation from other source.
+The idea that somwtimes already translated lines are located in defferent files.
+So, if we have the source file with the original language (e.g en), and lots of other files
+with original texts (on e.g. english) and already translated texts, we can search already
+translated files for some replicas.
+'''
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__desc__)
+    parser.add_argument('infile', help='Input filename.')
+    parser.add_argument('--out', help='Output filename.', required=True)
+    parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
+    parser.add_argument('--translated-dir', help='Dir with translated tra files (should be the same lang as for output file).', required=True)
+    args = parser.parse_args()
+
+    out = args.out
+    if not out:
+        out = args.infile
+
+    update_file(args.infile, out, args.source_dir, args.translated_dir)
