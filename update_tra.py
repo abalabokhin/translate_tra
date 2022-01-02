@@ -52,13 +52,22 @@ def build_dict_file(result, orig_file, tr_file):
             result[dfo[k][0]].append(dft[k])
 
 
+def upper_case_map(strings):
+    result = dict()
+    for s in strings:
+        result[s.upper()] = s
+    return result
+
+
 def build_dict_dir(orig_dir, tr_dir):
     result = dict()
     orig_files = os.listdir(orig_dir)
     tr_files = os.listdir(tr_dir)
-    common_files = list(set(orig_files) & set(tr_files))
+    orig_files_map = upper_case_map(orig_files)
+    tr_files_map = upper_case_map(tr_files)
+    common_files = list(orig_files_map.keys() & tr_files_map.keys())
     for cf in common_files:
-        build_dict_file(result, os.path.join(orig_dir, cf), os.path.join(tr_dir, cf))
+        build_dict_file(result, os.path.join(orig_dir, orig_files_map[cf]), os.path.join(tr_dir, tr_files_map[cf]))
     return result
 
 
