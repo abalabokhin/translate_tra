@@ -126,6 +126,9 @@ with original texts (on e.g. english) and already translated texts, we can searc
 translated files for some replicas.
 '''
 
+# TODO: 1) add support for male/female translation
+# 2) smarter search (if there is a translation from several sources - it should be taken from the same file"
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile', help='Input filename.')
