@@ -8,10 +8,10 @@ import chardet
 import re
 
 def remove_extra_spaces(string):
-    result = re.sub(' +', ' ', string)
+    result = "".join(string.split())
     return result
 
-def read_file1(infile, enc=None):
+def read_file1(infile, enc=None, remove_whitespaces = False):
     print("\n\nStarted processing file {}".format(infile))
     if enc is None:
         with open(infile, mode='rb') as file:
@@ -42,17 +42,19 @@ def read_file1(infile, enc=None):
 
         if len(numbers) != 1 or len(replicas) == 0 or len(replicas) > 2:
             sys.exit('Bad line in file {}: \n {}'.format(infile, line))
-        fixed_replicas = []
-        for r in replicas:
-            fixed_replicas.append(remove_extra_spaces(r))
-
+        if remove_whitespaces:
+            fixed_replicas = []
+            for r in replicas:
+                fixed_replicas.append(remove_extra_spaces(r))
+        else:
+            fixed_replicas = replicas
         result[numbers[0]] = fixed_replicas
     return result
 
 
 def build_dict_file(result, orig_file, tr_file, tr_enc):
     print(orig_file, tr_file)
-    dfo = read_file1(orig_file)
+    dfo = read_file1(orig_file, None, True)
     dft = read_file1(tr_file, tr_enc)
     common_keys = list(set(dfo.keys()) & set(dft.keys()))
     for k in common_keys:
@@ -101,8 +103,9 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
         string = text[p[0] + 1: p[1]]
         translated_string = string
         fixed_string = remove_extra_spaces(string)
+        print(fixed_string)
         check_me = True
-        if string in tr_map:
+        if fixed_string in tr_map:
             translated_string = tr_map[fixed_string][0][0]
             check_me = False
 
