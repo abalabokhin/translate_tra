@@ -7,6 +7,10 @@ import sys
 import chardet
 import re
 
+def remove_extra_spaces(string):
+    result = re.sub(' +', ' ', string)
+    return result
+
 def read_file1(infile, enc=None):
     print("\n\nStarted processing file {}".format(infile))
     if enc is None:
@@ -38,7 +42,11 @@ def read_file1(infile, enc=None):
 
         if len(numbers) != 1 or len(replicas) == 0 or len(replicas) > 2:
             sys.exit('Bad line in file {}: \n {}'.format(infile, line))
-        result[numbers[0]] = replicas
+        fixed_replicas = []
+        for r in replicas:
+            fixed_replicas.append(remove_extra_spaces(r))
+
+        result[numbers[0]] = fixed_replicas
     return result
 
 
@@ -92,9 +100,10 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
         print('processing {} out of {}'.format(n_processed, len(pairs)))
         string = text[p[0] + 1: p[1]]
         translated_string = string
+        fixed_string = remove_extra_spaces(string)
         check_me = True
         if string in tr_map:
-            translated_string = tr_map[string][0][0]
+            translated_string = tr_map[fixed_string][0][0]
             check_me = False
 
         n_translated +=1
