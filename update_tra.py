@@ -99,11 +99,10 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
     out_text_offset = 0
     for p in pairs:
         n_processed += 1
-        print('processing {} out of {}'.format(n_processed, len(pairs)))
         string = text[p[0] + 1: p[1]]
+        print('processing string "{}", {} out of {}'.format(string, n_processed, len(pairs)))
         translated_string = string
         fixed_string = remove_extra_spaces(string)
-        print(fixed_string)
         check_me = True
         if fixed_string in tr_map:
             translated_string = tr_map[fixed_string][0][0]
@@ -111,7 +110,7 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
 
         n_translated +=1
         if check_me:
-            translated_string = "НП: " + translated_string
+            translated_string = translated_string
         out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
         out_text_offset += (len(translated_string) - len(string))
 
