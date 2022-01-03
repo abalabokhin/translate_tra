@@ -7,15 +7,17 @@ import sys
 import chardet
 import re
 
-def read_file1(infile):
+def read_file1(infile, enc=None):
     print("\n\nStarted processing file {}".format(infile))
-    with open(infile, mode='rb') as file:
-        raw_data = file.read()
-        result = chardet.detect(raw_data)
+    if enc is None:
+        with open(infile, mode='rb') as file:
+            raw_data = file.read()
+            result = chardet.detect(raw_data)
+            enc = result['encoding']
 
-    print("\n\nStarted processing file {} with encoding {}\n\n".format(infile, result['encoding']))
+    print("\n\nStarted processing file {} with encoding {}\n\n".format(infile, enc))
     try:
-        with open(infile, mode='r', encoding=result['encoding']) as file:
+        with open(infile, mode='r', encoding=enc) as file:
             text = file.read()
     except UnicodeDecodeError:
         with open(infile, mode='r') as file:
@@ -40,10 +42,10 @@ def read_file1(infile):
     return result
 
 
-def build_dict_file(result, orig_file, tr_file):
+def build_dict_file(result, orig_file, tr_file, tr_enc):
     print(orig_file, tr_file)
     dfo = read_file1(orig_file)
-    dft = read_file1(tr_file)
+    dft = read_file1(tr_file, tr_enc)
     common_keys = list(set(dfo.keys()) & set(dft.keys()))
     for k in common_keys:
         if dfo[k][0] not in result:
@@ -59,7 +61,7 @@ def upper_case_map(strings):
     return result
 
 
-def build_dict_dir(orig_dir, tr_dir):
+def build_dict_dir(orig_dir, tr_dir, tr_enc):
     result = dict()
     orig_files = os.listdir(orig_dir)
     tr_files = os.listdir(tr_dir)
@@ -67,12 +69,12 @@ def build_dict_dir(orig_dir, tr_dir):
     tr_files_map = upper_case_map(tr_files)
     common_files = list(orig_files_map.keys() & tr_files_map.keys())
     for cf in common_files:
-        build_dict_file(result, os.path.join(orig_dir, orig_files_map[cf]), os.path.join(tr_dir, tr_files_map[cf]))
+        build_dict_file(result, os.path.join(orig_dir, orig_files_map[cf]), os.path.join(tr_dir, tr_files_map[cf]), tr_enc)
     return result
 
 
-def update_file(infile, outfile, orig_dir, tr_dir):
-    tr_map = build_dict_dir(orig_dir, tr_dir)
+def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
+    tr_map = build_dict_dir(orig_dir, tr_dir, tr_enc)
     if len(tr_map) == 0:
         sys.exit("Cannot build translation dict from '{}' and '{}' dirs".format(orig_dir, tr_dir))
 
@@ -119,10 +121,11 @@ if __name__ == '__main__':
     parser.add_argument('--out', help='Output filename.', required=True)
     parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
     parser.add_argument('--translated-dir', help='Dir with translated tra files (should be the same lang as for output file).', required=True)
+    parser.add_argument('--translated-encoding', help='You can specifu the translated encoding here, otherwise it is defined automatically.', required=False)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    update_file(args.infile, out, args.source_dir, args.translated_dir)
+    update_file(args.infile, out, args.source_dir, args.translated_dir, args.translated_encoding)
