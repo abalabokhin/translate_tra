@@ -119,8 +119,8 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
 
 
 __desc__ = '''
-This program ausomatically update one *.tra file translation from other source.
-The idea that somwtimes already translated lines are located in defferent files.
+This program automatically update one *.tra file translation from other source.
+The idea that sometimes already translated lines are located in defferent files.
 So, if we have the source file with the original language (e.g en), and lots of other files
 with original texts (on e.g. english) and already translated texts, we can search already
 translated files for some replicas.
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     parser.add_argument('--out', help='Output filename.', required=True)
     parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
     parser.add_argument('--translated-dir', help='Dir with translated tra files (should be the same lang as for output file).', required=True)
-    parser.add_argument('--translated-encoding', help='You can specifu the translated encoding here, otherwise it is defined automatically.', required=False)
+    parser.add_argument('--translated-encoding', help='You can specify the translated encoding here, otherwise it is defined automatically.', required=False)
     args = parser.parse_args()
 
     out = args.out
