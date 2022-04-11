@@ -11,6 +11,7 @@ from googletrans import Translator
 import pycld2 as cld2
 from google.cloud import translate_v2 as translate
 from yandex.Translater import Translater
+import deepl
 
 
 def translate_file(infile, outfile, lang, engine, add_prefix):
@@ -43,6 +44,10 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
         yandex_key = file.read()
         translate_client.set_key(yandex_key)
         translate_client.set_to_lang(lang)
+    elif engine == 'deepl':
+        file = open('DEEPL_API_KEY', mode='r')
+        deepl_key = file.read().rstrip()
+        translator = deepl.Translator(deepl_key)
 
     try:
         r = True
@@ -84,8 +89,10 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                     elif engine == 'yandex':
                         translate_client.set_text(string)
                         translated_string = translate_client.translate()
+                    elif engine == 'deepl':
+                        translated_string = str(translator.translate_text(string, target_lang=lang))
                     else:
-                        sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob or yandex'.format(engine))
+                        sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob, yandex or deepl'.format(engine))
 
                 if string != translated_string:
                     if add_prefix:
@@ -121,7 +128,7 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
-    parser.add_argument('--engine', help='Select one of four translation engines: googletrans, googlecloud, textblob, yandex.',
+    parser.add_argument('--engine', help='Select one of the next translation engines: googletrans, googlecloud, textblob, yandex, deepl',
                         required=False, default='textblob')
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
