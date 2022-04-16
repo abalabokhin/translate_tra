@@ -75,24 +75,26 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
 
             strings = find_replica_re.findall(line)
             for string in strings:
-                translated_string = string
-                reliable, _, details = cld2.detect(string)
-                if details[0][1] != lang:
-                    if engine == 'googletrans':
-                        translated_string = translator.translate(string, dest=lang).text
-                    elif engine == 'googlecloud':
-                        result = translate_client.translate(string, target_language=lang)
-                        translated_string = result['translatedText']
-                    elif engine == 'textblob':
-                        blob = TextBlob(string)
-                        translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
-                    elif engine == 'yandex':
-                        translate_client.set_text(string)
-                        translated_string = translate_client.translate()
-                    elif engine == 'deepl':
-                        translated_string = str(translator.translate_text(string, target_lang=lang))
-                    else:
-                        sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob, yandex or deepl'.format(engine))
+                translated_string = ""
+                if string:
+                    translated_string = string
+                    reliable, _, details = cld2.detect(string)
+                    if details[0][1] != lang:
+                        if engine == 'googletrans':
+                            translated_string = translator.translate(string, dest=lang).text
+                        elif engine == 'googlecloud':
+                            result = translate_client.translate(string, target_language=lang)
+                            translated_string = result['translatedText']
+                        elif engine == 'textblob':
+                            blob = TextBlob(string)
+                            translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
+                        elif engine == 'yandex':
+                            translate_client.set_text(string)
+                            translated_string = translate_client.translate()
+                        elif engine == 'deepl':
+                            translated_string = str(translator.translate_text(string, target_lang=lang))
+                        else:
+                            sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob, yandex or deepl'.format(engine))
 
                 if string != translated_string:
                     if add_prefix:
