@@ -57,7 +57,7 @@ The dictionary file for word that can be read both ways is in russian_yo_words_b
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile', help='Input filename.')
-    parser.add_argument('--out', help='Output filename.', required=True)
+    parser.add_argument('--out', help='Output filename.', required=False)
     args = parser.parse_args()
 
     out = args.out
