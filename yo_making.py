@@ -3,6 +3,8 @@
 import argparse
 import re
 import click
+from colorama import Fore
+from colorama import Style
 
 def read_dict(dict_file):
     dictionary = {}
@@ -37,7 +39,12 @@ def update_file(infile, outfile):
                     if w_lower not in both_dict:
                         text = text[:start_p] + new_w + text[end_p:]
                     else:
-                        print('replace "{0}" with "{1}" in "{2}": (y/n)?"'.format(w, new_w, text[start_p-10 : end_p+20]))
+                        start_line = text.rfind('\n', 0, start_p)
+                        end_line = text.find('\n', end_p)
+                        before = text[start_line : start_p]
+                        word = text[start_p : end_p]
+                        after = text[end_p : end_line]
+                        print(f'replace "{w}" with "{new_w}" in "{before}{Fore.GREEN}{word}{Style.RESET_ALL}{after}": (y/n)?"')
                         c = click.getchar()
                         print(c)
                         if c == 'y':
