@@ -30,10 +30,15 @@ def update_file(infile, outfile):
                 w = match.group(0)
                 w_lower = w.lower()
                 upper_case = True
+                all_upper_case = False
                 if w == w_lower:
                     upper_case = False
+                if w == w.upper():
+                    all_upper_case = True
                 if w_lower in main_dict:
                     new_w = main_dict[w_lower]
+                    if all_upper_case:
+                        new_w = new_w.upper()
                     if upper_case:
                         new_w = new_w[0].upper() + new_w[1:]
                     if w_lower not in both_dict:
