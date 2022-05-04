@@ -21,6 +21,7 @@ def update_file(infile, outfile):
         both_dict = read_dict("russian_yo_words_both.txt")
 
         with open(infile, mode='r') as file:
+            print (f'processing file {infile}')
             text = file.read()
             regex = re.compile(r'\w+')
             match = regex.search(text)
