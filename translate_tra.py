@@ -10,7 +10,6 @@ from textblob import TextBlob
 from googletrans import Translator
 import pycld2 as cld2
 from google.cloud import translate_v2 as translate
-from yandex.Translater import Translater
 import deepl
 
 
@@ -88,9 +87,6 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                         elif engine == 'textblob':
                             blob = TextBlob(string)
                             translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
-                        elif engine == 'yandex':
-                            translate_client.set_text(string)
-                            translated_string = translate_client.translate()
                         elif engine == 'deepl':
                             translated_string = str(translator.translate_text(string, target_lang=lang))
                         else:
@@ -130,7 +126,7 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
-    parser.add_argument('--engine', help='Select one of the next translation engines: googletrans, googlecloud, textblob, yandex, deepl',
+    parser.add_argument('--engine', help='Select one of the next translation engines: googletrans, googlecloud, textblob, deepl',
                         required=False, default='textblob')
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
