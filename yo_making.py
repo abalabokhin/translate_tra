@@ -47,6 +47,8 @@ def update_file(infile, outfile):
                     else:
                         start_line = text.rfind('\n', 0, start_p)
                         end_line = text.find('\n', end_p)
+                        if start_line < 0:
+                            start_line = 0
                         before = text[start_line : start_p]
                         word = text[start_p : end_p]
                         after = text[end_p : end_line]
