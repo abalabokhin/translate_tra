@@ -2,6 +2,7 @@
 
 import argparse
 import re
+import os
 import click
 from colorama import Fore
 from colorama import Style
@@ -16,15 +17,22 @@ def read_dict(dict_file):
     return dictionary
 
 def update_file(infile, outfile):
+    file_pos_name = "file_pos.txt"
     with open(infile, mode='r') as file:
         main_dict = read_dict("russian_yo_words.txt")
         both_dict = read_dict("russian_yo_words_both.txt")
+        start_line = 0
+        if os.path.exists(file_pos_name):
+            with open(file_pos_name, mode='r') as inf:
+                text = inf.read()
+                start_line = int(text)
 
         with open(infile, mode='r') as file:
-            print (f'processing file {infile}')
+            print (f'processing file {infile} starting position {start_line}')
             text = file.read()
             regex = re.compile(r'\w+')
-            match = regex.search(text)
+            match = regex.search(text, start_line)
+            last_checked_position = -1
             while match:
                 start_p = match.start(0)
                 end_p = match.end(0)
@@ -52,15 +60,25 @@ def update_file(infile, outfile):
                         before = text[start_line : start_p]
                         word = text[start_p : end_p]
                         after = text[end_p : end_line]
-                        print(f'replace "{w}" with "{new_w}" in "{before}{Fore.GREEN}{word}{Style.RESET_ALL}{after}": (y/n)?"')
+                        print(f'replace "{w}" with "{new_w}" in "{before}{Fore.GREEN}{word}{Style.RESET_ALL}{after}": (y/n/q)?"')
                         c = click.getchar()
                         print(c)
                         if c == 'y':
                             text = text[:start_p] + new_w + text[end_p:]
+                        if c == 'q':
+                            last_checked_position = start_line
+                            break
 
                 match = regex.search(text, end_p)
             with open(outfile, mode='w') as outf:
                 outf.write(text)
+            if last_checked_position >= 0:
+                with open(file_pos_name, mode='w') as outf:
+                    outf.write(str(last_checked_position))
+            else:
+                if os.path.exists(file_pos_name):
+                    os.remove(file_pos_name)
+
 
 __desc__ = '''
 This program automatically change all russian letters "е" to be "ё" in words in a file, if such words exists
