@@ -16,7 +16,7 @@ def read_dict(dict_file):
             dictionary[b] = a
     return dictionary
 
-def update_file(infile, outfile):
+def update_file(infile, outfile, always_no):
     file_pos_name = "file_pos.txt"
     with open(infile, mode='r') as file:
         main_dict = read_dict("russian_yo_words.txt")
@@ -52,7 +52,7 @@ def update_file(infile, outfile):
                         new_w = new_w[0].upper() + new_w[1:]
                     if w_lower not in both_dict:
                         text = text[:start_p] + new_w + text[end_p:]
-                    else:
+                    elif not always_no:
                         start_line = text.rfind('\n', 0, start_p)
                         end_line = text.find('\n', end_p)
                         if start_line < 0:
@@ -91,10 +91,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
+    parser.add_argument('--always-no', help='Never ask about arguable words, always consider not replace.', action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    update_file(args.infile, out)
+    update_file(args.infile, out, args.always_no)
