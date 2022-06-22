@@ -31,14 +31,17 @@ def read_file1(infile, enc=None, remove_whitespaces = False):
     find_number_re = re.compile('@([0-9]+)')
     find_replica_re = re.compile('~([^~]*)~')
     find_replica_re1 = re.compile('"([^"]*)"')
+    find_replica_re2 = re.compile('%([^%]*)%')
 
     lines_n = len(lines)
     result = dict()
     for num, line in enumerate(lines):
         numbers = find_number_re.findall(line)
         replicas = find_replica_re.findall(line)
-        if len(replicas) == 0:
+        if len(replicas) == 0 or len(replicas) > 2:
             replicas = find_replica_re1.findall(line)
+            if len(replicas) == 0 or len(replicas) > 2:
+                replicas = find_replica_re2.findall(line)
 
         if len(numbers) != 1 or len(replicas) == 0 or len(replicas) > 2:
             sys.exit('Bad line in file {}: \n {}'.format(infile, line))
