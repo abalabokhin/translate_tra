@@ -86,8 +86,11 @@ def build_dict_dir(orig_dir, tr_dir, tr_enc):
     return result
 
 
-def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
+def update_file(infile, outfile, orig_dir, tr_dir, tr_enc='', def_file = ''):
     tr_map = build_dict_dir(orig_dir, tr_dir, tr_enc)
+    def_file_map = {}
+    if def_file:
+        def_file_map = read_file1(def_file)
     if len(tr_map) == 0:
         sys.exit("Cannot build translation dict from '{}' and '{}' dirs".format(orig_dir, tr_dir))
 
@@ -103,17 +106,20 @@ def update_file(infile, outfile, orig_dir, tr_dir, tr_enc=''):
     for p in pairs:
         n_processed += 1
         string = text[p[0] + 1: p[1]]
-        print('processing string "{}", {} out of {}'.format(string, n_processed, len(pairs)))
+        at_index = text.rfind('@', 0, p[0])
+        for i in range(1, 1000):
+            if not text[at_index + i].isnumeric():
+                break
+        number = text[at_index + 1 : at_index + i]
+        print('processing string @{} "{}", {} out of {}'.format(number, string, n_processed, len(pairs)))
         translated_string = string
         fixed_string = remove_extra_spaces(string)
-        check_me = True
         if fixed_string in tr_map:
             translated_string = tr_map[fixed_string][0][0]
-            check_me = False
+        elif number in def_file_map:
+            translated_string = def_file_map[number][0]
 
         n_translated +=1
-        if check_me:
-            translated_string = translated_string
         out_text = out_text[:(p[0] + 1 + out_text_offset)] + translated_string + out_text[(p[1] + out_text_offset):]
         out_text_offset += (len(translated_string) - len(string))
 
@@ -139,10 +145,11 @@ if __name__ == '__main__':
     parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
     parser.add_argument('--translated-dir', help='Dir with translated tra files (should be the same lang as for output file).', required=True)
     parser.add_argument('--translated-encoding', help='You can specify the translated encoding here, otherwise it is defined automatically.', required=False)
+    parser.add_argument('--default-file', help='File that can have some replicas for the ones that are not found. they are taken by number.', required=False)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    update_file(args.infile, out, args.source_dir, args.translated_dir, args.translated_encoding)
+    update_file(args.infile, out, args.source_dir, args.translated_dir, args.translated_encoding, args.default_file)
