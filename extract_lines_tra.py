@@ -6,7 +6,6 @@ import os
 import sys
 import chardet
 import re
-from Levenshtein import distance as levenshtein_distance
 
 
 def remove_extra_spaces(string):
@@ -43,14 +42,24 @@ def read_file1(infile, enc=None):
         result[numbers[0]] = line
     return result
 
-
-def extract_lines(src_file, number_file, tr_enc=''):
-    with open(number_file, mode='r') as file:
+def read_numbers(filename):
+    with open(filename, mode='r') as file:
         text = file.read()
     numbers = list(set(text.split()))
-    numbers = list(map(int, numbers))
+    return set(map(int, numbers))
+
+
+def extract_lines(src_file, number_file, exclude_file):
+    numbers = read_numbers(number_file)
+    numbers_ex = set()
+    if exclude_file:
+        numbers_ex = read_numbers(exclude_file)
+
+    print(len(numbers), len(numbers_ex))
+    numbers = list(numbers.difference(numbers_ex))
     numbers.sort()
     numbers = list(map(str, numbers))
+    print(len(numbers))
 
     src_dict = read_file1(src_file)
 
@@ -62,17 +71,14 @@ def extract_lines(src_file, number_file, tr_enc=''):
 
 
 __desc__ = '''
-This program find all the items in tra file and return their numbers.
+This program extract all provided replicas from tra file.
 '''
-
-# TODO: 1) add support for male/female translation
-# 2) smarter search (if there is a translation from several sources - it should be taken from the same file"
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='Tra file to find items in.')
     parser.add_argument('infile2', help='File with lines to extract. Numbers can be duplicated. Every nymber must be on the next string')
-    # parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
+    parser.add_argument('--exclude', help='File with lines to exclude from infile2).', required=False, default="")
     args = parser.parse_args()
 
-    extract_lines(args.infile1, args.infile2)
+    extract_lines(args.infile1, args.infile2, args.exclude)
