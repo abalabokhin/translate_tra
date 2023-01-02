@@ -102,8 +102,10 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                 out_text = out_text[:(start_i + out_text_offset)] + translated_line + out_text[(end_i + out_text_offset):]
                 out_text_offset += (len(translated_line) - len(line))
 
-    except urllib.error.HTTPError:
-        print('"Too Many Requests" exception, try again tomorrow. Saving what was translated...')
+    except BaseException as e:
+        print('An exception occurred: {}'.format(e))
+        print('Saving what was translated...')
+
 
     with open(outfile, mode='w') as outfile:
         outfile.write(out_text)
