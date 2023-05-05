@@ -6,7 +6,6 @@ import urllib.error
 import chardet
 import re
 
-from textblob import TextBlob
 from googletrans import Translator
 import pycld2 as cld2
 from google.cloud import translate_v2 as translate
@@ -84,13 +83,10 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
                         elif engine == 'googlecloud':
                             result = translate_client.translate(string, target_language=lang)
                             translated_string = result['translatedText']
-                        elif engine == 'textblob':
-                            blob = TextBlob(string)
-                            translated_string = str(blob.translate(from_lang=details[0][1], to=lang))
                         elif engine == 'deepl':
                             translated_string = str(translator.translate_text(string, target_lang=lang))
                         else:
-                            sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, textblob, yandex or deepl'.format(engine))
+                            sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, yandex or deepl'.format(engine))
 
                 if string != translated_string:
                     if add_prefix:
@@ -128,8 +124,8 @@ if __name__ == '__main__':
     parser.add_argument('infile', help='Input filename.')
     parser.add_argument('--out', help='Output filename.', required=False)
     parser.add_argument('--lang', help='Language to translate to.', required=False, default='ru')
-    parser.add_argument('--engine', help='Select one of the next translation engines: googletrans, googlecloud, textblob, deepl',
-                        required=False, default='textblob')
+    parser.add_argument('--engine', help='Select one of the next translation engines: googletrans, googlecloud, deepl',
+                        required=False, default='deepl')
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
     parser.set_defaults(add_prefix=True)
