@@ -8,7 +8,7 @@ import re
 
 from googletrans import Translator
 import pycld2 as cld2
-from google.cloud import translate_v2 as translate
+#from google.cloud import translate_v2 as translate
 import deepl
 
 
