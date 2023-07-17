@@ -8,9 +8,11 @@ import chardet
 import re
 from Levenshtein import distance as levenshtein_distance
 
+
 def remove_extra_spaces(string):
     result = "".join(string.split())
     return result
+
 
 def read_file1(infile, enc=None, remove_whitespaces = False):
     print("\n\nStarted processing file {}".format(infile))
@@ -87,44 +89,65 @@ def build_dict_dir(orig_dir, tr_dir, tr_enc):
     return result
 
 
-def find_closest_lines(src_file, dst_file, tr_enc=''):
-    src_dict = read_file1(src_file)
+def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
     dst_dict = read_file1(dst_file)
-    for n in src_dict.keys():
-        # print(n)
-        src_string = src_dict[n][0]
-        if n in dst_dict:
-            dst_string = dst_dict[n][0]
-            if src_string == dst_string:
-                # don't print the same lines
-                # print(n, src_dict[n], dst_dict[n])
+    if tr_file:
+        tr_dict = read_file1(tr_file)
+    if map_file:
+        map_out_file = open(map_file, "w")
+
+    for src_file in src_files:
+        src_dict = read_file1(src_file)
+        if out_folder:
+            basename = os.path.basename(src_file)
+            out_filename = out_folder + "/" + basename
+            out_file = open(out_filename, "w")
+        for n in src_dict.keys():
+            # print(n)
+            src_string = src_dict[n][0]
+            if n in dst_dict:
+                dst_string = dst_dict[n][0]
+                if src_string == dst_string:
+                    # don't print the same lines
+                    # print(n, src_dict[n], dst_dict[n])
+                    continue
+
+            # processing empty string
+            if not src_string:
+                if n in dst_dict:
+                    print(n, src_dict[n], dst_dict[n], "!!! Empy string in src but in dst not empty!!!")
+                    pass
+                else:
+                    print(n, src_dict[n], "!!! Empy string only in src !!!")
                 continue
 
-        # processing empty string
-        if not src_string:
-            if n in dst_dict:
-                print(n, src_dict[n], dst_dict[n], "!!! Empy string in src but in dst not empty!!!")
-                pass
-            else:
-                print(n, src_dict[n], "!!! Empy string only in src !!!")
-            continue
+            min_d = 1000000
+            dst_n = -1
+            for n1 in dst_dict.keys():
+                dst_string = dst_dict[n1][0]
+                d = levenshtein_distance(src_string, dst_string)
+                if d < min_d or (d == min_d and n1 == n):
+                    min_d = d
+                    dst_n = n1
+                if min_d == 0:
+                    break
 
-        min_d = 1000000
-        dst_n = -1
-        for n1 in dst_dict.keys():
-            dst_string = dst_dict[n1][0]
-            d = levenshtein_distance(src_string, dst_string)
-            if d < min_d or (d == min_d and n1 == n):
-                min_d = d
-                dst_n = n1
-            if min_d == 0:
-                break
+            if dst_n == n:
+                # don't print the same lines
+                continue
 
-        if dst_n == n:
-            # don't print the same lines
-            continue
+            print(n, dst_n, min_d, src_dict[n], dst_dict[dst_n])
+            if out_file:
+                if tr_dict:
+                    if min_d <= len(src_dict[n][0]) / 10:
+                        out_file.write("@{} = ~{}~\n".format(n, tr_dict[dst_n][0]))
+                        if map_out_file:
+                            map_out_file.write("@{}:{} {} {}\n".format(basename, n, dst_n, min_d))
 
-        print(n, dst_n, src_dict[n], dst_dict[dst_n])
+                    else:
+                        out_file.write("@{} = ~{}~ /*{}*/\n".format(n, "MT: " + src_dict[n][0], tr_dict[dst_n][0]))
+
+
 
 
 
@@ -176,9 +199,23 @@ This program take one tra file and find all the closest lines (based on Levensht
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
-    parser.add_argument('infile1', help='File to check all tra lines from.')
-    parser.add_argument('infile2', help='File to find closest line for every line in infile1.')
-    # parser.add_argument('--source-dir', help='Dir with original tra files (should be the same lang as for infile).', required=True)
+    parser.add_argument('src', help='File or folder to check all tra lines from.')
+    parser.add_argument('dst_file', help='File to find closest line for every line in infile1.')
+    parser.add_argument('--tr_file', help='File to take replicas for translation if the distance is small enough', required=True)
+    parser.add_argument('--out_folder', help='Out folder for generated tra file', required=True)
+    parser.add_argument('--map_file', help='file to show mapping lines and distance', required=False)
     args = parser.parse_args()
 
-    find_closest_lines(args.infile1, args.infile2)
+    if os.path.isfile(args.src):
+        find_closest_lines({args.src}, args.dst_file, args.tr_file, args.out_folder, args.map_file)
+    if os.path.isdir(args.src):
+        filenames = []
+        for path in os.listdir(args.src):
+            if 'setup' in path:
+                continue
+            full_path = os.path.join(args.src, path)
+            if os.path.isfile(full_path):
+                filenames.append(full_path)
+        find_closest_lines(filenames, args.dst_file, args.tr_file, args.out_folder, args.map_file)
+
+
