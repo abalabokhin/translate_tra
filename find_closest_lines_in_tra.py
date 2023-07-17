@@ -139,13 +139,13 @@ def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
             print(n, dst_n, min_d, src_dict[n], dst_dict[dst_n])
             if out_file:
                 if tr_dict:
-                    if min_d <= len(src_dict[n][0]) / 10:
+                    good_line = (min_d <= len(src_dict[n][0]) / 10)
+                    if good_line:
                         out_file.write("@{} = ~{}~\n".format(n, tr_dict[dst_n][0]))
-                        if map_out_file:
-                            map_out_file.write("@{}:{} {} {}\n".format(basename, n, dst_n, min_d))
-
                     else:
                         out_file.write("@{} = ~{}~ /*{}*/\n".format(n, "MT: " + src_dict[n][0], tr_dict[dst_n][0]))
+                    if map_out_file:
+                        map_out_file.write("{} {} {} {} {}\n".format(basename, n, dst_n, min_d, good_line))
 
 
 
