@@ -145,7 +145,7 @@ def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
                     else:
                         out_file.write("@{} = ~{}~ /*{}*/\n".format(n, "MT: " + src_dict[n][0], tr_dict[dst_n][0]))
                     if map_out_file:
-                        map_out_file.write("{} {} {} {} {}\n".format(basename, n, dst_n, min_d, good_line))
+                        map_out_file.write("{}{} {} {} {}\n".format(basename, n, dst_n, min_d, good_line))
 
 
 
