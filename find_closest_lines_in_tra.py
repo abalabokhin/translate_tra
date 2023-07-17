@@ -35,9 +35,10 @@ def read_file1(infile, enc=None, remove_whitespaces = False):
     find_replica_re = re.compile('~([^~]*)~')
     find_replica_re1 = re.compile('"([^"]*)"')
     find_replica_re2 = re.compile('%([^%]*)%')
+    find_sound = re.compile('\\[[^\\]]*\\]')
 
-    lines_n = len(lines)
     result = dict()
+    sound_result = dict()
     for num, line in enumerate(lines):
         numbers = find_number_re.findall(line)
         replicas = find_replica_re.findall(line)
@@ -55,7 +56,14 @@ def read_file1(infile, enc=None, remove_whitespaces = False):
         else:
             fixed_replicas = replicas
         result[numbers[0]] = fixed_replicas
-    return result
+
+        for r in replicas:
+            line.replace(r, '')
+        sounds = find_sound.findall(line)
+        if len(sounds) > 0:
+            sound_result[numbers[0]] = sounds
+
+    return result, sound_result
 
 
 def build_dict_file(result, orig_file, tr_file, tr_enc):
@@ -90,14 +98,14 @@ def build_dict_dir(orig_dir, tr_dir, tr_enc):
 
 
 def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
-    dst_dict = read_file1(dst_file)
+    dst_dict, _ = read_file1(dst_file)
     if tr_file:
-        tr_dict = read_file1(tr_file)
+        tr_dict, _ = read_file1(tr_file)
     if map_file:
         map_out_file = open(map_file, "w")
 
     for src_file in src_files:
-        src_dict = read_file1(src_file)
+        src_dict, src_dict_s = read_file1(src_file)
         if out_folder:
             basename = os.path.basename(src_file)
             out_filename = out_folder + "/" + basename
@@ -141,9 +149,15 @@ def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
                 if tr_dict:
                     good_line = (min_d <= len(src_dict[n][0]) / 10)
                     if good_line:
-                        out_file.write("@{} = ~{}~\n".format(n, tr_dict[dst_n][0]))
+                        if n in src_dict_s:
+                            out_file.write("@{} = ~{}~ {}\n".format(n, tr_dict[dst_n][0], src_dict_s[n][0]))
+                        else:
+                            out_file.write("@{} = ~{}~\n".format(n, tr_dict[dst_n][0]))
                     else:
-                        out_file.write("@{} = ~{}~ /*{}*/\n".format(n, "MT: " + src_dict[n][0], tr_dict[dst_n][0]))
+                        if n in src_dict_s:
+                            out_file.write("@{} = ~{}~ {} /*{}*/\n".format(n, "MT: " + src_dict[n][0], src_dict_s[n][0], tr_dict[dst_n][0]))
+                        else:
+                            out_file.write("@{} = ~{}~ /*{}*/\n".format(n, "MT: " + src_dict[n][0], tr_dict[dst_n][0]))
                     if map_out_file:
                         map_out_file.write("{}{} {} {} {}\n".format(basename, n, dst_n, min_d, good_line))
 
