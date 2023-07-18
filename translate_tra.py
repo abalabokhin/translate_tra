@@ -12,7 +12,7 @@ import pycld2 as cld2
 import deepl
 
 
-def translate_file(infile, outfile, lang, engine, add_prefix):
+def translate_file(infile, outfile, lang, engine, add_prefix, only_prefix):
     with open(infile, mode='rb') as file:
         raw_data = file.read()
         result = chardet.detect(raw_data)
@@ -73,8 +73,15 @@ def translate_file(infile, outfile, lang, engine, add_prefix):
 
             strings = find_replica_re.findall(line)
             for string in strings:
+                do_translate = True
+                if only_prefix:
+                    if string.startswith(only_prefix):
+                        string = string[len(only_prefix):]
+                    else:
+                        do_translate = False
+
                 translated_string = ""
-                if string:
+                if string and do_translate:
                     translated_string = string
                     reliable, _, details = cld2.detect(string)
                     if details[0][1] != lang:
@@ -129,10 +136,11 @@ if __name__ == '__main__':
     parser.add_argument('--add-prefix', required=False, dest='add_prefix', action='store_true')
     parser.add_argument('--no-add-prefix', required=False, dest='add_prefix', action='store_false')
     parser.set_defaults(add_prefix=True)
+    parser.add_argument('--only-prefix', help='Only translate lanes that start with prefix (the prefix is not translated).', required=False)
     args = parser.parse_args()
 
     out = args.out
     if not out:
         out = args.infile
 
-    translate_file(args.infile, out, args.lang, args.engine, args.add_prefix)
+    translate_file(args.infile, out, args.lang, args.engine, args.add_prefix, args.only_prefix)
