@@ -6,7 +6,7 @@ import pathlib
 import re
 
 
-def collect_uniq_filenames(in_folder, folders_to_skip):
+def change_inside_files(in_folder, folders_to_skip, rename_table):
     es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'mus', 'acm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
     all_ids_with_files = []
 
@@ -100,25 +100,20 @@ This program collect all unique filenames that prefix should be added to
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('in_folder', help='Folder recursively search filename in.')
-    parser.add_argument('out_table_file', help='File to print renaming table.')
-    parser.add_argument('out_filenames_file', help='File to print original files to rename.')
-    parser.add_argument('prefix', help='Prefix to add')
+    parser.add_argument('in_table_file', help='File to read renaming table.')
+    parser.add_argument('in_filenames_file', help='File to read files to rename.')
     parser.add_argument('--skip', help='Folder names to skip', nargs='+', default=[])
     args = parser.parse_args()
 
-    ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip)
-    # print(ids_with_filenames)
-    ids = set()
-    for e in ids_with_filenames:
-        ids.add(e[0])
-    table = build_table(ids, args.prefix)
+    table = {}
+    f = open(args.in_table_file, "r")
+    lines = f.readlines()
+    for line in lines:
+        line.split(',')
+        table[line[0].strip()] = line[1].strip()
 
-    f = open(args.out_filenames_file, "w")
-    for e in ids_with_filenames:
-        f.write("{}, {}\n".format(e[0], e[1]))
-    f.close()
+    print(table)
 
-    f1 = open(args.out_table_file, "w")
-    for k in table:
-        f1.write("{}, {}\n".format(k, table[k]))
-    f1.close()
+    change_inside_files(args.in_folder, args.skip, args.in_table_file)
+    rename_files(args.in_filenames_file, args.in_table_file)
+
