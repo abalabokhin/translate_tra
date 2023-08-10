@@ -111,6 +111,16 @@ if __name__ == '__main__':
     ids = set()
     for e in ids_with_filenames:
         ids.add(e[0])
+    table = build_table(ids, args.prefix)
 
-    # print(build_table(ids, args.prefix))
+    f = open(args.out_filenames_file, "w")
+    for e in ids_with_filenames:
+        f.write("{}, {}\n".format(e[0], e[1]))
+    f.close()
+
+    f1 = open(args.out_table_file, "w")
+    for k in table:
+        f1.write("{}, {}\n".format(k, table[k]))
+    f1.close()
+
     #TODO: print both tables in files
