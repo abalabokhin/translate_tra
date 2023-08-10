@@ -8,7 +8,8 @@ import re
 
 def collect_uniq_filenames(in_folder, folders_to_skip):
     es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'mus', 'acm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
-    all_ids = set()
+    all_ids_with_files = []
+
     extensions = ["." + x.upper() for x in es]
     for dir_, _, files in os.walk(in_folder):
         rel_dir = os.path.relpath(dir_, in_folder)
@@ -18,12 +19,12 @@ def collect_uniq_filenames(in_folder, folders_to_skip):
                 file_upper = f.upper()
                 split_filename = os.path.splitext(file_upper)
                 if split_filename[1] in extensions and not re.match("SP(PR|WI|IN|CL[0-9]{3})", split_filename[0]):
-                    all_ids.add(split_filename[0])
-    return all_ids
+                    all_ids_with_files.append((split_filename[0], os.path.join(dir_, f)))
+    return all_ids_with_files
 
 
-def clean_id(id):
-    result = id
+def clean_id(id_to_clean):
+    result = id_to_clean
     for c in ["_", "-", "#"]:
         i = result.find(c)
         if 0 <= i <= 2:
@@ -31,10 +32,10 @@ def clean_id(id):
         result = result.replace(c, '')
     return result
 
+
 def build_table(ids, prefix):
     table = {}
     for id in ids:
-        value = id
         id_cleaned = clean_id(id)
         if id.startswith(prefix):
             continue
@@ -55,27 +56,41 @@ def build_table(ids, prefix):
                 result = re.search("[0-9]+.$", id_cleaned)
                 if result:
                     n_keep_at_end = len(result.group())
-            if n_to_eat + n_keep_at_end >= 8:
-                n_keep_at_end = 0
+            if n_to_eat + n_keep_at_end > 8:
+                n_keep_at_end = n_to_eat + n_keep_at_end - 8
             value = prefix + id_cleaned[0: len(id_cleaned) - n_to_eat - n_keep_at_end]
             if n_keep_at_end > 0:
                 value += id_cleaned[-n_keep_at_end:]
-
-        if len(value) > 8:
-            print("Error in defining value for id: id, value", id, value)
         table[id] = value
-    v2i = {}
-    for i in table:
-        v = table[i]
-        if v in v2i:
-            print("COLLISION {}->{}, {}->{}".format(v2i[v], v, i, v))
-        v2i[v] = i
 
+    values = set(table.values())
+    v2k = {}
+    for k in table:
+        v = table[k]
+        if v in v2k:
+            # try to solve the collision
+            new_v = v
+            for j in range(100):
+                suffix = str(j)
+                if len(suffix) + len(v) <= 8:
+                    v_candidate = v + suffix
+                else:
+                    n_to_eat = len(v) + len(suffix) - 8
+                    v_candidate = v[0:-n_to_eat] + suffix
+                if v_candidate not in values:
+                    new_v = v_candidate
+                    break
 
+            if new_v == v:
+                print("UNSOLVED COLLISION {}->{}, {}->{}".format(v2k[v], v, k, v))
+            v = new_v
+        if len(v) > 8:
+            print("Error in defining new id name: ", k, v)
+        values.add(v)
+        v2k[v] = k
+        table[k] = v
 
-
-
-
+    return table
 
 
 __desc__ = '''
@@ -85,10 +100,17 @@ This program collect all unique filenames that prefix should be added to
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('in_folder', help='Folder recursively search filename in.')
-    parser.add_argument('out_file', help='Folder recursively search filename in.')
+    parser.add_argument('out_table_file', help='File to print renaming table.')
+    parser.add_argument('out_filenames_file', help='File to print original files to rename.')
     parser.add_argument('prefix', help='Prefix to add')
     parser.add_argument('--skip', help='Folder names to skip', nargs='+', default=[])
     args = parser.parse_args()
 
-    ids = collect_uniq_filenames(args.in_folder, args.skip)
-    build_table(ids, args.prefix)
+    ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip)
+    # print(ids_with_filenames)
+    ids = set()
+    for e in ids_with_filenames:
+        ids.add(e[0])
+
+    # print(build_table(ids, args.prefix))
+    #TODO: print both tables in files
