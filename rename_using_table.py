@@ -7,6 +7,7 @@ import re
 
 
 def change_inside_files(in_folder, folders_to_skip, rename_table):
+    return
     es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'mus', 'acm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
     all_ids_with_files = []
 
@@ -94,7 +95,8 @@ def build_table(ids, prefix):
 
 
 __desc__ = '''
-This program collect all unique filenames that prefix should be added to 
+This program rename reference inside files and files itself according to provided tables
+example of parameters for NWN: /home/paladin/source/translations/NWNForBG/NWNForBG/ 1.txt 2.txt --skip 2da Worldmap audio bam bmp ia_cre ia_ini legacy_dlg missing_anim_ee movies mus portraits portraits_ee to_extend tis tis_ee iconv
 '''
 
 if __name__ == '__main__':
@@ -109,11 +111,11 @@ if __name__ == '__main__':
     f = open(args.in_table_file, "r")
     lines = f.readlines()
     for line in lines:
-        line.split(',')
-        table[line[0].strip()] = line[1].strip()
+        lines = line.split(',')
+        table[lines[0].strip()] = lines[1].strip()
 
     print(table)
 
-    change_inside_files(args.in_folder, args.skip, args.in_table_file)
-    rename_files(args.in_filenames_file, args.in_table_file)
+    change_inside_files(args.in_folder, args.skip, table)
+    # rename_files(args.in_filenames_file, args.in_table_file)
 

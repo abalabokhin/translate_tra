@@ -6,20 +6,20 @@ import pathlib
 import re
 
 
-def collect_uniq_filenames(in_folder, folders_to_skip):
-    es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'mus', 'acm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
+def collect_uniq_filenames(in_folder, folders_to_skip, filenames_to_skip):
+    es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
     all_ids_with_files = []
-
     extensions = ["." + x.upper() for x in es]
+
     for dir_, _, files in os.walk(in_folder):
         rel_dir = os.path.relpath(dir_, in_folder)
         folders = pathlib.PurePath(rel_dir).parts
         if not any([i in folders for i in folders_to_skip]):
-            for f in files:
-                file_upper = f.upper()
-                split_filename = os.path.splitext(file_upper)
-                if split_filename[1] in extensions and not re.match("SP(PR|WI|IN|CL[0-9]{3})", split_filename[0]):
-                    all_ids_with_files.append((split_filename[0], os.path.join(dir_, f)))
+            for file in files:
+                split_filename = os.path.splitext(file)
+                if (split_filename[1].upper() in extensions and split_filename[0] not in filenames_to_skip and
+                        not re.match("SP(PR|WI|IN|CL[0-9]{3})", split_filename[0].upper())):
+                    all_ids_with_files.append((split_filename[0].upper(), os.path.join(dir_, file)))
     return all_ids_with_files
 
 
@@ -94,7 +94,10 @@ def build_table(ids, prefix):
 
 
 __desc__ = '''
-This program collect all unique filenames that prefix should be added to 
+This program collect all unique filenames that prefix should be added to
+And generate global renaming table with this prefix
+All area files (are, mos, wed, tis) and music files (acm, mus) are considered to have proper names
+example of parameters for NWN: /home/paladin/source/translations/NWNForBG/NWNForBG/ 1.txt 2.txt NW --skip-folders 2da Worldmap are ia_cre ia_ini legacy_dlg lib missing_anim_ee movies to_extend tis tis_ee iconv setup setup-ee --skip-files setup setup-ee worldmap
 '''
 
 if __name__ == '__main__':
@@ -103,10 +106,12 @@ if __name__ == '__main__':
     parser.add_argument('out_table_file', help='File to print renaming table.')
     parser.add_argument('out_filenames_file', help='File to print original files to rename.')
     parser.add_argument('prefix', help='Prefix to add')
-    parser.add_argument('--skip', help='Folder names to skip', nargs='+', default=[])
+    parser.add_argument('--skip-folders', help='Case sensitive folder names to skip', nargs='+', default=[])
+    parser.add_argument('--skip-files', help='Case sensitive file names to skip', nargs='+',
+                        default=[])
     args = parser.parse_args()
 
-    ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip)
+    ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip_folders, args.skip_files)
     # print(ids_with_filenames)
     ids = set()
     for e in ids_with_filenames:
