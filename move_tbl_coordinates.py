@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 import argparse
-import os
-import pathlib
-import re
 
 __desc__ = '''
 This program modify coordinates in tlb file: new_x = (old_x + init_offset_x) * factor_x + final_offset_x
