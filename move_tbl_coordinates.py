@@ -22,6 +22,7 @@ if __name__ == '__main__':
     outlines = []
     f_in = open(args.in_file, "r")
     lines = f_in.readlines()
+    f_in.close()
     for line in lines:
         tokens = line.split(" ")
         out_tokens = []
@@ -47,3 +48,4 @@ if __name__ == '__main__':
 
     f_out = open(args.out_file, "w")
     f_out.writelines(outlines)
+    f_out.close()
