@@ -4,7 +4,7 @@ file = open('DEEPL_API_KEY', mode='r')
 deepl_key = file.read().rstrip()
 translator = deepl.Translator(deepl_key)
 
-entries = {"Faerun": "Фаэрун"}
+entries = {"Faerun": "Файрун"}
 
 my_glossary = translator.create_glossary(
     "My glossary",
@@ -13,6 +13,6 @@ my_glossary = translator.create_glossary(
     entries=entries,
 )
 
-translated_string = str(translator.translate_text("Faerun", target_lang='ru', source_lang='en', glossary=my_glossary))
+translated_string = str(translator.translate_text("I never been to Faerun", target_lang='ru', source_lang='en', glossary=my_glossary))
 print(translated_string)
 
