@@ -4,21 +4,56 @@ import argparse
 import os
 import pathlib
 import re
+import sys
 
 
-def change_refs(in_folder, renaming_table_filename):
+def replace_refs_in_bin(filename, table):
+    # TODO: make it case insensitive
+    f = open(filename, "rb")
+    s = f.read()
+    s_orig = s
+    f.close()
+    for key in table:
+        key_b = bytes(key, 'ascii')
+        key_b = key_b + bytearray(8 - len(key_b))
+        value_b = bytes(table[key], 'ascii')
+        value_b = value_b + bytearray(8 - len(value_b))
+        s = s.replace(key_b, value_b)
+
+    if s != s_orig:
+        f = open(filename, "wb")
+        f.write(s)
+        f.close()
+
+
+def replace_refs_in_txt(filename, table):
+    # TODO: make it case insensitive
+    f = open(filename, "r", encoding='cp1251')
+    print(filename)
+    s = f.read()
+    s_orig = s
+    f.close()
+    for key in table:
+        s = re.sub('\\b'+key+'\\b', table[key], s)
+
+    if s != s_orig:
+        f = open(filename, "w", encoding='cp1251')
+        f.write(s)
+        f.close()
+
+def change_refs(in_folder, renaming_table_filename, folders_to_skip):
     table_file = open(renaming_table_filename, "r")
     table = {}
-    for l in f.readlines():
+    for l in table_file.readlines():
         tokens = l.split(',')
-        table[tokens[0]] = tokens[1]
+        table[tokens[0].strip()] = tokens[1].strip()
 
+    print(table)
     # check, do we need eff?
     es_bin = ['are', 'cre', 'eff', 'itm', 'pro', 'spl', 'sto', 'vvs']
-    ex_text = ['d', 'tph', 'baf', 'tra', 'tp2']
-    es = ['ogg', 'wav', 'bam', 'bmp', 'cre', 'd', 'eff', 'itm', 'pro', 'baf', 'spl', 'sto', 'tra', 'vvc']
-    all_ids_with_files = []
-    extensions = ["." + x.upper() for x in es]
+    ex_txt = ['d', 'tph', 'baf', 'tra', 'tp2']
+    extensions_bin = ["." + x.upper() for x in es_bin]
+    extensions_txt = ["." + x.upper() for x in ex_txt]
 
     for dir_, _, files in os.walk(in_folder):
         rel_dir = os.path.relpath(dir_, in_folder)
@@ -26,11 +61,10 @@ def change_refs(in_folder, renaming_table_filename):
         if not any([i in folders for i in folders_to_skip]):
             for file in files:
                 split_filename = os.path.splitext(file)
-                if (split_filename[1].upper() in extensions and split_filename[0] not in filenames_to_skip and
-                        not re.match("SP(PR|WI|IN|CL[0-9]{3})", split_filename[0].upper())):
-                    all_ids_with_files.append((split_filename[0].upper(), os.path.join(dir_, file)))
-    return all_ids_with_files
-
+                if split_filename[1].upper() in extensions_bin:
+                    replace_refs_in_bin(os.path.join(dir_, file), table)
+                if split_filename[1].upper() in extensions_txt:
+                    replace_refs_in_txt(os.path.join(dir_, file), table)
 
 def clean_id(id_to_clean):
     result = id_to_clean
@@ -118,17 +152,4 @@ if __name__ == '__main__':
 
     ids_with_filenames = change_refs(args.in_folder, args.in_table_file, args.skip_folders)
     # print(ids_with_filenames)
-    ids = set()
-    for e in ids_with_filenames:
-        ids.add(e[0])
-    table = build_table(ids, args.prefix)
 
-    f = open(args.out_filenames_file, "w")
-    for e in ids_with_filenames:
-        f.write("{}, {}\n".format(e[0], e[1]))
-    f.close()
-
-    f1 = open(args.out_table_file, "w")
-    for k in table:
-        f1.write("{}, {}\n".format(k, table[k]))
-    f1.close()

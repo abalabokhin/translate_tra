@@ -2,3 +2,4 @@
 venv
 YANDEX_API_KEY
 DEEPL_API_KEY
+__pycache__
