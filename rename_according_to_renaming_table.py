@@ -18,7 +18,7 @@ def replace_refs_in_bin(filename, table):
         key_b = key_b + bytearray(8 - len(key_b))
         value_b = bytes(table[key], 'ascii')
         value_b = value_b + bytearray(8 - len(value_b))
-        s = s.replace(key_b, value_b)
+        s = re.sub(key_b, value_b, s, flags=re.IGNORECASE)
 
     if s != s_orig:
         f = open(filename, "wb")
@@ -27,14 +27,13 @@ def replace_refs_in_bin(filename, table):
 
 
 def replace_refs_in_txt(filename, table):
-    # TODO: make it case insensitive
     f = open(filename, "r", encoding='cp1251')
     print(filename)
     s = f.read()
     s_orig = s
     f.close()
     for key in table:
-        s = re.sub('\\b'+key+'\\b', table[key], s)
+        s = re.sub('\\b'+key+'\\b', table[key], s, flags=re.IGNORECASE)
 
     if s != s_orig:
         f = open(filename, "w", encoding='cp1251')
