@@ -37,11 +37,16 @@ def replace_refs_in_bin(filename, table):
 
 def replace_refs_in_txt(filename, table):
     f = open(filename, "r", encoding='cp1251')
+    _, ext = os.path.splitext(filename)
     s = f.read()
     s_orig = s
     f.close()
-    for key in table:
-        s = re.sub('\\b'+key+'\\b', table[key], s, flags=re.IGNORECASE)
+    if ext.upper() == '.TRA':
+        for key in table:
+            s = re.sub('\\[ *' + key + ' *\\]', '[' + table[key] + ']', s, flags=re.IGNORECASE)
+    else:
+        for key in table:
+            s = re.sub('\\b' + key + '\\b', table[key], s, flags=re.IGNORECASE)
 
     if s != s_orig:
         print("txt file {} changed and saved".format(filename))
