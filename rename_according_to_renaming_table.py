@@ -8,7 +8,6 @@ import sys
 
 
 def replace_refs_in_bin(filename, table):
-    # TODO: make it case insensitive
     f = open(filename, "rb")
     s = f.read()
     s_orig = s
@@ -28,7 +27,6 @@ def replace_refs_in_bin(filename, table):
 
 def replace_refs_in_txt(filename, table):
     f = open(filename, "r", encoding='cp1251')
-    print(filename)
     s = f.read()
     s_orig = s
     f.close()
@@ -61,8 +59,10 @@ def change_refs(in_folder, renaming_table_filename, folders_to_skip):
             for file in files:
                 split_filename = os.path.splitext(file)
                 if split_filename[1].upper() in extensions_bin:
+                    print("processing binary file {}".format(file))
                     replace_refs_in_bin(os.path.join(dir_, file), table)
                 if split_filename[1].upper() in extensions_txt:
+                    print("processing txt file {}".format(file))
                     replace_refs_in_txt(os.path.join(dir_, file), table)
 
 def clean_id(id_to_clean):
