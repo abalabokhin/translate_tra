@@ -9,10 +9,10 @@ import sys
 
 def read_table(filename):
     table_file = open(filename, "r")
-    table = {}
+    table = []
     for line in table_file.readlines():
         tokens = line.split(',')
-        table[tokens[0].strip()] = tokens[1].strip()
+        table.append((tokens[0].strip(), tokens[1].strip()))
     return table
 
 
@@ -57,15 +57,15 @@ def replace_refs_in_txt(filename, table):
 
 def rename_files_according_to_table(file_table, renaming_table):
     print(renaming_table)
-    for k in file_table:
+    for k, orig_filepath in file_table:
         if k not in renaming_table:
             continue
         new_basename = renaming_table[k]
-        path, filename = os.path.split(file_table[k])
+        path, filename = os.path.split(orig_filepath)
         _, ext = os.path.splitext(filename)
         new_full_filename = os.path.join(path, new_basename + ext)
-        print("renaming {} into {}".format(file_table[k], new_full_filename))
-        os.rename(file_table[k], new_full_filename)
+        print("renaming {} into {}".format(orig_filepath, new_full_filename))
+        os.rename(orig_filepath, new_full_filename)
 
 
 def change_refs(in_folder, renaming_table, folders_to_skip):
@@ -103,6 +103,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     file_table = read_table(args.in_filenames_file)
-    renaming_table = read_table(args.in_table_file)
+    renaming_table = dict(read_table(args.in_table_file))
     change_refs(args.in_folder, renaming_table, args.skip_folders)
     rename_files_according_to_table(file_table, renaming_table)
