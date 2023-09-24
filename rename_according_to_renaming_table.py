@@ -16,17 +16,19 @@ def read_table(filename):
     return table
 
 
-def replace_refs_in_bin(filename, table):
+def replace_refs_in_bin(filename, table_bin):
     f = open(filename, "rb")
     s = f.read()
     s_orig = s
     f.close()
-    for key in table:
-        key_b = bytes(key, 'ascii')
-        key_b = key_b + bytearray(8 - len(key_b))
-        value_b = bytes(table[key], 'ascii')
-        value_b = value_b + bytearray(8 - len(value_b))
-        s = re.sub(key_b, value_b, s, flags=re.IGNORECASE)
+    pos_i = 0
+    while pos_i < len(s_orig) - 8:
+        id_candidate = s[pos_i:pos_i+8].upper()
+        if id_candidate in table_bin:
+            s = s[:pos_i] + table_bin[id_candidate] + s[pos_i+8:]
+            pos_i += 8
+        else:
+            pos_i += 1
 
     if s != s_orig:
         print("bin file {} changed and saved".format(filename))
@@ -68,12 +70,20 @@ def rename_files_according_to_table(file_table, renaming_table):
         os.rename(orig_filepath, new_full_filename)
 
 
-def change_refs(in_folder, renaming_table, folders_to_skip):
+def change_refs(in_folder, renaming_table_txt, folders_to_skip):
     print(renaming_table)
     es_bin = ['are', 'cre', 'eff', 'itm', 'pro', 'spl', 'sto', 'vvs']
     ex_txt = ['d', 'tph', 'baf', 'tra', 'tp2']
     extensions_bin = ["." + x.upper() for x in es_bin]
     extensions_txt = ["." + x.upper() for x in ex_txt]
+
+    renaming_table_bin = {}
+    for key in renaming_table_txt:
+        key_b = bytes(key, 'ascii')
+        key_b = key_b + bytearray(8 - len(key_b))
+        value_b = bytes(renaming_table_txt[key], 'ascii')
+        value_b = value_b + bytearray(8 - len(value_b))
+        renaming_table_bin[key_b.upper()] = value_b.upper()
 
     for dir_, _, files in os.walk(in_folder):
         rel_dir = os.path.relpath(dir_, in_folder)
@@ -82,9 +92,9 @@ def change_refs(in_folder, renaming_table, folders_to_skip):
             for file in files:
                 split_filename = os.path.splitext(file)
                 if split_filename[1].upper() in extensions_bin:
-                    replace_refs_in_bin(os.path.join(dir_, file), renaming_table)
+                    replace_refs_in_bin(os.path.join(dir_, file), renaming_table_bin)
                 if split_filename[1].upper() in extensions_txt:
-                    replace_refs_in_txt(os.path.join(dir_, file), renaming_table)
+                    replace_refs_in_txt(os.path.join(dir_, file), renaming_table_txt)
 
 
 __desc__ = '''
