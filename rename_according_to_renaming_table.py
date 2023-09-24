@@ -26,7 +26,7 @@ def replace_refs_in_bin(filename, table):
         key_b = key_b + bytearray(8 - len(key_b))
         value_b = bytes(table[key], 'ascii')
         value_b = value_b + bytearray(8 - len(value_b))
-        s = re.sub(b'([^a-zA-Z])' + key_b, b'\\1'+value_b, s, flags=re.IGNORECASE)
+        s = re.sub(key_b, value_b, s, flags=re.IGNORECASE)
 
     if s != s_orig:
         print("bin file {} changed and saved".format(filename))
