@@ -26,7 +26,7 @@ def replace_refs_in_bin(filename, table):
         key_b = key_b + bytearray(8 - len(key_b))
         value_b = bytes(table[key], 'ascii')
         value_b = value_b + bytearray(8 - len(value_b))
-        s = re.sub(key_b, value_b, s, flags=re.IGNORECASE)
+        s = re.sub(b'([^a-zA-Z])' + key_b, b'\\1'+value_b, s, flags=re.IGNORECASE)
 
     if s != s_orig:
         print("bin file {} changed and saved".format(filename))
@@ -70,7 +70,6 @@ def rename_files_according_to_table(file_table, renaming_table):
 
 def change_refs(in_folder, renaming_table, folders_to_skip):
     print(renaming_table)
-    # check, do we need eff?
     es_bin = ['are', 'cre', 'eff', 'itm', 'pro', 'spl', 'sto', 'vvs']
     ex_txt = ['d', 'tph', 'baf', 'tra', 'tp2']
     extensions_bin = ["." + x.upper() for x in es_bin]

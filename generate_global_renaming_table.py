@@ -67,7 +67,7 @@ def build_table(ids, prefix):
     v2k = {}
     for k in table:
         v = table[k]
-        if v in v2k:
+        if v in v2k or v in ids:
             # try to solve the collisions
             new_v = v
             for j in range(100):
@@ -77,7 +77,7 @@ def build_table(ids, prefix):
                 else:
                     n_to_eat = len(v) + len(suffix) - 8
                     v_candidate = v[0:-n_to_eat] + suffix
-                if v_candidate not in values:
+                if v_candidate not in values and v_candidate not in ids:
                     new_v = v_candidate
                     break
 
@@ -97,7 +97,7 @@ __desc__ = '''
 This program collect all unique filenames that prefix should be added to
 And generate global renaming table with this prefix
 All area files (are, mos, wed, tis) and music files (acm, mus) are considered to have proper names
-example of parameters for NWN: /home/paladin/source/translations/NWNForBG/NWNForBG/ 1.txt 2.txt NW --skip-folders 2da Worldmap are ia_cre ia_ini legacy_dlg lib missing_anim_ee movies to_extend tis tis_ee iconv setup setup-ee --skip-files setup setup-ee worldmap
+example of parameters for NWN: /home/paladin/source/NWNForBG/NWNForBG/ 1.txt 2.txt NW --skip-folders 2da Worldmap are ia_cre ia_ini legacy_dlg lib missing_anim_ee movies to_extend tis tis_ee iconv setup setup-ee --skip-files setup setup-ee worldmap
 '''
 
 if __name__ == '__main__':
