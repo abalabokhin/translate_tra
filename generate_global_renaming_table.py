@@ -17,6 +17,7 @@ def collect_uniq_filenames(in_folder, folders_to_skip, filenames_to_skip):
         if not any([i in folders for i in folders_to_skip]):
             for file in files:
                 split_filename = os.path.splitext(file)
+                # TODO: add not renaming RNDTRE08.ITM and similar items
                 if (split_filename[1].upper() in extensions and split_filename[0] not in filenames_to_skip and
                         not re.match("SP(PR|WI|IN|CL[0-9]{3})", split_filename[0].upper())):
                     all_ids_with_files.append((split_filename[0].upper(), os.path.join(dir_, file)))

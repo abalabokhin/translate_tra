@@ -24,6 +24,9 @@ def replace_refs_in_bin(filename, table_bin):
     pos_i = 0
     while pos_i < len(s_orig) - 8:
         id_candidate = s[pos_i:pos_i+8].upper()
+        if id_candidate[0:2] == b'NW':
+            pos_i += 8
+            continue
         if id_candidate in table_bin:
             s = s[:pos_i] + table_bin[id_candidate] + s[pos_i+8:]
             pos_i += 8
@@ -73,7 +76,7 @@ def rename_files_according_to_table(file_table, renaming_table):
 
 def change_refs(in_folder, renaming_table_txt, folders_to_skip):
     print(renaming_table)
-    es_bin = ['are', 'cre', 'eff', 'itm', 'pro', 'spl', 'sto', 'vvs']
+    es_bin = ['are', 'cre', 'eff', 'itm', 'pro', 'spl', 'sto', 'vvc']
     ex_txt = ['d', 'tph', 'baf', 'tra', 'tp2']
     extensions_bin = ["." + x.upper() for x in es_bin]
     extensions_txt = ["." + x.upper() for x in ex_txt]
