@@ -38,6 +38,7 @@ def replace_refs_in_bin(filename, table_bin):
 
 
 def replace_refs_in_txt(filename, table):
+    # TODO: makde dedicated processing for SPRITE_IS_DEAD variable
     f = open(filename, "r", encoding='cp1251')
     _, ext = os.path.splitext(filename)
     s = f.read()
