@@ -7,7 +7,8 @@ import sys
 import chardet
 import re
 from Levenshtein import distance as levenshtein_distance
-
+from nltk import tokenize
+import nltk
 
 def remove_extra_spaces(string):
     result = "".join(string.split())
@@ -97,17 +98,114 @@ def build_dict_dir(orig_dir, tr_dir, tr_enc):
     return result
 
 
-def find_closest_lines(src_files, dst_file, tr_file, out_folder, map_file):
-    print(src_files)
+def all_split_on_sentences_combinations(line):
+    result = [[line]]
+    nltk.download('punkt')
+    parts = tokenize.sent_tokenize(line)
+    for i in range(1, len(parts)):
+        first_part = parts[:i]
+        second_part = parts[i:]
+        result.append([" ".join(first_part), " ".join(second_part)])
+    return result
 
 
-    dst_dict, _ = read_file1(dst_file)
-    if tr_file:
-        tr_dict, _ = read_file1(tr_file)
+def find_closest_in_dict(src_string, dst_dict):
+    min_d = 1000000
+    dst_n = -1
+    for n1 in dst_dict.keys():
+        dst_string = dst_dict[n1][0]
+        d = levenshtein_distance(src_string, dst_string)
+        if d < min_d:
+            min_d = d
+            dst_n = n1
+        if min_d == 0:
+            break
+    return dst_n, min_d
+
+# l1 - english
+def find_closest_lines(src_files, src_files_l2, dict_l1_file, dict_l2_file, map_file):
+    print(src_files, src_files_l2)
+    # dict_l1, _ = read_file1(dict_l1_file)
+    dict_l2, _ = read_file1(dict_l2_file)
     if map_file:
         map_out_file = open(map_file, "w")
 
-    for src_file in src_files:
+    for src_file, src_file_l2 in zip(src_files, src_files_l2):
+        print(src_file, src_file_l2)
+        src_l2, _ = read_file1(src_file_l2)
+
+        with open(src_file, mode='r') as file:
+            text = file.read()
+        out_text = text
+
+        find_number_re = re.compile('@([0-9]+)')
+        find_delimiter_re = re.compile('@[0-9]+[\\s]*=[\\s]*(.)')
+        find_string_re = re.compile('@[0-9]+[^@]*')
+        find_replica_re0 = re.compile('~([^~]*)~')
+        find_replica_re1 = re.compile('"([^"]*)"')
+
+        start_i = -1
+        while True:
+            r = find_string_re.search(text, start_i + 1)
+            if not r:
+                break
+            start_i = r.start()
+            end_i = r.end() - 1
+            if end_i == len(text) - 1:
+                end_i += 1
+            line = text[start_i:end_i]
+            numbers = find_number_re.findall(line)
+            number = numbers[0]
+            delimiters = find_delimiter_re.findall(line)
+            if len(delimiters) != 1 or (delimiters[0] != '~' and delimiters[0] != '"'):
+                print("Cannot process line: \"{}\", skipping".format(line))
+                continue
+            if delimiters[0] == "~":
+                find_replica_re = find_replica_re0
+            else:
+                find_replica_re = find_replica_re1
+
+            strings = find_replica_re.findall(line)
+            if not strings:
+                continue
+            string = strings[0]
+            if not string.startswith('NP:'):
+                continue
+            changed_string = string[3:]
+            print(changed_string, src_l2[number])
+            all_combinations = all_split_on_sentences_combinations(src_l2[number][0])
+            best_comb_ns = []
+            best_comb = ""
+            min_d = 100000
+            for combination in all_combinations:
+                closest_parts = []
+                comb_ns = []
+                for part in combination:
+                    n, _ = find_closest_in_dict(part, dict_l2)
+                    closest_parts.append(dict_l2[n][0])
+                    comb_ns.append(n)
+                comb = " ".join(closest_parts)
+                d = levenshtein_distance(comb, src_l2[number][0])
+                if d < min_d:
+                    min_d = d
+                    best_comb_ns = comb_ns
+                    best_comb = comb
+
+            print(best_comb, min_d)
+            sys.exit()
+
+            # translated_line = translated_line.replace(string, translated_string)
+
+        #     if line != translated_line:
+        #         print('"{}" translated into "{}"'.format(line, translated_line))
+        #         out_text = out_text[:(start_i + out_text_offset)] + translated_line + out_text[
+        #                                                                               (end_i + out_text_offset):]
+        #         out_text_offset += (len(translated_line) - len(line))
+        #
+        # with open(outfile, mode='w') as outfile:
+        #     outfile.write(out_text)
+
+
         src_dict, src_dict_s = read_file1(src_file)
         if out_folder:
             basename = os.path.basename(src_file)
