@@ -106,7 +106,7 @@ def find_closest_lines(src_files, src_files_l2, dict_l1_file, dict_l2_file, map_
     dict_l1, _ = read_file1(dict_l1_file)
     dict_l2, _ = read_file1(dict_l2_file)
     if map_file:
-        map_out_file = open(map_file, "w")
+        map_out_file = open(map_file, "a")
 
     for src_file, src_file_l2 in zip(src_files, src_files_l2):
         print("processing {}".format(src_file))
@@ -171,7 +171,7 @@ def find_closest_lines(src_files, src_files_l2, dict_l1_file, dict_l2_file, map_
                 continue
 
             if map_out_file:
-                map_out_file.write("{}{} {} {} {}\n".format(basename, number, best_comb_ns, min_d, good_line))
+                map_out_file.write("{} {} {} {} {}\n".format(basename, number, best_comb_ns, min_d, good_line))
             best_comb_l1 = []
             for n in best_comb_ns:
                 best_comb_l1.append(dict_l1[n][0])
