@@ -16,33 +16,33 @@ def clear_content(content):
     result = re.sub("<StartAction>([^<]*)<StartAction>", '\\1', result)
     result = re.sub("<StartHighlight>([^<]*)</Start>", '\\1', result)
 
-    result = re.sub("<[Bb]itch/[Bb]astard>", '<PRO_GIRLBOY>', result)
-    result = re.sub("<[Bb]oy/[Gg]irl>", '<PRO_GIRLBOY>', result)
-    result = re.sub("<[Ll]ad/[Ll]ass>", '<PRO_GIRLBOY>', result)
+    result = re.sub("<[Bb]itch/[Bb]astard>", 'GIRLBOY>', result)
+    result = re.sub("<[Bb]oy/[Gg]irl>", '<GIRLBOY>', result)
+    result = re.sub("<[Ll]ad/[Ll]ass>", '<GIRLBOY>', result)
 
-    result = re.sub("<[Bb]rother/[Ss]ister>", '<PRO_BROTHERSISTER>', result)
+    result = re.sub("<[Bb]rother/[Ss]ister>", '<BROTHERSISTER>', result)
 
-    result = re.sub("<[Rr]ace>", '<PRO_RACE>', result)
-    result = re.sub("<class>", '<PRO_RACE>', result)
+    result = re.sub("<[Rr]ace>", '<RACE>', result)
+    result = re.sub("<class>", '<RACE>', result)
 
     result = re.sub("<day/night>", '<DAYNIGHT>', result)
     result = re.sub("<quarterday>", '<DAYNIGHTALL>', result)
     result = re.sub("<FirstName>", '<CHARNAME>', result)
     result = re.sub("<FullName>", '<CHARNAME>', result)
     result = re.sub("<LastName>", '<CHARNAME>', result)
-    result = re.sub("<[Hh]e/[Ss]he>", '<PRO_HESHE>', result)
-    result = re.sub("<[Hh]im/[Hh]er>", '<PRO_HIMHER>', result)
-    result = re.sub("<[Hh]is/[Hh]er(s|)>", '<PRO_HISHER>', result)
+    result = re.sub("<[Hh]e/[Ss]he>", '<HESHE>', result)
+    result = re.sub("<[Hh]im/[Hh]er>", '<HIMHER>', result)
+    result = re.sub("<[Hh]is/[Hh]er(s|)>", '<HISHER>', result)
 
-    result = re.sub("<[Ll]ady/[Ll]ord>", '<PRO_LADYLORD>', result)
-    result = re.sub("<[Ll]ord/[Ll]ady>", '<PRO_LADYLORD>', result)
-    result = re.sub("<[Mm]aster/[Mm]istress>", '<PRO_LADYLORD>', result)
+    result = re.sub("<[Ll]ady/[Ll]ord>", '<LADYLORD>', result)
+    result = re.sub("<[Ll]ord/[Ll]ady>", '<LADYLORD>', result)
+    result = re.sub("<[Mm]aster/[Mm]istress>", '<LADYLORD>', result)
 
-    result = re.sub("<[Mm]ale/[Ff]emale>", '<PRO_MALEFEMALE>', result)
-    result = re.sub("<[Mm]an/[Ww]oman>", '<PRO_MANWOMAN>', result)
+    result = re.sub("<[Mm]ale/[Ff]emale>", '<MALEFEMALE>', result)
+    result = re.sub("<[Mm]an/[Ww]oman>", '<MANWOMAN>', result)
 
-    result = re.sub("<[Ss]ir/[Mm]adam>", '<PRO_SIRMAAM>', result)
-    result = re.sub("<[Mm]ister/[Mm]iss(s|)us>", '<PRO_SIRMAAM>', result)
+    result = re.sub("<[Ss]ir/[Mm]adam>", '<SIRMAAM>', result)
+    result = re.sub("<[Mm]ister/[Mm]iss(s|)us>", '<SIRMAAM>', result)
 
     result = result.strip()
     return result
