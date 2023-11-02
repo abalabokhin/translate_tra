@@ -10,7 +10,6 @@ def find_global_vars_in_one_txt(filename):
     f = open(filename, "r", encoding='cp1251')
     _, ext = os.path.splitext(filename)
     s = f.read()
-    s_orig = s
     f.close()
     result = set()
     for el in re.findall(r'"[^"]*"\s*,\s*"GLOBAL"', s, flags=re.IGNORECASE):
@@ -40,6 +39,8 @@ def find_all_global_vars(in_folder, folders_to_skip, prefix):
     table = {}
     for r in global_result:
         if not r.startswith(prefix) and not r.startswith('SPRITE_IS_DEAD'):
+            if prefix + r in global_result:
+                print("ERROR", r)
             table[r] = prefix + r
 
     return table

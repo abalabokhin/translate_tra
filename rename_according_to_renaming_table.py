@@ -41,7 +41,8 @@ def replace_refs_in_bin(filename, table_bin):
 
 
 def replace_refs_in_txt(filename, table):
-    # TODO: makde dedicated processing for SPRITE_IS_DEAD variable
+    # TODO: make dedicated processing for SPRITE_IS_DEAD variable
+    print(filename)
     f = open(filename, "r", encoding='cp1251')
     _, ext = os.path.splitext(filename)
     s = f.read()
@@ -62,7 +63,6 @@ def replace_refs_in_txt(filename, table):
 
 
 def rename_files_according_to_table(file_table, renaming_table):
-    print(renaming_table)
     for k, orig_filepath in file_table:
         if k not in renaming_table:
             continue
@@ -83,12 +83,15 @@ def change_refs(in_folder, renaming_table_txt, folders_to_skip):
 
     renaming_table_bin = {}
     for key in renaming_table_txt:
+        if len(key) > 8 or len(renaming_table_txt[key]) > 8:
+            continue
         key_b = bytes(key, 'ascii')
         key_b = key_b + bytearray(8 - len(key_b))
         value_b = bytes(renaming_table_txt[key], 'ascii')
         value_b = value_b + bytearray(8 - len(value_b))
         renaming_table_bin[key_b.upper()] = value_b.upper()
 
+    print(in_folder)
     for dir_, _, files in os.walk(in_folder):
         rel_dir = os.path.relpath(dir_, in_folder)
         folders = pathlib.PurePath(rel_dir).parts
@@ -104,18 +107,19 @@ def change_refs(in_folder, renaming_table_txt, folders_to_skip):
 __desc__ = '''
 This program change all references to all resources according to the provided table and rename files itself.
 Example of parameters for NWN: 
-/home/paladin/source/translations/NWNForBG/NWNForBG/ 1.txt 2.txt --skip-folders legacy_dlg
+/home/paladin/source/translations/NWNForBG/NWNForBG/ 1.txt --in_filenames_file 2.txt --skip-folders legacy_dlg reference
 '''
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('in_folder', help='Folder recursively rename files and references to them in.')
     parser.add_argument('in_table_file', help='File to read renaming table.')
-    parser.add_argument('in_filenames_file', help='File with original files and paths to them.')
+    parser.add_argument('--in_filenames_file', help='File with original files and paths to them.', required=False)
     parser.add_argument('--skip-folders', help='Case sensitive folder names to skip', nargs='+', default=[])
     args = parser.parse_args()
 
-    file_table = read_table(args.in_filenames_file)
     renaming_table = dict(read_table(args.in_table_file))
     change_refs(args.in_folder, renaming_table, args.skip_folders)
-    rename_files_according_to_table(file_table, renaming_table)
+    if args.in_filenames_file:
+        file_table = read_table(args.in_filenames_file)
+        rename_files_according_to_table(file_table, renaming_table)
