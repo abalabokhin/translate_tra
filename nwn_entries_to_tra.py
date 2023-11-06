@@ -8,6 +8,7 @@ def clear_content(content):
     pos1 = content.find('"')
     pos2 = content.rfind('"')
     result = content[pos1+1:pos2]
+    result = re.sub("<CUSTOM7..>", "<CHARNAME>", result)
     result = re.sub("<CUSTOM[^<]*>", '', result)
     result = re.sub("<Delete>", '', result)
     result = re.sub("<StartCheck>.*</Start>", '', result)
