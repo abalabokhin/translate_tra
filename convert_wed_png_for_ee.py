@@ -107,14 +107,12 @@ if __name__ == '__main__':
 
     # todo: implement sanity check
     groups = find_groups(elements)
-    additional_h = 0
     groups_info = []
 
     for g_i in range(len(groups)):
         g = groups[g_i]
         bb = bounding_box(g)
         bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
-        additional_h += bb_ex[1][1] - bb_ex[0][1] + 1
         rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
         # groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
         groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g})
@@ -141,19 +139,23 @@ if __name__ == '__main__':
     groups_info = sorted(groups_info, key=cmp_to_key(compare))
     groups_info.reverse()
     # groups are sorted, so let's start to place them
-    field = np.zeros((image_w, additional_h))
+    field_h = (image_h + 1) * len(groups)
+    field_w = image_w + 1
+    print(field_h, field_w)
+    field = np.zeros((field_h, field_w))
+    new_image_h = 0
     for group in groups_info:
         bb_w = group["bb_ex"][1][0] - group["bb_ex"][0][0] + 1
         bb_h = group["bb_ex"][1][1] - group["bb_ex"][0][1] + 1
-        for y in range(additional_h - bb_h):
+        for y in range(field_h - bb_h):
             if "offset_to_insert" in group:
                 break
-            for x in range(image_w - bb_w):
+            for x in range(field_w - bb_w):
                 found_place = True
-                for bb_x in range(bb_w):
+                for bb_y in range(bb_h):
                     if not found_place:
                         break
-                    for bb_y in range(bb_h):
+                    for bb_x in range(bb_w):
                         if field[y+bb_y][x+bb_x] != 0:
                             found_place = False
                             break
@@ -162,10 +164,11 @@ if __name__ == '__main__':
                     break
         for bb_y in range(bb_h):
             for bb_x in range(bb_w):
-                field[group["offset_to_insert"][1] + bb_y][group["offset_to_insert"][0] + bb_x] = 1
-
-    print(additional_h)
-    output_image = Image.new(mode="RGB", size=(image_w * 64, (overlay_h + additional_h) * 64))
+                y = group["offset_to_insert"][1] + bb_y
+                new_image_h = max(y, new_image_h)
+                field[y][group["offset_to_insert"][0] + bb_x] = 1
+    print(new_image_h, overlay_h)
+    output_image = Image.new(mode="RGB", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
     output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
     output_wed_data = bytearray(wed_data)
@@ -184,7 +187,6 @@ if __name__ == '__main__':
             output_image.paste(im.crop(second_tile_rect), second_tile_offset)
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
-            print(new_second_tile)
             output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
             output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
 
