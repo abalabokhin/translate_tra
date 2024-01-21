@@ -120,7 +120,7 @@ if __name__ == '__main__':
         w_start = 0
         additional_h += bb_ex[1][1] - bb_ex[0][1] + 1
         rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
-        groups_info.append(((w_start, h_start), bb_ex, rect, g))
+        groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
 
     print(additional_h)
     output_image = Image.new(mode="RGB", size=(image_w * 64, (overlay_h + additional_h) * 64))
@@ -129,16 +129,16 @@ if __name__ == '__main__':
     output_wed_data = bytearray(wed_data)
 
     for group in groups_info:
-        group_rect_offset = (group[0][0], (overlay_h + group[0][1]) * 64)
-        output_image.paste(im.crop((group[2])), group_rect_offset)
-        for first_tile_coord in group[3]:
+        group_rect_offset = (group["offset_to_insert"][0], (overlay_h + group["offset_to_insert"][1]) * 64)
+        output_image.paste(im.crop((group["rect"])), group_rect_offset)
+        for first_tile_coord in group["elements"]:
             first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
             second_tile = tile_map[first_tile][0]
             second_tile_coords = [second_tile % image_w, second_tile // image_w]
             second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
             im.crop(second_tile_rect)
-            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group[1][0][0]),
-                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - group[1][0][1]))
+            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group["bb_ex"][0][0]),
+                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - group["bb_ex"][0][1]))
             output_image.paste(im.crop(second_tile_rect), second_tile_offset)
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
