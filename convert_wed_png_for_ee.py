@@ -47,7 +47,7 @@ if __name__ == '__main__':
     # still don't know what to do with fireplaces
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
-    parser.add_argument('out_dir', help='dir to put transformed wed and png files', default="")
+    parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
     args = parser.parse_args()
 
     wed_in = open(args.infile1, mode="rb")
@@ -95,22 +95,63 @@ if __name__ == '__main__':
             tile_map[first_tile] = [second_tile, second_tile_offset]
 
     im = Image.open(png_filename)
+    image_w, image_h = im.size
+    image_w //= 64
+    image_h //= 64
+
 
     elements = []
+    all_secondary_tile = []
     for k in tile_map.keys():
         elements.append([k % overlay_w, k // overlay_w])
-    print(elements)
-    groups = find_groups(elements)
+        all_secondary_tile.append(tile_map[k][0])
 
+    # todo: implement sanity check
+    groups = find_groups(elements)
+    additional_h = 0
+    groups_info = []
+
+    # todo: implement better groups placing
     for g_i in range(len(groups)):
         g = groups[g_i]
         bb = bounding_box(g)
         bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
+        h_start = additional_h
+        w_start = 0
+        additional_h += bb_ex[1][1] - bb_ex[0][1] + 1
         rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
-        print(bb, bb_ex, rect)
-        im.crop((rect)).save(str(g_i) + ".png")
+        groups_info.append(((w_start, h_start), bb, bb_ex, rect))
+        # im.crop((rect)).save(str(g_i) + ".png")
 
+    print(additional_h)
+    output_image = Image.new(mode="RGB", size=(image_w * 64, (overlay_h + additional_h) * 64))
+    output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
+    output_wed_data = bytearray(wed_data)
+
+    for group_i in range(len(groups)):
+        group_rect_offset = (groups_info[group_i][0][0], (overlay_h + groups_info[group_i][0][1]) * 64)
+        output_image.paste(im.crop((groups_info[group_i][3])), group_rect_offset)
+        for first_tile_coord in groups[group_i]:
+            first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
+            second_tile = tile_map[first_tile][0]
+            second_tile_coords = [second_tile % image_w, second_tile // image_w]
+            second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
+            im.crop(second_tile_rect)
+            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - groups_info[group_i][2][0][0]),
+                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - groups_info[group_i][2][0][1]))
+            output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+            new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
+            st_bytes = new_second_tile.to_bytes(2, 'little')
+            print(new_second_tile)
+            output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
+            output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
+
+    filepath_out_wed = os.path.join(args.outdir, basename + ".WED")
+    filepath_out_png = os.path.join(args.outdir, basename + ".PNG")
+    output_image.save(filepath_out_png)
+    wed_out = open(filepath_out_wed, mode="wb")
+    wed_out.write(output_wed_data)
     # for door_i in range(n_doors):
     #
     #     door_offset = doors_offset + door_i * 0x1a
