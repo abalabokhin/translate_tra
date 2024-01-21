@@ -111,9 +111,6 @@ if __name__ == '__main__':
         im.crop((rect)).save(str(g_i) + ".png")
 
 
-
-
-    im.show()
     # for door_i in range(n_doors):
     #
     #     door_offset = doors_offset + door_i * 0x1a
