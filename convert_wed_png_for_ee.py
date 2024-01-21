@@ -6,6 +6,12 @@ import os
 import sys
 import chardet
 import re
+from PIL import Image
+
+
+def bounding_box(points):
+    x_coordinates, y_coordinates = zip(*points)
+    return [(min(x_coordinates), min(y_coordinates)), (max(x_coordinates), max(y_coordinates))]
 
 
 def find_groups(elements):
@@ -49,7 +55,6 @@ if __name__ == '__main__':
     filepath_no_ext = os.path.splitext(args.infile1)[0]
     png_filename = filepath_no_ext + ".PNG"
     basename = os.path.basename(filepath_no_ext).upper()
-    png_in = open(png_filename, mode="rb")
 
     n_doors = int.from_bytes(wed_data[0xc:0xc + 4], "little")
     n_overlays = int.from_bytes(wed_data[0x8:0x8 + 4], "little")
@@ -72,6 +77,8 @@ if __name__ == '__main__':
     if not overlay_found:
         sys.exit("Cannot find appropriate overlay name in WED file")
 
+    print(overlay_w, overlay_h)
+
     tile_map = {}
     for tile_i in range(overlay_w * overlay_h):
         tilemap_offset_i = tilemap_offset + tile_i * 0xa
@@ -87,25 +94,40 @@ if __name__ == '__main__':
             first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
             tile_map[first_tile] = [second_tile, second_tile_offset]
 
+    im = Image.open(png_filename)
+
     elements = []
     for k in tile_map.keys():
         elements.append([k % overlay_w, k // overlay_w])
     print(elements)
-    print(find_groups(elements))
+    groups = find_groups(elements)
+
+    for g_i in range(len(groups)):
+        g = groups[g_i]
+        bb = bounding_box(g)
+        bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
+        rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
+        print(bb, bb_ex, rect)
+        im.crop((rect)).save(str(g_i) + ".png")
 
 
 
-    for door_i in range(n_doors):
 
-        door_offset = doors_offset + door_i * 0x1a
-        first_door_tile_cell_i = int.from_bytes(wed_data[door_offset + 0xa:door_offset + 0xa + 2], "little")
-        n_door_tile_cell = int.from_bytes(wed_data[door_offset + 0xc:door_offset + 0xc + 2], "little")
-        door_tile_indexes = []
-        for door_tile_i in range(n_door_tile_cell):
-            tile_offset = door_tile_cell_offset + 2 * (first_door_tile_cell_i + door_tile_i)
-            door_tile_indexes.append(int.from_bytes(wed_data[tile_offset:tile_offset + 2], "little"))
-
-        print(door_tile_indexes)
+    im.show()
+    # for door_i in range(n_doors):
+    #
+    #     door_offset = doors_offset + door_i * 0x1a
+    #     first_door_tile_cell_i = int.from_bytes(wed_data[door_offset + 0xa:door_offset + 0xa + 2], "little")
+    #     n_door_tile_cell = int.from_bytes(wed_data[door_offset + 0xc:door_offset + 0xc + 2], "little")
+    #     door_tile_indexes = []
+    #     for door_tile_i in range(n_door_tile_cell):
+    #         tile_offset = door_tile_cell_offset + 2 * (first_door_tile_cell_i + door_tile_i)
+    #         door_tile_indexes.append(int.from_bytes(wed_data[tile_offset:tile_offset + 2], "little"))
+    #
+    #     door_elements = []
+    #     for k in door_tile_indexes:
+    #         door_elements.append([k % overlay_w, k // overlay_w])
+    #     print(door_elements)
 
 
 
