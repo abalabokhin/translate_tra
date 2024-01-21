@@ -120,7 +120,7 @@ if __name__ == '__main__':
         w_start = 0
         additional_h += bb_ex[1][1] - bb_ex[0][1] + 1
         rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
-        groups_info.append(((w_start, h_start), bb, bb_ex, rect))
+        groups_info.append(((w_start, h_start), bb_ex, rect))
         # im.crop((rect)).save(str(g_i) + ".png")
 
     print(additional_h)
@@ -131,15 +131,15 @@ if __name__ == '__main__':
 
     for group_i in range(len(groups)):
         group_rect_offset = (groups_info[group_i][0][0], (overlay_h + groups_info[group_i][0][1]) * 64)
-        output_image.paste(im.crop((groups_info[group_i][3])), group_rect_offset)
+        output_image.paste(im.crop((groups_info[group_i][2])), group_rect_offset)
         for first_tile_coord in groups[group_i]:
             first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
             second_tile = tile_map[first_tile][0]
             second_tile_coords = [second_tile % image_w, second_tile // image_w]
             second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
             im.crop(second_tile_rect)
-            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - groups_info[group_i][2][0][0]),
-                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - groups_info[group_i][2][0][1]))
+            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - groups_info[group_i][1][0][0]),
+                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - groups_info[group_i][1][0][1]))
             output_image.paste(im.crop(second_tile_rect), second_tile_offset)
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
@@ -152,6 +152,7 @@ if __name__ == '__main__':
     output_image.save(filepath_out_png)
     wed_out = open(filepath_out_wed, mode="wb")
     wed_out.write(output_wed_data)
+
     # for door_i in range(n_doors):
     #
     #     door_offset = doors_offset + door_i * 0x1a
