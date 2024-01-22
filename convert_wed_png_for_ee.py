@@ -53,7 +53,9 @@ This program takes wed and corresponding png files and convert them both to prep
 '''
 
 if __name__ == '__main__':
-    # still don't know what to do with fireplaces
+    # todo: implement fireplaces support
+    # todo: implement better groups placing
+    # todo: implement changing tiles if overlay (tis2ovl functionality)
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
