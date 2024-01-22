@@ -96,7 +96,7 @@ if __name__ == '__main__':
     image_w //= 64
     image_h //= 64
 
-    all_second_tiles = []
+    all_second_tiles = set()
     for tile_i in range(overlay_w * overlay_h):
         tilemap_offset_i = tilemap_offset + tile_i * 0xa
         tile_start_i = int.from_bytes(wed_data[tilemap_offset_i:tilemap_offset_i + 2], "little")
@@ -105,7 +105,7 @@ if __name__ == '__main__':
         second_tile = int.from_bytes(wed_data[second_tile_offset:second_tile_offset + 2], "little", signed=True)
         if second_tile < 0:
             continue
-        all_second_tiles.append(second_tile)
+        all_second_tiles.add(second_tile)
 
         if tile_is_empty(im, second_tile, image_w):
             output_wed_data[second_tile_offset] = bytes_negative_one[0]
@@ -117,7 +117,17 @@ if __name__ == '__main__':
             first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
             tile_map[first_tile] = [second_tile, second_tile_offset]
 
-    # todo: implement sanity check
+    if len(tile_map) == 0:
+        sys.exit("Nothing to do, exiting")
+
+    # sanity check
+    print(overlay_h, image_h)
+    for tile_coord_y in range(overlay_h, image_h):
+        for tile_coord_x in range(0, image_w):
+            tile = tile_coord_y * image_w + tile_coord_x
+            if tile not in all_second_tiles:
+                if not tile_is_empty(im, tile, image_w):
+                    print("Unknown non empty tile ({} : [{}, {}]) that was not found in WED file, please make sure it is ok".format(tile, tile_coord_x, tile_coord_y))
 
     if args.style == "chess":
         n_additional_rows = (len(tile_map) // image_w + 1) * 4
