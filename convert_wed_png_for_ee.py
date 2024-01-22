@@ -48,13 +48,27 @@ def tile_is_empty(image, tile, width):
                 return False
     return True
 
+
+def place_shape_if_possible(field, shape, corner):
+    for x in range(shape.shape[0]):
+        for y in range(shape.shape[1]):
+            if shape[x][y] == 1 and not field[corner[0]+x][corner[1]+y] == 0:
+                return False
+            elif shape[x][y] == 2 and field[corner[0]+x][corner[1]+y] == 1:
+                return False
+    for x in range(shape.shape[0]):
+        for y in range(shape.shape[1]):
+            if not shape[x][y] == 0:
+                field[corner[0] + x][corner[1] + y] = shape[x][y]
+    return True
+
+
 __desc__ = '''
 This program takes wed and corresponding png files and convert them both to prepare them to export in EE games on infinity engine.
 '''
 
 if __name__ == '__main__':
     # todo: implement fireplaces support
-    # todo: implement better groups placing
     # todo: implement changing tiles if overlay (tis2ovl functionality)
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
@@ -159,13 +173,28 @@ if __name__ == '__main__':
         groups = find_groups(elements)
         groups_info = []
 
-        for g_i in range(len(groups)):
-            g = groups[g_i]
+        for g in groups:
             bb = bounding_box(g)
             bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
             rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
             # groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
-            groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g})
+            shape = np.zeros((bb_ex[1][0] - bb_ex[0][0] + 1, bb_ex[1][1] - bb_ex[0][1] + 1))
+            for element in g:
+                shape[element[0] - bb_ex[0][0]][element[1] - bb_ex[0][1]] = 1
+
+            for x in range(shape.shape[0]):
+                for y in range(shape.shape[1]):
+                    if shape[x][y] == 1:
+                        for dx in range(-1, 2):
+                            for dy in range(-1, 2):
+                                nx = x + dx
+                                ny = y + dy
+                                if nx < 0 or ny < 0 or nx >= shape.shape[0] or ny >= shape.shape[1]:
+                                    continue
+                                if shape[nx][ny] == 0:
+                                    shape[nx][ny] = 2
+            groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g, "shape": shape})
+
 
         def compare(a, b):
             a_w = a["bb_ex"][1][0] - a["bb_ex"][0][0]
@@ -191,8 +220,7 @@ if __name__ == '__main__':
         # groups are sorted, so let's start to place them
         field_h = (image_h + 1) * len(groups)
         field_w = image_w + 1
-        print(field_h, field_w)
-        field = np.zeros((field_h, field_w))
+        field = np.zeros((field_w, field_h))
         new_image_h = 0
         for group in groups_info:
             bb_w = group["bb_ex"][1][0] - group["bb_ex"][0][0] + 1
@@ -201,22 +229,11 @@ if __name__ == '__main__':
                 if "offset_to_insert" in group:
                     break
                 for x in range(field_w - bb_w):
-                    found_place = True
-                    for bb_y in range(bb_h):
-                        if not found_place:
-                            break
-                        for bb_x in range(bb_w):
-                            if field[y+bb_y][x+bb_x] != 0:
-                                found_place = False
-                                break
-                    if found_place:
+                    if place_shape_if_possible(field, group["shape"], (x, y)):
                         group["offset_to_insert"] = (x, y)
+                        new_image_h = max(y + bb_h - 1, new_image_h)
                         break
-            for bb_y in range(bb_h):
-                for bb_x in range(bb_w):
-                    y = group["offset_to_insert"][1] + bb_y
-                    new_image_h = max(y, new_image_h)
-                    field[y][group["offset_to_insert"][0] + bb_x] = 1
+
         print(new_image_h, overlay_h)
         output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
         output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
