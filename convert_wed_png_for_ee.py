@@ -63,6 +63,12 @@ def place_shape_if_possible(field, shape, corner):
     return True
 
 
+def prepare_and_paste_overlay(input_im, output_im, in_first_tile, in_second_tile, out_second_tile_offset, image_w):
+    first_tale_rect = (in_first_tile % image_w * 64, in_first_tile // image_w * 64, in_first_tile % image_w * 64 + 64, in_first_tile // image_w * 64 + 64)
+    second_tile_rect = (in_second_tile % image_w * 64, in_second_tile // image_w * 64, in_second_tile % image_w * 64 + 64, in_second_tile // image_w * 64 + 64)
+    output_im.paste(input_im.crop(second_tile_rect), out_second_tile_offset)
+
+
 __desc__ = '''
 This program takes wed and corresponding png files and convert them both to prepare them to export in EE games on infinity engine.
 '''
@@ -128,16 +134,17 @@ if __name__ == '__main__':
             output_wed_data[second_tile_offset + 1] = bytes_negative_one[1]
             continue
 
+        is_overlay = not (int.from_bytes(wed_data[tilemap_offset_i + 0x6:tilemap_offset_i + 0x6 + 1], "little", signed=True) == 0)
+
         for tile_ii in range(tile_count):
             tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
             first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
-            tile_map[first_tile] = [second_tile, second_tile_offset]
+            tile_map[first_tile] = [second_tile, second_tile_offset, is_overlay]
 
     if len(tile_map) == 0:
         sys.exit("Nothing to do, exiting")
 
     # sanity check
-    print(overlay_h, image_h)
     for tile_coord_y in range(overlay_h, image_h):
         for tile_coord_x in range(0, image_w):
             tile = tile_coord_y * image_w + tile_coord_x
@@ -156,7 +163,10 @@ if __name__ == '__main__':
             second_tile_coords = [second_tile % image_w, second_tile // image_w]
             second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
             second_tile_offset = (tile_i * 2 % image_w * 64, (overlay_h + 2 * (1 + (tile_i * 2) // image_w) - 1) * 64)
-            output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+            if not tile_map[first_tile][2]:
+                output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+            else:
+                prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
             tile_i += 1
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
@@ -177,7 +187,6 @@ if __name__ == '__main__':
             bb = bounding_box(g)
             bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
             rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
-            # groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
             shape = np.zeros((bb_ex[1][0] - bb_ex[0][0] + 1, bb_ex[1][1] - bb_ex[0][1] + 1))
             for element in g:
                 shape[element[0] - bb_ex[0][0]][element[1] - bb_ex[0][1]] = 1
@@ -194,7 +203,6 @@ if __name__ == '__main__':
                                 if shape[nx][ny] == 0:
                                     shape[nx][ny] = 2
             groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g, "shape": shape})
-
 
         def compare(a, b):
             a_w = a["bb_ex"][1][0] - a["bb_ex"][0][0]
@@ -234,7 +242,6 @@ if __name__ == '__main__':
                         new_image_h = max(y + bb_h - 1, new_image_h)
                         break
 
-        print(new_image_h, overlay_h)
         output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
         output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
@@ -251,6 +258,10 @@ if __name__ == '__main__':
                 im.crop(second_tile_rect)
                 second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group["bb_ex"][0][0]),
                                       group_rect_offset[1] + 64 * (first_tile_coord[1] - group["bb_ex"][0][1]))
+                if not tile_map[first_tile][2]:
+                    output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+                else:
+                    prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
                 output_image.paste(im.crop(second_tile_rect), second_tile_offset)
                 new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
                 st_bytes = new_second_tile.to_bytes(2, 'little')
