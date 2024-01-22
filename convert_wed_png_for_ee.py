@@ -168,7 +168,7 @@ if __name__ == '__main__':
                 new_image_h = max(y, new_image_h)
                 field[y][group["offset_to_insert"][0] + bb_x] = 1
     print(new_image_h, overlay_h)
-    output_image = Image.new(mode="RGB", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
+    output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
     output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
     output_wed_data = bytearray(wed_data)
