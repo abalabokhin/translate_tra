@@ -175,7 +175,7 @@ if __name__ == '__main__':
 
     for group in groups_info:
         group_rect_offset = (group["offset_to_insert"][0] * 64, (overlay_h + group["offset_to_insert"][1]) * 64)
-        output_image.paste(im.crop((group["rect"])), group_rect_offset)
+        # output_image.paste(im.crop((group["rect"])), group_rect_offset)
         for first_tile_coord in group["elements"]:
             first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
             second_tile = tile_map[first_tile][0]
