@@ -64,9 +64,16 @@ def place_shape_if_possible(field, shape, corner):
 
 
 def prepare_and_paste_overlay(input_im, output_im, in_first_tile, in_second_tile, out_second_tile_offset, image_w):
-    first_tale_rect = (in_first_tile % image_w * 64, in_first_tile // image_w * 64, in_first_tile % image_w * 64 + 64, in_first_tile // image_w * 64 + 64)
+    first_tile_rect = (in_first_tile % image_w * 64, in_first_tile // image_w * 64, in_first_tile % image_w * 64 + 64, in_first_tile // image_w * 64 + 64)
     second_tile_rect = (in_second_tile % image_w * 64, in_second_tile // image_w * 64, in_second_tile % image_w * 64 + 64, in_second_tile // image_w * 64 + 64)
-    output_im.paste(input_im.crop(second_tile_rect), out_second_tile_offset)
+    first_tile = input_im.crop(first_tile_rect)
+    second_tile = input_im.crop(second_tile_rect)
+    output_im.paste(second_tile, (first_tile_rect[0], first_tile_rect[1]))
+    for x in range(64):
+        for y in range(64):
+            if second_tile.getpixel((x, y)) != (0, 0, 0, 0):
+                first_tile.putpixel((x, y), (0, 0, 0, 0))
+    output_im.paste(first_tile, out_second_tile_offset)
 
 
 __desc__ = '''
@@ -129,10 +136,10 @@ if __name__ == '__main__':
             continue
         all_second_tiles.add(second_tile)
 
-        if tile_is_empty(im, second_tile, image_w):
-            output_wed_data[second_tile_offset] = bytes_negative_one[0]
-            output_wed_data[second_tile_offset + 1] = bytes_negative_one[1]
-            continue
+        # if tile_is_empty(im, second_tile, image_w):
+        #     output_wed_data[second_tile_offset] = bytes_negative_one[0]
+        #     output_wed_data[second_tile_offset + 1] = bytes_negative_one[1]
+        #     continue
 
         is_overlay = not (int.from_bytes(wed_data[tilemap_offset_i + 0x6:tilemap_offset_i + 0x6 + 1], "little", signed=True) == 0)
 
@@ -262,7 +269,6 @@ if __name__ == '__main__':
                     output_image.paste(im.crop(second_tile_rect), second_tile_offset)
                 else:
                     prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
-                output_image.paste(im.crop(second_tile_rect), second_tile_offset)
                 new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
                 st_bytes = new_second_tile.to_bytes(2, 'little')
                 output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
