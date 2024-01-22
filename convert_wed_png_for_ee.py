@@ -38,6 +38,16 @@ def find_groups(elements):
 
     return groups
 
+
+def tile_is_empty(image, tile, width):
+    offset = (tile % width * 64, tile // width * 64)
+    first_pixel = image.getpixel(offset)
+    for x in range(64):
+        for y in range(64):
+            if not image.getpixel((offset[0] + x, offset[1] + y)) == first_pixel:
+                return False
+    return True
+
 __desc__ = '''
 This program takes wed and corresponding png files and convert them both to prepare them to export in EE games on infinity engine.
 '''
@@ -47,6 +57,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
+    parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping]', default="grouping")
     args = parser.parse_args()
 
     wed_in = open(args.infile1, mode="rb")
@@ -76,9 +87,16 @@ if __name__ == '__main__':
     if not overlay_found:
         sys.exit("Cannot find appropriate overlay name in WED file")
 
-    print(overlay_w, overlay_h)
+    output_wed_data = bytearray(wed_data)
+    bytes_negative_one = (-1).to_bytes(2, 'little', signed=True)
 
     tile_map = {}
+    im = Image.open(png_filename)
+    image_w, image_h = im.size
+    image_w //= 64
+    image_h //= 64
+
+    all_second_tiles = []
     for tile_i in range(overlay_w * overlay_h):
         tilemap_offset_i = tilemap_offset + tile_i * 0xa
         tile_start_i = int.from_bytes(wed_data[tilemap_offset_i:tilemap_offset_i + 2], "little")
@@ -87,108 +105,130 @@ if __name__ == '__main__':
         second_tile = int.from_bytes(wed_data[second_tile_offset:second_tile_offset + 2], "little", signed=True)
         if second_tile < 0:
             continue
+        all_second_tiles.append(second_tile)
+
+        if tile_is_empty(im, second_tile, image_w):
+            output_wed_data[second_tile_offset] = bytes_negative_one[0]
+            output_wed_data[second_tile_offset + 1] = bytes_negative_one[1]
+            continue
 
         for tile_ii in range(tile_count):
             tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
             first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
             tile_map[first_tile] = [second_tile, second_tile_offset]
 
-    im = Image.open(png_filename)
-    image_w, image_h = im.size
-    image_w //= 64
-    image_h //= 64
-
-
-    elements = []
-    all_secondary_tile = []
-    for k in tile_map.keys():
-        elements.append([k % overlay_w, k // overlay_w])
-        all_secondary_tile.append(tile_map[k][0])
-
     # todo: implement sanity check
-    groups = find_groups(elements)
-    groups_info = []
 
-    for g_i in range(len(groups)):
-        g = groups[g_i]
-        bb = bounding_box(g)
-        bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
-        rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
-        # groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
-        groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g})
+    if args.style == "chess":
+        n_additional_rows = (len(tile_map) // image_w + 1) * 4
+        output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + n_additional_rows + 1) * 64))
+        output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
-    def compare(a, b):
-        a_w = a["bb_ex"][1][0] - a["bb_ex"][0][0]
-        a_h = a["bb_ex"][1][1] - a["bb_ex"][0][1]
-        b_w = b["bb_ex"][1][0] - b["bb_ex"][0][0]
-        b_h = b["bb_ex"][1][1] - b["bb_ex"][0][1]
-        max_a = max(a_w, a_h)
-        min_a = min(a_w, a_h)
-        max_b = max(b_w, b_h)
-        min_b = min(b_w, b_h)
-        if max_a < max_b:
-            return -1
-        if max_a > max_b:
-            return 1
-        if min_a < min_b:
-            return -1
-        if min_a > min_b:
-            return 1
-        return 0
-
-    groups_info = sorted(groups_info, key=cmp_to_key(compare))
-    groups_info.reverse()
-    # groups are sorted, so let's start to place them
-    field_h = (image_h + 1) * len(groups)
-    field_w = image_w + 1
-    print(field_h, field_w)
-    field = np.zeros((field_h, field_w))
-    new_image_h = 0
-    for group in groups_info:
-        bb_w = group["bb_ex"][1][0] - group["bb_ex"][0][0] + 1
-        bb_h = group["bb_ex"][1][1] - group["bb_ex"][0][1] + 1
-        for y in range(field_h - bb_h):
-            if "offset_to_insert" in group:
-                break
-            for x in range(field_w - bb_w):
-                found_place = True
-                for bb_y in range(bb_h):
-                    if not found_place:
-                        break
-                    for bb_x in range(bb_w):
-                        if field[y+bb_y][x+bb_x] != 0:
-                            found_place = False
-                            break
-                if found_place:
-                    group["offset_to_insert"] = (x, y)
-                    break
-        for bb_y in range(bb_h):
-            for bb_x in range(bb_w):
-                y = group["offset_to_insert"][1] + bb_y
-                new_image_h = max(y, new_image_h)
-                field[y][group["offset_to_insert"][0] + bb_x] = 1
-    print(new_image_h, overlay_h)
-    output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
-    output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
-
-    output_wed_data = bytearray(wed_data)
-
-    for group in groups_info:
-        group_rect_offset = (group["offset_to_insert"][0] * 64, (overlay_h + group["offset_to_insert"][1]) * 64)
-        # output_image.paste(im.crop((group["rect"])), group_rect_offset)
-        for first_tile_coord in group["elements"]:
-            first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
+        tile_i = 0
+        for first_tile in tile_map.keys():
             second_tile = tile_map[first_tile][0]
             second_tile_coords = [second_tile % image_w, second_tile // image_w]
             second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
-            im.crop(second_tile_rect)
-            second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group["bb_ex"][0][0]),
-                                  group_rect_offset[1] + 64 * (first_tile_coord[1] - group["bb_ex"][0][1]))
+            second_tile_offset = (tile_i * 2 % image_w * 64, (overlay_h + 2 * (1 + (tile_i * 2) // image_w) - 1) * 64)
             output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+            tile_i += 1
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
             output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
             output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
+
+    elif args.style == "grouping":
+        elements = []
+        all_secondary_tile = []
+        for k in tile_map.keys():
+            elements.append([k % overlay_w, k // overlay_w])
+            all_secondary_tile.append(tile_map[k][0])
+
+        groups = find_groups(elements)
+        groups_info = []
+
+        for g_i in range(len(groups)):
+            g = groups[g_i]
+            bb = bounding_box(g)
+            bb_ex = [[max(bb[0][0] - 1, 0), max(bb[0][1] - 1, 0)], [min(bb[1][0] + 1, overlay_w - 1), min(bb[1][1] + 1, overlay_h - 1)]]
+            rect = (bb_ex[0][0] * 64, bb_ex[0][1] * 64, (bb_ex[1][0] + 1) * 64, (bb_ex[1][1] + 1) * 64)
+            # groups_info.append({"offset_to_insert": (w_start, h_start), "bb_ex": bb_ex, "rect": rect, "elements": g})
+            groups_info.append({"bb_ex": bb_ex, "rect": rect, "elements": g})
+
+        def compare(a, b):
+            a_w = a["bb_ex"][1][0] - a["bb_ex"][0][0]
+            a_h = a["bb_ex"][1][1] - a["bb_ex"][0][1]
+            b_w = b["bb_ex"][1][0] - b["bb_ex"][0][0]
+            b_h = b["bb_ex"][1][1] - b["bb_ex"][0][1]
+            max_a = max(a_w, a_h)
+            min_a = min(a_w, a_h)
+            max_b = max(b_w, b_h)
+            min_b = min(b_w, b_h)
+            if max_a < max_b:
+                return -1
+            if max_a > max_b:
+                return 1
+            if min_a < min_b:
+                return -1
+            if min_a > min_b:
+                return 1
+            return 0
+
+        groups_info = sorted(groups_info, key=cmp_to_key(compare))
+        groups_info.reverse()
+        # groups are sorted, so let's start to place them
+        field_h = (image_h + 1) * len(groups)
+        field_w = image_w + 1
+        print(field_h, field_w)
+        field = np.zeros((field_h, field_w))
+        new_image_h = 0
+        for group in groups_info:
+            bb_w = group["bb_ex"][1][0] - group["bb_ex"][0][0] + 1
+            bb_h = group["bb_ex"][1][1] - group["bb_ex"][0][1] + 1
+            for y in range(field_h - bb_h):
+                if "offset_to_insert" in group:
+                    break
+                for x in range(field_w - bb_w):
+                    found_place = True
+                    for bb_y in range(bb_h):
+                        if not found_place:
+                            break
+                        for bb_x in range(bb_w):
+                            if field[y+bb_y][x+bb_x] != 0:
+                                found_place = False
+                                break
+                    if found_place:
+                        group["offset_to_insert"] = (x, y)
+                        break
+            for bb_y in range(bb_h):
+                for bb_x in range(bb_w):
+                    y = group["offset_to_insert"][1] + bb_y
+                    new_image_h = max(y, new_image_h)
+                    field[y][group["offset_to_insert"][0] + bb_x] = 1
+        print(new_image_h, overlay_h)
+        output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
+        output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
+
+        output_wed_data = bytearray(wed_data)
+
+        for group in groups_info:
+            group_rect_offset = (group["offset_to_insert"][0] * 64, (overlay_h + group["offset_to_insert"][1]) * 64)
+            # output_image.paste(im.crop((group["rect"])), group_rect_offset)
+            for first_tile_coord in group["elements"]:
+                first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
+                second_tile = tile_map[first_tile][0]
+                second_tile_coords = [second_tile % image_w, second_tile // image_w]
+                second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
+                im.crop(second_tile_rect)
+                second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group["bb_ex"][0][0]),
+                                      group_rect_offset[1] + 64 * (first_tile_coord[1] - group["bb_ex"][0][1]))
+                output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+                new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
+                st_bytes = new_second_tile.to_bytes(2, 'little')
+                output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
+                output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
+    else:
+        sys.exit("Unknown style for additional tiles, exiting...")
 
     filepath_out_wed = os.path.join(args.outdir, basename + ".WED")
     filepath_out_png = os.path.join(args.outdir, basename + ".PNG")
