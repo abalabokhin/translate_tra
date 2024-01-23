@@ -86,7 +86,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
-    parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping|optimal]', default="grouping")
+    parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping|optimal]', default="optimal")
     args = parser.parse_args()
 
     print("Processing file {}".format(args.infile1))
@@ -120,7 +120,7 @@ if __name__ == '__main__':
     output_wed_data = bytearray(wed_data)
     bytes_negative_one = (-1).to_bytes(2, 'little', signed=True)
 
-    #second_tyle to (first_tyle, second_tile_offset, is_overlay)
+    # second_tyle to (first_tyle, second_tile_offset, is_overlay)
     tile_map = {}
     im = Image.open(png_filename)
     image_w, image_h = im.size
@@ -161,33 +161,13 @@ if __name__ == '__main__':
                 if not tile_is_empty(im, tile, image_w):
                     print("Unknown non empty tile ({} : [{}, {}]) that was not found in WED file, please make sure it is ok".format(tile, tile_coord_x, tile_coord_y))
 
-    if args.style == "chess":
-        n_additional_rows = (len(tile_map) // image_w + 1) * 4
-        output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + n_additional_rows + 1) * 64))
-        output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
-
-        tile_i = 0
-        for second_tile in tile_map.keys():
-            first_tile = tile_map[first_tile][0]
-            second_tile_coords = [second_tile % image_w, second_tile // image_w]
-            second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
-            second_tile_offset = (tile_i * 2 % image_w * 64, (overlay_h + 2 * (1 + (tile_i * 2) // image_w) - 1) * 64)
-            if not tile_map[second_tile][2]:
-                output_image.paste(im.crop(second_tile_rect), second_tile_offset)
-            else:
-                prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
-            tile_i += 1
-            new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
-            st_bytes = new_second_tile.to_bytes(2, 'little')
-            output_wed_data[tile_map[second_tile][1]] = st_bytes[0]
-            output_wed_data[tile_map[second_tile][1] + 1] = st_bytes[1]
-
-    elif args.style == "grouping":
+    if args.style == "chess" or args.style == "optimal":
+        n_additional_rows_chess = (len(tile_map) // image_w + 1) * 4
+    if args.style == "grouping" or args.style == "optimal":
+        n_additional_rows_grouping = 0
         elements = []
-        all_secondary_tile = []
         for k in tile_map.keys():
             elements.append([tile_map[k][0] % overlay_w, tile_map[k][0] // overlay_w])
-            all_secondary_tile.append(k)
 
         groups = find_groups(elements)
         groups_info = []
@@ -238,7 +218,6 @@ if __name__ == '__main__':
         field_h = (image_h + 1) * len(groups)
         field_w = image_w + 1
         field = np.zeros((field_w, field_h))
-        new_image_h = 0
         for group in groups_info:
             bb_w = group["bb_ex"][1][0] - group["bb_ex"][0][0] + 1
             bb_h = group["bb_ex"][1][1] - group["bb_ex"][0][1] + 1
@@ -248,13 +227,44 @@ if __name__ == '__main__':
                 for x in range(field_w - bb_w):
                     if place_shape_if_possible(field, group["shape"], (x, y)):
                         group["offset_to_insert"] = (x, y)
-                        new_image_h = max(y + bb_h - 1, new_image_h)
+                        n_additional_rows_grouping = max(y + bb_h - 1, n_additional_rows_grouping)
                         break
 
-        output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + new_image_h + 1) * 64))
-        output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
+    style = args.style
+    if args.style == "optimal":
+        if n_additional_rows_grouping <= n_additional_rows_chess:
+            style = "grouping"
+        else:
+            style = "chess"
 
-        output_wed_data = bytearray(wed_data)
+    if style == "chess":
+        n_additional_rows = n_additional_rows_chess
+    elif style == "grouping":
+        n_additional_rows = n_additional_rows_grouping
+    else:
+        sys.exit("Unknown style for additional tiles, exiting...")
+
+    output_image = Image.new(mode="RGBA", size=(image_w * 64, (overlay_h + n_additional_rows + 1) * 64))
+    output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
+
+    if style == "chess":
+        tile_i = 0
+        for second_tile in tile_map.keys():
+            first_tile = tile_map[second_tile][0]
+            second_tile_coords = [second_tile % image_w, second_tile // image_w]
+            second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
+            second_tile_offset = (tile_i * 2 % image_w * 64, (overlay_h + 2 * (1 + (tile_i * 2) // image_w) - 1) * 64)
+            if not tile_map[second_tile][2]:
+                output_image.paste(im.crop(second_tile_rect), second_tile_offset)
+            else:
+                prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
+            tile_i += 1
+            new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
+            st_bytes = new_second_tile.to_bytes(2, 'little')
+            output_wed_data[tile_map[second_tile][1]] = st_bytes[0]
+            output_wed_data[tile_map[second_tile][1] + 1] = st_bytes[1]
+
+    elif style == "grouping":
 
         def find_second_tile_by_first(tile_map, first_tile):
             for second_tile in tile_map.keys():
@@ -281,8 +291,6 @@ if __name__ == '__main__':
                 st_bytes = new_second_tile.to_bytes(2, 'little')
                 output_wed_data[tile_map[second_tile][1]] = st_bytes[0]
                 output_wed_data[tile_map[second_tile][1] + 1] = st_bytes[1]
-    else:
-        sys.exit("Unknown style for additional tiles, exiting...")
 
     filepath_out_wed = os.path.join(args.outdir, basename + ".WED")
     filepath_out_png = os.path.join(args.outdir, basename + ".PNG")
