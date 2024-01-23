@@ -82,13 +82,13 @@ This program takes wed and corresponding png files and convert them both to prep
 
 if __name__ == '__main__':
     # todo: implement fireplaces support
-    # todo: implement changing tiles if overlay (tis2ovl functionality)
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
     parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping]', default="grouping")
     args = parser.parse_args()
 
+    print("Processing file {}".format(args.infile1))
     wed_in = open(args.infile1, mode="rb")
     wed_data = wed_in.read()
     filepath_no_ext = os.path.splitext(args.infile1)[0]
