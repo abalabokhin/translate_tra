@@ -82,10 +82,11 @@ This program takes wed and corresponding png files and convert them both to prep
 
 if __name__ == '__main__':
     # todo: implement fireplaces support
+    # todo: implement "optimal" style
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
-    parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping]', default="grouping")
+    parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping|optimal]', default="grouping")
     args = parser.parse_args()
 
     print("Processing file {}".format(args.infile1))
@@ -119,6 +120,7 @@ if __name__ == '__main__':
     output_wed_data = bytearray(wed_data)
     bytes_negative_one = (-1).to_bytes(2, 'little', signed=True)
 
+    #second_tyle to (first_tyle, second_tile_offset, is_overlay)
     tile_map = {}
     im = Image.open(png_filename)
     image_w, image_h = im.size
@@ -146,7 +148,7 @@ if __name__ == '__main__':
         for tile_ii in range(tile_count):
             tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
             first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
-            tile_map[first_tile] = [second_tile, second_tile_offset, is_overlay]
+            tile_map[second_tile] = [first_tile, second_tile_offset, is_overlay]
 
     if len(tile_map) == 0:
         sys.exit("Nothing to do, exiting")
@@ -165,27 +167,27 @@ if __name__ == '__main__':
         output_image.paste(im.crop((0, 0, overlay_w * 64, overlay_h * 64)))
 
         tile_i = 0
-        for first_tile in tile_map.keys():
-            second_tile = tile_map[first_tile][0]
+        for second_tile in tile_map.keys():
+            first_tile = tile_map[first_tile][0]
             second_tile_coords = [second_tile % image_w, second_tile // image_w]
             second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
             second_tile_offset = (tile_i * 2 % image_w * 64, (overlay_h + 2 * (1 + (tile_i * 2) // image_w) - 1) * 64)
-            if not tile_map[first_tile][2]:
+            if not tile_map[second_tile][2]:
                 output_image.paste(im.crop(second_tile_rect), second_tile_offset)
             else:
                 prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
             tile_i += 1
             new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
             st_bytes = new_second_tile.to_bytes(2, 'little')
-            output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
-            output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
+            output_wed_data[tile_map[second_tile][1]] = st_bytes[0]
+            output_wed_data[tile_map[second_tile][1] + 1] = st_bytes[1]
 
     elif args.style == "grouping":
         elements = []
         all_secondary_tile = []
         for k in tile_map.keys():
-            elements.append([k % overlay_w, k // overlay_w])
-            all_secondary_tile.append(tile_map[k][0])
+            elements.append([tile_map[k][0] % overlay_w, tile_map[k][0] // overlay_w])
+            all_secondary_tile.append(k)
 
         groups = find_groups(elements)
         groups_info = []
@@ -254,25 +256,31 @@ if __name__ == '__main__':
 
         output_wed_data = bytearray(wed_data)
 
+        def find_second_tile_by_first(tile_map, first_tile):
+            for second_tile in tile_map.keys():
+                if tile_map[second_tile][0] == first_tile:
+                    return second_tile
+            sys.exit("Cannot find second tile for the first on , impossible situation")
+
         for group in groups_info:
             group_rect_offset = (group["offset_to_insert"][0] * 64, (overlay_h + group["offset_to_insert"][1]) * 64)
             # output_image.paste(im.crop((group["rect"])), group_rect_offset)
             for first_tile_coord in group["elements"]:
                 first_tile = first_tile_coord[1] * overlay_w + first_tile_coord[0]
-                second_tile = tile_map[first_tile][0]
+                second_tile = find_second_tile_by_first(tile_map, first_tile)
                 second_tile_coords = [second_tile % image_w, second_tile // image_w]
                 second_tile_rect = (second_tile_coords[0] * 64, second_tile_coords[1] * 64, second_tile_coords[0] * 64 + 64, second_tile_coords[1] * 64 + 64)
                 im.crop(second_tile_rect)
                 second_tile_offset = (group_rect_offset[0] + 64 * (first_tile_coord[0] - group["bb_ex"][0][0]),
                                       group_rect_offset[1] + 64 * (first_tile_coord[1] - group["bb_ex"][0][1]))
-                if not tile_map[first_tile][2]:
+                if not tile_map[second_tile][2]:
                     output_image.paste(im.crop(second_tile_rect), second_tile_offset)
                 else:
                     prepare_and_paste_overlay(im, output_image, first_tile, second_tile, second_tile_offset, image_w)
                 new_second_tile = second_tile_offset[0] // 64 + second_tile_offset[1] // 64 * image_w
                 st_bytes = new_second_tile.to_bytes(2, 'little')
-                output_wed_data[tile_map[first_tile][1]] = st_bytes[0]
-                output_wed_data[tile_map[first_tile][1] + 1] = st_bytes[1]
+                output_wed_data[tile_map[second_tile][1]] = st_bytes[0]
+                output_wed_data[tile_map[second_tile][1] + 1] = st_bytes[1]
     else:
         sys.exit("Unknown style for additional tiles, exiting...")
 
