@@ -134,14 +134,16 @@ if __name__ == '__main__':
         tile_count = int.from_bytes(wed_data[tilemap_offset_i + 0x2:tilemap_offset_i + 0x2 + 2], "little")
         second_tile_offset = tilemap_offset_i + 0x4
         second_tile = int.from_bytes(wed_data[second_tile_offset:second_tile_offset + 2], "little", signed=True)
+        is_overlay = not (int.from_bytes(wed_data[tilemap_offset_i + 0x6:tilemap_offset_i + 0x6 + 1], "little", signed=True) == 0)
 
-        # if tile_count > 1:
-        #     # force chess style if there are fireplaces, because it is not clear how to group in this case
-        #     style = "chess"
-        #     for tile_ii in range(tile_count):
-        #         tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
-        #         first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
-        #         tile_map[second_tile] = [first_tile, second_tile_offset, is_overlay]
+        if tile_count > 1:
+            # force chess style if there are fireplaces, because it is not clear how to group in this case
+            style = "chess"
+            for tile_ii in range(tile_count):
+                tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
+                first_tile = int.from_bytes(wed_data[tile_ii_offset:tile_ii_offset + 2], "little")
+                all_second_tiles.add(first_tile)
+                tile_map.append({"st": first_tile, "ft": first_tile, "sto": tile_ii_offset, "is_o": is_overlay})
 
         if second_tile < 0:
             continue
@@ -151,8 +153,6 @@ if __name__ == '__main__':
         #     output_wed_data[second_tile_offset] = bytes_negative_one[0]
         #     output_wed_data[second_tile_offset + 1] = bytes_negative_one[1]
         #     continue
-
-        is_overlay = not (int.from_bytes(wed_data[tilemap_offset_i + 0x6:tilemap_offset_i + 0x6 + 1], "little", signed=True) == 0)
 
         for tile_ii in range(tile_count):
             tile_ii_offset = tile_index_lookup_offset + (tile_start_i + tile_ii) * 2
