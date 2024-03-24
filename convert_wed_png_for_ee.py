@@ -81,7 +81,7 @@ This program takes wed and corresponding png files and convert them both to prep
 '''
 
 if __name__ == '__main__':
-    # todo: implement fireplaces support
+    sys.setrecursionlimit(10000)
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
