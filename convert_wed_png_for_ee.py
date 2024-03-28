@@ -77,14 +77,14 @@ def prepare_and_paste_overlay(input_im, output_im, in_first_tile, in_second_tile
 
 
 __desc__ = '''
-This program takes wed and corresponding png files and convert them both to prepare them to export in EE games on infinity engine.
+This program takes WED and corresponding PNG files and convert them both to prepare them to export in EE games on infinity engine.
 '''
 
 if __name__ == '__main__':
     sys.setrecursionlimit(10000)
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('infile1', help='WED file')
-    parser.add_argument('outdir', help='dir to put transformed wed and png files', default=".")
+    parser.add_argument('outdir', help='dir to put transformed WED and PNG files', default=".")
     parser.add_argument('--style', help='style, how to place additional tiles: [chess|grouping|optimal]', default="optimal")
     args = parser.parse_args()
     style = args.style
