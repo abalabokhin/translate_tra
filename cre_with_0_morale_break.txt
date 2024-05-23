@@ -1,0 +1,185 @@
++ ../../../../ClassicAdventuresEE/Classics053/CRE/TCSLOFF1.CRE, 0, 1	+ Ship Officer
+- ../../../../ClassicAdventuresEE/Classics053/CRE/TCHARPY.CRE, 0, 10	- like in iwd
++ ../../../../ClassicAdventuresEE/Classics053/CRE/TCNED02.CRE, 0, 1	+ Ned Shankshaft
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMMVEN.CRE, 0, 1	+ Sir Vengerhawk
+../../../../ClassicAdventuresEE/Classics053/CRE/TCJAK.CRE, 0, 1		+ Jak
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCASIMO.cre, 0, 1	+ Simon Amber
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRAT1.CRE, 0, 1	+ Wererat, Guthash
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMARKX2.CRE, 0, 1	+ Elf
+../../../../ClassicAdventuresEE/Classics053/CRE/TCIOCILI.CRE, 0, 1	+ Private Iocilin
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNERE1.CRE, 0, 1	+ Nerelas Essen
+../../../../ClassicAdventuresEE/Classics053/CRE/TCXYZOM.CRE, 0, 1	+ Xyzom
+../../../../ClassicAdventuresEE/Classics053/CRE/TCJOY.CRE, 0, 1		+ Priestess Joy
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCATH.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRURIK.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNED.CRE, 0, 1		+ Ned Shankshaft
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBANE05.CRE, 0, 1	+ Acolyte
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSHRIEK.CRE, 0, 1	- like for Mikonid
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKOBWIZ.CRE, 0, 1	+ Yusdrayl
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHARPY1.CRE, 0, 10     - like in iwd
+../../../../ClassicAdventuresEE/Classics053/CRE/TCFALAX.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCELORA8.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCABISH.CRE, 0, 0	+ For Abishai from BG2 it is 12, 5, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMARKX1.CRE, 0, 1	+ Elf
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTar.cre, 0, 1		? is not used
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHELPA1.CRE, 0, 1	+ Lead Inquisitioner
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTERRA.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMERMA1.CRE, 0, 1	+ Merman, Sahuagin from BG2 has 10, 5, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCUL.CRE, 0, 1		+ Ul'thrak
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMAGD.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCERKY.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCFROST1.CRE, 0, 0	+ Frost Giant, in BG2 they have 10, 5, 60; 12, 5, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSHARWY.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBLUS1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCANDE.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCILHAR9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDRGPR1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBRAFOR.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAJEAN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCURQUA.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDIYA.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNERE.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/HAMMER.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBLOD.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAGUIL.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSTIRGE.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIV9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRMSG.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBANE03.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCVILD8.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCAESDAL.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSTURM.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCAZUSA.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCPARA.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/U#SW1H04.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCERI2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBORON.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCGNOLL1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCELMINS.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAMARI.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLOVPR1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCWORM.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLAMON.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTHEG.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSHRIE1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHELPA2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR4.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNED01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCHAAR7.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMARKES.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRWIZ01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/BPTRESU.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAANDR.cre, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSLOFF.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLOVPR2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAETI.cre, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCFGIANT.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/TCAQUAEL.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDRAK.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSLGIR.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBINIAN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBLUSH.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN6.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCERIN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCVILD6.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCARICH.cre, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDRGPR2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBART.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHON.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCARNAUD.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHILLG1.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHO1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCQUERN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAISAB.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCILHAR7.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMERMAN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCELER.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSLBGRD.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCPORPH8.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSHADOW.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIL7.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLATPA1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNECRO9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHO7.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCELATH.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCWRAT.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCELORAX.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMMCRIS.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBANE01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALEIG.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIL5.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBLIGHT.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCHESNA.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHERAN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCWRAT1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLATPRX.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCGARGO.CRE, 0, 10
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBANE02.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMILERJ.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCNARC5.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSNAKE1.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBUR.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCEANW.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCAESDA6.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCXVART1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCFALA1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHILLG2.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCHAAR9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSA.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDIRBER.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCHAAR.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCEANW1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSNAKE2.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLATPR1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCAJAKS.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN8.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR11.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCACHAR.cre, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCFALA2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTURT.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSKELET.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCCARRAS.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/DOGWASU.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSKELE4.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/UMBHUL01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/HGSAL01.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/BATOUT01.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCBANE04.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLFGT5.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCNARCIL.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCRMSG.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCCOMM1.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ZOMBX1.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSKELE1.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE2.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI02.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCTROLL1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/STALKE01.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLBGRD.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/VAMQ1.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCFSTAT.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/SKELE2.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLSI01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ICSALCOL.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSNAKE3.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA2.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCZOMB01.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA1.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLFR01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/SKELET01.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIV7.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCWGPR1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTUDWIL.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/TCGROZ.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCERI1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBERGON.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCLOVPR3.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSTALMN.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMEEPO.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSAX.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSA1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCXVART2.CRE, 0, 1
