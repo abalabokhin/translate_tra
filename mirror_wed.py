@@ -17,7 +17,6 @@ if __name__ == '__main__':
     parser.add_argument('infile1', help='WED file')
     parser.add_argument('outdir', help='dir to put transformed WED file', default=".")
     args = parser.parse_args()
-    style = args.style
 
     print("Processing file {}".format(args.infile1))
     wed_in = open(args.infile1, mode="rb")
@@ -66,6 +65,8 @@ if __name__ == '__main__':
             new_first_tile_bytes = new_first_tile.to_bytes(2, 'little')
             output_wed_data[tile_ii_offset] = new_first_tile_bytes[0]
             output_wed_data[tile_ii_offset + 1] = new_first_tile_bytes[1]
+            # output_wed_data[tilemap_offset_i] = new_first_tile_bytes[0]
+            # output_wed_data[tilemap_offset_i + 1] = new_first_tile_bytes[1]
 
         if second_tile >= 0:
             tile_x = second_tile % overlay_w
