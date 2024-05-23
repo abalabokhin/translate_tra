@@ -76,22 +76,22 @@
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCFGIANT.CRE, 0, 0	+ Fenja
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCAQUAEL.CRE, 0, 1	+ Aquatic Elf
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCDRAK.CRE, 0, 60	+ Drakkar
-../../../../ClassicAdventuresEE/Classics053/CRE/TCSLGIR.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCBINIAN.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCBLUSH.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN6.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCERIN.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCVILD6.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCCARICH.cre, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCDRGPR2.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCBART.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHON.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCARNAUD.CRE, 0, 0
-../../../../ClassicAdventuresEE/Classics053/CRE/TCHILLG1.CRE, 0, 0
-../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHO1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCQUERN.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCCAISAB.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSLGIR.CRE, 0, 1	+ Captain Girana
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBINIAN.CRE, 0, 1	+ Brother Binian
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBLUSH.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN6.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCERIN.CRE, 0, 1	+ Erin, NPC?
+../../../../ClassicAdventuresEE/Classics053/CRE/TCVILD6.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCARICH.cre, 0, 1	+ Richard Amber
+../../../../ClassicAdventuresEE/Classics053/CRE/TCDRGPR2.CRE, 0, 1	- Dragon Priest (the same as for troll)
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBART.CRE, 0, 1	+ Bart Brannagin
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHON.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCARNAUD.CRE, 0, 0	+ Arnaud
+../../../../ClassicAdventuresEE/Classics053/CRE/TCHILLG1.CRE, 0, 0	+ I sould make it as for Fire giants unless it is intentionally
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR1.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCALTHO1.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCQUERN.CRE, 0, 1	+ Quern
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCAISAB.CRE, 0, 1	+ Isabelle Amber
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCILHAR7.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCMERMAN.CRE, 0, 1
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCELER.CRE, 0, 1
@@ -130,12 +130,12 @@
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCDIRBER.CRE, 0, 1
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCCHAAR.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCEANW1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR9.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR9.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCSNAKE2.CRE, 0, 60
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCLATPR1.CRE, 0, 1
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCAJAKS.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN8.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR11.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIHN8.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCICAR11.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCCACHAR.cre, 0, 1
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCFALA2.CRE, 0, 1
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCTURT.CRE, 0, 1
