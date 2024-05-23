@@ -144,42 +144,42 @@
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/DOGWASU.CRE, 0, 60	+ War dog, vanilla war dogs have 10, 5, 60
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSKELE4.CRE, 0, 60	- make sense, no moral break for skeletons
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/UMBHUL01.CRE, 0, 1	- no break morale as for vanila umber hulk
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/HGSAL01.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/BATOUT01.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCBANE04.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLFGT5.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCNARCIL.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCRMSG.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCCOMM1.CRE, 0, 0
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ZOMBX1.CRE, 0, 0
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/HGSAL01.CRE, 0, 60	- salamander, no break as in valilla
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/BATOUT01.CRE, 0, 60	- bat, no break as in valilla
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCBANE04.CRE, 0, 1	+ Priest
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLFGT5.CRE, 0, 1	+ Slaver
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCNARCIL.CRE, 0, 1	+ Narcvillicus Hawwilliger Neen
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCRMSG.CRE, 0, 1	+ Messenger
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCCOMM1.CRE, 0, 0	- Commoner, as in vanilla
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ZOMBX1.CRE, 0, 0	- make sense, no moral break for zombi
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSKELE1.CRE, 0, 60	- make sense, no moral break for skeletons
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE2.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI02.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCTROLL1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/STALKE01.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLBGRD.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/VAMQ1.CRE, 0, 0
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCFSTAT.CRE, 0, 60
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE2.CRE, 0, 1	+ Mage
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI02.CRE, 0, 1	- no moral break for trolls
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCTROLL1.CRE, 0, 1	- no moral break for trolls
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/STALKE01.CRE, 0, 60	- no moral break for invisible stalker
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMAGE1.CRE, 0, 1	+ Mage
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSLBGRD.CRE, 0, 1	+ bodyguard
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/VAMQ1.CRE, 0, 0	- vampire, no moral break
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCFSTAT.CRE, 0, 60	- statue, no moral break
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/SKELE2.CRE, 0, 60	- make sense, no moral break for skeletons
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLSI01.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ICSALCOL.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSNAKE3.CRE, 0, 60 	- as for vanilla snake
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI01.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA2.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCZOMB01.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA1.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLFR01.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLSI01.CRE, 0, 11	- no moral break for trolls
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/ICSALCOL.CRE, 0, 60	+ Saltmarsh Captain
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCSNAKE3.CRE, 0, 60	- as for vanilla snake
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLGI01.CRE, 0, 11	- no moral break for trolls
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA2.CRE, 0, 60	- statue, no moral break
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCZOMB01.CRE, 0, 60	- make sense, no moral break for zombi
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TCMDSTA1.CRE, 0, 60	- statue, no moral break
+../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/TROLFR01.CRE, 0, 1	- no moral break for trolls
 ../../../../ClassicAdventuresEE/Classics053/CRE/Nostring/SKELET01.CRE, 0, 60	- make sense, no moral break for skeletons
-../../../../ClassicAdventuresEE/Classics053/CRE/TCRIV7.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCWGPR1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCTUDWIL.CRE, 0, 60
-../../../../ClassicAdventuresEE/Classics053/CRE/TCGROZ.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCCERI1.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCBERGON.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCRIV7.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCWGPR1.CRE, 0, 1	+ Lathander Priest
+../../../../ClassicAdventuresEE/Classics053/CRE/TCTUDWIL.CRE, 0, 60	+ Minister Tudwill
+../../../../ClassicAdventuresEE/Classics053/CRE/TCGROZ.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCCERI1.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCBERGON.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCLOVPR3.CRE, 0, 1	+ Loviatar Priestess
-../../../../ClassicAdventuresEE/Classics053/CRE/TCSTALMN.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCMEEPO.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSAX.CRE, 0, 1
-../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSA1.CRE, 0, 1
+../../../../ClassicAdventuresEE/Classics053/CRE/TCSTALMN.CRE, 0, 1	+ Stalman Kilm
+../../../../ClassicAdventuresEE/Classics053/CRE/TCMEEPO.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSAX.CRE, 0, 1	+ NPC
+../../../../ClassicAdventuresEE/Classics053/CRE/TCKESSA1.CRE, 0, 1	+ NPC
 ../../../../ClassicAdventuresEE/Classics053/CRE/TCXVART2.CRE, 0, 1	+ Xvart Mage, usual Xcarts have 10, 6, 60
