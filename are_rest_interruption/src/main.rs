@@ -14,10 +14,9 @@ fn main() {
     let night_old = u16::from_le_bytes(night_probability.try_into().unwrap());
     if night_old > 0 && day_old > 0 {
         let path = Path::new(filename);
-        let filename = path.file_name().unwrap();
         let new_night = (100. - (f32::powf(1. - f32::from(night_old) / 100., 0.125)) * 100.).ceil() as u16;
         let new_day = (100. - (f32::powf(1. - f32::from(day_old) / 100., 0.125)) * 100.).ceil() as u16;
-        print!("{}, {}, {} -> {}, {}\n", filename.to_str().unwrap(), day_old, night_old, new_day, new_night);
+        print!("{}, {}, {} -> {}, {}\n", filename, day_old, night_old, new_day, new_night);
         let new_night = new_night.to_le_bytes();
         let new_day = new_day.to_le_bytes();
         data[sleep_i_offset+0xa8] = new_day[0];
