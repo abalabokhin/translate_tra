@@ -1,4 +1,6 @@
 # translate_tra
+There are many scripts here, but the main one:
+
 The script to translate one \*.tra file (a localization file for infinity engine modding) using google translate.
 
 The script should be used like this:
