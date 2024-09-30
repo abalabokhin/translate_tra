@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 
 import argparse
-import re
-import csv
 
 def print_death_variable(infile):
-    print("Processing file {}".format(infile))
     cre_in = open(infile, mode="rb")
     cre_data = cre_in.read()
 
     dv_bytes = cre_data[0x280:0x280 + 32]
-    print(dv_bytes.decode('latin-1'))
+    print(infile, dv_bytes.decode('latin-1'))
 
 
 __desc__ = '''
