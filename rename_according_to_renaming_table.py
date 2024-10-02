@@ -5,6 +5,7 @@ import os
 import pathlib
 import re
 import sys
+import magic
 
 
 def read_table(filename):
@@ -42,8 +43,15 @@ def replace_refs_in_bin(filename, table_bin):
 
 def replace_refs_in_txt(filename, table):
     # TODO: make dedicated processing for SPRITE_IS_DEAD variable
-    print(filename)
-    f = open(filename, "r", encoding='cp1251')
+    with open(filename, 'rb') as file_blob:
+        blob = file_blob.read()
+        m = magic.open(magic.MAGIC_MIME_ENCODING)
+        m.load()
+        encoding = m.buffer(blob)
+    if encoding == 'unknown-8bit' or encoding == 'us-ascii':
+        encoding = 'cp1251'
+    print("processing {} with encoding {}".format(filename, encoding))
+    f = open(filename, "r", encoding=encoding)
     _, ext = os.path.splitext(filename)
     s = f.read()
     s_orig = s
