@@ -34,11 +34,19 @@ def clean_id(id_to_clean):
     return result
 
 
-def build_table(ids, prefix):
+def build_table(ids, prefix, file_for_names):
+    names_to_rename = set()
+    if file_for_names:
+        with open(file_for_names, "rt") as f:
+            lines = [line.rstrip('\n').upper() for line in f]
+            names_to_rename = set(lines)
+
     table = {}
     for id in ids:
         id_cleaned = clean_id(id)
         if id.startswith(prefix):
+            continue
+        if len(names_to_rename) > 0 and id not in names_to_rename:
             continue
         i = id.find(prefix)
         if i >= 0:
@@ -110,6 +118,7 @@ if __name__ == '__main__':
     parser.add_argument('--skip-folders', help='Case sensitive folder names to skip', nargs='+', default=[])
     parser.add_argument('--skip-files', help='Case sensitive file names to skip', nargs='+',
                         default=[])
+    parser.add_argument('--names-from-file-only', help='To rename only some particular names, the file with names can be provided here', default="")
     args = parser.parse_args()
 
     ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip_folders, args.skip_files)
@@ -117,7 +126,7 @@ if __name__ == '__main__':
     ids = set()
     for e in ids_with_filenames:
         ids.add(e[0])
-    table = build_table(ids, args.prefix)
+    table = build_table(ids, args.prefix, args.names_from_file_only)
 
     f = open(args.out_filenames_file, "w")
     for e in ids_with_filenames:
