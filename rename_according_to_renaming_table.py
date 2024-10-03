@@ -65,7 +65,7 @@ def replace_refs_in_txt(filename, table):
 
     if s != s_orig:
         print("txt file {} changed and saved".format(filename))
-        f = open(filename, "w", encoding='cp1251')
+        f = open(filename, "w", encoding=encoding)
         f.write(s)
         f.close()
 
