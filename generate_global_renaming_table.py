@@ -119,8 +119,6 @@ if __name__ == '__main__':
     parser.add_argument('--skip-files', help='Case sensitive file names to skip', nargs='+',
                         default=[])
     parser.add_argument('--names-from-file-only', help='To rename only some particular names, the file with names can be provided here', default="")
-    parser.add_argument('--only-ext', help='if only particular extensions should be processed', nargs='+',
-                        default=[])
     args = parser.parse_args()
 
     ids_with_filenames = collect_uniq_filenames(args.in_folder, args.skip_folders, args.skip_files)
@@ -128,7 +126,6 @@ if __name__ == '__main__':
     ids = set()
     for e in ids_with_filenames:
         ids.add(e[0])
-    # TODO: collect only particular filenames of only-ext is not empty and provide them as names
     table = build_table(ids, args.prefix, args.names_from_file_only)
 
     f = open(args.out_filenames_file, "w")
