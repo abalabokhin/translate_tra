@@ -1,0 +1,50 @@
+# D Files Speaker Analysis
+
+Files processed: 3
+Total unique speakers: 18
+
+## All Speakers
+ANOMENJ
+IMOEN2J
+JAHEIRAJ
+KORGANJ
+MINSCJ
+NALIA
+NALIAJ
+P#KI25J
+PLAYER1
+SPEAKER1
+SPEAKER2
+SPEAKER3
+SPEAKER4
+SPEAKER5
+SPEAKER6
+SPEAKER7
+SPEAKER8
+TEST_MINSC
+
+## Speakers by File
+
+### p#kilt25.d
+- P#KI25J
+
+### test_dialogue.d
+- ANOMENJ
+- IMOEN2J
+- JAHEIRAJ
+- KORGANJ
+- MINSCJ
+- NALIA
+- NALIAJ
+- PLAYER1
+- TEST_MINSC
+
+### test_weidu_commands.d
+- SPEAKER1
+- SPEAKER2
+- SPEAKER3
+- SPEAKER4
+- SPEAKER5
+- SPEAKER6
+- SPEAKER7
+- SPEAKER8

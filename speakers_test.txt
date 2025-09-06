@@ -1,0 +1,12 @@
+# D Files Speaker Analysis
+
+Files processed: 1
+Total unique speakers: 6
+
+## All Speakers
+ANOMENJ
+IMOEN2J
+JAHEIRAJ
+KORGANJ
+MINSCJ
+NALIAJ

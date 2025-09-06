@@ -1,0 +1,30 @@
+# D Files Speaker Analysis
+
+Files processed: 2
+Total unique speakers: 9
+
+## All Speakers
+ANOMENJ
+IMOEN2J
+JAHEIRAJ
+KORGANJ
+MINSCJ
+NALIA
+NALIAJ
+P#KI25J
+TEST_MINSC
+
+## Speakers by File
+
+### p#kilt25.d
+- P#KI25J
+
+### test_dialogue.d
+- ANOMENJ
+- IMOEN2J
+- JAHEIRAJ
+- KORGANJ
+- MINSCJ
+- NALIA
+- NALIAJ
+- TEST_MINSC
