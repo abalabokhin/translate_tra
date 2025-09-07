@@ -32,6 +32,7 @@ class DialogueLine:
     predecessors: List[str] # Lines that can lead to this line
     targets: List[str] # Lines this line can lead to
     original_ref: Optional[str] = None  # Original @NUMBER reference if any
+    source_info: str = ""  # Source file and location info for translation
 
 
 @dataclass 
@@ -69,10 +70,52 @@ class ImprovedDialogueListener(ParseTreeListener):
         self.syntax_errors = []
         self.all_speakers = {}  # speaker -> {state_id -> DialogueState}
         
+        # Source tracking for translation
+        self.d_file_lines = []  # Store D file lines for line number lookup
+        self.d_file_content = ""  # Store original D file content
+        
         # Load TRA file for this D file
         base_name = os.path.splitext(d_filename)[0]
         tra_filename = base_name + '.tra'
         self.tra_dict = self.load_tra_file(tra_filename)
+    
+    def set_d_file_content(self, content):
+        """Set D file content for line number tracking."""
+        self.d_file_content = content
+        self.d_file_lines = content.split('\n')
+    
+    def find_d_file_line_number(self, search_text):
+        """Find the line number where text appears in D file."""
+        if not search_text or not self.d_file_lines:
+            return None
+        
+        # Clean up the search text - remove quotes/tildes for searching
+        search_clean = search_text.strip()
+        if (search_clean.startswith('~') and search_clean.endswith('~')) or \
+           (search_clean.startswith('"') and search_clean.endswith('"')):
+            search_clean = search_clean[1:-1]
+        
+        # Search for the text in D file lines
+        for i, line in enumerate(self.d_file_lines, 1):
+            if search_clean in line and len(search_clean) > 10:  # Only for substantial text
+                return i
+        
+        return None
+    
+    def create_source_info(self, text_node, tra_ref=None):
+        """Create source information for translation purposes."""
+        if tra_ref:
+            # This text comes from TRA file
+            base_name = os.path.splitext(self.d_filename)[0]
+            return f"TRA:{base_name}.tra:{tra_ref}"
+        else:
+            # This text comes from D file - find line number
+            if text_node:
+                original_text = text_node.getText()
+                line_num = self.find_d_file_line_number(original_text)
+                if line_num:
+                    return f"D:{self.d_filename}:{line_num}"
+            return f"D:{self.d_filename}:unknown"
     
     def load_tra_file(self, tra_filename):
         """Load TRA file into cache."""
@@ -225,6 +268,9 @@ class ImprovedDialogueListener(ParseTreeListener):
         line_id = f"{state_id}_SAY_{self.line_counter}"
         self.line_counter += 1
         
+        tra_ref = self.get_tra_ref(element_ctx.line)
+        source_info = self.create_source_info(element_ctx.line, tra_ref)
+        
         line = DialogueLine(
             speaker=self.current_speaker,
             line_id=line_id,
@@ -233,7 +279,8 @@ class ImprovedDialogueListener(ParseTreeListener):
             line_type="SAY",
             predecessors=[],
             targets=[],
-            original_ref=self.get_tra_ref(element_ctx.line)
+            original_ref=tra_ref,
+            source_info=source_info
         )
         
         self.all_lines.append(line)
@@ -295,6 +342,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                 dialogue_text = self.resolve_text(line_ctx)
                 
                 line_id = f"{state_id}_SAY_{i}"
+                tra_ref = self.get_tra_ref(line_ctx)
+                source_info = self.create_source_info(line_ctx, tra_ref)
                 
                 line = DialogueLine(
                     speaker=self.current_speaker,
@@ -304,7 +353,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                     line_type="SAY",
                     predecessors=[],
                     targets=[],
-                    original_ref=self.get_tra_ref(line_ctx)
+                    original_ref=tra_ref,
+                    source_info=source_info
                 )
                 
                 state_lines.append(line)
@@ -361,6 +411,9 @@ class ImprovedDialogueListener(ParseTreeListener):
             line_id = f"{parent_state_id}_REPLY_{self.line_counter}"
             self.line_counter += 1
             
+            tra_ref = self.get_tra_ref(trans_ctx.reply)
+            source_info = self.create_source_info(trans_ctx.reply, tra_ref)
+            
             reply_line = DialogueLine(
                 speaker="PLAYER",
                 line_id=line_id,
@@ -369,7 +422,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                 line_type="REPLY",
                 predecessors=[],  # Will be filled in flow building
                 targets=targets,
-                original_ref=self.get_tra_ref(trans_ctx.reply)
+                original_ref=tra_ref,
+                source_info=source_info
             )
             
             replies.append(reply_line)
@@ -387,6 +441,9 @@ class ImprovedDialogueListener(ParseTreeListener):
                     line_id = f"{parent_state_id}_REPLY_{self.line_counter}"
                     self.line_counter += 1
                     
+                    tra_ref = self.get_tra_ref(feature.line)
+                    source_info = self.create_source_info(feature.line, tra_ref)
+                    
                     reply_line = DialogueLine(
                         speaker="PLAYER",
                         line_id=line_id,
@@ -395,7 +452,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                         line_type="REPLY",
                         predecessors=[],  # Will be filled in flow building
                         targets=targets,
-                        original_ref=self.get_tra_ref(feature.line)
+                        original_ref=tra_ref,
+                        source_info=source_info
                     )
                     
                     replies.append(reply_line)
@@ -582,6 +640,7 @@ class ImprovedGrammarDialogueParser:
         
         # Create improved listener
         listener = ImprovedDialogueListener(d_filename, self.tra_folder)
+        listener.set_d_file_content(content)  # Set content for line number tracking
         
         # Walk the parse tree
         walker = ParseTreeWalker()
@@ -705,7 +764,7 @@ class ImprovedGrammarDialogueParser:
                                 predecessors_str,
                                 line.text,
                                 tra_ref,
-                                ""  # Additional_Info column
+                                line.source_info  # Source information for translation
                             ])
                     
                     total_csvs += 1
