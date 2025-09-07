@@ -67,11 +67,19 @@ class CompleteDialogueParser:
             print(f"Error reading TRA file {tra_filename}: {e}")
             return {}
         
-        # Parse TRA file: @123 = ~text~
+        # Parse TRA file: @123 = ~text~ or @123 = "text"
         tra_dict = {}
-        pattern = r'@(\d+)\s*=\s*~([^~]*)~'
         
-        for match in re.finditer(pattern, content, re.MULTILINE | re.DOTALL):
+        # Pattern for tilde format
+        pattern_tilde = r'@(\d+)\s*=\s*~([^~]*)~'
+        for match in re.finditer(pattern_tilde, content, re.MULTILINE | re.DOTALL):
+            tra_number = int(match.group(1))
+            tra_text = match.group(2).strip()
+            tra_dict[tra_number] = tra_text
+        
+        # Pattern for quote format
+        pattern_quote = r'@(\d+)\s*=\s*"([^"]*)"'
+        for match in re.finditer(pattern_quote, content, re.MULTILINE | re.DOTALL):
             tra_number = int(match.group(1))
             tra_text = match.group(2).strip()
             tra_dict[tra_number] = tra_text
@@ -108,9 +116,9 @@ class CompleteDialogueParser:
         lines = []
         line_counter = 0
         
-        # Find SAY statements
-        say_pattern = r'SAY\s+(@\d+|~[^~]*~|"[^"]*"|\S+)'
-        say_matches = list(re.finditer(say_pattern, state_content, re.IGNORECASE))
+        # Find SAY statements - much more flexible pattern
+        say_pattern = r'SAY\s+(@\d+|~[^~]*~|"[^"]*")'
+        say_matches = list(re.finditer(say_pattern, state_content, re.IGNORECASE | re.DOTALL))
         
         for say_match in say_matches:
             raw_text = say_match.group(1)
@@ -129,88 +137,92 @@ class CompleteDialogueParser:
                 targets=[]
             ))
         
-        # Find REPLY statements - three formats:
-        # Format 1: ++ @text + target or ++ @text DO ~actions~ + target  
-        # Format 2: IF ~~ THEN REPLY @text DO ~actions~ GOTO target
-        # Format 3: + ~condition~ + @text + target (conditional replies)
+        # Find continuation SAY statements (= lines)
+        continuation_pattern = r'=\s*(@\d+|~[^~]*~|"[^"]*")'
+        continuation_matches = list(re.finditer(continuation_pattern, state_content, re.IGNORECASE | re.DOTALL))
         
-        # Pattern 1: ++ replies
-        reply_pattern1 = r'\+\+\s*(@\d+|~[^~]*~|"[^"]*"|[^+\n]+?)(?:\s+DO\s+~[^~]*~)?\s*\+\s*([A-Za-z_][A-Za-z0-9_.]*|\d+)'
-        reply_matches1 = list(re.finditer(reply_pattern1, state_content, re.IGNORECASE))
-        
-        # Pattern 2: IF ~~ THEN REPLY
-        reply_pattern2 = r'IF\s+~~\s+THEN\s+REPLY\s+(@\d+|~[^~]*~|"[^"]*"|\S+)(?:\s+DO\s+~[^~]*~)?(?:\s+GOTO\s+([A-Za-z_][A-Za-z0-9_.]*|\d+))?'
-        reply_matches2 = list(re.finditer(reply_pattern2, state_content, re.IGNORECASE))
-        
-        # Pattern 3: Conditional replies: + ~condition~ + @text + target
-        reply_pattern3 = r'\+\s+~[^~]*~\s+\+\s*(@\d+|~[^~]*~|"[^"]*"|[^+\n]+?)\s*\+\s*([A-Za-z_][A-Za-z0-9_.]*|\d+)'
-        reply_matches3 = list(re.finditer(reply_pattern3, state_content, re.IGNORECASE))
-        
-        # Process ++ format replies
-        for reply_match in reply_matches1:
-            raw_text = reply_match.group(1)
-            target = reply_match.group(2)
-            
+        for cont_match in continuation_matches:
+            raw_text = cont_match.group(1)
             dialogue_text = self.resolve_text(raw_text, d_filename)
             
-            line_id = f"{state_id}_REPLY_{line_counter}"
+            line_id = f"{state_id}_SAY_{line_counter}"
             line_counter += 1
             
-            targets = [target] if target else []
-            
             lines.append(DialogueLine(
-                speaker="PLAYER",
+                speaker=speaker,
                 line_id=line_id,
                 text=dialogue_text,
                 state_id=state_id,
-                line_type="REPLY",
+                line_type="SAY",
                 predecessors=[],
-                targets=targets
+                targets=[]
             ))
         
-        # Process IF ~~ THEN REPLY format
-        for reply_match in reply_matches2:
-            raw_text = reply_match.group(1)
-            target = reply_match.group(2) if reply_match.group(2) else None
-            
-            dialogue_text = self.resolve_text(raw_text, d_filename)
-            
-            line_id = f"{state_id}_REPLY_{line_counter}"
-            line_counter += 1
-            
-            targets = [target] if target else []
-            
-            lines.append(DialogueLine(
-                speaker="PLAYER",
-                line_id=line_id,
-                text=dialogue_text,
-                state_id=state_id,
-                line_type="REPLY",
-                predecessors=[],
-                targets=targets
-            ))
+        # Find REPLY statements - multiple formats:
+        # Format 1: ++ @text DO ~actions~ GOTO target
+        # Format 2: ++ @text DO ~actions~ + target  
+        # Format 3: IF ~~ THEN REPLY @text DO ~actions~ GOTO target
+        # Format 4: + ~condition~ + @text + target (conditional replies)
         
-        # Process conditional replies: + ~condition~ + @text + target
-        for reply_match in reply_matches3:
-            raw_text = reply_match.group(1)
-            target = reply_match.group(2)
-            
-            dialogue_text = self.resolve_text(raw_text, d_filename)
-            
-            line_id = f"{state_id}_REPLY_{line_counter}"
-            line_counter += 1
-            
-            targets = [target] if target else []
-            
-            lines.append(DialogueLine(
-                speaker="PLAYER",
-                line_id=line_id,
-                text=dialogue_text,
-                state_id=state_id,
-                line_type="REPLY",
-                predecessors=[],
-                targets=targets
-            ))
+        # Pattern 1: ++ replies with GOTO
+        reply_pattern1 = r'\+\+\s*(@\d+|~[^~]*~|"[^"]*")(?:[^+\n]*?)(?:\s+GOTO\s+([A-Za-z_][A-Za-z0-9_.]*|\d+))'
+        reply_matches1 = list(re.finditer(reply_pattern1, state_content, re.IGNORECASE | re.DOTALL))
+        
+        # Pattern 2: ++ replies with + target
+        reply_pattern2 = r'\+\+\s*(@\d+|~[^~]*~|"[^"]*")(?:[^+\n]*?)\s*\+\s*([A-Za-z_][A-Za-z0-9_.]*|\d+)'
+        reply_matches2 = list(re.finditer(reply_pattern2, state_content, re.IGNORECASE | re.DOTALL))
+        
+        # Pattern 3: IF ~~ THEN REPLY
+        reply_pattern3 = r'IF\s+~~\s+THEN\s+REPLY\s+(@\d+|~[^~]*~|"[^"]*")(?:[^G]*?)(?:GOTO\s+([A-Za-z_][A-Za-z0-9_.]*|\d+))?'
+        reply_matches3 = list(re.finditer(reply_pattern3, state_content, re.IGNORECASE | re.DOTALL))
+        
+        # Pattern 4: Conditional replies: + ~condition~ + @text + target
+        reply_pattern4 = r'\+\s+~[^~]*~\s*\+\s*(@\d+|~[^~]*~|"[^"]*")(?:[^+\n]*?)\+\s*([A-Za-z_][A-Za-z0-9_.]*|\d+)'
+        reply_matches4 = list(re.finditer(reply_pattern4, state_content, re.IGNORECASE | re.DOTALL))
+        
+        # Also find simple ++ EXIT patterns
+        reply_pattern_exit = r'\+\+\s*(@\d+|~[^~]*~|"[^"]*")(?:[^+\n]*?)(?:\s+EXIT)'
+        reply_matches_exit = list(re.finditer(reply_pattern_exit, state_content, re.IGNORECASE | re.DOTALL))
+        
+        # Process all reply patterns
+        all_reply_matches = [
+            (reply_matches1, 1),    # ++ with GOTO
+            (reply_matches2, 2),    # ++ with + target  
+            (reply_matches3, 3),    # IF ~~ THEN REPLY
+            (reply_matches4, 4),    # conditional replies
+            (reply_matches_exit, 0) # ++ with EXIT
+        ]
+        
+        for reply_list, pattern_type in all_reply_matches:
+            for reply_match in reply_list:
+                raw_text = reply_match.group(1)
+                
+                # Extract target based on pattern
+                if pattern_type == 0:  # EXIT pattern
+                    target = "EXIT"
+                elif pattern_type == 3 and reply_match.lastindex and reply_match.lastindex >= 2:  # IF ~~ THEN REPLY
+                    target = reply_match.group(2) if reply_match.group(2) else None
+                elif reply_match.lastindex and reply_match.lastindex >= 2:  # Other patterns with target
+                    target = reply_match.group(2)
+                else:
+                    target = None
+                
+                dialogue_text = self.resolve_text(raw_text, d_filename)
+                
+                line_id = f"{state_id}_REPLY_{line_counter}"
+                line_counter += 1
+                
+                targets = [target] if target else []
+                
+                lines.append(DialogueLine(
+                    speaker="PLAYER",
+                    line_id=line_id,
+                    text=dialogue_text,
+                    state_id=state_id,
+                    line_type="REPLY",
+                    predecessors=[],
+                    targets=targets
+                ))
         
         return lines
     
