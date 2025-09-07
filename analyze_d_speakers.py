@@ -4,6 +4,7 @@ import argparse
 import os
 import re
 import chardet
+import csv
 from collections import defaultdict
 
 
@@ -81,7 +82,50 @@ def extract_speakers_from_file(filepath):
     return speakers
 
 
-def analyze_d_files(folder_path):
+def read_existing_speakers(csv_file):
+    """Read existing speakers from CSV file."""
+    existing_speakers = set()
+    if os.path.exists(csv_file):
+        try:
+            with open(csv_file, 'r', encoding='utf-8') as f:
+                reader = csv.reader(f)
+                for row in reader:
+                    if row and len(row) >= 1:  # At least speaker name
+                        speaker = row[0].strip().upper()
+                        if speaker:
+                            existing_speakers.add(speaker)
+        except Exception as e:
+            print(f"Error reading CSV file {csv_file}: {e}")
+    
+    return existing_speakers
+
+
+def append_speakers_to_csv(csv_file, new_speakers):
+    """Append new speakers to CSV file."""
+    try:
+        # Check if file exists and needs a newline at the end
+        needs_newline = False
+        if os.path.exists(csv_file) and os.path.getsize(csv_file) > 0:
+            with open(csv_file, 'rb') as f:
+                f.seek(-1, 2)  # Go to last byte
+                needs_newline = f.read(1) != b'\n'
+        
+        with open(csv_file, 'a', encoding='utf-8', newline='') as f:
+            # Add newline if file exists but doesn't end with newline
+            if needs_newline:
+                f.write('\n')
+                
+            writer = csv.writer(f)
+            for speaker in sorted(new_speakers):
+                writer.writerow([speaker, ""])  # Speaker name and empty description
+                
+        return True
+    except Exception as e:
+        print(f"Error writing to CSV file {csv_file}: {e}")
+        return False
+
+
+def analyze_d_files(folder_path, csv_file=None):
     """Analyze all D files in a folder and collect speakers."""
     if not os.path.isdir(folder_path):
         print(f"Error: {folder_path} is not a valid directory")
@@ -107,9 +151,22 @@ def analyze_d_files(folder_path):
         print(f"No .D files found in {folder_path}")
         return
     
-    # Output only unique speakers
-    for speaker in sorted(all_speakers):
-        print(speaker)
+    if csv_file:
+        # CSV mode: only add new speakers to CSV file
+        existing_speakers = read_existing_speakers(csv_file)
+        new_speakers = all_speakers - existing_speakers
+        
+        if new_speakers:
+            if append_speakers_to_csv(csv_file, new_speakers):
+                print(f"Added {len(new_speakers)} new speakers to {csv_file}")
+            else:
+                print(f"Failed to update CSV file")
+        else:
+            print(f"No new speakers found (all {len(all_speakers)} speakers already exist in CSV)")
+    else:
+        # Standard mode: output unique speakers to console
+        for speaker in sorted(all_speakers):
+            print(speaker)
 
 
 __desc__ = '''
@@ -129,6 +186,7 @@ D files are dialogue files used in Infinity Engine game modding with WeiDU.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
     parser.add_argument('folder', help='Folder containing D files to analyze')
+    parser.add_argument('--csv', help='CSV file to append new speakers to (format: SPEAKER,Description)', required=False)
     args = parser.parse_args()
     
-    analyze_d_files(args.folder)
+    analyze_d_files(args.folder, args.csv)
