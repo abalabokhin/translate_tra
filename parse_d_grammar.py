@@ -63,6 +63,10 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         # Transition tracking
         self.state_transitions = {}  # state_id -> [target_states]
+        
+        # Error tracking
+        self.missing_tra_refs = set()
+        self.syntax_errors = []
         self.all_speakers = {}  # speaker -> {state_id -> DialogueState}
         
         # Load TRA file for this D file
@@ -77,7 +81,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         tra_path = os.path.join(self.tra_folder, tra_filename)
         if not os.path.exists(tra_path):
-            print(f"Warning: TRA file {tra_filename} not found")
+            print(f"❌ ERROR: TRA file {tra_filename} not found in {self.tra_folder}")
             return {}
         
         try:
@@ -85,7 +89,7 @@ class ImprovedDialogueListener(ParseTreeListener):
             with open(tra_path, 'r', encoding=encoding) as file:
                 content = file.read()
         except Exception as e:
-            print(f"Error reading TRA file {tra_filename}: {e}")
+            print(f"❌ ERROR reading TRA file {tra_filename}: {e}")
             return {}
         
         # Parse TRA file: @123 = ~text~ or @123 = "text"
@@ -107,6 +111,7 @@ class ImprovedDialogueListener(ParseTreeListener):
             tra_dict[tra_number] = tra_text
         
         self.tra_cache[tra_filename] = tra_dict
+        print(f"✅ Loaded {len(tra_dict)} TRA entries from {tra_filename}")
         return tra_dict
     
     def resolve_text(self, text_node):
@@ -122,6 +127,7 @@ class ImprovedDialogueListener(ParseTreeListener):
             if tra_number in self.tra_dict:
                 return self.tra_dict[tra_number]
             else:
+                self.missing_tra_refs.add(text)
                 return f"{text} (TRA not found)"
         
         # Clean direct text (remove quotes/tildes)
@@ -586,6 +592,17 @@ class ImprovedGrammarDialogueParser:
         
         # Group connected dialogues
         dialogue_groups = listener.group_connected_dialogues()
+        
+        # Report any missing TRA references
+        if listener.missing_tra_refs:
+            print(f"  ⚠️  WARNING: {len(listener.missing_tra_refs)} missing TRA references:")
+            for ref in sorted(listener.missing_tra_refs):
+                print(f"    - {ref}")
+        
+        if listener.syntax_errors:
+            print(f"  ⚠️  WARNING: {len(listener.syntax_errors)} syntax errors encountered:")
+            for error in listener.syntax_errors[:5]:  # Show first 5
+                print(f"    - {error}")
         
         return listener.all_states, listener.all_lines, dialogue_groups
     
