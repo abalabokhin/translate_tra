@@ -70,10 +70,15 @@ class TSTranslator:
         print(f"Processing {ts_file}...")
         
         try:
+            # Read the original file content
+            with open(ts_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
             tree = ET.parse(ts_file)
             root = tree.getroot()
             
             translations_updated = 0
+            modified_content = content
             
             for message in root.findall('.//message'):
                 source_elem = message.find('source')
@@ -103,18 +108,42 @@ class TSTranslator:
                         
                         # Update the translation if we found one
                         if new_translation:
-                            translation_elem.text = new_translation
-                            # Remove the unfinished attribute
-                            if 'type' in translation_elem.attrib:
-                                del translation_elem.attrib['type']
-                            translations_updated += 1
+                            # Find the translation tag in the original content and replace it
+                            # Look for the pattern: <translation type="unfinished"></translation>
+                            # or <translation type="unfinished"/>
+                            escaped_source = re.escape(source_text)
+                            
+                            # Pattern to match the translation element with unfinished type
+                            pattern = (r'(<translation[^>]*type=(["\'])unfinished\2[^>]*>)([^<]*)(</translation>)')
+                            
+                            # Find all matches and replace the appropriate one
+                            matches = list(re.finditer(pattern, modified_content))
+                            
+                            # We need to find the right translation element that corresponds to our source
+                            # This is complex, so let's use a simpler approach: find the message block
+                            source_pattern = re.escape(source_text).replace(r'\ ', r'\s*')
+                            message_pattern = (r'(<message[^>]*>.*?<source[^>]*>)' + 
+                                             source_pattern + 
+                                             r'(</source>.*?<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>.*?</message>)')
+                            
+                            match = re.search(message_pattern, modified_content, re.DOTALL)
+                            if match:
+                                # Replace with the new translation and remove type="unfinished"
+                                replacement = (match.group(1) + source_text + match.group(2) + 
+                                             new_translation + match.group(5))
+                                # Remove type="unfinished" from the replacement
+                                replacement = re.sub(r'\s*type=(["\'])unfinished\1', '', replacement)
+                                modified_content = modified_content.replace(match.group(0), replacement)
+                                translations_updated += 1
             
             if translations_updated > 0:
-                # Write the updated file
-                tree.write(ts_file, encoding='utf-8', xml_declaration=True)
+                # Write the modified content back to the file
+                with open(ts_file, 'w', encoding='utf-8') as f:
+                    f.write(modified_content)
                 print(f"  Updated {translations_updated} translations in {ts_file}")
             else:
                 print(f"  No translations updated in {ts_file}")
+                # File remains unchanged - original formatting preserved
                 
         except deepl.exceptions.QuotaExceededException:
             # Re-raise quota exceeded to stop all processing
