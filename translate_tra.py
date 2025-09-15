@@ -92,7 +92,16 @@ def translate_file(infile, outfile, lang, engine, add_prefix, only_prefix):
                                 result = translate_client.translate(string, target_language=lang)
                                 translated_string = result['translatedText']
                             elif engine == 'deepl':
-                                translated_string = str(translator.translate_text(string, target_lang=lang))
+                                too_many_requests_exception_happend = True
+                                while too_many_requests_exception_happend:
+                                    too_many_requests_exception_happend = False
+                                    try:
+                                        translated_string = str(translator.translate_text(string, target_lang=lang))
+                                    except BaseException as e:
+                                        if str(e).startswith("Too many requests"):
+                                            print("Too many requests, trying again.")
+                                            too_many_requests_exception_happend = False
+
                             else:
                                 sys.exit('Unknown engine name: {}. Use googletrans, googlecloud, yandex or deepl'.format(engine))
 
