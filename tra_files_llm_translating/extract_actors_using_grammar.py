@@ -722,9 +722,11 @@ Only actors starting with TC or BTC are considered valid.
 
                     new_entries.append([actor, gender_column])
 
-            # Append new entries to CSV file
+            # Write new entries to CSV file
             if new_entries:
-                with open(args.csv_output, 'a', encoding='utf-8', newline='') as f:
+                # Use write mode if file doesn't exist, append mode if it does
+                file_mode = 'w' if not os.path.exists(args.csv_output) or not existing_actors else 'a'
+                with open(args.csv_output, file_mode, encoding='utf-8', newline='') as f:
                     writer = csv.writer(f)
                     writer.writerows(new_entries)
                 print(f"\nAdded {len(new_entries)} new actor-gender mappings to: {args.csv_output}")
