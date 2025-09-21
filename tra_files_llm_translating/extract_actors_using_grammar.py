@@ -52,6 +52,36 @@ def extract_death_variable_from_cre(cre_filepath):
         return None
 
 
+def extract_gender_from_cre(cre_filepath):
+    """Extract gender from CRE file binary data."""
+    try:
+        with open(cre_filepath, 'rb') as f:
+            # Seek to the gender field offset (0x0275 = 629)
+            f.seek(0x0275)
+
+            # Read 1 byte for the gender
+            gender_byte = f.read(1)
+
+            if len(gender_byte) < 1:
+                return None
+
+            gender_value = gender_byte[0]
+
+            # Map gender values according to GENDER.IDS
+            gender_map = {
+                1: 'MALE',
+                2: 'FEMALE',
+                3: 'OTHER',
+                4: 'NEITHER'
+            }
+
+            return gender_map.get(gender_value, 'UNKNOWN')
+
+    except Exception as e:
+        print(f"Error reading CRE file {cre_filepath}: {e}")
+        return None
+
+
 def extract_dialog_file_from_cre(cre_filepath):
     """Extract dialog file name from CRE file binary data."""
     try:
@@ -78,31 +108,35 @@ def extract_dialog_file_from_cre(cre_filepath):
 
 
 def scan_cre_files_in_folder(folder_path):
-    """Recursively scan CRE files and extract death variables and dialog file names."""
+    """Recursively scan CRE files and extract death variables, dialog file names, and genders."""
     cre_to_dialog = {}
     dialog_to_cre = defaultdict(set)
     cre_to_death_var = {}
     death_var_to_cre = defaultdict(set)
+    cre_to_gender = {}
 
     if not os.path.exists(folder_path):
         print(f"Warning: CRE folder {folder_path} does not exist")
-        return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre
+        return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender
 
     print(f"Scanning CRE files in {folder_path}...")
 
     cre_count = 0
     death_var_count = 0
+    gender_count = 0
     for root, dirs, files in os.walk(folder_path):
         for filename in files:
             if filename.lower().endswith('.cre'):
                 cre_filepath = os.path.join(root, filename)
                 dialog_name = extract_dialog_file_from_cre(cre_filepath)
                 death_variable = extract_death_variable_from_cre(cre_filepath)
+                gender = extract_gender_from_cre(cre_filepath)
 
                 cre_count += 1
                 cre_basename = os.path.basename(filename)
                 cre_to_dialog[cre_basename] = dialog_name
                 cre_to_death_var[cre_basename] = death_variable
+                cre_to_gender[cre_basename] = gender
 
                 if dialog_name and is_valid_actor_name(dialog_name):
                     dialog_to_cre[dialog_name].add(cre_basename)
@@ -111,11 +145,15 @@ def scan_cre_files_in_folder(folder_path):
                     death_var_to_cre[death_variable].add(cre_basename)
                     death_var_count += 1
 
+                if gender:
+                    gender_count += 1
+
     print(f"Processed {cre_count} CRE files")
     print(f"Found {len([d for d in cre_to_dialog.values() if d and is_valid_actor_name(d)])} CRE files with valid dialog actors")
     print(f"Found {death_var_count} CRE files with death variables")
+    print(f"Found {gender_count} CRE files with gender information")
 
-    return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre
+    return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender
 
 
 def parse_tp2_table_modifications(tp2_filepath):
@@ -446,6 +484,34 @@ def process_d_files_in_folder(folder_path):
     return all_actors, file_actors
 
 
+def resolve_actor_gender(actor, all_cre_files, cre_to_gender):
+    """Resolve gender for an actor based on associated CRE files."""
+    if not all_cre_files:
+        return "", ""  # Empty gender and no detail
+
+    # Collect genders from all CRE files
+    genders = []
+    cre_gender_details = []
+
+    for cre_file in all_cre_files:
+        gender = cre_to_gender.get(cre_file)
+        if gender:
+            genders.append(gender)
+            cre_gender_details.append(f"{cre_file}:{gender}")
+
+    if not genders:
+        return "", ""  # No gender information available
+
+    # Check if all genders are the same
+    unique_genders = set(genders)
+    if len(unique_genders) == 1:
+        return genders[0], ""  # Single consistent gender
+    else:
+        # Mixed genders - return MIXED and details
+        detail = " (" + " ".join(cre_gender_details) + ")"
+        return "MIXED", detail
+
+
 def main():
     parser = argparse.ArgumentParser(description='''
 Extract unique actors from D files using ANTLR grammar and map them to CRE files via death variables.
@@ -476,6 +542,7 @@ Only actors starting with TC or BTC are considered valid.
     parser.add_argument('--cre-folder', '-c', help='Folder containing CRE files (optional)')
     parser.add_argument('--tp2-file', '-t', help='TP2 file to parse for table modifications (optional)')
     parser.add_argument('--output', '-o', help='Output file to save enhanced actor mapping')
+    parser.add_argument('--csv-output', help='CSV output file for actor-gender mapping')
     parser.add_argument('--verbose', '-v', action='store_true',
                        help='Show detailed per-file actor lists')
 
@@ -493,9 +560,10 @@ Only actors starting with TC or BTC are considered valid.
     dialog_to_cre = defaultdict(set)
     death_var_to_cre = defaultdict(set)
     cre_to_death_var = {}
+    cre_to_gender = {}
     if args.cre_folder:
         print(f"\n=== PROCESSING CRE FILES ===")
-        cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre = scan_cre_files_in_folder(args.cre_folder)
+        cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender = scan_cre_files_in_folder(args.cre_folder)
 
     # Process TP2 file if specified
     pdialog_entries = {}
@@ -624,6 +692,47 @@ Only actors starting with TC or BTC are considered valid.
                 death_var_detail = f" DV:{', '.join(sorted(cre_files_by_death_var))}" if cre_files_by_death_var else ""
                 dynamic_info = f" [{dynamic_type}:{character}]" if character else ""
                 print(f"  - {actor}{cre_info}{dialog_detail}{death_var_detail}{dynamic_info}")
+
+    # Save CSV output if specified
+    if args.csv_output:
+        try:
+            import csv
+
+            # Read existing CSV entries if file exists
+            existing_actors = set()
+            if os.path.exists(args.csv_output):
+                with open(args.csv_output, 'r', encoding='utf-8') as f:
+                    reader = csv.reader(f)
+                    for row in reader:
+                        if row and row[0]:  # Skip empty rows
+                            existing_actors.add(row[0])
+
+            # Prepare new entries
+            new_entries = []
+            for actor in sorted_actors:
+                if actor not in existing_actors:
+                    info = actor_info_mapping[actor]
+                    all_cre_files = info['cre_files']
+
+                    # Resolve gender for this actor
+                    gender, gender_detail = resolve_actor_gender(actor, all_cre_files, cre_to_gender)
+
+                    # Format the gender column
+                    gender_column = gender + gender_detail if gender_detail else gender
+
+                    new_entries.append([actor, gender_column])
+
+            # Append new entries to CSV file
+            if new_entries:
+                with open(args.csv_output, 'a', encoding='utf-8', newline='') as f:
+                    writer = csv.writer(f)
+                    writer.writerows(new_entries)
+                print(f"\nAdded {len(new_entries)} new actor-gender mappings to: {args.csv_output}")
+            else:
+                print(f"\nNo new actors to add to CSV file: {args.csv_output}")
+
+        except Exception as e:
+            print(f"Error saving CSV to {args.csv_output}: {e}")
 
     # Save to output file if specified
     if args.output:
