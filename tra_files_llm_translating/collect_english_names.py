@@ -95,7 +95,34 @@ def collect_fantasy_names_from_tra_file(tra_file, dictionary_csv=None, blacklist
     for e in all_expressions:
         if e not in seen:
             seen[e] = None
-    return list(seen.keys())
+
+    unique_expressions = list(seen.keys())
+
+    # Split multiword expressions if their parts exist as standalone expressions
+    final_expressions = []
+    single_words = {expr for expr in unique_expressions if len(expr.split()) == 1}
+
+    for expr in unique_expressions:
+        words = expr.split()
+        if len(words) > 1:
+            # Check if any word in this multiword expression exists as a standalone
+            if any(word in single_words for word in words):
+                # Split into individual words
+                final_expressions.extend(words)
+            else:
+                # Keep the multiword expression
+                final_expressions.append(expr)
+        else:
+            # Single word, always keep
+            final_expressions.append(expr)
+
+    # Remove duplicates again after splitting
+    final_seen = OrderedDict()
+    for e in final_expressions:
+        if e not in final_seen:
+            final_seen[e] = None
+
+    return list(final_seen.keys())
 
 # ---------------- CLI ----------------
 if __name__ == "__main__":
