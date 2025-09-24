@@ -29,10 +29,17 @@ def collect_fantasy_names_from_text(text, min_words=1):
             if i == 0:
                 continue  # skip first word of sentence
 
-            clean = tok.strip("()\"'“”.,;:!?")
-            clean = clean.replace("’", "'").replace("‘", "'").replace("–", "-").replace("—", "-")
+            clean = tok.strip("()\"'"".,;:!?")
+            clean = clean.replace("'", "'").replace("'", "'").replace("–", "-").replace("—", "-")
 
-            if TOKEN_OK_RE.match(clean):
+            # Remove possessive forms - any apostrophe-like character followed by 's or alone
+            # Include regular apostrophe ('), right single quotation (\u2019), and backtick (`)
+            if clean.endswith("'s") or clean.endswith("\u2019s") or clean.endswith("`s"):
+                clean = clean[:-2]
+            elif clean.endswith("'") or clean.endswith("\u2019") or clean.endswith("`"):
+                clean = clean[:-1]
+
+            if TOKEN_OK_RE.match(clean) and clean:
                 current.append(clean)
             else:
                 if current:
@@ -45,7 +52,8 @@ def collect_fantasy_names_from_text(text, min_words=1):
         words = expr.split()
         if len(words) < min_words:
             return False
-        return any(not is_common_word(w) for w in words)
+        # Check that each individual word is uncommon (not a common English word)
+        return all(not is_common_word(w) for w in words)
 
     return [e for e in expressions if keep(e)]
 
