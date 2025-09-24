@@ -60,7 +60,7 @@ def extract_text_from_tra_line(line):
     match = re.search(r'~(.*?)~', line)
     return match.group(1) if match else None
 
-def collect_fantasy_names_from_text(text, min_words=1):
+def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
     """Extract consecutive capitalized words and filter common words."""
     sentences = re.split(r'(?<=[.!?])\s+', text)
     expressions = []
@@ -148,7 +148,11 @@ def collect_fantasy_names_from_text(text, min_words=1):
         valid_words = keep_and_expand(expr)
         final_words.extend(valid_words)
 
-    return final_words
+    # If location_info provided, return tuples of (word, location), otherwise just words
+    if location_info:
+        return [(word, location_info) for word in final_words]
+    else:
+        return final_words
 
 def load_dictionary(csv_file):
     existing = set()
@@ -168,9 +172,9 @@ def load_blacklist(file_path):
                 bl.add(line)
     return bl
 
-def save_to_dictionary(dictionary_csv, new_words):
-    """Add new words to dictionary file in alphabetical order."""
-    if not dictionary_csv or not new_words:
+def save_to_dictionary(dictionary_csv, new_word_locations):
+    """Add new words with locations to dictionary file in alphabetical order."""
+    if not dictionary_csv or not new_word_locations:
         return
 
     # Load existing rows (preserving translations if they exist)
@@ -180,15 +184,34 @@ def save_to_dictionary(dictionary_csv, new_words):
             reader = csv.reader(f)
             for row in reader:
                 if row and row[0].strip():  # Skip empty rows
+                    # Extend row to 3 columns if needed
+                    while len(row) < 3:
+                        row.append("")
                     existing_rows[row[0]] = row
     except FileNotFoundError:
         # Dictionary file doesn't exist yet
         pass
 
-    # Add new words (without translations initially)
-    for word in new_words:
-        if word not in existing_rows:
-            existing_rows[word] = [word]
+    # Process new word locations
+    for word, location in new_word_locations:
+        if word in existing_rows:
+            # Word exists - check if translation exists (column 1 not empty)
+            if existing_rows[word][1].strip():
+                # Translation exists, don't add location
+                continue
+            else:
+                # No translation, add/update location info
+                if len(existing_rows[word]) < 3:
+                    existing_rows[word].append(location)
+                else:
+                    # Append to existing locations
+                    if existing_rows[word][2].strip():
+                        existing_rows[word][2] += "; " + location
+                    else:
+                        existing_rows[word][2] = location
+        else:
+            # New word - add with empty translation and location
+            existing_rows[word] = [word, "", location]
 
     # Write back in alphabetical order
     with open(dictionary_csv, 'w', newline='', encoding='utf-8') as f:
@@ -220,78 +243,53 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
     tra_files = get_tra_files(tra_path)
     print(f"Processing {len(tra_files)} TRA file(s)...")
 
-    all_expressions = []
+    all_word_locations = []
     for tra_file in tra_files:
         print(f"Processing: {os.path.basename(tra_file)}")
+        abs_path = os.path.abspath(tra_file)
         with open(tra_file, encoding="utf-8") as f:
-            for line in f:
-                text = extract_text_from_tra_line(line)
-                if text:
-                    names = collect_fantasy_names_from_text(text)
-                    for name in names:
-                        if name not in existing and name not in blacklist:
-                            all_expressions.append(name)
+            for line_num, line in enumerate(f, 1):
+                # Look for @number pattern to get the TRA line identifier
+                tra_match = re.match(r'^@(\d+)', line.strip())
+                if tra_match:
+                    tra_number = tra_match.group(1)
+                    text = extract_text_from_tra_line(line)
+                    if text:
+                        location = f"{abs_path}@{tra_number}"
+                        word_location_pairs = collect_fantasy_names_from_text(text, location_info=location)
+                        for word, loc in word_location_pairs:
+                            if word not in blacklist:
+                                all_word_locations.append((word, loc))
 
-    # remove duplicates
-    seen = OrderedDict()
-    for e in all_expressions:
-        if e not in seen:
-            seen[e] = None
-
-    unique_expressions = list(seen.keys())
-
-    # Split multiword expressions if their parts exist as standalone expressions
-    # Also check against dictionary during splitting
-    final_expressions = []
-    single_words = {expr for expr in unique_expressions if len(expr.split()) == 1}
-
-    for expr in unique_expressions:
-        words = expr.split()
-        if len(words) > 1:
-            # Check if this multiword expression is already in dictionary
-            if expr in existing:
-                continue  # Skip if already in dictionary
-
-            # Check if any word in this multiword expression exists as a standalone
-            if any(word in single_words for word in words):
-                # Split into individual words, but only add those not in dictionary
-                for word in words:
-                    if word not in existing:
-                        final_expressions.append(word)
-            else:
-                # Keep the multiword expression if not in dictionary
-                final_expressions.append(expr)
+    # Group locations by word and handle case normalization
+    word_locations_map = {}
+    for word, location in all_word_locations:
+        # Normalize case (prefer proper case over all caps)
+        key = word.upper()
+        if key not in word_locations_map:
+            word_locations_map[key] = {'word': word, 'locations': [location]}
         else:
-            # Single word, add if not in dictionary
-            if expr not in existing:
-                final_expressions.append(expr)
+            # Update word if this version is better (not all caps)
+            existing_word = word_locations_map[key]['word']
+            if existing_word.isupper() and not word.isupper():
+                word_locations_map[key]['word'] = word
 
-    # Remove duplicates and handle case normalization
-    # Prefer proper case over all caps (e.g., "Xan" over "XAN")
-    case_map = {}
-    for e in final_expressions:
-        key = e.upper()
-        if key not in case_map:
-            case_map[key] = e
-        else:
-            # Prefer the version that's not all caps
-            existing_word = case_map[key]
-            if existing_word.isupper() and not e.isupper():
-                case_map[key] = e
-            elif not existing_word.isupper() and e.isupper():
-                # Keep the existing non-caps version
-                pass
-            else:
-                # Both are same case style, keep the first one
-                pass
+            # Add location if not already present
+            if location not in word_locations_map[key]['locations']:
+                word_locations_map[key]['locations'].append(location)
 
-    new_words = list(case_map.values())
+    # Convert to final format
+    final_word_locations = []
+    for entry in word_locations_map.values():
+        word = entry['word']
+        locations = "; ".join(entry['locations'])
+        final_word_locations.append((word, locations))
 
     # Save new words to dictionary file
-    if dictionary_csv and new_words:
-        save_to_dictionary(dictionary_csv, new_words)
+    if dictionary_csv and final_word_locations:
+        save_to_dictionary(dictionary_csv, final_word_locations)
 
-    return new_words
+    return [word for word, _ in final_word_locations]
 
 # ---------------- CLI ----------------
 if __name__ == "__main__":
