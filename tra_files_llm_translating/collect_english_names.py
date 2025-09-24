@@ -11,7 +11,19 @@ TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
 
 
 def is_common_word(word):
-    return zipf_frequency(word.lower(), "en") >= ZIPF_THRESH
+    # For words with hyphens or apostrophes, check each part separately
+    if '-' in word or "'" in word:
+        # Split on hyphens and apostrophes, filter empty parts
+        parts = re.split(r"[-']", word)
+        parts = [part for part in parts if part and len(part) > 1]  # Skip single letters
+
+        # If any part is a common word, consider the whole thing common
+        for part in parts:
+            if zipf_frequency(part.lower(), "en") >= ZIPF_THRESH:
+                return True
+        return False
+    else:
+        return zipf_frequency(word.lower(), "en") >= ZIPF_THRESH
 
 def is_valid_fantasy_name(word):
     """Check if a word is a valid fantasy name (not onomatopoeia, repetitive patterns, etc.)"""
@@ -82,14 +94,61 @@ def collect_fantasy_names_from_text(text, min_words=1):
         if current:
             expressions.append(" ".join(current))
 
-    def keep(expr):
+    def normalize_capitalization(word):
+        """Convert all-caps words to proper case (first letter capitalized)"""
+        if word.isupper() and len(word) > 1:
+            return word.capitalize()
+        return word
+
+    def process_word(word):
+        """Process a word - if it's compound, extract valid parts, otherwise return as-is"""
+        if '-' in word or "'" in word:
+            # Split compound words and check each part
+            parts = re.split(r"[-']", word)
+            parts = [part for part in parts if part and len(part) > 1]  # Skip single letters
+
+            valid_parts = []
+            for part in parts:
+                # Skip parts that don't start with capital letter (after normalization)
+                normalized_part = normalize_capitalization(part)
+                if not normalized_part[0].isupper():
+                    continue
+
+                # Keep parts that are uncommon and valid fantasy names
+                if not is_common_word(part) and is_valid_fantasy_name(part):
+                    valid_parts.append(normalized_part)
+
+            return valid_parts
+        else:
+            # Single word - check if it's valid
+            if not is_common_word(word) and is_valid_fantasy_name(word):
+                normalized_word = normalize_capitalization(word)
+                # Skip words that don't start with capital letter (after normalization)
+                if not normalized_word[0].isupper():
+                    return []
+                return [normalized_word]
+            else:
+                return []
+
+    def keep_and_expand(expr):
         words = expr.split()
         if len(words) < min_words:
-            return False
-        # Check that each individual word is uncommon and is a valid fantasy name
-        return all(not is_common_word(w) and is_valid_fantasy_name(w) for w in words)
+            return []
 
-    return [e for e in expressions if keep(e)]
+        all_valid_words = []
+        for word in words:
+            valid_parts = process_word(word)
+            all_valid_words.extend(valid_parts)
+
+        return all_valid_words
+
+    # Process all expressions and collect valid words/parts
+    final_words = []
+    for expr in expressions:
+        valid_words = keep_and_expand(expr)
+        final_words.extend(valid_words)
+
+    return final_words
 
 def load_dictionary(csv_file):
     existing = set()
