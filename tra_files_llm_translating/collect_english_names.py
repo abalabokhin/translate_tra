@@ -4,8 +4,9 @@ import argparse
 from wordfreq import zipf_frequency
 from collections import OrderedDict
 
-ZIPF_THRESH = 4.0  # threshold for common English words
-TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z'’-]*$")
+ZIPF_THRESH = 3.5  # threshold for common English words
+TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
+
 
 def is_common_word(word):
     return zipf_frequency(word.lower(), "en") >= ZIPF_THRESH
