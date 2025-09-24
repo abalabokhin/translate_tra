@@ -34,8 +34,12 @@ def is_valid_fantasy_name(word):
         if max_count > len(word) * 0.6:
             return False
 
-    # Skip words with excessive repetition of letter pairs
+    # Skip words with excessive repetition of letter pairs or 3+ consecutive letters
     if re.match(r'^(.)\1{3,}', word) or re.match(r'^(.{2})\1{2,}', word):
+        return False
+
+    # Skip words with 3 or more consecutive identical letters anywhere in the word
+    if re.search(r'(.)\1{2,}', word):
         return False
 
     return True
