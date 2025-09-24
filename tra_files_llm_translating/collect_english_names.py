@@ -6,12 +6,39 @@ import glob
 from wordfreq import zipf_frequency
 from collections import OrderedDict
 
-ZIPF_THRESH = 3.5  # threshold for common English words
+ZIPF_THRESH = 2.5  # threshold for common English words
 TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
 
 
 def is_common_word(word):
     return zipf_frequency(word.lower(), "en") >= ZIPF_THRESH
+
+def is_valid_fantasy_name(word):
+    """Check if a word is a valid fantasy name (not onomatopoeia, repetitive patterns, etc.)"""
+    # Skip words that are all caps common English words
+    if word.isupper() and is_common_word(word):
+        return False
+
+    # Skip onomatopoeia and repetitive character patterns
+    # Check for patterns like ZZZZzzz, SSSSsss, etc.
+    if re.match(r'^[A-Z]{2,}[a-z]{2,}$', word) and len(set(word.upper())) <= 2:
+        return False
+
+    # Skip words that are mostly repeated characters (like ZZZZzzzzz)
+    if len(word) >= 4:
+        char_counts = {}
+        for char in word.upper():
+            char_counts[char] = char_counts.get(char, 0) + 1
+        # If any character appears more than 60% of the time, it's likely repetitive
+        max_count = max(char_counts.values())
+        if max_count > len(word) * 0.6:
+            return False
+
+    # Skip words with excessive repetition of letter pairs
+    if re.match(r'^(.)\1{3,}', word) or re.match(r'^(.{2})\1{2,}', word):
+        return False
+
+    return True
 
 def extract_text_from_tra_line(line):
     match = re.search(r'~(.*?)~', line)
@@ -55,8 +82,8 @@ def collect_fantasy_names_from_text(text, min_words=1):
         words = expr.split()
         if len(words) < min_words:
             return False
-        # Check that each individual word is uncommon (not a common English word)
-        return all(not is_common_word(w) for w in words)
+        # Check that each individual word is uncommon and is a valid fantasy name
+        return all(not is_common_word(w) and is_valid_fantasy_name(w) for w in words)
 
     return [e for e in expressions if keep(e)]
 
@@ -176,13 +203,26 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
             if expr not in existing:
                 final_expressions.append(expr)
 
-    # Remove duplicates again after splitting
-    final_seen = OrderedDict()
+    # Remove duplicates and handle case normalization
+    # Prefer proper case over all caps (e.g., "Xan" over "XAN")
+    case_map = {}
     for e in final_expressions:
-        if e not in final_seen:
-            final_seen[e] = None
+        key = e.upper()
+        if key not in case_map:
+            case_map[key] = e
+        else:
+            # Prefer the version that's not all caps
+            existing_word = case_map[key]
+            if existing_word.isupper() and not e.isupper():
+                case_map[key] = e
+            elif not existing_word.isupper() and e.isupper():
+                # Keep the existing non-caps version
+                pass
+            else:
+                # Both are same case style, keep the first one
+                pass
 
-    new_words = list(final_seen.keys())
+    new_words = list(case_map.values())
 
     # Save new words to dictionary file
     if dictionary_csv and new_words:
