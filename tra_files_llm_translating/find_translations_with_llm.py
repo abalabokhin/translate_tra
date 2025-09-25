@@ -224,8 +224,8 @@ The expression to find a translation for is "{word}"."""
 
             print(f"  Found {len(english_lines)} matching line pairs")
 
-            # Limit to first 5 pairs to avoid overly long prompts
-            max_pairs = 5
+            # Limit to first 2 pairs to avoid overly long prompts
+            max_pairs = 2
             if len(english_lines) > max_pairs:
                 english_lines = english_lines[:max_pairs]
                 russian_lines = russian_lines[:max_pairs]
