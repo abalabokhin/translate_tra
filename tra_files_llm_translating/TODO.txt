@@ -1,3 +1,4 @@
+0. Add another column (4th one) to CSV when collecting words from mods - it is user's comment (defines as an argument for the script) and specify the mode where this word is taken from.
 1. Collect dictionary (based on mod) - collect all the non-dictionary english words and keep adding new words
 2. Make sure sript to translate works with real data, improve prompt over time (add information about all the <CHARACTER>, etc).
 3. Create a script to put the information back into tra files
