@@ -31,27 +31,13 @@ def is_valid_fantasy_name(word):
     if word.isupper() and is_common_word(word):
         return False
 
-    # Skip onomatopoeia and repetitive character patterns
-    # Check for patterns like ZZZZzzz, SSSSsss, etc.
-    if re.match(r'^[A-Z]{2,}[a-z]{2,}$', word) and len(set(word.upper())) <= 2:
-        return False
-
-    # Skip words that are mostly repeated characters (like ZZZZzzzzz)
-    if len(word) >= 4:
-        char_counts = {}
-        for char in word.upper():
-            char_counts[char] = char_counts.get(char, 0) + 1
-        # If any character appears more than 60% of the time, it's likely repetitive
-        max_count = max(char_counts.values())
-        if max_count > len(word) * 0.6:
-            return False
-
+    word_upper = word.upper()
     # Skip words with excessive repetition of letter pairs or 3+ consecutive letters
-    if re.match(r'^(.)\1{3,}', word) or re.match(r'^(.{2})\1{2,}', word):
+    if re.match(r'^(.)\1{3,}', word_upper) or re.match(r'^(.{2})\1{2,}', word_upper):
         return False
 
     # Skip words with 3 or more consecutive identical letters anywhere in the word
-    if re.search(r'(.)\1{2,}', word):
+    if re.search(r'(.)\1{2,}', word_upper):
         return False
 
     return True
