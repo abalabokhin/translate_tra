@@ -225,18 +225,29 @@ The expression to find a translation for is "{word}"."""
 
             print(f"  Found {len(english_lines)} matching line pairs")
 
-            # Limit to first 2 pairs to avoid overly long prompts
-            max_pairs = 2
-            if len(english_lines) > max_pairs:
-                english_lines = english_lines[:max_pairs]
-                russian_lines = russian_lines[:max_pairs]
-                print(f"  Using first {max_pairs} line pairs to avoid long prompts")
+            # Sort line pairs by length (shortest first) before taking first 2
+            paired_lines = list(zip(english_lines, russian_lines))
+            paired_lines.sort(key=lambda pair: len(pair[0]) + len(pair[1]))
+            english_lines, russian_lines = zip(*paired_lines) if paired_lines else ([], [])
+            english_lines, russian_lines = list(english_lines), list(russian_lines)
 
-            # Create prompt and call LLM
-            prompt = self._create_translation_prompt(english_lines, russian_lines, word)
+            # Check if first (shortest) English line exactly matches the word
+            if english_lines and english_lines[0].strip().lower() == word.strip().lower():
+                translation = russian_lines[0].strip()
+                print(f"  Direct match found: '{word}' -> '{translation}' (no LLM needed)")
+            else:
+                # Limit to first 2 pairs to avoid overly long prompts
+                max_pairs = 2
+                if len(english_lines) > max_pairs:
+                    english_lines = english_lines[:max_pairs]
+                    russian_lines = russian_lines[:max_pairs]
+                    print(f"  Using first {max_pairs} shortest line pairs to avoid long prompts")
 
-            print(f"  Calling LLM for translation...")
-            translation = self._call_ollama(prompt)
+                # Create prompt and call LLM
+                prompt = self._create_translation_prompt(english_lines, russian_lines, word)
+
+                print(f"  Calling LLM for translation...")
+                translation = self._call_ollama(prompt)
 
             if translation:
                 # Clean up the translation result
