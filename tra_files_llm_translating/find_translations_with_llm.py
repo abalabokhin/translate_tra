@@ -182,15 +182,16 @@ The expression to find a translation for is "{word}"."""
         return prompt
 
     def _update_dictionary_with_translation(self, word: str, translation: str):
-        """Update the dictionary file with the found translation"""
+        """Update the dictionary file with the found translation and clear location column"""
         # Read all rows
         rows = []
         with open(self.dictionary_file, 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
                 if len(row) >= 3 and row[0].strip() == word:
-                    # Update this row with translation
+                    # Update this row with translation and clear 3rd column (locations)
                     row[1] = translation.strip()
+                    row[2] = ""  # Clear the location column
                 rows.append(row)
 
         # Write back all rows
