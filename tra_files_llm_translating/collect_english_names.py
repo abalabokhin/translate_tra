@@ -158,7 +158,7 @@ def load_blacklist(file_path):
                 bl.add(line)
     return bl
 
-def save_to_dictionary(dictionary_csv, new_word_locations):
+def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
     """Add new words with locations to dictionary file in alphabetical order."""
     if not dictionary_csv or not new_word_locations:
         return
@@ -170,8 +170,8 @@ def save_to_dictionary(dictionary_csv, new_word_locations):
             reader = csv.reader(f)
             for row in reader:
                 if row and row[0].strip():  # Skip empty rows
-                    # Extend row to 3 columns if needed
-                    while len(row) < 3:
+                    # Extend row to 4 columns if needed
+                    while len(row) < 4:
                         row.append("")
                     existing_rows[row[0]] = row
     except FileNotFoundError:
@@ -188,16 +188,26 @@ def save_to_dictionary(dictionary_csv, new_word_locations):
             else:
                 # No translation, add/update location info
                 if len(existing_rows[word]) < 3:
-                    existing_rows[word].append(location)
+                    existing_rows[word].extend(["", location, comment])
+                elif len(existing_rows[word]) < 4:
+                    # Append to existing locations
+                    if existing_rows[word][2].strip():
+                        existing_rows[word][2] += "; " + location
+                    else:
+                        existing_rows[word][2] = location
+                    existing_rows[word].append(comment)
                 else:
                     # Append to existing locations
                     if existing_rows[word][2].strip():
                         existing_rows[word][2] += "; " + location
                     else:
                         existing_rows[word][2] = location
+                    # Update comment if provided
+                    if comment:
+                        existing_rows[word][3] = comment
         else:
-            # New word - add with empty translation and location
-            existing_rows[word] = [word, "", location]
+            # New word - add with empty translation, location, and comment
+            existing_rows[word] = [word, "", location, comment]
 
     # Write back in alphabetical order
     with open(dictionary_csv, 'w', newline='', encoding='utf-8') as f:
@@ -221,7 +231,7 @@ def get_tra_files(path):
     else:
         raise ValueError(f"Path {path} does not exist")
 
-def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklist_file=None):
+def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklist_file=None, comment=""):
     existing = load_dictionary(dictionary_csv) if dictionary_csv else set()
     blacklist = load_blacklist(blacklist_file) if blacklist_file else set()
 
@@ -273,7 +283,7 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
 
     # Save new words to dictionary file
     if dictionary_csv and final_word_locations:
-        save_to_dictionary(dictionary_csv, final_word_locations)
+        save_to_dictionary(dictionary_csv, final_word_locations, comment)
 
     return [word for word, _ in final_word_locations]
 
@@ -285,6 +295,7 @@ if __name__ == "__main__":
     parser.add_argument("tra_path", help="Path to .tra file or folder containing .tra files")
     parser.add_argument("-d", "--dictionary", help="Optional CSV dictionary file (first column = names)")
     parser.add_argument("-b", "--blacklist", help="Optional blacklist file (one word/expression per line)")
+    parser.add_argument("-c", "--comment", default="", help="Optional comment to add to the 4th column of CSV")
 
     args = parser.parse_args()
 
@@ -292,7 +303,8 @@ if __name__ == "__main__":
         new_names = collect_fantasy_names_from_tra_files(
             args.tra_path,
             dictionary_csv=args.dictionary,
-            blacklist_file=args.blacklist
+            blacklist_file=args.blacklist,
+            comment=args.comment
         )
 
         print("\nNew names found:")
