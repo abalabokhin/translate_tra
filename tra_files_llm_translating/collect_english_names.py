@@ -57,10 +57,7 @@ def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
             continue
 
         current = []
-        for i, tok in enumerate(tokens):
-            if i == 0:
-                continue  # skip first word of sentence
-
+        for tok in tokens:
             clean = tok.strip("()\"'"".,;:!?")
             clean = clean.replace("'", "'").replace("'", "'").replace("–", "-").replace("—", "-")
 
