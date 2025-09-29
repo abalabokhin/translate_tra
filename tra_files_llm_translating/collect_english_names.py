@@ -152,7 +152,7 @@ def load_blacklist(file_path):
         for line in f:
             line = line.strip()
             if line:
-                bl.add(line)
+                bl.add(line.upper())
     return bl
 
 def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
@@ -251,7 +251,7 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
                         location = f"{abs_path}@{tra_number}"
                         word_location_pairs = collect_fantasy_names_from_text(text, location_info=location)
                         for word, loc in word_location_pairs:
-                            if word not in blacklist:
+                            if word.upper() not in blacklist:
                                 all_word_locations.append((word, loc))
 
     # Group locations by word and handle case normalization
