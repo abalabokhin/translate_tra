@@ -1,3 +1,19 @@
+Gangly,Неуклюжий,,NP:sod_rus
+Gardnersonsons,Гарднерсонсоны,,NP:sod_rus
+Geddit,Где это,,NP:sod_rus
+Geddowdahere,Проваливай,,NP:sod_rus
+Gibberslug,Гибберслаг,,NP:sod_rus
+Gnash,Скрежет,,NP:sod_rus
+Godling,Божество,,NP:sod_rus
+Goodb,До,,NP:sod_rus
+Goodly,Хорошие,,NP:sod_rus
+Grampa,дедушка,,NP:sod_rus
+Gughugh,У-ух,,NP:sod_rus
+Guh,Уфф,,NP:sod_rus
+
+
+
+
 Deceiver
 Desecrates
 Despoiler

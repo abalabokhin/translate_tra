@@ -44,7 +44,7 @@ Aluend,Алуэнд,,BG1RUS-EET
 Aluenda,Алуэнда,,BG1RUS-EET
 Aluendo,Алуэндо,,BG1RUS-EET
 Alurlyath,Алурлиат,,BG1RUS-EET
-Aluve,Алувe,,sod_rus
+Aluve,алувэ,,sod_rus
 Alvanhendar,Алванхендар,,BG1RUS-EET
 Alveus,Алвеус,,BG1RUS-EET
 Alyth,Алит,,BG1RUS-EET
@@ -576,7 +576,7 @@ Furlwing,Связанокрылая,,BG1RUS-EET
 Furnelaine,Фурнелайн,,BG1RUS-EET
 Furnellbol,Фурнеллбол,,BG1RUS-EET
 Furret,Фуррет,,BG1RUS-EET
-Galad,Галад,,NP:sod_rus
+Galad,Галад,,sod_rus
 Galahynne,Галахинн,,BG1RUS-EET
 Galan,Галан,,BG1RUS-EET
 Galdor,Галдор,,BG1RUS-EET
@@ -589,83 +589,72 @@ Galteran,Гальтеран,,BG1RUS-EET
 Galtok,Галток,,BG1RUS-EET
 Gamaz,Гамаз,,BG1RUS-EET
 Gandolar,Гандолар,,BG1RUS-EET
-Gangly,Неуклюжий,,NP:sod_rus
 Gantolandan,Гантоландан,,BG1RUS-EET
-Garachen,Гарачен,,NP:sod_rus
-Garagos,Гараос,,NP:sod_rus
+Garachen,Гарачен,,sod_rus
+Garagos,Гарагос,,sod_rus
 Garan,Гаран,,BG1RUS-EET
 Garaq,Гарак,,BG1RUS-EET
 Garclax,Гарклакс,,BG1RUS-EET
-Gardnerson,Гарднерсон,,NP:sod_rus
-Gardnersonson,Гарднерсонсон,,NP:sod_rus
-Gardnersonsons,Гарднерсонсоны,,NP:sod_rus
+Gardnerson,Гарднерсон,,sod_rus
+Gardnersonson,Гарднерсонсон,,sod_rus
 Gardush,Гардуш,,BG1RUS-EET
 Garl,Гарл,,BG1RUS-EET
 Garou,Гару,,BG1RUS-EET
-Garrold,Гаррольд,,NP:sod_rus
-Garrus,Гаррус,,NP:sod_rus
+Garrold,Гаррольд,,sod_rus
+Garrus,Гаррус,,sod_rus
 Garst,Гарст,,BG1RUS-EET
 Gatewarden,Смотритель Врат,,BG1RUS-EET
-Gath,Гат,,NP:sod_rus
-Gauth,Гаут,,NP:sod_rus
+Gath,Гат,,sod_rus
+Gauth,гаут,,sod_rus
 Gazib,Газиб,,BG1RUS-EET
 Geddarm,Геддарм,,BG1RUS-EET
-Geddit,Где это,,NP:sod_rus
-Geddowdahere,Проваливай,,NP:sod_rus
 Gellana,Геллана,,BG1RUS-EET
 Geltik,Гелтик,,BG1RUS-EET
-Gemblade,Самоцветное лезвие,,NP:sod_rus
+Gemblade,Самоцветное лезвие,,sod_rus
 Genthore,Гентор,,BG1RUS-EET
-Gentrus,Гентрус,,NP:sod_rus
+Gentrus,Гентрус,,sod_rus
 Gerde,Герд,,BG1RUS-EET
 Gervisse,Гервисс,,BG1RUS-EET
 Ghast,вурдалак,,BG1RUS-EET
 Ghastkill,Гасткилл,,BG1RUS-EET
-Ghel,Гел,,NP:sod_rus
+Ghel,Гел,,sod_rus
 Gheldehar,Гелдехар,,BG1RUS-EET
 Ghlouralk,Глоуралк,,BG1RUS-EET
 Ghorak,Горак,,BG1RUS-EET
-Ghostdreamers,Призрачные сновидцы,,NP:sod_rus
-Ghostrant,Гострант,,NP:sod_rus
+Ghostdreamers,Призрачные сновидцы,,sod_rus
+Ghostrant,Гострант,,sod_rus
 Giantkiller,Убийца Великанов,,BG1RUS-EET
 Gibberling,гибберлинг,,BG1RUS-EET
-Gibberslug,Гибберслаг,,NP:sod_rus
-Giddial,Гиддиал,,NP:sod_rus
+Giddial,Гиддиал,,sod_rus
 Gisella,Гизелла,,BG1RUS-EET
 Glabrezu,Глабрезу,,BG1RUS-EET
 Glanmarie,Гланмари,,BG1RUS-EET
-Glarghl,Гларгхл,,NP:sod_rus
+Glarghl,Гларгхл,,sod_rus
 Glayde,Глайд,,BG1RUS-EET
 Glittergold,Глиттерголд,,BG1RUS-EET
-Gnarg,Гнарг,,NP:sod_rus
+Gnarg,Гнарг,,sod_rus
 Gnarl,Гнарл,,BG1RUS-EET
-Gnash,Скрежет,,NP:sod_rus
 Gnoll,гнолл,,BG1RUS-EET
-Godling,Божество,,NP:sod_rus
-Godsbane,Погибель Богов,,NP:sod_rus
-Goldbuckler,Златощит,,NP:sod_rus
+Godsbane,Погибель Богов,,sod_rus
+Goldbuckler,Златощит,,sod_rus
 Golin,Голин,,BG1RUS-EET
 Golodon,Голодон,,BG1RUS-EET
-Golt,Голт,,NP:sod_rus
+Golt,Голт,,sod_rus
 Gond,Гонд,,BG1RUS-EET
 Gondegal,Гондегал,,BG1RUS-EET
-Goodb,До,,NP:sod_rus
-Goodly,Хорошие,,NP:sod_rus
-Goodtree,Гудтри,,NP:sod_rus
+Goodtree,Гудтри,,sod_rus
 Gorch,Горч,,BG1RUS-EET
 Gord,Горд,,BG1RUS-EET
 Gorf,Горф,,BG1RUS-EET
 Gorion,Горайон,,BG1RUS-EET
 Gorm,Горм,,BG1RUS-EET
 Gorpel,Горпел,,BG1RUS-EET
-Gosz,Р'гос,,NP:sod_rus
 Gothoz,Ур-Готоз,,BG1RUS-EET
 Grael,Граэль,,BG1RUS-EET
-Gramorn,Граморн,,NP:sod_rus
-Grampa,дедушка,,NP:sod_rus
-Grampop,Грэмпоп,,NP:sod_rus
-Granz,Гранц,,NP:sod_rus
-Greatgas,Грейтгас,,NP:sod_rus
+Gramorn,Граморн,,sod_rus
+Grampop,Грэмпоп,,sod_rus
+Granz,Гранц,,sod_rus
+Greatgas,Грейтгас,,sod_rus
 Greenstone,зеленчак,,BG1RUS-EET
 Grenthal,Грентал,,BG1RUS-EET
 Gretek,Гретек,,BG1RUS-EET
@@ -673,13 +662,11 @@ Greycart,Грейкарт,,BG1RUS-EET
 Greycloak,Серый Плащ,,BG1RUS-EET
 Greywolf,Грейвульф,,BG1RUS-EET
 Griel,Грил,,BG1RUS-EET
-Grimgor,Гримгор,,NP:sod_rus
-Grubdoubler,Грубдублер,,NP:sod_rus
-Gruumsh,Груумш,,NP:sod_rus
-Gughugh,У-ух,,NP:sod_rus
-Guh,Уфф,,NP:sod_rus
+Grimgor,Гримгор,,sod_rus
+Grubdoubler,Грубдублер,,sod_rus
+Gruumsh,Груумш,,sod_rus
 Gullykin,Галликин,,BG1RUS-EET
-Gurgle,Гургл,,NP:sod_rus
+Gurgle,Гургл,,sod_rus
 Gurke,Гурке,,BG1RUS-EET
 Gurn,Гурн,,BG1RUS-EET
 Gwist,Гвист,,BG1RUS-EET
@@ -1254,6 +1241,7 @@ Quickloot,быстрый сбор,,NP:sod_rus
 Quicksave,Быстрое сохр.,,NP:sod_rus
 Quila,Кила,,NP:sod_rus
 Quoningar,Квонингар,,BG1RUS-EET
+R'gosz,Р'Госз,,NP:sod_rus
 Raargh,РААР,,NP:sod_rus
 Raawr,А-а-а-ар,,NP:sod_rus
 Raconteur,рассказчик,,NP:sod_rus
