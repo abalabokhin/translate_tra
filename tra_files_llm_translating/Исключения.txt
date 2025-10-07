@@ -1,0 +1,89 @@
+мои комменты:
+
+Galante,Галант,,BG2EE-russian
+
+Garoll,Гароль,,BG2EE-russian + Garrol,Гароль,,BG2EE-russian
+
+Gaspacho,Геспачо,,BG2EE-russian
+
+Gaelan,Гаэлан,,BG2EE-russian + Gaylan,Гаэлан,,BG2EE-russian
+
+
+
+
+
+
+
+Gabber,Пустозвон,,NP:BG2EE-russian
+Gawking,Пялиться,,NP:BG2EE-russian
+Genies,Джинны,,NP:BG2EE-russian
+Gird,Укрепи,,NP:BG2EE-russian
+Gith,гит,,NP:BG2EE-russian
+Gladiatorial,Гладиаторская,,NP:BG2EE-russian
+Gllgghh,Гр-р-р-рг-гх,,NP:BG2EE-russian
+Gnasher,Скрежет,,NP:BG2EE-russian
+Godhood,Божественность,,NP:BG2EE-russian
+Goingsh,Проишходит,,NP:BG2EE-russian
+Golemcraft,големостроение,,NP:BG2EE-russian
+Gondars,служители,,NP:BG2EE-russian
+Gordul,Гордул,,NP:BG2EE-russian
+Graah,Р-ра-а,,NP:BG2EE-russian
+Gramma,бабуля,,NP:BG2EE-russian
+Gravediggers,Расхитители,,NP:BG2EE-russian
+Graverobbers,Расхитители,,NP:BG2EE-russian
+Greh,Грех,,NP:BG2EE-russian
+Greyflow,Серый поток,,NP:BG2EE-russian
+Grff,Гр-р-ф.,,NP:BG2EE-russian
+Grievously,Ужасная,,NP:BG2EE-russian
+Grimjaws,Неумолимый,,NP:BG2EE-russian
+Grimward,Мрачный,,NP:BG2EE-russian
+Groargh,Граар-р-р,,NP:BG2EE-russian
+Grornk,Гр-р-нк,,NP:BG2EE-russian
+Grovel,Встать на колени,,NP:BG2EE-russian
+Grrk,Гр-р-р,,NP:BG2EE-russian
+Grroar,АР-Р-Р,,NP:BG2EE-russian
+Grue,ненависть,,NP:BG2EE-russianGruh,Гр-ра,,NP:BG2EE-russian
+Grumbler,Ворчуна,,NP:BG2EE-russian
+Guildmistress,Староста,,NP:BG2EE-russian
+GweRrl,ГвеР-рл,,NP:BG2EE-russian
+Hackmaster,«Руби-кромсай»,,NP:BG2EE-russian
+Hahhr,Хар-р,,NP:BG2EE-russian
+Hahr,Хар-р,,NP:BG2EE-russian
+Hairband,Лента для волос,,NP:BG2EE-russian
+Halfman,Полумерок,,NP:BG2EE-russian
+Handmaiden,Служанка,,NP:BG2EE-russian
+Handmaidens,Служанки,,NP:BG2EE-russian
+Hardtack,сухари,,NP:BG2EE-russian
+Harken,Услышь,,NP:BG2EE-russian
+Harpist,Арфист,,NP:BG2EE-russian
+Harumph,Грмпф,,NP:BG2EE-russian
+Hasn,Не,,NP:BG2EE-russian
+Hatchetman,Рубака,,NP:BG2EE-russian
+Hathk,ХАТК,,NP:BG2EE-russian
+Havatcha,Получ-чи,,NP:BG2EE-russian
+Hearthfire,Очага,,NP:BG2EE-russian
+Hearthkeeper,Хранительница,,NP:BG2EE-russian
+Heartseeker,Метящий,,NP:BG2EE-russian
+Heartwood,лесного сердца,,NP:BG2EE-russian
+Heeding,Забота,,NP:BG2EE-russian
+Heeheehee,Хи-хи-хи-и,,NP:BG2EE-russian
+HeeheeheeHEEheehee,Хи-хи-хи-и-и,,NP:BG2EE-russian
+Heeheeheeheeheeheehee,Хи-хи-хи-хи-хи-хи…,,NP:BG2EE-russian
+Helmites,хелмитов,,NP:BG2EE-russian
+Hesitantly,Сомнением,,NP:BG2EE-russian
+Hexxats,Гексатс,,NP:BG2EE-russian
+Hierophant,иерофантом,,NP:BG2EE-russian
+Hillfort,горный форт,,NP:BG2EE-russian
+Hillock,Холм,,NP:BG2EE-russian
+Hmmheheh,Кхе-хе-хе,,NP:BG2EE-russian
+Hmmn,Хм-м-н,,NP:BG2EE-russian
+Hogbelly,Свинобрюх,,NP:BG2EE-russian
+Hookay,Ла-адно,,NP:BG2EE-russian
+Hordelands,варварские земли,,NP:BG2EE-russian
+Hottentrot,гаддендратских,,NP:BG2EE-russian
+Hrrh,Хрм-м,,NP:BG2EE-russian
+Hrrmm,Хр-рм-м,,NP:BG2EE-russian
+Huffy,Заносчивые,,NP:BG2EE-russian
+Hulks,Увальни,,NP:BG2EE-russian
+Huntin,подползать,,NP:BG2EE-russian
+Hurrm,хур-рм,,NP:BG2EE-russian
