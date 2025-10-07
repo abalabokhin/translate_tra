@@ -1105,7 +1105,6 @@ Gahan,Гаан,,BG2EE-russian
 Galad,Галад,,sod_rus
 Galahynne,Галахинн,,BG1RUS-EET
 Galan,Галан,,BG1RUS-EET
-Galante,Галант,,BG2EE-russian
 Galdor,Галдор,,BG1RUS-EET
 Galenwood,Галенвуд,,BG2EE-russian
 Galia,Галия,,BG2EE-russian
@@ -1140,19 +1139,16 @@ Garock,Гарок,,BG2EE-russian
 Garoll,Гароль,,BG2EE-russian
 Garou,Гару,,BG1RUS-EET
 Garren,Гаррен,,BG2EE-russian
-Garrol,Гароль,,BG2EE-russian
 Garrold,Гаррольд,,sod_rus
 Garrus,Гаррус,,sod_rus
 Garst,Гарст,,BG1RUS-EET
 Garuk,Гарук,,BG2EE-russian
-Gaspacho,Геспачо,,BG2EE-russian
 Gatchounkemin,Гатчункемин,,BG2EE-russian
 Gatewarden,Смотритель Врат,,BG1RUS-EET
 Gath,Гат,,sod_rus
 Gauth,гаут,,sod_rus
 Gavid,Гавид,,BG2EE-russian
 Gaxx,Гаксс,,BG2EE-russian
-Gaylan,Гаэлан,,BG2EE-russian
 Gazib,Газиб,,BG1RUS-EET
 Gazmithin,Газмитин,,BG2EE-russian
 Gazz,Газз,,BG2EE-russian
@@ -1163,8 +1159,9 @@ Geldorf,Гелдорф,,BG2EE-russian
 Gellal,Геллал,,BG2EE-russian
 Gellana,Геллана,,BG1RUS-EET
 Geltik,Гелтик,,BG1RUS-EET
-Gelugon,Гелугон,,BG2EE-russian
+Gelugon,гелугон,,BG2EE-russian
 Gemblade,Самоцветное лезвие,,sod_rus
+Genie,джинни,,NP:BG2EE-russian
 Genthore,Гентор,,BG1RUS-EET
 Gentrus,Гентрус,,sod_rus
 Gerde,Герд,,BG1RUS-EET
@@ -1183,7 +1180,6 @@ Ghallus,Галлус,,BG2EE-russian
 Ghast,вурдалак,,BG1RUS-EET
 Ghastkill,Гасткилл,,BG1RUS-EET
 Ghaunadaur,Гонадор,,BG2EE-russian
-Ghaundaur,Гонадор,,BG2EE-russian
 Ghel,Гел,,sod_rus
 Gheldehar,Гелдехар,,BG1RUS-EET
 Ghell,Гелл,,BG2EE-russian
@@ -1201,7 +1197,8 @@ Ginia,Джиния,,BG2EE-russian
 Giran,Джиран,,BG2EE-russian
 Gisella,Гизелла,,BG1RUS-EET
 Gish,Гиш,,BG2EE-russian
-Githyanki,Гитиянки,,BG2EE-russian
+Gith,гит,,BG2EE-russian
+Githyanki,гитиянки,,BG2EE-russian
 Glabrezu,Глабрезу,,BG1RUS-EET
 Glaicus,Глаикус,,BG2EE-russian
 Glandig,Гландиг,,BG2EE-russian
@@ -1295,7 +1292,7 @@ Hackman,Мясорубка,,BG2EE-russian
 Hackum,Хакум,,BG1RUS-EET
 Haegan,Хаган,,BG2EE-russian
 Haela,Хаэла,,sod_rus
-Haer,Хаэр,,BG2EE-russian
+Haer'Dalis,Хаэр'Далис,,BG2EE-russian
 Haery,Херри,,BG2EE-russian
 Hairtooth,Шерстезубый,,BG1RUS-EET
 Haither,Хейтер,,sod_rus
@@ -1338,6 +1335,7 @@ Hargrove,Харгрув,,BG2EE-russian
 Harle,Харли,,BG2EE-russian
 Harmonium,Гармониум,,BG2EE-russian
 Harpell,Арфелл,,BG2EE-russian
+Harpist,Арфист,,BG2EE-russian
 Harridan,Карга,,sod_rus
 Harrold,Гаррольд,,BG2EE-russian
 Harrower,Отсекатель,,BG1RUS-EET
@@ -1360,7 +1358,6 @@ Hecito,Хесито,,BG1RUS-EET
 Hectan,Хектан,,BG2EE-russian
 Heddrin,Хеддрин,,BG2EE-russian
 Helmite,хелмит,,BG2EE-russian
-Helmites,хелмитов,,BG2EE-russian
 Helmsport,Хелмспорт,,BG2EE-russian
 Helshara,Хельшара,,BG1RUS-EET
 Helvdar,Хельвдар,,sod_rus
@@ -1375,7 +1372,6 @@ Hephernaan,Хефернаан,,sod_rus
 Hephis,Хефис,,BG1RUS-EET
 Herath,Херат,,BG2EE-russian
 Herdrin,Хердрин,,sod_rus
-Heresies,Ереси,,BG2EE-russian
 Herolde,Херольд,,BG2EE-russian
 Herth,Херт,,BG2EE-russian
 Hervo,Херво,,BG2EE-russian
