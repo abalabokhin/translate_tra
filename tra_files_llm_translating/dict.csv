@@ -627,7 +627,6 @@ Daar,Даар,,BG2EE-russian
 Dabiat,Дабиат,,BG2EE-russian
 Dabron,Даброн,,BG1RUS-EET
 Dace,Дейс,,BG2EE-russian
-Daer,Даэр,,BG2EE-russian
 Daer'Ragh,Даэр'Раг,,BG1RUS-EET
 Daeros,Даэрос,,sod_rus
 Daese,Даэз,,BG1RUS-EET
@@ -1161,7 +1160,7 @@ Gellana,Геллана,,BG1RUS-EET
 Geltik,Гелтик,,BG1RUS-EET
 Gelugon,гелугон,,BG2EE-russian
 Gemblade,Самоцветное лезвие,,sod_rus
-Genie,джинни,,NP:BG2EE-russian
+Genie,джинни,,BG2EE-russian
 Genthore,Гентор,,BG1RUS-EET
 Gentrus,Гентрус,,sod_rus
 Gerde,Герд,,BG1RUS-EET
@@ -1235,7 +1234,7 @@ Gorkale,Горкейл,,BG2EE-russian
 Gorm,Горм,,BG1RUS-EET
 Gorpel,Горпел,,BG1RUS-EET
 Gorvin,Горвин,,BG2EE-russian
-Gos,Гос,,NP:BG2EE-russian
+Gos'l,гос'л,язык дроу,BG2EE-russian
 Goshan,Гошан,,BG2EE-russian
 Gothoz,Ур-Готоз,,BG1RUS-EET
 Goxxa,Гоксса,,BG2EE-russian
@@ -1388,7 +1387,6 @@ Hilldark,Хиллдарк,,BG2EE-russian
 Hillgnasher,Холмоскрёб,,BG2EE-russian
 Hindo,Хиндо,,BG2EE-russian
 Hindra,Хиндра,,BG2EE-russian
-Hmmn,Хм-м-н,,NP:BG2EE-russian
 Hoach,Хоач,,sod_rus
 Hoar,Хоар,,BG2EE-russian
 Hobgoblin,хобгоблин,,BG1RUS-EET
@@ -1408,150 +1406,132 @@ Hurgis,Хургис,,BG2EE-russian
 Husam,Хусам,,BG1RUS-EET
 Hydcont,Хидконт,,BG2EE-russian
 Hyreth,Хирет,,sod_rus
-Ianulin,Янулин,,NP:BG2EE-russian
+Ianulin,Янулин,,BG2EE-russian
 Iblith,иблит,,BG1RUS-EET
-Icedust,Ледяная пыль,,NP:BG2EE-russian
+Icedust,Ледяная пыль,,BG2EE-russian
 Icewind Dale,Долина Ледяного Ветра,,BG1RUS-EET
 Icharyd,Ичарид,,BG1RUS-EET
-Ichor,кровью,,NP:BG2EE-russian
 Icingdeath,Леденящая Смерть,,BG1RUS-EET
 Idianeali,Идианеали,,sod_rus
 Idianeelix,Идианиликс,,sod_rus
 Idianori,Идианори,,sod_rus
-Idras,Идрас,,NP:BG2EE-russian
+Idras,Идрас,,BG2EE-russian
 Idyletia,Идилетия,,sod_rus
-Igarol,Игарол,,NP:BG2EE-russian
-Igen,Айген,,NP:BG2EE-russian
+Igarol,Игарол,,BG2EE-russian
+Igen,Айген,,BG2EE-russian
 Ignatio,Игнатио,,BG1RUS-EET
-Ignominy,Поножение,,NP:BG2EE-russian
-Ihtafeer,Ихтафир,,NP:BG2EE-russian
-Ikert,Икерт,,NP:BG2EE-russian
-Iko,Ико,,NP:BG2EE-russian
+Ihtafeer,Ихтафир,,BG2EE-russian
+Ikert,Икерт,,BG2EE-russian
+Iko,Ико,,BG2EE-russian
 Ikros,Икрос,,sod_rus
-Ilbratha,Илбрата,,NP:BG2EE-russian
+Ilbratha,Илбрата,,BG2EE-russian
 Illaruel,Илларуэль,,sod_rus
-Illasera,Илласера,,NP:BG2EE-russian
+Illasera,Илласера,,BG2EE-russian
 Illithid,иллитид,,BG1RUS-EET
-Illithids,Иллитиды,,NP:BG2EE-russian
-Illithium,иллитий,,NP:BG2EE-russian
-Illon,Иллон,,NP:BG2EE-russian
-Illuryssallya,Иллуриссалия,,NP:BG2EE-russian
+Illithium,иллитий,,BG2EE-russian
+Illon,Иллон,,BG2EE-russian
+Illuryssallya,Иллуриссалия,,BG2EE-russian
 Ilmater,Ильматер,,BG1RUS-EET
-Ilmryn,Илмрин,,NP:BG2EE-russian
-Iltha,Ильта,,NP:BG2EE-russian
-Iltheia,Илтейя,,NP:BG2EE-russian
+Ilmryn,Илмрин,,BG2EE-russian
+Iltha,Ильта,,BG2EE-russian
+Iltheia,Илтейя,,BG2EE-russian
 Ilvarstarr,Ильвастарр,,sod_rus
 Ilvastarr,Ильвастарр,,BG1RUS-EET
-Ilyich,Илич,,NP:BG2EE-russian
-Ilythiiri,Илитиири,,NP:BG2EE-russian
-Imascus,Имаскус,,NP:BG2EE-russian
-Imix,Аймикс,,NP:BG2EE-russian
+Ilyich,Илич,,BG2EE-russian
+Ilythiiri,Илитиири,,BG2EE-russian
+Imascus,Имаскус,,BG2EE-russian
+Imix,Аймикс,,BG2EE-russian
 Immartyred,Иммартиред,,sod_rus
-Immilmar,Иммилмар,,NP:BG2EE-russian
-Imnescar,Имнескар,,NP:BG2EE-russian
-Imnesvale,Имнесвейл,,NP:BG2EE-russian
+Immilmar,Иммилмар,,BG2EE-russian
+Imnescar,Имнескар,,BG2EE-russian
+Imnesvale,Имнесвейл,,BG2EE-russian
 Imoen,Имоен,,BG1RUS-EET
-Impaler,Накол,,NP:BG2EE-russian
-Impudent,Нахальная,,NP:BG2EE-russian
-Imrae,Имрэ,,NP:BG2EE-russian
-Incandescence,Раскаления,,NP:BG2EE-russian
-Indecipherable,Непереводимые,,NP:BG2EE-russian
-Inelegant,Вульгарно,,NP:BG2EE-russian
-Inevitabilities,Неизбежность,,NP:BG2EE-russian
-Infiltrator,Лазутчик,,NP:BG2EE-russian
+Impaler,Накол,,BG2EE-russian
+Imrae,Имрэ,,BG2EE-russian
 Infravision,инфравидение,,BG1RUS-EET
 Ingot,Ингот,,BG1RUS-EET
 Innisfall,Иннисфолл,,sod_rus
-Innkeep,Трактирщик,,NP:BG2EE-russian
-Inscribing,Внесение,,NP:BG2EE-russian
 Invoker,воплотитель,,BG1RUS-EET
 Ioin,Йоин,,BG1RUS-EET
-Iol,Иолит,,NP:BG2EE-russian
+Iol Gem,Иолит,,BG2EE-russian
 Iolite,Иолит,,BG1RUS-EET
 Ioun,Иоун,,BG1RUS-EET
 Irenicus,Айреникус,,BG1RUS-EET
 Iriaebor,Ириэбор,,BG1RUS-EET
 Iriaeboran,ириэборский,,BG1RUS-EET
-Irlana,Ирлана,,NP:BG2EE-russian
+Irlana,Ирлана,,BG2EE-russian
 Irlentree,Ирлентри,,BG1RUS-EET
 Iron Throne,Железный Трон,,BG1RUS-EET
-Ironblade,Айронблейд,,NP:BG2EE-russian
-Ironeye,Железноглазая,,NP:BG2EE-russian
-Irregardless,Независимо,,NP:BG2EE-russian
+Ironblade,Айронблейд,,BG2EE-russian
+Ironeye,Железноглазая,,BG2EE-russian
 Irregulars,Нерегулярники,,sod_rus
-Irritableness,Раздражительность,,NP:BG2EE-russian
-Isaea,Изайя,,NP:BG2EE-russian
-Ishla,Ишлы,,NP:BG2EE-russian
+Isaea,Изайя,,BG2EE-russian
+Ishla,Ишла,,BG2EE-russian
 Ishmella,Ишмелла,,BG1RUS-EET
 Ishnael,Ишнаэль,,BG1RUS-EET
 Islanne,Исланн,,BG1RUS-EET
 Ithmeera,Итмира,,BG1RUS-EET
 Ithtaerus,Иттериус,,sod_rus
 Ithtyl,Иттил,,BG1RUS-EET
-Itona,Итона,,NP:BG2EE-russian
-Itsh,«Не прошло и года!»,,NP:BG2EE-russian
+Itona,Итона,,BG2EE-russian
 Ivann,Иванн,,sod_rus
 Ivanne,Иванне,,BG1RUS-EET
-Ixil,Иксиля,,NP:BG2EE-russian
-Ixilthetocal,Иксилтетокаль,,NP:BG2EE-russian
-Ixthezzys,Иксфеззис,,NP:BG2EE-russian
-Iyachtu,Ийяхту,,NP:BG2EE-russian
-Iycanth,Ийкант,,NP:BG2EE-russian
-Ize,йа,,NP:BG2EE-russian
+Ixil,Иксиль,,BG2EE-russian
+Ixilthetocal,Иксилтетокаль,,BG2EE-russian
+Ixthezzys,Иксфеззис,,BG2EE-russian
+Iyachtu,Ийяхту,,BG2EE-russian
+Iycanth,Ийкант,,BG2EE-russian
 Izefia,Изефия,,BG1RUS-EET
-Izer,Изер,,NP:BG2EE-russian
-Izil,Изил,,NP:BG2EE-russian
-Izzat,Чего,,NP:BG2EE-russian
-Jabira,Джабира,,NP:BG2EE-russian
+Izer,Изер,,BG2EE-russian
+Izil,Изил,,BG2EE-russian
+Jabira,Джабира,,BG2EE-russian
 Jacil,Джасил,,BG1RUS-EET
-Jaella,Джаэлла,,NP:BG2EE-russian
-Jahaboam,Джахабоам,,NP:BG2EE-russian
-Jahag,Йяхаг,,NP:BG2EE-russian
+Jaella,Джаэлла,,BG2EE-russian
+Jahaboam,Джахабоам,,BG2EE-russian
+Jahag,Йяхаг,,BG2EE-russian
 Jaheira,Джахейра,,BG1RUS-EET
-Jailkeep,тюремщик,,NP:BG2EE-russian
-Jailor,тюремщик,,NP:BG2EE-russian
-Jakobar,Якобар,,NP:BG2EE-russian
-Jalaal,Джалаал,,NP:BG2EE-russian
+Jakobar,Якобар,,BG2EE-russian
+Jalaal,Джалаал,,BG2EE-russian
 Jalantha,Джаланта,,BG1RUS-EET
 Jalbyr,Джалбир,,sod_rus
-Jalico,Джалико,,NP:BG2EE-russian
-Jalin,Джалин,,NP:BG2EE-russian
+Jalico,Джалико,,BG2EE-russian
+Jalin,Джалин,,BG2EE-russian
 Jambiya,Джамбия,,sod_rus
-Jamis,Джамис,,NP:BG2EE-russian
-Jamtoes,Джемтоус,,NP:BG2EE-russian
+Jamis,Джамис,,BG2EE-russian
+Jamtoes,Джемтоус,,BG2EE-russian
 Jamven,Джамвен,,sod_rus
 Jannath,Джаннат,,BG1RUS-EET
-Janny,Янни,,NP:BG2EE-russian
-Janos,Янос,,NP:BG2EE-russian
+Janny,Янни,,BG2EE-russian
+Janos,Янос,,BG2EE-russian
+Jansen,Янсен,,BG2EE-russian
 Jardak,Джардак,,BG1RUS-EET
-Jarden,Джарден,,NP:BG2EE-russian
-Jariel,Джариэль,,NP:BG2EE-russian
-Jarlaxle,Джарлаксл,,NP:BG2EE-russian
+Jarden,Джарден,,BG2EE-russian
+Jariel,Джариэль,,BG2EE-russian
+Jarlaxle,Джарлаксл,,BG2EE-russian
 Jase,Джас,,BG1RUS-EET
 Jased,Джасед,,BG1RUS-EET
-Jassar,Джессар,,NP:BG2EE-russian
-Jayes,Джайес,,NP:BG2EE-russian
-Jaylos,Джайлос,,NP:BG2EE-russian
+Jassar,Джессар,,BG2EE-russian
+Jayes,Джайес,,BG2EE-russian
+Jaylos,Джайлос,,BG2EE-russian
 Jayvis,Джейвис,,sod_rus
-Jeag,Джиг,,NP:BG2EE-russian
-Jeagger,Джиггер,,NP:BG2EE-russian
+Jeag,Джиг,,BG2EE-russian
+Jeagger,Джиггер,,BG2EE-russian
 Jebadoh,Джебадо,,BG1RUS-EET
-Jeevesy,Дживзи,,NP:BG2EE-russian
+Jeevesy,Дживзи,,BG2EE-russian
 Jegg,Джегг,,sod_rus
-Jeggred,Джеггред,,NP:BG2EE-russian
-Jehosaphat,ёшкин свет,,NP:BG2EE-russian
+Jeggred,Джеггред,,BG2EE-russian
+Jehosaphat,ёшкин свет,,BG2EE-russian
 Jemby,Джемби,,BG1RUS-EET
-Jenia,Джения,,NP:BG2EE-russian
+Jenia,Джения,,BG2EE-russian
 Jenkal,Дженкал,,BG1RUS-EET
-Jenthan,Джентан,,NP:BG2EE-russian
-Jeremon,Джеремон,,NP:BG2EE-russian
-Jerlia,Джерлия,,NP:BG2EE-russian
-Jermien,Джермиен,,NP:BG2EE-russian
+Jenthan,Джентан,,BG2EE-russian
+Jeremon,Джеремон,,BG2EE-russian
+Jerlia,Джерлия,,BG2EE-russian
+Jermien,Джермиен,,BG2EE-russian
 Jerro,Джерро,,NP:BG2EE-russian
 Jerrod,Джеррод,,NP:BG2EE-russian
 Jessa,Джесса,,BG1RUS-EET
 Jeth,Джет,,sod_rus
-Jeweled,Драгоценные,,NP:BG2EE-russian
 Jhaeri,Джери,,NP:BG2EE-russian
 Jhan,Ян,,sod_rus
 Jhasso,Джассо,,BG1RUS-EET
@@ -1585,15 +1565,12 @@ Joster,Джостер,,NP:BG2EE-russian
 Joular,Джоулар,,BG1RUS-EET
 Jowen,Джоуэн,,NP:BG2EE-russian
 Joye,Джой,,NP:BG2EE-russian
-Judgin,Судя,,NP:BG2EE-russian
 Julann,Джуланн,,sod_rus
 Jum,Джум,,NP:BG2EE-russian
 Junia,Джуния,,sod_rus
-Jush,Прош-што,,NP:BG2EE-russian
 Jussen,Юссен,,sod_rus
 Justarius,Юстариус,,NP:BG2EE-russian
 Jysstev,Джисстев,,NP:BG2EE-russian
-Jysstevs,Джисстевы,,NP:BG2EE-russian
 Kaatje,Катье,,NP:BG2EE-russian
 Kachiko,Качико,,NP:BG2EE-russian
 Kadar,Кабар,,NP:BG2EE-russian
@@ -1644,7 +1621,6 @@ Kazrah,Казрах,,NP:BG2EE-russian
 Kazzrem,Каззрем,,sod_rus
 Keelan,Килан,,NP:BG2EE-russian
 Keelor,Килор,,BG1RUS-EET
-Keening,Причитания,,NP:BG2EE-russian
 Keexie,Кикси,,BG1RUS-EET
 Kegleg,Кеглег,,sod_rus
 Keherrem,Кехерем,,sod_rus
@@ -1664,13 +1640,12 @@ Kerrachus,Керрачус,,BG1RUS-EET
 Kerrick,Керрик,,NP:BG2EE-russian
 Kerstia,Керстия,,NP:BG2EE-russian
 Kesheel,Кешил,,BG1RUS-EET
-Keshla,Кешлы,,NP:BG2EE-russian
+Keshla,Кешла,,NP:BG2EE-russian
 Kestor,Кестор,,BG1RUS-EET
 Ketlaar,Кетлаар,,NP:BG2EE-russian
 Ketrick,Кетрик,,NP:BG2EE-russian
 Ketta,Кетта,,NP:BG2EE-russian
 Kevan,Кеван,,NP:BG2EE-russian
-Kha,Ха,,NP:BG2EE-russian
 Khal,Хал,,NP:BG2EE-russian
 Khalazza,Калазза,,NP:BG2EE-russian
 Khaless,Кхалесс,,BG1RUS-EET
@@ -1692,8 +1667,7 @@ Killis,Киллис,,NP:BG2EE-russian
 Kimble,Кимбл,,sod_rus
 Kindail,Киндейл,,NP:BG2EE-russian
 Kindt,Киндт,,sod_rus
-Kingsdale,Кингсдейле,,NP:BG2EE-russian
-Kir,Кир,,NP:BG2EE-russian
+Kingsdale,Кингсдейл,,NP:BG2EE-russian
 Kirian,Кириан,,BG1RUS-EET
 Kirik,Кирик,,NP:BG2EE-russian
 Kirinaldo,Киринальдо,,NP:BG2EE-russian
@@ -1701,14 +1675,13 @@ Kirinhale,Киринхал,,BG1RUS-EET
 Kirkirik,Киркирик,,NP:BG2EE-russian
 Kiser,Кизер,,NP:BG2EE-russian
 Kissiq,Киссик,,BG1RUS-EET
-Kith,Кит,,NP:BG2EE-russian
+Kith,кит,язык дроу,NP:BG2EE-russian
 Kitthix,Киттикс,,BG1RUS-EET
 Kivan,Киван,,BG1RUS-EET
 Kjarvan,Кьярван,,sod_rus
 Klaatu,Клаату,,NP:BG2EE-russian
 Klodg,Клодг,,NP:BG2EE-russian
 Kneecapper,Подсекатель,,BG1RUS-EET
-Knockback,Удар в спину,,NP:BG2EE-russian
 Knocktor,Кноктор,,NP:BG2EE-russian
 Kobold,кобольд,,BG1RUS-EET
 Kolssed,Колссед,,BG1RUS-EET
@@ -1744,13 +1717,11 @@ Kruntur,Крунтур,,sod_rus
 Kryla,Крила,,BG1RUS-EET
 Kryll,Крилл,,BG1RUS-EET
 Kryn,Крин,,sod_rus
-Krynnspace,пространстве Кринна,,NP:BG2EE-russian
 Krystin,Кристин,,BG1RUS-EET
-Kul,Кул,,NP:BG2EE-russian
+Kul'gobussen,кул'гобуссен,язык дроу,NP:BG2EE-russian
 Kuldahar,Кулдахар,,NP:BG2EE-russian
 Kulg,Калг,,NP:BG2EE-russian
 Kundane,Канден,,NP:BG2EE-russian
-Kur,Кур,,NP:BG2EE-russian
 Kurdall,Курдалл,,NP:BG2EE-russian
 Kurtulmak,Куртулмак,,NP:BG2EE-russian
 Kveroslava,Кверослава,,NP:BG2EE-russian
@@ -1784,12 +1755,10 @@ Lanneth,Ланнет,,NP:BG2EE-russian
 Lantan,Лантан,,BG1RUS-EET
 Lantanara,Лантанара,,BG1RUS-EET
 Lantanese,Лантанская,,sod_rus
-Lanthorn,Светильник,,NP:BG2EE-russian
 Laola,Лаола,,BG1RUS-EET
 Laratrak,Ларатрак,,NP:BG2EE-russian
 Laren,Ларен,,NP:BG2EE-russian
 Larethian,Ларетиан,,NP:BG2EE-russian
-Largesse,Щедрость,,NP:BG2EE-russian
 Laris,Ларис,,NP:BG2EE-russian
 Larloch,Ларлох,,BG1RUS-EET
 Larnos,Ларнос,,BG1RUS-EET
@@ -1808,11 +1777,10 @@ Lastin,Ластин,,NP:BG2EE-russian
 Lathan,Латан,,NP:BG2EE-russian
 Lathander,Латандер,,BG1RUS-EET
 Lathanderite,латандерит,,NP:BG2EE-russian
-Lathanderites,латандериты,,NP:BG2EE-russian
 Lathandoo,Латандур,,NP:BG2EE-russian
 Lathandross,Латандросс,,NP:BG2EE-russian
 Lathel,Лател,,NP:BG2EE-russian
-Laudanus,Лауданусом,,NP:BG2EE-russian
+Laudanus,Лауданус,,NP:BG2EE-russian
 Laune,Лаун,,NP:BG2EE-russian
 Lavok,Лавок,,NP:BG2EE-russian
 Layene,Лайен,,NP:BG2EE-russian
@@ -1820,7 +1788,6 @@ Leaflord,Владыка Листьев,,NP:BG2EE-russian
 Leathel,Лител,,NP:BG2EE-russian
 Lebass,Лебасс,,sod_rus
 Legdoril,Легдорил,,NP:BG2EE-russian
-Legionary,легионер,,NP:BG2EE-russian
 Lehtinan,Летинан,,NP:BG2EE-russian
 Leira,Лейра,,BG1RUS-EET
 Lellyn,Леллин,,NP:BG2EE-russian
@@ -1833,15 +1800,11 @@ Leokas,Леокас,,NP:BG2EE-russian
 Leopas,Леопас,,sod_rus
 Ler,Лер,,NP:BG2EE-russian
 Lerta,Лерта,,NP:BG2EE-russian
-Lessers,Низшим,,NP:BG2EE-russian
 Lestor,Лестор,,BG1RUS-EET
 Letec,Летек,,BG1RUS-EET
 Lette,Летт,,NP:BG2EE-russian
 Lexa,Лекса,,sod_rus
 Liann,Лианн,,sod_rus
-Liberatin,Освобождение,,NP:BG2EE-russian
-Librarus,Библиотекарь,,NP:BG2EE-russian
-Liches,Личи,,NP:BG2EE-russian
 Lightstone,Камень света,,NP:BG2EE-russian
 Lihp,Лихп,,BG1RUS-EET
 Liia,Лийя,,BG1RUS-EET
@@ -1865,15 +1828,11 @@ Lodefinder,Лодефиндер,,sod_rus
 Lollycook,Лоликук,,NP:BG2EE-russian
 Lolth,Лолт,,BG1RUS-EET
 Longbrow,Длиннобровый,,BG1RUS-EET
-Longlimbs,Долговязые,,NP:BG2EE-russian
 Longtooth,Зубоскал,,BG1RUS-EET
 Lonk,Лонк,,NP:BG2EE-russian
-Lops,Сносит,,NP:BG2EE-russian
 Lordly,владык,,NP:BG2EE-russian
 Lothander,Лотандер,,BG1RUS-EET
 Lothtyran,Лоттиран,,BG1RUS-EET
-Lotsa,Много,,NP:BG2EE-russian
-Loup,Луп,,NP:BG2EE-russian
 Loup Garou,Луп Гару,,BG1RUS-EET
 Loviatar,Ловиатар,,sod_rus
 Loxley,Локсли,,sod_rus
@@ -1886,10 +1845,8 @@ Lugg,Лаг,,sod_rus
 Luiren,Луирен,,BG1RUS-EET
 Lunia,Луния,,NP:BG2EE-russian
 Lunisia,Лунисия,,NP:BG2EE-russian
-Lupine,Волк,,NP:BG2EE-russian
-Lurching,пошатывание,,NP:BG2EE-russian
 Lurkwood,Лурквуд,,NP:BG2EE-russian
-Lurraxol,Люрраксолы,,NP:BG2EE-russian
+Lurraxol,Люрраксол,,NP:BG2EE-russian
 Lurraxols,Люрраксолы,,NP:BG2EE-russian
 Lushelyn,Лусселин,,BG1RUS-EET
 Luskan,Лускан,,BG1RUS-EET
@@ -1903,7 +1860,6 @@ Madele,Мадли,,sod_rus
 Madulf,Мадульф,,NP:BG2EE-russian
 Maferan,Маферан,,NP:BG2EE-russian
 Magdelene,Магдалена,,NP:BG2EE-russian
-Magicks,чудес,,NP:BG2EE-russian
 Maglubiyet,Маглубиет,,sod_rus
 Magreb,Магреб,,BG1RUS-EET
 Mahar,Махар,,NP:BG2EE-russian
@@ -1912,7 +1868,6 @@ Maheer,Махир,,NP:BG2EE-russian
 Mairyn,Майрин,,NP:BG2EE-russian
 Maisha,Майша,,NP:BG2EE-russian
 Majira,Маджира,,NP:BG2EE-russian
-Majordomo,Дворецкий,,NP:BG2EE-russian
 Maka,Мака,,BG1RUS-EET
 Malacazar,Малаказар,,NP:BG2EE-russian
 Maladomini,Маладомини,,sod_rus
@@ -1932,12 +1887,10 @@ Maltz,Мальц,,BG1RUS-EET
 Malvolio,Мальволио,,NP:BG2EE-russian
 Mammon,Маммон,,sod_rus
 Maneira,Манейра,,BG1RUS-EET
-Manlings,Человеки,,NP:BG2EE-russian
 Maralee,Марали,,BG1RUS-EET
 Mardii,Мардии,,NP:BG2EE-russian
 Mardus,Мардус,,NP:BG2EE-russian
 Marduuk,Мардук,,NP:BG2EE-russian
-Margh,Так,,NP:BG2EE-russian
 Margl,Маргл,,sod_rus
 Marilith,марилит,,BG1RUS-EET
 Marilynn,Мэрилин,,NP:BG2EE-russian
@@ -1951,11 +1904,9 @@ Marynford,Маринфорд,,NP:BG2EE-russian
 Mastav,Мастав,,NP:BG2EE-russian
 Masterstroke,Шедевр,,NP:BG2EE-russian
 Mattroun,Мэттроун,,sod_rus
-Mauler,Воин,,NP:BG2EE-russian
 Mauletar,Молетар,,BG1RUS-EET
 Maunu,Мауну,,NP:BG2EE-russian
 Maurezhi,Мауреджи,,NP:BG2EE-russian
-Mayhapsh,Может,,NP:BG2EE-russian
 Mazewalker,Блуждающая в Лабиринте,,NP:BG2EE-russian
 Maztica,Мазтика,,BG1RUS-EET
 Maztican,мазтиканский,,sod_rus
@@ -1964,11 +1915,8 @@ Mazul,Мазул,,NP:BG2EE-russian
 Mazzy,Маззи,,NP:BG2EE-russian
 McAverstein,МакАверстейн,,BG1RUS-EET
 Meakin,Меакин,,BG1RUS-EET
-Mealy,Бледное,,NP:BG2EE-russian
-Mebbe,Мож,,NP:BG2EE-russian
 Mechezarin,Мечезарин,,BG1RUS-EET
 Meck,Мек,,NP:BG2EE-russian
-Meddlers,Надоедаете,,NP:BG2EE-russian
 Meems,Миимз,,NP:BG2EE-russian
 Megge,Мегге,,sod_rus
 Meiala,Мейала,,BG1RUS-EET
@@ -1997,14 +1945,11 @@ Merlinious,Мерлиниус,,NP:BG2EE-russian
 Merome,Мером,,sod_rus
 Meronia,Мерония,,NP:BG2EE-russian
 Meryll,Мерилл,,BG1RUS-EET
-Meself,Сам-то,,NP:BG2EE-russian
-Metaspell,Метаспелл,,NP:BG2EE-russian
 Methild,Метилда,,sod_rus
 Metigo,Метиго,,NP:BG2EE-russian
 Metrich,Метрич,,NP:BG2EE-russian
 Meym,Мейм,,BG1RUS-EET
 Mezro,Мезро,,NP:BG2EE-russian
-Mhmm,М-м-м,,NP:BG2EE-russian
 Midfallow,Мидфаллоу,,NP:BG2EE-russian
 Mielder,Милдер,,BG1RUS-EET
 Mielikki,Миеликки,,NP:BG2EE-russian
@@ -2013,9 +1958,7 @@ Milil,Милиль,,sod_rus
 Milsire,Милсир,,NP:BG2EE-russian
 Minauros,Минаурос,,sod_rus
 Mind Flayer,Пожиратель разума,,BG1RUS-EET
-Minesite,Раскопки,,NP:BG2EE-russian
 Minling,Минлинг,,NP:BG2EE-russian
-Minotaurs,Минотавры,,NP:BG2EE-russian
 Minsc,Минск,,BG1RUS-EET
 Minscy,Минсик,,NP:BG2EE-russian
 Mirabar,Мирабар,,sod_rus
@@ -2025,43 +1968,31 @@ Mirnielle,Мирниэль,,NP:BG2EE-russian
 Mironda,Миронда,,NP:BG2EE-russian
 Mirrorshades,Мирроршейды,,BG1RUS-EET
 Mirtul,Миртул,,BG1RUS-EET
-Miserly,Скаредный,,NP:BG2EE-russian
-Misrule,Неудач,,NP:BG2EE-russian
 Mistmyr,Мистмир,,BG1RUS-EET
-Mistreat,плохо обращаться,,NP:BG2EE-russian
 Mistshadow,Туманная Тень,,BG1RUS-EET
 Mithas,Митас,,NP:BG2EE-russian
 Mithral,мифриловый,,BG1RUS-EET
 Mithrest,Митрест,,NP:BG2EE-russian
 Mithykyl,Митикиль,,NP:BG2EE-russian
 Mitsu,Митсу,,NP:BG2EE-russian
-Mixin,Смешивание,,NP:BG2EE-russian
 Miyar,Мийяр,,BG1RUS-EET
 Mizhena,Мижена,,sod_rus
 Modron,модрон,,sod_rus
-Mog,Мог,,NP:BG2EE-russian
 Mogadish,Могадиш,,NP:BG2EE-russian
 Mohad,Мохад,,sod_rus
-Moirala,Мойралы,,NP:BG2EE-russian
+Moirala,Мойрала,,NP:BG2EE-russian
 Molkar,Молкар,,BG1RUS-EET
 Molzahn,Молзан,,NP:BG2EE-russian
-Monadic,Монадическая,,NP:BG2EE-russian
-Moneylender,Ростовщик,,NP:BG2EE-russian
-Mongrels,Дворняжки,,NP:BG2EE-russian
 Montaron,Монтарон,,BG1RUS-EET
 Montgomer,Монтгомер,,sod_rus
 Montolio,Монтолио,,NP:BG2EE-russian
 Moonbar,Лунный луч,,BG1RUS-EET
 Moonblade,Лунный клинок,,BG1RUS-EET
-Mooning,Мечтаю,,NP:BG2EE-russian
 Moonmaiden,Лунная Дева,,BG1RUS-EET
 Moonsea,Лунное Море,,BG1RUS-EET
 Moonshae,Муншаи,,BG1RUS-EET
-Moonshea,Лунного Древа,,NP:BG2EE-russian
 Moorlock,Мурлок,,BG1RUS-EET
-Mope,Хандрил,,NP:BG2EE-russian
 Moradin,Морадин,,BG1RUS-EET
-Moralizing,Морализирующий,,NP:BG2EE-russian
 Mordaine,Мордайн,,BG1RUS-EET
 Mordaus,Мордаус,,sod_rus
 Mordenkainen,Морденкайнен,,BG1RUS-EET
@@ -2073,34 +2004,23 @@ Morningale,Морнингейл,,NP:BG2EE-russian
 Morningales,Морнингейлы,,NP:BG2EE-russian
 Morninglord,Владыка Утра,,BG1RUS-EET
 Mornmaster,Повелитель Утра,,NP:BG2EE-russian
-Morose,Мрачная,,NP:BG2EE-russian
 Morsa,Морса,,NP:BG2EE-russian
 Morsk,Морск,,sod_rus
-Mortifying,Унизительное,,NP:BG2EE-russian
 Morul,Морул,,NP:BG2EE-russian
 Morvin,Морвин,,BG1RUS-EET
 Mosela,Мозела,,sod_rus
-Mosst,Оч-чень,,NP:BG2EE-russian
-Mourner,Скорбящий,,NP:BG2EE-russian
 Mourninglord,Владыка Утрат,,NP:BG2EE-russian
-Movanic,мованическая,,NP:BG2EE-russian
-Moyt,Нэ,,NP:BG2EE-russian
-Mroak,Мр-ра,,NP:BG2EE-russian
-Muahahahahahahahahahaa,Муа-ха-ха-ха-ха-ха-а,,NP:BG2EE-russian
-Muham,Мухама,,NP:BG2EE-russian
+Movanic Deva,мованическая дева,,NP:BG2EE-russian
 Muhan,Мухан,,NP:BG2EE-russian
 Muharr,Мухарр,,NP:BG2EE-russian
-Muhuhahahahahaha,У-ха-ха-ха-ха-ха,,NP:BG2EE-russian
 Mulahey,Мулахей,,BG1RUS-EET
-Mulhorand,Малхоранд,,NP:BG2EE-russian
-Mumbleberry,Тёртоягодный,,NP:BG2EE-russian
+Mulhorand,Мулхоранд,,BG1RUS-EET
 Munsch,Мунш,,sod_rus
-Muraan,Мураанские,,NP:BG2EE-russian
+Muraan,Мураан,,NP:BG2EE-russian
 Murann,Муранн,,NP:BG2EE-russian
 Murtlen,Муртлен,,NP:BG2EE-russian
 Murundhi,Мурунди,,NP:BG2EE-russian
 Mutamin,Мутамин,,BG1RUS-EET
-Muwahahaha,Ха-ха-ха-ха-ха,,NP:BG2EE-russian
 Myconid,миконид,,BG1RUS-EET
 Myratma,Миратма,,NP:BG2EE-russian
 Myrkul,Миркул,,BG1RUS-EET
@@ -2109,7 +2029,6 @@ Myrlochar,Мирлочар,,sod_rus
 Myrna,Мирна,,BG1RUS-EET
 Mystra,Мистра,,BG1RUS-EET
 Naaman,Нааман,,BG1RUS-EET
-Naaw,Не-е-е,,NP:BG2EE-russian
 Nabassu,Набассу,,BG1RUS-EET
 Nadarin,Надарин,,BG1RUS-EET
 Nadinal,Надинал,,NP:BG2EE-russian
@@ -2131,8 +2050,6 @@ Narbucchad,Нарбукчад,,BG1RUS-EET
 Narcillicus,Нарцилликус,,BG1RUS-EET
 Narlen,Нарлен,,BG1RUS-EET
 Nasad,Насад,,NP:BG2EE-russian
-Nasadran,Насада,,NP:BG2EE-russian
-Nasadrans,Насадцы,,NP:BG2EE-russian
 Nasha,Наша,,BG1RUS-EET
 Nashkel,Нашкель,,BG1RUS-EET
 Natas,Натас,,NP:BG2EE-russian
@@ -2144,7 +2061,6 @@ Necaradan,Некарадан,,NP:BG2EE-russian
 Neckeith,Некейт,,NP:BG2EE-russian
 Necre,Некре,,NP:BG2EE-russian
 Necromancy,некромантия,,BG1RUS-EET
-Necropoli,«Некрополе»,,NP:BG2EE-russian
 Nector,Нектор,,NP:BG2EE-russian
 Nederlok,Недерлок,,sod_rus
 Neeber,Нибер,,NP:BG2EE-russian
@@ -2185,61 +2101,51 @@ Neverwinter,Невервинтер,,BG1RUS-EET
 Nevron,Неврон,,BG1RUS-EET
 Newf,Ньюф,,BG1RUS-EET
 Nexlit,Некслит,,BG1RUS-EET
-Ngh,Ух,,NP:BG2EE-russian
 Nhilvann,Нильванн,,sod_rus
 Niemain,Ниемайн,,BG1RUS-EET
 Nightal,Найтал,,BG1RUS-EET
-Nightmaster,Ночных Дел Мастером,,NP:BG2EE-russian
+Nightmaster,Ночных Дел Мастер,,NP:BG2EE-russian
 Nightsinger,Ночная Певица,,BG1RUS-EET
 Niklos,Никлос,,BG1RUS-EET
 Nila,Нила,,BG1RUS-EET
 Nilthiri,Нилтири,,NP:BG2EE-russian
 Nimblefinger,Нимблфингер,,sod_rus
 Nimbul,Нимбул,,BG1RUS-EET
-Nind,Нинд,,NP:BG2EE-russian
-Nindol,Ниндол,,NP:BG2EE-russian
+Nind,Нинд,язык дроу,NP:BG2EE-russian
+Nindol,Ниндол,язык дроу,NP:BG2EE-russian
 Ninjato,ниндзя-то,,BG1RUS-EET
 Nirkhas,Ниркхас,,NP:BG2EE-russian
 Nishrek,Нишрек,,NP:BG2EE-russian
 Nishruu,нишруу,,BG1RUS-EET
 Nivek,Нивек,,BG1RUS-EET
-Nizidramanii,Низидраманий,,NP:BG2EE-russian
+Nizidramanii'yt,Низидраманий'ит,,NP:BG2EE-russian
 Nomis,Номис,,NP:BG2EE-russian
 Noober,Нубер,,BG1RUS-EET
-Noontide,Полуденный,,NP:BG2EE-russian
 Noralee,Норали,,BG1RUS-EET
 Norheim,Норхейм,,BG1RUS-EET
-Northlander,северяне,,NP:BG2EE-russian
 Nortuary,Нортуарий,,BG1RUS-EET
 Noser,Носач,,NP:BG2EE-russian
 Nosers,Носачи,,NP:BG2EE-russian
 Nosferatu,Носферату,,BG1RUS-EET
-Nuargh,Ах-х-х,,NP:BG2EE-russian
 Nuez,Нуэз,,BG1RUS-EET
 Nyalee,Найали,,NP:BG2EE-russian
 Nym,Ним,,NP:BG2EE-russian
-Nyuck,Ай-яй-яй,,NP:BG2EE-russian
 Nyzzlar,Низлар,,NP:BG2EE-russian
-Oaken,Дубовое,,NP:BG2EE-russian
-Oakfather,Дуба-Отца,,NP:BG2EE-russian
+Oakfather,Дуб-Отец,,NP:BG2EE-russian
 Oberan,Оберан,,BG1RUS-EET
-Obliteration,забвение,,NP:BG2EE-russian
 Ocellis,Оцеллис,,BG1RUS-EET
 Odamaron,Одамарон,,NP:BG2EE-russian
 Odendal,Одендал,,NP:BG2EE-russian
 Odesseiron,Одессейрон,,sod_rus
-Odg,Одг,,NP:BG2EE-russian
+Odg,одг,язык дроу,NP:BG2EE-russian
 Odie,Одие,,sod_rus
 Odren,Одрен,,NP:BG2EE-russian
-Offed,Устранённым,,NP:BG2EE-russian
 Oghma,Огма,,BG1RUS-EET
-Oghmanyte,огмаистских,,NP:BG2EE-russian
 Ogre,огр,,BG1RUS-EET
 Ogremoch,Огремох,,NP:BG2EE-russian
 Ogreslayer,Истребитель Огров,,BG1RUS-EET
 Ogrillon,огриллон,,BG1RUS-EET
 Ogrons,Огроны,,NP:BG2EE-russian
-Ohmigosh,Боже ж ты мой,,NP:BG2EE-russian
 Oisig,Ойзиг,,NP:BG2EE-russian
 Olben,Олбен,,NP:BG2EE-russian
 Olehm,Олем,,NP:BG2EE-russian
@@ -2261,7 +2167,6 @@ Ophidius,Офидиус,,sod_rus
 Ophyllis,Офиллис,,sod_rus
 Orannias,Оранниас,,sod_rus
 Orbbz,Орббз,,NP:BG2EE-russian
-Orcish,Орочья,,NP:BG2EE-russian
 Orcslicer,Оркорез,,NP:BG2EE-russian
 Ordulin,Ордулин,,BG1RUS-EET
 Ordulinian,Ордулиниан,,BG1RUS-EET
@@ -2271,7 +2176,7 @@ Oris,Орис,,NP:BG2EE-russian
 Orland,Орланд,,sod_rus
 Orleth,Олет,,sod_rus
 Orluss,Орлусс,,NP:BG2EE-russian
-Ormias,Ормиаса,,NP:BG2EE-russian
+Ormias,Ормиас,,NP:BG2EE-russian
 Ormlyr,Ормлир,,BG1RUS-EET
 Orog,орог,,sod_rus
 Orothiar,Оротиар,,BG1RUS-EET
@@ -2284,10 +2189,8 @@ Otiluke,Отилук,,BG1RUS-EET
 Otyugh,отиуг,,sod_rus
 Oublek,Оублек,,BG1RUS-EET
 Oulam,Оулам,,BG1RUS-EET
-Ouzel,Чёрный дрозд,,NP:BG2EE-russian
-Overfather,Всеобщий Отец Ао,,NP:BG2EE-russian
+Overfather,Всеобщий Отец,,NP:BG2EE-russian
 Overgold,Оверголд,,NP:BG2EE-russian
-Overlong,ДОЛГО,,NP:BG2EE-russian
 Overmind,Сверхразум,,sod_rus
 Ovidiu,Овидиу,,NP:BG2EE-russian
 Owyn,Овин,,BG1RUS-EET
@@ -2298,10 +2201,6 @@ Paladinstar,Паладинстар,,BG1RUS-EET
 Palern,Палерн,,NP:BG2EE-russian
 Pallonia,Паллония,,BG1RUS-EET
 Pandesmos,Пандесмос,,NP:BG2EE-russian
-Pantalettes,панталоны,,NP:BG2EE-russian
-Pantaloon,Панталонных,,NP:BG2EE-russian
-Paralytic,Парализующий,,sod_rus
-Paralyzation,парализация,,NP:BG2EE-russian
 Parda,Парда,,BG1RUS-EET
 Pargus,Паргус,,BG1RUS-EET
 Parick,Парик,,NP:BG2EE-russian
@@ -2310,9 +2209,7 @@ Paritin,Паритин,,NP:BG2EE-russian
 Patoo,Пату,,NP:BG2EE-russian
 Patrescus,Патреск,,sod_rus
 Pauden,Пауден,,NP:BG2EE-russian
-Pawning,Заложишь,,NP:BG2EE-russian
 Pebblecrusher,Щебнедроб,,NP:BG2EE-russian
-Peddlers,Коробейники,,NP:BG2EE-russian
 Pehllus,Пеллус,,NP:BG2EE-russian
 Peladan,Пеладан,,BG1RUS-EET
 Pelanna,Пеланна,,NP:BG2EE-russian
@@ -2327,10 +2224,7 @@ Perren,Перрен,,sod_rus
 Perter,Пертер,,NP:BG2EE-russian
 Petrine,Петрин,,BG1RUS-EET
 Pettiwick,Фитилёк,,NP:BG2EE-russian
-Petunia,Петунья,,NP:BG2EE-russian
 Pfaug,Пфауг,,sod_rus
-Pfaw,Тьфу,,NP:BG2EE-russian
-Pfeh,Тьфу,,NP:BG2EE-russian
 Phaere,Фейр,,NP:BG2EE-russian
 Phaersis,Фаэрсис,,BG1RUS-EET
 Phaerus,Фэриус,,sod_rus
@@ -2346,50 +2240,31 @@ Phreya,Ферейя,,NP:BG2EE-russian
 Phylactery,филактерия,,sod_rus
 Phyllidus,Филлидус,,NP:BG2EE-russian
 Piato,Пиато,,BG1RUS-EET
-Pickaxe,Кирка,,NP:BG2EE-russian
 Picklefeather,Солонопёр,,NP:BG2EE-russian
-Pickpocketing,карманник,,NP:BG2EE-russian
 Picoccio,Пикоччио,,NP:BG2EE-russian
 Piercer,Протыкатель,,sod_rus
 Piergeiron,Пиргейрон,,BG1RUS-EET
-Pigheaded,Упрямый,,NP:BG2EE-russian
-Pikeman,Копейщик,,NP:BG2EE-russian
 Pimlico,Пимлико,,NP:BG2EE-russian
-Piousness,Набожность,,NP:BG2EE-russian
-Pipsqueak,НИЧТОЖЕСТВО,,NP:BG2EE-russian
-Pirating,Пиратство,,NP:BG2EE-russian
 Pitre,Питр,,NP:BG2EE-russian
 Pitter,Питтер,,BG1RUS-EET
 Piwafwi,пивавфи,,sod_rus
-Planeswalker,Планарный путешественник,,NP:BG2EE-russian
 Planetar,планетар,,BG1RUS-EET
-Planetars,Планетары,,NP:BG2EE-russian
-Pleeze,Пожа-алста,,NP:BG2EE-russian
 Plet,Плет,,BG1RUS-EET
 Plooty,Плути,,NP:BG2EE-russian
 Ployer,Плойер,,NP:BG2EE-russian
-Ployers,Плойеров,,NP:BG2EE-russian
-Pollywog,Головастики,,NP:BG2EE-russian
 Polv,Полв,,sod_rus
 Polvi,Полви,,sod_rus
-Pommel,головка,,NP:BG2EE-russian
 Ponz,Понз,,NP:BG2EE-russian
 Pooky,Бесик,,NP:BG2EE-russian
 Popple,Поппл,,BG1RUS-EET
 Porios,Пориос,,sod_rus
-Porkchop,Свининки,,NP:BG2EE-russian
 Portalbendarwinden,Порталбендарвинден,,BG1RUS-EET
 Prebar,Пребар,,NP:BG2EE-russian
 Prebek,Пребек,,NP:BG2EE-russian
-Pretension,Претензия,,NP:BG2EE-russian
-Pretties,Блестяшки,,NP:BG2EE-russian
-Priador,Приадоре,,NP:BG2EE-russian
+Priador,Приадор,,NP:BG2EE-russian
 Prin,Прин,,sod_rus
 Priss,Присс,,NP:BG2EE-russian
-Prissy,Присси,,NP:BG2EE-russian
-Prophetess,пророчица,,NP:BG2EE-russian
 Psion,Псион,,NP:BG2EE-russian
-Pteww,ТЬФУ,,NP:BG2EE-russian
 Puffguts,Толстопуз,,BG1RUS-EET
 Pugney,Пагни,,NP:BG2EE-russian
 Purskul,Пурскул,,NP:BG2EE-russian
@@ -2412,12 +2287,9 @@ Quickhand,Проворные Пальцы,,NP:BG2EE-russian
 Quila,Кила,,sod_rus
 Quoningar,Квонингар,,BG1RUS-EET
 R'gosz,Р'Госз,,sod_rus
-RRaagh,Ар-р-р,,NP:BG2EE-russian
-RRarp,Р-ргав,,NP:BG2EE-russian
 Raafee,Раафи,,NP:BG2EE-russian
 Raamilat,Раамилат,,NP:BG2EE-russian
-Raarr,РА-АР-Р,,NP:BG2EE-russian
-Rabi,Раби'а,,NP:BG2EE-russian
+Rabi'ah,Раби'а,,NP:BG2EE-russian
 Radeel,Радил,,NP:BG2EE-russian
 Raeanndra,Раэнндра,,sod_rus
 Raelis,Раэлис,,NP:BG2EE-russian
@@ -2426,17 +2298,13 @@ Raevilin,Равилин,,NP:BG2EE-russian
 Rafeha,Рафеха,,NP:BG2EE-russian
 Raffiyah,Раффия,,NP:BG2EE-russian
 Ragefast,Рагефаст,,BG1RUS-EET
-Rageous,ВОЗМУТИТЕЛЬНО,,NP:BG2EE-russian
 Ragers,Раскиловцы,,NP:BG2EE-russian
 Raggemos,Раггемос,,sod_rus
-Ragh,Рагх,,NP:BG2EE-russian
 Rahvin,Рахвин,,BG1RUS-EET
 Raiken,Райкен,,BG1RUS-EET
-Rainmaker,шаман,,NP:BG2EE-russian
 Raissa,Раисса,,NP:BG2EE-russian
 Raizarn,Раизарн,,sod_rus
 Rakshasa,ракшаса,,sod_rus
-Rakshasas,Ракшасы,,NP:BG2EE-russian
 Raleo,Ралео,,BG1RUS-EET
 Ralg,Ральг,,NP:BG2EE-russian
 Ralisar,Рэлизар,,NP:BG2EE-russian
@@ -2448,15 +2316,12 @@ Randomkettle,Случайночайник,,NP:BG2EE-russian
 Randymonk,Рендимонк,,sod_rus
 Rania,Рания,,NP:BG2EE-russian
 Rasaad,Расаад,,BG1RUS-EET
-Rashemani,Рашемена,,NP:BG2EE-russian
 Rashemen,Рашемен,,BG1RUS-EET
 Rashemi,рашеми,,sod_rus
 Raskilov,Раскилов,,NP:BG2EE-russian
 Rassmusen,Рассмусен,,NP:BG2EE-russian
 Ratchild,Крысеныш,,BG1RUS-EET
 Rattell,Раттель,,NP:BG2EE-russian
-Raugh,Р-ра-ах,,NP:BG2EE-russian
-Ravager,Губитель,,NP:BG2EE-russian
 Ravenscar,Воронов Шрам,,BG1RUS-EET
 Ravisher,Разрушитель,,BG1RUS-EET
 Ravoc,Равок,,sod_rus
@@ -2465,10 +2330,6 @@ Rayler,Райлер,,sod_rus
 Rayn,Райн,,NP:BG2EE-russian
 Rayphus,Райфус,,sod_rus
 Razvan,Разван,,NP:BG2EE-russian
-Reaagh,Ра-а-а-ах,,NP:BG2EE-russian
-Readier,Готов,,NP:BG2EE-russian
-Readme,Readme,,NP:BG2EE-russian
-Realmspace,Королевства,,NP:BG2EE-russian
 Rededge,Кровосток,,BG1RUS-EET
 Redigar,Редигар,,NP:BG2EE-russian
 Redmoons,Редмунс,,sod_rus
@@ -2476,13 +2337,11 @@ Redsun,Красное Солнце,,NP:BG2EE-russian
 Redwater,Красные Воды,,BG1RUS-EET
 Reedle,Ридл,,NP:BG2EE-russian
 Reevor,Ривор,,BG1RUS-EET
-Reflexively,Рефлекторно,,NP:BG2EE-russian
 Reinss,Рейнсс,,sod_rus
 Reirra,Реирра,,NP:BG2EE-russian
 Reirrac,Реиррак,,NP:BG2EE-russian
 Rejiek,Реджек,,NP:BG2EE-russian
 Relair,Рилейр,,BG1RUS-EET
-Relevantly,Уместно,,NP:BG2EE-russian
 Reliquary,Реликварий,,sod_rus
 Relonar,Релонар,,NP:BG2EE-russian
 Rend,Ренд,,sod_rus
@@ -2494,20 +2353,18 @@ Rerdes,Рердес,,NP:BG2EE-russian
 Resar,Ресар,,BG1RUS-EET
 Reti,Рети,,NP:BG2EE-russian
 Revanek,Реванек,,NP:BG2EE-russian
-Revelatory,Откровения,,NP:BG2EE-russian
 Reviane,Ревиан,,NP:BG2EE-russian
-Revo,Восстать,,NP:BG2EE-russian
 Reyna,Рейна,,NP:BG2EE-russian
 Reynald,Рейнальд,,NP:BG2EE-russian
 Rezdan,Рездан,,BG1RUS-EET
-Rff,Руф-ф,,NP:BG2EE-russian
 Rhayla,Райла,,sod_rus
 Rhian,Риан,,BG1RUS-EET
 Rhigaerd,Ригерд,,BG1RUS-EET
 Rhon,Рон,,sod_rus
-Rhynn,Риннском,,NP:BG2EE-russian
+Rhynn,Ринн,,NP:BG2EE-russian
 Rhynwis,Ринвис,,sod_rus
 Rhyte,Райт,,BG1RUS-EET
+
 Riatavin,Риатавинский,,NP:BG2EE-russian
 Ribald,Рибальд,,BG1RUS-EET
 Rielev,Рилев,,NP:BG2EE-russian
