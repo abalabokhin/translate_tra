@@ -1,3 +1,10 @@
+Glutted
+Goblinoids
+Golems
+Gored
+Gotsch
+Grandaddy
+Greatswords
 Fencer
 Fetid
 Fiddlebenders
@@ -75,9 +82,6 @@ Everlast
 Evoker
 Expeditious
 Enthralls
-
-
-
 Naaw
 Ngh
 Noontide
@@ -266,8 +270,6 @@ Yoink
 Yoou
 Youse
 Zapped
-
-
 Ichor
 Ignominy
 Illithids
