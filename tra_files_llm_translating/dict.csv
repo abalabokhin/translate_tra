@@ -1200,17 +1200,14 @@ Fadell,Фаделл,,BG2EE-russian
 Fadoon,Фадун,,BG2EE-russian
 Fael,Фаэль,,BG2EE-russian
 Faenya,Фаэния,,BG2EE-russian
-Faer,Фаэр,,NP:iwd2_rus
-Faerum,Фаерум,,NP:iwd2_rus
 Faerun,Фаэрун,,BG1RUS-EET
-Faerunian,Фаэруний,,NP:iwd2_rus
 Faeyr,Файр,,BG2EE-russian
 Fafhrd,Фафхрд,,BG1RUS-EET
 Faheed,Фахид,,BG2EE-russian
 Fahrington,Фахрингтон,,BG1RUS-EET
 Fairfoot,Файрфут,,BG2EE-russian
 Fairhand,Пряморукая,,BG2EE-russian
-Fairwynd,Фэйрвинд,,NP:iwd2_rus
+Fairwynd,Фэйрвинд,,iwd2_rus
 Faizah,Файзах,,BG1RUS-EET
 Falahar,Фалагар,,BG2EE-russian
 Falchion,фальшион,,sod_rus
@@ -1221,28 +1218,25 @@ Faltis,Фалтис,,BG1RUS-EET
 Famari,Фамари,,sod_rus
 Familiar,приживала,,BG1RUS-EET
 Fanegonorom,Фэйнгонором,,sod_rus
-Fanged,Закалённых Клыков,,NP:iwd2_rus
-Fara,Фара,,NP:iwd2_rus
+Fanged Seasons,Закалённые Клыки,,iwd2_rus
 Faragrim,Фарагрим,,sod_rus
 Faraji,Фараджи,,BG2EE-russian
 Farcutter,Длинный Тесак,,BG2EE-russian
 Fargl,Фаргл,,sod_rus
 Farielle,Фариэль,,BG2EE-russian
 Farluck,Фарлук,,BG1RUS-EET
-Farold,Фарольд,,NP:iwd2_rus
+Farold,Фарольд,,iwd2_rus
 Farrahd,Фаррахд,,BG2EE-russian
 Farrl,Фаррл,,sod_rus
 Farseer,Дальнозор,,BG1RUS-EET
 Farsight,предвидение,,BG1RUS-EET
 Farthington,Пердингтон,,BG2EE-russian
 Farthy,Перди,,BG2EE-russian
-Fasdul,Фас-с-сдул,,NP:iwd2_rus
 Fastpaws,Быстрые Лапы,,BG2EE-russian
 Faughley,Фогли,,sod_rus
-Faur,Фаэрун,,NP:iwd2_rus
 Faurun,Фаэрун,,BG1RUS-EET
 Fayanna,Фаянна,,BG2EE-russian
-Fayr,Фейр,,NP:iwd2_rus
+Fayr,Фейр,,iwd2_rus
 Fearghus,Фергус,,BG2EE-russian
 Feelie,Фили,,BG1RUS-EET
 Feerlattiys,Фиирлаттийс,,BG2EE-russian
@@ -1253,8 +1247,7 @@ Feldrak,Фелдрак,,BG2EE-russian
 Feldurkin,Фельдуркин,,sod_rus
 Fellik,Феллик,,sod_rus
 Felonius,Фелониус,,BG1RUS-EET
-Fencer,Фехтовальщик,,NP:iwd2_rus
-Fengla,Фенгла,,NP:iwd2_rus
+Fengla,Фенгла,,iwd2_rus
 Fenheld,Фенхельд,,BG2EE-russian
 Fennecia,Феннеция,,BG2EE-russian
 Fenrus,Фенрус,,BG1RUS-EET
@@ -1270,82 +1263,71 @@ Ferrumach,Феррумах,,BG2EE-russian
 Ferrusk,Ферруск,,sod_rus
 Festhall,Фестхолл,,BG1RUS-EET
 Festule,Фестул,,BG2EE-russian
-Fetid,зловоние,,NP:iwd2_rus
-Feveran,Феверон,,NP:iwd2_rus
+Feveran,Феверон,,iwd2_rus
 Feveron,Феверон,,BG2EE-russian
 Feyr,фейр,,sod_rus
 Fezhak,Фежак,,BG2EE-russian
 Fflar,Флар,,BG2EE-russian
-Fhutma,Футма,,NP:iwd2_rus
+Fhutma,Футма,,iwd2_rus
 Fibbert,Фибберт,,BG2EE-russian
 Fiddich,Фиддич,,BG2EE-russian
-Fiddlebender,Скрипкогиб,,NP:iwd2_rus
-Fiddlebenders,Скрипкогибов,,NP:iwd2_rus
-Fiendslayer,Убийца демонов,,NP:iwd2_rus
+Fiddlebender,Скрипкогиб,,iwd2_rus
+Fiendslayer,Убийца демонов,,iwd2_rus
 Filacturry,филактерия,,sod_rus
 Filbert,Филберт,,BG2EE-russian
-Filched,украл,,NP:iwd2_rus
 Fillis,Филлис,,BG2EE-russian
 Finderlig,Финдерлиг,,BG2EE-russian
 Finischuk,Финишук,,BG2EE-russian
 Finkle,Финкл,,BG1RUS-EET
 Firebead,Фаербид,,BG1RUS-EET
 Fireblade,Файрблейд,,BG2EE-russian
-Firebreath,Огненное дыхание,,NP:iwd2_rus
 Firecam,Фаеркам,,BG2EE-russian
-Firedrake,Огненный дракончик,,NP:iwd2_rus
 Firehair,Огневласая,,BG1RUS-EET
 Firehammer,Файрхаммер,,BG2EE-russian
 Firejaw,Огнехват,,BG2EE-russian
 Fireseeds,Огненные семена,,BG2EE-russian
-Firestarter,Поджигатель,,NP:iwd2_rus
 Firetooth,Огнезуб,,BG2EE-russian
 Firewine,Фаервайн,,BG1RUS-EET
 Firkraag,Фиркрааг,,BG2EE-russian
-Firtha,Фирта,,NP:iwd2_rus
-Fishmonger,Торговец рыбой,,NP:iwd2_rus
-Flamekiller,Усмиритель огня,,NP:iwd2_rus
+Firtha,Фирта,,iwd2_rus
 Flamerule,Флеймрул,,BG1RUS-EET
-Flamewalker,Огнеходец,,NP:iwd2_rus
+Flamewalker,Огнеходец,,iwd2_rus
 Flaming Fist,Пламенный Кулак,,BG1RUS-EET
-Flaying,Сдирание кожи,,NP:iwd2_rus
 Flaylan,Флейлан,,BG2EE-russian
-Fleein,Уходить,,NP:iwd2_rus
 Fleetknees,Быстроколенка,,BG2EE-russian
-Fleezum,Флизум,,NP:iwd2_rus
+Fleezum,Флизум,,iwd2_rus
 Fleshripper,Разрывающий плоть,,sod_rus
-Flim,Флим,,NP:iwd2_rus
+Flim,Флим,,iwd2_rus
 Flind,флинд,,BG1RUS-EET
 Flindkiller,Убийца Флиндов,,BG1RUS-EET
 Flintborn,Флинтборн,,sod_rus
 Flippy,Флиппи,,BG2EE-russian
 Fll'Yissetat,Флл'Йиссетат,,BG2EE-russian
 Floogar,Флугар,,sod_rus
-Flozem,Флозем,,NP:iwd2_rus
+Flozem,Флозем,,iwd2_rus
 Flydian,Флидиан,,BG2EE-russian
 Foebane,Истребитель Врагов,,BG2EE-russian
 Foehammer,Сокрушитель Врагов,,BG1RUS-EET
 Foekiller,Убийца Врагов,,BG2EE-russian
 Folt,Фолт,,BG2EE-russian
-Fomorian,Фоморский,,NP:iwd2_rus
+Fomorian,Фоморский,,iwd2_rus
 Foolio,Фулио,,BG1RUS-EET
 Foolios,Фулио,,BG1RUS-EET
 Forthel,Фортель,,BG1RUS-EET
-Foulair,Фоулайр,,NP:iwd2_rus
+Foulair,Фоулайр,,iwd2_rus
 Fouleye,Фаулай,,sod_rus
 Fovem,Фовем,,BG2EE-russian
 Foxleigh,Фоксли,,sod_rus
 Frair,Фрейр,,sod_rus
 Frennedan,Френнедан,,BG2EE-russian
 Frixis,Фриксис,,sod_rus
-Frostblade,Морозный клинок,,NP:iwd2_rus
-Frostbrand,Печать холода,,NP:iwd2_rus
-Frostkiss,Ледяного Поцелуя,,NP:iwd2_rus
-Frostmaiden,Ледяная Дева,,NP:iwd2_rus
+Frostblade,Морозный клинок,,iwd2_rus
+Frostbrand,Печать холода,,iwd2_rus
+Frostkiss,Ледяной Поцелуй,,iwd2_rus
+Frostmaiden,Ледяная Дева,,iwd2_rus
 Frostreaver,Снежный разбойник,,BG2EE-russian
-Frostrose,Морозная роза,,NP:iwd2_rus
-Frosttouch,касание мороза,,NP:iwd2_rus
-Frosttouches,ТРОНУТЫЕ ЛЬДОМ,,NP:iwd2_rus
+Frostrose,Морозная роза,,iwd2_rus
+Frosttouch,касание мороза,,iwd2_rus
 Fucknut,Ипанат,,BG2EE-russian
 Fuerlag,Фурлаг,,BG1RUS-EET
 Fuernebol,Фурнебол,,BG1RUS-EET
@@ -1359,9 +1341,9 @@ Furnbottom,Бронезад,,BG2EE-russian
 Furnelaine,Фурнелайн,,BG1RUS-EET
 Furnellbol,Фурнеллбол,,BG1RUS-EET
 Furret,Фуррет,,BG1RUS-EET
-Fynne,Финн,,NP:iwd2_rus
+Fynne,Финн,,iwd2_rus
 Fyrus,Файрус,,BG2EE-russian
-Gaarrh,Га-ар-рх,,NP:iwd2_rus
+Gaarrh,Га-ар-рх,,iwd2_rus
 Gaden,Гаден,,BG2EE-russian
 Gadu,Гаду,,NP:iwd2_rus
 Gaelan,Гаэлан,,BG2EE-russian
