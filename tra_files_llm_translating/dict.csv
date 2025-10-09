@@ -1738,11 +1738,10 @@ Hydcont,Хидконт,,BG2EE-russian
 Hyreth,Хирет,,sod_rus
 Ianulin,Янулин,,BG2EE-russian
 Iblith,иблит,,BG1RUS-EET
-Icasaracht,Иказарахт,,NP:iwd2_rus
-Icedawn,Ледяная Заря,,NP:iwd2_rus
+Icasaracht,Иказарахт,,iwd2_rus
+Icedawn,Ледяная Заря,,iwd2_rus
 Icedust,Ледяная пыль,,BG2EE-russian
-Icelance,Ледяное копьё,,NP:iwd2_rus
-Icewall,Ледяная стена,,NP:iwd2_rus
+Icelance,Ледяное копьё,,iwd2_rus
 Icewind Dale,Долина Ледяного Ветра,,BG1RUS-EET
 Icharyd,Ичарид,,BG1RUS-EET
 Icingdeath,Леденящая Смерть,,BG1RUS-EET
@@ -1754,33 +1753,30 @@ Idyletia,Идилетия,,sod_rus
 Igarol,Игарол,,BG2EE-russian
 Igen,Айген,,BG2EE-russian
 Ignatio,Игнатио,,BG1RUS-EET
-Iholikan,Ихоликан,,NP:iwd2_rus
+Iholikan,Ихоликан,,iwd2_rus
 Ihtafeer,Ихтафир,,BG2EE-russian
 Ikert,Икерт,,BG2EE-russian
 Iko,Ико,,BG2EE-russian
 Ikros,Икрос,,sod_rus
-Ilair,Илейр,,NP:iwd2_rus
+Ilair,Илейр,,iwd2_rus
 Ilbratha,Илбрата,,BG2EE-russian
-Ilharess,ильхаресс,,NP:iwd2_rus
-Ilharessen,Ильхаресс,,NP:iwd2_rus
+Ilharess,ильхаресс,язык дроу,iwd2_rus
 Illaruel,Илларуэль,,sod_rus
 Illasera,Илласера,,BG2EE-russian
-Illian,Иллиан,,NP:iwd2_rus
-Illigmar,Иллигмар,,NP:iwd2_rus
+Illian,Иллиан,,iwd2_rus
+Illigmar,Иллигмар,,iwd2_rus
 Illithid,иллитид,,BG1RUS-EET
 Illithium,иллитий,,BG2EE-russian
-Illium,Иллиум,,NP:iwd2_rus
-Illmater,Ильматаर्,,NP:iwd2_rus
+Illium,Иллиум,,iwd2_rus
 Illon,Иллон,,BG2EE-russian
 Illuryssallya,Иллуриссалия,,BG2EE-russian
-Ilmadia,Ильмадия,,NP:iwd2_rus
-Ilmatar,Ильматараго,,NP:iwd2_rus
-Ilmatari,ильматари,,NP:iwd2_rus
+Ilmadia,Ильмадия,,iwd2_rus
+Ilmatari,ильматари,,iwd2_rus
 Ilmater,Ильматер,,BG1RUS-EET
 Ilmryn,Илмрин,,BG2EE-russian
-Ilmus,Илмус,,NP:iwd2_rus
-Ilquog,Илкуог,,NP:iwd2_rus
-Ilsensine,Илсенсина,,NP:iwd2_rus
+Ilmus,Илмус,,iwd2_rus
+Ilquog,Илкуог,,iwd2_rus
+Ilsensine,Илсенсина,,iwd2_rus
 Iltha,Ильта,,BG2EE-russian
 Iltheia,Илтейя,,BG2EE-russian
 Ilvarstarr,Ильвастарр,,sod_rus
@@ -1791,34 +1787,26 @@ Imascus,Имаскус,,BG2EE-russian
 Imix,Аймикс,,BG2EE-russian
 Immartyred,Иммартиред,,sod_rus
 Immilmar,Иммилмар,,BG2EE-russian
-Immolation,Жертвоприношение,,NP:iwd2_rus
 Imnescar,Имнескар,,BG2EE-russian
 Imnesvale,Имнесвейл,,BG2EE-russian
 Imoen,Имоен,,BG1RUS-EET
 Impaler,Накол,,BG2EE-russian
-Imphraili,Имфраили,,NP:iwd2_rus
+Imphraili,Имфраили,,iwd2_rus
 Imrae,Имрэ,,BG2EE-russian
-Inconsequence,Непоследовательность,,NP:iwd2_rus
-Incylia,Инцилия,,NP:iwd2_rus
-Indubitably,Несомненно,,NP:iwd2_rus
+Incylia,Инцилия,,iwd2_rus
 Infravision,инфравидение,,BG1RUS-EET
 Ingot,Ингот,,BG1RUS-EET
-Ingrath,Инграт,,NP:iwd2_rus
-Inhatri,Инхатри,,NP:iwd2_rus
-Inhein,Инхейн,,NP:iwd2_rus
-Inidil,Инидил,,NP:iwd2_rus
+Ingrath,Инграт,,iwd2_rus
+Inhatri,Инхатри,,iwd2_rus
+Inhein,Инхейн,,iwd2_rus
+Inidil,Инидил,,iwd2_rus
 Innisfall,Иннисфолл,,sod_rus
-Interloper,Лазутчик,,NP:iwd2_rus
 Invoker,воплотитель,,BG1RUS-EET
 Ioin,Йоин,,BG1RUS-EET
-Iol,Иолит,,NP:iwd2_rus
 Iol Gem,Иолит,,BG2EE-russian
 Iolite,Иолит,,BG1RUS-EET
-Iols,Иолам,,NP:iwd2_rus
 Ioun,Иоун,,BG1RUS-EET
-Iphegenia,Ифегения,,NP:iwd2_rus
-Ipsi,Ипси,,NP:iwd2_rus
-Iquog,Илкуога,,NP:iwd2_rus
+Iphegenia,Ифегения,,iwd2_rus
 Irenicus,Айреникус,,BG1RUS-EET
 Iriaebor,Ириэбор,,BG1RUS-EET
 Iriaeboran,ириэборский,,BG1RUS-EET
@@ -1826,17 +1814,15 @@ Irlana,Ирлана,,BG2EE-russian
 Irlentree,Ирлентри,,BG1RUS-EET
 Iron Throne,Железный Трон,,BG1RUS-EET
 Ironblade,Айронблейд,,BG2EE-russian
-Ironbreaker,Железолом,,NP:iwd2_rus
+Ironbreaker,Железолом,,iwd2_rus
 Ironeye,Железноглазая,,BG2EE-russian
-Irongut,Железное брюхо,,NP:iwd2_rus
-Ironshod,Окованный,,NP:iwd2_rus
-Ironskins,Железные кожи,,NP:iwd2_rus
+Irongut,Железное брюхо,,iwd2_rus
 Irregulars,Нерегулярники,,sod_rus
-Irter,Иртер,,NP:iwd2_rus
+Irter,Иртер,,iwd2_rus
 Isaea,Изайя,,BG2EE-russian
-Isair,Исаир,,NP:iwd2_rus
-Iselore,Айселор,,NP:iwd2_rus
-Isherwood,Айшервуд,,NP:iwd2_rus
+Isair,Исаир,,iwd2_rus
+Iselore,Айселор,,iwd2_rus
+Isherwood,Айшервуд,,iwd2_rus
 Ishla,Ишла,,BG2EE-russian
 Ishmella,Ишмелла,,BG1RUS-EET
 Ishnael,Ишнаэль,,BG1RUS-EET
@@ -1852,7 +1838,7 @@ Ixilthetocal,Иксилтетокаль,,BG2EE-russian
 Ixthezzys,Иксфеззис,,BG2EE-russian
 Iyachtu,Ийяхту,,BG2EE-russian
 Iycanth,Ийкант,,BG2EE-russian
-Izbelah,Избела,,NP:iwd2_rus
+Izbelah,Избела,,iwd2_rus
 Izefia,Изефия,,BG1RUS-EET
 Izer,Изер,,BG2EE-russian
 Izil,Изил,,BG2EE-russian
