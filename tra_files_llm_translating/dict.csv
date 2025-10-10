@@ -540,6 +540,7 @@ Bruenor,Бруенор,,sod_rus
 Brunos,Брунос,,BG1RUS-EET
 Brus,Брюс,,BG2EE-russian
 Brutai,Брутай,,iwd2_rus
+Bryn Shander,Брин Шандер,,iwd2_rus
 Brynnlaw,Бриннлоу,,BG2EE-russian
 Buckler,баклер,,BG1RUS-EET
 Bugbear,багбир,,sod_rus
@@ -3050,24 +3051,21 @@ Sanik,Саник,,BG2EE-russian
 Sansuki,Сансуки,,BG2EE-russian
 Santele,Сантеле,,BG2EE-russian
 Saradush,Сарадуш,,BG2EE-russian
-
-Saralon,Саралон,,NP:iwd2_rus
+Saralon,Саралон,,iwd2_rus
 Sarevok,Саревок,,BG1RUS-EET
 Sarginson,Саргинсон,,sod_rus
-Sargtlin,Саргтлин,,NP:iwd2_rus
+Sargtlin,Саргтлин,,iwd2_rus
 Sarhedra,Сархедра,,BG1RUS-EET
 Sarles,Сарльз,,BG2EE-russian
 Sartessa,Сартесса,,BG1RUS-EET
 Sashay,Сашей,,BG1RUS-EET
 Sashenstar,Сашенстар,,BG1RUS-EET
-Sashkta,Сашкта,,NP:iwd2_rus
+Sashkta,Сашкта,,iwd2_rus
 Sassar,Сассар,,BG2EE-russian
 Sath,Сат,,BG1RUS-EET
 Satos,Сатос,,BG1RUS-EET
-Sayid,Сайид,,NP:iwd2_rus
 Scald,скальд,,sod_rus
-Scalecleaver,Рассекатель чешуи,,NP:iwd2_rus
-Scamper,Беги-беги,,NP:iwd2_rus
+Scalecleaver,Рассекатель чешуи,,iwd2_rus
 Schaal,Шаал,,BG2EE-russian
 Schael,Шаэль,,sod_rus
 Schamadar,Шамадар,,BG2EE-russian
@@ -3075,16 +3073,15 @@ Schlumpsha,Шлюмпша,,BG1RUS-EET
 Schvantz,Шванс,,BG1RUS-EET
 Scimitar,скимитар,,BG1RUS-EET
 Scornubel,Скорнубел,,sod_rus
-Scrag,Скрэг,,NP:iwd2_rus
-Screed,Клочок,,NP:iwd2_rus
-Scrimshander,Косторез,,NP:iwd2_rus
+Scrag,Скрэг,,iwd2_rus
+Screed,Клочок,,iwd2_rus
+Scrimshander,Косторез,,iwd2_rus
 Scrooloose,Бумажкинс,,BG2EE-russian
-Scuffs,Потёртости,,NP:iwd2_rus
 Seatower,Морская Башня,,BG1RUS-EET
 Seawatcher,Страж Моря,,BG1RUS-EET
 Seawolf,Сивульф,,BG2EE-russian
-Sehanine,Сеханин,,NP:iwd2_rus
-Sehriya,Серийя,,NP:iwd2_rus
+Sehanine,Сеханин,,iwd2_rus
+Sehriya,Серийя,,iwd2_rus
 Sekath,Секатх,,BG2EE-russian
 Sekolah,Секолах,,BG2EE-russian
 Selaad,Селаад,,BG1RUS-EET
@@ -3096,7 +3093,7 @@ Semahl,Семал,,sod_rus
 Semaj,Семадж,,BG1RUS-EET
 Sembia,Сембия,,BG1RUS-EET
 Sembian,сембийский,,BG1RUS-EET
-Semia,Семия,,NP:iwd2_rus
+Semia,Семия,,BG1RUS-EET
 Semmemon,Семмемон,,BG1RUS-EET
 Sempek,Семпек,,sod_rus
 Senderin,Сендерин,,sod_rus
@@ -3104,163 +3101,135 @@ Seni,Сени,,BG2EE-russian
 Senityili,Сенитьили,,BG2EE-russian
 Seniyad,Сенияд,,BG1RUS-EET
 Senjak,Сенджак,,BG1RUS-EET
-Sephica,Сефика,,NP:iwd2_rus
+Sephica,Сефика,,iwd2_rus
 Sephos,Сефос,,BG2EE-russian
-Sepitius,С-с-сепитий,,NP:iwd2_rus
-Serak,Серак,,NP:iwd2_rus
-Sersa,Серса,,NP:iwd2_rus
+Serak,Серак,,iwd2_rus
+Sersa,Серса,,iwd2_rus
 Sethle,Сетл,,BG2EE-russian
 Sethyl,Сетил,,sod_rus
 Shaar,Шаар,,BG1RUS-EET
 Shadel,Шадель,,BG2EE-russian
 Shadowdale,Шэдоудейл,,BG1RUS-EET
 Shadowdancer,Теневой танцор,,BG1RUS-EET
-Shadowdark,Шедоударкский,,NP:iwd2_rus
 Shadowdark Ale,Шедоударкский эль,,BG2EE-russian
 Shadowlord,Владыка Теней,,BG1RUS-EET
 Shadowmaster,Мастер теней,,BG2EE-russian
 Shadowstep,Теневой шаг,,BG2EE-russian
 Shaella,Шаэлла,,BG1RUS-EET
 Shaelle,Шаэлль,,BG1RUS-EET
-Shaengaren,Шенгарнский,,NP:iwd2_rus
-Shaengarne,Шенгарн,,NP:iwd2_rus
+Shaengaren,шенгарнский,,iwd2_rus
+Shaengarne,Шенгарн,,iwd2_rus
 Shagbag,Патлатый,,BG2EE-russian
 Shalasin,Шаласин,,BG1RUS-EET
 Shaldrissa,Шалдрисса,,BG1RUS-EET
 Shallen,Шаллен,,sod_rus
 Shallie,Шалли,,BG1RUS-EET
-Shambler,Ползун,,NP:iwd2_rus
+Shambler,ползун,,iwd2_rus
 Shambling Mound,Ползущий холм,,BG1RUS-EET
 Shamus,Шамус,,BG2EE-russian
 Shanall,Шаналл,,BG1RUS-EET
 Shandalar,Шандалар,,BG1RUS-EET
-Shander,Шандер,,NP:iwd2_rus
 Shandon,Шандон,,BG1RUS-EET
 Shangalar,Шангалар,,BG2EE-russian
 Shani,Шани,,BG2EE-russian
 Shapeshifter,оборотень,,BG1RUS-EET
-Shapeshifters,Оборотни,,NP:iwd2_rus
-Shapeshifts,Смена формы,,NP:iwd2_rus
 Shapur,Шапур,,sod_rus
 Shara,Шара,,BG1RUS-EET
 Shareen,Шарин,,BG2EE-russian
 Sharess,Шаресс,,sod_rus
 Sharik,Шарик,,BG2EE-russian
 Sharindlar,Шариндлар,,BG2EE-russian
-Sharptooth,Острозуб,,NP:iwd2_rus
-Sharra,Шарра,,NP:iwd2_rus
+Sharptooth,Острозуб,,iwd2_rus
+Sharra,Шарра,,iwd2_rus
 Sharran,Шарран,,sod_rus
 Sharrans,шарране,,BG2EE-russian
 Shaundakul,Шаундакул,,BG2EE-russian
-Shawford,Шоуфорд,,NP:iwd2_rus
-Shawm,гобой,,NP:iwd2_rus
+Shawford,Шоуфорд,,iwd2_rus
 Shazzellim,Шаззеллим,,BG2EE-russian
-Sheemish,Шимиш,,NP:iwd2_rus
-Shelgoth,Шелгота,,NP:iwd2_rus
-Shelhai,Шелхай,,NP:iwd2_rus
+Sheemish,Шимиш,,iwd2_rus
+Shelgoth,Шелгота,,iwd2_rus
+Shelhai,Шелхай,,iwd2_rus
 Shelligh,Шеллиг,,BG1RUS-EET
-Shenlen,Шенлен,,NP:iwd2_rus
-Sherincal,Шеринкаль,,NP:iwd2_rus
-Shernical,Шеринкаль,,NP:iwd2_rus
+Shenlen,Шенлен,,iwd2_rus
+Sherincal,Шеринкаль,,iwd2_rus
 Shertzwin,Шертцвин,,BG2EE-russian
 Shevarash,Шевараш,,sod_rus
-Shikata,Шиката,,NP:iwd2_rus
+Shikata,Шиката,,iwd2_rus
 Shilmista,Шилмиста,,sod_rus
 Shilo,Шило,,BG1RUS-EET
 Shistal,Шистал,,BG1RUS-EET
 Shoogen,Шугенов,,sod_rus
 Shoon,Шун,,BG2EE-russian
-Shoppe,Лавочка,,NP:iwd2_rus
 Shortbow,короткий лук,,BG1RUS-EET
-Shorthorn,рожок,,NP:iwd2_rus
-Shrrace,лучники,,NP:iwd2_rus
 Shur,Шур,,BG2EE-russian
 Shuruppak,Шурупpak,,BG2EE-russian
 Shvanana,Шванана,,BG2EE-russian
 Shvertszche,Швертзче,,BG1RUS-EET
 Shyressa,Шайресса,,BG2EE-russian
-Sibilant,Шипящая,,NP:iwd2_rus
 Sickl,Сикл,,sod_rus
 Sidge,Сидж,,BG2EE-russian
 Sigandulba,Сигандулба,,BG2EE-russian
 Sigil,Сигил,,sod_rus
-Silentkiller,Тихий убийца,,NP:iwd2_rus
+Silentkiller,Тихий убийца,,iwd2_rus
 Silke,Силке,,BG1RUS-EET
 Siltrin,Силтрин,,BG2EE-russian
-Silvanas,Сильванус,,NP:iwd2_rus
-Silvanite,жрецов Сильвануса,,NP:iwd2_rus
 Silvanus,Сильванус,,BG2EE-russian
 Silverblade,Сильверблейд,,BG2EE-russian
-Silvered,Посеребрённый,,NP:iwd2_rus
-Silverfinger,Сребропалый,,NP:iwd2_rus
+Silverfinger,Сребропалый,,iwd2_rus
 Silverhair,Среброволосая,,BG2EE-russian
 Silvershield,Сильвершилд,,BG1RUS-EET
-Silverstar,Серебряная Звезда,,NP:iwd2_rus
-Silverstars,Серебряные звёзды,,NP:iwd2_rus
-Silvertongue,Сладкоголосая,,NP:iwd2_rus
+Silverstar,Серебряная Звезда,,iwd2_rus
+Silvertongue,Сладкоголосая,,iwd2_rus
 Silverymoon,Серебристая Луна,,BG1RUS-EET
 Simbja,Симбжа,,BG2EE-russian
 Sime,Сайм,,BG2EE-russian
 Simmeon,Симмеон,,BG1RUS-EET
 Simonetta,Симонетта,,sod_rus
-Simpletons,Простаки,,NP:iwd2_rus
 Simulacrum,Подобие,,BG1RUS-EET
 Simyaz,Симьяз,,BG2EE-russian
 Sindret,Синдрет,,sod_rus
 Sirine,сирена,,BG1RUS-EET
 Sixfingers,Шестипалый,,BG2EE-russian
 Sixscar,Сикскар,,BG2EE-russian
-Sixtoes,Шестипалый,,NP:iwd2_rus
+Sixtoes,Шестипалый,,iwd2_rus
 Siyo,Сийо,,sod_rus
 Skal,Скал,,BG2EE-russian
-Skaldar,Скальдар,,NP:iwd2_rus
+Skaldar,Скальдар,,iwd2_rus
 Skarmaen,Скармэн,,BG2EE-russian
 Skie,Скай,,BG1RUS-EET
-Skirling,Вопящий,,NP:iwd2_rus
 Skuld,Скулд,,BG2EE-russian
-Skulking,Угрюмый,,NP:iwd2_rus
-SkullFlail,Цеп Черепов,,NP:iwd2_rus
 Skullcrusher,Череподробитель,,BG1RUS-EET
 Skullgnasher,Черепогрыз,,BG2EE-russian
-Skullsplitter,Череполом,,NP:iwd2_rus
-Slanderous,Клеветнические,,BG2EE-russian
-Slithering,Скользкие,,NP:iwd2_rus
+Skullsplitter,Череполом,,iwd2_rus
 Slooble,Слубль,,BG2EE-russian
 Slythe,Слит,,BG1RUS-EET
-SmSw,СмСв,,NP:iwd2_rus
-SmSword,Меч,,NP:iwd2_rus
 Smaeluv,Вониаг,,BG2EE-russian
 Smurtlepuss,Хитропопье,,BG2EE-russian
-Snakebite,Укус змеи,,NP:iwd2_rus
-Snicker,Закуска,,NP:iwd2_rus
+Snakebite,Укус змеи,заклинание,iwd2_rus
 Snikt,Сникт,,BG1RUS-EET
-Snilloc,Сниллок,,NP:iwd2_rus
+Snilloc,Сниллок,,iwd2_rus
 Snorgash,Сноргаш,,sod_rus
-Snowdrift,Сугробная,,NP:iwd2_rus
 Snuffy,Снуфи,,BG2EE-russian
-Soarsmen,Парящий,,NP:iwd2_rus
 Softbelcher,Софтбелчер,,sod_rus
 Solamnia,Соламния,,BG2EE-russian
 Solamnic,соламнийский,,BG2EE-russian
 Solaufein,Солафейн,,BG2EE-russian
 Solgen,Солген,,BG1RUS-EET
 Solianna,Солианна,,BG1RUS-EET
-Solik,Солик,,NP:iwd2_rus
+Solik,Солик,,iwd2_rus
 Solik Berries,Ягоды солик,,BG2EE-russian
-Solonor,Солонор,,NP:iwd2_rus
+Solonor,Солонор,,iwd2_rus
 Sondal,Сондал,,BG2EE-russian
 Sonner,Соннер,,BG1RUS-EET
 Sontan,Сонтан,,BG2EE-russian
-Sophias,Софии,,NP:iwd2_rus
 Soralis,Соралис,,sod_rus
 Sorcere,Магическая академия,,sod_rus
 Sorcerous Sundries,Колдовские Припасы,,BG1RUS-EET
-Sorderer,Сордерер,,NP:iwd2_rus
-Sordirsin,Сордирсин,,NP:iwd2_rus
+Sordirsin,Сордирсин,,iwd2_rus
 Sorn,Сорн,,BG2EE-russian
 Sorrem,Соррем,,BG1RUS-EET
 Sorsha,Сорша,,BG2EE-russian
-Soth,Сот,,NP:iwd2_rus
+Soth,Сот,,iwd2_rus
 Sotuk,Сотук,,sod_rus
 Soubar,Соубар,,sod_rus
 Soulherder,Собиратель душ,,sod_rus
@@ -3269,45 +3238,34 @@ Sovalidaas,Совалидаас,,BG2EE-russian
 Spanky,Шлёпка,,BG2EE-russian
 Spearbiter,Копьекус,,BG2EE-russian
 Spearbiters,копьекусцы,,BG2EE-russian
-Spearman,копейщик,,NP:iwd2_rus
-Spek,Пугуври,,NP:iwd2_rus
-SpellWeaver,заклинатель,,NP:iwd2_rus
 Spellcaster,заклинатель,,BG1RUS-EET
-Spellcraft,Колдовство,,NP:iwd2_rus
 Spellhaunt,Спеллхонт,,BG2EE-russian
 Spellhold,Спеллхолд,,BG2EE-russian
 Spelljammer,чаролёт,,BG2EE-russian
 Spellstrike,Удар по заклинаниям,,BG1RUS-EET
-Spellsword,Маг-мечник,,NP:iwd2_rus
-Spellward,Оберега,,NP:iwd2_rus
 Spen,Спен,,BG1RUS-EET
-Spendelard,Спенделард,,NP:iwd2_rus
+Spendelard,Спенделард,,iwd2_rus
 Spensse,Спенс,,sod_rus
 Sphene,Сфен,,BG1RUS-EET
-Spinesheath,Ножны-в-спине,,NP:iwd2_rus
-Spiritcaller,Герольд мёртвых,,NP:iwd2_rus
-Spithdrider,Тенетодрайдер,,NP:iwd2_rus
+Spinesheath,Ножны-в-спине,,iwd2_rus
+Spiritcaller,Герольд мёртвых,,iwd2_rus
+Spithdrider,Тенетодрайдер,,iwd2_rus
 Spitwrack,Спитрек,,BG1RUS-EET
-Splendon,Сплендон,,NP:iwd2_rus
-Spli,Раско,,NP:iwd2_rus
-Splitsteel,Расколотой Стали,,NP:iwd2_rus
+Splendon,Сплендон,,iwd2_rus
+Splitsteel,Расколотая Сталь,клан дварфов,iwd2_rus
 Splurging Sturgeon,Игривый Осётр,,BG1RUS-EET
 Sprat,Спрэт,,BG1RUS-EET
-Sprawg,Спрог,,NP:iwd2_rus
-Springson,Веснопевец,,NP:iwd2_rus
-Springsong,Веснопевец,,NP:iwd2_rus
+Sprawg,Спрог,,iwd2_rus
+Springsong,Веснопевец,,iwd2_rus
 Squip,Сквип,,BG2EE-russian
 Squisher,Давила,,BG2EE-russian
-Sseth,Ссет,,NP:iwd2_rus
-Ssethsar,Ссетсар,,NP:iwd2_rus
-Ssethssar,Ссетссар,,NP:iwd2_rus
-Ssethssars,ссетссаров,,NP:iwd2_rus
-Sshamath,Сшамате,,NP:iwd2_rus
-Sshh,Тс-с,,NP:iwd2_rus
+Sseth,Ссет,,iwd2_rus
+Ssethsar,Ссетсар,,iwd2_rus
+Sshamath,Сшамат,,iwd2_rus
 Ssivilis,Ссивилис,,BG2EE-russian
 Ssussun,Ссуссун,,BG2EE-russian
 Stablehand,Крепкорукая,,BG1RUS-EET
-Stagheart,Оленье сердце,,NP:iwd2_rus
+Stagheart,Оленье сердце,,iwd2_rus
 Stalia,Сталия,,sod_rus
 Stalman,Сталман,,BG2EE-russian
 Stanet,Станет,,BG2EE-russian
@@ -3315,61 +3273,52 @@ Stannel,Станнел,,BG2EE-russian
 Starmantle,Стармантл,,BG2EE-russian
 Steadyhammer,Верный Молот,,BG1RUS-EET
 Steadyhand,Вернорукий,,sod_rus
-Stele,стелы,,NP:iwd2_rus
 Sterk,Стерк,,BG2EE-russian
 Steth,Стет,,BG2EE-russian
 Stirv,Стирв,,BG2EE-russian
 Stivan,Стиван,,BG2EE-russian
-Stoh,Сто,,NP:iwd2_rus
-Stomper,Топтун,,NP:iwd2_rus
+Stoh,Сто,,iwd2_rus
+Stomper,Топтун,,iwd2_rus
 Stoneblade,Закаменевший Клинок,,BG1RUS-EET
 Stonebreaker,Сокрушитель Камней,,BG1RUS-EET
 Stoneface,Камнеликий,,BG2EE-russian
-Stonefoe,Каменюка,,NP:iwd2_rus
+Stonefoe,Каменюка,,iwd2_rus
 Stonehand,Стоунхэнд,,sod_rus
-Stonehead,Каменная башка,,NP:iwd2_rus
-Stonemason,Каменщик,,NP:iwd2_rus
+Stonehead,Каменная башка,,iwd2_rus
+Stonemason,Каменщик,,iwd2_rus
 Stoneshape Scroll,Свиток камнетворения,,BG2EE-russian
 Stoneskin,Каменная кожа,,BG1RUS-EET
-Stonewalker,камнеходец,,NP:iwd2_rus
+Stonewalker,камнеходец,,iwd2_rus
 Stoone,Стун,,BG2EE-russian
 Stormbringer,Громовержец,,BG2EE-russian
-Stormbrother,Буревестник,,NP:iwd2_rus
-Stormcaller,Певец бури,,NP:iwd2_rus
+Stormbrother,Буревестник,,iwd2_rus
+Stormcaller,Певец бури,,iwd2_rus
 Stormfingers,Штормопал,,BG2EE-russian
 Stormherald,Буревестник,,BG2EE-russian
 Stormhorn,Штормовые пики,,BG2EE-russian
 Stormlord,Владыка Бурь,,sod_rus
-Stormlords,Буревладыки,,NP:iwd2_rus
-Stormshifter,Грозобой,,NP:iwd2_rus
-Stormsister,штормовая сестра,,NP:iwd2_rus
-Stormstar,Звезда Штормов,,NP:iwd2_rus
-Stoutward,Крепкий страж,,NP:iwd2_rus
+Stormshifter,Грозобой,,iwd2_rus
+Stormstar,Звезда Штормов,,iwd2_rus
+Stoutward,Крепкий страж,,iwd2_rus
 Strathi,Страти,,BG2EE-russian
-Straug,Строга,,NP:iwd2_rus
+Straug,Строг,,iwd2_rus
 Streea,Стриа,,BG2EE-russian
 Strohm,Стром,,BG2EE-russian
-Stromnos,Стромнос,,NP:iwd2_rus
-Strongheart,Крепкий,,NP:iwd2_rus
+Stromnos,Стромнос,,iwd2_rus
 Strunk,Странк,,sod_rus
-Stubbletoes,Шерстопал,,NP:iwd2_rus
-Stubnok,Стабнок,,NP:iwd2_rus
+Stubbletoes,Шерстопал,,iwd2_rus
+Stubnok,Стабнок,,iwd2_rus
 Stumfel,Штумфель,,sod_rus
-Stunty,коротышку,,NP:iwd2_rus
 Stupefier,Ошеломитель,,BG1RUS-EET
 Stysich,Стайсич,,sod_rus
-Subrace,Подраса,,NP:iwd2_rus
-Subvocal,безголосые,,NP:iwd2_rus
 Sukayna,Сакайна,,BG2EE-russian
 Sularus,Суларус,,BG2EE-russian
 Suldanessellar,Сулданесселлар,,BG1RUS-EET
-Sulo,Суло,,NP:iwd2_rus
-Sumat,Сумат,,NP:iwd2_rus
+Sulo,Суло,,iwd2_rus
+Sumat,Сумат,,iwd2_rus
 Summerheigh,Саммерхай,,BG2EE-russian
-Summoner,Призывательница,,NP:iwd2_rus
 Suna,Суна,,BG2EE-russian
-Sundabar,Сундабаре,,NP:iwd2_rus
-Sundered,Разбитый,,NP:iwd2_rus
+Sundabar,Сундабар,,BG1RUS-EET
 Sundermaul,Кувалда Раскола,,sod_rus
 Sundrah,Сундрах,,BG1RUS-EET
 Sundus,Сандус,,BG2EE-russian
@@ -3379,26 +3328,24 @@ Sunfire,Солнечный огонь,,BG2EE-russian
 Sunin,Сунин,,BG1RUS-EET
 Sunlord,Солнечный лорд,,BG2EE-russian
 Sunray,Луч солнца,,BG2EE-russian
-Sunscorch,Солнечный ожог,,NP:iwd2_rus
+Sunscorch,Солнечный ожог,,iwd2_rus
 Sunspeaker,Говорящий с Солнцем,,sod_rus
 Sunstone,Солнечный камень,,BG2EE-russian
-Suoma,Суома,,NP:iwd2_rus
-Supplicant,Проситель,,NP:iwd2_rus
+Suoma,Суома,,iwd2_rus
 Surayah,Сурайя,,BG2EE-russian
 Surfacer,наземник,,BG2EE-russian
 Surkh,Сурх,,BG1RUS-EET
 Surtr,Граз,,BG2EE-russian
 Suryris,Суририс,,BG1RUS-EET
 Susret,Сусрет,,BG1RUS-EET
-Svaltid,Свалтид,,NP:iwd2_rus
+Svaltid,Свалтид,,iwd2_rus
 Svenson,Свенсон,,BG1RUS-EET
-Svian,Свиан,,NP:iwd2_rus
+Svian,Свиан,,iwd2_rus
 Svirfneblin,Свирфнеблин,,sod_rus
 Svlast,Свласт,,BG1RUS-EET
 Swashbuckler,головорез,,BG1RUS-EET
 Swiftfootsdottir,Свифтфутсдоттир,,sod_rus
-Swizarnian,Шvizцарский,,NP:iwd2_rus
-Swordmaster,мастер меча,,NP:iwd2_rus
+Holy Swizarnian Hammer of Lucerne,Швизцарский люцернский молот,,iwd2_rus
 Sybarr,Сибарра,,BG1RUS-EET
 Symm,Симм,,BG2EE-russian
 Sythillis,Ситсилл,,BG2EE-russian
@@ -3409,13 +3356,13 @@ Sziltar,Сцильтар,,BG2EE-russian
 Szithla,Сцитла,,BG2EE-russian
 Szordrin,Зордрин,,BG2EE-russian
 Taar,Таар,,BG2EE-russian
-Tabard,Табард,,NP:iwd2_rus
+Tabard,Табард,,iwd2_rus
 Taddaus,Таддаус,,BG2EE-russian
 Taerga,Таерга,,BG2EE-russian
 Taerom,Таэром,,BG1RUS-EET
 Tagget,Таггет,,BG2EE-russian
 Tahazzar,Тахаззар,,BG2EE-russian
-Tahvo,Таво,,NP:iwd2_rus
+Tahvo,Таво,,iwd2_rus
 Taibela,Тайбела,,BG2EE-russian
 Taield,Тайелд,,sod_rus
 Taig,Тайг,,sod_rus
