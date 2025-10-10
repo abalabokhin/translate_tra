@@ -2900,8 +2900,7 @@ Rededge,Кровосток,,BG1RUS-EET
 Redigar,Редигар,,BG2EE-russian
 Redmoons,Редмунс,,sod_rus
 Redsun,Красное Солнце,,BG2EE-russian
-Redwater,Красные Воды,,BG1RUS-EET
-Redwaters,Красные Воды,,iwd2_rus
+Redwater,Красноводье,,iwd2_rus
 Reedle,Ридл,,BG2EE-russian
 Reevor,Ривор,,BG1RUS-EET
 Reghedmen,Регеда,,iwd2_rus
@@ -3296,7 +3295,8 @@ Stormcaller,Певец бури,,iwd2_rus
 Stormfingers,Штормопал,,BG2EE-russian
 Stormherald,Буревестник,,BG2EE-russian
 Stormhorn,Штормовые пики,,BG2EE-russian
-Stormlord,Владыка Бурь,,sod_rus
+Stormlord,Владыка Бурь,прозвище Талоса,sod_rus
+Stormlord,Буревладыка,ранг священника Талоса,sod_rus
 Stormshifter,Грозобой,,iwd2_rus
 Stormstar,Звезда Штормов,,iwd2_rus
 Stoutward,Крепкий страж,,iwd2_rus
