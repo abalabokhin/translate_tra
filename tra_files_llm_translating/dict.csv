@@ -326,10 +326,10 @@ Badiat,Бадиат,,BG2EE-russian
 Badon,Бадон,,BG2EE-russian
 Bael,Бейл,,BG2EE-russian
 Baelm,Бэлм,,iwd2_rus
-Baelnorn,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8373; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15372,NP:IWDEE-russian
+Baelnorn,баэльнорн,,NP:IWDEE-russian
 Baeloth,Баэлот,,BG1RUS-EET
 Baerin,Баэрин,,BG1RUS-EET
-Baern,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40001,NP:IWDEE-russian
+Baern,Баерн,,NP:IWDEE-russian
 Baervan,Баэрван,,BG2EE-russian
 Bahamut,Бахамут,,BG1RUS-EET
 Baldemar,Бальдемар,,iwd2_rus
@@ -376,15 +376,15 @@ Bassilus,Бассилус,,BG1RUS-EET
 Batalista,Баталиста,,BG1RUS-EET
 Battledale,Баттлдейл,,BG1RUS-EET
 Battleguard,Страж Битвы,,iwd2_rus
-Battlehammer,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22913; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40444; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40445; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40614,NP:IWDEE-russian
-Battlehammers,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40437,NP:IWDEE-russian
-Battlelord,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@192,NP:IWDEE-russian
+Battlehammer,Боевой Молот,,NP:IWDEE-russian
+Battlehammers,Боевой Молот,,NP:IWDEE-russian
+Battlelord,Господин Битв,,NP:IWDEE-russian
 Battlesong,боевую песнь,,iwd2_rus
 Battuks,Баттукс,,sod_rus
 Bautha,Баутха,,iwd2_rus
-Bawk,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2214,NP:IWDEE-russian
+Bawk,Квок,,NP:IWDEE-russian
 Bayle,Бейл,,BG2EE-russian
-Be'land,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@455; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7702,NP:IWDEE-russian
+Be'land,Белэнд,,NP:IWDEE-russian
 Beastlord,повелитель зверей,,iwd2_rus
 Beastmaster,повелитель зверей,,BG1RUS-EET
 Becek,Бицек,,iwd2_rus
@@ -399,7 +399,7 @@ Belak,Белак,,BG2EE-russian
 Belar,Белар,,BG2EE-russian
 Belben,Белбен,,sod_rus
 Belde,Белде,,BG1RUS-EET
-Belde'ar,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2515; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4815; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4816; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4817; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4818; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12512; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12513; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12514; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12515; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12709; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12759; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12777,NP:IWDEE-russian
+Belde'ar,Белде'ар,,NP:IWDEE-russian
 Beldin,Белдин,,BG1RUS-EET
 Belegarm,Белегарм,,sod_rus
 Belhifet,Белхифет,,sod_rus
@@ -417,7 +417,7 @@ Bence,Бенс,,sod_rus
 Bendalis,Бендалис,,BG1RUS-EET
 Bendelia,Бенделия,,BG2EE-russian
 Bengahd,Бенгад,,sod_rus
-Benjamins,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@37; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@797,NP:IWDEE-russian
+Benjamins,деньги,,NP:IWDEE-russian
 Benjy,Бенджи,,BG1RUS-EET
 Bennon,Беннон,,BG2EE-russian
 Beno,Бено,,sod_rus
@@ -437,12 +437,12 @@ Beregost,Берегост,,BG1RUS-EET
 Berena,Берена,,BG2EE-russian
 Berenford,Беренфорд,,BG2EE-russian
 Berenn,Беренн,,BG2EE-russian
-Berenson,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2098; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@6951; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9835; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@20214; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@20256; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34234; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34281; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34290; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34291,NP:IWDEE-russian
-Bergclaw,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@25811; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@25812,NP:IWDEE-russian
+Berenson,Беренсон,,NP:IWDEE-russian
+Bergclaw,Коготь айсберга,,NP:IWDEE-russian
 Bergrick,Бергрик,,iwd2_rus
 Berinvar,Беринвар,,BG2EE-russian
 Berkref,Беркреф,,BG2EE-russian
-Berronar,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9745; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19412,NP:IWDEE-russian
+Berronar,Берронар,,NP:IWDEE-russian
 Berrun,Беррун,,BG1RUS-EET
 Berserker,Берсерк,,BG1RUS-EET
 Beruel,Беруэль,,BG1RUS-EET
@@ -450,7 +450,7 @@ Berywel,Беривел,,iwd2_rus
 Beshaba,Бешаба,,BG1RUS-EET
 Bessen,Бессен,,BG2EE-russian
 Betha,Бета,,iwd2_rus
-Bethla,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40202,NP:IWDEE-russian
+Bethla,Бетла,,NP:IWDEE-russian
 Betran,Бетран,,iwd2_rus
 Betror,Бетрор,,sod_rus
 Betsie,Бетси,,BG1RUS-EET
@@ -491,7 +491,7 @@ Blane,Блейн,,BG1RUS-EET
 Blethyn,Блетин,,BG2EE-russian
 Blingdenstone,Блингденстоун,,sod_rus
 Blinky,Бинки,,BG2EE-russian
-Blix,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8147,NP:IWDEE-russian
+Blix,Бликс,,NP:IWDEE-russian
 Bloodaxe,Кровавый Топор,,BG2EE-russian
 Bloodscalp,Кровавый Скальп,,BG2EE-russian
 Bloodstone,кровавик,,BG1RUS-EET
@@ -513,9 +513,9 @@ Boneblade,Костяной клинок,,BG2EE-russian
 Bonecleaver,Костолом,,iwd2_rus
 Bonecracker,Костолом,,iwd2_rus
 Bonecutter,Косторез,,iwd2_rus
-Bonedancers,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13990; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13991; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13992,NP:IWDEE-russian
+Bonedancers,Костяные танцоры,,NP:IWDEE-russian
 Boneguard,Костяной страж,,iwd2_rus
-Boneyard,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40100,NP:IWDEE-russian
+Boneyard,Поле Костей,,NP:IWDEE-russian
 Boosenburry,Хмель-ягода,,iwd2_rus
 Bootcut,Стопорез,,BG2EE-russian
 Booter,Бутер,,BG2EE-russian
@@ -530,7 +530,7 @@ Bottlesworth,Бражник,,BG2EE-russian
 Boulon,Боулон,,BG1RUS-EET
 Braehg,Брэг,,iwd2_rus
 Brage,Брейг,,BG1RUS-EET
-Braggart,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23275,NP:IWDEE-russian
+Braggart,Хвастун,,NP:IWDEE-russian
 Braitenbach,Брайтенбах,,BG2EE-russian
 Brandilar,Брандилар,,BG1RUS-EET
 Brandobaris,Брандобарис,,BG1RUS-EET
@@ -585,23 +585,23 @@ Burran,бурран,,BG2EE-russian
 Burrower,Землерой,,iwd2_rus
 Busya,Буся,,BG2EE-russian
 Buvai,Бувай,,iwd2_rus
-Bwahahaha,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@24273,NP:IWDEE-russian
+Bwahahaha,Ах-ха-ха-ха-ха-ха,,NP:IWDEE-russian
 Bylanna,Биланна,,BG2EE-russian
 Byzon,Байзон,,sod_rus
-C'mere,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19626; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19922,NP:IWDEE-russian
+C'mere,Иди сюда,,NP:IWDEE-russian
 Caan,Каан,,BG2EE-russian
 Caballus,Кабаллус,,iwd2_rus
 Cabrina,Кабрина,,BG2EE-russian
 Cacofiend,Какодемон,,BG1RUS-EET
 Cadderly,Каддерли,,BG1RUS-EET
-Cadriel,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40002,NP:IWDEE-russian
+Cadriel,Кадриэль,,NP:IWDEE-russian
 Cadril,Кадрил,,BG2EE-russian
 Caedmon,Каэдмон,,BG1RUS-EET
 Caehan,Каэхан,,BG2EE-russian
 Caelar,Каэлар,,sod_rus
 Caeless,Каэлесс,,sod_rus
 Caelfor,Каэлфор,,BG2EE-russian
-Caer,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@260; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@275; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@282; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@349; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@350; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@351; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2331; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16535; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18100; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18101; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18103; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18106; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18108; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18139; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18772; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18774; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19320; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22928; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34182; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34183; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34231,NP:IWDEE-russian
+Caer,Каэр,,NP:IWDEE-russian
 Caer-Dinival,Каэр-Диневал,,iwd2_rus
 Caer-Konig,Каэр-Кониг,,iwd2_rus
 Caernach,Каэрнах,,iwd2_rus
@@ -628,7 +628,7 @@ Camitis,Камитис,,BG2EE-russian
 Canderous,Кандероус,,BG1RUS-EET
 Candlekeep,Кендлкип,,BG1RUS-EET
 Cania,Кания,,BG2EE-russian
-Canid,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34831,NP:IWDEE-russian
+Canid,Канид,,NP:IWDEE-russian
 Canticle,Кантикл,,BG1RUS-EET
 Caradoc,Карадок,,iwd2_rus
 Carbin,Карбин,,BG2EE-russian
@@ -651,7 +651,7 @@ Cathin,Катин,,iwd2_rus
 Cathras,Катрас,,BG2EE-russian
 Catis,Катис,,BG2EE-russian
 Cattack,Каттак,,BG1RUS-EET
-Catti,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2296; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2298,NP:IWDEE-russian
+Catti,Кэтти,,NP:IWDEE-russian
 Catti-Brie,Кэтти-бри,,BG2EE-russian
 Caturak,Катурак,,BG1RUS-EET
 Caulder,Колдер,,iwd2_rus
@@ -670,7 +670,7 @@ Cerebus,Церебус,,BG2EE-russian
 Cernd,Сернд,,BG2EE-russian
 Cernick,Серник,,BG2EE-russian
 Cespenar,Цеспенар,,BG1RUS-EET
-Chaarr,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18899,NP:IWDEE-russian
+Chaarr,К,,NP:IWDEE-russian
 Chahopek,Чахопек,,iwd2_rus
 Chak,Чак,,BG2EE-russian
 Chalimandren,Калимандрен,,iwd2_rus
@@ -720,7 +720,7 @@ Cless,Клесс,,BG2EE-russian
 Cletus,Клетус,,BG2EE-russian
 Cloakshadow,Плащ Теней,,sod_rus
 Cloakwood,Клоаквуд,,BG1RUS-EET
-Cloudburst,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21419; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@25319,NP:IWDEE-russian
+Cloudburst,Ливень,,NP:IWDEE-russian
 Cloudkill,смертоносное облако,,BG1RUS-EET
 Cloudkiss,Облачный поцелуй,,iwd2_rus
 Cloudpeaks,Облачные Вершины,,BG1RUS-EET
@@ -753,12 +753,12 @@ Corgeig,Коргейг,,BG2EE-russian
 Corianna,Корианна,,BG1RUS-EET
 Cormanthor,Кормантор,,BG2EE-russian
 Cormyr,Кормир,,BG1RUS-EET
-Cormyran,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@130,NP:IWDEE-russian
+Cormyran,Кормиранское,,NP:IWDEE-russian
 Cormyrians,кормирцы,,BG2EE-russian
 Corneil,Корнейл,,BG2EE-russian
 Cornugon,Корнугон,,sod_rus
 Coroniir,Корониир,,sod_rus
-Corrupter,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15490,NP:IWDEE-russian
+Corrupter,Богохульник,,NP:IWDEE-russian
 Corsone,Корсон,,BG1RUS-EET
 Corthala,Кортала,Кортала склоняемая фамилия,BG2EE-russian
 Corvyr,Корвир,,BG1RUS-EET
@@ -775,7 +775,7 @@ Craumerdaun,Кромердон,,BG2EE-russian
 Crecia,Креция,,BG2EE-russian
 Credus,Кредус,,BG1RUS-EET
 Crenshinibon,Креншинибон,,sod_rus
-Crieck,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27311,NP:IWDEE-russian
+Crieck,Крайек,,NP:IWDEE-russian
 Criek,Краек,,iwd2_rus
 Crimmor,Криммор,,BG2EE-russian
 Cristiana,Кристиана,,iwd2_rus
@@ -785,7 +785,7 @@ Crommus,Кроммус,,sod_rus
 Crragtail,Сккалохвост,,BG2EE-russian
 Crum,Крум,,iwd2_rus
 Cryonax,Крионакс,,BG2EE-russian
-Cryshal,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@499; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8501; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16142; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16780; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17703; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40115,NP:IWDEE-russian
+Cryshal,Кришал,,NP:IWDEE-russian
 Cryshal-Tirith,Кришал-Тирит,,iwd2_rus
 Cuchol,Кучол,,BG1RUS-EET
 Cuchul,Кучул,,BG2EE-russian
@@ -808,12 +808,12 @@ Cyrvisnea,Сирвиснея,,BG2EE-russian
 Cythandria,Ситандрия,,BG1RUS-EET
 D'Artuzzi,Д'Артуцци,,BG2EE-russian
 Daar,Даар,,BG2EE-russian
-Dabath,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27327; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27328; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27330; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27333; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27341,NP:IWDEE-russian
+Dabath,Дабат,,NP:IWDEE-russian
 Dabiat,Дабиат,,BG2EE-russian
 Dabron,Даброн,,BG1RUS-EET
 Dace,Дейс,,BG2EE-russian
 Daemba,Даэмба,,iwd2_rus
-Daen,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40423; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40622; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40624; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40625; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40626,NP:IWDEE-russian
+Daen,Даэн,,NP:IWDEE-russian
 Daer'Ragh,Даэр'Раг,,BG1RUS-EET
 Daeros,Даэрос,,sod_rus
 Daese,Даэз,,BG1RUS-EET
@@ -891,9 +891,9 @@ Dazer,Ошеломитель,,iwd2_rus
 Dazzo,Даззо,,sod_rus
 De'Mallonblades,Де'Меллонблейды,,BG1RUS-EET
 De'Tranion,Де'Транион,,BG1RUS-EET
-De'lain,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23304; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23305,NP:IWDEE-russian
+De'lain,Де'лейн,,NP:IWDEE-russian
 DeVir,ДеВир,,sod_rus
-Deadeye,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40623,NP:IWDEE-russian
+Deadeye,Меткий стрелок,,NP:IWDEE-russian
 Deagan,Деаган,,BG1RUS-EET
 Deagle,Дигл,,iwd2_rus
 Deaner,Динер,,BG1RUS-EET
@@ -911,7 +911,7 @@ Deepstone,Дипстоун,,BG2EE-russian
 Deepvein,Дипвейн,,sod_rus
 Deepwash,Дипвоше,,BG2EE-russian
 Deepwinter,середина зимы,,sod_rus
-Defilers,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8150,NP:IWDEE-russian
+Defilers,Разрушители,,NP:IWDEE-russian
 Degardan,Дегардан,,BG2EE-russian
 Degrodel,Дегродел,,BG1RUS-EET
 Deheriana,Дехериана,,BG1RUS-EET
@@ -973,7 +973,7 @@ Diarmid,Диармид,,BG1RUS-EET
 Diaytha,Диайта,,BG2EE-russian
 DigDag,ДигДаг,,BG2EE-russian
 Digdeep,Дигдип,,sod_rus
-Digusting,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27516,NP:IWDEE-russian
+Digusting,Отвратительная,,NP:IWDEE-russian
 Diir,Диир,,BG2EE-russian
 Dilak,Дилак,,BG1RUS-EET
 Dilav,Дилав,,BG2EE-russian
@@ -984,14 +984,14 @@ Dillar,Дилларом,,BG1RUS-EET
 Dillsandra,Диллсандра,,iwd2_rus
 DillzMasher,Измельчитель укропа,,iwd2_rus
 Dilos,Дилос,,BG1RUS-EET
-Dineval,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@260; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@275; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@282; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@349; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@350; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@351; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2331; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16535; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18100; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18101; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18103; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18106; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18108; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18139; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18772; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18774; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19320; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22928; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34182; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34183; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34231,NP:IWDEE-russian
-Dingbat,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21722,NP:IWDEE-russian
+Dineval,Диневал,,NP:IWDEE-russian
+Dingbat,Дуболом,,NP:IWDEE-russian
 Dinguer,Дингуэр,,BG1RUS-EET
 Dinklemus,Динклемус,,BG1RUS-EET
 Dinneshere,Диннешер,,iwd2_rus
 Dinnsmore,Диннсмор,,iwd2_rus
 Diopside,диопсид,,BG1RUS-EET
-Dipslleased,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8500,NP:IWDEE-russian
+Dipslleased,Рассержен,,NP:IWDEE-russian
 Dirbert,Дирберт,,BG2EE-russian
 Dirbish,Дирбиш,,BG2EE-russian
 Dirla,Дирла,,sod_rus
@@ -1005,7 +1005,7 @@ Diyab,Дийяб,,BG1RUS-EET
 Dizreth,Дизрет,,iwd2_rus
 Djinni,джинни,,BG1RUS-EET
 Do'Urden,До'Урден,,BG1RUS-EET
-Do'urden,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1182; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1183; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1184; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4499; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4500; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4501; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4502; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4503; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4504; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5243; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5424; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5425; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5426; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15156; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15157; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15158,NP:IWDEE-russian
+Do'urden,До'урден,,NP:IWDEE-russian
 Dogar,Догар,,BG2EE-russian
 Dogstooth,Пёсоклык,,iwd2_rus
 Dohor,Дохор,,iwd2_rus
@@ -1021,7 +1021,7 @@ Doomguard,Страж Судьбы,,BG2EE-russian
 Doomplate,Броня рока,,BG2EE-russian
 Doomsayer,глашатай судьбы,,BG1RUS-EET
 Doppelganger,доппельгангер,,BG1RUS-EET
-Doppleganger,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5170; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5172; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5173; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5886; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5887; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5888; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5889; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5890; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5891,NP:IWDEE-russian
+Doppleganger,Допплегангер,,NP:IWDEE-russian
 Dorkus,Доркус,,BG2EE-russian
 Dormamus,Дормамус,,BG2EE-russian
 Dorotea,Доротея,,BG1RUS-EET
@@ -1031,7 +1031,7 @@ Dosan,Досан,,BG1RUS-EET
 Dosia,Дося,,sod_rus
 Dosst,досст,,sod_rus
 Dougan,Дуган,,iwd2_rus
-Dra'tan,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@20271; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@20272,NP:IWDEE-russian
+Dra'tan,Дра'тан,,NP:IWDEE-russian
 Dracandros,Дракандрос,,BG2EE-russian
 Dracein,Дракейн,,iwd2_rus
 Dracolich,драколич,,iwd2_rus
@@ -1052,7 +1052,7 @@ Drakar,Дракар,,BG1RUS-EET
 Drakkas,Драккас,,iwd2_rus
 Drakmul,Дракмул,,BG2EE-russian
 Drakon,Дракон,,BG1RUS-EET
-Drannor,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7690,NP:IWDEE-russian
+Drannor,Драннор,,NP:IWDEE-russian
 Drasus,Драсус,,BG1RUS-EET
 Draug,Драуг,,BG2EE-russian
 Dray,Дрей,,iwd2_rus
@@ -1092,7 +1092,7 @@ Dukeem,Дукиме,,BG2EE-russian
 Dulf,Дульф,,BG2EE-russian
 Dullcobble,Дулкобл,,iwd2_rus
 Dumathoin,Думатоин,,sod_rus
-Dumbbutt,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21722,NP:IWDEE-russian
+Dumbbutt,Долбоящер,,NP:IWDEE-russian
 Dumok,Думок,,sod_rus
 Durdel,Дурдель,,iwd2_rus
 Durkon,Дуркон,,BG2EE-russian
@@ -1115,7 +1115,7 @@ Eadro,Эадро,,sod_rus
 Earthenport,Землепорт,,iwd2_rus
 Earthmother,Мать-Земля,,BG1RUS-EET
 Easthaven,Восточная Гавань,,BG2EE-russian
-Easthaveners,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@199,NP:IWDEE-russian
+Easthaveners,жители Восточной Гавани,,NP:IWDEE-russian
 Ebonbeard,Чернобородый,,BG2EE-russian
 Ebrone,Эброн,,BG2EE-russian
 Echtah,Эктах,,BG1RUS-EET
@@ -1127,7 +1127,7 @@ Edley,Эдли,,iwd2_rus
 Edventar,Эдвентарь,,BG1RUS-EET
 Eevo,Ээво,,BG2EE-russian
 Effy,Эффи,,sod_rus
-Efreet,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@29215,NP:IWDEE-russian
+Efreet,ифрит,,NP:IWDEE-russian
 Efreeti,ифрит,,BG1RUS-EET
 Efreetum,Ифритум,,BG1RUS-EET
 Egeissag,Эгиссаг,,BG2EE-russian
@@ -1149,7 +1149,7 @@ Elandro,Эландро,,sod_rus
 Elban,Эльбан,,BG1RUS-EET
 Eldarin,Элдарин,,BG2EE-russian
 Eldath,Эльдат,,iwd2_rus
-Eldathyn,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@885; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@893; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1156; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1157; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1222; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1232; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1236; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1265; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1303; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1304; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1306; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1308; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1317; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@3354; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4301; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18702; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@25127,NP:IWDEE-russian
+Eldathyn,Последователь Эльдат,,NP:IWDEE-russian
 Eldercity,Подземный Город,,iwd2_rus
 Eldgull,Эльдгалл,,iwd2_rus
 Eldorin,Элдорин,,BG2EE-russian
@@ -1163,20 +1163,20 @@ Elence,Иленс,,BG2EE-russian
 Elendar,Элендар,,iwd2_rus
 Elendara,Элендара,,BG1RUS-EET
 Eler,Элер,,BG2EE-russian
-Elfbone,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@3343,NP:IWDEE-russian
+Elfbone,кости эльфа,,NP:IWDEE-russian
 Elfsong,Эльфийская Песня,,BG1RUS-EET
-Elfy,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@424,NP:IWDEE-russian
+Elfy,Эльфик,,NP:IWDEE-russian
 Elgea,Элджея,,BG2EE-russian
 Elghinn,Элгхинн,,iwd2_rus
 Elgiad,Элгиад,,BG2EE-russian
 Elhan,Эльхан,,BG2EE-russian
 Elic,Элик,,BG2EE-russian
 Elisia,Элизия,,iwd2_rus
-Elisia-of-the-Sky,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34547; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34554,NP:IWDEE-russian
+Elisia-of-the-Sky,Элизия Небес,,NP:IWDEE-russian
 Eliya,Элия,,BG2EE-russian
 Elkan,Элкан,,BG2EE-russian
 Elkart,Элкарт,,BG1RUS-EET
-Elles,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18670,NP:IWDEE-russian
+Elles,Эллес,,NP:IWDEE-russian
 Ellesime,Эллесим,,BG1RUS-EET
 Ellraish,Эллраиш,,BG2EE-russian
 Elma,Эльма,,BG1RUS-EET
@@ -1197,7 +1197,7 @@ Elytharra,Элитарра,,iwd2_rus
 Embarl,Эмбарл,,BG2EE-russian
 Emesi,Эмеси,,sod_rus
 Emmerich,Эммерик,,iwd2_rus
-Enaril,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8518,NP:IWDEE-russian
+Enaril,Энарил,,NP:IWDEE-russian
 Enchanter,чародей,,BG1RUS-EET
 Enegar,Энегар,,BG2EE-russian
 Enge,Энге,,BG2EE-russian
@@ -1257,7 +1257,7 @@ Evermeet,Эвермит,,BG1RUS-EET
 Evermoors,Вечные Топи,,BG1RUS-EET
 Everwatch,Вечный Дозор,,sod_rus
 Ewenn,Ивенн,,BG2EE-russian
-Extraordinare,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8716,NP:IWDEE-russian
+Extraordinare,ВЫДАЮЩИЙСЯ,,NP:IWDEE-russian
 Extremis,Экстремис,,BG1RUS-EET
 Exzesus,Экзесус,,BG1RUS-EET
 Exzeus,Экзевс,,sod_rus
@@ -1266,7 +1266,7 @@ Fadell,Фаделл,,BG2EE-russian
 Fadoon,Фадун,,BG2EE-russian
 Fael,Фаэль,,BG2EE-russian
 Faenya,Фаэния,,BG2EE-russian
-Faerum,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4700; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4701; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12415; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12416,NP:IWDEE-russian
+Faerum,Фаерум,,NP:IWDEE-russian
 Faerun,Фаэрун,,BG1RUS-EET
 Faeyr,Файр,,BG2EE-russian
 Fafhrd,Фафхрд,,BG1RUS-EET
@@ -1300,9 +1300,9 @@ Farsight,предвидение,,BG1RUS-EET
 Farthington,Пердингтон,,BG2EE-russian
 Farthy,Перди,,BG2EE-russian
 Fastpaws,Быстрые Лапы,,BG2EE-russian
-Fathead,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23118,NP:IWDEE-russian
+Fathead,тупейшество,,NP:IWDEE-russian
 Faughley,Фогли,,sod_rus
-Faur'n,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4525,NP:IWDEE-russian
+Faur'n,Фаэрун,,NP:IWDEE-russian
 Faurun,Фаэрун,,BG1RUS-EET
 Fayanna,Фаянна,,BG2EE-russian
 Fayr,Фейр,,iwd2_rus
@@ -1346,13 +1346,13 @@ Filacturry,филактерия,,sod_rus
 Filbert,Филберт,,BG2EE-russian
 Fillis,Филлис,,BG2EE-russian
 Finderlig,Финдерлиг,,BG2EE-russian
-Finegan,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@41; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@800,NP:IWDEE-russian
+Finegan,Финеган,,NP:IWDEE-russian
 Finischuk,Финишук,,BG2EE-russian
 Finkle,Финкл,,BG1RUS-EET
 Firebead,Фаербид,,BG1RUS-EET
 Fireblade,Файрблейд,,BG2EE-russian
 Firecam,Фаеркам,,BG2EE-russian
-Firedrake,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@778; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@785,NP:IWDEE-russian
+Firedrake,Огненный дракончик,,NP:IWDEE-russian
 Firehair,Огневласая,,BG1RUS-EET
 Firehammer,Файрхаммер,,BG2EE-russian
 Firejaw,Огнехват,,BG2EE-russian
@@ -1392,7 +1392,7 @@ Foxleigh,Фоксли,,sod_rus
 Frair,Фрейр,,sod_rus
 Frennedan,Френнедан,,BG2EE-russian
 Frixis,Фриксис,,sod_rus
-Frostbeard,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8814; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8956; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9020; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9109; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15526; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34265; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34287; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34324; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34337; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34385,NP:IWDEE-russian
+Frostbeard,Ледобрад,,NP:IWDEE-russian
 Frostblade,Морозный клинок,,iwd2_rus
 Frostbrand,Печать холода,,iwd2_rus
 Frostkiss,Ледяной Поцелуй,,iwd2_rus
@@ -1415,7 +1415,7 @@ Furnellbol,Фурнеллбол,,BG1RUS-EET
 Furret,Фуррет,,BG1RUS-EET
 Fynne,Финн,,iwd2_rus
 Fyrus,Файрус,,BG2EE-russian
-G'axir,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15549; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15570; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17195; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17197,NP:IWDEE-russian
+G'axir,Г'аксир,,NP:IWDEE-russian
 Gaarrh,Га-ар-рх,,iwd2_rus
 Gaden,Гаден,,BG2EE-russian
 Gadu,Гаду,,iwd2_rus
@@ -1448,7 +1448,7 @@ Gammock,Гаммока,,iwd2_rus
 Gandel,Гандель,,BG2EE-russian
 Gandolar,Гандолар,,BG1RUS-EET
 Gantolandan,Гантоландан,,BG1RUS-EET
-Gantolandon,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12688; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12720,NP:IWDEE-russian
+Gantolandon,Гантоландон,,NP:IWDEE-russian
 Garachen,Гарачен,,sod_rus
 Garagos,Гарагос,,sod_rus
 Garan,Гаран,,BG1RUS-EET
@@ -1478,7 +1478,7 @@ Gath,Гат,,sod_rus
 Gauth,гаут,,sod_rus
 Gavid,Гавид,,BG2EE-russian
 Gaxx,Гаксс,,BG2EE-russian
-Gaylan,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15252; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15254,NP:IWDEE-russian
+Gaylan,Гейлан,,NP:IWDEE-russian
 Gazib,Газиб,,BG1RUS-EET
 Gazmithin,Газмитин,,BG2EE-russian
 Gaznak,Газнак,,iwd2_rus
@@ -1499,7 +1499,7 @@ Geloise,Гелоиза,,iwd2_rus
 Geltik,Гелтик,,BG1RUS-EET
 Gelugon,гелугон,,BG2EE-russian
 Gemblade,Самоцветное лезвие,,sod_rus
-Gemcutter,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40079,NP:IWDEE-russian
+Gemcutter,Ювелир,,NP:IWDEE-russian
 Genek,Генек,,iwd2_rus
 Genesi,генаси,,iwd2_rus
 Genie,джинни,,BG2EE-russian
@@ -1542,7 +1542,7 @@ Gibberling,гибберлинг,,BG1RUS-EET
 Giddial,Гиддиал,,sod_rus
 Gifos,Гифос,,iwd2_rus
 Gijjal,Гидджал,,BG2EE-russian
-Gil'meh,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11576; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11577,NP:IWDEE-russian
+Gil'meh,Гиль'мех,,NP:IWDEE-russian
 Gillish,Гиллиш,,BG2EE-russian
 Giltham,Гильтам,,BG2EE-russian
 Ginafae,Джинафей,,iwd2_rus
@@ -1565,7 +1565,7 @@ Gloomfrost,Ледник Мрака,,iwd2_rus
 Gnarg,Гнарг,,sod_rus
 Gnarl,Гнарл,,BG1RUS-EET
 Gnoll,гнолл,,BG1RUS-EET
-Gnomish,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40618,NP:IWDEE-russian
+Gnomish,Гномий,,NP:IWDEE-russian
 Godsbane,Погибель Богов,,sod_rus
 Godswar,Война Богов,,BG2EE-russian
 Gofus,Гофус,,BG2EE-russian
@@ -1575,7 +1575,7 @@ Gohoin,Гохойн,,iwd2_rus
 Goldander,Голдандер,,BG2EE-russian
 Goldbuckler,Златощит,,sod_rus
 Goldenhand,Златорукий,,BG2EE-russian
-Goldenspires,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21792,NP:IWDEE-russian
+Goldenspires,Золотые Шпили,,NP:IWDEE-russian
 Golin,Голин,,BG1RUS-EET
 Golodon,Голодон,,BG1RUS-EET
 Golt,Голт,,sod_rus
@@ -1585,7 +1585,7 @@ Gondegal,Гондегал,,BG1RUS-EET
 Gont,Гонт,,BG2EE-russian
 Goobar,Губар,,BG2EE-russian
 Goodtree,Гудтри,,sod_rus
-Goodytums,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10909,NP:IWDEE-russian
+Goodytums,сэр Чистоплюй,,NP:IWDEE-russian
 Goozlemin,Гузлемин,,BG2EE-russian
 Gorch,Горч,,BG1RUS-EET
 Gord,Горд,,BG1RUS-EET
@@ -1596,7 +1596,7 @@ Gorje,Гордж,,BG2EE-russian
 Gorkale,Горкейл,,BG2EE-russian
 Gorm,Горм,,BG1RUS-EET
 Gorpel,Горпел,,BG1RUS-EET
-Gorris,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40000,NP:IWDEE-russian
+Gorris,Горрис,,NP:IWDEE-russian
 Gorvin,Горвин,,BG2EE-russian
 Gos'l,гос'л,язык дроу,BG2EE-russian
 Goshan,Гошан,,BG2EE-russian
@@ -1618,14 +1618,14 @@ Grampop,Грэмпоп,,sod_rus
 Grancor,Гранкор,,BG2EE-russian
 Granz,Гранц,,sod_rus
 Gratin,Грейтин,,BG2EE-russian
-Gravedigger,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34809,NP:IWDEE-russian
+Gravedigger,могильщик,,NP:IWDEE-russian
 Gravis,Грейвис,,BG2EE-russian
 Graybrook,Грейбрук,,BG2EE-russian
 Graye,Грай,,iwd2_rus
 Greataxe,двуручный топор,,iwd2_rus
 Greatgas,Грейтгас,,sod_rus
 Greatsword,двуручный меч,,iwd2_rus
-Greenaxe,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2995,NP:IWDEE-russian
+Greenaxe,Зелёного Топора,,NP:IWDEE-russian
 Greenstone,зеленчак,,BG1RUS-EET
 Grenthal,Грентал,,BG1RUS-EET
 Greshal,Грешал,,BG2EE-russian
@@ -1696,7 +1696,7 @@ Haldorr,Халдорр,,BG2EE-russian
 Haletlatess,Халетлатесс,,BG2EE-russian
 Halfling,полурослик,,BG1RUS-EET
 Halimstad,Халимстад,,BG1RUS-EET
-Hallaster,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2336,NP:IWDEE-russian
+Hallaster,Халластер,,NP:IWDEE-russian
 Hallucinator,Галлюцинатор,,sod_rus
 Halnur,Халнур,,BG2EE-russian
 Halruaa,Халруаа,,BG1RUS-EET
@@ -1767,7 +1767,7 @@ Hemma,Хемма,,BG1RUS-EET
 Hendak,Хендак,,BG2EE-russian
 Hendron,Хендрон,,BG2EE-russian
 Henghelm,Хенгхельм,,iwd2_rus
-Hengorot,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22697,NP:IWDEE-russian
+Hengorot,Хенгоро,,NP:IWDEE-russian
 Henrette,Хенретт,,BG1RUS-EET
 Hensleigh,Хенсли,,sod_rus
 Hentold,Хентольд,,BG1RUS-EET
@@ -1807,26 +1807,26 @@ Hojar,Годжар,,BG2EE-russian
 Hokkney,Хоккни,,BG2EE-russian
 Holy Swizarnian Hammer of Lucerne,Швизцарский люцернский молот,,iwd2_rus
 Honglath,Хонглат,,sod_rus
-Hoomun,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16326,NP:IWDEE-russian
+Hoomun,Человек,,NP:IWDEE-russian
 Hormorn,Хорморн,,sod_rus
 Hornung,Хорнунг,,BG2EE-russian
 Hort,Хорт,,BG2EE-russian
 Horvat,Хорват,,BG2EE-russian
 Hosttower,Великая Башня,,iwd2_rus
 Houndstooth,Гончеклык,,iwd2_rus
-How're,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@39111,NP:IWDEE-russian
+How're,Как,,NP:IWDEE-russian
 Hrothgar,Хротгар,,BG2EE-russian
 Huatchpa,Гуатчпа,,iwd2_rus
-Huhahahahahahahahahahaha,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@41255,NP:IWDEE-russian
+Huhahahahahahahahahahaha,У-у-ха-ха-ха-ха-ха-ха,,NP:IWDEE-russian
 Hulrik,Хулрик,,BG1RUS-EET
-Humph,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4638; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4673; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8973; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14999; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17043,NP:IWDEE-russian
+Humph,Пф-ф,,NP:IWDEE-russian
 Hurg,Хург,,BG2EE-russian
 Hurgan,Хурган,,BG1RUS-EET
 Hurgis,Хургис,,BG2EE-russian
 Husam,Хусам,,BG1RUS-EET
 Hydcont,Хидконт,,BG2EE-russian
 Hyreth,Хирет,,sod_rus
-I'lls,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4564,NP:IWDEE-russian
+I'lls,Я,,NP:IWDEE-russian
 Ianulin,Янулин,,BG2EE-russian
 Iblith,иблит,,BG1RUS-EET
 Icasaracht,Иказарахт,,iwd2_rus
@@ -1841,7 +1841,7 @@ Idianeelix,Идианиликс,,sod_rus
 Idianori,Идианори,,sod_rus
 Idras,Идрас,,BG2EE-russian
 Idyletia,Идилетия,,sod_rus
-If'n,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4129,NP:IWDEE-russian
+If'n,Если,,NP:IWDEE-russian
 Igarol,Игарол,,BG2EE-russian
 Igen,Айген,,BG2EE-russian
 Ignatio,Игнатио,,BG1RUS-EET
@@ -1851,12 +1851,12 @@ Ikert,Икерт,,BG2EE-russian
 Iko,Ико,,BG2EE-russian
 Ikros,Икрос,,sod_rus
 Ilair,Илейр,,iwd2_rus
-Ilauna,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40004,NP:IWDEE-russian
+Ilauna,Илауна,,NP:IWDEE-russian
 Ilbratha,Илбрата,,BG2EE-russian
 Ilharess,ильхаресс,язык дроу,iwd2_rus
 Illaruel,Илларуэль,,sod_rus
 Illasera,Илласера,,BG2EE-russian
-Illefarn,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9740,NP:IWDEE-russian
+Illefarn,Иллефарн,,NP:IWDEE-russian
 Illian,Иллиан,,iwd2_rus
 Illigmar,Иллигмар,,iwd2_rus
 Illithid,иллитид,,BG1RUS-EET
@@ -1867,7 +1867,7 @@ Illuryssallya,Иллуриссалия,,BG2EE-russian
 Ilmadia,Ильмадия,,iwd2_rus
 Ilmatari,ильматари,,iwd2_rus
 Ilmater,Ильматер,,BG1RUS-EET
-Ilmaterians,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2145; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2171; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9731,NP:IWDEE-russian
+Ilmaterians,последователи Ильматера,,NP:IWDEE-russian
 Ilmryn,Илмрин,,BG2EE-russian
 Ilmus,Илмус,,iwd2_rus
 Ilquog,Илкуог,,iwd2_rus
@@ -1887,7 +1887,7 @@ Imnesvale,Имнесвейл,,BG2EE-russian
 Imoen,Имоен,,BG1RUS-EET
 Impaler,Накол,,BG2EE-russian
 Imphraili,Имфраили,,iwd2_rus
-Impostors,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1375,NP:IWDEE-russian
+Impostors,Самозванцы,,NP:IWDEE-russian
 Imrae,Имрэ,,BG2EE-russian
 Incylia,Инцилия,,iwd2_rus
 Infravision,инфравидение,,BG1RUS-EET
@@ -1899,7 +1899,7 @@ Inidil,Инидил,,iwd2_rus
 Innisfall,Иннисфолл,,sod_rus
 Invoker,воплотитель,,BG1RUS-EET
 Ioin,Йоин,,BG1RUS-EET
-Iol,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7118,NP:IWDEE-russian
+Iol,Иолит,,NP:IWDEE-russian
 Iol Gem,Иолит,,BG2EE-russian
 Iolite,Иолит,,BG1RUS-EET
 Ioun,Иоун,,BG1RUS-EET
@@ -1930,7 +1930,7 @@ Ithtyl,Иттил,,BG1RUS-EET
 Itona,Итона,,BG2EE-russian
 Ivann,Иванн,,sod_rus
 Ivanne,Иванне,,BG1RUS-EET
-Iwd,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40838,NP:IWDEE-russian
+Iwd,стартовый,,NP:IWDEE-russian
 Ixil,Иксиль,,BG2EE-russian
 Ixilthetocal,Иксилтетокаль,,BG2EE-russian
 Ixthezzys,Иксфеззис,,BG2EE-russian
@@ -1971,7 +1971,7 @@ Jarden,Джарден,,BG2EE-russian
 Jari,Джари,,iwd2_rus
 Jariel,Джариэль,,BG2EE-russian
 Jarkko,Яркко,,iwd2_rus
-Jarl,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8963; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8973; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8994,NP:IWDEE-russian
+Jarl,Ярл,,NP:IWDEE-russian
 Jarlaxle,Джарлаксл,,BG2EE-russian
 Jase,Джас,,BG1RUS-EET
 Jased,Джасед,,BG1RUS-EET
@@ -1984,7 +1984,7 @@ Jeagger,Джиггер,,BG2EE-russian
 Jebadoh,Джебадо,,BG1RUS-EET
 Jediza,Джедиза,,iwd2_rus
 Jeevesy,Дживзи,,BG2EE-russian
-Jeffk,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15442; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15452,NP:IWDEE-russian
+Jeffk,Джеффк,,NP:IWDEE-russian
 Jeffy,Джеффи,,iwd2_rus
 Jegg,Джегг,,sod_rus
 Jeggred,Джеггред,,BG2EE-russian
@@ -2008,7 +2008,7 @@ Jezabel,Изабель,,iwd2_rus
 Jhaeri,Джери,,BG2EE-russian
 Jhan,Ян,,sod_rus
 Jhasso,Джассо,,BG1RUS-EET
-Jho,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5380; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5384; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5394; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@5664; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34543; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34547; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34549; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34551; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34553,NP:IWDEE-russian
+Jho,Джо,,NP:IWDEE-russian
 Jhonen,Джонен,,iwd2_rus
 Jhor,Джор,,BG2EE-russian
 Jhovan,Джован,,BG2EE-russian
@@ -2071,7 +2071,7 @@ Kaitlin,Кейтлин,,BG1RUS-EET
 Kaivon,Кайвон,,iwd2_rus
 Kalabac,Калабак,,iwd2_rus
 Kalah,Калах,,BG2EE-russian
-Kalam,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10511,NP:IWDEE-russian
+Kalam,Калам,,NP:IWDEE-russian
 Kalden,Кальден,,BG2EE-russian
 Kaldran,Калдран,,BG1RUS-EET
 Kaleel,Калель,,iwd2_rus
@@ -2104,7 +2104,7 @@ Katheera,Катира,,sod_rus
 Kaudies,Каудиес,,iwd2_rus
 Kav,Кав,,iwd2_rus
 Kava,Кава,,sod_rus
-Kaval,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1856,NP:IWDEE-russian
+Kaval,Кавал,,NP:IWDEE-russian
 Kaxazel,Каксазель,,BG2EE-russian
 Kayardi,Кайарди,,BG2EE-russian
 Kayl,Кайл,,iwd2_rus
@@ -2124,7 +2124,7 @@ Keexie,Кикси,,BG1RUS-EET
 Kegleg,Кеглег,,sod_rus
 Kegsplitter,Гроза бочек,,iwd2_rus
 Keherrem,Кехерем,,sod_rus
-Keldath,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12235; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12280,NP:IWDEE-russian
+Keldath,Келдат,,NP:IWDEE-russian
 Kelddath,Келддат,,BG1RUS-EET
 Keldorn,Келдорн,,BG2EE-russian
 Keldy,Келдик,,BG2EE-russian
@@ -2181,7 +2181,7 @@ Kindt,Киндт,,sod_rus
 Kingsdale,Кингсдейл,,BG2EE-russian
 Kirian,Кириан,,BG1RUS-EET
 Kirik,Кирик,,BG2EE-russian
-Kirika,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40003,NP:IWDEE-russian
+Kirika,Кирика,,NP:IWDEE-russian
 Kirinaldo,Киринальдо,,BG2EE-russian
 Kirinhale,Киринхал,,BG1RUS-EET
 Kirkirik,Киркирик,,BG2EE-russian
@@ -2223,7 +2223,7 @@ Krammach,Краммач,,BG1RUS-EET
 Krancor,Кранкор,,BG1RUS-EET
 Kratuuk,Кратуук,,iwd2_rus
 Kreel,Крил,,BG2EE-russian
-Kreg,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8149; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8961; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8963; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8969; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8994; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9020; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9109; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@15526; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34241; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34265; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34382,NP:IWDEE-russian
+Kreg,Крег,,NP:IWDEE-russian
 Krellus,Креллус,,sod_rus
 Kresselack,Кресселак,,iwd2_rus
 Kretor,Кретор,,BG2EE-russian
@@ -2317,7 +2317,7 @@ Laudanus,Лауданус,,BG2EE-russian
 Laune,Лаун,,BG2EE-russian
 Lavok,Лавок,,BG2EE-russian
 Layene,Лайен,,BG2EE-russian
-Leafall,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2343; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16390,NP:IWDEE-russian
+Leafall,Листопаднь,,NP:IWDEE-russian
 Leaflord,Владыка Листьев,,BG2EE-russian
 Leathel,Лител,,BG2EE-russian
 Lebass,Лебасс,,sod_rus
@@ -2362,14 +2362,14 @@ Llarsh,Лларш,,BG2EE-russian
 Llew,Лью,,iwd2_rus
 Lliira,Ллиира,,BG2EE-russian
 Llindellyn,Ллинделлин,,BG1RUS-EET
-Lloth,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10594,NP:IWDEE-russian
+Lloth,Ллот,,NP:IWDEE-russian
 Lluis,Ллуис,,sod_rus
 Llylla,Ллилла,,BG2EE-russian
 Llynis,Ллинис,,BG2EE-russian
 Llyrk,Ллирк,,BG1RUS-EET
 Lobar,Лобар,,BG1RUS-EET
 Lobelahn,Лобелан,,iwd2_rus
-Localizzazione,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40820,NP:IWDEE-russian
+Localizzazione,Локализация,,NP:IWDEE-russian
 Lodefinder,Лодефиндер,,sod_rus
 Lollycook,Лоликук,,BG2EE-russian
 Lolth,Лолт,,BG1RUS-EET
@@ -2397,7 +2397,7 @@ Luiren,Луирен,,BG1RUS-EET
 Lunia,Луния,,BG2EE-russian
 Lunisia,Лунисия,,BG2EE-russian
 Luremaster,Повелитель Соблазнов,,iwd2_rus
-Lurien,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@3183,NP:IWDEE-russian
+Lurien,Луирен,,NP:IWDEE-russian
 Lurkwood,Лурквуд,,BG2EE-russian
 Lurraxol,Люрраксол,,BG2EE-russian
 Lurraxols,Люрраксолы,,BG2EE-russian
@@ -2417,9 +2417,9 @@ Madae,Мадея,,iwd2_rus
 Madeen,Мадин,,BG2EE-russian
 Madele,Мадли,,sod_rus
 Madulf,Мадульф,,BG2EE-russian
-Mae'Var,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2217; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22072; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22345; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22346; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22986; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22987,NP:IWDEE-russian
-Maegan,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2345; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12657; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14189; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40331,NP:IWDEE-russian
-Maer,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21703; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21772; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26635,NP:IWDEE-russian
+Mae'Var,Мэ'Вар,,NP:IWDEE-russian
+Maegan,Мэган,,NP:IWDEE-russian
+Maer,Маэр,,NP:IWDEE-russian
 Maer Dualdon,Маэр Дуалдон,,iwd2_rus
 Maergeth,Маэргет,,iwd2_rus
 Maferan,Маферан,,BG2EE-russian
@@ -2430,7 +2430,7 @@ Magreb,Магреб,,BG1RUS-EET
 Mahar,Махар,,BG2EE-russian
 Maharajah,Махараджа,,BG2EE-russian
 Maheer,Махир,,BG2EE-russian
-Mahkrat,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@6388,NP:IWDEE-russian
+Mahkrat,Махрат,,NP:IWDEE-russian
 Mailripper,Гроза доспехов,,iwd2_rus
 Mairyn,Майрин,,BG2EE-russian
 Maisha,Майша,,BG2EE-russian
@@ -2455,7 +2455,7 @@ Malicia,Малиция,,BG1RUS-EET
 Malika,Малика,,BG2EE-russian
 Malkax,Малкакс,,BG1RUS-EET
 Malla,Малла,,BG2EE-russian
-Mallan,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7953,NP:IWDEE-russian
+Mallan,Маллан,,NP:IWDEE-russian
 Maltz,Мальц,,BG1RUS-EET
 Maluradek,Малурадек,,iwd2_rus
 Malvolio,Мальволио,,BG2EE-russian
@@ -2520,7 +2520,7 @@ Menold,Менолд,,BG2EE-russian
 Mensel,Мензель,,iwd2_rus
 Menzoberranzan,Мензоберранзан,,BG1RUS-EET
 Mephit,мефит,,BG1RUS-EET
-Mephits,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14989,NP:IWDEE-russian
+Mephits,мефиты,,NP:IWDEE-russian
 Merana,Мерана,,BG2EE-russian
 Mercykiller,Убийц Милосердия,,BG2EE-russian
 Meredath,Мередат,,BG2EE-russian
@@ -2550,7 +2550,7 @@ Mind Flayer,Пожиратель разума,,BG1RUS-EET
 Minling,Минлинг,,BG2EE-russian
 Minsc,Минск,,BG1RUS-EET
 Minscy,Минсик,,BG2EE-russian
-Mipo,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1853,NP:IWDEE-russian
+Mipo,Мипо,,NP:IWDEE-russian
 Mirabar,Мирабар,,sod_rus
 Mirabel,Мирабель,,iwd2_rus
 Miram,Мирам,,iwd2_rus
@@ -2572,7 +2572,7 @@ Mithykyl,Митикиль,,BG2EE-russian
 Mitsu,Митсу,,BG2EE-russian
 Miyar,Мийяр,,BG1RUS-EET
 Mizhena,Мижена,,sod_rus
-Moander,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17638,NP:IWDEE-russian
+Moander,Моандер,,NP:IWDEE-russian
 Modron,модрон,,sod_rus
 Mogadish,Могадиш,,BG2EE-russian
 Mohad,Мохад,,sod_rus
@@ -2580,7 +2580,7 @@ Moirala,Мойрала,,BG2EE-russian
 Mokrul,Мокрул,,iwd2_rus
 Molkar,Молкар,,BG1RUS-EET
 Molzahn,Молзан,,BG2EE-russian
-Monoliths,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@34829,NP:IWDEE-russian
+Monoliths,монолиты,,NP:IWDEE-russian
 Montaron,Монтарон,,BG1RUS-EET
 Montgomer,Монтгомер,,sod_rus
 Montolio,Монтолио,,BG2EE-russian
@@ -2605,7 +2605,7 @@ Morningale,Морнингейл,,BG2EE-russian
 Morningales,Морнингейлы,,BG2EE-russian
 Morninglord,Владыка Утра,,BG1RUS-EET
 Mornmaster,Повелитель Утра,,BG2EE-russian
-Morohanotsurugi,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40662,NP:IWDEE-russian
+Morohanotsurugi,Мороханотсуруги,,NP:IWDEE-russian
 Morohem,Морохем,,iwd2_rus
 Morsa,Морса,,BG2EE-russian
 Morsk,Морск,,sod_rus
@@ -2615,8 +2615,8 @@ Morvyn,Морвин,,iwd2_rus
 Mosela,Мозела,,sod_rus
 Mourninglord,Владыка Утрат,,BG2EE-russian
 Movanic Deva,мованическая дева,,BG2EE-russian
-Muhahaha,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@24942,NP:IWDEE-russian
-Muhahahaha,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8872; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@24266,NP:IWDEE-russian
+Muhahaha,Ха-ха-ха,,NP:IWDEE-russian
+Muhahahaha,Ах-ха-ха-ха-ха-ха,,NP:IWDEE-russian
 Muhan,Мухан,,BG2EE-russian
 Muharr,Мухарр,,BG2EE-russian
 Mulahey,Мулахей,,BG1RUS-EET
@@ -2675,7 +2675,7 @@ Narlen,Нарлен,,BG1RUS-EET
 Nasad,Насад,,BG2EE-russian
 Nasha,Наша,,BG1RUS-EET
 Nashkel,Нашкель,,BG1RUS-EET
-Nashkell,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13218; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13241; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13242; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13297; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13298; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13301; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13304; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13305; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13362; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13363; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13364; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13365; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13366; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13497; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13498; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13499; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13500; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13518; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@13569,NP:IWDEE-russian
+Nashkell,Нашкелл,,NP:IWDEE-russian
 Natas,Натас,,BG2EE-russian
 Natha,Ната,,BG2EE-russian
 Nathbaera,Назбаэра,,sod_rus
@@ -2755,7 +2755,7 @@ Noralee,Норали,,BG1RUS-EET
 Norheim,Норхейм,,BG1RUS-EET
 Norl,Норл,,iwd2_rus
 Norlinor,Норлинор,,iwd2_rus
-Northerner,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7232; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@7274,NP:IWDEE-russian
+Northerner,северянин,,NP:IWDEE-russian
 Nortuary,Нортуарий,,BG1RUS-EET
 Noser,Носач,,BG2EE-russian
 Nosers,Носачи,,BG2EE-russian
@@ -2778,7 +2778,7 @@ Odg,одг,язык дроу,BG2EE-russian
 Odie,Одие,,sod_rus
 Odren,Одрен,,BG2EE-russian
 Oghma,Огма,,BG1RUS-EET
-Ogi,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@24804,NP:IWDEE-russian
+Ogi,Оги,,NP:IWDEE-russian
 Ogi-Luc,Оги-Люк,,iwd2_rus
 Ogien,Огиен,,iwd2_rus
 Ogre,огр,,BG1RUS-EET
@@ -2792,7 +2792,7 @@ Oilwater,Масляная Вода,,iwd2_rus
 Oinchack'olp,Ойнчак'ольп,,iwd2_rus
 Oisig,Ойзиг,,BG2EE-russian
 Ojaiha,Оджайха,,iwd2_rus
-Olamn,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10208,NP:IWDEE-russian
+Olamn,Оламн,,NP:IWDEE-russian
 Olap,Олап,,iwd2_rus
 Olben,Олбен,,BG2EE-russian
 Olehm,Олем,,BG2EE-russian
@@ -2813,7 +2813,7 @@ Oogie,Уги,,BG1RUS-EET
 Oolay,Улэй,,iwd2_rus
 Oopah,Упа,,BG1RUS-EET
 Ophal,Офал,,BG2EE-russian
-Ophidian,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1303; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2136,NP:IWDEE-russian
+Ophidian,Змеиная,,NP:IWDEE-russian
 Ophidius,Офидиус,,sod_rus
 Ophyllis,Офиллис,,sod_rus
 Orannias,Оранниас,,sod_rus
@@ -2833,7 +2833,7 @@ Ormias,Ормиас,,BG2EE-russian
 Ormis,Ормис,,iwd2_rus
 Ormlyr,Ормлир,,BG1RUS-EET
 Orog,орог,,sod_rus
-Orogs,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8175,NP:IWDEE-russian
+Orogs,Ороги,,NP:IWDEE-russian
 Orothiar,Оротиар,,BG1RUS-EET
 Orrick,Оррик,,iwd2_rus
 Orthan,Ортан,,BG1RUS-EET
@@ -2845,10 +2845,10 @@ Otilda,Отильда,,sod_rus
 Otiluke,Отилук,,BG1RUS-EET
 Otyugh,отиуг,,sod_rus
 Oublek,Оублек,,BG1RUS-EET
-Oubliette,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40081,NP:IWDEE-russian
+Oubliette,Темница,,NP:IWDEE-russian
 Ougamya,Оугамия,,iwd2_rus
 Oulam,Оулам,,BG1RUS-EET
-Outlanders,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40800,NP:IWDEE-russian
+Outlanders,Чужеземцы,,NP:IWDEE-russian
 Overfather,Всеобщий Отец,,BG2EE-russian
 Overgold,Оверголд,,BG2EE-russian
 Overmind,Сверхразум,,sod_rus
@@ -2858,12 +2858,12 @@ Owlbear,совомедведь,BG1RUS-EET,
 Owyn,Овин,,BG1RUS-EET
 Paac,Паак,,BG2EE-russian
 Paalater,Паалатер,,BG2EE-russian
-Pai'Na,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@33903; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@33904,NP:IWDEE-russian
+Pai'Na,Пай'На,,NP:IWDEE-russian
 Painbearer,Мученик,,sod_rus
 Pairi,Пайри,,iwd2_rus
 Paladinstar,Паладинстар,,BG1RUS-EET
 Palern,Палерн,,BG2EE-russian
-Palidinstar,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10208,NP:IWDEE-russian
+Palidinstar,Палидинстар,,NP:IWDEE-russian
 Pallonia,Паллония,,BG1RUS-EET
 Pandesmos,Пандесмос,,BG2EE-russian
 Parda,Парда,,BG1RUS-EET
@@ -2886,7 +2886,7 @@ Pellon,Пеллон,,iwd2_rus
 Peltje,Пелтье,,BG2EE-russian
 Pemby,Пемби,,iwd2_rus
 Perdiem,Пердием,,iwd2_rus
-Perdition,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11310,NP:IWDEE-russian
+Perdition,Погибель,,NP:IWDEE-russian
 Peridan,Перидан,,BG2EE-russian
 Permidion,Пермидион,,BG1RUS-EET
 Perorate,Перорейт,,BG1RUS-EET
@@ -2941,7 +2941,7 @@ Porios,Пориос,,sod_rus
 Portalbendarwinden,Порталбендарвинден,,BG1RUS-EET
 Prebar,Пребар,,BG2EE-russian
 Prebek,Пребек,,BG2EE-russian
-Pregen,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40838,NP:IWDEE-russian
+Pregen,Предген,,NP:IWDEE-russian
 Prehv,Прев,,iwd2_rus
 Presio,Пресио,,iwd2_rus
 Priador,Приадор,,BG2EE-russian
@@ -2969,11 +2969,11 @@ Qelbelther,Келбельфер,,sod_rus
 Qilue,Квилу,,BG2EE-russian
 Qoral,Корале,,BG2EE-russian
 Quallo,Квалло,,BG2EE-russian
-Quarterstaffs,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16031; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18330,NP:IWDEE-russian
+Quarterstaffs,Посохи,,NP:IWDEE-russian
 Quasit,квазит,,BG1RUS-EET
 Quataris,Кватарис,,BG2EE-russian
 Quenash,Квенаш,,BG1RUS-EET
-Queshuns,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26033,NP:IWDEE-russian
+Queshuns,Во-прос,,NP:IWDEE-russian
 Quice,Квис,,iwd2_rus
 Quickblade,Быстрый Клинок,,BG2EE-russian
 Quickhand,Проворные Пальцы,,BG2EE-russian
@@ -2984,7 +2984,7 @@ Quoningar,Квонингар,,BG1RUS-EET
 Quost,Куост,,iwd2_rus
 R'gosz,Р'Госз,,sod_rus
 Raafee,Раафи,,BG2EE-russian
-Raag,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23772,NP:IWDEE-russian
+Raag,Раага,,NP:IWDEE-russian
 Raamilat,Раамилат,,BG2EE-russian
 Rabi'ah,Раби'а,,BG2EE-russian
 Rachid,Рашид,,iwd2_rus
@@ -3017,12 +3017,12 @@ Randymonk,Рендимонк,,sod_rus
 Rania,Рания,,BG2EE-russian
 Rasaad,Расаад,,BG1RUS-EET
 Rasheman,Рашемен,,BG1RUS-EET
-Rashemen,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10185; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@38907,NP:IWDEE-russian
+Rashemen,Рашеман,,NP:IWDEE-russian
 Rashemi,рашеми,,sod_rus
 Raskilov,Раскилов,,BG2EE-russian
 Rassmusen,Рассмусен,,BG2EE-russian
 Ratchild,Крысеныш,,BG1RUS-EET
-Ratta,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11307,NP:IWDEE-russian
+Ratta,Ратта,,NP:IWDEE-russian
 Rattell,Раттель,,BG2EE-russian
 Ravenscar,Воронов Шрам,,BG1RUS-EET
 Ravisher,Разрушитель,,BG1RUS-EET
@@ -3041,7 +3041,7 @@ Redsun,Красное Солнце,,BG2EE-russian
 Redwater,Красноводье,,iwd2_rus
 Reedle,Ридл,,BG2EE-russian
 Reevor,Ривор,,BG1RUS-EET
-Reghed,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22816,NP:IWDEE-russian
+Reghed,Регедский,,NP:IWDEE-russian
 Reghedmen,Регеда,,iwd2_rus
 Reig,Рейг,,iwd2_rus
 Reinss,Рейнсс,,sod_rus
@@ -3078,9 +3078,9 @@ Rhynn,Ринн,,BG2EE-russian
 Rhynwis,Ринвис,,sod_rus
 Rhyte,Райт,,BG1RUS-EET
 Riatavin,Риатавин,,BG2EE-russian
-Riatvin,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@29146; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@29147,NP:IWDEE-russian
+Riatvin,Риатвин,,NP:IWDEE-russian
 Ribald,Рибальд,,BG1RUS-EET
-Richon,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1828,NP:IWDEE-russian
+Richon,Ричон,,NP:IWDEE-russian
 Riddlemaster,Знаток загадок,,iwd2_rus
 Rielev,Рилев,,BG2EE-russian
 Rieltar,Риелтар,,BG1RUS-EET
@@ -3115,7 +3115,7 @@ Robel,Робель,,sod_rus
 Rocksmash,Камнебои,,BG2EE-russian
 Rodesi,Родеси,,BG2EE-russian
 Rodnim,Родним,,BG1RUS-EET
-Roenal,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14506; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14508; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14515; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14516; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14523; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14524,NP:IWDEE-russian
+Roenal,Роэнал,,NP:IWDEE-russian
 Roenall,Роенал,,BG2EE-russian
 Roenalls,Роеналы,,BG2EE-russian
 Roffer,Роффер,,BG2EE-russian
@@ -3134,7 +3134,7 @@ Rotarran,Ротарран,,sod_rus
 Rothe,Ротхэ,,iwd2_rus
 Rottentooth,Гнилозуб,,iwd2_rus
 Rowyn,Роуин,,BG2EE-russian
-Royalness,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@604; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@609,NP:IWDEE-russian
+Royalness,величество,,NP:IWDEE-russian
 Royo,Ройо,,sod_rus
 Rozar,Розар,,BG2EE-russian
 Rrostarr,Простарр,,iwd2_rus
@@ -3200,7 +3200,7 @@ Sargtlin,Саргтлин,,iwd2_rus
 Sarhedra,Сархедра,,BG1RUS-EET
 Sarles,Сарльз,,BG2EE-russian
 Sartessa,Сартесса,,BG1RUS-EET
-Sarutobi,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40268,NP:IWDEE-russian
+Sarutobi,Сарутоби,,NP:IWDEE-russian
 Sashay,Сашей,,BG1RUS-EET
 Sashenstar,Сашенстар,,BG1RUS-EET
 Sashkta,Сашкта,,iwd2_rus
@@ -3209,7 +3209,7 @@ Sath,Сат,,BG1RUS-EET
 Satos,Сатос,,BG1RUS-EET
 Scald,скальд,,sod_rus
 Scalecleaver,Рассекатель чешуи,,iwd2_rus
-Sch'theraqpasstt,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1329; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1957; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@6266,NP:IWDEE-russian
+Sch'theraqpasstt,Сш'теракупасст,,NP:IWDEE-russian
 Schaal,Шаал,,BG2EE-russian
 Schael,Шаэль,,sod_rus
 Schamadar,Шамадар,,BG2EE-russian
@@ -3220,7 +3220,7 @@ Scornubel,Скорнубел,,sod_rus
 Scrag,Скрэг,,iwd2_rus
 Screed,Клочок,,iwd2_rus
 Scrimshander,Косторез,,iwd2_rus
-Scrimshaw,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18090,NP:IWDEE-russian
+Scrimshaw,резная кость,,NP:IWDEE-russian
 Scrooloose,Бумажкинс,,BG2EE-russian
 Seatower,Морская Башня,,BG1RUS-EET
 Seawatcher,Страж Моря,,BG1RUS-EET
@@ -3230,7 +3230,7 @@ Sehriya,Серийя,,iwd2_rus
 Sekath,Секатх,,BG2EE-russian
 Sekolah,Секолах,,BG2EE-russian
 Selaad,Селаад,,BG1RUS-EET
-Selara,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21716; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21718,NP:IWDEE-russian
+Selara,Селара,,NP:IWDEE-russian
 Seldarine,Селдарин,,sod_rus
 Selgaunt,Сельгонт,,BG1RUS-EET
 Selgauntian,сельгонтский,,BG1RUS-EET
@@ -3257,7 +3257,7 @@ Shaar,Шаар,,BG1RUS-EET
 Shadel,Шадель,,BG2EE-russian
 Shadowdale,Шэдоудейл,,BG1RUS-EET
 Shadowdancer,Теневой танцор,,BG1RUS-EET
-Shadowdark,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@14757,NP:IWDEE-russian
+Shadowdark,Тёмная тень,,NP:IWDEE-russian
 Shadowdark Ale,Шедоударкский эль,,BG2EE-russian
 Shadowlord,Владыка Теней,,BG1RUS-EET
 Shadowmaster,Мастер теней,,BG2EE-russian
@@ -3276,7 +3276,7 @@ Shambling Mound,Ползущий холм,,BG1RUS-EET
 Shamus,Шамус,,BG2EE-russian
 Shanall,Шаналл,,BG1RUS-EET
 Shandalar,Шандалар,,BG1RUS-EET
-Shander,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@192; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@743; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@751; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2028; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4424; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8659; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9515; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@19320; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26635,NP:IWDEE-russian
+Shander,Шандер,,NP:IWDEE-russian
 Shandon,Шандон,,BG1RUS-EET
 Shangalar,Шангалар,,BG2EE-russian
 Shani,Шани,,BG2EE-russian
@@ -3305,7 +3305,7 @@ Shevarash,Шевараш,,sod_rus
 Shikata,Шиката,,iwd2_rus
 Shilmista,Шилмиста,,sod_rus
 Shilo,Шило,,BG1RUS-EET
-Shiruni,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1852,NP:IWDEE-russian
+Shiruni,Шируни,,NP:IWDEE-russian
 Shistal,Шистал,,BG1RUS-EET
 Shoogen,Шугенов,,sod_rus
 Shoon,Шун,,BG2EE-russian
@@ -3316,7 +3316,7 @@ Shvanana,Шванана,,BG2EE-russian
 Shvertszche,Швертзче,,BG1RUS-EET
 Shyressa,Шайресса,,BG2EE-russian
 Sickl,Сикл,,sod_rus
-Sidereal,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11599,NP:IWDEE-russian
+Sidereal,Небесные,,NP:IWDEE-russian
 Sidge,Сидж,,BG2EE-russian
 Sigandulba,Сигандулба,,BG2EE-russian
 Sigil,Сигил,,sod_rus
@@ -3336,7 +3336,7 @@ Sime,Сайм,,BG2EE-russian
 Simmeon,Симмеон,,BG1RUS-EET
 Simonetta,Симонетта,,sod_rus
 Simulacrum,Подобие,,BG1RUS-EET
-Simulacrums,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40263,NP:IWDEE-russian
+Simulacrums,Симулякры,,NP:IWDEE-russian
 Simyaz,Симьяз,,BG2EE-russian
 Sindret,Синдрет,,sod_rus
 Sirine,сирена,,BG1RUS-EET
@@ -3347,9 +3347,9 @@ Siyo,Сийо,,sod_rus
 Skal,Скал,,BG2EE-russian
 Skaldar,Скальдар,,iwd2_rus
 Skarmaen,Скармэн,,BG2EE-russian
-Skeld,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26360; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26361; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26369,NP:IWDEE-russian
+Skeld,Скельд,,NP:IWDEE-russian
 Skie,Скай,,BG1RUS-EET
-Skitty,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@11307,NP:IWDEE-russian
+Skitty,Скитти,,NP:IWDEE-russian
 Skuld,Скулд,,BG2EE-russian
 Skullcrusher,Череподробитель,,BG1RUS-EET
 Skullgnasher,Черепогрыз,,BG2EE-russian
@@ -3357,8 +3357,8 @@ Skullsplitter,Череполом,,iwd2_rus
 Slooble,Слубль,,BG2EE-russian
 Slythe,Слит,,BG1RUS-EET
 Smaeluv,Вониаг,,BG2EE-russian
-Smithson,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23052,NP:IWDEE-russian
-Smoothhands,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8892,NP:IWDEE-russian
+Smithson,Смитсон,,NP:IWDEE-russian
+Smoothhands,Гладкие Руки,,NP:IWDEE-russian
 Smurtlepuss,Хитропопье,,BG2EE-russian
 Snakebite,Укус змеи,заклинание,iwd2_rus
 Snikt,Сникт,,BG1RUS-EET
@@ -3375,13 +3375,13 @@ Solik,Солик,,iwd2_rus
 Solik Berries,Ягоды солик,,BG2EE-russian
 Solonor,Солонор,,iwd2_rus
 Sondal,Сондал,,BG2EE-russian
-Songbender,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8716,NP:IWDEE-russian
+Songbender,Песняр,,NP:IWDEE-russian
 Sonner,Соннер,,BG1RUS-EET
 Sontan,Сонтан,,BG2EE-russian
 Soralis,Соралис,,sod_rus
 Sorcere,Магическая академия,,sod_rus
 Sorcerous Sundries,Колдовские Припасы,,BG1RUS-EET
-Sorderer,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@12365,NP:IWDEE-russian
+Sorderer,Сордерер,,NP:IWDEE-russian
 Sordirsin,Сордирсин,,iwd2_rus
 Sorn,Сорн,,BG2EE-russian
 Sorrem,Соррем,,BG1RUS-EET
@@ -3416,7 +3416,7 @@ Sprawg,Спрог,,iwd2_rus
 Springsong,Веснопевец,,iwd2_rus
 Squip,Сквип,,BG2EE-russian
 Squisher,Давила,,BG2EE-russian
-Sset,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1820; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1849,NP:IWDEE-russian
+Sset,Ссет,,NP:IWDEE-russian
 Sseth,Ссет,,iwd2_rus
 Ssethsar,Ссетсар,,iwd2_rus
 Sshamath,Сшамат,,iwd2_rus
@@ -3426,7 +3426,7 @@ Stablehand,Крепкорукая,,BG1RUS-EET
 Stagheart,Оленье сердце,,iwd2_rus
 Stalia,Сталия,,sod_rus
 Stalman,Сталман,,BG2EE-russian
-Stam,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10509; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10511,NP:IWDEE-russian
+Stam,Стам,,NP:IWDEE-russian
 Stanet,Станет,,BG2EE-russian
 Stannel,Станнел,,BG2EE-russian
 Starmantle,Стармантл,,BG2EE-russian
@@ -3449,7 +3449,7 @@ Stoneshape Scroll,Свиток камнетворения,,BG2EE-russian
 Stoneskin,Каменная кожа,,BG1RUS-EET
 Stonewalker,камнеходец,,iwd2_rus
 Stoone,Стун,,BG2EE-russian
-Stoopid,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16326,NP:IWDEE-russian
+Stoopid,Гупый,,NP:IWDEE-russian
 Stormbringer,Громовержец,,BG2EE-russian
 Stormbrother,Буревестник,,iwd2_rus
 Stormcaller,Певец бури,,iwd2_rus
@@ -3498,7 +3498,7 @@ Surkh,Сурх,,BG1RUS-EET
 Surtr,Граз,,BG2EE-russian
 Suryris,Суририс,,BG1RUS-EET
 Susret,Сусрет,,BG1RUS-EET
-Suzail,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21764,NP:IWDEE-russian
+Suzail,Сюзейл,,NP:IWDEE-russian
 Svaltid,Свалтид,,iwd2_rus
 Svenson,Свенсон,,BG1RUS-EET
 Svian,Свиан,,iwd2_rus
@@ -3506,10 +3506,10 @@ Svirfneblin,Свирфнеблин,,sod_rus
 Svlast,Свласт,,BG1RUS-EET
 Swashbuckler,головорез,,BG1RUS-EET
 Swiftfootsdottir,Свифтфутсдоттир,,sod_rus
-Swooning,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8727,NP:IWDEE-russian
+Swooning,Падающие в обморок,,NP:IWDEE-russian
 Sybarr,Сибарра,,BG1RUS-EET
 Symm,Симм,,BG2EE-russian
-Syndar,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21776,NP:IWDEE-russian
+Syndar,Синдар,,NP:IWDEE-russian
 Sythillis,Ситсилл,,BG2EE-russian
 Sythillisian,ситсиллийский,,BG2EE-russian
 Sythillisians,ситсиллийцы,,BG2EE-russian
@@ -3517,7 +3517,7 @@ Szass,Шазз,,BG2EE-russian
 Sziltar,Сцильтар,,BG2EE-russian
 Szithla,Сцитла,,BG2EE-russian
 Szordrin,Зордрин,,BG2EE-russian
-T'rahcie,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@6138,NP:IWDEE-russian
+T'rahcie,Т'рагси,,NP:IWDEE-russian
 Taar,Таар,,BG2EE-russian
 Tabard,Табард,,iwd2_rus
 Taddaus,Таддаус,,BG2EE-russian
@@ -3543,7 +3543,7 @@ Talltrees,Высоколесье,,BG2EE-russian
 Tallus,Таллус,,BG2EE-russian
 Talona,Талона,,sod_rus
 Talonite,талонит,,iwd2_rus
-Talonites,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1972; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2137; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2145,NP:IWDEE-russian
+Talonites,жрецы Талона,,NP:IWDEE-russian
 Talos,Талос,,BG1RUS-EET
 Taloun,Талоун,,BG1RUS-EET
 Talthalra,Талталра,,BG2EE-russian
@@ -3555,7 +3555,7 @@ Tamoko,Тамоко,,BG1RUS-EET
 Tamorlin,Таморлин,,BG2EE-russian
 Tanagyr,Танагир,,BG1RUS-EET
 Tanar,Танар,,BG2EE-russian
-Tanar'ri,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17068; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17069,NP:IWDEE-russian
+Tanar'ri,Танар'ри,,NP:IWDEE-russian
 Tandolan,Тандолан,,BG2EE-russian
 Tanislove,Танислов,,BG2EE-russian
 Tannath,Таннат,,BG2EE-russian
@@ -3608,8 +3608,8 @@ Telman,Тельман,,BG1RUS-EET
 Telmen,Тельман,,iwd2_rus
 Telwyn,Тельвин,,BG2EE-russian
 Tempos,Темпос,,iwd2_rus
-Tempuran,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@199; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@205; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@312; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@315; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40780,NP:IWDEE-russian
-Tempurans,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@190,NP:IWDEE-russian
+Tempuran,Темпуса,,NP:IWDEE-russian
+Tempurans,последователи Темпуса,,NP:IWDEE-russian
 Tempus,Темпус,,BG1RUS-EET
 Tenhammer,Размолотивший,,BG1RUS-EET
 Tenhevich,Тенхович,,BG1RUS-EET
@@ -3633,7 +3633,7 @@ Testocles,Тестокл,,iwd2_rus
 Teth,Тет,,sod_rus
 Tethir,Тетир,,BG2EE-russian
 Tethtoril,Тетторил,,BG1RUS-EET
-Tethtorils,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@4598,NP:IWDEE-russian
+Tethtorils,Тетторил,,NP:IWDEE-russian
 Tethyr,Тетир,,BG1RUS-EET
 Tethyrian,тетирский,,BG2EE-russian
 Tethyrians,Тетирцы,,BG2EE-russian
@@ -3648,7 +3648,7 @@ Thallis,Таллис,,BG2EE-russian
 Thann,Танн,,BG1RUS-EET
 Tharantis,Тарантис,,sod_rus
 Thardek,Тардек,,BG1RUS-EET
-Thargren,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10769,NP:IWDEE-russian
+Thargren,Таргрен,,NP:IWDEE-russian
 Thassk,Тасск,,BG2EE-russian
 Thasz,Тхаз,,sod_rus
 Thaxll'ssillyia,Тхакслл'ссиллия,,BG2EE-russian
@@ -3691,7 +3691,7 @@ Thunderburp,Тандербурп,,BG2EE-russian
 Thunderhammer,Грохочущий Молот,,BG1RUS-EET
 Thundertree,Древогром,,BG2EE-russian
 Thurlow,Турлоу,,iwd2_rus
-Thurlows,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26069; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26814,NP:IWDEE-russian
+Thurlows,Турлоу,,NP:IWDEE-russian
 Thurm,Турм,,BG1RUS-EET
 Thvara,Твара,,iwd2_rus
 Thy-Dunag,Тай-дунаг,,iwd2_rus
@@ -3712,8 +3712,8 @@ Tindul,Тиндул,,BG2EE-russian
 Tipian,Типиан,,BG1RUS-EET
 Tirdir,Тирдир,,BG2EE-russian
 Tiris,Тирис,,BG2EE-russian
-Tirith,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8501; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16142; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17703; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40115,NP:IWDEE-russian
-Tirizi,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@1854,NP:IWDEE-russian
+Tirith,Тирит,,NP:IWDEE-russian
+Tirizi,Тиризи,,NP:IWDEE-russian
 Tirthold,Тиртхолд,,BG2EE-russian
 Tix,Тикс,,BG2EE-russian
 Tizzak,Тиззак,,BG2EE-russian
@@ -3745,15 +3745,15 @@ Toril,Торил,,BG1RUS-EET
 Torlath,Торлат,,BG2EE-russian
 Torlo,Торло,,BG1RUS-EET
 Torm,Торм,,sod_rus
-Tormish,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17788,NP:IWDEE-russian
+Tormish,Торма,,NP:IWDEE-russian
 Tornyn,Торнин,,BG2EE-russian
 Torsend,Торсенд,,iwd2_rus
 Torsin,Торсин,,sod_rus
 Tottle,Тоттли,,BG2EE-russian
 Tracea,Трацея,,BG1RUS-EET
 Trademeet,Трейдмит,,BG2EE-russian
-Traduction,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40816,NP:IWDEE-russian
-Traduzione,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40821,NP:IWDEE-russian
+Traduction,Перевод,,NP:IWDEE-russian
+Traduzione,Перевод,,NP:IWDEE-russian
 Traggor,Траггор,,BG2EE-russian
 Trailstone,Трейлстоун,,BG2EE-russian
 Tralithan,Тралитан,,BG1RUS-EET
@@ -3776,10 +3776,10 @@ Trissa,Трисса,,BG2EE-russian
 Tristian,Тристиан,,sod_rus
 Trixy,Трикси,,BG2EE-russian
 Trollbark Forest,Троллбаркский лес,,sod_rus
-Trollish,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@21433; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@25357,NP:IWDEE-russian
+Trollish,Троллинская,,NP:IWDEE-russian
 Trollkiller,Убийца Троллей,,BG1RUS-EET
 Trollslayer,Истребитель Троллей,,iwd2_rus
-Truesilver,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@9745,NP:IWDEE-russian
+Truesilver,Истинное Серебро,,NP:IWDEE-russian
 Trugnuk,Тругнук,,iwd2_rus
 Tsoct,Тсокт,,BG1RUS-EET
 Tsol,Тсол,,iwd2_rus
@@ -3844,7 +3844,7 @@ Underdark,Андердарк,,BG1RUS-EET
 Undergood,Андергуд,,BG2EE-russian
 Undermountain,Подгорье,,BG1RUS-EET
 Understone,Андерстоун,,BG2EE-russian
-Unfrozen,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@18500,NP:IWDEE-russian
+Unfrozen,Незамёрзлый,,NP:IWDEE-russian
 Unshey,Уншей,,BG1RUS-EET
 Unsleeping Eye,Недремлющее Око,,BG1RUS-EET
 Unstrung,Расстроенная,,iwd2_rus
@@ -3854,7 +3854,7 @@ Urbane,Урбейн,,iwd2_rus
 Urbek,Урбек,,iwd2_rus
 Urdlen,Урдлен,,BG2EE-russian
 Urdlenglas,Урдленглас,,BG2EE-russian
-Urk,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@24933,NP:IWDEE-russian
+Urk,Ы-ы-ы,,NP:IWDEE-russian
 Urnist,Дристан,,BG2EE-russian
 Urnst,Урнст,,BG1RUS-EET
 Urold,Уролд,,sod_rus
@@ -3893,7 +3893,7 @@ Vaprak,Вапрак,,sod_rus
 Vara,Вара,,BG2EE-russian
 Varahl,Варал,,sod_rus
 Varci,Варси,,BG1RUS-EET
-Varglann,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@26463,NP:IWDEE-russian
+Varglann,Ваарглан,,NP:IWDEE-russian
 Varia,Вария,,BG2EE-russian
 Varscona,Варскона,,BG1RUS-EET
 Vashti,Вашти,,iwd2_rus
@@ -3946,7 +3946,7 @@ Vilhon,Вилхон,,BG2EE-russian
 Villynaty,Виллинати,,BG2EE-russian
 Vilon,Вилон,,BG2EE-russian
 Vinke,Винк,,BG2EE-russian
-Viol,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@16782,NP:IWDEE-russian
+Viol,Скрипка,,NP:IWDEE-russian
 Vipergout,Поток змей,,iwd2_rus
 Virah,Вира,,BG2EE-russian
 Visaj,Висадж,,BG2EE-russian
@@ -3987,7 +3987,7 @@ Wakizashi,вакизаши,,BG1RUS-EET
 Wallag,Валлаг,,BG2EE-russian
 Wallen,Валлен,,BG1RUS-EET
 Walloping Club,Громящая палица,,iwd2_rus
-Walson,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@23579,NP:IWDEE-russian
+Walson,Уолсон,,NP:IWDEE-russian
 Wanev,Ванев,,BG2EE-russian
 Wanmok,Ванмок,,iwd2_rus
 Warblade,Боевой клинок,,BG2EE-russian
@@ -4002,7 +4002,7 @@ Waterstar,водяная звезда,,BG1RUS-EET
 Waukeen,Вокин,,sod_rus
 Waveservant,Слуга Волн,,BG1RUS-EET
 Waylane,Вейлан,,BG2EE-russian
-Weal,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@977; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@3027,NP:IWDEE-russian
+Weal,Счастье,,NP:IWDEE-russian
 Wealdath,Веалдат,,BG2EE-russian
 Weathermistress,Владычица погоды,,BG2EE-russian
 Weedian,Видиан,,iwd2_rus
@@ -4020,12 +4020,12 @@ Wererat,крыса-оборотень,,sod_rus
 Wern'nt,Верн'нт,,BG2EE-russian
 Wessalen,Вессален,,BG2EE-russian
 Wessel,Вессел,,sod_rus
-Wharr,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@22471,NP:IWDEE-russian
+Wharr,Где,,NP:IWDEE-russian
 Whattya,Шотебенада,,iwd2_rus
 Wheber,Вебер,,BG1RUS-EET
-Where'r,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10452,NP:IWDEE-russian
+Where'r,Куда,,NP:IWDEE-russian
 Whitedove,Белая Голубка,,BG2EE-russian
-Whre,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@8500,NP:IWDEE-russian
+Whre,Игххде,,NP:IWDEE-russian
 Wicuf,Викуф,,sod_rus
 Widowmaker,Вдоводел,,BG1RUS-EET
 Wila berries,ягоды вила,,BG2EE-russian
@@ -4037,7 +4037,7 @@ Windspear,Виндспир,,BG1RUS-EET
 Wingding,Вингдинга,,BG2EE-russian
 Winski,Вински,,BG1RUS-EET
 Winterbrook,Винтербрук,,BG2EE-russian
-Winterbrush,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40624; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40625; /home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40626,NP:IWDEE-russian
+Winterbrush,Зимняя Ветвь,,NP:IWDEE-russian
 Winterthaw,Винтертоу,,iwd2_rus
 Wird,Вирд,,BG2EE-russian
 Wirthing,Виртинг,,BG1RUS-EET
@@ -4045,7 +4045,7 @@ Wisham,Вишам,,BG1RUS-EET
 Wistak,Вистак,,sod_rus
 Witherbranch,Увядающей Ветви,,iwd2_rus
 Witherjar,Вялгоршок,,BG2EE-russian
-Withery,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@2863,NP:IWDEE-russian
+Withery,Сушь,,NP:IWDEE-russian
 Wiven,Вивен,,BG1RUS-EET
 Wode,Воуд,,iwd2_rus
 Wolfsbane,Волчий корень,,BG1RUS-EET
@@ -4061,7 +4061,7 @@ Wudei,Вудей,,BG1RUS-EET
 Wulfgar,Вульфгар,,BG2EE-russian
 Wulfhunter,Истребитель Волков,,BG1RUS-EET
 Wurn,Вурн,,BG2EE-russian
-Wychalarn,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@10185,NP:IWDEE-russian
+Wychalarn,Викаларн,,NP:IWDEE-russian
 Wychlaran,Вичларан,,BG1RUS-EET
 Wylfdene,Вильфдин,,iwd2_rus
 Wylliam,Вильям,,BG1RUS-EET
@@ -4156,7 +4156,7 @@ Zelma,Зелма,,sod_rus
 Zelnick,Зелник,,BG1RUS-EET
 Zemblan,зембланский,,BG2EE-russian
 Zeph'ulp-Maress,Зеф'ульп-Маресс,,iwd2_rus
-Zephalim,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@27394,NP:IWDEE-russian
+Zephalim,Зефалим,,NP:IWDEE-russian
 Zephir,Зефир,,BG2EE-russian
 Zerihyda,Зерихида,,sod_rus
 Zeris,Зерис,,BG2EE-russian
@@ -4174,7 +4174,7 @@ Zhurlong,Журлонг,,BG1RUS-EET
 Ziatar,Зиатар,,sod_rus
 Zidrand,Зидранд,,sod_rus
 Zierkki,Зиеркки,,iwd2_rus
-Ziggurat,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@40120,NP:IWDEE-russian
+Ziggurat,Зиккурат,,NP:IWDEE-russian
 Zigma,Зигма,,iwd2_rus
 Zil,Зил,,iwd2_rus
 Zil-t'yor,Зил-т'йор,,iwd2_rus
@@ -4186,7 +4186,7 @@ Zogas,Зогас,,BG2EE-russian
 Zordral,Зордрал,,BG1RUS-EET
 Zorgar,Зоргар,,iwd2_rus
 Zorl,Зорл,,BG1RUS-EET
-Zug,,/home/paladin/source/translations/IWDEE-russian/iwdeetra/tra/dialog-english-sil.tra@17998,NP:IWDEE-russian
+Zug,Зуг,,NP:IWDEE-russian
 Zulkir,Зулкир,,BG1RUS-EET
 Zustrin,Застрин,,sod_rus
 Zuvembie,Зувемби,,iwd2_rus
