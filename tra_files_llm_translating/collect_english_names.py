@@ -11,10 +11,11 @@ TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
 
 
 def is_common_word(word):
-    # For words with hyphens or apostrophes, check each part separately
-    if '-' in word or "'" in word:
-        # Split on hyphens and apostrophes, filter empty parts
-        parts = re.split(r"[-']", word)
+    # For words with hyphens, check each part separately
+    # For words with apostrophes, treat as single word (names like O'Connor, D'Angelo)
+    if '-' in word and "'" not in word:
+        # Split on hyphens only, filter empty parts
+        parts = re.split(r"[-]", word)
         parts = [part for part in parts if part and len(part) > 1]  # Skip single letters
 
         # If any part is a common word, consider the whole thing common
@@ -84,10 +85,10 @@ def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
         return word
 
     def process_word(word):
-        """Process a word - if it's compound, extract valid parts, otherwise return as-is"""
-        if '-' in word or "'" in word:
-            # Split compound words and check each part
-            parts = re.split(r"[-']", word)
+        """Process a word - if it has hyphens, extract valid parts; keep apostrophe names whole"""
+        if '-' in word and "'" not in word:
+            # Split compound words with hyphens only and check each part
+            parts = re.split(r"[-]", word)
             parts = [part for part in parts if part and len(part) > 1]  # Skip single letters
 
             valid_parts = []
@@ -103,7 +104,7 @@ def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
 
             return valid_parts
         else:
-            # Single word - check if it's valid
+            # Single word or word with apostrophe - check if it's valid as whole
             if not is_common_word(word) and is_valid_fantasy_name(word):
                 normalized_word = normalize_capitalization(word)
                 # Skip words that don't start with capital letter (after normalization)
