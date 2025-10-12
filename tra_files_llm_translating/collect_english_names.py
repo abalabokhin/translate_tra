@@ -158,6 +158,30 @@ def load_blacklist(file_path):
                 bl.add(line.upper())
     return bl
 
+def get_singular_forms(word):
+    """Try to get possible singular forms of a word if it appears to be plural.
+    Returns a list of possible singular forms to check."""
+    if len(word) <= 2:
+        return []
+
+    singular_candidates = []
+
+    # Pattern: cities → city, berries → berry
+    if word.endswith('ies') and len(word) > 3:
+        singular_candidates.append(word[:-3] + 'y')
+
+    # Pattern: boxes → box, heroes → hero
+    # But be careful with names ending in 'es' like Jones, Charles
+    if word.endswith('es') and len(word) > 3 and not word.endswith('ies'):
+        singular_candidates.append(word[:-2])
+
+    # Pattern: cats → cat, dragons → dragon
+    # But not: glass → glas, pass → pas
+    if word.endswith('s') and not word.endswith('ss') and len(word) > 2:
+        singular_candidates.append(word[:-1])
+
+    return singular_candidates
+
 def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
     """Add new words with locations to dictionary file in alphabetical order."""
     if not dictionary_csv or not new_word_locations:
@@ -185,6 +209,19 @@ def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
     for word, location in new_word_locations:
         # Check case-insensitively if word exists
         word_upper = word.upper()
+
+        # Check if this word is a plural and its singular form already exists
+        singular_forms = get_singular_forms(word)
+        singular_exists = False
+        for singular in singular_forms:
+            if singular.upper() in existing_rows_upper:
+                # Singular form exists in dictionary, skip this plural
+                singular_exists = True
+                break
+
+        if singular_exists:
+            continue  # Skip adding plural form
+
         if word_upper in existing_rows_upper:
             # Use the existing word's original case
             existing_word = existing_rows_upper[word_upper]
