@@ -138,7 +138,16 @@ class DialogTranslator:
         """Call Ollama API to get translation"""
         if self.test_mode:
             # Return different mock translations based on context
-            if "Previously translated CSV for male Player1:" in prompt:
+            if "Translate independent game text lines" in prompt:
+                # Unused lines translation - extract references and mock translate
+                lines = prompt.split("Lines to translate:")[1].split("Return ONLY")[0].strip().split('\n')
+                result = []
+                for line in lines:
+                    if '|' in line:
+                        ref, text = line.split('|', 1)
+                        result.append(f"{ref}|[ТЕСТ ПЕРЕВОД] {text[:30]}...")
+                return '\n'.join(result)
+            elif "Previously translated CSV for male Player1:" in prompt:
                 # Female version referencing male translation
                 return '''ACTOR,UNIQUE LINE NUMBER,PREVIOUS LINE NUMBER(S),LINE
 Cassia,"1",,~(Кассия глубоко дышит, когда её взгляд опускается на землю, и что-то шепчет себе, прежде чем снова поднять глаза и дать тебе резкий кивок.)~
@@ -349,28 +358,156 @@ Previously translated CSV for male Player1:
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(translation_text)
     
+    def translate_unused_lines_file(self, csv_file: Path):
+        """Translate the special _unused_tra_lines.csv file with independent lines"""
+        print(f"Processing unused TRA lines from {csv_file.name}...")
+
+        # Read the CSV file
+        rows = self._read_csv_content(csv_file)
+        if not rows or len(rows) < 2:  # Need at least header + 1 line
+            print(f"Warning: {csv_file.name} is empty or has only header")
+            return
+
+        header = rows[0]
+        if len(header) < 2 or header[0] != "Reference" or header[1] != "Text":
+            print(f"Warning: {csv_file.name} has unexpected format")
+            return
+
+        # Prepare output with additional column for translation
+        output_rows = [["Reference", "English_Text", "Russian_Text"]]
+
+        # Process lines in batches for efficiency (10 lines per request)
+        batch_size = 10
+        total_lines = len(rows) - 1  # Exclude header
+        processed = 0
+
+        for batch_start in range(1, len(rows), batch_size):
+            batch_end = min(batch_start + batch_size, len(rows))
+            batch_rows = rows[batch_start:batch_end]
+
+            print(f"  Translating lines {batch_start} to {batch_end-1} of {total_lines}...")
+
+            # Build batch content and collect dictionary context
+            batch_content = ""
+            all_text = ""
+            for row in batch_rows:
+                if len(row) >= 2:
+                    reference = row[0]
+                    text = row[1]
+                    all_text += text + " "
+                    batch_content += f"{reference}|{text}\n"
+
+            # Get dictionary context for all text in this batch
+            dict_context = self._build_dictionary_context(all_text)
+
+            # Create simplified prompt for independent lines
+            prompt = self._create_unused_lines_prompt(batch_content.strip(), dict_context)
+
+            # Call LLM
+            start_time = time.time()
+            translation = self._call_ollama(prompt)
+            end_time = time.time()
+            duration = end_time - start_time
+
+            if translation:
+                # Parse the translation result
+                translated_lines = self._parse_unused_lines_result(translation)
+
+                # Match translations with original lines
+                for i, row in enumerate(batch_rows):
+                    if len(row) >= 2:
+                        reference = row[0]
+                        english_text = row[1]
+
+                        # Find corresponding translation
+                        russian_text = translated_lines.get(reference, "")
+                        if not russian_text:
+                            # Fallback: use by index if reference lookup fails
+                            if i < len(translated_lines):
+                                russian_text = list(translated_lines.values())[i]
+
+                        output_rows.append([reference, english_text, russian_text])
+
+                processed += len(batch_rows)
+                print(f"  Processed {processed}/{total_lines} lines (took {duration:.2f} seconds)")
+            else:
+                print(f"  Error: Failed to translate batch starting at line {batch_start}")
+                # Add lines without translation
+                for row in batch_rows:
+                    if len(row) >= 2:
+                        output_rows.append([row[0], row[1], ""])
+
+        # Save the result
+        output_file = self.target_folder / csv_file.name
+        self._write_csv_content(output_file, output_rows)
+        print(f"Saved: {output_file}")
+
+    def _create_unused_lines_prompt(self, batch_content: str, dict_context: str) -> str:
+        """Create translation prompt for unused lines (independent lines)"""
+        prompt = """Translate independent game text lines from English to Russian. These are NOT part of dialogues - they are standalone lines like item descriptions, journal entries, system messages, etc.
+
+Input format: Each line is "Reference|English text"
+Output format: Return each line as "Reference|Russian translation"
+
+Translation requirements:
+1. Use informal address (T-distinction): "ты", "тебе", "твоё" instead of "вы", "вам", "ваше" when addressing one person
+2. Keep any special markup like <PLAYER1>, ~, *, [], etc. unchanged in their proper positions
+3. Each line is independent - translate based on its own context"""
+
+        if dict_context:
+            prompt += f"\n\nAdditional translation requirements: {dict_context}"
+
+        prompt += f"\n\nLines to translate:\n{batch_content}"
+        prompt += "\n\nReturn ONLY the translated lines in the same format (Reference|Russian translation), nothing else:"
+
+        return prompt
+
+    def _parse_unused_lines_result(self, translation_text: str) -> Dict[str, str]:
+        """Parse the translation result for unused lines"""
+        translations = {}
+
+        lines = translation_text.strip().split('\n')
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+            # Try to parse "Reference|Translation" format
+            if '|' in line:
+                parts = line.split('|', 1)
+                if len(parts) == 2:
+                    reference = parts[0].strip()
+                    translation = parts[1].strip()
+                    translations[reference] = translation
+
+        return translations
+
     def translate_all_dialogs(self):
         """Translate all CSV files in the source folder"""
         if not self.source_folder.exists():
             print(f"Error: Source folder '{self.source_folder}' does not exist")
             return
-        
+
         csv_files = list(self.source_folder.glob("*.csv"))
         if not csv_files:
             print(f"No CSV files found in '{self.source_folder}'")
             return
-        
+
         print(f"Found {len(csv_files)} CSV file(s) to translate")
         print(f"Actors loaded: {self.actors}")
         print(f"Dictionary entries: {len(self.dictionary)}")
         print()
-        
+
         for csv_file in csv_files:
             try:
-                self.translate_dialog_file(csv_file)
+                # Check if this is the special unused lines file
+                if csv_file.name == "_unused_tra_lines.csv":
+                    self.translate_unused_lines_file(csv_file)
+                else:
+                    self.translate_dialog_file(csv_file)
             except Exception as e:
                 print(f"Error processing {csv_file.name}: {e}")
-        
+
         print("\nTranslation completed!")
 
 
