@@ -78,10 +78,34 @@ class DialogTranslator:
     
     def _build_dictionary_context(self, dialog_text: str) -> str:
         """Build dictionary context for words that appear in the dialog"""
+        import re
+
         relevant_translations = []
-        for english_word, russian_word in self.dictionary.items():
-            if english_word.lower() in dialog_text.lower():
-                relevant_translations.append(f'"{english_word}" should be translated as "{russian_word}"')
+        matched_positions = set()  # Track which positions have been matched
+
+        # Sort dictionary entries by length (descending) to match longer phrases first
+        sorted_dict_items = sorted(self.dictionary.items(), key=lambda x: len(x[0]), reverse=True)
+
+        for english_word, russian_word in sorted_dict_items:
+            # Create a regex pattern with word boundaries
+            # Use \b for word boundaries to match whole words/phrases only
+            pattern = r'\b' + re.escape(english_word) + r'\b'
+
+            # Find all matches in the dialog text (case-insensitive)
+            for match in re.finditer(pattern, dialog_text, re.IGNORECASE):
+                start, end = match.span()
+
+                # Check if this position range overlaps with already matched positions
+                if not any(pos in matched_positions for pos in range(start, end)):
+                    # Mark these positions as matched
+                    matched_positions.update(range(start, end))
+
+                    # Add to relevant translations (only once per unique entry)
+                    translation_rule = f'"{english_word}" should be translated as "{russian_word}"'
+                    if translation_rule not in relevant_translations:
+                        relevant_translations.append(translation_rule)
+                    break  # Found at least one match for this dictionary entry
+
         return " ".join(relevant_translations) + "." if relevant_translations else ""
     
     def _call_ollama(self, prompt: str) -> str:
