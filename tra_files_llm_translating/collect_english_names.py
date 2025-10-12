@@ -59,14 +59,16 @@ def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
 
         current = []
         for tok in tokens:
-            clean = tok.strip("()\"'"".,;:!?")
+            # Strip punctuation but NOT apostrophes (we need them for possessive detection)
+            clean = tok.strip("()\"\"\".,;:!?")
+            # Normalize fancy quotes/apostrophes to regular ones first
             clean = clean.replace("'", "'").replace("'", "'").replace("–", "-").replace("—", "-")
 
-            # Remove possessive forms - any apostrophe-like character followed by 's or alone
-            # Include regular apostrophe ('), right single quotation (\u2019), and backtick (`)
-            if clean.endswith("'s") or clean.endswith("\u2019s") or clean.endswith("`s"):
+            # Remove possessive forms (after normalization, all apostrophes are regular ')
+            # Check for both lowercase 's and uppercase 'S
+            if clean.endswith("'s") or clean.endswith("'S"):
                 clean = clean[:-2]
-            elif clean.endswith("'") or clean.endswith("\u2019") or clean.endswith("`"):
+            elif clean.endswith("'"):
                 clean = clean[:-1]
 
             if TOKEN_OK_RE.match(clean) and clean:
@@ -162,7 +164,9 @@ def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
         return
 
     # Load existing rows (preserving translations if they exist)
+    # Use case-insensitive lookup: map uppercase key to actual row
     existing_rows = {}
+    existing_rows_upper = {}  # Map uppercase word to original word for case-insensitive lookup
     try:
         with open(dictionary_csv, newline="", encoding="utf-8") as f:
             reader = csv.reader(f)
@@ -172,40 +176,46 @@ def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
                     while len(row) < 4:
                         row.append("")
                     existing_rows[row[0]] = row
+                    existing_rows_upper[row[0].upper()] = row[0]
     except FileNotFoundError:
         # Dictionary file doesn't exist yet
         pass
 
     # Process new word locations
     for word, location in new_word_locations:
-        if word in existing_rows:
+        # Check case-insensitively if word exists
+        word_upper = word.upper()
+        if word_upper in existing_rows_upper:
+            # Use the existing word's original case
+            existing_word = existing_rows_upper[word_upper]
             # Word exists - check if translation exists (column 1 not empty)
-            if existing_rows[word][1].strip():
+            if existing_rows[existing_word][1].strip():
                 # Translation exists, don't add location
                 continue
             else:
                 # No translation, add/update location info
-                if len(existing_rows[word]) < 3:
-                    existing_rows[word].extend(["", location, comment])
-                elif len(existing_rows[word]) < 4:
+                if len(existing_rows[existing_word]) < 3:
+                    existing_rows[existing_word].extend(["", location, comment])
+                elif len(existing_rows[existing_word]) < 4:
                     # Append to existing locations
-                    if existing_rows[word][2].strip():
-                        existing_rows[word][2] += "; " + location
+                    if existing_rows[existing_word][2].strip():
+                        existing_rows[existing_word][2] += "; " + location
                     else:
-                        existing_rows[word][2] = location
-                    existing_rows[word].append(comment)
+                        existing_rows[existing_word][2] = location
+                    existing_rows[existing_word].append(comment)
                 else:
                     # Append to existing locations
-                    if existing_rows[word][2].strip():
-                        existing_rows[word][2] += "; " + location
+                    if existing_rows[existing_word][2].strip():
+                        existing_rows[existing_word][2] += "; " + location
                     else:
-                        existing_rows[word][2] = location
+                        existing_rows[existing_word][2] = location
                     # Update comment if provided
                     if comment:
-                        existing_rows[word][3] = comment
+                        existing_rows[existing_word][3] = comment
         else:
             # New word - add with empty translation, location, and comment
             existing_rows[word] = [word, "", location, comment]
+            existing_rows_upper[word_upper] = word
 
     # Write back in alphabetical order
     with open(dictionary_csv, 'w', newline='', encoding='utf-8') as f:
