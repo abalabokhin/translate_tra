@@ -1,3 +1,0 @@
-1. Make sure sript to translate works with real data, improve prompt over time (add information about all the <CHARACTER>, etc).
-2. Create a script to put the information back into tra files
-3. Improve the script that creates scv files with information from tra files that are not parts of the dialogs (we need it to at least use dictionary).

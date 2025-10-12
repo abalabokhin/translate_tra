@@ -43,9 +43,21 @@ This is a collection of Python scripts for working with TRA files (localization 
   ```
   - Translates CSV dialog files from English to Russian using Ollama
   - Supports gender-specific translations for Player1
+  - Handles `_unused_tra_lines.csv` with batch translation (10 lines per request)
   - Uses `actors.csv` for character information
   - Uses `dict.csv` for translation dictionary with context
   - Dictionary features: word boundaries, prioritizes longer phrases, supports multiple translations with context
+
+- `update_tra_from_csv.py` - Updates TRA files with translations from CSV files
+  ```bash
+  python3 update_tra_from_csv.py tra_folder csv_folder [--output output_folder]
+  ```
+  - Reads translated dialogue CSVs (male/female variants) and unused lines CSV
+  - Updates original TRA files with Russian translations
+  - Preserves original formatting, comments, and sound references
+  - Gender handling: same translation → single line, different → `~male~ ~female~` format
+  - Only updates lines with TRA references (ignores D file direct text)
+  - Output encoding: UTF-8
 
 ### File Management and Processing
 - `generate_global_renaming_table.py` - Creates renaming tables for game files with prefixes
