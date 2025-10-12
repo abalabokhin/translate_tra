@@ -25,11 +25,34 @@ This is a collection of Python scripts for working with TRA files (localization 
   - Uses `russian_yo_words.txt` and `russian_yo_words_both.txt` dictionaries
   - Interactive mode for ambiguous cases unless `--always-no` specified
 
+### Dialogue Processing (D Files)
+- `parse_d_grammar.py` - **Primary dialogue parser** using ANTLR4 grammar
+  ```bash
+  python3 parse_d_grammar.py d_folder tra_folder output_folder
+  ```
+  - Parses D dialogue files using proper ANTLR4 grammar (robust, handles all constructs)
+  - Extracts SAY lines (NPC dialogue) and REPLY lines (player responses)
+  - Resolves @number references from TRA files
+  - Creates one CSV per connected dialogue with proper flow tracking
+  - Generates `_unused_tra_lines.csv` containing lines not used in dialogues (setup, journal entries, etc.)
+  - Uses `DParser.g4` and `DLexer.g4` grammar files
+
+- `translate_dialogs.py` - Translates dialogue CSV files using local LLM (Ollama)
+  ```bash
+  python3 translate_dialogs.py [source_folder] [--target target_folder] [--model model_name]
+  ```
+  - Translates CSV dialog files from English to Russian using Ollama
+  - Supports gender-specific translations for Player1
+  - Uses `actors.csv` for character information
+  - Uses `dict.csv` for translation dictionary with context
+  - Dictionary features: word boundaries, prioritizes longer phrases, supports multiple translations with context
+
 ### File Management and Processing
 - `generate_global_renaming_table.py` - Creates renaming tables for game files with prefixes
 - `find_closest_lines_in_tra.py` - Finds similar lines between TRA files using Levenshtein distance
 - `update_tra.py` - Updates TRA files based on mapping tables
 - `extract_lines_tra.py` - Extracts specific lines from TRA files
+- `extract_actors_using_grammar.py` - Extracts actor names from D files using grammar parser
 
 ## Dependencies
 
@@ -45,6 +68,7 @@ pip install click
 pip install chardet
 pip install levenshtein
 pip install nltk
+pip install antlr4-python3-runtime  # For D file grammar parsing
 ```
 
 ## TRA File Format
@@ -77,8 +101,24 @@ Various utility scripts for encoding conversion and batch processing:
 
 ## Architecture Notes
 
-- All main scripts follow similar pattern: file reading with encoding detection, regex-based text processing, and safe file writing
-- Text processing uses regex patterns to identify TRA file structure (@number = ~text~ or @number = "text")
+- All main scripts follow similar pattern: file reading with encoding detection, text processing, and safe file writing
+- TRA file parsing uses regex patterns to identify structure (@number = ~text~ or @number = "text")
+- **D file parsing uses ANTLR4 grammar** (`DParser.g4`, `DLexer.g4`) for robust parsing of all dialogue constructs (IF-THEN, CHAIN, APPEND, etc.)
 - Translation engines are abstracted to allow switching between different providers
-- Dictionary-based text processing for Russian language improvements
+- Dictionary-based text processing for Russian language improvements with:
+  - Word boundary matching to avoid partial matches
+  - Prioritization of longer phrases over shorter ones
+  - Support for multiple context-dependent translations
 - File collision handling in renaming operations with automatic suffix generation
+
+## D File Dialogue Format
+
+D files contain dialogue scripts for Infinity Engine games. Key constructs:
+- `APPEND ~NPC~ ... END` - Append dialogue to existing NPC
+- `IF ~condition~ THEN BEGIN state_id ... END` - Dialogue state with condition
+- `SAY @number` - NPC dialogue line (references TRA file)
+- `++ @number GOTO target` - Player reply option
+- `CHAIN ... EXIT` - Sequential dialogue chain
+- `EXTERN ~NPC~ state` - Jump to another NPC's dialogue
+
+The grammar-based parser (`parse_d_grammar.py`) handles all these constructs correctly.

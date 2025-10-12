@@ -47,12 +47,13 @@ class DialogueState:
 
 class ImprovedDialogueListener(ParseTreeListener):
     """Enhanced ANTLR4 listener with proper state tracking and transition resolution."""
-    
+
     def __init__(self, d_filename, tra_folder):
         self.d_filename = d_filename
         self.tra_folder = tra_folder
         self.tra_cache = {}
-        
+        self.used_tra_entries = set()  # Track which TRA entries are used
+
         # Enhanced state tracking
         self.all_lines = []
         self.all_states = []
@@ -61,19 +62,19 @@ class ImprovedDialogueListener(ParseTreeListener):
         self.current_state_id = None
         self.current_state_context = None
         self.line_counter = 0
-        
+
         # Transition tracking
         self.state_transitions = {}  # state_id -> [target_states]
-        
+
         # Error tracking
         self.missing_tra_refs = set()
         self.syntax_errors = []
         self.all_speakers = {}  # speaker -> {state_id -> DialogueState}
-        
+
         # Source tracking for translation
         self.d_file_lines = []  # Store D file lines for line number lookup
         self.d_file_content = ""  # Store original D file content
-        
+
         # Load TRA file for this D file
         base_name = os.path.splitext(d_filename)[0]
         tra_filename = base_name + '.tra'
@@ -161,23 +162,27 @@ class ImprovedDialogueListener(ParseTreeListener):
         """Resolve text from parse tree node to actual dialogue text."""
         if text_node is None:
             return ""
-            
+
         text = text_node.getText()
-        
+
         # Handle TRA references (@123)
         if text.startswith('@') and text[1:].isdigit():
             tra_number = int(text[1:])
             if tra_number in self.tra_dict:
+                # Track this TRA entry as used
+                base_name = os.path.splitext(self.d_filename)[0]
+                tra_filename = base_name + '.tra'
+                self.used_tra_entries.add((tra_filename, tra_number))
                 return self.tra_dict[tra_number]
             else:
                 self.missing_tra_refs.add(text)
                 return f"{text} (TRA not found)"
-        
+
         # Clean direct text (remove quotes/tildes)
         if (text.startswith('~') and text.endswith('~')) or \
            (text.startswith('"') and text.endswith('"')):
             text = text[1:-1]
-        
+
         return text.strip()
     
     def get_speaker_from_file_rule(self, file_rule):
@@ -605,11 +610,13 @@ class ImprovedDialogueListener(ParseTreeListener):
 
 class ImprovedGrammarDialogueParser:
     """Improved grammar-based D file parser with better state tracking."""
-    
+
     def __init__(self, d_folder, tra_folder):
         self.d_folder = d_folder
         self.tra_folder = tra_folder
         self.all_dialogues = {}
+        self.used_tra_entries = set()  # Global set of used TRA entries
+        self.tra_cache = {}  # Global TRA cache
         
     def parse_d_file(self, d_filepath):
         """Parse a D file using the improved ANTLR4 grammar."""
@@ -645,24 +652,27 @@ class ImprovedGrammarDialogueParser:
         # Walk the parse tree
         walker = ParseTreeWalker()
         walker.walk(listener, tree)
-        
+
+        # Collect used TRA entries from this file
+        self.used_tra_entries.update(listener.used_tra_entries)
+
         # Build enhanced dialogue flow
         listener.build_enhanced_dialogue_flow()
-        
+
         # Group connected dialogues
         dialogue_groups = listener.group_connected_dialogues()
-        
+
         # Report any missing TRA references
         if listener.missing_tra_refs:
             print(f"  ⚠️  WARNING: {len(listener.missing_tra_refs)} missing TRA references:")
             for ref in sorted(listener.missing_tra_refs):
                 print(f"    - {ref}")
-        
+
         if listener.syntax_errors:
             print(f"  ⚠️  WARNING: {len(listener.syntax_errors)} syntax errors encountered:")
             for error in listener.syntax_errors[:5]:  # Show first 5
                 print(f"    - {error}")
-        
+
         return listener.all_states, listener.all_lines, dialogue_groups
     
     def sort_lines_by_flow(self, lines):
@@ -697,19 +707,56 @@ class ImprovedGrammarDialogueParser:
         
         return result
     
+    def load_all_tra_files(self):
+        """Load all TRA files from the TRA folder into cache."""
+        tra_files = [f for f in os.listdir(self.tra_folder) if f.lower().endswith('.tra')]
+        print(f"Pre-loading {len(tra_files)} TRA files...")
+
+        import re
+        for tra_filename in tra_files:
+            tra_path = os.path.join(self.tra_folder, tra_filename)
+            try:
+                encoding = detect_encoding(tra_path)
+                with open(tra_path, 'r', encoding=encoding) as file:
+                    content = file.read()
+
+                tra_dict = {}
+                # Pattern for tilde format
+                pattern_tilde = r'@(\d+)\s*=\s*~([^~]*)~'
+                for match in re.finditer(pattern_tilde, content, re.MULTILINE | re.DOTALL):
+                    tra_number = int(match.group(1))
+                    tra_text = match.group(2).strip()
+                    tra_dict[tra_number] = tra_text
+
+                # Pattern for quote format
+                pattern_quote = r'@(\d+)\s*=\s*"([^"]*)"'
+                for match in re.finditer(pattern_quote, content, re.MULTILINE | re.DOTALL):
+                    tra_number = int(match.group(1))
+                    tra_text = match.group(2).strip()
+                    tra_dict[tra_number] = tra_text
+
+                self.tra_cache[tra_filename] = tra_dict
+            except Exception as e:
+                print(f"Error loading {tra_filename}: {e}")
+
+        print(f"Loaded {len(self.tra_cache)} TRA files into cache")
+
     def process_all_d_files(self):
         """Process all D files in the folder."""
+        # Pre-load all TRA files so we can detect unused lines
+        self.load_all_tra_files()
+
         d_files = [f for f in os.listdir(self.d_folder) if f.lower().endswith('.d')]
         print(f"Found {len(d_files)} D files to process")
-        
+
         # Process all files
         all_dialogue_groups = []
         total_lines = 0
-        
+
         for d_filename in d_files:
             d_filepath = os.path.join(self.d_folder, d_filename)
             print(f"Processing {d_filename}...")
-            
+
             try:
                 states, all_lines, dialogue_groups = self.parse_d_file(d_filepath)
                 if dialogue_groups:
@@ -722,7 +769,7 @@ class ImprovedGrammarDialogueParser:
                 print("Full traceback:")
                 traceback.print_exc()
                 continue
-        
+
         self.all_dialogues['combined'] = all_dialogue_groups
         print(f"\nTotal: {len(all_dialogue_groups)} dialogue groups with {total_lines} lines")
     
@@ -775,6 +822,46 @@ class ImprovedGrammarDialogueParser:
         
         print(f"\nTotal CSV files created: {total_csvs}")
 
+    def write_unused_lines_csv(self, output_folder):
+        """Write CSV file containing all TRA lines not used in dialogues."""
+        # Collect all unused TRA entries
+        unused_lines = []
+
+        for tra_filename, tra_dict in self.tra_cache.items():
+            for tra_number, tra_text in tra_dict.items():
+                # Check if this entry was NOT used in dialogues
+                if (tra_filename, tra_number) not in self.used_tra_entries:
+                    # Create reference in format "filename.tra:@123"
+                    reference = f"{tra_filename}:@{tra_number}"
+                    unused_lines.append((reference, tra_text))
+
+        if not unused_lines:
+            print("No unused TRA lines found")
+            return
+
+        # Sort by reference for consistency
+        unused_lines.sort(key=lambda x: x[0])
+
+        # Write to special CSV file
+        csv_filename = "_unused_tra_lines.csv"
+        csv_path = os.path.join(output_folder, csv_filename)
+
+        try:
+            with open(csv_path, 'w', encoding='utf-8', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+
+                # Write header (simplified format for unused lines)
+                writer.writerow(['Reference', 'Text'])
+
+                # Write all unused lines
+                for reference, text in unused_lines:
+                    writer.writerow([reference, text])
+
+            print(f"\nCreated {csv_filename} with {len(unused_lines)} unused TRA lines")
+
+        except Exception as e:
+            print(f"Error writing {csv_filename}: {e}")
+
 
 def main():
     parser = argparse.ArgumentParser(description='''
@@ -814,7 +901,8 @@ CSV format:
     parser_obj = ImprovedGrammarDialogueParser(args.d_folder, args.tra_folder)
     parser_obj.process_all_d_files()
     parser_obj.write_csv_files(args.output_folder)
-    
+    parser_obj.write_unused_lines_csv(args.output_folder)
+
     return 0
 
 
