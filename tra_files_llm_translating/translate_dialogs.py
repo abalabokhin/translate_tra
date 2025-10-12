@@ -46,15 +46,25 @@ class DialogTranslator:
                         actors[row[0].strip()] = row[1].strip().lower()
         return actors
     
-    def _load_dictionary(self) -> Dict[str, str]:
-        """Load translation dictionary from dict.csv"""
+    def _load_dictionary(self) -> Dict[str, List[Tuple[str, str]]]:
+        """Load translation dictionary from dict.csv
+        Returns dict mapping English -> list of (Russian translation, Russian comment) tuples
+        Supports multiple translations for the same word with different contexts
+        """
         dictionary = {}
         if self.dict_file.exists():
             with open(self.dict_file, 'r', encoding='utf-8') as f:
                 reader = csv.reader(f)
                 for row in reader:
                     if len(row) >= 2 and row[0].strip() and row[1].strip():
-                        dictionary[row[0].strip()] = row[1].strip()
+                        english = row[0].strip()
+                        russian = row[1].strip()
+                        comment = row[2].strip() if len(row) >= 3 and row[2].strip() else ""
+
+                        # Add to list of translations for this word
+                        if english not in dictionary:
+                            dictionary[english] = []
+                        dictionary[english].append((russian, comment))
         return dictionary
     
     def _get_actors_in_dialog(self, csv_file: Path) -> List[str]:
@@ -86,7 +96,7 @@ class DialogTranslator:
         # Sort dictionary entries by length (descending) to match longer phrases first
         sorted_dict_items = sorted(self.dictionary.items(), key=lambda x: len(x[0]), reverse=True)
 
-        for english_word, russian_word in sorted_dict_items:
+        for english_word, translations_list in sorted_dict_items:
             # Create a regex pattern with word boundaries
             # Use \b for word boundaries to match whole words/phrases only
             pattern = r'\b' + re.escape(english_word) + r'\b'
@@ -100,8 +110,24 @@ class DialogTranslator:
                     # Mark these positions as matched
                     matched_positions.update(range(start, end))
 
-                    # Add to relevant translations (only once per unique entry)
-                    translation_rule = f'"{english_word}" should be translated as "{russian_word}"'
+                    # Build translation rule based on number of translations
+                    if len(translations_list) == 1:
+                        # Single translation
+                        russian_word, comment = translations_list[0]
+                        if comment:
+                            translation_rule = f'"{english_word}" should be translated as "{russian_word}" ({comment})'
+                        else:
+                            translation_rule = f'"{english_word}" should be translated as "{russian_word}"'
+                    else:
+                        # Multiple translations - list all options
+                        options = []
+                        for russian_word, comment in translations_list:
+                            if comment:
+                                options.append(f'"{russian_word}" ({comment})')
+                            else:
+                                options.append(f'"{russian_word}"')
+                        translation_rule = f'"{english_word}" should be translated as {" or ".join(options)} depending on context'
+
                     if translation_rule not in relevant_translations:
                         relevant_translations.append(translation_rule)
                     break  # Found at least one match for this dictionary entry
