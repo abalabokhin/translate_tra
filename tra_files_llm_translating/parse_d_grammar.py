@@ -232,13 +232,18 @@ class ImprovedDialogueListener(ParseTreeListener):
             self.current_speaker = self.get_speaker_from_file_rule(ctx.dlg)
             if self.current_speaker not in self.all_speakers:
                 self.all_speakers[self.current_speaker] = {}
-        
+
         # Process chain dialogue
+        chain_label = "CHAIN_UNKNOWN"
+        if ctx.label:
+            chain_label = self.resolve_text(ctx.label)
+
         if ctx.body:
-            chain_label = "CHAIN_UNKNOWN"
-            if ctx.label:
-                chain_label = self.resolve_text(ctx.label)
             self.process_chain_dlg_rule(ctx.body, chain_label)
+
+        # Process epilog (transitions after CHAIN...END)
+        if ctx.epilog:
+            self.process_chain_epilog(ctx.epilog, chain_label)
     
     def process_chain_dlg_rule(self, chain_ctx, chain_label):
         """Process chainDlgRule context."""
@@ -313,7 +318,7 @@ class ImprovedDialogueListener(ParseTreeListener):
                 block_speaker = self.get_speaker_from_file_rule(block_ctx.dlg)
             else:
                 block_speaker = self.current_speaker
-                
+
             for i, element in enumerate(block_ctx.elements):
                 element_state_id = f"{state_id}_ELEMENT_{i}"
                 # Temporarily change speaker for this block
@@ -322,11 +327,56 @@ class ImprovedDialogueListener(ParseTreeListener):
                 self.ensure_speaker_initialized(self.current_speaker)
                 self.process_chain_element(element, element_state_id)
                 self.current_speaker = original_speaker
-        
+
         elif hasattr(block_ctx, 'blocks') and block_ctx.blocks:
             # Handle branch chain block
             for i, sub_block in enumerate(block_ctx.blocks):
                 self.process_chain_block(sub_block, f"{state_id}_BRANCH_{i}")
+
+    def process_chain_epilog(self, epilog_ctx, chain_label):
+        """Process chainActionEpilogRule context - handles transitions after CHAIN...END."""
+        if not epilog_ctx:
+            return
+
+        # Check if this is an endWithTransitionsChainActionEpilog (has transitions)
+        if hasattr(epilog_ctx, 'transitions') and epilog_ctx.transitions:
+            # Create a pseudo-state for the chain epilog to attach replies to
+            epilog_state_id = f"{chain_label}_EPILOG"
+
+            # Ensure current speaker is initialized
+            self.ensure_speaker_initialized(self.current_speaker)
+
+            # Process transitions (REPLY lines)
+            epilog_lines = []
+            transition_targets = []
+
+            for trans_ctx in epilog_ctx.transitions:
+                # Extract REPLY lines from transitions
+                reply_lines = self.extract_replies_from_transition(trans_ctx, epilog_state_id)
+                epilog_lines.extend(reply_lines)
+
+                # Extract transition targets
+                targets = self.extract_transition_targets(trans_ctx)
+                transition_targets.extend(targets)
+
+            # Store transitions
+            if transition_targets:
+                self.state_transitions[epilog_state_id] = transition_targets
+
+            # Create a pseudo-state for these epilog transitions
+            if epilog_lines:
+                state_obj = DialogueState(
+                    state_id=epilog_state_id,
+                    speaker=self.current_speaker,
+                    condition="",
+                    lines=epilog_lines,
+                    transitions=transition_targets
+                )
+
+                self.all_states_by_id[epilog_state_id] = state_obj
+                self.all_states.append(state_obj)
+                self.all_lines.extend(epilog_lines)
+                self.all_speakers[self.current_speaker][epilog_state_id] = state_obj
     
     def enterIfThenState(self, ctx: DParser.IfThenStateContext):
         """Enhanced state handler with proper transition tracking."""
