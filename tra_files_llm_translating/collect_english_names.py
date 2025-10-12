@@ -222,7 +222,7 @@ def get_tra_files(path):
             raise ValueError(f"File {path} is not a .tra file")
     elif os.path.isdir(path):
         # Find all .tra files in the directory
-        tra_files = glob.glob(os.path.join(path, "*.tra"))
+        tra_files = glob.glob(os.path.join(path, "*.tra")) + glob.glob(os.path.join(path, "*.TRA"))
         if not tra_files:
             raise ValueError(f"No .tra files found in directory {path}")
         return sorted(tra_files)  # Sort for consistent processing order
