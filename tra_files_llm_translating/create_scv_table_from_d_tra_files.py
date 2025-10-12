@@ -48,6 +48,7 @@ class CompleteDialogueParser:
         self.tra_folder = tra_folder
         self.tra_cache = {}
         self.all_dialogues = {}
+        self.used_tra_entries = set()  # Track which TRA entries are used in dialogues
         
     def load_tra_file(self, tra_filename):
         """Load TRA file into cache."""
@@ -90,25 +91,27 @@ class CompleteDialogueParser:
     def resolve_text(self, text, d_filename):
         """Resolve @number references to actual text from TRA files."""
         text = text.strip()
-        
+
         # Check if it's a TRA reference
         tra_match = re.match(r'@(\d+)', text)
         if tra_match:
             tra_number = int(tra_match.group(1))
             base_name = os.path.splitext(d_filename)[0]
             tra_filename = base_name + '.tra'
-            
+
             tra_dict = self.load_tra_file(tra_filename)
             if tra_number in tra_dict:
+                # Track this TRA entry as used
+                self.used_tra_entries.add((tra_filename, tra_number))
                 return tra_dict[tra_number]
             else:
                 return f"@{tra_number} (TRA not found)"
-        
+
         # Clean direct text (remove quotes/tildes)
         if (text.startswith('~') and text.endswith('~')) or \
            (text.startswith('"') and text.endswith('"')):
             text = text[1:-1]
-        
+
         return text.strip()
     
     def parse_state_content(self, state_content, state_id, speaker, d_filename):
@@ -573,11 +576,24 @@ class CompleteDialogueParser:
         print(f"  Grouped into {len(dialogues)} separate dialogues")
         return dialogues
     
+    def load_all_tra_files(self):
+        """Load all TRA files from the TRA folder into cache."""
+        tra_files = [f for f in os.listdir(self.tra_folder) if f.lower().endswith('.tra')]
+        print(f"Pre-loading {len(tra_files)} TRA files...")
+
+        for tra_filename in tra_files:
+            self.load_tra_file(tra_filename)
+
+        print(f"Loaded {len(self.tra_cache)} TRA files into cache")
+
     def process_all_d_files(self):
         """Process all D files in the folder."""
+        # Pre-load all TRA files so we can detect unused lines
+        self.load_all_tra_files()
+
         d_files = [f for f in os.listdir(self.d_folder) if f.lower().endswith('.d')]
         print(f"Found {len(d_files)} D files to process")
-        
+
         # First pass: collect all states and lines from all files
         all_states_global = []
         all_lines_global = []
@@ -603,11 +619,51 @@ class CompleteDialogueParser:
             print(f"  Grouped into {len(dialogues)} separate dialogues")
             print(f"  Found {len(dialogues)} dialogue(s) with {len(all_lines_global)} total lines")
     
+    def write_unused_lines_csv(self, output_folder):
+        """Write CSV file containing all TRA lines not used in dialogues."""
+        # Collect all unused TRA entries
+        unused_lines = []
+
+        for tra_filename, tra_dict in self.tra_cache.items():
+            for tra_number, tra_text in tra_dict.items():
+                # Check if this entry was NOT used in dialogues
+                if (tra_filename, tra_number) not in self.used_tra_entries:
+                    # Create reference in format "filename.tra:@123"
+                    reference = f"{tra_filename}:@{tra_number}"
+                    unused_lines.append((reference, tra_text))
+
+        if not unused_lines:
+            print("No unused TRA lines found")
+            return
+
+        # Sort by reference for consistency
+        unused_lines.sort(key=lambda x: x[0])
+
+        # Write to special CSV file
+        csv_filename = "_unused_tra_lines.csv"
+        csv_path = os.path.join(output_folder, csv_filename)
+
+        try:
+            with open(csv_path, 'w', encoding='utf-8', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+
+                # Write header (simplified format for unused lines)
+                writer.writerow(['Reference', 'Text'])
+
+                # Write all unused lines
+                for reference, text in unused_lines:
+                    writer.writerow([reference, text])
+
+            print(f"\nCreated {csv_filename} with {len(unused_lines)} unused TRA lines")
+
+        except Exception as e:
+            print(f"Error writing {csv_filename}: {e}")
+
     def write_csv_files(self, output_folder):
         """Write separate CSV files for each dialogue."""
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
-        
+
         total_csvs = 0
         
         for d_filename, dialogues in self.all_dialogues.items():
@@ -656,8 +712,11 @@ class CompleteDialogueParser:
                     
                 except Exception as e:
                     print(f"Error writing {csv_filename}: {e}")
-        
+
         print(f"\nTotal CSV files created: {total_csvs}")
+
+        # Write unused TRA lines to separate CSV
+        self.write_unused_lines_csv(output_folder)
     
     def sort_lines_by_flow(self, lines):
         """Sort dialogue lines by logical flow."""
@@ -698,18 +757,23 @@ def main():
 Complete D file parser that includes REPLY lines.
 
 This parser extracts ALL dialogue lines from D files:
-- SAY lines (NPC dialogue)  
+- SAY lines (NPC dialogue)
 - REPLY lines (Player responses)
 - Proper dialogue flow with predecessors
 - TRA file resolution for @number references
 - One CSV per connected dialogue
+- Special CSV for unused TRA lines (_unused_tra_lines.csv)
 
-CSV format:
+CSV format for dialogues:
 - Actor: NPC name or "PLAYER"
-- Line_ID: Unique line identifier  
+- Line_ID: Unique line identifier
 - Predecessors: Lines that lead to this line
 - Dialogue_Text: Resolved text from TRA files
 - Additional_Info: Empty for manual notes
+
+CSV format for unused lines:
+- Reference: TRA file and line number (e.g., "filename.tra:@123")
+- Text: The text from TRA file (includes journal entries and other non-dialogue content)
 ''')
     
     parser.add_argument('d_folder', help='Folder containing D files')
