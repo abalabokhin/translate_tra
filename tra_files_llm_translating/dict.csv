@@ -1,4 +1,4 @@
-A'maelamin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@688; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1613,NP:BG1NPC
+A'maelamin,А'маэламин,,NP:BG1NPC
 Aabir,Аабир,,BG2EE-russian
 Aasim,Аасим,,BG1RUS-EET
 Aasimar,аасимар,,sod_rus
@@ -15,15 +15,15 @@ Abishai,Абишай,,sod_rus
 Abjuration,Отречение,,BG1RUS-EET
 Abjurer,отрицатель,,BG1RUS-EET
 Aboleth,Аболет,,BG2EE-russian
-Abominably,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@9,NP:BG1NPC
-Absotively,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzqu.tra@26,NP:BG1NPC
+Abominably,Отвратительно,,NP:BG1NPC
+Absotively,Аболсютно,,NP:BG1NPC
 Accalia,Аккалия,,iwd2_rus
-Acchh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiax.tra@121,NP:BG1NPC
+Acchh,Ы-Ы-Ы-Ы,,NP:BG1NPC
 Achen,Акен,,BG1RUS-EET
 Acheron,Ахерон,,iwd2_rus
 Achmed,Ахмед,,BG2EE-russian
 Achon,Акон,,BG2EE-russian
-Achoo,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3807; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3814,NP:BG1NPC
+Achoo,Апчхи,,NP:BG1NPC
 Adalon,Адалон,,BG2EE-russian
 Adamantine,адамантин,,sod_rus
 Adamantite,адамантит,,BG2EE-russian
@@ -32,7 +32,7 @@ Adecan,Адекан,,BG2EE-russian
 Adelain,Аделайн,,BG2EE-russian
 Adirran,Адирран,,sod_rus
 Adjatha,Аджата,,BG2EE-russian
-Adon,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@753; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@755; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@760; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@761; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@767; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@768,NP:BG1NPC
+Adon,Адон,,NP:BG1NPC
 Adoy,Адой,,BG1RUS-EET
 Adran,Адран,,iwd2_rus
 Adras,Адрас,,sod_rus
@@ -61,7 +61,7 @@ Agnasia,Агназия,,BG1RUS-EET
 Agog,Агог,,iwd2_rus
 Agru,Агру,,BG2EE-russian
 Ahdzekharrin,Ахдзекхаррин,,sod_rus
-Ahghairon,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@333; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@334; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@335; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3962,NP:BG1NPC
+Ahghairon,Агайрон,,NP:BG1NPC
 Ahk Kyorl Kulgg,Ахк Куорл Кулгг,,iwd2_rus
 Ahmadora,Амадора,,iwd2_rus
 Ahmaz,Ахмаз,,BG2EE-russian
@@ -72,8 +72,8 @@ Aiel,Айел,,BG2EE-russian
 Aihonen,Айонен,,iwd2_rus
 Ainordec,Айнордек,,BG1RUS-EET
 Aisath,Айсат,,BG2EE-russian
-Aiya,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@416,NP:BG1NPC
-Aiyee,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@922; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@1006,NP:BG1NPC
+Aiya,Аия,,NP:BG1NPC
+Aiyee,Айи-и-и!,,NP:BG1NPC
 Ajantis,Аджантис,,BG1RUS-EET
 Ak'azmhir,Ак'азмир,,IWDEE-russian
 Akae,Акаи,,BG2EE-russian
@@ -85,7 +85,7 @@ Akuda,Акуда,,BG2EE-russian
 Alacander,Алакандер,,IWDEE-russian
 Alachi,Алачи,,sod_rus
 Alaghon,Алагон,,BG2EE-russian
-Alaghor,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3064,NP:BG1NPC
+Alaghor,Алагора,,NP:BG1NPC
 Alai,Алай,,BG1RUS-EET
 Alamion,Аламион,,iwd2_rus
 Alandor,Аландор,,BG2EE-russian
@@ -94,7 +94,7 @@ Alarion,Аларион,,BG2EE-russian
 Alatelo,Алатело,,BG2EE-russian
 Alathan,Алатан,,sod_rus
 Alatos,Алатос,,BG1RUS-EET
-Alaundalion,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@59; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@179; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@180,NP:BG1NPC
+Alaundalion,Алаундалион,,NP:BG1NPC
 Alaundo,Алаундо,,BG1RUS-EET
 Albruin,Альбруин,,BG1RUS-EET
 Alcaman,Алькаман,,iwd2_rus
@@ -109,9 +109,9 @@ Aleena,Алина,,BG1RUS-EET
 Alemander,Эйлмандер,,BG1RUS-EET
 Alenina,Аленина,,BG2EE-russian
 Aleson,Эйлсон,,BG2EE-russian
-Alewyn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@122; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@126; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@127,NP:BG1NPC
+Alewyn,Алевин,,NP:BG1NPC
 Alfons,Альфонс,,BG2EE-russian
-Algarond,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3528,NP:BG1NPC
+Algarond,Алгаронд,,NP:BG1NPC
 Algor,Алгор,,BG2EE-russian
 Alhanna,Аланна,,BG2EE-russian
 Alhelor,Алхелор,,BG2EE-russian
@@ -125,9 +125,9 @@ Alinda,Алинда,,BG2EE-russian
 Alkonos,Алконос,,IWDEE-russian
 Alkullok,Алкуллок,,sod_rus
 Allafif,Аллафиф,,BG2EE-russian
-Allana,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@569; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@574; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@596; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@607,NP:BG1NPC
+Allana,Аллана,,NP:BG1NPC
 Allendale,Аллендейл,,BG1RUS-EET
-Allus,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@28,NP:BG1NPC
+Allus,Всегда,,NP:BG1NPC
 Almur,Алмур,,sod_rus
 Aln,Альн,,BG2EE-russian
 Alnarow,Альнароу,,BG2EE-russian
@@ -137,7 +137,7 @@ Alora,Алора,,BG1RUS-EET
 Alore,Алора,,BG2EE-russian
 Alorgoth,Алоргот,,BG1RUS-EET
 Alpheus,Альфеус,,iwd2_rus
-Alric,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@111; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@112,NP:BG1NPC
+Alric,Альрик,,NP:BG1NPC
 Altheia,Альтея,,BG2EE-russian
 Altru,Алтру,,BG1RUS-EET
 Altru'ar,Алтру'ар,,BG1RUS-EET
@@ -153,11 +153,11 @@ Alvahendar,Алванхендар,,iwd2_rus
 Alvanhendar,Алванхендар,,BG1RUS-EET
 Alvanna,Альванна,,BG2EE-russian
 Alveus,Алвеус,,BG1RUS-EET
-Alvo,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@786,NP:BG1NPC
+Alvo,Алво,,NP:BG1NPC
 Alyittyl,Алийттил,,BG2EE-russian
 Alynar,Эйлинар,,BG2EE-russian
 Alyra,Алира,,BG2EE-russian
-Alyss,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3149,NP:BG1NPC
+Alyss,Элисс,,NP:BG1NPC
 Alyth,Алит,,BG1RUS-EET
 Amac,Амак,,BG2EE-russian
 Amalas,Амалас,,BG2EE-russian
@@ -167,17 +167,17 @@ Amaunator,Амаунатор,,BG1RUS-EET
 Ambere,Амбер,,iwd2_rus
 Ambidexterity,амбидекстрия,,iwd2_rus
 Amelyssan,Амелиссан,,BG2EE-russian
-Ameniela,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@24,NP:BG1NPC
+Ameniela,Амениэлу,,NP:BG1NPC
 Ameralis,Амералис,,BG2EE-russian
 Aminah,Амина,,BG2EE-russian
 Amkethran,Амкетран,,BG2EE-russian
 Amlos,Амлос,,BG2EE-russian
 Ammon,Аммон,,sod_rus
 Amn,Амн,,BG1RUS-EET
-Amnish,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@540; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@701; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#rumor.tra@4; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#rumor.tra@26; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#rumor.tra@30; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#safana.tra@173,NP:BG1NPC
+Amnish,Амна,,NP:BG1NPC
 Amuana,Амуана,,BG2EE-russian
-Amyrlin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@58,NP:BG1NPC
-An'belein,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@336,NP:BG1NPC
+Amyrlin,Амирлин,,NP:BG1NPC
+An'belein,Ан'белейн,,NP:BG1NPC
 Anadia,Анадия,,BG2EE-russian
 Anarg,Анарг,,BG2EE-russian
 Anast,Анаст,,iwd2_rus
@@ -192,7 +192,7 @@ Andante,Анданте,,BG2EE-russian
 Andar,Андар,,BG1RUS-EET
 Andarrson,Андаррсон,,BG1RUS-EET
 Andarsson,Андарссон,,BG1RUS-EET
-Andarthe,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@363; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@4; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@20; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@21; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@25; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@67; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@72; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@155; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@156; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@183,NP:BG1NPC
+Andarthe,Андарт,,NP:BG1NPC
 Andor,Андор,,BG1RUS-EET
 Andora,Андора,,iwd2_rus
 Andoran,андоранский,,iwd2_rus
@@ -200,10 +200,10 @@ Andorans,андоранцы,,iwd2_rus
 Andorian,Андориан,,BG2EE-russian
 Andout,Андоут,,BG1RUS-EET
 Andris,Андрис,,BG1RUS-EET
-Anette,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@173,NP:BG1NPC
+Anette,Анетт,,NP:BG1NPC
 Angaar,Ангаар,,iwd2_rus
 Angharradh,Ангаррат,,iwd2_rus
-Angries,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@374,NP:BG1NPC
+Angries,Раздражает,,NP:BG1NPC
 Anguiliian,Ангилииан,,BG2EE-russian
 Angurvadal,Ангурвадал,,BG2EE-russian
 Anhur,Анхур,,BG2EE-russian
@@ -230,12 +230,12 @@ Arabel,Арабел,,BG1RUS-EET
 Arabellan,арабелское,,BG1RUS-EET
 Arabelle,Арабелль,,BG1RUS-EET
 Arakon,Аракон,,iwd2_rus
-Aramande,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#totsc.tra@53,NP:BG1NPC
+Aramande,Амаранд,,NP:BG1NPC
 Aramite,Арамит,,iwd2_rus
 Aran,Аран,,BG2EE-russian
 Aranthis,Арентис,,BG2EE-russian
 Arat,Арат,,BG2EE-russian
-Aravaata,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@291; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@182; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@185,NP:BG1NPC
+Aravaata,Араваата,,NP:BG1NPC
 Araya,Арая,,sod_rus
 Arbane,Арбейн,,BG2EE-russian
 Arbinge,Арбинг,,sod_rus
@@ -246,8 +246,8 @@ Archimandrite,архимандрит,,iwd2_rus
 Archmage,архимаг,,sod_rus
 Archmagi,архимаги,,BG1RUS-EET
 Archon,Архон,,BG1RUS-EET
-Arcorar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@254,NP:BG1NPC
-Ardeep,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@321; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3957,NP:BG1NPC
+Arcorar,Аркорар,,NP:BG1NPC
+Ardeep,Ардип,,NP:BG1NPC
 Ardenor,Арденор,,BG1RUS-EET
 Ardic,Ардик,,BG2EE-russian
 Ardis,Ардис,,BG2EE-russian
@@ -255,8 +255,8 @@ Ardrouine,Ардруин,,BG1RUS-EET
 Ardulace,Ардулейс,,BG2EE-russian
 Ardulia,Ардулия,,BG2EE-russian
 Areana,Ареана,,BG1RUS-EET
-Arel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@407,NP:BG1NPC
-Arenel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@139,NP:BG1NPC
+Arel,Арель,,NP:BG1NPC
+Arenel,Аренель,,NP:BG1NPC
 Arenthis,Арентис,,BG2EE-russian
 Arfie,Арфи,,BG2EE-russian
 Argents,Аргенты,,sod_rus
@@ -283,16 +283,16 @@ Artemus,Артем,,iwd2_rus
 Artipheon,Артифеон,,sod_rus
 Aruma,Арума,,iwd2_rus
 Arval,Арвал,,BG2EE-russian
-Arvanaith,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantis.tra@134; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantis.tra@136; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantis.tra@138; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@218; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kiint.tra@125; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@201; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@273; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@65; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@87; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@102; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@106; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@107; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1181,NP:BG1NPC
+Arvanaith,Арванайт,,NP:BG1NPC
 Arvandor,Арвандор,,BG1RUS-EET
 Arvoreen,Арворин,,BG2EE-russian
-Arwen,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3425,NP:BG1NPC
+Arwen,Арвен,,NP:BG1NPC
 Arzol,Арзол,,BG2EE-russian
 Asana,Асана,,BG2EE-russian
 Asery,Асери,,sod_rus
 Ashabenford,Ашабенфорд,,BG1RUS-EET
-Ashanath,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@10,NP:BG1NPC
-Ashane,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1306,NP:BG1NPC
+Ashanath,Ашанат,,NP:BG1NPC
+Ashane,Ашани,,NP:BG1NPC
 Ashatiel,Ашатиэль,,sod_rus
 Ashen,Ашен,,BG1RUS-EET
 Ashideena,Ашидина,,BG1RUS-EET
@@ -309,29 +309,29 @@ Astutely,Астутно,,BG2EE-russian
 Astyr,Астир,,iwd2_rus
 Atalaclys,Аталаклис,,iwd2_rus
 Atash,Аташ,,BG1RUS-EET
-Athakatlan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@73,NP:BG1NPC
+Athakatlan,Аткатланский,,NP:BG1NPC
 Athkatla,Аткатла,,BG1RUS-EET
 Atlar,Атлар,,BG1RUS-EET
 Atrantis,Атрантис,,sod_rus
-Aubade,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1065,NP:BG1NPC
+Aubade,Утренняя серенада,,NP:BG1NPC
 Auchlin,Аучлин,,sod_rus
 Audamar,Аудамар,,sod_rus
 Audria,Аудриа,,sod_rus
-Augathra,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@311; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@329,NP:BG1NPC
+Augathra,Аугатра,,NP:BG1NPC
 Aulava,Аулава,,BG2EE-russian
 Aule,Аул,,BG1RUS-EET
 Aumarr,Аумарр,,sod_rus
 Aun,Аун,,sod_rus
-Auranamn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@646,NP:BG1NPC
+Auranamn,Ауранамн,,NP:BG1NPC
 Auril,Аурил,,BG1RUS-EET
 Aurilians,аурилиты,,iwd2_rus
 Aurilite,аурилит,,iwd2_rus
 Aurilites,аурилиты,,iwd2_rus
 Aurumach,Аурумах,,BG2EE-russian
-Auta,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#sharteel.tra@115,NP:BG1NPC
+Auta,Аута,,NP:BG1NPC
 Autharch,Аутарх,,BG2EE-russian
 Autinn,Аутинн,,sod_rus
-Auw,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@199,NP:BG1NPC
+Auw,Ой,,NP:BG1NPC
 Auziel,Аузиэль,,sod_rus
 Avariel,авариэль,,BG2EE-russian
 Avellone,Авеллон,,iwd2_rus
@@ -340,16 +340,16 @@ Avia,Авия,,iwd2_rus
 Avrum,Аврум,,BG2EE-russian
 Axehand,Эксхенд,,BG1RUS-EET
 Azamantes,Азамантис,,BG2EE-russian
-Azar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@113,NP:BG1NPC
+Azar,Азар,,NP:BG1NPC
 Azgoloth,Азголот,,BG2EE-russian
 Azlaer,Азлаэр,,BG2EE-russian
 Azmadi,Азмади,,BG2EE-russian
 Aznar,Азнар,,BG2EE-russian
 Azothet,Азотет,,BG1RUS-EET
 Azoun,Азун,,BG1RUS-EET
-Azuon,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1101,NP:BG1NPC
+Azuon,Азун,,NP:BG1NPC
 Azuredge,Азуредж,,BG2EE-russian
-Azuth,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@606,NP:BG1NPC
+Azuth,Азут,,NP:BG1NPC
 Azzek,Аззек,,sod_rus
 Ba'ruk,Ба'рук,,IWDEE-russian
 Baalor,Баалор,,BG1RUS-EET
@@ -361,13 +361,13 @@ Babiat,Бабиат,,BG2EE-russian
 Babron,Баброн,,iwd2_rus
 Backblighter,Бичеватель,,iwd2_rus
 Badiat,Бадиат,,BG2EE-russian
-Badness,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#quayl.tra@134,NP:BG1NPC
+Badness,скверну,,NP:BG1NPC
 Badon,Бадон,,BG2EE-russian
 Bael,Бейл,,BG2EE-russian
 Baelm,Бэлм,,iwd2_rus
 Baelnorn,баэльнорн,,IWDEE-russian
 Baeloth,Баэлот,,BG1RUS-EET
-Baenre,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@124,NP:BG1NPC
+Baenre,Бэнр,,NP:BG1NPC
 Baerin,Баэрин,,BG1RUS-EET
 Baern,Баерн,,IWDEE-russian
 Baervan,Баэрван,,BG2EE-russian
@@ -395,7 +395,7 @@ Baragh,Бараг,,BG2EE-russian
 Baram,Барам,,BG2EE-russian
 Baravar,Баравар,,sod_rus
 Barbauld,Барбаулд,,BG2EE-russian
-Barding,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#branw.tra@277,NP:BG1NPC
+Barding,ПЕНИЕ,,NP:BG1NPC
 Bardolan,Бардолан,,BG1RUS-EET
 Bardyla,Бардила,,sod_rus
 Baresh,Бареш,,BG1RUS-EET
@@ -407,14 +407,14 @@ Barkersdottir,Баркерсдоттир,,sod_rus
 Barkskin,Кожа-кора,,BG1RUS-EET
 Barl,Барл,,BG2EE-russian
 Barnal,Барнал,,BG2EE-russian
-Barnephas,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#quayl.tra@78,NP:BG1NPC
+Barnephas,Барнефаса,,NP:BG1NPC
 Barrityl,Барритил,,BG1RUS-EET
 Bartleby,Бартлби,,sod_rus
 Barud,Баруд,,iwd2_rus
-Barvar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2424,NP:BG1NPC
+Barvar,Баравар,,NP:BG1NPC
 Barzam,Барзам,,iwd2_rus
-Barzenak,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@392; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@393; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@394; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@398,NP:BG1NPC
-Barzy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@396,NP:BG1NPC
+Barzenak,Барзенака,,NP:BG1NPC
+Barzy,Барзи,,NP:BG1NPC
 Bashshar,Башшар,,iwd2_rus
 Basilisk,василиск,,BG1RUS-EET
 Bassano,Бассано,,BG1RUS-EET
@@ -428,7 +428,7 @@ Battuks,Баттукс,,sod_rus
 Bautha,Баутха,,iwd2_rus
 Bayle,Бейл,,BG2EE-russian
 Be'land,Бе'ланд,,BG2EE-russian
-Beador,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@364; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@6; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@11; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@16; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@17; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@18; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@36; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@38; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@54; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@64; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@66; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@68; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@71; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@73; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@78; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@108; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@109; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@110; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@146; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@151; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@162,NP:BG1NPC
+Beador,Беадор,,NP:BG1NPC
 Beastlord,повелитель зверей,,iwd2_rus
 Beastmaster,повелитель зверей,,BG1RUS-EET
 Becek,Бицек,,iwd2_rus
@@ -437,7 +437,7 @@ Beeloo,Билу,,BG2EE-russian
 Beelthot,Билтхот,,iwd2_rus
 Beherant,Бехерант,,BG2EE-russian
 Beholder,созерцатель,,BG1RUS-EET
-Bel'la,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viconia.tra@41,NP:BG1NPC
+Bel'la,Бель'ла,,NP:BG1NPC
 Belaem,Белаэм,,iwd2_rus
 Belaessar,Белессар,,iwd2_rus
 Belak,Белак,,BG2EE-russian
@@ -446,20 +446,20 @@ Belben,Белбен,,sod_rus
 Belde'ar,Белде'ар,,BG2EE-russian
 Beldin,Белдин,,BG1RUS-EET
 Belegarm,Белегарм,,sod_rus
-Belena,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@544; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@551,NP:BG1NPC
-Belgarden,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@57; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@178,NP:BG1NPC
-Belgin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@784; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@63; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@72; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@73; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@100; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@101; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@104; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@106; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@108; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@112; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@114; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@126; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@131; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@163; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@187; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@198; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@203; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@204; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@218; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@219; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@220; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@221; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@226; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@228; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@244; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@247; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@253; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@257; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@282; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@283; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@285; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@310; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@313; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@329; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@332; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@333; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@334; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@335; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@337; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@338; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@339; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@351; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@354; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@361; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@362; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@382,NP:BG1NPC
-Belgraye,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@681,NP:BG1NPC
+Belena,Белена,,NP:BG1NPC
+Belgarden,Белгарден,,NP:BG1NPC
+Belgin,Белгин,,NP:BG1NPC
+Belgraye,Белгрей,,NP:BG1NPC
 Belhifet,Белхифет,,sod_rus
 Belib,Белиб,,iwd2_rus
-Belike,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@58,NP:BG1NPC
+Belike,Вероятно,,NP:BG1NPC
 Beljuril,Белджурил,,BG1RUS-EET
 Bellowglym,Беллоуглим,,sod_rus
 Bellowglyn,Беллоуглин,,BG1RUS-EET
 Bellowgulp,Ревоглот,,BG1RUS-EET
 Belm,Бельм,,BG2EE-russian
 Belmin,Белмин,,BG2EE-russian
-Belnimbra,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@637,NP:BG1NPC
+Belnimbra,Белнимбры,,NP:BG1NPC
 Beltyn,Бельтин,,iwd2_rus
 Beluir,Белуир,,sod_rus
 Belverston,Белверстон,,BG2EE-russian
@@ -478,7 +478,7 @@ Beodaewn,Беодейн,,iwd2_rus
 Beorn,Беорн,,iwd2_rus
 Beornen,Беорнен,,iwd2_rus
 Berahli,Берахли,,sod_rus
-Berayat,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@162; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@164,NP:BG1NPC
+Berayat,Бераят,,NP:BG1NPC
 Berden,Берден,,BG1RUS-EET
 Berdusk,Бердуск,,BG1RUS-EET
 Berduskan,бердусканский,,BG1RUS-EET
@@ -494,28 +494,28 @@ Berkref,Беркреф,,BG2EE-russian
 Berronar,Берронар,,IWDEE-russian
 Berrun,Беррун,,BG1RUS-EET
 Berserker,Берсерк,,BG1RUS-EET
-Berthe,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@562; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#miint.tra@69,NP:BG1NPC
+Berthe,Берта,,NP:BG1NPC
 Beruel,Беруэль,,BG1RUS-EET
 Berywel,Беривел,,iwd2_rus
-Beseems,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@185,NP:BG1NPC
-Beserkers,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@234,NP:BG1NPC
-Besetment,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@35,NP:BG1NPC
+Beseems,Похоже,,NP:BG1NPC
+Beserkers,Берсерков,,NP:BG1NPC
+Besetment,Осады,,NP:BG1NPC
 Beshaba,Бешаба,,BG1RUS-EET
-Beshabans,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@719,NP:BG1NPC
+Beshabans,Бешабаны,,NP:BG1NPC
 Bessen,Бессен,,BG2EE-russian
 Betha,Бета,,iwd2_rus
 Bethla,Бетла,,IWDEE-russian
 Betran,Бетран,,iwd2_rus
 Betror,Бетрор,,sod_rus
 Betsie,Бетси,,BG1RUS-EET
-Better'n,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@240,NP:BG1NPC
+Better'n,Лучше,,NP:BG1NPC
 Beverus,Беверус,,BG2EE-russian
 Beyn,Беин,,BG1RUS-EET
 Bgt,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1001; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1002; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1095; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@5001; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@5003,NP:BG1NPC
 Bhaal,Баал,,BG1RUS-EET
 Bhaerynden,Баэринден,,BG2EE-russian
 Bheren,Берен,,BG1RUS-EET
-Bhetel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@448; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@341; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@348; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@351; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@352; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@369,NP:BG1NPC
+Bhetel,Бетель,,NP:BG1NPC
 Biffle,Биффл,,BG2EE-russian
 Bifflechips,Биффлчипс,,BG2EE-russian
 Bifflelips,Завернигубу,,BG2EE-russian
@@ -549,7 +549,7 @@ Blethyn,Блетин,,BG2EE-russian
 Blingdenstone,Блингденстоун,,sod_rus
 Blinky,Бинки,,BG2EE-russian
 Bloodaxe,Кровавый Топор,,BG2EE-russian
-Bloodmaidens,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@311,NP:BG1NPC
+Bloodmaidens,Девы Крови,,NP:BG1NPC
 Bloodscalp,Кровавый Скальп,,BG2EE-russian
 Bloodstone,кровавик,,BG1RUS-EET
 Bluebeard,Синяя Борода,,sod_rus
@@ -558,7 +558,7 @@ Blugglugl,Благглагл,,sod_rus
 Blushing Mermaid,Стыдливая Русалка,,BG1RUS-EET
 Blynnyk,Блинник,,BG2EE-russian
 Boalisk,Боалиск,,BG2EE-russian
-Boaraskyr,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@256,NP:BG1NPC
+Boaraskyr,Боарскир,,NP:BG1NPC
 Boareskyr,Боарескир,,sod_rus
 Bodi,Боди,,BG1RUS-EET
 Boldcam,Смелый Кулак,,BG2EE-russian
@@ -573,7 +573,7 @@ Bonecracker,Костолом,,iwd2_rus
 Bonecutter,Косторез,,iwd2_rus
 Bonedancer,Костяной танцор,,IWDEE-russian
 Boneguard,Костяной страж,,iwd2_rus
-Boo'd,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@39,NP:BG1NPC
+Boo'd,Бу,,NP:BG1NPC
 Boosenburry,Хмель-ягода,,iwd2_rus
 Bootcut,Стопорез,,BG2EE-russian
 Booter,Бутер,,BG2EE-russian
@@ -582,7 +582,7 @@ Borinall,Боринал,,BG2EE-russian
 Borinole,Боринол,,BG1RUS-EET
 Borland,Борланд,,BG1RUS-EET
 Borok-Tosst,Борок-Тосст,,BG2EE-russian
-Borovsk,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@894; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@896; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@940; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@942; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@959; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@980; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@993,NP:BG1NPC
+Borovsk,Боровск,,NP:BG1NPC
 Borrokin,Боррокин,,BG2EE-russian
 Bort,Борт,,BG1RUS-EET
 Bottlesworth,Бражник,,BG2EE-russian
@@ -595,7 +595,7 @@ Brandobaris,Брандобарис,,BG1RUS-EET
 Branet,Бранет,,BG2EE-russian
 Brannel,Браннел,,BG2EE-russian
 Branwen,Бранвен,,BG1RUS-EET
-Brany,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@298,NP:BG1NPC
+Brany,Брани,,NP:BG1NPC
 Brassbreaker,Брасбрейкер,,sod_rus
 Braston,Брастон,,iwd2_rus
 Brathlen,Братлен,,BG1RUS-EET
@@ -617,7 +617,7 @@ Brielle,Бриель,,sod_rus
 BrightWalker,БрайтУокер,,BG1RUS-EET
 Brightaxe,Сияющий Топор,,BG2EE-russian
 Brightmantle,Светлый Плащ,,iwd2_rus
-Bril,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@368,NP:BG1NPC
+Bril,Б...,,NP:BG1NPC
 Brilla,Брилла,,BG1RUS-EET
 Brisbaine,Брисбейн,,iwd2_rus
 Britik,Бритик,,BG1RUS-EET
@@ -625,9 +625,9 @@ Brode,Броуд,,BG2EE-russian
 Brodle,Бродл,,BG2EE-russian
 Brogrob,Брогроб,,iwd2_rus
 Brohn,Брон,,iwd2_rus
-Brokenheads,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1329,NP:BG1NPC
+Brokenheads,Разбитых Голов,,NP:BG1NPC
 Browswaithe,Бровсвайт,,BG2EE-russian
-Brr,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@209; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@81,NP:BG1NPC
+Brr,Бр-р,,NP:BG1NPC
 Bruenor,Бруенор,,sod_rus
 Brunos,Брунос,,BG1RUS-EET
 Brus,Брюс,,BG2EE-russian
@@ -637,21 +637,29 @@ Brynnlaw,Бриннлоу,,BG2EE-russian
 Buckler,баклер,,BG1RUS-EET
 Bugbear,багбир,,sod_rus
 Bullrush,Булраш,,BG1RUS-EET
-Bumpkin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3603,NP:BG1NPC
-Bungling,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3607,NP:BG1NPC
+Bumpkin,Увальня,,NP:BG1NPC
+Bungling,"bungling folly -> глупость
+
+However, if you specifically asked for the word ""Bungling,"" it would be translated as:
+
+bungling -> растяпство
+
+But based on your request and the provided context, the exact match in the subjective case is:
+
+глупость",,NP:BG1NPC
 Bunkhouse,Ночлежка,,BG1RUS-EET
 Bunkin,Банкин,,BG2EE-russian
 Bunky,Бунки,,BG1RUS-EET
 Bunsen,Бунсен,,BG1RUS-EET
-Bunter,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@583,NP:BG1NPC
+Bunter,Бантеру,,NP:BG1NPC
 Bureaugarde,Бюрогарда,,BG2EE-russian
 Burich,Бурич,,BG2EE-russian
 Burran,бурран,,BG2EE-russian
 Burrower,Землерой,,iwd2_rus
 Busya,Буся,,BG2EE-russian
-Buttkick,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@266,NP:BG1NPC
+Buttkick,Пинать,,NP:BG1NPC
 Buvai,Бувай,,iwd2_rus
-Bwahahah,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaint.tra@143,NP:BG1NPC
+Bwahahah,Ахахах,,NP:BG1NPC
 Bylanna,Биланна,,BG2EE-russian
 Byzon,Байзон,,sod_rus
 Caan,Каан,,BG2EE-russian
@@ -661,7 +669,7 @@ Cacofiend,Какодемон,,BG1RUS-EET
 Cadderly,Каддерли,,BG1RUS-EET
 Cadriel,Кадриэль,,IWDEE-russian
 Cadril,Кадрил,,BG2EE-russian
-Cads,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viint.tra@67,NP:BG1NPC
+Cads,Хамы,,NP:BG1NPC
 Caedmon,Каэдмон,,BG1RUS-EET
 Caehan,Каэхан,,BG2EE-russian
 Caelar,Каэлар,,sod_rus
@@ -678,29 +686,29 @@ Calantryn,Калантрин,,BG1RUS-EET
 Calbor,Калбор,,BG2EE-russian
 Caldo,Кальдо,,BG1RUS-EET
 Caldum,Калдум,,iwd2_rus
-Calggedin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3064,NP:BG1NPC
+Calggedin,Клангеддин,,NP:BG1NPC
 Calim,Калим,,sod_rus
 Calimport,Калимпорт,,BG1RUS-EET
 Calimshan,Калимшан,,BG1RUS-EET
 Calimshite,калимшанский,,sod_rus
 Calimshites,калимшанцы,,BG2EE-russian
-Calishate,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@68,NP:BG1NPC
+Calishate,Калишит,,NP:BG1NPC
 Calishite,калимшанец,,BG1RUS-EET
 Callard,Каллард,,iwd2_rus
 Callarduran,Каллардуран,,iwd2_rus
 Calliana,Каллиана,,iwd2_rus
-Calliostroni,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#davi.tra@16; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#davi.tra@17,NP:BG1NPC
-Calloo,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzqu.tra@40,NP:BG1NPC
+Calliostroni,Калльострони,,NP:BG1NPC
+Calloo,Колу,,NP:BG1NPC
 Camaris,Камарис,,BG2EE-russian
 Cambion,камбион,,BG1RUS-EET
 Camitis,Камитис,,BG2EE-russian
-Can'st,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@126,NP:BG1NPC
+Can'st,Неужели,,NP:BG1NPC
 Canderous,Кандероус,,BG1RUS-EET
 Candlekeep,Кендлкип,,BG1RUS-EET
 Cania,Кания,,BG2EE-russian
 Canid,Канид,,IWDEE-russian
 Canticle,Кантикл,,BG1RUS-EET
-Capish,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3297,NP:BG1NPC
+Capish,Уловил,,NP:BG1NPC
 Caradoc,Карадок,,iwd2_rus
 Carbin,Карбин,,BG2EE-russian
 Carbos,Карбос,,BG1RUS-EET
@@ -708,10 +716,10 @@ Cardaf,Кардаф,,iwd2_rus
 Carita,Карита,,iwd2_rus
 Carlig,Карлиг,,BG2EE-russian
 Carline,Карлайн,,sod_rus
-Carradoon,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@138,NP:BG1NPC
+Carradoon,Каррадун,,NP:BG1NPC
 Carras,Каррас,,BG2EE-russian
 Carravis,Карравис,,BG2EE-russian
-Carrina,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@292,NP:BG1NPC
+Carrina,Каррина,,NP:BG1NPC
 Carsa,Карса,,BG1RUS-EET
 Carsomyr,Карсомир,,BG2EE-russian
 Carston,Карстон,,BG1RUS-EET
@@ -725,17 +733,17 @@ Cathras,Катрас,,BG2EE-russian
 Catis,Катис,,BG2EE-russian
 Cattack,Каттак,,BG1RUS-EET
 Catti-Brie,Кэтти-бри,,BG2EE-russian
-Cattie,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@555; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@556; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@557; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@560; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@563; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@569; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@574; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@577; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@585; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@590; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@605; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@120,NP:BG1NPC
+Cattie,Кэтти,,NP:BG1NPC
 Caturak,Катурак,,BG1RUS-EET
 Caulder,Колдер,,iwd2_rus
 Cauternus,Каутернус,,BG1RUS-EET
-Cautz'qu'ati'kan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@547; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@553; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@171,NP:BG1NPC
+Cautz'qu'ati'kan,Кауц'ку'ати'кан,,NP:BG1NPC
 Cayia,Кайя,,BG2EE-russian
 Ceddrin,Седдрин,,BG2EE-russian
 Cedra,Седра,,iwd2_rus
 Cedrin,Седрин,,iwd2_rus
-Celanil,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@694; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@698; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@52; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@202; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@771; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@936; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1418; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@54; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@56; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@345; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@532; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@566; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@933; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@101,NP:BG1NPC
-Celebrantus,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@404; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xaint.tra@42,NP:BG1NPC
+Celanil,Селанил,,NP:BG1NPC
+Celebrantus,Селебрантус,,NP:BG1NPC
 Celeridrider,Скородрайдер,,iwd2_rus
 Celestia,Селестия,,BG2EE-russian
 Celestine,Целестина,,BG2EE-russian
@@ -759,7 +767,7 @@ Chanticleer,Шантеклер,,BG2EE-russian
 Charra,Чарра,,sod_rus
 Chatillon,Шатийон,,BG2EE-russian
 Chauntea,Чонтия,,BG1RUS-EET
-Chauntlea,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1603,NP:BG1NPC
+Chauntlea,Чонтия,,NP:BG1NPC
 Chautog,Чотог,,iwd2_rus
 Ched,Чед,,BG2EE-russian
 Chelak,Челак,,BG1RUS-EET
@@ -767,22 +775,22 @@ Chelan,Челан,,BG1RUS-EET
 Ches,Чес,,BG1RUS-EET
 Cheski,Чески,,sod_rus
 Chesley,Чесли,,BG1RUS-EET
-Chessentian,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1017; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1019,NP:BG1NPC
+Chessentian,чессентский,,NP:BG1NPC
 Chih-Wei,Чжи-Вей,,BG2EE-russian
 Chiktikka,Чиктикка,,BG2EE-russian
-Childishly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@355,NP:BG1NPC
+Childishly,По-детски,,NP:BG1NPC
 Chimandrae,Химандра,,iwd2_rus
 Chionthar,Чионтар,,BG1RUS-EET
 Chizelo,Чизело,,iwd2_rus
 Chondath,Чондат,,BG1RUS-EET
-Choristers,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@999,NP:BG1NPC
+Choristers,Хористы,,NP:BG1NPC
 Chorster,Чорстер,,sod_rus
 Chremy,Чреми,,BG2EE-russian
 Chrost,Хрост,,BG2EE-russian
 Chrysoberyl,хризоберилл,,BG1RUS-EET
 Chult,Чулт,,BG1RUS-EET
 Chultan,чултский,,BG2EE-russian
-Chultian,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@348,NP:BG1NPC
+Chultian,чултанская,,NP:BG1NPC
 Chumba,Чумба,,BG2EE-russian
 Chumbra,Чумбра,,iwd2_rus
 Churin,Хурин,,iwd2_rus
@@ -796,7 +804,7 @@ Clangeddin,Клангеддин,,BG1RUS-EET
 Claybelly,Клейбелли,,sod_rus
 Claylan,Клейлан,,BG2EE-russian
 Clea,Клеа,,BG2EE-russian
-Clericking,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#moint.tra@84,NP:BG1NPC
+Clericking,Священнослужение,,NP:BG1NPC
 Cless,Клесс,,BG2EE-russian
 Cletus,Клетус,,BG2EE-russian
 Cloakshadow,Плащ Теней,,sod_rus
@@ -814,7 +822,7 @@ Colia,Колия,,BG2EE-russian
 Collus,Коллус,,BG2EE-russian
 Colquetle,Колкветл,,BG1RUS-EET
 Cominda,Коминда,,BG2EE-russian
-Communing,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@439,NP:BG1NPC
+Communing,Общаешься,,NP:BG1NPC
 Conal,Конал,,sod_rus
 Concocter,Зельевар,,BG1RUS-EET
 Conia,Кания,,iwd2_rus
@@ -822,9 +830,9 @@ Conjuration,Вызывание,,BG1RUS-EET
 Conjurer,Призыватель,,BG1RUS-EET
 Conlan,Конлан,,iwd2_rus
 Connoly,Конноли,,BG1RUS-EET
-Considerin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1252,NP:BG1NPC
+Considerin,Учитывая,,NP:BG1NPC
 Conster,Констер,,BG2EE-russian
-Cooped,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@83,NP:BG1NPC
+Cooped,Запертый,,NP:BG1NPC
 Copperpot,Копперпот,,BG2EE-russian
 Coppersky,Копперски,,iwd2_rus
 Coprith,Коприт,,BG2EE-russian
@@ -834,12 +842,12 @@ Corellon,Кореллон,,BG2EE-russian
 Coren,Корен,,BG2EE-russian
 Corgeig,Коргейг,,BG2EE-russian
 Corianna,Корианна,,BG1RUS-EET
-Cormanthir,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2170,NP:BG1NPC
+Cormanthir,Кормантирийский,,NP:BG1NPC
 Cormanthor,Кормантор,,BG2EE-russian
-Cormanthyr,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@596; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@925,NP:BG1NPC
-Cormlle,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2166,NP:BG1NPC
+Cormanthyr,Кормантир,,NP:BG1NPC
+Cormlle,Кормллэ,,NP:BG1NPC
 Cormyr,Кормир,,BG1RUS-EET
-Cormyrian,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1607,NP:BG1NPC
+Cormyrian,Кормирский,,NP:BG1NPC
 Cormyrians,кормирцы,,BG2EE-russian
 Corneil,Корнейл,,BG2EE-russian
 Cornugon,Корнугон,,sod_rus
@@ -863,7 +871,7 @@ Crenshinibon,Креншинибон,,sod_rus
 Crieck,Крайек,,IWDEE-russian
 Criek,Краек,,iwd2_rus
 Crimmor,Криммор,,BG2EE-russian
-Crimony,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@189,NP:BG1NPC
+Crimony,Проклятье,,NP:BG1NPC
 Cristiana,Кристиана,,iwd2_rus
 Crolus,Кролус,,BG2EE-russian
 Crom,Кром,,BG2EE-russian
@@ -872,7 +880,7 @@ Crragtail,Сккалохвост,,BG2EE-russian
 Crum,Крум,,iwd2_rus
 Cryonax,Крионакс,,BG2EE-russian
 Cryshal-Tirith,Кришал-Тирит,,iwd2_rus
-Cuamin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2169; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3313,NP:BG1NPC
+Cuamin,Куамин,,NP:BG1NPC
 Cuchol,Кучол,,BG1RUS-EET
 Cuchul,Кучул,,BG2EE-russian
 Culak,Калак,,BG2EE-russian
@@ -894,7 +902,7 @@ Cyrvisnea,Сирвиснея,,BG2EE-russian
 Cythandria,Ситандрия,,BG1RUS-EET
 D'Artuzzi,Д'Артуцци,,BG2EE-russian
 Daar,Даар,,BG2EE-russian
-Daarling,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@270,NP:BG1NPC
+Daarling,Дорогуша,,NP:BG1NPC
 Dabath,Дабат,,IWDEE-russian
 Dabiat,Дабиат,,BG2EE-russian
 Dabron,Даброн,,BG1RUS-EET
@@ -912,12 +920,12 @@ Dahaundar,Дахондар,,BG2EE-russian
 Dahk,Дахк,,sod_rus
 Dahn,Данн,,BG2EE-russian
 Dail,Дайл,,BG2EE-russian
-Daione,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@61; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@68,NP:BG1NPC
+Daione,Дэойн,,NP:BG1NPC
 Daital,Дайтал,,BG1RUS-EET
 Daku,Даку,,iwd2_rus
-Dalelands,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@391; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@29; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@989,NP:BG1NPC
+Dalelands,Долины,,NP:BG1NPC
 Dalemark,Дейлмарк,,BG2EE-russian
-Dalereckoning,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@989,NP:BG1NPC
+Dalereckoning,Летоисчисление Долин,,NP:BG1NPC
 Daleson,Далесон,,BG2EE-russian
 Dalis,Далис,,BG2EE-russian
 Dallillia,Даллиллия,,BG1RUS-EET
@@ -928,7 +936,7 @@ Dalzim,Далзима,,BG2EE-russian
 Damara,Дамара,,BG2EE-russian
 Damarr,Дамарр,,sod_rus
 Dambrath,Дамбрат,,BG1RUS-EET
-Damfool,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2337,NP:BG1NPC
+Damfool,дурацкими,,NP:BG1NPC
 Damius,Дамиус,,sod_rus
 Dammel,Даммель,,iwd2_rus
 Dand,Данд,,BG2EE-russian
@@ -938,7 +946,7 @@ Dannak,Даннак,,BG2EE-russian
 Dannik,Данник,,sod_rus
 Danno,Данно,,BG2EE-russian
 Danys,Данис,,BG2EE-russian
-Daoine,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@48; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@49; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@60; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@61; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@69,NP:BG1NPC
+Daoine,Дэойн,,NP:BG1NPC
 Daran,Даран,,sod_rus
 Darathon,Даратон,,BG2EE-russian
 Darbin,Дарбин,,BG2EE-russian
@@ -964,8 +972,8 @@ Darromar,Дарромар,,BG2EE-russian
 Darronal,Дарронал,,BG2EE-russian
 Darsidian,Дарсидиан,,BG2EE-russian
 Darskhelin,Дарскхелин,,sod_rus
-Darthiir,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@288; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viconia.tra@88; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@388; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1243,NP:BG1NPC
-Darthiiri,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@3,NP:BG1NPC
+Darthiir,Дартиир,,NP:BG1NPC
+Darthiiri,Дартхири,,NP:BG1NPC
 Darvin,Дарвин,,BG2EE-russian
 Dason,Дасон,,BG1RUS-EET
 Dath,Датх,,BG1RUS-EET
@@ -990,7 +998,7 @@ DeVir,ДеВир,,sod_rus
 Deadeye,Меткий стрелок,,IWDEE-russian
 Deagan,Деаган,,BG1RUS-EET
 Deagle,Дигл,,iwd2_rus
-Dealin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#lp3rep.tra@107,NP:BG1NPC
+Dealin,Сделки,,NP:BG1NPC
 Deaner,Динер,,BG1RUS-EET
 Deathblow,Смертельный удар,,BG2EE-russian
 Deathbringer,Несущий Смерть,,BG1RUS-EET
@@ -1056,7 +1064,7 @@ Dervish,дервиш,,sod_rus
 Desharik,Дешарик,,BG2EE-russian
 Despana,Деспана,,BG2EE-russian
 Desreta,Дезрета,,BG1RUS-EET
-Dessarin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@321; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3957,NP:BG1NPC
+Dessarin,Дессарин,,NP:BG1NPC
 Destus,Дестус,,BG1RUS-EET
 Dettseh,Деттсе,,BG2EE-russian
 Deyghul,Дейгул,,sod_rus
@@ -1064,11 +1072,11 @@ Deylore,Дейлор,,iwd2_rus
 Dezkiel,Дезкил,,BG1RUS-EET
 Dhanial,Даниаль,,BG1RUS-EET
 Diagott,Диаготт,,BG2EE-russian
-Diala,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@638; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@162,NP:BG1NPC
+Diala,Диала,,NP:BG1NPC
 Diarmid,Диармид,,BG1RUS-EET
 Diaytha,Диайта,,BG2EE-russian
-Dicing,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@242,NP:BG1NPC
-Didst,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@264; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@381; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@623; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1096,NP:BG1NPC
+Dicing,Нарезка,,NP:BG1NPC
+Didst,Ты,,NP:BG1NPC
 DigDag,ДигДаг,,BG2EE-russian
 Digdeep,Дигдип,,sod_rus
 Diir,Диир,,BG2EE-russian
@@ -1085,7 +1093,7 @@ Dinguer,Дингуэр,,BG1RUS-EET
 Dinklemus,Динклемус,,BG1RUS-EET
 Dinneshere,Диннешер,,iwd2_rus
 Dinnsmore,Диннсмор,,iwd2_rus
-Diola,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3312,NP:BG1NPC
+Diola,Диола,,NP:BG1NPC
 Diopside,диопсид,,BG1RUS-EET
 Dirbert,Дирберт,,BG2EE-russian
 Dirbish,Дирбиш,,BG2EE-russian
@@ -1094,7 +1102,7 @@ Dirth,Дирт,,BG2EE-russian
 Dispater,Диспатер,,sod_rus
 Displasius,Дисплазиус,,BG1RUS-EET
 Disredain,Дисредейн,,iwd2_rus
-Divinations,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@191,NP:BG1NPC
+Divinations,предсказания,,NP:BG1NPC
 Diviner,Прорицатель,,BG1RUS-EET
 Diya,Дийя,,BG2EE-russian
 Diyab,Дийяб,,BG1RUS-EET
@@ -1108,18 +1116,18 @@ Dola,Дола,,BG2EE-russian
 Dolced,Долсед,,BG1RUS-EET
 Dolon,Долон,,iwd2_rus
 Dolrassa,Долрасса,,BG2EE-russian
-Don'tcha,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@202; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@222; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@267; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@117,NP:BG1NPC
+Don'tcha,Ты,,NP:BG1NPC
 Donalus,Доналус,,BG2EE-russian
 Donderbeg,Дондербег,,BG2EE-russian
-Dontcha,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@208; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@157,NP:BG1NPC
+Dontcha,Не переживай,,NP:BG1NPC
 Doogal,Дугал,,iwd2_rus
 Doombringer,Несущий рок,,BG2EE-russian
 Doomguard,Страж Судьбы,,BG2EE-russian
 Doomplate,Броня рока,,BG2EE-russian
 Doomsayer,глашатай судьбы,,BG1RUS-EET
-Doomsaying,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@38,NP:BG1NPC
+Doomsaying,Предреканий,,NP:BG1NPC
 Doppelganger,доппельгангер,,BG1RUS-EET
-Doppleganger,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alint.tra@9,NP:BG1NPC
+Doppleganger,Доппельгангер,,NP:BG1NPC
 Dorkus,Доркус,,BG2EE-russian
 Dormamus,Дормамус,,BG2EE-russian
 Dorotea,Доротея,,BG1RUS-EET
@@ -1128,9 +1136,9 @@ Dorwin,Дорвин,,sod_rus
 Dosan,Досан,,BG1RUS-EET
 Dosia,Дося,,sod_rus
 Dosst,досст,,sod_rus
-Doubtlessly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@311; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viint.tra@29,NP:BG1NPC
+Doubtlessly,Несомненно,,NP:BG1NPC
 Dougan,Дуган,,iwd2_rus
-Doxy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@190,NP:BG1NPC
+Doxy,Бордель,,NP:BG1NPC
 Dra'tan,Дра'тан,,BG2EE-russian
 Dracandros,Дракандрос,,BG2EE-russian
 Dracein,Дракейн,,iwd2_rus
@@ -1145,12 +1153,12 @@ Dragomir,Драгомир,,BG2EE-russian
 Dragonbane,Драконья Погибель,,BG1RUS-EET
 Dragonclaw,Драконий Коготь,,iwd2_rus
 Dragonkin,Драконорожденный,,iwd2_rus
-Dragonmere,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@599; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@797; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3377,NP:BG1NPC
-Dragonrages,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@656,NP:BG1NPC
+Dragonmere,Драгонмир,,NP:BG1NPC
+Dragonrages,Драконья Ярость,,NP:BG1NPC
 Dragonslayer,Истребитель Драконов,,BG1RUS-EET
 Dragonspear,Драконье Копьё,,sod_rus
 Dragu,Драгу,,iwd2_rus
-Draka,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@129,NP:BG1NPC
+Draka,Драка,,NP:BG1NPC
 Drakar,Дракар,,BG1RUS-EET
 Drakkas,Драккас,,iwd2_rus
 Drakmul,Дракмул,,BG2EE-russian
@@ -1159,10 +1167,10 @@ Drannor,Драннор,,iwd2_rus
 Drasus,Драсус,,BG1RUS-EET
 Draug,Драуг,,BG2EE-russian
 Dray,Дрей,,iwd2_rus
-Dreadbringer,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@261,NP:BG1NPC
+Dreadbringer,Несущий Страх,,NP:BG1NPC
 Dreadmaster,Повелитель Ужаса,,BG2EE-russian
 Drealer,Дрилер,,iwd2_rus
-Dreamscape,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@783,NP:BG1NPC
+Dreamscape,Мир Грёз,,NP:BG1NPC
 Dreden,Дреден,,iwd2_rus
 Dreedle,Дридль,,BG2EE-russian
 Dreisbach,Дрейсбах,,iwd2_rus
@@ -1178,7 +1186,7 @@ Drienne,Дриенн,,BG1RUS-EET
 Drin,Дрин,,BG1RUS-EET
 Drizzt,Дриззт,,BG1RUS-EET
 Drooldribbler,Друлдриблер,,sod_rus
-Dropkick,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiax.tra@55,NP:BG1NPC
+Dropkick,сбросить,,NP:BG1NPC
 Droth,Дрот,,BG1RUS-EET
 Drothan,Дротан,,iwd2_rus
 Drow,дроу,,BG1RUS-EET
@@ -1188,7 +1196,7 @@ Drusus,Друсус,,BG1RUS-EET
 Dryad,дриада,,BG1RUS-EET
 Dualdon,Дуалдон,,iwd2_rus
 Ducal Palace,Дворец Герцогов,,BG1RUS-EET
-Duckyfoot,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#moint.tra@88,NP:BG1NPC
+Duckyfoot,Дакифут,,NP:BG1NPC
 Duelist,Дуэлянт,,BG2EE-russian
 Duergar,дуэргар,,BG1RUS-EET
 Dugdeep,Дагдип,,sod_rus
@@ -1201,7 +1209,7 @@ Dullcobble,Дулкобл,,iwd2_rus
 Dumathoin,Думатоин,,sod_rus
 Dumok,Думок,,sod_rus
 Durdel,Дурдель,,iwd2_rus
-Durgin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@122; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@126; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@127,NP:BG1NPC
+Durgin,Дургин,,NP:BG1NPC
 Durkon,Дуркон,,BG2EE-russian
 Durlag,Дурлаг,,BG1RUS-EET
 Durlass,Дурласс,,BG1RUS-EET
@@ -1212,37 +1220,37 @@ Dushwick,Душвик,,sod_rus
 Duskblade,Сумрачный клинок,,BG2EE-russian
 Dver,Двер,,iwd2_rus
 Dwarf,дварф,,BG1RUS-EET
-Dwarfhood,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#quayl.tra@156,NP:BG1NPC
+Dwarfhood,дварфства,,NP:BG1NPC
 Dwarven,дварфский,,BG1RUS-EET
-Dwarves've,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@242,NP:BG1NPC
+Dwarves've,дварфы,,NP:BG1NPC
 Dwarvish,дварфском,,BG2EE-russian
 Dwelnar,Двелнар,,iwd2_rus
 Dweomer,Двеомер,,BG1RUS-EET
-Dwin'anea,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@272; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@48; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@50; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@62; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@65,NP:BG1NPC
+Dwin'anea,Двин'анэа,,NP:BG1NPC
 Dykhast,дикаст,,iwd2_rus
-Dyna,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@72; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@114; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@125; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@501,NP:BG1NPC
+Dyna,Дина,,NP:BG1NPC
 Dynaheir,Динахейр,,BG1RUS-EET
-Eack,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#miint.tra@150,NP:BG1NPC
+Eack,Еак,,NP:BG1NPC
 Eadro,Эадро,,sod_rus
 Earthenport,Землепорт,,iwd2_rus
 Earthmother,Мать-Земля,,BG1RUS-EET
-Easterlings,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@280; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@282,NP:BG1NPC
+Easterlings,истерлинги,,NP:BG1NPC
 Easthaven,Восточная Гавань,,BG2EE-russian
 EasyTutu,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1002,NP:BG1NPC
 Ebonbeard,Чернобородый,,BG2EE-russian
 Ebrone,Эброн,,BG2EE-russian
-Ecch,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzint.tra@101,NP:BG1NPC
+Ecch,Экч,,NP:BG1NPC
 Echtah,Эктах,,BG1RUS-EET
-Echtelion,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@408; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@413; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@415; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@422; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@425; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1390,NP:BG1NPC
-Echtellion,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@57; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@60; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@63; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@64; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@176; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@178; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@179; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@181; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@184; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@185; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@139,NP:BG1NPC
+Echtelion,Эктеллион,,NP:BG1NPC
+Echtellion,Эктеллион,,NP:BG1NPC
 Ecktarr,Эктарр,,iwd2_rus
 Eddard,Эддард,,BG1RUS-EET
 Edgeel,Эдгиль,,iwd2_rus
-Edificiant,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@138,NP:BG1NPC
+Edificiant,Назиданий,,NP:BG1NPC
 Edion,Эдион,,iwd2_rus
 Edley,Эдли,,iwd2_rus
 Edventar,Эдвентарь,,BG1RUS-EET
-Eei,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@574,NP:BG1NPC
+Eei,Иу-у!,,NP:BG1NPC
 Eet,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@5006,NP:BG1NPC
 Eevo,Ээво,,BG2EE-russian
 Effy,Эффи,,sod_rus
@@ -1266,21 +1274,21 @@ Elanda,Эланда,,BG2EE-russian
 Elander,Эландер,,BG1RUS-EET
 Elandro,Эландро,,sod_rus
 Elban,Эльбан,,BG1RUS-EET
-Elbereth,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@540; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2186,NP:BG1NPC
-Eldalie,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2171,NP:BG1NPC
+Elbereth,Эльберет,,NP:BG1NPC
+Eldalie,Элдалиэ,,NP:BG1NPC
 Eldarin,Элдарин,,BG2EE-russian
 Eldath,Эльдат,,iwd2_rus
 Eldercity,Подземный Город,,iwd2_rus
 Eldgull,Эльдгалл,,iwd2_rus
 Eldorin,Элдорин,,BG2EE-russian
 Eldoth,Элдот,,BG1RUS-EET
-Eldoth'd,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@473,NP:BG1NPC
+Eldoth'd,Элдот,,NP:BG1NPC
 Eldric,Элдрик,,sod_rus
 Eleasias,Элизис,,BG1RUS-EET
 Electrum,электрум,,iwd2_rus
 Eleint,Элейнт,,BG1RUS-EET
 Elemental,элементаль,,sod_rus
-Elen,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2167,NP:BG1NPC
+Elen,Элен,,NP:BG1NPC
 Elence,Иленс,,BG2EE-russian
 Elendar,Элендар,,iwd2_rus
 Elendara,Элендара,,BG1RUS-EET
@@ -1291,10 +1299,10 @@ Elghinn,Элгхинн,,iwd2_rus
 Elgiad,Элгиад,,BG2EE-russian
 Elhan,Эльхан,,BG2EE-russian
 Elic,Элик,,BG2EE-russian
-Elina,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@388; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3945,NP:BG1NPC
+Elina,Элина,,NP:BG1NPC
 Elisia,Элизия,,iwd2_rus
 Elisia-of-the-Sky,Элизия Небес,,IWDEE-russian
-Elistraee,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@104; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaheira.tra@228,NP:BG1NPC
+Elistraee,Эйлистраи,,NP:BG1NPC
 Eliya,Элия,,BG2EE-russian
 Elkan,Элкан,,BG2EE-russian
 Elkart,Элкарт,,BG1RUS-EET
@@ -1309,19 +1317,19 @@ Elotte,Илотт,,BG2EE-russian
 Eltan,Эльтан,,BG1RUS-EET
 Eltob,Элтоб,,iwd2_rus
 Eltor,Элтор,,BG1RUS-EET
-Elue,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@102; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@106,NP:BG1NPC
+Elue,Элуи,,NP:BG1NPC
 Eluno,Элуно,,BG2EE-russian
 Elv,Элв,,BG2EE-russian
 Elvaius,Эльваиус,,sod_rus
-Elvendom,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1512; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@318; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@388; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2832; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@30; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@79; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@85; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@117; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@251; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@807; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1081; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@32; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@33,NP:BG1NPC
+Elvendom,Эльвендома,,NP:BG1NPC
 Elvenhair,Эльфоподобный,,BG1RUS-EET
-Elverquisst,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@660; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1173,NP:BG1NPC
-Elvish,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@685; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@708; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@19; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@415; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2111; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2171,NP:BG1NPC
+Elverquisst,Эльверквисст,,NP:BG1NPC
+Elvish,эльфийский,,NP:BG1NPC
 Elyme,Элайм,,BG2EE-russian
 Elyse,Элис,,BG1RUS-EET
 Elytharra,Элитарра,,iwd2_rus
 Embarl,Эмбарл,,BG2EE-russian
-Embracement,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@1026,NP:BG1NPC
+Embracement,Объятье,,NP:BG1NPC
 Emesi,Эмеси,,sod_rus
 Emmerich,Эммерик,,iwd2_rus
 Enaril,Энарил,,IWDEE-russian
@@ -1330,22 +1338,22 @@ Enegar,Энегар,,BG2EE-russian
 Enge,Энге,,BG2EE-russian
 Engles,Энгльс,,BG1RUS-EET
 Enith,Энит,,BG1RUS-EET
-Enivien,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@24,NP:BG1NPC
+Enivien,Энивьен,,NP:BG1NPC
 Enkidu,Энкиду,,BG2EE-russian
 Enna,Энна,,BG1RUS-EET
 Ennelia,Эннелия,,iwd2_rus
 Enneth,Эннет,,BG2EE-russian
 Enoreth,Энорет,,iwd2_rus
-Enslaving,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@26; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@146; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaint.tra@123,NP:BG1NPC
+Enslaving,Поработить,,NP:BG1NPC
 Ensler,Энслер,,sod_rus
 Entar,Энтар,,BG1RUS-EET
 Entillis,Энтиллис,,BG1RUS-EET
-Entombed,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@172,NP:BG1NPC
+Entombed,замурованным,,NP:BG1NPC
 Entreri,Энтрери,,BG2EE-russian
 Entu,Энту,,BG2EE-russian
 Envelop,Окутывание,,BG2EE-russian
-Envin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@388; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@401; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@449; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@450; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3945,NP:BG1NPC
-Envying,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@310,NP:BG1NPC
+Envin,Энвин,,NP:BG1NPC
+Envying,Завидовать,,NP:BG1NPC
 Ephrik,Эфрик,,sod_rus
 Equus,Экус,,sod_rus
 Eradru,Эрадру,,iwd2_rus
@@ -1358,13 +1366,13 @@ Erim,Эрим,,BG1RUS-EET
 Erinne,Эринн,,BG2EE-russian
 Erinyes,Эринии,,sod_rus
 Erlin,Эрлин,,BG1RUS-EET
-Erlkazar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@432; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@442,NP:BG1NPC
-Ermm,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@260; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@156; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@229,NP:BG1NPC
+Erlkazar,Эрлказар,,NP:BG1NPC
+Ermm,Эм-м,,NP:BG1NPC
 Eron,Эрон,,iwd2_rus
 Errard,Эррард,,BG2EE-russian
-Errilam,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@487; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@516,NP:BG1NPC
+Errilam,Эррилам,,NP:BG1NPC
 Erris,Эррис,,iwd2_rus
-Errm,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@114; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@229; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@251,NP:BG1NPC
+Errm,Э-эм,,NP:BG1NPC
 Ertof,Эртоф,,BG2EE-russian
 Ervo,Эрво,,BG2EE-russian
 Esamon,Исамон,,BG2EE-russian
@@ -1376,9 +1384,9 @@ Espejo,Эспеджо,,BG1RUS-EET
 Esserin,Эссерин,,sod_rus
 Estagund,Эстагунд,,BG1RUS-EET
 Estebarre,Эстебарр,,sod_rus
-Estel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@582; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@584; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@588; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@590; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@596; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@602; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@609; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@625,NP:BG1NPC
-Estel'amin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2676; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2731; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2732; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2748; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2751; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2763; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2765; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2773; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2782; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2794; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2796; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2839; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@609; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@611; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@617; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@621; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@633; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@634; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@676; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1010; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1020; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1029; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1032; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1043; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1485,NP:BG1NPC
-Ethran,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@59,NP:BG1NPC
+Estel,Эстель,,NP:BG1NPC
+Estel'amin,Эстель'амин,,NP:BG1NPC
+Ethran,Этран,,NP:BG1NPC
 Ettercap,эттеркап,,BG1RUS-EET
 Ettin,эттин,,sod_rus
 Euric,Эврик,,BG1RUS-EET
@@ -1390,16 +1398,16 @@ Evayne,Эвайна,,iwd2_rus
 Eveningstar,Вечерняя Звезда,,iwd2_rus
 Everard,Эверард,,BG2EE-russian
 Evereska,Эвереска,,BG1RUS-EET
-Evereskan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@237; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@244; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@257; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xaint.tra@33; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xaint.tra@35; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@132; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@156; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@188; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@164; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@34,NP:BG1NPC
-Everfull,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@213,NP:BG1NPC
+Evereskan,Эвересканский,,NP:BG1NPC
+Everfull,Вечно полные,,NP:BG1NPC
 Everlight,Вечная Лампа,,BG1RUS-EET
 Evermead,эвермитский мёд,,BG1RUS-EET
 Evermeet,Эвермит,,BG1RUS-EET
 Evermoors,Вечные Топи,,BG1RUS-EET
 Everwatch,Вечный Дозор,,sod_rus
 Ewenn,Ивенн,,BG2EE-russian
-Exaltedly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@93,NP:BG1NPC
-Excitin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@46,NP:BG1NPC
+Exaltedly,Возвышенно,,NP:BG1NPC
+Excitin,захватывающе,,NP:BG1NPC
 Extremis,Экстремис,,BG1RUS-EET
 Exzesus,Экзесус,,BG1RUS-EET
 Exzeus,Экзевс,,sod_rus
@@ -1408,7 +1416,7 @@ Fadell,Фаделл,,BG2EE-russian
 Fadoon,Фадун,,BG2EE-russian
 Fael,Фаэль,,BG2EE-russian
 Faenya,Фаэния,,BG2EE-russian
-Faeries,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@286,NP:BG1NPC
+Faeries,Эльфы,,NP:BG1NPC
 Faerun,Фаэрун,,BG1RUS-EET
 Faeyr,Файр,,BG2EE-russian
 Fafhrd,Фафхрд,,BG1RUS-EET
@@ -1417,7 +1425,7 @@ Fahrington,Фахрингтон,,BG1RUS-EET
 Fairfoot,Файрфут,,BG2EE-russian
 Fairhand,Пряморукая,,BG2EE-russian
 Fairwynd,Фэйрвинд,,iwd2_rus
-Faithlessness,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1631,NP:BG1NPC
+Faithlessness,Неверия,,NP:BG1NPC
 Faizah,Файзах,,BG1RUS-EET
 Falahar,Фалагар,,BG2EE-russian
 Falchion,фальшион,,sod_rus
@@ -1433,7 +1441,7 @@ Faragrim,Фарагрим,,sod_rus
 Faraji,Фараджи,,BG2EE-russian
 Farcutter,Длинный Тесак,,BG2EE-russian
 Fargl,Фаргл,,sod_rus
-Fargrim,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@108; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@110; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@112; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@116,NP:BG1NPC
+Fargrim,Фаргрим,,NP:BG1NPC
 Farielle,Фариэль,,BG2EE-russian
 Farluck,Фарлук,,BG1RUS-EET
 Farold,Фарольд,,iwd2_rus
@@ -1444,22 +1452,22 @@ Farsight,предвидение,,BG1RUS-EET
 Farthington,Пердингтон,,BG2EE-russian
 Farthy,Перди,,BG2EE-russian
 Fastpaws,Быстрые Лапы,,BG2EE-russian
-Faugh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@148,NP:BG1NPC
+Faugh,Тьфу,,NP:BG1NPC
 Faughley,Фогли,,sod_rus
-Faur'n,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@302; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@500,NP:BG1NPC
+Faur'n,Фаэрун,,NP:BG1NPC
 Faurun,Фаэрун,,BG1RUS-EET
 Fayanna,Фаянна,,BG2EE-russian
-Fayatel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@90; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@91; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@92; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@94,NP:BG1NPC
+Fayatel,Фаятель,,NP:BG1NPC
 Fayr,Фейр,,iwd2_rus
 Fearghus,Фергус,,BG2EE-russian
-Feastin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@108,NP:BG1NPC
+Feastin,праздниках,,NP:BG1NPC
 Feelie,Фили,,BG1RUS-EET
-Feer,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@48; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@49; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@60; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@61; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@69,NP:BG1NPC
+Feer,Фир,,NP:BG1NPC
 Feerlattiys,Фиирлаттийс,,BG2EE-russian
 Feldane,Фелдан,,BG1RUS-EET
 Feldepost,Фельдепост,,BG1RUS-EET
 Feldernath,Фелдернат,,BG1RUS-EET
-Feldpost,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1297,NP:BG1NPC
+Feldpost,Фельдепост,,NP:BG1NPC
 Feldrak,Фелдрак,,BG2EE-russian
 Feldurkin,Фельдуркин,,sod_rus
 Fellik,Феллик,,sod_rus
@@ -1474,7 +1482,7 @@ Fenten,Фентен,,BG1RUS-EET
 Fenuku,Фенуку,,BG2EE-russian
 Ferendale,Ферендал,,BG1RUS-EET
 Ferg,Ферг,,BG2EE-russian
-Fergit,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@190,NP:BG1NPC
+Fergit,Забудь,,NP:BG1NPC
 Fernault,Фернальт,,BG2EE-russian
 Ferric,Феррик,,BG2EE-russian
 Ferrumach,Феррумах,,BG2EE-russian
@@ -1491,21 +1499,21 @@ Fibbert,Фибберт,,BG2EE-russian
 Fiddich,Фиддич,,BG2EE-russian
 Fiddlebender,Скрипкогиб,,iwd2_rus
 Fiendslayer,Убийца демонов,,iwd2_rus
-Fift,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@307,NP:BG1NPC
-Figgered,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@154,NP:BG1NPC
+Fift,Пят,,NP:BG1NPC
+Figgered,Подумал,,NP:BG1NPC
 Filacturry,филактерия,,sod_rus
 Filbert,Филберт,,BG2EE-russian
 Fillis,Филлис,,BG2EE-russian
 Finderlig,Финдерлиг,,BG2EE-russian
 Finischuk,Финишук,,BG2EE-russian
 Finkle,Финкл,,BG1RUS-EET
-Fire'll,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kagain.tra@30,NP:BG1NPC
+Fire'll,Огонь,,NP:BG1NPC
 Firebead,Фаербид,,BG1RUS-EET
 Fireblade,Файрблейд,,BG2EE-russian
 Firecam,Фаеркам,,BG2EE-russian
 Firehair,Огневласая,,BG1RUS-EET
 Firehammer,Файрхаммер,,BG2EE-russian
-Fireheart,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@732; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@885; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@970,NP:BG1NPC
+Fireheart,Искорка,,NP:BG1NPC
 Firejaw,Огнехват,,BG2EE-russian
 Fireseeds,Огненные семена,,BG2EE-russian
 Firetooth,Огнезуб,,BG2EE-russian
@@ -1535,7 +1543,7 @@ Folt,Фолт,,BG2EE-russian
 Fomorian,Фоморский,,iwd2_rus
 Foolio,Фулио,,BG1RUS-EET
 Foolios,Фулио,,BG1RUS-EET
-Forewarn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaheira.tra@133,NP:BG1NPC
+Forewarn,Предостеречь,,NP:BG1NPC
 Forthel,Фортель,,BG1RUS-EET
 Foulair,Фоулайр,,iwd2_rus
 Fouleye,Фаулай,,sod_rus
@@ -1566,7 +1574,7 @@ Furnelaine,Фурнелайн,,BG1RUS-EET
 Furnellbol,Фурнеллбол,,BG1RUS-EET
 Furret,Фуррет,,BG1RUS-EET
 Fynne,Финн,,iwd2_rus
-Fyrra,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@581; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@582; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@583; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@587; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@589; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1654; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@163; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@165; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@167; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@170; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@172; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@174; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@175; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@176; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@178; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@179; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@180,NP:BG1NPC
+Fyrra,Фирра,,NP:BG1NPC
 Fyrus,Файрус,,BG2EE-russian
 G'axir,Г'аксир,,IWDEE-russian
 Gaden,Гаден,,BG2EE-russian
@@ -1576,7 +1584,7 @@ Gaerdal,Гэрдал,,iwd2_rus
 Gaernat,Гаэрнат,,iwd2_rus
 Gahan,Гаан,,BG2EE-russian
 Galad,Галад,,sod_rus
-Galador,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@543,NP:BG1NPC
+Galador,Галадор,,NP:BG1NPC
 Galahynne,Галахинн,,BG1RUS-EET
 Galan,Галан,,BG1RUS-EET
 Galdor,Галдор,,BG1RUS-EET
@@ -1600,7 +1608,7 @@ Gambiton,Гамбитон,,BG2EE-russian
 Gammock,Гаммока,,iwd2_rus
 Gandel,Гандель,,BG2EE-russian
 Gandolar,Гандолар,,BG1RUS-EET
-Gandy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#moint.tra@88,NP:BG1NPC
+Gandy,Гэнди,,NP:BG1NPC
 Gantolandan,Гантоландан,,BG1RUS-EET
 Garachen,Гарачен,,sod_rus
 Garagos,Гарагос,,sod_rus
@@ -1611,7 +1619,7 @@ Gardnerson,Гарднерсон,,sod_rus
 Gardnersonson,Гарднерсонсон,,sod_rus
 Gardush,Гардуш,,BG1RUS-EET
 Garfunkle,Гарфункель,,BG2EE-russian
-Garglish,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@111; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@112; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@113,NP:BG1NPC
+Garglish,Гарглиш,,NP:BG1NPC
 Garh,Гарх,,BG2EE-russian
 Gark,Гарк,,iwd2_rus
 Garl,Гарл,,BG1RUS-EET
@@ -1629,7 +1637,7 @@ Garuk,Гарук,,BG2EE-russian
 Gatchounkemin,Гатчункемин,,BG2EE-russian
 Gatewarden,Смотритель Врат,,BG1RUS-EET
 Gath,Гат,,sod_rus
-Gauros,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@436,NP:BG1NPC
+Gauros,Гауросское,,NP:BG1NPC
 Gauth,гаут,,sod_rus
 Gavid,Гавид,,BG2EE-russian
 Gaxx,Гаксс,,BG2EE-russian
@@ -1671,7 +1679,7 @@ Gesen,Гезен,,BG2EE-russian
 Geshtemachin,Гештемачин,,BG2EE-russian
 Gethras,Гетрас,,BG2EE-russian
 Gethres,Гетрас,,iwd2_rus
-Gevalenties,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@404; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xaint.tra@42,NP:BG1NPC
+Gevalenties,Джевалентис,,NP:BG1NPC
 Gezunteitimin,Гезунтейтимин,,BG2EE-russian
 Gezzthemin,Геззтемин,,BG2EE-russian
 Ghallus,Галлус,,BG2EE-russian
@@ -1720,7 +1728,7 @@ Gnarg,Гнарг,,sod_rus
 Gnarl,Гнарл,,BG1RUS-EET
 Gnoll,гнолл,,BG1RUS-EET
 Godsbane,Погибель Богов,,sod_rus
-Godspawn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@908,NP:BG1NPC
+Godspawn,Сын бога,,NP:BG1NPC
 Godswar,Война Богов,,BG2EE-russian
 Gofus,Гофус,,BG2EE-russian
 Gohar,Гохар,,iwd2_rus
@@ -1730,7 +1738,7 @@ Goldander,Голдандер,,BG2EE-russian
 Goldbuckler,Златощит,,sod_rus
 Goldenhand,Златорукий,,BG2EE-russian
 Goldenspires,Золотые Шпили,,IWDEE-russian
-Goldstone,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2504; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2509,NP:BG1NPC
+Goldstone,Голдстоун,,NP:BG1NPC
 Golin,Голин,,BG1RUS-EET
 Golodon,Голодон,,BG1RUS-EET
 Golt,Голт,,sod_rus
@@ -1740,7 +1748,7 @@ Gondegal,Гондегал,,BG1RUS-EET
 Gont,Гонт,,BG2EE-russian
 Goobar,Губар,,BG2EE-russian
 Goodtree,Гудтри,,sod_rus
-Gooseberries,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#khalid.tra@111,NP:BG1NPC
+Gooseberries,Крыжовник,,NP:BG1NPC
 Goozlemin,Гузлемин,,BG2EE-russian
 Gorch,Горч,,BG1RUS-EET
 Gord,Горд,,BG1RUS-EET
@@ -1757,8 +1765,8 @@ Gos'l,гос'л,язык дроу,BG2EE-russian
 Goshan,Гошан,,BG2EE-russian
 Gothog,Готог,,iwd2_rus
 Gothoz,Ур-Готоз,,BG1RUS-EET
-Gotom,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@388; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@449; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@450; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3945,NP:BG1NPC
-Gottcha,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2027,NP:BG1NPC
+Gotom,Готом,,NP:BG1NPC
+Gottcha,Попался,,NP:BG1NPC
 Goublika,Гоблика,,iwd2_rus
 Goxxa,Гоксса,,BG2EE-russian
 Gracele,Грейсель,,BG2EE-russian
@@ -1774,7 +1782,7 @@ Gramorn,Граморн,,sod_rus
 Grampop,Грэмпоп,,sod_rus
 Grancor,Гранкор,,BG2EE-russian
 Granz,Гранц,,sod_rus
-Grargar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@112,NP:BG1NPC
+Grargar,Граргар,,NP:BG1NPC
 Gratin,Грейтин,,BG2EE-russian
 Gravis,Грейвис,,BG2EE-russian
 Graybrook,Грейбрук,,BG2EE-russian
@@ -1784,15 +1792,15 @@ Greatgas,Грейтгас,,sod_rus
 Greatsword,двуручный меч,,iwd2_rus
 Greenaxe,Зелёный Топор,,IWDEE-russian
 Greenstone,зеленчак,,BG1RUS-EET
-Gren,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kiint.tra@85,NP:BG1NPC
+Gren,Грена,,NP:BG1NPC
 Grenthal,Грентал,,BG1RUS-EET
 Greshal,Грешал,,BG2EE-russian
 Gretek,Гретек,,BG1RUS-EET
 Greycart,Грейкарт,,BG1RUS-EET
-Greycloack,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@202; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@245,NP:BG1NPC
+Greycloack,Серый Плащ,,NP:BG1NPC
 Greycloak,Серый Плащ,,BG1RUS-EET
-Greyhome,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@198; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@201,NP:BG1NPC
-Greymantle,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@343; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@344,NP:BG1NPC
+Greyhome,дом Серых Плащей,,NP:BG1NPC
+Greymantle,Серая Мантия,,NP:BG1NPC
 Greywolf,Грейвульф,,BG1RUS-EET
 Griel,Грил,,BG1RUS-EET
 Grimgor,Гримгор,,sod_rus
@@ -1808,9 +1816,9 @@ Grophinet,Грофинет,,BG2EE-russian
 Grossey,Гросси,,iwd2_rus
 Grubash,Грубаш,,BG2EE-russian
 Grubdoubler,Грубдублер,,sod_rus
-Grubs,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaheira.tra@12,NP:BG1NPC
-Grum,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#chop.tra@9,NP:BG1NPC
-Grumpier,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2286,NP:BG1NPC
+Grubs,Личинки,,NP:BG1NPC
+Grum,Грум,,NP:BG1NPC
+Grumpier,Мрачнее,,NP:BG1NPC
 Grundwall,Грандволл,,iwd2_rus
 Gruumsh,Груумш,,sod_rus
 Guello,Гвелло,,iwd2_rus
@@ -1827,19 +1835,19 @@ Gurke,Гурке,,BG1RUS-EET
 Gurn,Гурн,,BG1RUS-EET
 Guthewulfe,Гютвульф,,iwd2_rus
 Guthma,Гутма,,iwd2_rus
-Gvidon,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1590,NP:BG1NPC
+Gvidon,Гвидон,,NP:BG1NPC
 Gwera,Гуэра,,BG2EE-russian
 Gwin,Гвин,,BG2EE-russian
 Gwist,Гвист,,BG1RUS-EET
 Gyllian,Гиллиан,,BG1RUS-EET
 H'Catha,Х'Ката,,sod_rus
 HaVaran,ГаВаран,,BG2EE-russian
-Haalp,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyint.tra@1002,NP:BG1NPC
+Haalp,Помогите,,NP:BG1NPC
 Hackman,Мясорубка,,BG2EE-russian
 Hackum,Хакум,,BG1RUS-EET
-Had'st,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1829,NP:BG1NPC
+Had'st,Общался,,NP:BG1NPC
 Hadbruki,Хадбруки,,iwd2_rus
-Hadst,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#khalid.tra@61,NP:BG1NPC
+Hadst,А,,NP:BG1NPC
 Hadya,Хадия,,iwd2_rus
 Haegan,Хаган,,BG2EE-russian
 Haela,Хаэла,,sod_rus
@@ -1861,7 +1869,7 @@ Halath,Халат,,sod_rus
 Halbazzer,Халбаззер,,BG1RUS-EET
 Haldi,Халди,,BG2EE-russian
 Haldorr,Халдорр,,BG2EE-russian
-Halduplac,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@87,NP:BG1NPC
+Halduplac,Халдуплак,,NP:BG1NPC
 Haletlatess,Халетлатесс,,BG2EE-russian
 Halfling,полурослик,,BG1RUS-EET
 Halimstad,Халимстад,,BG1RUS-EET
@@ -1880,7 +1888,7 @@ Hamenrousee,Хаменруси,,iwd2_rus
 Hammerhelm,Хаммерхелм,,BG2EE-russian
 Hammerlust,Хаммерласт,,sod_rus
 Hammersparks,Искрящий Молот,,BG2EE-russian
-Hanali,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@52; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@74; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@84; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@146; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@165; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@175; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@178; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@186; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@192; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@195; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@198; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@201; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@203; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@206; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@208; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@209; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@202; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@337; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@387; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@406; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@407; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@593; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@771; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@936; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1344; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1418; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@85; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@201; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@9; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@54; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@56; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@345; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3082; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3200; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3202; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3204; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3207; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3213; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3303; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@532; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@566; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@933; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1038; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1369; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1376; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1391; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@155; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@101,NP:BG1NPC
+Hanali,Ханали,,NP:BG1NPC
 Hanarsen,Ханарсен,,iwd2_rus
 Hando,Хандо,,sod_rus
 Hangard,Хангард,,BG2EE-russian
@@ -1911,9 +1919,9 @@ Hasnain,Хаснайн,,BG2EE-russian
 Haspur,Хаспур,,BG1RUS-EET
 Hastenback,Хастенбек,,BG1RUS-EET
 Hastus,Хастус,,sod_rus
-Hatchlings,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faint.tra@57,NP:BG1NPC
+Hatchlings,Птенцы,,NP:BG1NPC
 Hatemaster,Владыка ненависти,,iwd2_rus
-Hathran,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantisnpc_talks_pr.tra@8; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantisnpc_talks_pr.tra@10; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@145; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@45; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@46; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@47; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@53; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@54; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@59; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@63; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@130; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@132; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@134; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@151; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@13; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@131; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@162; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@16; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@116; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@128; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@160; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@167; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@179; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@186; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@199; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@240; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@241; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@247; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@296; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@313; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@315; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@319; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@334; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@364; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@386; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@392; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@399; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@408; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@413; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@446; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@457; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@459; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@523; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@541; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@552; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@554; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@555; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@573; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@585; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@586; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@589; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@597; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@598; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@606; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@618; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@873; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@884; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@886; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@888; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@894; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@901; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@902; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@929; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@940; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@955; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@959; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@972; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@993; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1175; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1178; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1181; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1182; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1201; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1501; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1505; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1517; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1555; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1557; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1569; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1577; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1631; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1654; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1660; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1662; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1772; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@181; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@321; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@322; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@35; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@41; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@50; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1302; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1303; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1304; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1305; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1306; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1710; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@118,NP:BG1NPC
+Hathran,Хатран,,NP:BG1NPC
 Hattoch,Хатточ,,iwd2_rus
 Havarian,Хавариан,,BG2EE-russian
 Havrelock,Хеврелок,,BG2EE-russian
@@ -1921,7 +1929,7 @@ Hawal,Хавал,,BG2EE-russian
 Hawalan,Хавалан,,BG2EE-russian
 Hawksight,Ястребиный взгляд,,BG2EE-russian
 Haximus,Хаксимус,,BG2EE-russian
-Hayseed,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@44,NP:BG1NPC
+Hayseed,Деревенщина,,NP:BG1NPC
 Haz,Хаз,,BG2EE-russian
 Headknocker,Череполом,,iwd2_rus
 Heartlands,Срединные Земли,,BG1RUS-EET
@@ -1931,14 +1939,14 @@ Hectan,Хектан,,BG2EE-russian
 Heddrin,Хеддрин,,BG2EE-russian
 Hedron,Хедрон,,iwd2_rus
 Heggr,Хеггр,,iwd2_rus
-Helg,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1239; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1240; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1244; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1266; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1268; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1270; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1271; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1239; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1240; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1241; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1242; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1258; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1259; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1260; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1262; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1273,NP:BG1NPC
+Helg,Хельг,,NP:BG1NPC
 Hellpick,Чертобоец,,iwd2_rus
 Helmite,хелмит,,BG2EE-russian
 Helmsport,Хелмспорт,,BG2EE-russian
 Helshara,Хельшара,,BG1RUS-EET
 Helvdar,Хельвдар,,sod_rus
 Hemma,Хемма,,BG1RUS-EET
-Henceforward,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@83,NP:BG1NPC
+Henceforward,Отныне,,NP:BG1NPC
 Hendak,Хендак,,BG2EE-russian
 Hendron,Хендрон,,BG2EE-russian
 Henghelm,Хенгхельм,,iwd2_rus
@@ -1955,8 +1963,8 @@ Herolde,Херольд,,BG2EE-russian
 Herth,Херт,,BG2EE-russian
 Hervo,Херво,,BG2EE-russian
 Hexxat,Хексат,,BG2EE-russian
-Hey're,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@274,NP:BG1NPC
-Hhm,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2021,NP:BG1NPC
+Hey're,Эй,,NP:BG1NPC
+Hhm,Хм-м,,NP:BG1NPC
 Hidesman,Шкуродел,,BG2EE-russian
 Hiekt,Хиект,,BG1RUS-EET
 Hiepherus,Хиферус,,iwd2_rus
@@ -1966,7 +1974,7 @@ Highcastle,Хайкастл,,BG2EE-russian
 Highdale,Верхняя долина,,BG2EE-russian
 Highhammer,Хайхаммер,,sod_rus
 Highmoon,Высокая Луна,,iwd2_rus
-Highwing,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@61; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@64; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@176; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@182; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@185,NP:BG1NPC
+Highwing,Высокое Крыло,,NP:BG1NPC
 Hildreth,Хилдрет,,iwd2_rus
 Hillcarver,Хиллкарвер,,sod_rus
 Hilldark,Хиллдарк,,BG2EE-russian
@@ -1977,7 +1985,7 @@ Hindra,Хиндра,,BG2EE-russian
 Hippogriff,гиппогриф,,iwd2_rus
 Histachii,хистачи,,iwd2_rus
 Hjollder,Йоллдер,,iwd2_rus
-Hmf,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@921; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@295,NP:BG1NPC
+Hmf,Хм-м,,NP:BG1NPC
 Hoach,Хоач,,sod_rus
 Hoar,Хоар,,BG2EE-russian
 Hobgoblin,хобгоблин,,BG1RUS-EET
@@ -1985,7 +1993,7 @@ Hogarl,Хогарл,,BG1RUS-EET
 Hojar,Годжар,,BG2EE-russian
 Hokkney,Хоккни,,BG2EE-russian
 Holy Swizarnian Hammer of Lucerne,Швизцарский люцернский молот,,iwd2_rus
-Homen,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@146; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@147; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@148,NP:BG1NPC
+Homen,Хомен,,NP:BG1NPC
 Honglath,Хонглат,,sod_rus
 Hormorn,Хорморн,,sod_rus
 Hornung,Хорнунг,,BG2EE-russian
@@ -1993,43 +2001,43 @@ Hort,Хорт,,BG2EE-russian
 Horvat,Хорват,,BG2EE-russian
 Hosttower,Великая Башня,,iwd2_rus
 Houndstooth,Гончеклык,,iwd2_rus
-How've,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@63,NP:BG1NPC
+How've,Как,,NP:BG1NPC
 Hrothgar,Хротгар,,BG2EE-russian
-Hrump,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#chop.tra@9,NP:BG1NPC
+Hrump,Хрумп,,NP:BG1NPC
 Huatchpa,Гуатчпа,,iwd2_rus
-Huhrong,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@115,NP:BG1NPC
+Huhrong,Хухронг,,NP:BG1NPC
 Hulrik,Хулрик,,BG1RUS-EET
-Humiliatin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@824; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#moint.tra@67,NP:BG1NPC
-Hunny,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@68; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@219,NP:BG1NPC
+Humiliatin,Унизительное,,NP:BG1NPC
+Hunny,Зайка,,NP:BG1NPC
 Hurg,Хург,,BG2EE-russian
 Hurgan,Хурган,,BG1RUS-EET
 Hurgis,Хургис,,BG2EE-russian
 Husam,Хусам,,BG1RUS-EET
 Hydcont,Хидконт,,BG2EE-russian
-Hygenic,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skie.tra@365,NP:BG1NPC
+Hygenic,Гигиена,,NP:BG1NPC
 Hyreth,Хирет,,sod_rus
-I'anor,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2170,NP:BG1NPC
-I'narr,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2170,NP:BG1NPC
-I'quelin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2190,NP:BG1NPC
+I'anor,И'анор,,NP:BG1NPC
+I'narr,И'нарр,,NP:BG1NPC
+I'quelin,И'квелин,,NP:BG1NPC
 Ianulin,Янулин,,BG2EE-russian
 Iblith,иблит,,BG1RUS-EET
 Icasaracht,Иказарахт,,iwd2_rus
 Icedawn,Ледяная Заря,,iwd2_rus
 Icedust,Ледяная пыль,,BG2EE-russian
 Icelance,Ледяное копьё,,iwd2_rus
-Icerim,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@443,NP:BG1NPC
+Icerim,Ицерим,,NP:BG1NPC
 Icewind Dale,Долина Ледяного Ветра,,BG1RUS-EET
 Icharyd,Ичарид,,BG1RUS-EET
-Ichthraa,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@288,NP:BG1NPC
+Ichthraa,Ихтраа,,NP:BG1NPC
 Icingdeath,Леденящая Смерть,,BG1RUS-EET
 Idianeali,Идианеали,,sod_rus
 Idianeelix,Идианиликс,,sod_rus
 Idianori,Идианори,,sod_rus
-Idjit,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1340,NP:BG1NPC
+Idjit,Тупица,,NP:BG1NPC
 Idras,Идрас,,BG2EE-russian
 Idyletia,Идилетия,,sod_rus
-Ieriyn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@68,NP:BG1NPC
-Ieryn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@426,NP:BG1NPC
+Ieriyn,Иерин,,NP:BG1NPC
+Ieryn,Иерин,,NP:BG1NPC
 Igarol,Игарол,,BG2EE-russian
 Igen,Айген,,BG2EE-russian
 Ignatio,Игнатио,,BG1RUS-EET
@@ -2042,7 +2050,7 @@ Ilair,Илейр,,iwd2_rus
 Ilauna,Илауна,,IWDEE-russian
 Ilbratha,Илбрата,,BG2EE-russian
 Ilharess,ильхаресс,язык дроу,iwd2_rus
-Iliryztara,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@103; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@106,NP:BG1NPC
+Iliryztara,Илиризтара,,NP:BG1NPC
 Illaruel,Илларуэль,,sod_rus
 Illasera,Илласера,,BG2EE-russian
 Illefarn,Иллефарн,,BG1RUS-EET
@@ -2053,7 +2061,7 @@ Illithium,иллитий,,BG2EE-russian
 Illium,Иллиум,,iwd2_rus
 Illon,Иллон,,BG2EE-russian
 Illuryssallya,Иллуриссалия,,BG2EE-russian
-Illusionists,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@382,NP:BG1NPC
+Illusionists,иллюзионистов,,NP:BG1NPC
 Ilmadia,Ильмадия,,iwd2_rus
 Ilmatari,ильматари,,iwd2_rus
 Ilmater,Ильматер,,BG1RUS-EET
@@ -2065,29 +2073,29 @@ Iltha,Ильта,,BG2EE-russian
 Iltheia,Илтейя,,BG2EE-russian
 Ilvarstarr,Ильвастарр,,sod_rus
 Ilvastarr,Ильвастарр,,BG1RUS-EET
-Ilyamenie,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1609,NP:BG1NPC
+Ilyamenie,Илуамениэ,,NP:BG1NPC
 Ilyich,Илич,,BG2EE-russian
 Ilythiiri,Илитиири,,BG2EE-russian
-Ilythiiry,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kiint.tra@56,NP:BG1NPC
-Imadain,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@655,NP:BG1NPC
-Imanel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@251; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@3; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@30; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@53; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@59,NP:BG1NPC
+Ilythiiry,Илитиири,,NP:BG1NPC
+Imadain,Имадаин,,NP:BG1NPC
+Imanel,Иманель,,NP:BG1NPC
 Imascus,Имаскус,,BG2EE-russian
-Imaskari,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@655,NP:BG1NPC
+Imaskari,Имаскари,,NP:BG1NPC
 Imix,Аймикс,,BG2EE-russian
 Immartyred,Иммартиред,,sod_rus
 Immilmar,Иммилмар,,BG2EE-russian
-Immy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@210; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@220; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@107,NP:BG1NPC
+Immy,Имми,,NP:BG1NPC
 Imnescar,Имнескар,,BG2EE-russian
 Imnesvale,Имнесвейл,,BG2EE-russian
 Imoen,Имоен,,BG1RUS-EET
 Impaler,Накол,,BG2EE-russian
-Impertinence,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiax.tra@133,NP:BG1NPC
+Impertinence,Дерзость!,,NP:BG1NPC
 Imphraili,Имфраили,,iwd2_rus
-Impiltur,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1323,NP:BG1NPC
-Impresk,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@932,NP:BG1NPC
+Impiltur,Имилтур,,NP:BG1NPC
+Impresk,Слёз,,NP:BG1NPC
 Imrae,Имрэ,,BG2EE-russian
 Incylia,Инцилия,,iwd2_rus
-Inde,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@227,NP:BG1NPC
+Inde,П-р-а-а-вда,,NP:BG1NPC
 Infravision,инфравидение,,BG1RUS-EET
 Ingot,Ингот,,BG1RUS-EET
 Ingrath,Инграт,,iwd2_rus
@@ -2095,7 +2103,7 @@ Inhatri,Инхатри,,iwd2_rus
 Inhein,Инхейн,,iwd2_rus
 Inidil,Инидил,,iwd2_rus
 Innisfall,Иннисфолл,,sod_rus
-Inopportunely,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1269,NP:BG1NPC
+Inopportunely,Некстати,,NP:BG1NPC
 Interjections,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1006; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1007,NP:BG1NPC
 Invoker,воплотитель,,BG1RUS-EET
 Ioin,Йоин,,BG1RUS-EET
@@ -2129,7 +2137,7 @@ Ithtyl,Иттил,,BG1RUS-EET
 Itona,Итона,,BG2EE-russian
 Ivann,Иванн,,sod_rus
 Ivanne,Иванне,,BG1RUS-EET
-Ivette,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@173,NP:BG1NPC
+Ivette,Иветт,,NP:BG1NPC
 Ixil,Иксиль,,BG2EE-russian
 Ixilthetocal,Иксилтетокаль,,BG2EE-russian
 Ixthezzys,Иксфеззис,,BG2EE-russian
@@ -2156,7 +2164,7 @@ Jalantha,Джаланта,,BG1RUS-EET
 Jalbyr,Джалбир,,sod_rus
 Jalico,Джалико,,BG2EE-russian
 Jalin,Джалин,,BG2EE-russian
-Jaluk,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viconia.tra@52,NP:BG1NPC
+Jaluk,Джалук,,NP:BG1NPC
 Jambiya,Джамбия,,sod_rus
 Jamis,Джамис,,BG2EE-russian
 Jamoth,Джамот,,iwd2_rus
@@ -2194,7 +2202,7 @@ Jenia,Джения,,BG2EE-russian
 Jenkal,Дженкал,,BG1RUS-EET
 Jenthan,Джентан,,BG2EE-russian
 Jeremon,Джеремон,,BG2EE-russian
-Jergal,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@357; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@362; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@363; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@988,NP:BG1NPC
+Jergal,Джергал,,NP:BG1NPC
 Jerlia,Джерлия,,BG2EE-russian
 Jermien,Джермиен,,BG2EE-russian
 Jermsy,Джермси,,iwd2_rus
@@ -2202,7 +2210,7 @@ Jerre,Джерр,,iwd2_rus
 Jerro,Джерро,,BG2EE-russian
 Jerrod,Джеррод,,BG2EE-russian
 Jessa,Джесса,,BG1RUS-EET
-Jesthren,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@87,NP:BG1NPC
+Jesthren,Джестрин,,NP:BG1NPC
 Jeszrael,Джезраэль,,iwd2_rus
 Jeth,Джет,,sod_rus
 Jezabel,Изабель,,iwd2_rus
@@ -2212,14 +2220,14 @@ Jhasso,Джассо,,BG1RUS-EET
 Jhonen,Джонен,,iwd2_rus
 Jhor,Джор,,BG2EE-russian
 Jhovan,Джован,,BG2EE-russian
-Jhuild,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1295,NP:BG1NPC
+Jhuild,Джуилд,,NP:BG1NPC
 Jidek,Джидек,,BG2EE-russian
 Jierdan,Джердан,,BG2EE-russian
 Jimvold,Джимвольд,,iwd2_rus
 Jinga,Джинга,,BG2EE-russian
 Jinsen,Ян Инсен,,BG2EE-russian
 Jiscanan,Джисканан,,BG2EE-russian
-Jjoin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzint.tra@110,NP:BG1NPC
+Jjoin,Присоединяйся,,NP:BG1NPC
 Joia,Джойя,,BG1RUS-EET
 Joinable,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1009,NP:BG1NPC
 Jojannsen,Джояннсен,,BG2EE-russian
@@ -2230,11 +2238,11 @@ Joluv,Джолув,,BG2EE-russian
 Jonavin,Джонавин,,BG1RUS-EET
 Jondal,Джондал,,BG1RUS-EET
 Jondalar,Джондалар,,BG1RUS-EET
-Jonel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@103,NP:BG1NPC
+Jonel,Джонел,,NP:BG1NPC
 Joneleth,Джонелет,,BG2EE-russian
 Joolon,Джулон,,BG1RUS-EET
 Jopalin,Джопалин,,BG1RUS-EET
-Jopha,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@81; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#skint.tra@117,NP:BG1NPC
+Jopha,Джофа,,NP:BG1NPC
 Jopi,Джопи,,BG1RUS-EET
 Joril,Джорил,,BG2EE-russian
 Jorin,Джорин,,BG1RUS-EET
@@ -2248,7 +2256,7 @@ Joster,Джостер,,BG2EE-russian
 Joular,Джоулар,,BG1RUS-EET
 Jowen,Джоуэн,,BG2EE-russian
 Joye,Джой,,BG2EE-russian
-Jozzi,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@264; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@35; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@36,NP:BG1NPC
+Jozzi,Джоззи,,NP:BG1NPC
 Julann,Джуланн,,sod_rus
 Jum,Джум,,BG2EE-russian
 Junia,Джуния,,sod_rus
@@ -2262,7 +2270,7 @@ Kadar,Кабар,,BG2EE-russian
 Kadence,Каденс,,iwd2_rus
 Kadie,Кэди,,BG2EE-russian
 Kadina,Кадина,,BG1RUS-EET
-Kador,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faint.tra@96; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@81; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@152; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@153; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@156; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@160; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@387; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@389; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@635; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@367; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@369; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@370; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@371; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@372; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#sharteel.tra@196,NP:BG1NPC
+Kador,Кадор,,NP:BG1NPC
 Kadresh,Кадреш,,iwd2_rus
 Kaelet,Каэлет,,sod_rus
 Kaella,Каэлла,,BG1RUS-EET
@@ -2298,7 +2306,7 @@ Kareninas,Каренин,,BG2EE-russian
 Karlat,Карлат,,BG1RUS-EET
 Karnass,Карнасс,,sod_rus
 Karoug,Каруг,,BG1RUS-EET
-Karris,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@785; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@120; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@121; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@122; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@123; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@124; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@189; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@195; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@196; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@199; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@218; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@224; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@237; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@309; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@311; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@313; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@375,NP:BG1NPC
+Karris,Каррис,,NP:BG1NPC
 Karrl,Каррл,,iwd2_rus
 Karsus,Карсус,,sod_rus
 Karthis,Картис,,BG2EE-russian
@@ -2337,13 +2345,13 @@ Kelef,Келеф,,sod_rus
 Kelemvor,Келемвор,,sod_rus
 Kellard,Келлард,,sod_rus
 Kelner,Кельнер,,BG2EE-russian
-Kelsen,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2509,NP:BG1NPC
-Keltormir,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@432; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@434; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@442; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@444; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@445; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@449,NP:BG1NPC
+Kelsen,Кельзен,,NP:BG1NPC
+Keltormir,Келтормир,,NP:BG1NPC
 Kendak,Кендак,,iwd2_rus
 Kennair,Кеннайр,,BG1RUS-EET
 Keno,Кено,,BG2EE-russian
 Kensai,кенсай,,BG1RUS-EET
-Kenudrum,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@543,NP:BG1NPC
+Kenudrum,Кенудрум,,NP:BG1NPC
 Kerdos,Кердос,,iwd2_rus
 Kereph,Кереф,,BG1RUS-EET
 Kerish,Кериш,,iwd2_rus
@@ -2354,9 +2362,9 @@ Kerstia,Керстия,,BG2EE-russian
 Kesheel,Кешил,,BG1RUS-EET
 Keshla,Кешла,,BG2EE-russian
 Kestor,Кестор,,BG1RUS-EET
-Keth'sim,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@272; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@273; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@48; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@50; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@62; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@65,NP:BG1NPC
-Kethalem,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faint.tra@110,NP:BG1NPC
-Kethvan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@224,NP:BG1NPC
+Keth'sim,Кет'сим,,NP:BG1NPC
+Kethalem,Кеталем,,NP:BG1NPC
+Kethvan,Кетван,,NP:BG1NPC
 Ketlaar,Кетлаар,,BG2EE-russian
 Ketrick,Кетрик,,BG2EE-russian
 Ketta,Кетта,,BG2EE-russian
@@ -2365,7 +2373,7 @@ Kfarm,Кфарм,,iwd2_rus
 Khal,Хал,,BG2EE-russian
 Khalazza,Калазза,,BG2EE-russian
 Khaless,Кхалесс,,BG1RUS-EET
-Khalreshaar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@90; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@95; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@251,NP:BG1NPC
+Khalreshaar,Калрешеар,,NP:BG1NPC
 Kharm,Харм,,sod_rus
 Khavros,Хаврос,,iwd2_rus
 Khelben,Хелбен,,BG1RUS-EET
@@ -2374,7 +2382,7 @@ Khellor,Келлор,,BG2EE-russian
 Kherk,Кхерк,,iwd2_rus
 Kherriun,Керриун,,sod_rus
 Khiin,Кхиин,,sod_rus
-Khila,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@66; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@70,NP:BG1NPC
+Khila,Кила,,NP:BG1NPC
 Khilgind,Килгинд,,BG2EE-russian
 Khollynnus,Коллинус,,BG2EE-russian
 Kholsa,Хольза,,iwd2_rus
@@ -2392,9 +2400,9 @@ Kimble,Кимбл,,sod_rus
 Kindail,Киндейл,,BG2EE-russian
 Kindt,Киндт,,sod_rus
 Kingsdale,Кингсдейл,,BG2EE-russian
-Kingslayer,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@428; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@433; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@656,NP:BG1NPC
-Kinslayer,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1478; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1479,NP:BG1NPC
-Kinslaying,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@59,NP:BG1NPC
+Kingslayer,Убийца Королей,,NP:BG1NPC
+Kinslayer,Братоубийца,,NP:BG1NPC
+Kinslaying,убийство сородичей,,NP:BG1NPC
 Kirian,Кириан,,BG1RUS-EET
 Kirik,Кирик,,BG2EE-russian
 Kirika,Кирика,,IWDEE-russian
@@ -2403,19 +2411,19 @@ Kirinhale,Киринхал,,BG1RUS-EET
 Kirkirik,Киркирик,,BG2EE-russian
 Kiser,Кизер,,BG2EE-russian
 Kissiq,Киссик,,BG1RUS-EET
-Kitej,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@932,NP:BG1NPC
+Kitej,Китеж-град,,NP:BG1NPC
 Kith,кит,язык дроу,BG2EE-russian
 Kitthix,Киттикс,,BG1RUS-EET
-Kiv,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@346; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@139,NP:BG1NPC
+Kiv,Кив,,NP:BG1NPC
 Kivan,Киван,,BG1RUS-EET
 Kjarvan,Кьярван,,sod_rus
 Klaatu,Клаату,,BG2EE-russian
 Klodg,Клодг,,BG2EE-russian
 Kneecapper,Подсекатель,,BG1RUS-EET
-Kneelin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#edwin.tra@175,NP:BG1NPC
-Knightly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajint.tra@212; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@85,NP:BG1NPC
+Kneelin,Коленопреклонение,,NP:BG1NPC
+Knightly,Рыцарская,,NP:BG1NPC
 Knocktor,Кноктор,,BG2EE-russian
-Know'd,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#moint.tra@83,NP:BG1NPC
+Know'd,Знаю,,NP:BG1NPC
 Knucklehead,круглоголовик,,iwd2_rus
 Kobold,кобольд,,BG1RUS-EET
 Kolom,Колом,,iwd2_rus
@@ -2436,11 +2444,11 @@ Kove,Кове,,BG1RUS-EET
 Koveras,Коверас,,BG1RUS-EET
 Kozah,Козах,,BG1RUS-EET
 Kozahyn,Козахин,,iwd2_rus
-Kozakuran,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@76,NP:BG1NPC
+Kozakuran,Козакуранский,,NP:BG1NPC
 Kracer,Крейсер,,BG2EE-russian
 Krag,Краг,,iwd2_rus
 Kraggor,Краггора,,BG2EE-russian
-Kraghanargh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@128,NP:BG1NPC
+Kraghanargh,Крагханарги,,NP:BG1NPC
 Kraken,кракен,,BG1RUS-EET
 Krammach,Краммач,,BG1RUS-EET
 Krancor,Кранкор,,BG1RUS-EET
@@ -2463,7 +2471,7 @@ Kruntur,Крунтур,,sod_rus
 Kryla,Крила,,BG1RUS-EET
 Kryll,Крилл,,BG1RUS-EET
 Kryn,Крин,,sod_rus
-Kryptgarden,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@321; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3957,NP:BG1NPC
+Kryptgarden,Криптгарден,,NP:BG1NPC
 Krystin,Кристин,,BG1RUS-EET
 Kul'gobussen,кул'гобуссен,язык дроу,BG2EE-russian
 Kuldahar,Кулдахар,,BG2EE-russian
@@ -2477,7 +2485,7 @@ Kyai,Кий,,BG2EE-russian
 Kyanka,Киянка,,iwd2_rus
 Kyland,Кайланд,,BG2EE-russian
 Kylee,Кили,,BG1RUS-EET
-Kymer,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1107; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@1110,NP:BG1NPC
+Kymer,Кимер,,NP:BG1NPC
 Kyone,Кьоне,,BG2EE-russian
 Kyosti,Киости,,iwd2_rus
 Kyrill,Кирилл,,sod_rus
@@ -2490,7 +2498,7 @@ Lachluger,Лахлюгер,,BG1RUS-EET
 Lachom,Лахом,,BG1RUS-EET
 Ladow Street,улица Ладоу,,iwd2_rus
 Laduguer,Ладугвер,,BG1RUS-EET
-Ladylove,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@154,NP:BG1NPC
+Ladylove,Прекрасная,,NP:BG1NPC
 Laen,Лаэн,,BG2EE-russian
 Laeral,Лаэрали,,BG1RUS-EET
 Laerta,Лаэрта,,BG1RUS-EET
@@ -2500,7 +2508,7 @@ Laider,Лайдер,,iwd2_rus
 Laiq,Лаик,,BG2EE-russian
 Lajatang,Ланджатан,,iwd2_rus
 Lakadaar,Лакадаар,,BG1RUS-EET
-Lalgrinor,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@182; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@183,NP:BG1NPC
+Lalgrinor,Лалгринор,,NP:BG1NPC
 Lamalha,Ламала,,BG1RUS-EET
 Lamia,Ламия,,iwd2_rus
 Lanceboard,Ленсборд,,sod_rus
@@ -2546,9 +2554,9 @@ Lavok,Лавок,,BG2EE-russian
 Layene,Лайен,,BG2EE-russian
 Leafall,Листопаднь,,IWDEE-russian
 Leaflord,Владыка Листьев,,BG2EE-russian
-Leapin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alorepl.tra@1,NP:BG1NPC
+Leapin,Прыгающие,,NP:BG1NPC
 Leathel,Лител,,BG2EE-russian
-Leavemebe,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#edwin.tra@70,NP:BG1NPC
+Leavemebe,Оставьменя,,NP:BG1NPC
 Lebass,Лебасс,,sod_rus
 Leevi,Ливи,,iwd2_rus
 Legdoril,Легдорил,,BG2EE-russian
@@ -2562,25 +2570,25 @@ Lemzenn,Лемзенн,,BG2EE-russian
 Lendarn,Лендарн,,BG1RUS-EET
 Lennah,Ленна,,BG2EE-russian
 Leokas,Леокас,,BG2EE-russian
-Leontisk,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@1228; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@1233; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@1237,NP:BG1NPC
+Leontisk,Леонтиск,,NP:BG1NPC
 Leopas,Леопас,,sod_rus
 Ler,Лер,,BG2EE-russian
 Lerta,Лерта,,BG2EE-russian
-Less'n,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@193,NP:BG1NPC
+Less'n,Если,,NP:BG1NPC
 Lestor,Лестор,,BG1RUS-EET
 Letec,Летек,,BG1RUS-EET
 Lethias,Летиас,,iwd2_rus
-Leti,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@787,NP:BG1NPC
+Leti,Лети,,NP:BG1NPC
 Lette,Летт,,BG2EE-russian
 Letto,Летто,,iwd2_rus
 Leun,Леун,,iwd2_rus
 Lexa,Лекса,,sod_rus
 Liann,Лианн,,sod_rus
-Lightfingers,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@85,NP:BG1NPC
+Lightfingers,Ловкие Пальчики,,NP:BG1NPC
 Lightstone,Камень света,,BG2EE-russian
 Lihp,Лихп,,BG1RUS-EET
 Liia,Лийя,,BG1RUS-EET
-Lilacs,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@931; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@934,NP:BG1NPC
+Lilacs,Сирень,,NP:BG1NPC
 Lilarcor,Лиларкор,,BG2EE-russian
 Limha,Лима,,iwd2_rus
 Lindin,Линдин,,BG1RUS-EET
@@ -2593,18 +2601,18 @@ Lium,Лиум,,BG2EE-russian
 Lizardman,человекоящер,,iwd2_rus
 Lizardmen,человекоящеры,,iwd2_rus
 Llarsh,Лларш,,BG2EE-russian
-Lle,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@76; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@81; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@84; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@91; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@549; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@554; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@607; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2165; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2171; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3195; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xan.tra@137,NP:BG1NPC
+Lle,ты,,NP:BG1NPC
 Llew,Лью,,iwd2_rus
 Lliira,Ллиира,,BG2EE-russian
 Llindellyn,Ллинделлин,,BG1RUS-EET
-Lloth,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@291; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@734; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaheira.tra@224; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@274; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@605; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@614; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@648; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@63; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@83; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@87; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viconia.tra@171; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viint.tra@73; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@715; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@1099,NP:BG1NPC
+Lloth,Лолт,,NP:BG1NPC
 Lluis,Ллуис,,sod_rus
 Llylla,Ллилла,,BG2EE-russian
 Llynis,Ллинис,,BG2EE-russian
 Llyrk,Ллирк,,BG1RUS-EET
 Lobar,Лобар,,BG1RUS-EET
 Lobelahn,Лобелан,,iwd2_rus
-Lockin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@275,NP:BG1NPC
+Lockin,Запереть,,NP:BG1NPC
 Lodefinder,Лодефиндер,,sod_rus
 Lollycook,Лоликук,,BG2EE-russian
 Lolth,Лолт,,BG1RUS-EET
@@ -2613,18 +2621,18 @@ Lonelywood,Лонливуд,,iwd2_rus
 Longbrow,Длиннобровый,,BG1RUS-EET
 Longtooth,Зубоскал,,BG1RUS-EET
 Lonk,Лонк,,BG2EE-russian
-Lookee,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@171,NP:BG1NPC
-Looser'n,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@376,NP:BG1NPC
+Lookee,Слушай,,NP:BG1NPC
+Looser'n,Рыхлее,,NP:BG1NPC
 Lordly,владык,,BG2EE-russian
 Lorekeeper,Хранитель Знаний,,iwd2_rus
 Lormsor,Лормсор,,iwd2_rus
-Lorn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3606,NP:BG1NPC
+Lorn,несчастного,,NP:BG1NPC
 Lothander,Лотандер,,BG1RUS-EET
 Lothar,Лотар,,iwd2_rus
 Lothtyran,Лоттиран,,BG1RUS-EET
 Loup Garou,Луп Гару,,BG1RUS-EET
 LoveTalks,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1109; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1110; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1111; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1112; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@1113,NP:BG1NPC
-Lovebundle,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@36,NP:BG1NPC
+Lovebundle,Ловеласка,,NP:BG1NPC
 Loviatar,Ловиатар,,sod_rus
 Loxley,Локсли,,sod_rus
 Lucette,Люсетт,,BG2EE-russian
@@ -2655,18 +2663,18 @@ Macarthy,Макарти,,iwd2_rus
 Madae,Мадея,,iwd2_rus
 Madeen,Мадин,,BG2EE-russian
 Madele,Мадли,,sod_rus
-Madrina,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@443; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@339; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@347; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@352; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@368,NP:BG1NPC
+Madrina,Мадрина,,NP:BG1NPC
 Madulf,Мадульф,,BG2EE-russian
 Mae'Var,Маэ'Вар,,IWDEE-russian
 Maegan,Мэган,,IWDEE-russian
 Maer Dualdon,Маэр Дуалдон,,iwd2_rus
 Maergeth,Маэргет,,iwd2_rus
-Maervik,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@24,NP:BG1NPC
+Maervik,Маэрвик,,NP:BG1NPC
 Maferan,Маферан,,BG2EE-russian
 Magdar,Магдар,,iwd2_rus
 Magdelene,Магдалена,,BG2EE-russian
-Mageling,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#branw.tra@78; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#branw.tra@79,NP:BG1NPC
-Magica,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@134,NP:BG1NPC
+Mageling,магик,,NP:BG1NPC
+Magica,Магического,,NP:BG1NPC
 Maglubiyet,Маглубиет,,sod_rus
 Magreb,Магреб,,BG1RUS-EET
 Mahar,Махар,,BG2EE-russian
@@ -2691,7 +2699,7 @@ Malau,Малау,,BG2EE-russian
 Malavon,Малавон,,iwd2_rus
 Malcanter,Малкантер,,sod_rus
 Malchor,Малькор,,BG2EE-russian
-Malenti,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@16; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@18; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@19; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@24; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kisequ.tra@32,NP:BG1NPC
+Malenti,Маленти,,NP:BG1NPC
 Malford,Малфорд,,BG2EE-russian
 Malicia,Малиция,,BG1RUS-EET
 Malika,Малика,,BG2EE-russian
@@ -2704,8 +2712,8 @@ Malvolio,Мальволио,,BG2EE-russian
 Mammon,Маммон,,sod_rus
 Mandal,Мандал,,iwd2_rus
 Maneira,Манейра,,BG1RUS-EET
-Manos,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@145,NP:BG1NPC
-Manscripts,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@248,NP:BG1NPC
+Manos,Манос,,NP:BG1NPC
+Manscripts,Манскрипты,,NP:BG1NPC
 Manticore,мантикора,,iwd2_rus
 Maralee,Марали,,BG1RUS-EET
 Maralie,Марали,,iwd2_rus
@@ -2713,7 +2721,7 @@ Marchon,Марчон,,iwd2_rus
 Mardii,Мардии,,BG2EE-russian
 Mardus,Мардус,,BG2EE-russian
 Marduuk,Мардук,,BG2EE-russian
-Maretha,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@365; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@15; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@22; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@29; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@30; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@31; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@32; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@33; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@34; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@35; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@37; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@42; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@58; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@66; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@71; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@78; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@98; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@100; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@107; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@150; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@151; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@162; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaqu.tra@164,NP:BG1NPC
+Maretha,Марета,,NP:BG1NPC
 Margl,Маргл,,sod_rus
 Marid,Марид,,iwd2_rus
 Marilith,марилит,,BG1RUS-EET
@@ -2729,11 +2737,11 @@ Marynford,Маринфорд,,BG2EE-russian
 Masher,Измельчитель,,iwd2_rus
 Mastav,Мастав,,BG2EE-russian
 Masterstroke,Шедевр,,BG2EE-russian
-Mati,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@789,NP:BG1NPC
-Matrons,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@176,NP:BG1NPC
+Mati,Мати,,NP:BG1NPC
+Matrons,Мамаш,,NP:BG1NPC
 Mattroun,Мэттроун,,sod_rus
-Matzica,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1541,NP:BG1NPC
-Matzika,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@30,NP:BG1NPC
+Matzica,Мазтика,,NP:BG1NPC
+Matzika,Мазтика,,NP:BG1NPC
 Mauletar,Молетар,,BG1RUS-EET
 Maunu,Мауну,,BG2EE-russian
 Maurezhi,Мауреджи,,BG2EE-russian
@@ -2744,7 +2752,7 @@ Maztica,Мазтика,,BG1RUS-EET
 Maztican,мазтиканский,,sod_rus
 Mazticans,мазтиканцы,,BG2EE-russian
 Mazul,Мазул,,BG2EE-russian
-Mazuri,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@634,NP:BG1NPC
+Mazuri,Мазури,,NP:BG1NPC
 Mazzy,Маззи,,BG2EE-russian
 McAverstein,МакАверстейн,,BG1RUS-EET
 Meakin,Меакин,,BG1RUS-EET
@@ -2753,27 +2761,27 @@ Mechezarin,Мечезарин,,BG1RUS-EET
 Meck,Мек,,BG2EE-russian
 Meems,Миимз,,BG2EE-russian
 Megge,Мегге,,sod_rus
-Meggy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@360,NP:BG1NPC
+Meggy,Мегги,,NP:BG1NPC
 Meiala,Мейала,,BG1RUS-EET
 Meilum,Мейлум,,BG1RUS-EET
 Meisarch,Мейсарх,,BG2EE-russian
 Meklin,Меклин,,BG1RUS-EET
 Mekrath,Мекрат,,BG2EE-russian
-Melamin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@189; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2704,NP:BG1NPC
+Melamin,Меламин,,NP:BG1NPC
 Melee-Quartha,Мили-Кварта,,iwd2_rus
 Melf,Мелф,,BG1RUS-EET
 Melicamp,Меликамп,,BG1RUS-EET
 Melissan,Мелиссан,,BG2EE-russian
-Mellonamin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@680; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2157; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2163; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2168; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2177; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3132,NP:BG1NPC
+Mellonamin,Меллонамин,,NP:BG1NPC
 Melvaunt,Мелваунт,,BG2EE-russian
 Mencar,Менкар,,BG2EE-russian
 Mendas,Мендас,,BG1RUS-EET
 Menhir,менгир,,sod_rus
-Menials,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@139,NP:BG1NPC
+Menials,Прислужники,,NP:BG1NPC
 Menold,Менолд,,BG2EE-russian
 Mensel,Мензель,,iwd2_rus
 Menzoberranzan,Мензоберранзан,,BG1RUS-EET
-Menzzoberranzan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@123; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@124; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantis.tra@187,NP:BG1NPC
+Menzzoberranzan,Мензоберранзане,,NP:BG1NPC
 Mephit,мефит,,BG1RUS-EET
 Merana,Мерана,,BG2EE-russian
 Mercykiller,Убийц Милосердия,,BG2EE-russian
@@ -2788,7 +2796,7 @@ Merome,Мером,,sod_rus
 Meronia,Мерония,,BG2EE-russian
 Meryll,Мерилл,,BG1RUS-EET
 Methild,Метилда,,sod_rus
-Methlid,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@770,NP:BG1NPC
+Methlid,Метильда,,NP:BG1NPC
 Metigo,Метиго,,BG2EE-russian
 Metrich,Метрич,,BG2EE-russian
 Meym,Мейм,,BG1RUS-EET
@@ -2802,11 +2810,11 @@ Milph,Милф,,iwd2_rus
 Milsire,Милсир,,BG2EE-russian
 Minauros,Минаурос,,sod_rus
 Mind Flayer,Пожиратель разума,,BG1RUS-EET
-Minemaster,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@122,NP:BG1NPC
+Minemaster,мастер Шахты,,NP:BG1NPC
 Minling,Минлинг,,BG2EE-russian
 Minsc,Минск,,BG1RUS-EET
 Minscy,Минсик,,BG2EE-russian
-Minuwiel,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@637; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@25; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xqxan.tra@162,NP:BG1NPC
+Minuwiel,Минувиэль,,NP:BG1NPC
 Mirabar,Мирабар,,sod_rus
 Mirabel,Мирабель,,iwd2_rus
 Miram,Мирам,,iwd2_rus
@@ -2817,10 +2825,10 @@ Mirnielle,Мирниэль,,BG2EE-russian
 Mironda,Миронда,,BG2EE-russian
 Mirrorshades,Мирроршейды,,BG1RUS-EET
 Mirtul,Миртул,,BG1RUS-EET
-Misheard,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@52,NP:BG1NPC
-Misnc,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#miint.tra@146,NP:BG1NPC
-Missin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@289,NP:BG1NPC
-Mistie,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#elint.tra@25,NP:BG1NPC
+Misheard,Ослышался,,NP:BG1NPC
+Misnc,Минск,,NP:BG1NPC
+Missin,Упускаю,,NP:BG1NPC
+Mistie,Мисти,,NP:BG1NPC
 Mistmyr,Мистмир,,BG1RUS-EET
 Mistshadow,Туманная Тень,,BG1RUS-EET
 Mithas,Митас,,BG2EE-russian
@@ -2832,8 +2840,8 @@ Mithykyl,Митикиль,,BG2EE-russian
 Mitsu,Митсу,,BG2EE-russian
 Miyar,Мийяр,,BG1RUS-EET
 Mizhena,Мижена,,sod_rus
-Mmgh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@925; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#addial_tmp.tra@70; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@16; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1041; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@856; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@442,NP:BG1NPC
-Mmh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3147,NP:BG1NPC
+Mmgh,М-м-м,,NP:BG1NPC
+Mmh,Хм,,NP:BG1NPC
 Moander,Моандер,,IWDEE-russian
 Modmerge,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/setup.tra@5004,NP:BG1NPC
 Modron,модрон,,sod_rus
@@ -2855,21 +2863,21 @@ Moonsea,Лунное Море,,BG1RUS-EET
 Moonshae,Муншаи,,BG1RUS-EET
 Moorlock,Мурлок,,BG1RUS-EET
 Moradin,Морадин,,BG1RUS-EET
-Mordabintius,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@404; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xaint.tra@42,NP:BG1NPC
+Mordabintius,Мордабинтиус,,NP:BG1NPC
 Mordaine,Мордайн,,BG1RUS-EET
 Mordaus,Мордаус,,sod_rus
 Mordenkainen,Морденкайнен,,BG1RUS-EET
 Mordim,Мордим,,BG2EE-russian
 Mordin,Мордин,,BG2EE-russian
 Morentherene,Морентферен,,sod_rus
-Morgar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@122,NP:BG1NPC
+Morgar,Моргар,,NP:BG1NPC
 Morhizulosh,Морхизулош,,iwd2_rus
-Mori'Quessier,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2190,NP:BG1NPC
-Mori'quessir,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kiint.tra@60; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2190,NP:BG1NPC
+Mori'Quessier,Мори'Квессир,,NP:BG1NPC
+Mori'quessir,Мори'Квессир,,NP:BG1NPC
 Morlis,Морлис,,sod_rus
 Morningale,Морнингейл,,BG2EE-russian
 Morningales,Морнингейлы,,BG2EE-russian
-Morninglight,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@545; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@547,NP:BG1NPC
+Morninglight,Монинлайт,,NP:BG1NPC
 Morninglord,Владыка Утра,,BG1RUS-EET
 Mornmaster,Повелитель Утра,,BG2EE-russian
 Morohanotsurugi,Мороханотсуруги,,IWDEE-russian
@@ -2880,16 +2888,16 @@ Morul,Морул,,BG2EE-russian
 Morvin,Морвин,,BG1RUS-EET
 Morvyn,Морвин,,iwd2_rus
 Mosela,Мозела,,sod_rus
-Mountebank,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzint.tra@11,NP:BG1NPC
+Mountebank,Шарлатан,,NP:BG1NPC
 Mourninglord,Владыка Утрат,,BG2EE-russian
 Movanic Deva,мованическая дева,,BG2EE-russian
 Muhan,Мухан,,BG2EE-russian
 Muharr,Мухарр,,BG2EE-russian
 Mulahey,Мулахей,,BG1RUS-EET
 Mulhorand,Мулхоранд,,BG1RUS-EET
-Mulhorandians,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@325; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@330; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@331; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@332; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@333,NP:BG1NPC
-Mulptan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1312,NP:BG1NPC
-Mulsantir,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@459,NP:BG1NPC
+Mulhorandians,мулхорандцы,,NP:BG1NPC
+Mulptan,Мулптан,,NP:BG1NPC
+Mulsantir,Мулсантире,,NP:BG1NPC
 Munsch,Мунш,,sod_rus
 Muraan,Мураан,,BG2EE-russian
 Murann,Муранн,,BG2EE-russian
@@ -2897,12 +2905,12 @@ Murdaugh,Мердох,,iwd2_rus
 Murl,Марл,,iwd2_rus
 Murtlen,Муртлен,,BG2EE-russian
 Murundhi,Мурунди,,BG2EE-russian
-Mussing,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@390,NP:BG1NPC
+Mussing,Помятость,,NP:BG1NPC
 Mutamin,Мутамин,,BG1RUS-EET
 Mycohulk,Микоувалень,,iwd2_rus
 Myconid,миконид,,BG1RUS-EET
 Myo-Myo,Мио-Мио,,iwd2_rus
-Myr'Cutio,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@180; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#garar.tra@25; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#garwyl.tra@5; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#garwyl.tra@12; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#garwyl.tra@23,NP:BG1NPC
+Myr'Cutio,Мир'Кутио,,NP:BG1NPC
 Myratma,Миратма,,BG2EE-russian
 Myrkul,Миркул,,BG1RUS-EET
 Myrleena,Мирлена,,sod_rus
@@ -2913,14 +2921,14 @@ Myrna,Мирна,,BG1RUS-EET
 Myrvek,Мирвек,,iwd2_rus
 Myson,Майсон,,iwd2_rus
 Mystra,Мистра,,BG1RUS-EET
-Mystryl,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1562,NP:BG1NPC
+Mystryl,Мистрил,,NP:BG1NPC
 Mythal,мифал,,iwd2_rus
-Mythrul,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@227; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@228; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@233; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@238; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@239; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@247; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#shrom.tra@257,NP:BG1NPC
+Mythrul,Миртула,,NP:BG1NPC
 Mytos,Митос,,iwd2_rus
-N'Tel'Quess,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#ciflirt.tra@208; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@463; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@468; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@469; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@471; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@472; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@480; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@485; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@619; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@620; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@621; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#challenge.tra@105; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@427; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@543; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@544; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@575; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xanlt.tra@603,NP:BG1NPC
+N'Tel'Quess,Н'Тель'Квесс,,NP:BG1NPC
 N'Tel'Quessir,Н'Тель'Квессир,,iwd2_rus
 N'Vosh,Н'Вош,,BG2EE-russian
-Na'N'Tel'Quess,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#imanel.tra@41,NP:BG1NPC
+Na'N'Tel'Quess,На'Н'Тель'Квесс,,NP:BG1NPC
 Naaman,Нааман,,BG1RUS-EET
 Nabassu,Набассу,,BG1RUS-EET
 Nadarin,Надарин,,BG1RUS-EET
@@ -2945,14 +2953,14 @@ Nanoc,Нанок,,BG2EE-russian
 Nantrin,Нантрин,,BG1RUS-EET
 Narbucchad,Нарбукчад,,BG1RUS-EET
 Narcillicus,Нарцилликус,,BG1RUS-EET
-Narfell,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@274; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@277; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@278; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@68; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@73; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@79; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@82; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@86; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@87; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@95; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1649; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1650; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@1309,NP:BG1NPC
-Narfellian,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@86,NP:BG1NPC
+Narfell,Нарфелл,,NP:BG1NPC
+Narfellian,Нарфелльских,,NP:BG1NPC
 Nargo,Нарго,,iwd2_rus
 Narlen,Нарлен,,BG1RUS-EET
 Nasad,Насад,,BG2EE-russian
 Nasha,Наша,,BG1RUS-EET
 Nashkel,Нашкель,,BG1RUS-EET
-Natan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@236; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@238; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@4; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@8; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@79; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@81; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@104; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@137; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@138; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@139; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@140; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@141; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@143; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@144; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@153; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@176; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@182; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@192; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@212; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@215; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@220; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@251; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@252; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#cosqu.tra@256,NP:BG1NPC
+Natan,Натан,,NP:BG1NPC
 Natas,Натас,,BG2EE-russian
 Natha,Ната,,BG2EE-russian
 Nathbaera,Назбаэра,,sod_rus
@@ -2995,14 +3003,14 @@ Nester,Нестер,,BG1RUS-EET
 Nethalin,Неталин,,BG1RUS-EET
 Netherese,нетерильский,,BG1RUS-EET
 Netheril,Нетерил,,BG1RUS-EET
-Netherworld,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@87,NP:BG1NPC
+Netherworld,Нижних Планов,,NP:BG1NPC
 Nethra,Нетер,,BG2EE-russian
 Nettlehammer,Обжигающий Молот,,BG2EE-russian
 Netty,Нетти,,BG1RUS-EET
 Nevaziah,Невазия,,BG2EE-russian
 Neverwinter,Невервинтер,,BG1RUS-EET
 Nevron,Неврон,,BG1RUS-EET
-Nevron'd,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyronpc.tra@335,NP:BG1NPC
+Nevron'd,Неврону,,NP:BG1NPC
 New Olamn,Новый Оламн,,BG1RUS-EET
 Newf,Ньюф,,BG1RUS-EET
 Nexlit,Некслит,,BG1RUS-EET
@@ -3014,8 +3022,8 @@ Nightal,Найтал,,BG1RUS-EET
 Nightmaster,Ночных Дел Мастер,,BG2EE-russian
 Nightsinger,Ночная Певица,,BG1RUS-EET
 Nightstep,Ночка,,iwd2_rus
-Nighty,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#sharteel.tra@132,NP:BG1NPC
-Nigtal,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@80; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#corlt.tra@83,NP:BG1NPC
+Nighty,Спокойной,,NP:BG1NPC
+Nigtal,Найтал,,NP:BG1NPC
 Niklos,Никлос,,BG1RUS-EET
 Nila,Нила,,BG1RUS-EET
 Nilthiri,Нилтири,,BG2EE-russian
@@ -3023,15 +3031,15 @@ Nimblefinger,Нимблфингер,,sod_rus
 Nimbul,Нимбул,,BG1RUS-EET
 Nind,Нинд,язык дроу,BG2EE-russian
 Nindol,Ниндол,язык дроу,BG2EE-russian
-Nindolen,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#viconia.tra@59,NP:BG1NPC
+Nindolen,Ниндолен,,NP:BG1NPC
 Ninjato,ниндзя-то,,BG1RUS-EET
 Nirkhas,Ниркхас,,BG2EE-russian
 Nishrek,Нишрек,,BG2EE-russian
 Nishruu,нишруу,,BG1RUS-EET
 Nivek,Нивек,,BG1RUS-EET
 Nizidramanii'yt,Низидраманий'ит,,BG2EE-russian
-Nobly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@998,NP:BG1NPC
-Nobo,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#totsc.tra@41,NP:BG1NPC
+Nobly,Благородно,,NP:BG1NPC
+Nobo,Никто,,NP:BG1NPC
 Nomis,Номис,,BG2EE-russian
 Nonin,Нонин,,iwd2_rus
 Noober,Нубер,,BG1RUS-EET
@@ -3039,18 +3047,18 @@ Noralee,Норали,,BG1RUS-EET
 Norheim,Норхейм,,BG1RUS-EET
 Norl,Норл,,iwd2_rus
 Norlinor,Норлинор,,iwd2_rus
-Northlanders,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#brlt.tra@107,NP:BG1NPC
-Northreckoning,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@335; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3962,NP:BG1NPC
+Northlanders,Северяне,,NP:BG1NPC
+Northreckoning,Северное Летоисчисление,,NP:BG1NPC
 Nortuary,Нортуарий,,BG1RUS-EET
 Noser,Носач,,BG2EE-russian
 Nosers,Носачи,,BG2EE-russian
 Nosferatu,Носферату,,BG1RUS-EET
-Nostaler,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@135,NP:BG1NPC
+Nostaler,Носталер,,NP:BG1NPC
 Nuez,Нуэз,,BG1RUS-EET
 Nyalee,Найали,,BG2EE-russian
 Nym,Ним,,BG2EE-russian
 Nyzzlar,Низлар,,BG2EE-russian
-O'Challenges,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/bg1npc_tmp.tra@491,NP:BG1NPC
+O'Challenges,испытаний,,NP:BG1NPC
 Oagla'ta,Оагла'та,,iwd2_rus
 Oakfather,Дуб-Отец,,BG2EE-russian
 Obbak,Оббак,,iwd2_rus
@@ -3067,7 +3075,7 @@ Odren,Одрен,,BG2EE-russian
 Oghma,Огма,,BG1RUS-EET
 Ogi-Luc,Оги-Люк,,iwd2_rus
 Ogien,Огиен,,iwd2_rus
-Ogneda,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coint.tra@59; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@180,NP:BG1NPC
+Ogneda,Огнеда,,NP:BG1NPC
 Ogre,огр,,BG1RUS-EET
 Ogremoch,Огремох,,BG2EE-russian
 Ogreslayer,Истребитель Огров,,BG1RUS-EET
@@ -3075,14 +3083,14 @@ Ogrillon,огриллон,,BG1RUS-EET
 Ogrok,Огрок,,iwd2_rus
 Ogrons,Огроны,,BG2EE-russian
 Ohanion,Оханион,,iwd2_rus
-Ohoh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#edwin.tra@181; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@264; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@271; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@278,NP:BG1NPC
+Ohoh,Ого,,NP:BG1NPC
 Oilwater,Масляная Вода,,iwd2_rus
 Oinchack'olp,Ойнчак'ольп,,iwd2_rus
-Oio,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#khalid.tra@134; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2173,NP:BG1NPC
+Oio,Оио,,NP:BG1NPC
 Oisig,Ойзиг,,BG2EE-russian
 Ojaiha,Оджайха,,iwd2_rus
-Okies,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imint.tra@389,NP:BG1NPC
-Olamn,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@211; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@125; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3590,NP:BG1NPC
+Okies,Оки,,NP:BG1NPC
+Olamn,Оламн,,NP:BG1NPC
 Olap,Олап,,iwd2_rus
 Olben,Олбен,,BG2EE-russian
 Olehm,Олем,,BG2EE-russian
@@ -3123,38 +3131,38 @@ Ormis,Ормис,,iwd2_rus
 Ormlyr,Ормлир,,BG1RUS-EET
 Orog,орог,,sod_rus
 Orothiar,Оротиар,,BG1RUS-EET
-Orovar,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@25; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@29; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@30; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@34; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@38,NP:BG1NPC
+Orovar,Оровар,,NP:BG1NPC
 Orrick,Оррик,,iwd2_rus
 Orthan,Ортан,,BG1RUS-EET
 Orthlor,Отлор,,BG2EE-russian
 Osmadi,Осмади,,BG1RUS-EET
 Ossifier,Зачерствитель,,BG1RUS-EET
-Othlor,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyint.tra@52; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@55; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynah.tra@59; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@49; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dynaquest.tra@145; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@581; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@583; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@590; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@617; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@955; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1561; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1578; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@1581; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ict3.tra@794; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kivan.tra@460; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#minsc.tra@22,NP:BG1NPC
-Othlot,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantisnpc_talks_pr.tra@13,NP:BG1NPC
+Othlor,Отлор,,NP:BG1NPC
+Othlot,Отлор,,NP:BG1NPC
 Oti,Оти,,iwd2_rus
 Otilda,Отильда,,sod_rus
 Otiluke,Отилук,,BG1RUS-EET
 Otyugh,отиуг,,sod_rus
 Oublek,Оублек,,BG1RUS-EET
-Ouf,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3305,NP:BG1NPC
+Ouf,Уф,,NP:BG1NPC
 Ougamya,Оугамия,,iwd2_rus
 Oulam,Оулам,,BG1RUS-EET
 Overfather,Всеобщий Отец,,BG2EE-russian
 Overgold,Оверголд,,BG2EE-russian
 Overmind,Сверхразум,,sod_rus
-Overweening,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3601,NP:BG1NPC
+Overweening,самонадеянных,,NP:BG1NPC
 Ovidiu,Овидиу,,BG2EE-russian
 Owain,Овейн,,iwd2_rus
 Owlbear,совомедведь,BG1RUS-EET,
 Owyn,Овин,,BG1RUS-EET
-P'raps,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#montaron.tra@126,NP:BG1NPC
-P'rhaps,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kagqst.tra@31; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#kagqst.tra@52,NP:BG1NPC
+P'raps,Пожалуй,,NP:BG1NPC
+P'rhaps,Возможно,,NP:BG1NPC
 Paac,Паак,,BG2EE-russian
 Paalater,Паалатер,,BG2EE-russian
 Pai'Na,Пай'На,,BG2EE-russian
 Painbearer,Мученик,,sod_rus
 Pairi,Пайри,,iwd2_rus
-Paladinson,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantislts_pr.tra@326; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3961,NP:BG1NPC
+Paladinson,Паладинсон,,NP:BG1NPC
 Paladinstar,Паладинстар,,BG1RUS-EET
 Palern,Палерн,,BG2EE-russian
 Pallonia,Паллония,,BG1RUS-EET
@@ -3164,13 +3172,13 @@ Pargus,Паргус,,BG1RUS-EET
 Parick,Парик,,BG2EE-russian
 Parisa,Париса,,BG2EE-russian
 Paritin,Паритин,,BG2EE-russian
-Passin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@177,NP:BG1NPC
+Passin,Проходить,,NP:BG1NPC
 Patoo,Пату,,BG2EE-russian
 Patrescus,Патреск,,sod_rus
 Pauden,Пауден,,BG2EE-russian
 Pebblecrusher,Щебнедроб,,BG2EE-russian
 Pedr,Педр,,iwd2_rus
-Peduritan,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@545; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@547; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@548,NP:BG1NPC
+Peduritan,Педуритан,,NP:BG1NPC
 Pehllus,Пеллус,,BG2EE-russian
 Peladan,Пеладан,,BG1RUS-EET
 Pelanna,Пеланна,,BG2EE-russian
@@ -3180,30 +3188,32 @@ Pellan,Пеллан,,BG1RUS-EET
 Pellon,Пеллон,,iwd2_rus
 Peltje,Пелтье,,BG2EE-russian
 Pemby,Пемби,,iwd2_rus
-People'd,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#lp3rep.tra@145; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#lp3rep.tra@158,NP:BG1NPC
+People'd,Народ,,NP:BG1NPC
 Perdiem,Пердием,,iwd2_rus
 Peridan,Перидан,,BG2EE-russian
 Permidion,Пермидион,,BG1RUS-EET
 Perorate,Перорейт,,BG1RUS-EET
 Perren,Перрен,,sod_rus
-Persn'ly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#jaheira.tra@269; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#yeslick.tra@175,NP:BG1NPC
+Persn'ly,"Вместо этого, на твоём месте, я бы лучше, попросил Клангеддина даровать мне силу раскалывать побольше черепов, раз в твоей крови поменьше камня и железа чем в моей.
+
+However, the direct translation of ""Persn'ly"" in Russian is ""Лично"".",,NP:BG1NPC
 Perter,Пертер,,BG2EE-russian
 Petrine,Петрин,,BG1RUS-EET
 Pettiwick,Фитилёк,,BG2EE-russian
 Pfaug,Пфауг,,sod_rus
-Pfgh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#tiaxquest.tra@307,NP:BG1NPC
+Pfgh,Тьфу,,NP:BG1NPC
 Pfinik,Пфиник,,iwd2_rus
 Phaen,Фаэн,,iwd2_rus
 Phaere,Фейр,,BG2EE-russian
 Phaersis,Фаэрсис,,BG1RUS-EET
 Phaerus,Фэриус,,sod_rus
-Phah,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#faldorn.tra@199; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@145,NP:BG1NPC
+Phah,Тьфу!,,NP:BG1NPC
 Phandalyn,Фандалин,,BG1RUS-EET
 Pharm,Фарм,,iwd2_rus
 Phealos,Филос,,BG2EE-russian
-Pheh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/p#crnpc.tra@160; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#coran.tra@365; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#eldoth.tra@46,NP:BG1NPC
+Pheh,Тьфу!,,NP:BG1NPC
 Pheirkas,Фейркас,,BG1RUS-EET
-Phht,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@2338,NP:BG1NPC
+Phht,Пф-фх!,,NP:BG1NPC
 Philbert,Филберт,,BG2EE-russian
 Phleed,Флид,,BG1RUS-EET
 Phlydia,Флидия,,BG1RUS-EET
@@ -3211,7 +3221,7 @@ Phlydian,Флидиан,,BG2EE-russian
 Phossey,Фосси,,sod_rus
 Phreya,Ферейя,,BG2EE-russian
 Phuzalon,Фузалон,,iwd2_rus
-Phyeh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzqu.tra@62,NP:BG1NPC
+Phyeh,Тьфу,,NP:BG1NPC
 Phylactery,филактерия,,sod_rus
 Phyllidus,Филлидус,,BG2EE-russian
 Piato,Пиато,,BG1RUS-EET
@@ -3219,15 +3229,15 @@ Picklefeather,Солонопёр,,BG2EE-russian
 Picoccio,Пикоччио,,BG2EE-russian
 Piercer,Протыкатель,,sod_rus
 Piergeiron,Пиргейрон,,BG1RUS-EET
-Pilin,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#pcinit_tmp.tra@3314,NP:BG1NPC
+Pilin,Стрелы,,NP:BG1NPC
 Pimlico,Пимлико,,BG2EE-russian
-Pinkcloaks,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@618,NP:BG1NPC
-Pish,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzqu.tra@54,NP:BG1NPC
+Pinkcloaks,Розовый Плащ,,NP:BG1NPC
+Pish,Пиш,,NP:BG1NPC
 Pitre,Питр,,BG2EE-russian
 Pitter,Питтер,,BG1RUS-EET
 Piwafwi,пивавфи,,sod_rus
 Planetar,планетар,,BG1RUS-EET
-Pleease,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#alora.tra@1,NP:BG1NPC
+Pleease,Пожа-а-алуйста,,NP:BG1NPC
 Plet,Плет,,BG1RUS-EET
 Plooty,Плути,,BG2EE-russian
 Ployer,Плойер,,BG2EE-russian
@@ -3244,19 +3254,19 @@ Popple,Поппл,,BG1RUS-EET
 Poquelin,Поквелин,,iwd2_rus
 Porios,Пориос,,sod_rus
 Portalbendarwinden,Порталбендарвинден,,BG1RUS-EET
-Portents,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dybha.tra@31; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@308; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@316; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@329; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@343; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#dyro.tra@347,NP:BG1NPC
-Potentis,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@145,NP:BG1NPC
-Prancy,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#branw.tra@261,NP:BG1NPC
+Portents,Предзнаменования,,NP:BG1NPC
+Potentis,Потентис,,NP:BG1NPC
+Prancy,Жеманной,,NP:BG1NPC
 Prebar,Пребар,,BG2EE-russian
 Prebek,Пребек,,BG2EE-russian
 Prehv,Прев,,iwd2_rus
 Presio,Пресио,,iwd2_rus
 Priador,Приадор,,BG2EE-russian
-Prilly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#elint.tra@2; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#elint.tra@34,NP:BG1NPC
+Prilly,Прилли,,NP:BG1NPC
 Prin,Прин,,sod_rus
 Priss,Присс,,BG2EE-russian
-Pro'lly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@251,NP:BG1NPC
-Prob'ly,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#imoen.tra@320,NP:BG1NPC
+Pro'lly,Вероятно,,NP:BG1NPC
+Prob'ly,Возможно,,NP:BG1NPC
 Progales,Прогалес,,iwd2_rus
 Prophia,Профия,,iwd2_rus
 Psion,Псион,,BG2EE-russian
@@ -3264,8 +3274,8 @@ Puddy,Падди,,iwd2_rus
 Pudu,Пуду,,iwd2_rus
 Puffguts,Толстопуз,,BG1RUS-EET
 Pugney,Пагни,,BG2EE-russian
-Puh,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzqu.tra@22,NP:BG1NPC
-Purblind,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#xzar.tra@178,NP:BG1NPC
+Puh,Пожа-а-алуйста-а-а,,NP:BG1NPC
+Purblind,Слепой,,NP:BG1NPC
 Pureblood,Чистокровный,,iwd2_rus
 Purskul,Пурскул,,BG2EE-russian
 Pusmug,Пасмуг,,iwd2_rus
@@ -3277,7 +3287,7 @@ Pyrrus,Пиррус,,BG2EE-russian
 Qadeel,Квадил,,BG2EE-russian
 Qais,Каис,,BG2EE-russian
 Qar,Квар,,BG2EE-russian
-Qed,,/home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#ajantis.tra@204; /home/paladin/source/translations/BG1NPC/bg1npc/tra/english/utf8/x#miint.tra@124,NP:BG1NPC
+Qed,Гипотеза доказана,,NP:BG1NPC
 Qelbelther,Келбельфер,,sod_rus
 Qilue,Квилу,,BG2EE-russian
 Qoral,Корале,,BG2EE-russian
