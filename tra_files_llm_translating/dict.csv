@@ -1,6 +1,6 @@
 A'maelamin,А'маэламин,,BG1NPC
 Aabir,Аабир,,BG2EE-russian
-Aarin,Аарин,,NP:NWNForBG
+Aarin,Аарин,,NWNForBG
 Aasim,Аасим,,BG1RUS-EET
 Aasimar,аасимар,,sod_rus
 Aataqah,Аатага,,BG2EE-russian
@@ -24,7 +24,7 @@ Achon,Акон,,BG2EE-russian
 Adalon,Адалон,,BG2EE-russian
 Adamantine,адамантин,,sod_rus
 Adamantite,адамантит,,BG2EE-russian
-Adaron,Адарон,,NP:NWNForBG
+Adaron,Адарон,,NWNForBG
 Adbar,Адбар,,BG1RUS-EET
 Adecan,Адекан,,BG2EE-russian
 Adelain,Аделайн,,BG2EE-russian
@@ -57,7 +57,6 @@ Ager,Агер,,BG2EE-russian
 Aglarond,Агларонд,,sod_rus
 Agnasia,Агназия,,BG1RUS-EET
 Agog,Агог,,iwd2_rus
-Agronomy,Агрономия,,NP:NWNForBG
 Agru,Агру,,BG2EE-russian
 Ahdzekharrin,Ахдзекхаррин,,sod_rus
 Ahghairon,Агайрон,,BG1NPC
@@ -79,14 +78,14 @@ Akanna,Аканна,,sod_rus
 Akata,Аката,,BG2EE-russian
 Akhlmere,Аклмер,,BG2EE-russian
 Akuda,Акуда,,BG2EE-russian
-Akulatraxas,Акулатраксас,,NP:NWNForBG
+Akulatraxas,Акулатраксас,,NWNForBG
 Alacander,Алакандер,,IWDEE-russian
 Alachi,Алачи,,sod_rus
-Alaefin,Элейфин,,NP:NWNForBG
-Alaganda,Алаганда,,NP:NWNForBG
+Alaefin,Элейфин,,NWNForBG
+Alaganda,Алаганда,,NWNForBG
 Alaghon,Алагон,,BG2EE-russian
 Alaghor,Алагор,,BG1NPC
-Alagondar,Алагондар,,NP:NWNForBG
+Alagondar,Алагондар,,NWNForBG
 Alai,Алай,,BG1RUS-EET
 Alamion,Аламион,,iwd2_rus
 Alandor,Аландор,,BG2EE-russian
@@ -94,7 +93,7 @@ Alar,Алар,,BG2EE-russian
 Alarion,Аларион,,BG2EE-russian
 Alatelo,Алатело,,BG2EE-russian
 Alathan,Алатан,,sod_rus
-Alatis,Алатис,,NP:NWNForBG
+Alatis,Алатис,,NWNForBG
 Alatos,Алатос,,BG1RUS-EET
 Alaundalion,Алаундалион,,BG1NPC
 Alaundo,Алаундо,,BG1RUS-EET
@@ -129,7 +128,6 @@ Alkullok,Алкуллок,,sod_rus
 Allafif,Аллафиф,,BG2EE-russian
 Allana,Аллана,,BG1NPC
 Allendale,Аллендейл,,BG1RUS-EET
-Almosht,Шо-то,,NP:NWNForBG
 Almur,Алмур,,sod_rus
 Aln,Альн,,BG2EE-russian
 Alnarow,Альнароу,,BG2EE-russian
@@ -165,7 +163,7 @@ Amac,Амак,,BG2EE-russian
 Amalas,Амалас,,BG2EE-russian
 Amanis,Аманис,,BG2EE-russian
 Amarande,Амаранд,,BG1RUS-EET
-Amaros,Амарос,,NP:NWNForBG
+Amaros,Амарос,,NWNForBG
 Amaunator,Амаунатор,,BG1RUS-EET
 Ambere,Амбер,,iwd2_rus
 Ambidexterity,амбидекстрия,,iwd2_rus
@@ -174,7 +172,7 @@ Ameniela,Амениэла,,BG1NPC
 Ameralis,Амералис,,BG2EE-russian
 Aminah,Амина,,BG2EE-russian
 Amkethran,Амкетран,,BG2EE-russian
-Amlaruil,Амларуиль,,NP:NWNForBG
+Amlaruil,Амларуиль,,NWNForBG
 Amlos,Амлос,,BG2EE-russian
 Ammon,Аммон,,sod_rus
 Amn,Амн,,BG1RUS-EET
@@ -203,7 +201,7 @@ Andorans,андоранцы,,iwd2_rus
 Andorian,Андориан,,BG2EE-russian
 Andout,Андоут,,BG1RUS-EET
 Andris,Андрис,,BG1RUS-EET
-Androd,Андрод,,NP:NWNForBG
+Androd,Андрод,,NWNForBG
 Anette,Анетт,,BG1NPC
 Angaar,Ангаар,,iwd2_rus
 Angharradh,Ангаррат,,iwd2_rus
@@ -226,7 +224,6 @@ Aphril,Эфрил,,BG2EE-russian
 Aphrunn,Афранн,,BG2EE-russian
 Applebane,Погибель яблок,,iwd2_rus
 Apsel,Апсель,,iwd2_rus
-Aqueducts,Акведуки,,NP:NWNForBG
 Ar'Tel'Quessir,Ар'Тель'Квессир,,IWDEE-russian
 Arabane,Арабейна,,iwd2_rus
 Arabani,Арабани,,iwd2_rus
@@ -235,25 +232,23 @@ Arabellan,арабелское,,BG1RUS-EET
 Arabelle,Арабелль,,BG1RUS-EET
 Arakon,Аракон,,iwd2_rus
 Aramande,Амаранд,,BG1NPC
-Aramis,Арамис,,NP:NWNForBG
+Aramis,Арамис,,NWNForBG
 Aramite,Арамит,,iwd2_rus
 Aran,Аран,,BG2EE-russian
 Aranthis,Арентис,,BG2EE-russian
 Arat,Арат,,BG2EE-russian
 Aravaata,Араваата,,BG1NPC
-Aravorn,Араворн,,NP:NWNForBG
+Aravorn,Араворн,,NWNForBG
 Araya,Арая,,sod_rus
 Arbane,Арбейн,,BG2EE-russian
 Arbinge,Арбинг,,sod_rus
 Arcand,Арканд,,BG1RUS-EET
 Archdruid,архидруид,,BG1RUS-EET
 Archenbridge,Архенбридж,,BG2EE-russian
-Archeologist,Археолог,,NP:NWNForBG
 Archimandrite,архимандрит,,iwd2_rus
 Archmage,архимаг,,sod_rus
 Archmagi,архимаги,,BG1RUS-EET
 Archon,Архон,,BG1RUS-EET
-Arcmage,Архимаг,,NP:NWNForBG
 Arcorar,Аркорар,,BG1NPC
 Ardeep,Ардип,,BG1NPC
 Ardenor,Арденор,,BG1RUS-EET
@@ -271,15 +266,13 @@ Argents,Аргенты,,sod_rus
 Arghain,Аргайн,,BG1RUS-EET
 Argrim,Аргрим,,BG2EE-russian
 Arhsstaff,Аркстаффа,,BG1RUS-EET
-Aribet,Арибет,,NP:NWNForBG
-Aribeth,Арибет,,NP:NWNForBG
+Aribeth,Арибет,,NWNForBG
 Ariziel,Аризиэль,,BG2EE-russian
 Arkamadis,Аркамадис,,iwd2_rus
 Arkanis,Арканис,,BG1RUS-EET
 Arkhstaff,Аркstaфф,,BG1RUS-EET
 Arkion,Аркион,,BG1RUS-EET
-Arklem,Арклем,,NP:NWNForBG
-Arkleth,Арклем,,NP:NWNForBG
+Arklem,Арклем,,NWNForBG
 Arktash,Аркташ,,sod_rus
 Arkushule,Аркушуль,,BG1RUS-EET
 Arla,Арла,,BG1RUS-EET
@@ -288,23 +281,23 @@ Arlena,Арлена,,BG1RUS-EET
 Arlin,Арлин,,BG1RUS-EET
 Arlond,Арлонд,,BG1RUS-EET
 Armagaran,Армагаран,,BG2EE-russian
-Armiste,Армист,,NP:NWNForBG
-Arness,Арнесс,,NP:NWNForBG
+Armiste,Армист,,NWNForBG
+Arness,Арнесс,,NWNForBG
 Arnise,Арнис,,BG2EE-russian
 Arnolinus,Арнолинус,,BG2EE-russian
 Arny,Арни,,BG2EE-russian
 Artemus,Артем,,iwd2_rus
 Artipheon,Артифеон,,sod_rus
-Arto,Арто,,NP:NWNForBG
+Arto,Арто,,NWNForBG
 Aruma,Арума,,iwd2_rus
-Arunsun,Арунсан,,NP:NWNForBG
-Aruph,Аруф,,NP:NWNForBG
+Arunsun,Арунсан,,BG1RUS-EET
+Aruph,Аруф,,NWNForBG
 Arval,Арвал,,BG2EE-russian
 Arvanaith,Арванайт,,BG1NPC
 Arvandor,Арвандор,,BG1RUS-EET
 Arvoreen,Арворин,,BG2EE-russian
 Arwen,Арвен,,BG1NPC
-Arwyl,Арвил,,NP:NWNForBG
+Arwyl,Арвил,,NWNForBG
 Arzol,Арзол,,BG2EE-russian
 Asana,Асана,,BG2EE-russian
 Asery,Асери,,sod_rus
@@ -312,10 +305,9 @@ Ashabenford,Ашабенфорд,,BG1RUS-EET
 Ashanath,Ашанат,,BG1NPC
 Ashane,Ашани,,BG1NPC
 Ashatiel,Ашатиэль,,sod_rus
-Asheera,Ашира,,NP:NWNForBG
+Asheera,Ашира,,NWNForBG
 Ashen,Ашен,,BG1RUS-EET
-Ashensmith,Ашенсмит,,NP:NWNForBG
-Ashensmth,Ашенсмит,,NP:NWNForBG
+Ashensmith,Ашенсмит,,NWNForBG
 Ashideena,Ашидина,,BG1RUS-EET
 Ashirukuru,Аширукуру,,BG1RUS-EET
 Ashra,Ашра,,iwd2_rus
@@ -354,13 +346,13 @@ Autinn,Аутинн,,sod_rus
 Auziel,Аузиэль,,sod_rus
 Avariel,авариэль,,BG2EE-russian
 Avellone,Авеллон,,iwd2_rus
-Averik,Аверик,,NP:NWNForBG
+Averik,Аверик,,NWNForBG
 Avernus,Авернус,,sod_rus
 Avia,Авия,,iwd2_rus
-Avista,Ависта,,NP:NWNForBG
+Avista,Ависта,,NWNForBG
 Avrum,Аврум,,BG2EE-russian
 Axehand,Эксхенд,,BG1RUS-EET
-Azallah,Азалла,,NP:NWNForBG
+Azallah,Азалла,,NWNForBG
 Azamantes,Азамантис,,BG2EE-russian
 Azar,Азар,,BG1NPC
 Azgoloth,Азголот,,BG2EE-russian
@@ -377,7 +369,7 @@ Baalor,Баалор,,BG1RUS-EET
 Baalzebul,Вельзевул,,sod_rus
 Baatezu,Баатезу,,BG2EE-russian
 Baator,Баатор,,BG2EE-russian
-Babau,Бабау,,NP:NWNForBG
+Babau,Бабау,,NWNForBG
 Babblemug,Баблмуг,,iwd2_rus
 Babiat,Бабиат,,BG2EE-russian
 Babron,Баброн,,iwd2_rus
@@ -414,7 +406,7 @@ Barad,Барад,,BG2EE-russian
 Baragh,Бараг,,BG2EE-russian
 Baram,Барам,,BG2EE-russian
 Baravar,Баравар,,sod_rus
-Barax,Баракс,,NP:NWNForBG
+Barax,Баракс,,NWNForBG
 Barbauld,Барбаулд,,BG2EE-russian
 Bardolan,Бардолан,,BG1RUS-EET
 Bardyla,Бардила,,sod_rus
@@ -431,7 +423,7 @@ Barnephas,Барнефас,,BG1NPC
 Barrityl,Барритил,,BG1RUS-EET
 Bartleby,Бартлби,,sod_rus
 Barud,Баруд,,iwd2_rus
-Barun,Барун,,NP:NWNForBG
+Barun,Барун,,NWNForBG
 Barzam,Барзам,,iwd2_rus
 Barzenak,Барзенак,,BG1NPC
 Barzy,Барзи,,BG1NPC
@@ -455,16 +447,15 @@ Becek,Бицек,,iwd2_rus
 Bedlen,Бедлен,,BG2EE-russian
 Beeloo,Билу,,BG2EE-russian
 Beelthot,Билтхот,,iwd2_rus
-Befuddle,Там,,NP:NWNForBG
 Beherant,Бехерант,,BG2EE-russian
 Beholder,созерцатель,,BG1RUS-EET
 Bel'la,бель'ла,язык дроу,BG1NPC
-Bela'd,Белы,,NP:NWNForBG
+Bela,Бела,,NWNForBG
 Belaem,Белаэм,,iwd2_rus
 Belaessar,Белессар,,iwd2_rus
 Belak,Белак,,BG2EE-russian
 Belar,Белар,,BG2EE-russian
-Belarian,Белариан,,NP:NWNForBG
+Belarian,Белариан,,NWNForBG
 Belben,Белбен,,sod_rus
 Belde'ar,Белде'ар,,BG2EE-russian
 Beldin,Белдин,,BG1RUS-EET
@@ -474,21 +465,19 @@ Belgarden,Белгарден,,BG1NPC
 Belgin,Белгин,,BG1NPC
 Belgraye,Белгрей,,BG1NPC
 Belhifet,Белхифет,,sod_rus
-Belial,Белиал,,NP:NWNForBG
+Belial,Белиал,,NWNForBG
 Belib,Белиб,,iwd2_rus
 Beljuril,Белджурил,,BG1RUS-EET
 Bellowglym,Беллоуглим,,sod_rus
 Bellowglyn,Беллоуглин,,BG1RUS-EET
 Bellowgulp,Ревоглот,,BG1RUS-EET
 Belm,Бельм,,BG2EE-russian
-Belman,Белман,,NP:NWNForBG
-Belmar,Белман,,NP:NWNForBG
+Belman,Белман,,NWNForBG
 Belmin,Белмин,,BG2EE-russian
 Belnimbra,Белнимбра,,BG1NPC
 Beltyn,Бельтин,,iwd2_rus
 Beluir,Белуир,,sod_rus
 Belverston,Белверстон,,BG2EE-russian
-Bemoan,Посожалеть,,NP:NWNForBG
 Bence,Бенс,,sod_rus
 Bendalis,Бендалис,,BG1RUS-EET
 Bendelia,Бенделия,,BG2EE-russian
@@ -503,14 +492,14 @@ Bentha,Бента,,BG1RUS-EET
 Beodaewn,Беодейн,,iwd2_rus
 Beorn,Беорн,,iwd2_rus
 Beornen,Беорнен,,iwd2_rus
-Beorunna,Беорунн,,NP:NWNForBG
+Beorunna's Well,Колодец Беорунна,,NWNForBG
 Berahli,Берахли,,sod_rus
 Berayat,Бераят,,BG1NPC
 Berden,Берден,,BG1RUS-EET
 Berdusk,Бердуск,,BG1RUS-EET
 Berduskan,бердусканский,,BG1RUS-EET
 Bered,Беред,,iwd2_rus
-Bereglaz,Береглаз,,NP:NWNForBG
+Bereglaz,Береглаз,,NWNForBG
 Beregost,Берегост,,BG1RUS-EET
 Berena,Берена,,BG2EE-russian
 Berenford,Беренфорд,,BG2EE-russian
@@ -534,7 +523,6 @@ Betror,Бетрор,,sod_rus
 Betsie,Бетси,,BG1RUS-EET
 Beverus,Беверус,,BG2EE-russian
 Beyn,Беин,,BG1RUS-EET
-Bgt,БГТ,,NP:NWNForBG
 Bhaal,Баал,,BG1RUS-EET
 Bhaerynden,Баэринден,,BG2EE-russian
 Bheren,Берен,,BG1RUS-EET
@@ -542,9 +530,9 @@ Bhetel,Бетель,,BG1NPC
 Biffle,Биффл,,BG2EE-russian
 Bifflechips,Биффлчипс,,BG2EE-russian
 Bifflelips,Завернигубу,,BG2EE-russian
-Bigbottom,Большезад,,NP:NWNForBG
+Bigbottom,Большезад,,NWNForBG
 Bigby,Бигби,,BG1RUS-EET
-Billiam,Биллиам,,NP:NWNForBG
+Billiam,Биллиам,,NWNForBG
 Bilqis,Билкис,,BG2EE-russian
 Bilshire,Билшир,,BG1RUS-EET
 Bilver,Билвер,,BG2EE-russian
@@ -561,7 +549,7 @@ Blackdrum,Чёрный Барабан,,iwd2_rus
 Blackenrock,Блакенрок,,BG2EE-russian
 Blackfinger,Чернопалая,,sod_rus
 Blackguard,чёрный страж,,BG1RUS-EET
-Blacklake,Чернозерье,,NP:NWNForBG
+Blacklake,Чернозерье,,NWNForBG
 Blackmane,Чёрные Гривы,,BG1RUS-EET
 Blacksheaf,Чёрный Сноп,,iwd2_rus
 Blackstaff,Чёрный Посох,,BG1RUS-EET
@@ -571,31 +559,25 @@ Blackwill,Блэквилл,,BG2EE-russian
 Bladesinger,поющий клинок,,BG2EE-russian
 Blahg'mah,Благ'ма,,iwd2_rus
 Blane,Блейн,,BG1RUS-EET
-Blaskar,Бласкар,,NP:NWNForBG
+Blaskar,Бласкар,,NWNForBG
 Blethyn,Блетин,,BG2EE-russian
 Blingdenstone,Блингденстоун,,sod_rus
 Blinky,Бинки,,BG2EE-russian
 Bloodaxe,Кровавый Топор,,BG2EE-russian
 Bloodmaiden,Дева Крови,,BG1NPC
-Bloodsail,Кровавый Парус,,NP:NWNForBG
-Bloodsailor,Кровавый моряк,,NP:NWNForBG
-Bloodsailors,Кровавые моряки,,NP:NWNForBG
+Bloodsail,Кровавый Парус,,NWNForBG
+Bloodsailor,Кровавый моряк,,NWNForBG
 Bloodscalp,Кровавый Скальп,,BG2EE-russian
-Bloodstained,Запятнанная,,NP:NWNForBG
 Bloodstone,кровавик,,BG1RUS-EET
-Bloodysailors,кровавых моряков,,NP:NWNForBG
-Blowhards,Крутые ребятки,,NP:NWNForBG
 Bluebeard,Синяя Борода,,sod_rus
 Bluefingers,Синеперстый,,BG1RUS-EET
 Blugglugl,Благглагл,,sod_rus
-Blundering,На ощупь пробираешься,,NP:NWNForBG
 Blushing Mermaid,Стыдливая Русалка,,BG1RUS-EET
 Blynnyk,Блинник,,BG2EE-russian
 Boalisk,Боалиск,,BG2EE-russian
 Boareskyr,Боарескир,,sod_rus
-Bodak,Бодак,,NP:NWNForBG
-Boddinok,Боддинок,,NP:NWNForBG
-Boddyknock,Боддинок,,NP:NWNForBG
+Bodak,Бодак,,NWNForBG
+Boddyknock,Боддинок,,NWNForBG
 Bodi,Боди,,BG1RUS-EET
 Boldcam,Смелый Кулак,,BG2EE-russian
 Bolhur,Болхур,,BG1RUS-EET
@@ -615,7 +597,7 @@ Booter,Бутер,,BG2EE-russian
 Borda,Борда,,BG1RUS-EET
 Borinall,Боринал,,BG2EE-russian
 Borinole,Боринол,,BG1RUS-EET
-Borlan,Борлан,,NP:NWNForBG
+Borlan,Борлан,,NWNForBG
 Borland,Борланд,,BG1RUS-EET
 Borok-Tosst,Борок-Тосст,,BG2EE-russian
 Borovsk,Боровск,,BG1NPC
@@ -635,8 +617,7 @@ Brany,Брани,,BG1NPC
 Brassbreaker,Брасбрейкер,,sod_rus
 Braston,Брастон,,iwd2_rus
 Brathlen,Братлен,,BG1RUS-EET
-Breakbone,Костолом,,NP:NWNForBG
-Breastplate,доспех,,NP:NWNForBG
+Breakbone,Костолом,,NWNForBG
 Brega,Брега,,BG2EE-russian
 Bregan,Бреган,,BG2EE-russian
 Bregg,Брегг,,BG2EE-russian
@@ -654,9 +635,9 @@ Brielbara,Бриельбара,,BG1RUS-EET
 Brielle,Бриель,,sod_rus
 BrightWalker,БрайтУокер,,BG1RUS-EET
 Brightaxe,Сияющий Топор,,BG2EE-russian
-Brightfist,Искрокулак,,NP:NWNForBG
+Brightfist,Искрокулак,,NWNForBG
 Brightmantle,Светлый Плащ,,iwd2_rus
-Briley,Брайли,,NP:NWNForBG
+Briley,Брайли,,NWNForBG
 Brilla,Брилла,,BG1RUS-EET
 Brisbaine,Брисбейн,,iwd2_rus
 Britik,Бритик,,BG1RUS-EET
@@ -667,16 +648,15 @@ Brohn,Брон,,iwd2_rus
 Browswaithe,Бровсвайт,,BG2EE-russian
 Bruenor,Бруенор,,sod_rus
 Brunos,Брунос,,BG1RUS-EET
-Bruns,Брунс,,NP:NWNForBG
+Bruns,Брунс,,NWNForBG
 Brus,Брюс,,BG2EE-russian
 Brutai,Брутай,,iwd2_rus
 Bryn Shander,Брин Шандер,,iwd2_rus
 Brynnlaw,Бриннлоу,,BG2EE-russian
 Buckler,баклер,,BG1RUS-EET
-Bucktooth,Торчкозуба,,NP:NWNForBG
+Bucktooth,Торчкозуб,,NWNForBG
 Bugbear,багбир,,sod_rus
 Bullrush,Булраш,,BG1RUS-EET
-Bumbleheart,Нескладёха,,NP:NWNForBG
 Bunkhouse,Ночлежка,,BG1RUS-EET
 Bunkin,Банкин,,BG2EE-russian
 Bunky,Бунки,,BG1RUS-EET
@@ -688,7 +668,6 @@ Burran,бурран,,BG2EE-russian
 Burrower,Землерой,,iwd2_rus
 Busya,Буся,,BG2EE-russian
 Buvai,Бувай,,iwd2_rus
-Byebye,Пока,,NP:NWNForBG
 Bylanna,Биланна,,BG2EE-russian
 Byzon,Байзон,,sod_rus
 Caan,Каан,,BG2EE-russian
@@ -722,10 +701,10 @@ Calimshites,калимшанцы,,BG2EE-russian
 Calishite,калимшанец,,BG1RUS-EET
 Callard,Каллард,,iwd2_rus
 Callarduran,Каллардуран,,iwd2_rus
-Calli,Калли,,NP:NWNForBG
+Calli,Калли,,NWNForBG
 Calliana,Каллиана,,iwd2_rus
-Calliara,Каллиара,,NP:NWNForBG
-Callik,Каллик,,NP:NWNForBG
+Calliara,Каллиара,,NWNForBG
+Callik,Каллик,,NWNForBG
 Calliostroni,Калльострони,,BG1NPC
 Camaris,Камарис,,BG2EE-russian
 Cambion,камбион,,BG1RUS-EET
@@ -757,7 +736,7 @@ Cathiari,Катиари,,sod_rus
 Cathin,Катин,,iwd2_rus
 Cathras,Катрас,,BG2EE-russian
 Catis,Катис,,BG2EE-russian
-Catoblepas,Катоблепаса,,NP:NWNForBG
+Catoblepas,катоблепас,,NWNForBG
 Cattack,Каттак,,BG1RUS-EET
 Catti-Brie,Кэтти-бри,,BG2EE-russian
 Cattie,Кэтти,,BG1NPC
@@ -775,7 +754,6 @@ Celestia,Селестия,,BG2EE-russian
 Celestine,Целестина,,BG2EE-russian
 Celisa,Селиза,,BG2EE-russian
 Celvan,Кельван,,BG2EE-russian
-Cemetary,кладбище,,NP:NWNForBG
 Centeol,Сентеол,,BG1RUS-EET
 Cerebus,Церебус,,BG2EE-russian
 Cernd,Сернд,,BG2EE-russian
@@ -787,23 +765,23 @@ Chalimandren,Калимандрен,,iwd2_rus
 Chalinthra,Чалинтра,,BG2EE-russian
 Chandrilla,Чандрилла,,BG2EE-russian
 Chanelle,Шанель,,BG2EE-russian
-Chani,Чани,,NP:NWNForBG
+Chani,Чани,,NWNForBG
 Chanserv,Чансерв,,BG1RUS-EET
 Chanter,Певчий,,BG1RUS-EET
 Chanthalas,Чанталас,,BG1RUS-EET
 Chanticleer,Шантеклер,,BG2EE-russian
-Chaohinon,Каохинон,,NP:NWNForBG
-Charon,Харон,,NP:NWNForBG
+Chaohinon,Каохинон,,NWNForBG
+Charon,Харон,,NWNForBG
 Charra,Чарра,,sod_rus
-Charwood,Чарвуд,,NP:NWNForBG
+Charwood,Чарвуд,,NWNForBG
 Chatillon,Шатийон,,BG2EE-russian
 Chauntea,Чонтия,,BG1RUS-EET
 Chautog,Чотог,,iwd2_rus
 Ched,Чед,,BG2EE-russian
 Chelak,Челак,,BG1RUS-EET
 Chelan,Челан,,BG1RUS-EET
-Cheldarstorn,Шелдарсторн,,NP:NWNForBG
-Cheroux,Шеру,,NP:NWNForBG
+Cheldarstorn,Шелдарсторн,,NWNForBG
+Cheroux,Шеру,,NWNForBG
 Ches,Чес,,BG1RUS-EET
 Cheski,Чески,,sod_rus
 Chesley,Чесли,,BG1RUS-EET
@@ -815,9 +793,9 @@ Chionthar,Чионтар,,BG1RUS-EET
 Chizelo,Чизело,,iwd2_rus
 Chondath,Чондат,,BG1RUS-EET
 Chorster,Чорстер,,sod_rus
-Chotog,Чотог,,NP:NWNForBG
+Chotog,Чотог,,NWNForBG
 Chremy,Чреми,,BG2EE-russian
-Christov,Кристов,,NP:NWNForBG
+Christov,Кристов,,NWNForBG
 Chrost,Хрост,,BG2EE-russian
 Chrysoberyl,хризоберилл,,BG1RUS-EET
 Chult,Чулт,,BG1RUS-EET
@@ -832,14 +810,14 @@ Cirine,Сирин,,BG2EE-russian
 Cittern,цитра,,sod_rus
 Clairvoyance,ясновидение,,BG1RUS-EET
 Clangeddin,Клангеддин,,BG1RUS-EET
-Claudus,Клодус,,NP:NWNForBG
+Claudus,Клодус,,NWNForBG
 Claybelly,Клейбелли,,sod_rus
 Claylan,Клейлан,,BG2EE-russian
 Clea,Клеа,,BG2EE-russian
 Cless,Клесс,,BG2EE-russian
 Cletus,Клетус,,BG2EE-russian
 Cloakshadow,Плащ Теней,,sod_rus
-Cloaktower,Башня Плаща,,NP:NWNForBG
+Cloaktower,Башня Плаща,,NWNForBG
 Cloakwood,Клоаквуд,,BG1RUS-EET
 Cloudkill,смертоносное облако,,BG1RUS-EET
 Cloudkiss,Облачный поцелуй,,iwd2_rus
@@ -848,10 +826,10 @@ Cloudwulfe,Клаудвульф,,BG1RUS-EET
 Cloverleaf,Лист Клевера,,sod_rus
 Clovista,Кловиста,,sod_rus
 Coastway,Прибрежный Путь,,BG1RUS-EET
-Cockatrice,кокатрица,,NP:NWNForBG
+Cockatrice,кокатрис,,NWNForBG
 Cohrvale,Корвейл,,BG2EE-russian
 Coldhearth,Колдхерт,,sod_rus
-Coldwood,Лес Стужи,,NP:NWNForBG
+Coldwood,Лес Стужи,,NWNForBG
 Colia,Колия,,BG2EE-russian
 Collus,Коллус,,BG2EE-russian
 Colquetle,Колкветл,,BG1RUS-EET
@@ -864,10 +842,9 @@ Conjurer,Призыватель,,BG1RUS-EET
 Conlan,Конлан,,iwd2_rus
 Connoly,Конноли,,BG1RUS-EET
 Conster,Констер,,BG2EE-russian
-Conyberry,Кониберри,,NP:NWNForBG
+Conyberry,Кониберри,,NWNForBG
 Copperpot,Копперпот,,BG2EE-russian
 Coppersky,Копперски,,iwd2_rus
-Copperthieves,мелкие воришки,,NP:NWNForBG
 Coprith,Коприт,,BG2EE-russian
 Coran,Коран,,BG1RUS-EET
 Cordyr,Кордир,,BG1RUS-EET
@@ -896,7 +873,7 @@ Cradoldrider,Кокондрайдер,,iwd2_rus
 Cragmoon,Крагмун,,BG2EE-russian
 Crale,Крэйл,,iwd2_rus
 Crang,Кранг,,BG1RUS-EET
-Craulnober,Кролнобер,,NP:NWNForBG
+Craulnober,Кролнобер,,NWNForBG
 Craum,Кром,,iwd2_rus
 Craumerdaun,Кромердон,,BG2EE-russian
 Crecia,Креция,,BG2EE-russian
@@ -906,10 +883,8 @@ Crieck,Крайек,,IWDEE-russian
 Criek,Краек,,iwd2_rus
 Crimmor,Криммор,,BG2EE-russian
 Cristiana,Кристиана,,iwd2_rus
-Cristov,Кристов,,NP:NWNForBG
 Crom,Кром,,BG2EE-russian
 Crommus,Кроммус,,sod_rus
-Crossbowman,Арбалетчик,,NP:NWNForBG
 Crragtail,Сккалохвост,,BG2EE-russian
 Crum,Крум,,iwd2_rus
 Cryonax,Крионакс,,BG2EE-russian
@@ -920,7 +895,6 @@ Cuchul,Кучул,,BG2EE-russian
 Culak,Калак,,BG2EE-russian
 Cullin,Кулин,,BG1RUS-EET
 Curell,Курелл,,BG2EE-russian
-Curser,проклинатель,,NP:NWNForBG
 Curst,Керст,,BG2EE-russian
 Custhantos,Кастантос,,iwd2_rus
 Cuvieronius,Куверониус,,sod_rus
@@ -941,18 +915,16 @@ Dabath,Дабат,,IWDEE-russian
 Dabiat,Дабиат,,BG2EE-russian
 Dabron,Даброн,,BG1RUS-EET
 Dace,Дейс,,BG2EE-russian
-Daelan,Даэлан,,NP:NWNForBG
-Daelon,Даэлан,,NP:NWNForBG
+Daelan,Даэлан,,NWNForBG
 Daemba,Даэмба,,iwd2_rus
 Daen,Даэн,,IWDEE-russian
 Daer'Ragh,Даэр'Раг,,BG1RUS-EET
-Daernuth,Даэрнате,,NP:NWNForBG
+Daernuth,Даэрнат,,NWNForBG
 Daeros,Даэрос,,sod_rus
 Daese,Даэз,,BG1RUS-EET
 Daggerford,Даггерфорд,,sod_rus
 Daggerfordians,даггерфордцы,,sod_rus
 Daglefodd,Даглфодд,,BG2EE-russian
-Dagnabbit,"Ну надо же, а?",,NP:NWNForBG
 Dahaunarch,Дахаунарх,,BG2EE-russian
 Dahaundar,Дахондар,,BG2EE-russian
 Dahk,Дахк,,sod_rus
@@ -960,7 +932,7 @@ Dahn,Данн,,BG2EE-russian
 Dail,Дайл,,BG2EE-russian
 Daital,Дайтал,,BG1RUS-EET
 Daku,Даку,,iwd2_rus
-Dalcia,Дальсия,,NP:NWNForBG
+Dalcia,Дальсия,,NWNForBG
 Dalemark,Дейлмарк,,BG2EE-russian
 Dalereckoning,Летоисчисление Долин,,BG1NPC
 Daleson,Далесон,,BG2EE-russian
@@ -972,21 +944,20 @@ Dalok,Далок,,BG2EE-russian
 Dalzim,Далзима,,BG2EE-russian
 Damara,Дамара,,BG2EE-russian
 Damarr,Дамарр,,sod_rus
-Damas,Дамас,,NP:NWNForBG
+Damas,Дамас,,NWNForBG
 Dambrath,Дамбрат,,BG1RUS-EET
 Damius,Дамиус,,sod_rus
 Dammel,Даммель,,iwd2_rus
-Damnedest,бесова,,NP:NWNForBG
 Dand,Данд,,BG2EE-russian
 Dandal,Дандал,,BG1RUS-EET
 Danine,Данайн,,sod_rus
 Dannak,Даннак,,BG2EE-russian
-Dannen,Даннен,,NP:NWNForBG
+Dannen,Даннен,,NWNForBG
 Dannik,Данник,,sod_rus
 Danno,Данно,,BG2EE-russian
 Danys,Данис,,BG2EE-russian
 Daoine Teague Feer,Дэойн Тиг Фир,,BG1NPC
-Dara'nei,Дара'ней,,NP:NWNForBG
+Dara'nei,Дара'ней,,NWNForBG
 Daran,Даран,,sod_rus
 Darathon,Даратон,,BG2EE-russian
 Darbin,Дарбин,,BG2EE-russian
@@ -1003,7 +974,7 @@ Darkfire,Тёмное пламя,,BG2EE-russian
 Darkhold,Даркхолд,,BG1RUS-EET
 Darkmail,Тёмный доспех,,BG2EE-russian
 Darkoozing,Даркузинг,,sod_rus
-Darktongue,Чернослов,,NP:NWNForBG
+Darktongue,Чернослов,,NWNForBG
 Darkvision,инфравидение,,iwd2_rus
 Darkwalk,Тенепроходец,,BG1RUS-EET
 Darkwell,Тёмный Колодец,,BG1RUS-EET
@@ -1023,7 +994,6 @@ Davaeorn,Даваэорн,,BG1RUS-EET
 Davin,Дейвин,,iwd2_rus
 Dawlins,Даулинс,,BG2EE-russian
 Dawnbringer,Зареносец,,sod_rus
-Dawnguard,Стража Рассвета,,NP:NWNForBG
 Dawnlord,Повелитель зари,,BG2EE-russian
 Dawnmaster,Служитель Зари,,BG2EE-russian
 Dawnmistress,Служительница Зари,,BG2EE-russian
@@ -1078,13 +1048,13 @@ Delorna,Делорна,,BG1RUS-EET
 Delosar,Делозар,,BG2EE-russian
 Delryn,Делрин,,BG2EE-russian
 Delsvirftanyon,Делсвирфтанион,,BG1RUS-EET
-Deltagar,Дельтагар,,NP:NWNForBG
+Deltagar,Дельтагар,,NWNForBG
 Delthuntle,Дельтантл,,BG2EE-russian
 Delthyr,Делтир,,BG1RUS-EET
 Delton,Делтон,,sod_rus
-Delvar,Делвар,,NP:NWNForBG
+Delvar,Делвар,,NWNForBG
 Delver,Делвер,,BG2EE-russian
-Demarasse,Демарасса,,NP:NWNForBG
+Demarasse,Демарасса,,NWNForBG
 Demarch,Мастер Слов,,iwd2_rus
 Demilich,демилич,,BG1RUS-EET
 Demin,Демин,,BG2EE-russian
@@ -1099,7 +1069,7 @@ Dennaton,Деннатон,,BG2EE-russian
 Denthelm,Мятый Шлем,,iwd2_rus
 Dereth,Дерет,,iwd2_rus
 Derg,Дерг,,BG2EE-russian
-Dergiab,Дергиаб,,NP:NWNForBG
+Dergiab,Дергиаб,,NWNForBG
 Deril,Дерил,,BG2EE-russian
 Dermin,Дермин,,BG2EE-russian
 Dermod,Дермод,,BG2EE-russian
@@ -1110,8 +1080,7 @@ Desharik,Дешарик,,BG2EE-russian
 Despana,Деспана,,BG2EE-russian
 Desreta,Дезрета,,BG1RUS-EET
 Dessarin,Дессарин,,BG1NPC
-Dester,Дестер,,NP:NWNForBG
-Desther,Дестер,,NP:NWNForBG
+Desther,Дестер,,NWNForBG
 Destus,Дестус,,BG1RUS-EET
 Dettseh,Деттсе,,BG2EE-russian
 Deyghul,Дейгул,,sod_rus
@@ -1142,10 +1111,10 @@ Diola,Диола,,BG1NPC
 Diopside,диопсид,,BG1RUS-EET
 Dirbert,Дирберт,,BG2EE-russian
 Dirbish,Дирбиш,,BG2EE-russian
-Direlin,Дирелин,,NP:NWNForBG
+Direlin,Дирелин,,NWNForBG
 Dirla,Дирла,,sod_rus
 Dirth,Дирт,,BG2EE-russian
-Disil,Дизил,,NP:NWNForBG
+Disil,Дизил,,NWNForBG
 Dispater,Диспатер,,sod_rus
 Displasius,Дисплазиус,,BG1RUS-EET
 Disredain,Дисредейн,,iwd2_rus
@@ -1155,7 +1124,6 @@ Diyab,Дийяб,,BG1RUS-EET
 Dizreth,Дизрет,,iwd2_rus
 Djinni,джинни,,BG1RUS-EET
 Do'Urden,До'Урден,,BG1RUS-EET
-Dockside,Портовой,,NP:NWNForBG
 Dogar,Догар,,BG2EE-russian
 Dogstooth,Пёсоклык,,iwd2_rus
 Dohor,Дохор,,iwd2_rus
@@ -1163,7 +1131,7 @@ Dola,Дола,,BG2EE-russian
 Dolced,Долсед,,BG1RUS-EET
 Dolon,Долон,,iwd2_rus
 Dolrassa,Долрасса,,BG2EE-russian
-Domine,Домайн,,NP:NWNForBG
+Domine,Домайн,,NWNForBG
 Donalus,Доналус,,BG2EE-russian
 Donderbeg,Дондербег,,BG2EE-russian
 Doogal,Дугал,,iwd2_rus
@@ -1206,16 +1174,15 @@ Drakon,Дракон,,BG1RUS-EET
 Drannor,Драннор,,iwd2_rus
 Drasus,Драсус,,BG1RUS-EET
 Draug,Драуг,,BG2EE-russian
-Drawl,Дрол,,NP:NWNForBG
+Drawl,Дрол,,NWNForBG
 Dray,Дрей,,iwd2_rus
 Dreadbringer,Несущий Страх,,BG1NPC
 Dreadmaster,Повелитель Ужаса,,BG2EE-russian
 Drealer,Дрилер,,iwd2_rus
-Dreamcatcher,Ловец снов,,NP:NWNForBG
 Dreamscape,Мир Грёз,,BG1NPC
 Dreden,Дреден,,iwd2_rus
 Dreedle,Дридль,,BG2EE-russian
-Dregin,Дрегин,,NP:NWNForBG
+Dregin,Дрегин,,NWNForBG
 Dreisbach,Дрейсбах,,iwd2_rus
 Drelik,Дрелик,,BG1RUS-EET
 Drenaur,Дренаур,,BG2EE-russian
@@ -1228,7 +1195,7 @@ Drider,драйдер,,sod_rus
 Drienne,Дриенн,,BG1RUS-EET
 Drin,Дрин,,BG1RUS-EET
 Drizzt,Дриззт,,BG1RUS-EET
-Drokas,Дрокас,,NP:NWNForBG
+Drokas,Дрокас,,NWNForBG
 Drooldribbler,Друлдриблер,,sod_rus
 Droth,Дрот,,BG1RUS-EET
 Drothan,Дротан,,iwd2_rus
@@ -1249,7 +1216,7 @@ Duin,Дуин,,sod_rus
 Dukeem,Дукиме,,BG2EE-russian
 Dulf,Дульф,,BG2EE-russian
 Dullcobble,Дулкобл,,iwd2_rus
-Dumal,Дюмаль,,NP:NWNForBG
+Dumal,Дюмаль,,NWNForBG
 Dumathoin,Думатоин,,sod_rus
 Dumok,Думок,,sod_rus
 Durdel,Дурдель,,iwd2_rus
@@ -1269,7 +1236,7 @@ Dwarvish,дварфском,,BG2EE-russian
 Dwelnar,Двелнар,,iwd2_rus
 Dweomer,Двеомер,,BG1RUS-EET
 Dwin'anea,Двин'анэа,,BG1NPC
-Dydd,Дидд,,NP:NWNForBG
+Dydd,Дидд,,NWNForBG
 Dykhast,дикаст,,iwd2_rus
 Dynaheir,Динахейр,,BG1RUS-EET
 Eadro,Эадро,,sod_rus
@@ -1280,16 +1247,15 @@ Ebonbeard,Чернобородый,,BG2EE-russian
 Ebrone,Эброн,,BG2EE-russian
 Echtah,Эктах,,BG1RUS-EET
 Echtellion,Эктеллион,,BG1NPC
-Eckel,Экель,,NP:NWNForBG
+Eckel,Экель,,NWNForBG
 Ecktarr,Эктарр,,iwd2_rus
 Eddard,Эддард,,BG1RUS-EET
-Edegar,Эдегар,,NP:NWNForBG
+Edegar,Эдегар,,NWNForBG
 Edgeel,Эдгиль,,iwd2_rus
 Edificiant Library,Библиотека Назиданий,,BG1NPC
 Edion,Эдион,,iwd2_rus
 Edley,Эдли,,iwd2_rus
 Edventar,Эдвентарь,,BG1RUS-EET
-Eet,EET,,NP:NWNForBG
 Eevo,Ээво,,BG2EE-russian
 Effy,Эффи,,sod_rus
 Efreet,ифрит,,IWDEE-russian
@@ -1305,8 +1271,7 @@ Eidan,Эйдан,,iwd2_rus
 Eilistraee,Эйлистраи,,BG1RUS-EET
 Eina,Эйна,,BG2EE-russian
 Einhiris,Эйнхирис,,BG2EE-russian
-Eisenfeldt,Эйзенфельдт,,NP:NWNForBG
-Eisenfeldts,Эйзенфельдты,,NP:NWNForBG
+Eisenfeldt,Эйзенфельдт,,NWNForBG
 Ekandor,Экандор,,BG1RUS-EET
 Ekim,Еким,,BG2EE-russian
 Elaith,Элайт,,NP:NWNForBG
