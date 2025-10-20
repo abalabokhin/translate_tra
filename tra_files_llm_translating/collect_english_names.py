@@ -142,6 +142,7 @@ def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
 
 def load_dictionary(csv_file):
     existing = set()
+    csv.field_size_limit(sys.maxsize)
     with open(csv_file, newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:

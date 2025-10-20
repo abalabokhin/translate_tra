@@ -61,6 +61,7 @@ class TranslationFinder:
     def _load_dictionary(self) -> List[Tuple[str, str, str]]:
         """Load dictionary and return list of (word, translation, locations) tuples for untranslated words"""
         untranslated_words = []
+        csv.field_size_limit(sys.maxsize)
         if not self.dictionary_file.exists():
             print(f"Error: Dictionary file '{self.dictionary_file}' not found")
             return untranslated_words
