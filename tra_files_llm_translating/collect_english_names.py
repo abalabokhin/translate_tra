@@ -3,6 +3,7 @@ import csv
 import argparse
 import os
 import glob
+import sys
 from wordfreq import zipf_frequency
 from collections import OrderedDict
 
