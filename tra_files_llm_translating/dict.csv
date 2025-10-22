@@ -242,6 +242,7 @@ Arabani,Арабани,,iwd2_rus
 Arabel,Арабел,,BG1RUS-EET
 Arabellan,арабелское,,BG1RUS-EET
 Arabelle,Арабелль,,BG1RUS-EET
+Arach-Tinilith,Арах-Тинилит,,SandrahToT
 Arakon,Аракон,,iwd2_rus
 Aramande,Амаранд,,BG1NPC
 Aramis,Арамис,,NWNForBG
@@ -307,6 +308,7 @@ Armiste,Армист,,NWNForBG
 Arness,Арнесс,,NWNForBG
 Arnolinus,Арнолинус,,BG2EE-russian
 Arny,Арни,,BG2EE-russian
+Arrabar,Аррабар,,SandrahToT
 Artemus,Артем,,iwd2_rus
 Artipheon,Артифеон,,sod_rus
 Arto,Арто,,NWNForBG
@@ -322,6 +324,7 @@ Arwyl,Арвил,,NWNForBG
 Arzol,Арзол,,BG2EE-russian
 Asana,Асана,,BG2EE-russian
 Ascalhorn,Аскалхорн,,BG1RUS-EET
+Aschmaan,Ашмаан,,SandrahToT
 Asery,Асери,,sod_rus
 Ashabenford,Ашабенфорд,,BG1RUS-EET
 Ashanath,Ашанат,,BG1NPC
@@ -426,6 +429,8 @@ Balthis,Балтис,,BG2EE-russian
 Balvin,Балвин,,sod_rus
 Bandon,Бандон,,BG2EE-russian
 Bandoth,Бэндот,,iwd2_rus
+Bane,Бейн,имя бога,BG1RUS-EET
+Banites,бейниты,,SandrahToT
 Bankao,Банкао,,iwd2_rus
 Bannor,Баннор,,BG2EE-russian
 Barachus,Баракус,,sod_rus
@@ -559,6 +564,7 @@ Beverus,Беверус,,BG2EE-russian
 Beyn,Беин,,BG1RUS-EET
 Bezantur,Безантур,,SandrahEET
 Bhaal,Баал,,BG1RUS-EET
+Bhaalists,баалисты,,SandrahToT
 Bhaerynden,Баэринден,,BG2EE-russian
 Bheren,Берен,,BG1RUS-EET
 Bhetel,Бетель,,BG1NPC
@@ -1401,6 +1407,7 @@ Eltar,Элтар,,SandrahEET
 Eltob,Элтоб,,iwd2_rus
 Eltoora,Эльтура,,NWNForBG
 Eltor,Элтор,,BG1RUS-EET
+Elturel,Элтурел,,iwd2_rus
 Elue,Элуи,,BG1NPC
 Eluno,Элуно,,BG2EE-russian
 Elv,Элв,,BG2EE-russian
@@ -1510,6 +1517,7 @@ Fadoon,Фадун,,BG2EE-russian
 Fael,Фаэль,,BG2EE-russian
 Faenya,Фаэния,,BG2EE-russian
 Faerun,Фаэрун,,BG1RUS-EET
+Faerzress,фаэрзресс,,SandrahToT
 Faeyr,Файр,,BG2EE-russian
 Fafhrd,Фафхрд,,BG1RUS-EET
 Faheed,Фахид,,BG2EE-russian
@@ -1821,6 +1829,7 @@ Giddial,Гиддиал,,sod_rus
 Gifos,Гифос,,iwd2_rus
 Gijjal,Гидджал,,BG2EE-russian
 Gil'meh,Гиль'мех,,BG1RUS-EET
+Gilgeam,Гильгеам,,SandrahToT
 Gillish,Гиллиш,,BG2EE-russian
 Giltham,Гильтам,,BG2EE-russian
 Ginafae,Джинафей,,iwd2_rus
@@ -1838,6 +1847,7 @@ Glabrezu,Глабрезу,,BG1RUS-EET
 Glaicus,Глаикус,,BG2EE-russian
 Glandig,Гландиг,,BG2EE-russian
 Glanmarie,Гланмари,,BG1RUS-EET
+Glarasteer,Гларастир,,SandrahToT
 Glarghl,Гларгхл,,sod_rus
 Glariss,Гларисс,,SandrahEET
 Glavius,Главиус,,NWNForBG
@@ -1915,6 +1925,7 @@ Gravis,Грейвис,,BG2EE-russian
 Graxx,Гракс,,NWNForBG
 Graybrook,Грейбрук,,BG2EE-russian
 Graye,Грай,,iwd2_rus
+Graz'zt,Граз'зт,,SandrahToT
 Great Mother,Великая Мать,,SandrahEET
 Greataxe,двуручный топор,,iwd2_rus
 Greatgas,Грейтгас,,sod_rus
@@ -1942,6 +1953,7 @@ Grishum,Гришум,,iwd2_rus
 Gristor,Гристор,,BG2EE-russian
 Grommin,Громмин,,NWNForBG
 Gromnir,Громнир,,BG2EE-russian
+Gromph,Громф,,SandrahToT
 Gron,Грон,,iwd2_rus
 Groncaner,Гронканер,,BG2EE-russian
 Groos,Грус,,BG2EE-russian
@@ -1962,6 +1974,7 @@ Gullykin,Галликин,,BG1RUS-EET
 Gulnan,Гулнан,,NWNForBG
 Gummo,Гуммо,,BG2EE-russian
 Gumph,Гамф,,iwd2_rus
+Guntharr,Гунтарр,,SandrahToT
 Gurak,Гурак,,NWNForBG
 Gurgen,Гурген,,BG2EE-russian
 Gurgh,Гург,,BG2EE-russian
@@ -1969,6 +1982,7 @@ Gurgle,Гургл,,sod_rus
 Guril,гурил,,BG2EE-russian
 Gurke,Гурке,,BG1RUS-EET
 Gurn,Гурн,,BG1RUS-EET
+Gustaf,Густав,,SandrahToT
 Guthewulfe,Гютвульф,,iwd2_rus
 Guthma,Гутма,,iwd2_rus
 Guzud,Гузуд,,NWNForBG
@@ -2178,6 +2192,7 @@ I'quelin,И'квелин,,BG1NPC
 Ianulin,Янулин,,BG2EE-russian
 Ibarum,Ибарум,,NWNForBG
 Iblith,иблит,,BG1RUS-EET
+Ibrandul,Ибрандул,,SandrahToT
 Icasaracht,Иказарахт,,iwd2_rus
 Icebear,Ледяной Медведь,,SandrahEET
 Icedawn,Ледяная Заря,,iwd2_rus
@@ -2817,11 +2832,13 @@ Lightstone,Камень света,,BG2EE-russian
 Lihp,Лихп,,BG1RUS-EET
 Liia,Лийя,,BG1RUS-EET
 Lilarcor,Лиларкор,,BG2EE-russian
+Lilianna,Лилианна,,SandrahToT
 Limha,Лима,,iwd2_rus
 Lindin,Линдин,,BG1RUS-EET
 Linu,Лину,,NWNForBG
 Linvail,Линвайл,,BG2EE-russian
 Lir,Лир,,SandrahRtF
+Liriel,Лириэль,,SandrahToT
 Litla,Литла,,sod_rus
 Littleclub,Литлклаб,,sod_rus
 Littlelog,Литлог,,BG1RUS-EET
@@ -3229,6 +3246,7 @@ Narghal,Наргал,,SandrahEET
 Nargo,Нарго,,iwd2_rus
 Narlen,Нарлен,,BG1RUS-EET
 Naronguth,Наронгут,,SandrahEET
+Narthil,Нартил,,SandrahToT
 Narvantial,Нарванциал,,SandrahEET
 Nasad,Насад,,BG2EE-russian
 Nasha,Наша,,BG1RUS-EET
@@ -3322,6 +3340,7 @@ Ninjato,ниндзя-то,,BG1RUS-EET
 Nirkhas,Ниркхас,,BG2EE-russian
 Nishrek,Нишрек,,BG2EE-russian
 Nishruu,нишруу,,BG1RUS-EET
+Nisstyre,Нисстир,,SandrahToT
 Niuve,Ниув,,SandrahEET
 Nivek,Нивек,,BG1RUS-EET
 Nizidramanii'yt,Низидраманий'ит,,BG2EE-russian
@@ -3412,6 +3431,7 @@ Ophyllis,Офиллис,,sod_rus
 Orannias,Оранниас,,sod_rus
 Orbbz,Орббз,,BG2EE-russian
 Orcslicer,Оркорез,,BG2EE-russian
+Orcus,Оркус,,SandrahToT
 Ordolath,Ордолат,,SandrahEET
 Ordulin,Ордулин,,BG1RUS-EET
 Ordulinian,Ордулиниан,,BG1RUS-EET
@@ -3719,6 +3739,7 @@ Rhaekbog,Раэкбог,,iwd2_rus
 Rhaine,Рэйн,,NWNForBG
 Rhanthona,Рантона,,SandrahRtF
 Rhathona,Ратона,,SandrahEET
+Rhauligan,Раулиган,,SandrahToT
 Rhayla,Райла,,sod_rus
 Rhian,Риан,,BG1RUS-EET
 Rhigaerd,Ригерд,,BG1RUS-EET
@@ -3813,6 +3834,7 @@ Runehammer,Рунный молот,,BG2EE-russian
 Runeshadow,Рунная Тень,,iwd2_rus
 Runestone,Рунный камень,,BG2EE-russian
 Rurik,Рюрик,,BG2EE-russian
+Ruskettle,Раскетл,,SandrahToT
 Ruzon,Рузон,,NWNForBG
 Rylock,Рилок,,BG2EE-russian
 Rynn,Ринн,,iwd2_rus
@@ -3842,6 +3864,7 @@ Saladrex,Саладрекс,,BG2EE-russian
 Salahee,Салахи,,BG2EE-russian
 Salebottom,Торгзад,,BG2EE-russian
 Salia,Салия,,BG2EE-russian
+Saliera,Салиера,,SandrahToT
 Salisam,Салисам,,iwd2_rus
 Salith,Салит,,SandrahRtF
 Sallinithyl,Саллинитил,,BG2EE-russian
@@ -3906,6 +3929,7 @@ Seatower,Морская Башня,,BG1RUS-EET
 Seawatcher,Страж Моря,,BG1RUS-EET
 Seawolf,Сивульф,,BG2EE-russian
 Sebile,Себил,,NWNForBG
+Secomber,Секомбер,,SandrahToT
 Sedos,Седос,,NWNForBG
 Sehameme,Сихамейм,,NWNForBG
 Sehanine,Сеханин,,iwd2_rus
@@ -4077,7 +4101,6 @@ Slythe,Слит,,BG1RUS-EET
 Slythie,Слити,,BG1NPC
 Smaeluv,Вониаг,,BG2EE-russian
 Smithson,Смитсон,,IWDEE-russian
-Stormhorm Smitty,Кузница Штормовых Рогов,,SandrahRtF
 Smoothhands,Гладкие Руки,,IWDEE-russian
 Smurtlepuss,Хитропопье,,BG2EE-russian
 Snakebite,Укус змеи,заклинание,iwd2_rus
@@ -4177,6 +4200,7 @@ Stormcaller,Певец бури,,iwd2_rus
 Stormfingers,Штормопал,,BG2EE-russian
 Stormhammer,Молот бури,,NWNForBG
 Stormherald,Буревестник,,BG2EE-russian
+Stormhorm Smitty,Кузница Штормовых Пиков,,SandrahRtF
 Stormhorn,Штормовые пики,,BG2EE-russian
 Stormlord,Буревладыка,ранг священника Талоса,sod_rus
 Stormshifter,Грозобой,,iwd2_rus
@@ -4308,6 +4332,7 @@ Tanislove,Танислов,,BG2EE-russian
 Tanith,Танит,,NWNForBG
 Tannath,Таннат,,BG2EE-russian
 Tannin,Танин,,BG2EE-russian
+Tannith,Таннит,,SandrahToT
 Tanorm,Танорм,,sod_rus
 Tanova,Танова,,BG1RUS-EET
 Tansheron,Таншерон,,BG2EE-russian
@@ -4564,6 +4589,7 @@ Trollslayer,Истребитель Троллей,,iwd2_rus
 Trollwall,Стена Троллей,,BG1NPC
 Truesilver,Истинное Серебро,,IWDEE-russian
 Trugnuk,Тругнук,,iwd2_rus
+Tsabrak,Цабрак,,SandrahToT
 Tsoct,Тсокт,,BG1RUS-EET
 Tsol,Тсол,,iwd2_rus
 Tsolak,Цолак,,sod_rus
@@ -4698,6 +4724,7 @@ Valsharess,Валшаресс,,sod_rus
 Valygar,Валигар,,BG2EE-russian
 Vanathar,Ванатар,,NWNForBG
 Vanda,Ванда,,NWNForBG
+Vandree,Вандри,,SandrahToT
 Vanimle,Ванимлэ,,BG1NPC
 Vanstraaten,Ванстраатен,,BG2EE-russian
 Vanya,Ванья,,BG1NPC
@@ -4909,6 +4936,7 @@ Wyrm,змий,,BG1RUS-EET
 Wyrmwood,Лес Вирмов,,BG1NPC
 Wyven,Вайверн,,NWNForBG
 Wyvern,виверна,,BG1RUS-EET
+Wyvernspur,Вивернспур,,SandrahToT
 Xachrimos,Ксачримос,,BG2EE-russian
 Xactile,Кзактиль,,iwd2_rus
 Xainlaphar,Ксайнлафар,,iwd2_rus
@@ -5055,6 +5083,7 @@ Zil,Зил,,iwd2_rus
 Zil-t'yor,Зил-т'йор,,iwd2_rus
 Zilvar,Зилвар,,iwd2_rus
 Zilzanzer,Зильзанзер,,iwd2_rus
+Zinzerena,Зинзерина,,SandrahToT
 Ziose,зиос,,BG1RUS-EET
 Ziyaad,Зийаад,,BG2EE-russian
 Zizi the Lovebundle,Зизи Ловеласка,,BG1NPC
