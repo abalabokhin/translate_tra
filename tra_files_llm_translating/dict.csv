@@ -1,7 +1,9 @@
 A'mael,А'маэль,язык эльфов,Kivan_and_Deheriana
 A'mael'amin,А'маэль'амин,язык эльфов,Kivan_and_Deheriana
 A'maelamin,А'маэламин,язык эльфов,BG1NPC
+Amin,амин,язык эльфов,BG1NPC
 Ar',ар',язык эльфов,BG1NPC
+Ar'soora,ар'соора,язык эльфов,BG1NPC
 Aabir,Аабир,,BG2EE-russian
 Aameul,Аамеул,,SandrahEET
 Aarin,Аарин,,NWNForBG
@@ -195,6 +197,7 @@ An'belein,Ан'белейн,язык эльфов,BG1NPC
 Anadia,Анадия,,BG2EE-russian
 Anarg,Анарг,,BG2EE-russian
 Anast,Анаст,,iwd2_rus
+Ananta,ананта,язык эльфов,BG1NPC
 Anath,Анат,,BG2EE-russian
 Anatha,Аната,,iwd2_rus
 Anauroch,Анаурох,,BG1RUS-EET
@@ -231,6 +234,7 @@ Annalynn,Анналинн,,BG2EE-russian
 Anomen,Аномен,,BG1RUS-EET
 Ansalon,Ансалон,,BG2EE-russian
 Anstinus,Анстинус,,SandrahEET
+Anta,анта,язык эльфов,BG1NPC
 Antenos,Антенос,,BG2EE-russian
 Antichickenator,Антицыплятор,,BG1RUS-EET
 Antolle,Антоллэ,,Kivan_and_Deheriana
@@ -1015,6 +1019,7 @@ Daeworn,Даеорн,,SandrahEET
 Daggerford,Даггерфорд,,sod_rus
 Daggerfordians,даггерфордцы,,sod_rus
 Daglefodd,Даглфодд,,BG2EE-russian
+Dagor,дагор,язык эльфов,BG1NPC
 Dahaunarch,Дахаунарх,,BG2EE-russian
 Dahaundar,Дахондар,,BG2EE-russian
 Dahk,Дахк,,sod_rus
@@ -3119,6 +3124,7 @@ Merinandra,Меринандра,,SandrahEET
 Merinid,Меринид,,BG2EE-russian
 Meriwether,Меривейзер,,iwd2_rus
 Merlinious,Мерлиниус,,BG2EE-russian
+Merna,мерна,язык эльфов,BG1NPC
 Merodfin,Меродфин,,Kivan_and_Deheriana
 Merome,Мером,,sod_rus
 Meronia,Мерония,,BG2EE-russian
@@ -3583,6 +3589,7 @@ Permidion,Пермидион,,BG1RUS-EET
 Perorate,Перорейт,,BG1RUS-EET
 Perren,Перрен,,sod_rus
 Perter,Пертер,,BG2EE-russian
+Peta,пета,язык эльфов,BG1NPC
 Petana,Петана,,SandrahEET
 Petrarca,Петрарка,,SandrahEET
 Petrine,Петрин,,BG1RUS-EET
@@ -4147,9 +4154,11 @@ Simmeon,Симмеон,,BG1RUS-EET
 Simonetta,Симонетта,,sod_rus
 Simulacrum,Подобие,,BG1RUS-EET
 Simyaz,Симьяз,,BG2EE-russian
+Sina,сина,язык эльфов,BG1NPC
 Sindret,Синдрет,,sod_rus
 Sinna,Синна,,BG1NPC
 Sinome,Синомэ,,BG1NPC
+Sinta,синта,язык эльфов,BG1NPC
 Sirine,сирена,,BG1RUS-EET
 Sixfingers,Шестипалый,,BG2EE-russian
 Sixscar,Сикскар,,BG2EE-russian
@@ -4445,6 +4454,7 @@ Taxek,Таксек,,BG1RUS-EET
 Tazit,Тазит,,BG2EE-russian
 Tazok,Тазок,,BG1RUS-EET
 Tchazar,Чазар,,BG1RUS-EET
+Te,тэ,язык эльфов,BG1NPC
 Teel,Тил,,BG1RUS-EET
 Teera,Тира,,sod_rus
 Tejarn,тежарнский,,BG2EE-russian
@@ -4469,6 +4479,7 @@ Telmen,Тельман,,iwd2_rus
 Telwyn,Тельвин,,BG2EE-russian
 Tempos,Темпос,,iwd2_rus
 Tempus,Темпус,,BG1RUS-EET
+Ten'rashwe,тен'рашвэ,язык эльфов,BG1NPC
 Tenhammer,Размолотивший,,BG1RUS-EET
 Tenhevich,Тенхович,,BG1RUS-EET
 Tenna,Тенна,,Kivan_and_Deheriana
@@ -4506,6 +4517,7 @@ Thaird,Фаирд,,sod_rus
 Thalackz'hind,Талакз'хинд,,SandrahRtF
 Thalantyr,Талантир,,BG1RUS-EET
 Thaldorn,Талдорн,,BG1RUS-EET
+Thaliolle,талиоллэ,BG1NPC
 Thallis,Таллис,,BG2EE-russian
 Thann,Танн,,BG1RUS-EET
 Tharantis,Тарантис,,sod_rus
@@ -4586,7 +4598,7 @@ Tinbasher,Тинбашер,,sod_rus
 Tindul,Тиндул,,BG2EE-russian
 Tinuvil,Тинувиль,,BG1NPC
 Tipian,Типиан,,BG1RUS-EET
-Tira,Тира,,BG1NPC
+Tira,тира,язык эльфов,BG1NPC
 Tirdir,Тирдир,,BG2EE-russian
 Tiris,Тирис,,BG2EE-russian
 Tirthold,Тиртхолд,,BG2EE-russian
@@ -4775,7 +4787,7 @@ Uthgar,Утгар,,iwd2_rus
 Uthgardt,Утгардт,,BG1RUS-EET
 Utinu,Утину,,BG1NPC
 Utor,Утор,,BG1RUS-EET
-Uuma,Уума,,BG1NPC
+Uuma,уума,язык эльфов,BG1NPC
 Uxley,Уксли,,sod_rus
 Uzef,Юзеф,,BG1NPC
 Vaarglan,Ваарглан,,iwd2_rus
@@ -4979,6 +4991,7 @@ Wilch,Вилч,,sod_rus
 Wildwanderer,Дикий Странник,,BG2EE-russian
 Wilf,Вильф,,BG1RUS-EET
 Willet,Уиллет,,BG2EE-russian
+Wilwarinamin,вилваринамин,язык эльфов,BG1NPC
 Windspear,Виндспир,,BG1RUS-EET
 Wingding,Вингдинга,,BG2EE-russian
 Winski,Вински,,BG1RUS-EET
