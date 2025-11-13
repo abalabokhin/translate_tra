@@ -774,7 +774,7 @@ Callik,Каллик,,NWNForBG
 Calliostroni,Калльострони,,BG1NPC
 Callisto,Каллисто,,SandrahEET
 Calos,Калос,,SandrahEET
-Cam'wethrin,Кам'ветрин,,Kivan_and_Deheriana
+Cam'wethrin,Кам'ветрин,язык эльфов,Kivan_and_Deheriana
 Camaris,Камарис,,BG2EE-russian
 Cambion,камбион,,BG1RUS-EET
 Camitis,Камитис,,BG2EE-russian
@@ -1456,6 +1456,7 @@ Emcyric,Эмцирик,,SandrahEET
 Emesi,Эмеси,,sod_rus
 Emmerich,Эммерик,,iwd2_rus
 En'coiamin,эн'коиамин,язык эльфов,BG1NPC
+En,ан,язык эльфов,Kivan_and_Deheriana
 Enaril,Энарил,,IWDEE-russian
 Enchanter,чародей,,BG1RUS-EET
 Endar,Эндар,,NWNForBG
@@ -1481,6 +1482,7 @@ Envelop,Окутывание,,BG2EE-russian
 Envin,Энвин,,BG1NPC
 Ephrik,Эфрик,,sod_rus
 Equus,Экус,,sod_rus
+Er,эр,язык эльфов,Kivan_and_Deheriana
 Er'sseae,Эр'ссэа,,BG2EE-russian
 Eradru,Эрадру,,iwd2_rus
 Erard,Ирард,,NWNForBG
@@ -2259,6 +2261,7 @@ Ihtafeer,Ихтафир,,BG2EE-russian
 Ikert,Икерт,,BG2EE-russian
 Iko,Ико,,BG2EE-russian
 Ikros,Икрос,,sod_rus
+Il',ил',язык эльфов,Kivan_and_Deheriana
 Ilair,Илейр,,iwd2_rus
 Ilauna,Илауна,,IWDEE-russian
 Ilbratha,Илбрата,,BG2EE-russian
@@ -4689,7 +4692,7 @@ Tsuraya,Цурайя,,BG2EE-russian
 Tu'narath,Ту'нарат,,SandrahEET
 Tuigan,Туиган,,BG2EE-russian
 Tula,тула,язык эльфов,BG1NPC
-Tulien,Тулиэн,,Kivan_and_Deheriana
+Tulien,тулиэн,язык эльфов,Kivan_and_Deheriana
 Tunigian,Тунигиан,,BG1NPC
 Tunnelfist,Туннельщик,,iwd2_rus
 Tuqak,Тукак,,iwd2_rus
@@ -4840,7 +4843,7 @@ Vay-ya,Вай-йя,,BG1RUS-EET
 Ve'xelt,Ве`кселт,,SandrahEET
 Vecna,Векна,,BG2EE-russian
 Veddion,Веддион,,iwd2_rus
-Vedui,Ведуи,,Kivan_and_Deheriana
+Vedui,Ведуи,язык эльфов,Kivan_and_Deheriana
 Veira,Вейра,,iwd2_rus
 Veiros,Вейрос,,iwd2_rus
 Veladorn,Веладорн,,BG1NPC
