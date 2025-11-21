@@ -7,45 +7,70 @@ from functools import cmp_to_key
 from PIL import Image, ImageOps
 
 __desc__ = '''
-This program takes groups of png, concatenate them and put them into outfolder 
+This program performs a specific image manipulation by merging parts of a tile
+from a source image into a tile of a destination image, using another tile from
+the destination image as a transparency mask. The tile indices are hardcoded.
 '''
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__desc__)
-    parser.add_argument('file1', help='PNG in file')
-    parser.add_argument('file2', help='PNG in file')
-    parser.add_argument('file_out', help='PNG out file')
+    parser.add_argument('dest_file', help='Destination PNG file (will be modified)')
+    parser.add_argument('source_file', help='Source PNG file')
+    parser.add_argument('output_file', help='Output PNG file path')
 
     args = parser.parse_args()
 
-    print(args.file1)
-    im1 = Image.open(args.file1)
-    im2 = Image.open(args.file2)
+    print(args.dest_file)
+    dest_image = Image.open(args.dest_file)
+    source_image = Image.open(args.source_file)
 
-    n_x_tiles = im1.width / 64
-    tile_i = 1537
-    tile_i_2 = 3372
-    tile_x_i = tile_i % n_x_tiles
-    tile_y_i = tile_i // n_x_tiles
-    tile_x_i_2 = tile_i_2 % n_x_tiles
-    tile_y_i_2 = tile_i_2 // n_x_tiles
-    print(n_x_tiles, tile_x_i, tile_y_i)
-    tile_1 = im1.crop((tile_x_i * 64, tile_y_i * 64, (tile_x_i + 1) * 64, (tile_y_i + 1) * 64))
-    tile_1_2 = im1.crop((tile_x_i_2 * 64, tile_y_i_2 * 64, (tile_x_i_2 + 1) * 64, (tile_y_i_2 + 1) * 64))
-    tile_2 = im2.crop((tile_x_i * 64, tile_y_i * 64, (tile_x_i + 1) * 64, (tile_y_i + 1) * 64))
+    # The script assumes images are composed of 64x64 tiles.
+    tile_width = 64
+    tiles_per_row = dest_image.width / tile_width
 
-    # tile_1.save("1.png")
-    # tile_1_2.save("1_2.png")
-    # tile_2.save("2.png")
+    # Hardcoded tile indices
+    mask_tile_index = 1537  # This tile from dest_file provides the transparency mask.
+    dest_tile_index = 3372  # This tile from dest_file will be modified.
 
-    for x in range(64):
-        for y in range(64):
-            if tile_1.getpixel((x, y)) == (0, 0, 0, 0):
-                tile_1_2.putpixel((x, y), tile_2.getpixel((x, y)))
+    # Calculate coordinates for the mask tile
+    mask_tile_x = mask_tile_index % tiles_per_row
+    mask_tile_y = mask_tile_index // tiles_per_row
 
-    im1.paste(tile_1_2, (int(tile_x_i_2) * 64, int(tile_y_i_2) * 64))
-    im1.save(args.file_out)
-    # tile_1_2.save("1_2_m.png")
+    # Calculate coordinates for the destination tile
+    dest_tile_x = dest_tile_index % tiles_per_row
+    dest_tile_y = dest_tile_index // tiles_per_row
+
+    print(tiles_per_row, mask_tile_x, mask_tile_y)
+
+    # Crop the tiles from the images.
+    # The mask tile is from the destination image.
+    mask_tile = dest_image.crop((mask_tile_x * tile_width, mask_tile_y * tile_width, (mask_tile_x + 1) * tile_width, (mask_tile_y + 1) * tile_width))
+
+    # The destination tile is also from the destination image, but a different one.
+    dest_tile = dest_image.crop((dest_tile_x * tile_width, dest_tile_y * tile_width, (dest_tile_x + 1) * tile_width, (dest_tile_y + 1) * tile_width))
+
+    # The source tile is from the source image, at the same location as the mask tile.
+    source_tile = source_image.crop((mask_tile_x * tile_width, mask_tile_y * tile_width, (mask_tile_x + 1) * tile_width, (mask_tile_y + 1) * tile_width))
+
+    # For debugging, save the tiles before modification
+    # mask_tile.save("mask_tile.png")
+    # dest_tile.save("dest_tile_before.png")
+    # source_tile.save("source_tile.png")
+
+    # For each pixel, if the mask_tile is transparent, copy the pixel from
+    # the source_tile to the dest_tile.
+    for x in range(tile_width):
+        for y in range(tile_width):
+            if mask_tile.getpixel((x, y)) == (0, 0, 0, 0):
+                dest_tile.putpixel((x, y), source_tile.getpixel((x, y)))
+
+    # Paste the modified tile back into the destination image.
+    # The paste location is the top-left corner of the destination tile's area.
+    paste_coord = (int(dest_tile_x) * tile_width, int(dest_tile_y) * tile_width)
+    dest_image.paste(dest_tile, paste_coord)
+    dest_image.save(args.output_file)
+    # For debugging, save the modified destination tile
+    # dest_tile.save("dest_tile_after.png")
 
     # tile_1.save("1.png")
     # tile_1_2.save("1_2.png")
