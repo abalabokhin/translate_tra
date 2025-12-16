@@ -20,11 +20,10 @@ def detect_encoding(filepath):
 
 
 def is_valid_actor_name(actor_name):
-    """Check if the actor name is valid (starts with TC or BTC)."""
+    """Check if the actor name is valid (all of them are considered valid for now)."""
     if not actor_name:
         return False
-    # Valid actor names should start with TC or BTC
-    return actor_name.startswith(('TC', 'BTC'))
+    return True
 
 
 def extract_death_variable_from_cre(cre_filepath):
@@ -179,12 +178,13 @@ def parse_tp2_table_modifications(tp2_filepath):
 
     # Parse PDIALOG.2DA APPEND statements
     # Format: APPEND ~PDIALOG.2DA~ ~CHARACTER_NAME POST_DIALOG JOINED_DIALOG DREAM_DIALOG ***...~
-    pdialog_pattern = r'APPEND\s+~PDIALOG\.2DA~\s+~([A-Za-z_][A-Za-z0-9_]*)\s+([A-Za-z_][A-Za-z0-9_]*)\s+([A-Za-z_][A-Za-z0-9_]*)\s+([A-Za-z_*][A-Za-z0-9_*]*)\s+'
+    pdialog_pattern = r'APPEND\s+~PDIALOG\.2DA~\s+~([A-Za-z_#][A-Za-z0-9_#]*)\s+([A-Za-z_#][A-Za-z0-9_#]*)\s+([A-Za-z_#][A-Za-z0-9_#]*)\s+([A-Za-z_*#][A-Za-z0-9_*#]*)'
 
     for match in re.finditer(pdialog_pattern, content, re.IGNORECASE):
         character = match.group(1).upper()
         post_dialog = match.group(2).upper()
         joined_dialog = match.group(3).upper()
+
         dream_dialog = match.group(4).upper() if match.group(4) != '***' else None
 
         # Only include valid actor names
@@ -203,7 +203,7 @@ def parse_tp2_table_modifications(tp2_filepath):
 
     # Parse INTERDIA.2DA APPEND statements
     # Format: APPEND ~INTERDIA.2DA~ ~CHARACTER_NAME PARTY_DIALOG INTERRUPT_DIALOG~
-    interdia_pattern = r'APPEND\s+~INTERDIA\.2DA~\s+~([A-Za-z_][A-Za-z0-9_]*)\s+([A-Za-z_][A-Za-z0-9_]*)\s+([A-Za-z_][A-Za-z0-9_]*)\s*~'
+    interdia_pattern = r'APPEND\s+~INTERDIA\.2DA~\s+~([A-Za-z_#][A-Za-z0-9_#]*)\s+([A-Za-z_#][A-Za-z0-9_#]*)\s+([A-Za-z_#][A-Za-z0-9_#]*)\s*~'
 
     for match in re.finditer(interdia_pattern, content, re.IGNORECASE):
         character = match.group(1).upper()
@@ -534,8 +534,6 @@ the TP2 table modifications (PDIALOG.2DA and INTERDIA.2DA).
 The key insight is that TP2 table entries use death variables (not CRE filenames)
 as the first column, so we extract death variables from CRE files and match them
 to the TP2 entries to complete the actor-to-CRE mapping.
-
-Only actors starting with TC or BTC are considered valid.
 ''')
 
     parser.add_argument('d_folder', help='Folder containing D files')
