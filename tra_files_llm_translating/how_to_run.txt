@@ -1,0 +1,14 @@
+Before running - use: pip install antlr4-python3-runtime==4.9.3
+
+1. extract_actors_using_grammar.py, with D folder, CRE folder and tp2 file, fill the existing ones manually (or take them from CRE files). The result is in: actor_description.csv
+2. parse_d_grammar.py
+
+blacklist.txt
+collect_english_names.py
+dict.csv
+find_translations_with_llm.py
+how_to_run.txt
+parse_d_grammar.py
+test
+translate_dialogs.py
+update_tra_from_csv.py
