@@ -124,9 +124,23 @@ class ImprovedDialogueListener(ParseTreeListener):
             return self.tra_cache[tra_filename]
         
         tra_path = os.path.join(self.tra_folder, tra_filename)
+        # If exact path doesn't exist, try case-insensitive search in directory
         if not os.path.exists(tra_path):
-            print(f"❌ ERROR: TRA file {tra_filename} not found in {self.tra_folder}")
-            return {}
+            found_path = None
+            if os.path.exists(self.tra_folder):
+                files_in_dir = os.listdir(self.tra_folder)
+                # print(f"DEBUG: Looking for {tra_filename} in {self.tra_folder}. Files: {files_in_dir}")
+                for f in files_in_dir:
+                    if f.lower() == tra_filename.lower():
+                        found_path = os.path.join(self.tra_folder, f)
+                        break
+            
+            if found_path:
+                tra_path = found_path
+            else:
+                print(f"❌ ERROR: TRA file {tra_filename} not found in {self.tra_folder}")
+                print(f"DEBUG: Available files: {os.listdir(self.tra_folder)}")
+                return {}
         
         try:
             encoding = detect_encoding(tra_path)
@@ -154,8 +168,14 @@ class ImprovedDialogueListener(ParseTreeListener):
             tra_text = match.group(2).strip()
             tra_dict[tra_number] = tra_text
         
+        # Store in cache (use the requested filename as key to avoid re-loading)
         self.tra_cache[tra_filename] = tra_dict
-        print(f"✅ Loaded {len(tra_dict)} TRA entries from {tra_filename}")
+        # Also store with actual filename if different
+        actual_name = os.path.basename(tra_path)
+        if actual_name != tra_filename:
+            self.tra_cache[actual_name] = tra_dict
+            
+        print(f"✅ Loaded {len(tra_dict)} TRA entries from {actual_name}")
         return tra_dict
     
     def resolve_text(self, text_node):
@@ -172,7 +192,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                 # Track this TRA entry as used
                 base_name = os.path.splitext(self.d_filename)[0]
                 tra_filename = base_name + '.tra'
-                self.used_tra_entries.add((tra_filename, tra_number))
+                # Store lowercase filename for consistent tracking
+                self.used_tra_entries.add((tra_filename.lower(), tra_number))
                 return self.tra_dict[tra_number]
             else:
                 self.missing_tra_refs.add(text)
@@ -880,7 +901,8 @@ class ImprovedGrammarDialogueParser:
         for tra_filename, tra_dict in self.tra_cache.items():
             for tra_number, tra_text in tra_dict.items():
                 # Check if this entry was NOT used in dialogues
-                if (tra_filename, tra_number) not in self.used_tra_entries:
+                # used_tra_entries stores lowercase filenames
+                if (tra_filename.lower(), tra_number) not in self.used_tra_entries:
                     # Create reference in format "filename.tra:@123"
                     reference = f"{tra_filename}:@{tra_number}"
                     unused_lines.append((reference, tra_text))
