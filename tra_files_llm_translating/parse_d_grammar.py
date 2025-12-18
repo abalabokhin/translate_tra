@@ -250,6 +250,56 @@ class ImprovedDialogueListener(ParseTreeListener):
             if self.current_speaker not in self.all_speakers:
                 self.all_speakers[self.current_speaker] = {}
     
+    def enterExtendTopBottomDAction(self, ctx: DParser.ExtendTopBottomDActionContext):
+        """Handle EXTEND_TOP/BOTTOM action."""
+        if not ctx.dlg:
+            return
+
+        speaker = self.get_speaker_from_file_rule(ctx.dlg)
+        
+        # Get states being extended
+        target_states = []
+        if ctx.states:
+            for state_ctx in ctx.states:
+                state_id = self.resolve_text(state_ctx)
+                target_states.append(state_id)
+        
+        # Ensure speaker initialized
+        self.ensure_speaker_initialized(speaker)
+
+        # Process transitions (REPLYs)
+        if ctx.transitions:
+            for trans_ctx in ctx.transitions:
+                for state_id in target_states:
+                    # Create/update state if it doesn't exist
+                    # This allows capturing lines for states defined externally
+                    if state_id not in self.all_states_by_id:
+                        state_obj = DialogueState(
+                            state_id=state_id,
+                            speaker=speaker,
+                            condition="",
+                            lines=[],
+                            transitions=[]
+                        )
+                        self.all_states_by_id[state_id] = state_obj
+                        self.all_states.append(state_obj)
+                        self.all_speakers[speaker][state_id] = state_obj
+                    
+                    # Extract replies linking to this state
+                    reply_lines = self.extract_replies_from_transition(trans_ctx, state_id)
+                    
+                    # Add lines
+                    self.all_lines.extend(reply_lines)
+                    self.all_states_by_id[state_id].lines.extend(reply_lines)
+                    
+                    # Extract and store transition targets
+                    targets = self.extract_transition_targets(trans_ctx)
+                    if targets:
+                        self.add_transition(state_id, targets[0]) # add_transition takes single target
+                        # Use internal logic if multiple targets (though add_transition implies list append)
+                        for t in targets[1:]:
+                             self.add_transition(state_id, t)
+
     def enterChainDAction(self, ctx: DParser.ChainDActionContext):
         """Handle CHAIN dialogue action."""
         if ctx.dlg:
