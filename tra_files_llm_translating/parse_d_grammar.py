@@ -229,6 +229,68 @@ class ImprovedDialogueListener(ParseTreeListener):
             return text
         return None
     
+    def enterInterjectCopyTransDAction(self, ctx: DParser.InterjectCopyTransDActionContext):
+        """Handle INTERJECT_COPY_TRANS."""
+        if not ctx.dlg:
+            return
+            
+        # Target info
+        target_dlg = self.get_speaker_from_file_rule(ctx.dlg)
+        
+        # In grammar: dlg label globalVar
+        # But globalVar is actually the new label for the interjection chain
+        new_label = "UNKNOWN_ICT"
+        if ctx.globalVar:
+            new_label = self.resolve_text(ctx.globalVar)
+            
+        print(f"DEBUG: Processing INTERJECT_COPY_TRANS {new_label}")
+
+        if hasattr(ctx, 'blocks') and ctx.blocks:
+            last_state_id = None
+            
+            for i, block in enumerate(ctx.blocks):
+                block_state_id = f"{new_label}_BLOCK_{i}"
+                
+                entry_state, exit_state = self.process_chain_block(block, block_state_id)
+                
+                if last_state_id and entry_state:
+                    self.add_transition(last_state_id, entry_state)
+                
+                if exit_state:
+                    last_state_id = exit_state
+
+    def enterInterjectDAction(self, ctx: DParser.InterjectDActionContext):
+        """Handle INTERJECT."""
+        if not ctx.dlg:
+            return
+            
+        # Target info
+        target_dlg = self.get_speaker_from_file_rule(ctx.dlg)
+        
+        new_label = "UNKNOWN_INTERJECT"
+        if ctx.globalVar:
+            new_label = self.resolve_text(ctx.globalVar)
+
+        print(f"DEBUG: Processing INTERJECT {new_label}")
+        
+        last_state_id = None
+        
+        if hasattr(ctx, 'blocks') and ctx.blocks:
+            for i, block in enumerate(ctx.blocks):
+                block_state_id = f"{new_label}_BLOCK_{i}"
+                
+                entry_state, exit_state = self.process_chain_block(block, block_state_id)
+                
+                if last_state_id and entry_state:
+                    self.add_transition(last_state_id, entry_state)
+                
+                if exit_state:
+                    last_state_id = exit_state
+        
+        # Process epilog (transitions)
+        if ctx.epilog and last_state_id:
+            self.process_chain_epilog(ctx.epilog, last_state_id)
+
     def enterBeginDAction(self, ctx: DParser.BeginDActionContext):
         """Handle BEGIN dialogueName action."""
         if ctx.dlg:
