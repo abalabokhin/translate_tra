@@ -65,6 +65,9 @@ class ImprovedDialogueListener(ParseTreeListener):
 
         # Transition tracking
         self.state_transitions = {}  # state_id -> [target_states]
+        
+        # Chain tracking
+        self.chain_roots = {}  # (speaker, label) -> root_state_id
 
         # Error tracking
         self.missing_tra_refs = set()
@@ -259,27 +262,55 @@ class ImprovedDialogueListener(ParseTreeListener):
         if ctx.label:
             chain_label = self.resolve_text(ctx.label)
 
+        last_state_id = None
         if ctx.body:
-            self.process_chain_dlg_rule(ctx.body, chain_label)
+            last_state_id = self.process_chain_dlg_rule(ctx.body, chain_label)
 
         # Process epilog (transitions after CHAIN...END)
-        if ctx.epilog:
-            self.process_chain_epilog(ctx.epilog, chain_label)
+        if ctx.epilog and last_state_id:
+            self.process_chain_epilog(ctx.epilog, last_state_id)
+        elif ctx.epilog:
+            print(f"Warning: Epilog found but no last state for chain {chain_label}")
     
     def process_chain_dlg_rule(self, chain_ctx, chain_label):
         """Process chainDlgRule context."""
         if not chain_ctx:
-            return
+            return None
+            
+        # Record chain root if not already recorded
+        root_recorded = False
+        last_state_id = None
             
         # Process initial speaker lines
         if hasattr(chain_ctx, 'initialSpeakerLines') and chain_ctx.initialSpeakerLines:
             for i, element in enumerate(chain_ctx.initialSpeakerLines):
-                self.process_chain_element(element, f"{chain_label}_INITIAL_{i}")
+                state_id = f"{chain_label}_INITIAL_{i}"
+                if not root_recorded:
+                    print(f"DEBUG: Registering chain root: ({self.current_speaker}, {chain_label}) -> {state_id}")
+                    self.chain_roots[(self.current_speaker, chain_label)] = state_id
+                    root_recorded = True
+                
+                # Connect from previous state if exists
+                if last_state_id:
+                     self.add_transition(last_state_id, state_id)
+
+                self.process_chain_element(element, state_id)
+                last_state_id = state_id
         
         # Process chain blocks
         if hasattr(chain_ctx, 'blocks') and chain_ctx.blocks:
             for i, block in enumerate(chain_ctx.blocks):
-                self.process_chain_block(block, f"{chain_label}_BLOCK_{i}")
+                block_state_id = f"{chain_label}_BLOCK_{i}"
+                
+                entry_state, exit_state = self.process_chain_block(block, block_state_id)
+                
+                if last_state_id and entry_state:
+                    self.add_transition(last_state_id, entry_state)
+                
+                if exit_state:
+                    last_state_id = exit_state
+
+        return last_state_id
     
     def ensure_speaker_initialized(self, speaker):
         """Ensure speaker exists in all_speakers dictionary."""
@@ -333,6 +364,10 @@ class ImprovedDialogueListener(ParseTreeListener):
     
     def process_chain_block(self, block_ctx, state_id):
         """Process chainBlockRule context."""
+        entry_state = None
+        exit_state = None
+        last_sub_state = None
+
         if hasattr(block_ctx, 'elements') and block_ctx.elements:
             # Handle monolog chain block
             if hasattr(block_ctx, 'dlg') and block_ctx.dlg:
@@ -342,28 +377,48 @@ class ImprovedDialogueListener(ParseTreeListener):
 
             for i, element in enumerate(block_ctx.elements):
                 element_state_id = f"{state_id}_ELEMENT_{i}"
+                
+                if not entry_state:
+                    entry_state = element_state_id
+                
+                if last_sub_state:
+                    self.add_transition(last_sub_state, element_state_id)
+
                 # Temporarily change speaker for this block
                 original_speaker = self.current_speaker
                 self.current_speaker = block_speaker
                 self.ensure_speaker_initialized(self.current_speaker)
                 self.process_chain_element(element, element_state_id)
                 self.current_speaker = original_speaker
+                
+                last_sub_state = element_state_id
+            
+            exit_state = last_sub_state
 
         elif hasattr(block_ctx, 'blocks') and block_ctx.blocks:
             # Handle branch chain block
             for i, sub_block in enumerate(block_ctx.blocks):
-                self.process_chain_block(sub_block, f"{state_id}_BRANCH_{i}")
+                 sub_entry, sub_exit = self.process_chain_block(sub_block, f"{state_id}_BRANCH_{i}")
+                 if not entry_state:
+                     entry_state = sub_entry
+                 
+                 if last_sub_state and sub_entry:
+                     self.add_transition(last_sub_state, sub_entry)
+                 
+                 if sub_exit:
+                     last_sub_state = sub_exit
+            
+            exit_state = last_sub_state
 
-    def process_chain_epilog(self, epilog_ctx, chain_label):
+        return entry_state, exit_state
+
+    def process_chain_epilog(self, epilog_ctx, parent_state_id):
         """Process chainActionEpilogRule context - handles transitions after CHAIN...END."""
         if not epilog_ctx:
             return
 
         # Check if this is an endWithTransitionsChainActionEpilog (has transitions)
         if hasattr(epilog_ctx, 'transitions') and epilog_ctx.transitions:
-            # Create a pseudo-state for the chain epilog to attach replies to
-            epilog_state_id = f"{chain_label}_EPILOG"
-
             # Ensure current speaker is initialized
             self.ensure_speaker_initialized(self.current_speaker)
 
@@ -373,31 +428,32 @@ class ImprovedDialogueListener(ParseTreeListener):
 
             for trans_ctx in epilog_ctx.transitions:
                 # Extract REPLY lines from transitions
-                reply_lines = self.extract_replies_from_transition(trans_ctx, epilog_state_id)
+                reply_lines = self.extract_replies_from_transition(trans_ctx, parent_state_id)
                 epilog_lines.extend(reply_lines)
 
                 # Extract transition targets
                 targets = self.extract_transition_targets(trans_ctx)
                 transition_targets.extend(targets)
 
-            # Store transitions
+            # Store transitions for parent state
             if transition_targets:
-                self.state_transitions[epilog_state_id] = transition_targets
+                if parent_state_id in self.state_transitions:
+                    self.state_transitions[parent_state_id].extend(transition_targets)
+                else:
+                    self.state_transitions[parent_state_id] = transition_targets
 
-            # Create a pseudo-state for these epilog transitions
+            # If there are reply lines, they are already linked to parent_state_id
             if epilog_lines:
-                state_obj = DialogueState(
-                    state_id=epilog_state_id,
-                    speaker=self.current_speaker,
-                    condition="",
-                    lines=epilog_lines,
-                    transitions=transition_targets
-                )
-
-                self.all_states_by_id[epilog_state_id] = state_obj
-                self.all_states.append(state_obj)
+                # Add them to all_lines
                 self.all_lines.extend(epilog_lines)
-                self.all_speakers[self.current_speaker][epilog_state_id] = state_obj
+                
+                # Add them to the state object if we can find it
+                if parent_state_id in self.all_states_by_id:
+                     self.all_states_by_id[parent_state_id].lines.extend(epilog_lines)
+                
+                # No need to create a separate epilog state anymore unless we want to group them
+                # But typically reply lines are part of the state they reply to.
+
     
     def enterIfThenState(self, ctx: DParser.IfThenStateContext):
         """Enhanced state handler with proper transition tracking."""
@@ -536,21 +592,29 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         return replies
     
+    def add_transition(self, from_state, to_state):
+        """Add a transition between states."""
+        if from_state not in self.state_transitions:
+            self.state_transitions[from_state] = []
+        self.state_transitions[from_state].append(to_state)
+
     def extract_transition_targets(self, trans_ctx):
         """Extract target states from transition context."""
         targets = []
         
         if hasattr(trans_ctx, 'out') and trans_ctx.out:
             for target_ctx in trans_ctx.out:
-                if hasattr(target_ctx, 'label') and target_ctx.label:
-                    target_id = self.resolve_text(target_ctx.label)
-                    targets.append(target_id)
-                elif hasattr(target_ctx, 'dlg') and target_ctx.dlg:
+                if hasattr(target_ctx, 'dlg') and target_ctx.dlg:
                     # EXTERN format
                     speaker = self.get_speaker_from_file_rule(target_ctx.dlg)
                     if hasattr(target_ctx, 'label') and target_ctx.label:
                         state_id = self.resolve_text(target_ctx.label)
+                        print(f"DEBUG: Extracted EXTERN target: {speaker}:{state_id}")
                         targets.append(f"{speaker}:{state_id}")
+                elif hasattr(target_ctx, 'label') and target_ctx.label:
+                    target_id = self.resolve_text(target_ctx.label)
+                    print(f"DEBUG: Extracted label target: {target_id}")
+                    targets.append(target_id)
                 elif str(type(target_ctx)).find('ExitTransitionTargetContext') != -1:
                     targets.append('EXIT')
         
@@ -581,6 +645,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         for state_id, target_states in self.state_transitions.items():
             source_state = self.all_states_by_id.get(state_id)
             if not source_state:
+                print(f"DEBUG: Source state {state_id} not found")
                 continue
                 
             # Get the last lines of the source state
@@ -594,6 +659,7 @@ class ImprovedDialogueListener(ParseTreeListener):
                     
                 target_state = self.all_states_by_id.get(target_state_id)
                 if not target_state:
+                    print(f"DEBUG: Target state {target_state_id} not found (from {state_id})")
                     continue
                 
                 # Get the first lines of the target state
@@ -601,12 +667,17 @@ class ImprovedDialogueListener(ParseTreeListener):
                 target_first_lines = [line for line in target_lines if line.line_type == "SAY"]
                 
                 # Connect last lines of source to first lines of target
+                connected = False
                 for source_line in source_last_lines:
                     for target_line in target_first_lines:
                         if target_line.line_id not in source_line.targets:
                             source_line.targets.append(target_line.line_id)
                         if source_line.line_id not in target_line.predecessors:
                             target_line.predecessors.append(source_line.line_id)
+                        connected = True
+                
+                if connected:
+                    print(f"DEBUG: Connected {state_id} -> {target_state_id}")
         
         print(f"Flow building completed. Connected {len([line for line in self.all_lines if line.targets or line.predecessors])} lines.")
     
@@ -614,6 +685,10 @@ class ImprovedDialogueListener(ParseTreeListener):
         """Resolve EXTERN ~speaker~ state_id references."""
         for state_id, transitions in list(self.state_transitions.items()):
             resolved_transitions = []
+            
+            # Get current speaker for resolving local chain references
+            source_state = self.all_states_by_id.get(state_id)
+            current_speaker = source_state.speaker if source_state else "UNKNOWN"
             
             for transition in transitions:
                 if ':' in transition:
@@ -623,11 +698,23 @@ class ImprovedDialogueListener(ParseTreeListener):
                     # Look for target state in the specified speaker's states
                     if speaker in self.all_speakers and target_state_id in self.all_speakers[speaker]:
                         resolved_transitions.append(target_state_id)
+                    # Check chain roots
+                    elif (speaker, target_state_id) in self.chain_roots:
+                        resolved = self.chain_roots[(speaker, target_state_id)]
+                        print(f"DEBUG: Resolved EXTERN {transition} -> {resolved}")
+                        resolved_transitions.append(resolved)
                     else:
-                        print(f"Warning: EXTERN reference {transition} not found")
+                        print(f"Warning: EXTERN reference {transition} not found. Available roots for {speaker}: {[k[1] for k in self.chain_roots.keys() if k[0] == speaker]}")
                         resolved_transitions.append(transition)  # Keep unresolved
                 else:
-                    resolved_transitions.append(transition)
+                    # Local reference
+                    # Check if it matches a chain root for the current speaker
+                    if (current_speaker, transition) in self.chain_roots:
+                        resolved = self.chain_roots[(current_speaker, transition)]
+                        print(f"DEBUG: Resolved local CHAIN target {transition} -> {resolved}")
+                        resolved_transitions.append(resolved)
+                    else:
+                        resolved_transitions.append(transition)
             
             self.state_transitions[state_id] = resolved_transitions
     
