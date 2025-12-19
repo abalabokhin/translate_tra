@@ -175,7 +175,7 @@ Player1,"5","3",~Подавлять свои эмоции не очень пол
             req = urllib.request.Request(self.ollama_url, data=data,
                                        headers={'Content-Type': 'application/json'})
 
-            with urllib.request.urlopen(req, timeout=3600) as response:
+            with urllib.request.urlopen(req, timeout=7200) as response:
                 result = json.loads(response.read().decode('utf-8'))
                 return result.get("response", "").strip()
         except urllib.error.URLError as e:
