@@ -25,9 +25,6 @@ def replace_refs_in_bin(filename, table_bin):
     pos_i = 0
     while pos_i < len(s_orig) - 8:
         id_candidate = s[pos_i:pos_i+8].upper()
-        if id_candidate[0:2] == b'NW':
-            pos_i += 8
-            continue
         if id_candidate in table_bin:
             s = s[:pos_i] + table_bin[id_candidate] + s[pos_i+8:]
             pos_i += 8
