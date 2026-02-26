@@ -86,16 +86,18 @@ class TSTranslator:
     def process_ts_file(self, ts_file):
         """Process a single .ts file, translating unfinished entries"""
         print(f"Processing {ts_file}...")
-        
+
+        translations_updated = 0
+        modified_content = None
+
         try:
             # Read the original file content
             with open(ts_file, 'r', encoding='utf-8') as f:
                 content = f.read()
-            
+
             tree = ET.parse(ts_file)
             root = tree.getroot()
-            
-            translations_updated = 0
+
             modified_content = content
             
             for message in root.findall('.//message'):
@@ -160,22 +162,21 @@ class TSTranslator:
                             modified_content = modified_content.replace(match.group(0), replacement)
                             translations_updated += 1
                             if self.test_mode and self.test_count >= 3:
-                                break
-            
-            if translations_updated > 0:
-                # Write the modified content back to the file
-                with open(ts_file, 'w', encoding='utf-8') as f:
-                    f.write(modified_content)
-                print(f"  Updated {translations_updated} translations in {ts_file}")
-            else:
-                print(f"  No translations updated in {ts_file}")
-                # File remains unchanged - original formatting preserved
-                
+                                print("Test mode: reached 3 DeepL calls, stopping (exception will be raised to trigger save)")
+                                raise Exception("Test mode limit reached")
+
         except deepl.exceptions.QuotaExceededException:
-            # Re-raise quota exceeded to stop all processing
-            raise
+            raise  # propagates after finally saves the file
         except Exception as e:
             print(f"Error processing {ts_file}: {e}")
+        finally:
+            if modified_content is not None:
+                if translations_updated > 0:
+                    with open(ts_file, 'w', encoding='utf-8') as f:
+                        f.write(modified_content)
+                    print(f"  Updated {translations_updated} translations in {ts_file}")
+                else:
+                    print(f"  No translations updated in {ts_file}")
     
     def translate_all_ts_files(self, folders=None):
         """Main method to translate all matching .ts files in the given folders"""
@@ -210,7 +211,6 @@ class TSTranslator:
             for ts_file in ts_files:
                 self.process_ts_file(str(ts_file))
                 if self.test_mode and self.test_count >= 3:
-                    print(f"Test mode: reached 3 DeepL calls, stopping")
                     return
             print("Translation process completed!")
         except deepl.exceptions.QuotaExceededException:
