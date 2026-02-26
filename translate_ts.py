@@ -3,13 +3,17 @@
 import os
 import xml.etree.ElementTree as ET
 import re
+import argparse
 import deepl
 from pathlib import Path
 
 class TSTranslator:
-    def __init__(self):
+    def __init__(self, target_lang='RU', force_update=False, remove_unfinished=False):
         self.translation_dict = {}
         self.deepl_translator = None
+        self.target_lang = target_lang.upper()
+        self.force_update = force_update
+        self.remove_unfinished = remove_unfinished
         self._load_deepl_api()
     
     def _load_deepl_api(self):
@@ -24,38 +28,50 @@ class TSTranslator:
             print(f"Error loading DeepL API key: {e}")
     
     def build_translation_dictionary(self, ts_files):
-        """Build dictionary from all existing translations in .ts files"""
+        """Build dictionary from all existing translations in .ts files.
+
+        Each entry is {'text': str, 'finished': bool}.
+        Finished entries always take priority over unfinished ones.
+        Unfinished non-empty entries are included only when not in --force-update mode.
+        """
         print("Building translation dictionary from existing translations...")
-        
+
         for ts_file in ts_files:
             print(f"Processing {ts_file}...")
             try:
                 tree = ET.parse(ts_file)
                 root = tree.getroot()
-                
+
                 for message in root.findall('.//message'):
                     source_elem = message.find('source')
                     translation_elem = message.find('translation')
-                    
+
                     if source_elem is not None and translation_elem is not None:
                         source_text = source_elem.text or ""
                         translation_text = translation_elem.text or ""
-                        
-                        # Only add non-empty translations that are not marked as unfinished
-                        if (translation_text and 
-                            translation_text.strip() and 
-                            translation_elem.get('type') != 'unfinished'):
-                            self.translation_dict[source_text] = translation_text
-                            
+                        is_unfinished = translation_elem.get('type') == 'unfinished'
+
+                        if not translation_text.strip():
+                            continue
+
+                        if not is_unfinished:
+                            # Finished entries always win
+                            self.translation_dict[source_text] = {'text': translation_text, 'finished': True}
+                        elif not self.force_update and source_text not in self.translation_dict:
+                            # Unfinished entries only in default mode, and only if no entry yet
+                            self.translation_dict[source_text] = {'text': translation_text, 'finished': False}
+
             except Exception as e:
                 print(f"Error processing {ts_file}: {e}")
-        
-        print(f"Built dictionary with {len(self.translation_dict)} translations")
+
+        finished_count = sum(1 for e in self.translation_dict.values() if e['finished'])
+        unfinished_count = len(self.translation_dict) - finished_count
+        print(f"Built dictionary with {finished_count} finished and {unfinished_count} unfinished translations")
     
     def translate_text(self, text):
         """Translate text using DeepL API"""
         try:
-            result = self.deepl_translator.translate_text(text, target_lang='RU')
+            result = self.deepl_translator.translate_text(text, target_lang=self.target_lang)
             return str(result)
         except deepl.exceptions.QuotaExceededException:
             print(f"DeepL quota exceeded while translating: '{text}'")
@@ -84,57 +100,59 @@ class TSTranslator:
                 source_elem = message.find('source')
                 translation_elem = message.find('translation')
                 
-                if (source_elem is not None and 
-                    translation_elem is not None and 
+                if (source_elem is not None and
+                    translation_elem is not None and
                     translation_elem.get('type') == 'unfinished'):
-                    
+
                     source_text = source_elem.text or ""
-                    
-                    if source_text.strip():
-                        new_translation = None
-                        
-                        # First, check if translation exists in dictionary
-                        if source_text in self.translation_dict:
-                            new_translation = self.translation_dict[source_text]
-                            print(f"  Found existing translation: '{source_text}' -> '{new_translation}'")
-                        
-                        # If not found in dictionary, use DeepL
-                        else:
-                            new_translation = self.translate_text(source_text)
-                            if new_translation and new_translation != source_text:
-                                print(f"  DeepL translation: '{source_text}' -> '{new_translation}'")
-                                # Add the new translation to dictionary for future reuse
-                                self.translation_dict[source_text] = new_translation
-                        
-                        # Update the translation if we found one
-                        if new_translation:
-                            # Find the translation tag in the original content and replace it
-                            # Look for the pattern: <translation type="unfinished"></translation>
-                            # or <translation type="unfinished"/>
-                            escaped_source = re.escape(source_text)
-                            
-                            # Pattern to match the translation element with unfinished type
-                            pattern = (r'(<translation[^>]*type=(["\'])unfinished\2[^>]*>)([^<]*)(</translation>)')
-                            
-                            # Find all matches and replace the appropriate one
-                            matches = list(re.finditer(pattern, modified_content))
-                            
-                            # We need to find the right translation element that corresponds to our source
-                            # This is complex, so let's use a simpler approach: find the message block
-                            source_pattern = re.escape(source_text).replace(r'\ ', r'\s*')
-                            message_pattern = (r'(<message[^>]*>.*?<source[^>]*>)' + 
-                                             source_pattern + 
-                                             r'(</source>.*?<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>.*?</message>)')
-                            
-                            match = re.search(message_pattern, modified_content, re.DOTALL)
-                            if match:
-                                # Replace with the new translation and remove type="unfinished"
-                                replacement = (match.group(1) + source_text + match.group(2) + 
-                                             new_translation + match.group(5))
-                                # Remove type="unfinished" from the replacement
+                    existing_translation = translation_elem.text or ""
+
+                    if not source_text.strip():
+                        continue
+
+                    new_translation = None
+                    should_remove_tag = self.remove_unfinished  # default, may be overridden below
+
+                    dict_entry = self.translation_dict.get(source_text)
+
+                    if dict_entry and dict_entry['finished']:
+                        # Finished translation in dict: always use it and always remove tag
+                        new_translation = dict_entry['text']
+                        should_remove_tag = True
+                        print(f"  Using finished translation: '{source_text}' -> '{new_translation}'")
+
+                    elif not self.force_update and existing_translation.strip():
+                        # Default mode: don't touch non-empty unfinished lines (may be human-edited)
+                        print(f"  Skipping non-empty unfinished: '{source_text}'")
+                        continue
+
+                    elif dict_entry:
+                        # Unfinished entry in dict: reuse to avoid a duplicate DeepL call
+                        new_translation = dict_entry['text']
+                        print(f"  Reusing unfinished translation: '{source_text}' -> '{new_translation}'")
+
+                    else:
+                        # Not in dict: call DeepL
+                        new_translation = self.translate_text(source_text)
+                        if new_translation and new_translation != source_text:
+                            print(f"  DeepL translation: '{source_text}' -> '{new_translation}'")
+                            # Add to dict so the same source isn't translated twice in this run
+                            self.translation_dict[source_text] = {'text': new_translation, 'finished': False}
+
+                    if new_translation:
+                        source_pattern = re.escape(source_text).replace(r'\ ', r'\s*')
+                        message_pattern = (r'(<message[^>]*>.*?<source[^>]*>)' +
+                                         source_pattern +
+                                         r'(</source>.*?<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>.*?</message>)')
+
+                        match = re.search(message_pattern, modified_content, re.DOTALL)
+                        if match:
+                            replacement = (match.group(1) + source_text + match.group(2) +
+                                         new_translation + match.group(5))
+                            if should_remove_tag:
                                 replacement = re.sub(r'\s*type=(["\'])unfinished\1', '', replacement)
-                                modified_content = modified_content.replace(match.group(0), replacement)
-                                translations_updated += 1
+                            modified_content = modified_content.replace(match.group(0), replacement)
+                            translations_updated += 1
             
             if translations_updated > 0:
                 # Write the modified content back to the file
@@ -176,7 +194,19 @@ class TSTranslator:
             return
 
 def main():
-    translator = TSTranslator()
+    parser = argparse.ArgumentParser(description='Translate .ts files using DeepL')
+    parser.add_argument('--lang', default='RU', help='Target language code (default: RU)')
+    parser.add_argument('--force-update', action='store_true',
+                        help='Retranslate all unfinished lines, even non-empty ones')
+    parser.add_argument('--remove-unfinished', action='store_true',
+                        help='Remove type="unfinished" attribute after translating')
+    args = parser.parse_args()
+
+    translator = TSTranslator(
+        target_lang=args.lang,
+        force_update=args.force_update,
+        remove_unfinished=args.remove_unfinished,
+    )
     translator.translate_all_ts_files()
 
 if __name__ == '__main__':
