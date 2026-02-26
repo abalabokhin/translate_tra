@@ -169,15 +169,26 @@ class TSTranslator:
         except Exception as e:
             print(f"Error processing {ts_file}: {e}")
     
-    def translate_all_ts_files(self):
-        """Main method to translate all .ts files"""
-        # Find all .ts files in current directory
-        ts_files = list(Path('.').glob('*.ts'))
-        
+    def translate_all_ts_files(self, folders=None):
+        """Main method to translate all matching .ts files in the given folders"""
+        if folders is None:
+            folders = ['.']
+
+        lang_suffix = f"_{self.target_lang.lower()}"
+        ts_files = []
+        for folder in folders:
+            folder_path = Path(folder)
+            if not folder_path.is_dir():
+                print(f"Warning: '{folder}' is not a directory, skipping")
+                continue
+            matched = [f for f in sorted(folder_path.rglob('*.ts'))
+                       if f.stem.lower().endswith(lang_suffix)]
+            ts_files.extend(matched)
+
         if not ts_files:
-            print("No .ts files found in current directory")
+            print(f"No *{lang_suffix}.ts files found in: {folders}")
             return
-        
+
         print(f"Found {len(ts_files)} .ts files: {[str(f) for f in ts_files]}")
         
         # Step 1: Build translation dictionary
@@ -195,6 +206,8 @@ class TSTranslator:
 
 def main():
     parser = argparse.ArgumentParser(description='Translate .ts files using DeepL')
+    parser.add_argument('folders', nargs='*', default=['.'],
+                        help='Folders to search recursively for .ts files (default: current directory)')
     parser.add_argument('--lang', default='RU', help='Target language code (default: RU)')
     parser.add_argument('--force-update', action='store_true',
                         help='Retranslate all unfinished lines, even non-empty ones')
@@ -207,7 +220,7 @@ def main():
         force_update=args.force_update,
         remove_unfinished=args.remove_unfinished,
     )
-    translator.translate_all_ts_files()
+    translator.translate_all_ts_files(args.folders)
 
 if __name__ == '__main__':
     main()
