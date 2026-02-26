@@ -8,12 +8,12 @@ import deepl
 from pathlib import Path
 
 class TSTranslator:
-    def __init__(self, target_lang='RU', force_update=False, remove_unfinished=False, test_mode=False):
+    def __init__(self, target_lang='RU', force_update=False, unfinished='finished', test_mode=False):
         self.translation_dict = {}
         self.deepl_translator = None
         self.target_lang = target_lang.upper()
         self.force_update = force_update
-        self.remove_unfinished = remove_unfinished
+        self.unfinished = unfinished  # 'keep', 'remove', or 'finished'
         self.test_mode = test_mode
         self.test_count = 0
         self._load_deepl_api()
@@ -113,14 +113,12 @@ class TSTranslator:
                         continue
 
                     new_translation = None
-                    should_remove_tag = self.remove_unfinished  # default, may be overridden below
-
                     dict_entry = self.translation_dict.get(source_text)
 
                     if dict_entry and dict_entry['finished']:
-                        # Finished translation in dict: always use it and always remove tag
+                        # Finished translation in dict: always use it
                         new_translation = dict_entry['text']
-                        should_remove_tag = True
+                        should_remove_tag = (self.unfinished != 'keep')
                         print(f"  Using finished translation: '{source_text}' -> '{new_translation}'")
 
                     elif not self.force_update and existing_translation.strip():
@@ -131,11 +129,13 @@ class TSTranslator:
                     elif dict_entry:
                         # Unfinished entry in dict: reuse to avoid a duplicate DeepL call
                         new_translation = dict_entry['text']
+                        should_remove_tag = (self.unfinished == 'remove')
                         print(f"  Reusing unfinished translation: '{source_text}' -> '{new_translation}'")
 
                     else:
                         # Not in dict: call DeepL
                         new_translation = self.translate_text(source_text)
+                        should_remove_tag = (self.unfinished == 'remove')
                         if new_translation and new_translation != source_text:
                             print(f"  DeepL translation: '{source_text}' -> '{new_translation}'")
                             # Add to dict so the same source isn't translated twice in this run
@@ -225,8 +225,10 @@ def main():
     parser.add_argument('--lang', default='RU', help='Target language code (default: RU)')
     parser.add_argument('--force-update', action='store_true',
                         help='Retranslate all unfinished lines, even non-empty ones')
-    parser.add_argument('--remove-unfinished', action='store_true',
-                        help='Remove type="unfinished" attribute after translating')
+    parser.add_argument('--unfinished', choices=['keep', 'remove', 'finished'], default='finished',
+                        help='How to handle the type="unfinished" tag after translating: '
+                             '"keep" always keeps it, "remove" always removes it, '
+                             '"finished" removes it only when the translation comes from a finished source (default)')
     parser.add_argument('--test', action='store_true',
                         help='Translate only the first 10 untranslated lines then save and exit')
     args = parser.parse_args()
@@ -234,7 +236,7 @@ def main():
     translator = TSTranslator(
         target_lang=args.lang,
         force_update=args.force_update,
-        remove_unfinished=args.remove_unfinished,
+        unfinished=args.unfinished,
         test_mode=args.test,
     )
     translator.translate_all_ts_files(args.folders)
