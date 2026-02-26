@@ -8,12 +8,14 @@ import deepl
 from pathlib import Path
 
 class TSTranslator:
-    def __init__(self, target_lang='RU', force_update=False, remove_unfinished=False):
+    def __init__(self, target_lang='RU', force_update=False, remove_unfinished=False, test_mode=False):
         self.translation_dict = {}
         self.deepl_translator = None
         self.target_lang = target_lang.upper()
         self.force_update = force_update
         self.remove_unfinished = remove_unfinished
+        self.test_mode = test_mode
+        self.test_count = 0
         self._load_deepl_api()
     
     def _load_deepl_api(self):
@@ -138,14 +140,18 @@ class TSTranslator:
                             print(f"  DeepL translation: '{source_text}' -> '{new_translation}'")
                             # Add to dict so the same source isn't translated twice in this run
                             self.translation_dict[source_text] = {'text': new_translation, 'finished': False}
+                            if self.test_mode:
+                                self.test_count += 1
 
                     if new_translation:
                         source_pattern = re.escape(source_text).replace(r'\ ', r'\s*')
-                        message_pattern = (r'(<message[^>]*>.*?<source[^>]*>)' +
+                        # Use (?:(?!</message>)[\s\S])*? to prevent matching across message boundaries
+                        no_msg_end = r'(?:(?!</message>)[\s\S])*?'
+                        message_pattern = (r'(<message\b' + no_msg_end + r'<source[^>]*>)' +
                                          source_pattern +
-                                         r'(</source>.*?<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>.*?</message>)')
+                                         r'(</source>' + no_msg_end + r'<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>' + no_msg_end + r'</message>)')
 
-                        match = re.search(message_pattern, modified_content, re.DOTALL)
+                        match = re.search(message_pattern, modified_content)
                         if match:
                             replacement = (match.group(1) + source_text + match.group(2) +
                                          new_translation + match.group(5))
@@ -153,6 +159,8 @@ class TSTranslator:
                                 replacement = re.sub(r'\s*type=(["\'])unfinished\1', '', replacement)
                             modified_content = modified_content.replace(match.group(0), replacement)
                             translations_updated += 1
+                            if self.test_mode and self.test_count >= 3:
+                                break
             
             if translations_updated > 0:
                 # Write the modified content back to the file
@@ -194,10 +202,16 @@ class TSTranslator:
         # Step 1: Build translation dictionary
         self.build_translation_dictionary(ts_files)
         
+        if self.test_mode:
+            print("Test mode: will make up to 3 DeepL calls then stop")
+
         # Step 2: Process each file for unfinished translations
         try:
             for ts_file in ts_files:
                 self.process_ts_file(str(ts_file))
+                if self.test_mode and self.test_count >= 3:
+                    print(f"Test mode: reached 3 DeepL calls, stopping")
+                    return
             print("Translation process completed!")
         except deepl.exceptions.QuotaExceededException:
             print("Translation stopped due to DeepL quota exceeded.")
@@ -213,12 +227,15 @@ def main():
                         help='Retranslate all unfinished lines, even non-empty ones')
     parser.add_argument('--remove-unfinished', action='store_true',
                         help='Remove type="unfinished" attribute after translating')
+    parser.add_argument('--test', action='store_true',
+                        help='Translate only the first 10 untranslated lines then save and exit')
     args = parser.parse_args()
 
     translator = TSTranslator(
         target_lang=args.lang,
         force_update=args.force_update,
         remove_unfinished=args.remove_unfinished,
+        test_mode=args.test,
     )
     translator.translate_all_ts_files(args.folders)
 
