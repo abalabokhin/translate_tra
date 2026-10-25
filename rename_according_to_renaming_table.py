@@ -48,7 +48,7 @@ def replace_refs_in_txt(filename, table):
     if encoding == 'unknown-8bit' or encoding == 'us-ascii':
         encoding = 'cp1251'
     print("processing {} with encoding {}".format(filename, encoding))
-    f = open(filename, "r", encoding=encoding)
+    f = open(filename, "r", encoding=encoding, newline='')
     _, ext = os.path.splitext(filename)
     s = f.read()
     s_orig = s
@@ -62,7 +62,7 @@ def replace_refs_in_txt(filename, table):
 
     if s != s_orig:
         print("txt file {} changed and saved".format(filename))
-        f = open(filename, "w", encoding=encoding)
+        f = open(filename, "w", encoding=encoding, newline='')
         f.write(s)
         f.close()
 
