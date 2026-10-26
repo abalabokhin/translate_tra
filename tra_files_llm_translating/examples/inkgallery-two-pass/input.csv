@@ -1,0 +1,13 @@
+ID,Speaker,Addressee,Predecessors,Text
+@16,Velcealle,Player1,,"Hello again, adventurer. Our Ink Gallery welcomes you with its tales."
+@23,Velcealle,Player1,,Is there anything else you'd like to know?
+@48,Velcealle,Player1,,We should talk downstairs. Unless you popped in only to see how I'm doing.
+@51,Velcealle,Player1,,I hope you are having a fine day.
+@100,Velcealle,Player1,,"Hello, <CHARNAME>! You've seen all my books already—but perhaps you're here for one of the souvenirs?"
+@17,Player1,Velcealle,@16,"So, from what I understood, by paying the fee I will be able to test myself in battles described in these books. Is that correct?"
+@18,Player1,Velcealle,@16,"You said you came here from Cormyr, yes? Was it to open the Ink Gallery?"
+@19,Player1,Velcealle,@16,What happens if I successfully learn from all these books?
+@20,Player1,Velcealle,@16,Don't you have any problems with the Cowled Wizards? Aren't these books magic?
+@21,Player1,Velcealle,@16,I would like to buy some souvenirs.
+@22,Player1,Velcealle,@16,I think I'll go now.
+@24,Player1,Velcealle,@23,"Yes. From what I understood, by paying the fee I will be able to test myself in battles described in these books. Is that correct?"

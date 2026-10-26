@@ -1,0 +1,155 @@
+{
+  "lines": [
+    {
+      "reference": "@16",
+      "source": "Hello again, adventurer. Our Ink Gallery welcomes you with its tales.",
+      "speaker": "Velcealle",
+      "addressee": "Player1",
+      "male": "Приветствую тебя вновь, путник. Наша Галерея Чернил приветствует тебя рассказами.",
+      "female": "Приветствую тебя вновь, путница.",
+      "previous_one_pass": {
+        "male": "Приветствую тебя вновь, путник! Наша Галерея Чернил с радостью рассказывает свои истории.",
+        "female": "Приветствую тебя вновь, путник! Наша Галерея Чернил с радостью рассказывает свои истории."
+      }
+    },
+    {
+      "reference": "@23",
+      "source": "Is there anything else you'd like to know?",
+      "speaker": "Velcealle",
+      "addressee": "Player1",
+      "male": "Есть ли ещё что-нибудь, что ты хочешь узнать?",
+      "female": "Есть ли ещё что-нибудь, что ты хочешь узнать?",
+      "previous_one_pass": {
+        "male": "А есть что-то ещё, о чём ты хочешь узнать?",
+        "female": "А есть что-то ещё, о чём ты хочешь узнать?"
+      }
+    },
+    {
+      "reference": "@48",
+      "source": "We should talk downstairs. Unless you popped in only to see how I'm doing.",
+      "speaker": "Velcealle",
+      "addressee": "Player1",
+      "male": "Нам лучше поговорить внизу. Или ты заглянул сюда просто чтобы увидеть, как у меня дела?",
+      "female": "Нам лучше поговорить внизу. Или ты заглянула сюда просто чтобы увидеть, как у меня дела?",
+      "previous_one_pass": {
+        "male": "Нам лучше поговорить внизу. Или ты просто пришёл посмотреть, как я себя чувствую.",
+        "female": "Нам лучше поговорить внизу. Или ты просто пришёл посмотреть, как я себя чувствую."
+      }
+    },
+    {
+      "reference": "@51",
+      "source": "I hope you are having a fine day.",
+      "speaker": "Velcealle",
+      "addressee": "Player1",
+      "male": "Надеюсь, у тебя чудесный день.",
+      "female": "Надеюсь, у тебя чудесный день.",
+      "previous_one_pass": {
+        "male": "Надеюсь, у тебя прекрасный день проходит.",
+        "female": "Надеюсь, у тебя прекрасный день проходит."
+      }
+    },
+    {
+      "reference": "@100",
+      "source": "Hello, <CHARNAME>! You've seen all my books already—but perhaps you're here for one of the souvenirs?",
+      "speaker": "Velcealle",
+      "addressee": "Player1",
+      "male": "Привет, <CHARNAME>! Ты уже прочёл все мои книги — но, может быть, ты пришел ради одного из сувениров?",
+      "female": "Привет, <CHARNAME>! Ты уже прочела все мои книги — но, может быть, ты пришла ради одного из сувениров?",
+      "previous_one_pass": {
+        "male": "Приветствую тебя, <CHARNAME>! Ты уже видел все мои книги — но, возможно, ты пришёл за одним из сувениров?",
+        "female": "Приветствую тебя, <CHARNAME>! Ты уже видел все мои книги — но, возможно, ты пришёл за одним из сувениров?"
+      }
+    },
+    {
+      "reference": "@17",
+      "source": "So, from what I understood, by paying the fee I will be able to test myself in battles described in these books. Is that correct?",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Так что, если я правильно понял, заплатив плату, я смогу проверить себя в боях, описанных в этих книгах. Это так?",
+      "female": "Так что, если я правильно поняла, заплатив плату, я смогу проверить себя в боях, описанных в этих книгах. Это так?",
+      "previous_one_pass": {
+        "male": "Итак, как я понял, заплатив плату, я смогу испытать себя в боях, описанных в этих книгах. Это правильно?",
+        "female": "Итак, как я поняла, заплатив плату, я смогу испытать себя в боях, описанных в этих книгах. Это верно?"
+      }
+    },
+    {
+      "reference": "@18",
+      "source": "You said you came here from Cormyr, yes? Was it to open the Ink Gallery?",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Ты говорила, что пришла сюда из Кормирра, да? Разве ты приехала открыть Галерею Чернил?",
+      "female": "Ты говорила, что пришла сюда из Кормирра, да? Разве ты приехала открыть Галерею Чернил?",
+      "previous_one_pass": {
+        "male": "Ты сказала, что ты пришёл сюда из Кормира? И чтобы открыть Галерею Чернил?",
+        "female": "Ты сказала, что ты пришла сюда из Кормира? И чтобы открыть Галерею Чернил?"
+      }
+    },
+    {
+      "reference": "@19",
+      "source": "What happens if I successfully learn from all these books?",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Что произойдет, если я успешно изучу все эти книги?",
+      "female": "Что произойдет, если я успешно изучу все эти книги?",
+      "previous_one_pass": {
+        "male": "Что произойдёт, если я успешно научился всему в этих книгах?",
+        "female": "Что произойдёт, если я успешно научилась всему в этих книгах?"
+      }
+    },
+    {
+      "reference": "@20",
+      "source": "Don't you have any problems with the Cowled Wizards? Aren't these books magic?",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "У тебя нет проблем с Магами в Капюшонах? Не магией ли наполнены эти книги?",
+      "female": "У тебя нет проблем с Магами в Капюшонах? Не магией ли наполнены эти книги?",
+      "previous_one_pass": {
+        "male": "У тебя нет проблем с колдовыми магами? Разве эти книги не магические?",
+        "female": "У тебя нет проблем с колдовыми магами? Разве эти книги не магические?"
+      }
+    },
+    {
+      "reference": "@21",
+      "source": "I would like to buy some souvenirs.",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Хотел бы купить кое-какие сувениры.",
+      "female": "Хотела бы купить кое-какие сувениры.",
+      "previous_one_pass": {
+        "male": "Мне бы хотелось купить несколько сувениров.",
+        "female": "Мне бы хотелось купить несколько сувениров."
+      }
+    },
+    {
+      "reference": "@22",
+      "source": "I think I'll go now.",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Кажется, мне пора идти.",
+      "female": "Кажется, мне пора идти.",
+      "previous_one_pass": {
+        "male": "Ладно, мне пора идти.",
+        "female": "Ладно, мне пора идти."
+      }
+    },
+    {
+      "reference": "@24",
+      "source": "Yes. From what I understood, by paying the fee I will be able to test myself in battles described in these books. Is that correct?",
+      "speaker": "Player1",
+      "addressee": "Velcealle",
+      "male": "Да. Так что если я правильно понял, заплатив плату, я смогу проверить себя в боях, описанных в этих книгах. Это так?",
+      "female": "Да. Так что если я правильно поняла, заплатив плату, я смогу проверить себя в боях, описанных в этих книгах. Это так?",
+      "previous_one_pass": {
+        "male": "Да. Как я понял, заплатив плату, я смогу испытать себя в боях, описанных в этих книгах. Это правильно?",
+        "female": "Да. Как я поняла, заплатив плату, я смогу испытать себя в боях, описанных в этих книгах. Это верно?"
+      }
+    }
+  ],
+  "csv_issues": [
+    "01_male/@16: unquoted commas in Text; reconstructed for this review only.",
+    "01_male/@23: unquoted commas in Text; reconstructed for this review only.",
+    "01_male/@48: unquoted commas in Text; reconstructed for this review only.",
+    "01_male/@51: unquoted commas in Text; reconstructed for this review only.",
+    "01_male/@100: unquoted commas in Text; reconstructed for this review only."
+  ]
+}
