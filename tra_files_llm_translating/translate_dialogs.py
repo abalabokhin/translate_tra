@@ -105,8 +105,8 @@ class DialogTranslator:
         """Get list of unique actors in the dialog rows (header excluded)"""
         return sorted({row[0].strip() for row in rows if row[0].strip()})
 
-    def _established_translations(self, current: Path) -> Dict[Tuple[str, int], Tuple[str, str, str]]:
-        """TRA key -> (male, female, file) from dialogue CSVs already exported to the target
+    def _established_translations(self, current: Path) -> dict:
+        """TRA key -> (male, female, file, source pair) from dialogue CSVs already exported to the target
         folder, so a string shared by several dialogue files gets one translation."""
         established = {}
         for path in sorted(self.target_folder.glob('*.csv'), key=lambda p: p.name.casefold()):
@@ -119,7 +119,8 @@ class DialogTranslator:
             for row in rows:
                 if row['TRA_Reference'] and row['Russian_Male']:
                     established.setdefault(parse_reference(row['Additional_Info']),
-                                           (row['Russian_Male'], row['Russian_Female'], path.name))
+                                           (row['Russian_Male'], row['Russian_Female'], path.name,
+                                            (row['Dialogue_Text'], female_source(row, row['Dialogue_Text']))))
         return established
 
     def _build_actor_info(self, actors_in_dialog: List[str]) -> str:
@@ -442,7 +443,13 @@ class DialogTranslator:
         for i, row in enumerate(rows[1:], 1):
             key = parse_reference(row[5]) if row[4] else None
             if key in established:
-                male[str(i)], female[str(i)], source = established[key]
+                old_male, old_female, source, old_sources = established[key]
+                current_sources = (row[3], female_source(dict(zip(rows[0], row)), row[3]))
+                if old_sources != current_sources:
+                    raise ValueError(f"{csv_file}: source text differs from existing translation in {source} for {row[5]}")
+                validate_text(current_sources[0], old_male, f'{source} reused male {row[5]}')
+                validate_text(current_sources[1], old_female, f'{source} reused female {row[5]}')
+                male[str(i)], female[str(i)] = old_male, old_female
                 sources.add(source)
         if sources:
             print(f"  Kept existing translations of strings shared with {', '.join(sorted(sources))}", flush=True)

@@ -85,7 +85,8 @@ def load(stage_dir):
     path = Path(stage_dir) / 'runs.jsonl'
     if not path.exists():
         return []
-    return [json.loads(line) for line in open(path, encoding='utf-8') if line.strip()]
+    with open(path, encoding='utf-8') as handle:
+        return [json.loads(line) for line in handle if line.strip()]
 
 
 def rate(records, *fields):
@@ -95,8 +96,8 @@ def rate(records, *fields):
         g = groups[tuple(r['config'][f] for f in fields)]
         g['ok'] += sum(c['ok'] for c in r['checks'])
         g['total'] += len(r['checks'])
-        if r.get('derived'):
-            continue  # markup: the female record shares the male record's request
+        if r.get('derived') or r.get('skipped'):
+            continue  # Derived variants and skipped passes are not additional requests.
         g['errors'] += bool(r['error'])
         g['seconds'] += r['wall_seconds']
         g['tokens'] += r['eval_count'] or 0
@@ -114,9 +115,14 @@ def table(groups, names):
     return lines
 
 
-def best(groups):
+def select_settings(records):
+    """Choose a tested full-dialogue configuration that needs no labelled addressees."""
+    eligible = [r for r in records if r['config']['scope'] == 'full'
+                and r['config']['prompt'] != 'reframed-addressee']
+    groups = rate(eligible, 'prompt', 'temperature')
     scored = {k: g['ok'] / g['total'] for k, g in groups.items() if g['total']}
-    return max(scored, key=scored.get)[0] if scored else None
+    # Prefer production, then model-default sampling, when scores tie.
+    return max(scored, key=lambda k: (scored[k], k[0] == 'production', k[1] == 'default')) if scored else None
 
 
 def experiment_args(args, out, **grid):
@@ -199,10 +205,7 @@ def main():
                   repeats=args.repeats)
     records = load(stage1)  # also when continuing with --stages 2,3 in the same --out folder
     if records:
-        # reframed-addressee uses hand-labelled data production lacks; choose among the others.
-        best_prompt = best({k: g for k, g in rate(records, 'prompt').items() if k[0] != 'reframed-addressee'}) or best_prompt
-        best_temp = best(rate(records, 'temperature')) or best_temp
-        # On a tie, the earlier value wins: production prompt, model-default temperature.
+        best_prompt, best_temp = select_settings(records) or (best_prompt, best_temp)
         print(f'Stage 1 best: prompt={best_prompt}, temperature={best_temp}', flush=True)
     for tag in available if '2' in stages else []:
         if thinking.get(tag):
@@ -233,6 +236,7 @@ def main():
               f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M')}, Ollama {version}, context {args.num_ctx}, "
               f'{args.repeats} repeats. Checks: `{Path(args.checks).name}`.', '',
               'Scores count expected-form checks (gender agreement, ты/вы, idiom, meaning, glossary). '
+              'Failed outputs and skipped female passes fail all expected checks. '
               'They catch known error types only; read `outputs.csv` in each stage before deciding.', '',
               '## Models', '', '| model | status | thinking-capable | GPU share |', '|---|---|---|---|']
     gpu = {}

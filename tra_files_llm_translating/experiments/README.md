@@ -34,7 +34,8 @@ What it does:
    deletes the models this run downloaded once it finishes; pre-installed ones are kept.
 2. **Stage 1** on the baseline (`qwen3.5:9b`): all prompts, `full`/`pair`, temperature
    `default`/`0.2`, thinking off. It picks the best prompt (any variant except `reframed-addressee`)
-   and temperature for the later stages. On a tie, it keeps production / default.
+   and temperature together from the full-dialogue results for the later stages.
+   On a tie, it prefers production, then model-default temperature.
 3. **Stage 2:** thinking on vs. off for every model that Ollama reports as
    thinking-capable.
 4. **Stage 3:** every model, `production` vs. the best prompt, whole dialogue, thinking
@@ -137,6 +138,16 @@ Each run writes to `experiments/results/<timestamp>/` (or `--out DIR`):
   actual translations (opens in Excel/LibreOffice as UTF-8).
 - `runs.jsonl`: everything: the exact request, raw reply, **thinking trace**, token
   counts, timings and GPU share. Use it to read why the model chose a wrong form.
+
+Both scopes score only the lines named in the checks file; `full` still supplies
+the entire dialogue as context. Failed requests fail every expected check. When
+the male pass fails, the skipped female pass also fails its expected checks and is
+logged with `skipped: true`, without adding a request or time to the averages.
+Markup variants likewise count as one request while scoring both genders.
+Rankings therefore account for missing output as well as incorrect translations.
+Use a fresh results directory after this scoring change: old logs lack these
+failure checks and skipped-pass records, and rebuilding their summaries does not
+rescore them.
 
 To rebuild the summary from `runs.jsonl` (e.g. after editing the checks):
 

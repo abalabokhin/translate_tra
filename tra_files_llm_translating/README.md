@@ -121,6 +121,9 @@ string already has a translation in another dialogue CSV in the target folder ta
 that existing translation (the first file by name wins), and the console names the
 files it came from. So the earlier export, including one from a previous run, decides
 the wording. To re-translate a shared string, remove or edit the older export first.
+Reuse requires identical male and female English source text, and both reused
+translations must pass structural validation against that source. A mismatch fails
+the current file without replacing its previous export.
 
 ## Two requests, one CSV
 

@@ -443,5 +443,29 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual((self.output/'test.tra').read_text(encoding='utf-8'), '@1 = ~Прощай.~\n@2 = ~Пока.~\n')
 
 
+    def test_reused_translation_rejects_changed_sources_and_invalid_tokens(self):
+        header = DIALOGUE_COLUMNS + ['Source_Female_Text', 'Source_Has_Female']
+        current = dict(zip(header, ['NPC', '1', '', 'Hello, <CHARNAME>!', '@1',
+                                   'TRA:test.tra:@1', 'Welcome, <PLAYER1>!', '1']))
+        write_csv(self.source / 'current.csv', header, [current])
+        cases = [
+            ('changed male source', {'Dialogue_Text': 'Hello!'}, 'source text differs'),
+            ('changed female source', {'Source_Female_Text': 'Welcome!'}, 'source text differs'),
+            ('invalid male tokens', {'Russian_Male': 'Привет!'}, 'reused male'),
+            ('invalid female tokens', {'Russian_Female': 'Привет!'}, 'reused female'),
+        ]
+        for label, changes, error in cases:
+            with self.subTest(label=label):
+                old = dict(current, Russian_Male='Привет, <CHARNAME>!',
+                           Russian_Female='Привет, <PLAYER1>!')
+                old.update(changes)
+                write_csv(self.target / 'old.csv', header + TRANSLATION_COLUMNS, [old])
+                destination = self.target / 'current.csv'
+                destination.write_text('previous export', encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, error):
+                    self.translator(test_mode=True).translate_dialog_file(self.source / 'current.csv')
+                self.assertEqual(destination.read_text(encoding='utf-8'), 'previous export')
+
+
 if __name__ == '__main__':
     unittest.main()

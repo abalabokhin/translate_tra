@@ -125,7 +125,7 @@ class Experiment:
         """Return (row subset, target Line_IDs scored in it)."""
         body = self.rows[1:]
         if scope == 'full':
-            return [(body, {r[1] for r in body})]
+            return [(body, {r[1] for r in body if r[1] in self.checks['lines']})]
         by_id = {r[1]: r for r in body}
         result = []
         for row in body:
@@ -268,7 +268,9 @@ class Experiment:
         line_checks = self.checks['lines'].get(line_id, {})
         results = []
         for check in self.checks.get('all', []) + line_checks.get('both', []) + line_checks.get(gender, []):
-            if 'require' in check:
+            if text is None:
+                ok = False  # Missing output fails every expected check, including forbids.
+            elif 'require' in check:
                 ok = re.search(check['require'], text, re.IGNORECASE) is not None
             else:
                 ok = re.search(check['forbid'], text, re.IGNORECASE) is None
@@ -309,6 +311,11 @@ class Experiment:
                             self.parse(record, record['content'], rows, gender)
                         self.write(handle, record, rows, targets)
                         if record['error']:
+                            if gender == 'male':
+                                skipped = self.record(config, 'female', targets, None, {'wall_seconds': 0})
+                                skipped.update(error='skipped: male pass failed', skipped=True,
+                                               eval_count=0)
+                                self.write(handle, skipped, rows, targets)
                             break  # female pass needs a valid male pass; no retry
                         male = {str(i): record['translations'][r[1]] for i, r in enumerate(rows, 1)}
 
@@ -351,8 +358,8 @@ class Experiment:
 
     def write(self, handle, record, rows, targets):
         for line_id in sorted(targets):
-            if line_id in record['translations']:
-                record['checks'] += self.score(line_id, record['gender'], record['translations'][line_id])
+            text = None if record['error'] else record['translations'].get(line_id)
+            record['checks'] += self.score(line_id, record['gender'], text)
         handle.write(json.dumps(record, ensure_ascii=False) + '\n')
         handle.flush()
         failed = [c for c in record['checks'] if not c['ok']]
@@ -363,15 +370,17 @@ class Experiment:
 
 def summarize(out):
     out = Path(out)
-    records = [json.loads(line) for line in open(out / 'runs.jsonl', encoding='utf-8') if line.strip()]
+    with open(out / 'runs.jsonl', encoding='utf-8') as handle:
+        records = [json.loads(line) for line in handle if line.strip()]
     groups = defaultdict(list)
     for r in records:
         c = r['config']
         groups[(c['model'], c['prompt'], c['scope'], c['think'], c['temperature'])].append(r)
 
     lines = ['# Diagnostic results', '',
-             f'Source: `{out / "runs.jsonl"}` ({sum(not r.get("derived") for r in records)} requests). Checks = expected-form tests '
-             'from the checks JSON, summed over repeats. Time and tokens are per request.', '',
+             f'Source: `{out / "runs.jsonl"}` ({sum(not r.get("derived") and not r.get("skipped") for r in records)} requests). Checks = expected-form tests '
+             'from the checks JSON, summed over repeats. Failed outputs and skipped female passes fail all expected checks. '
+             'Time and tokens are per actual request.', '',
              '| model | prompt | scope | think | temp | runs | checks ok | failed requests | avg s | avg tokens |',
              '|---|---|---|---|---|---|---|---|---|---|']
     details = []
@@ -382,7 +391,7 @@ def summarize(out):
         for key, recs in sorted(groups.items()):
             checks = [c for r in recs for c in r['checks']]
             ok = sum(c['ok'] for c in checks)
-            real = [r for r in recs if not r.get('derived')]  # markup: one request, two records
+            real = [r for r in recs if not r.get('derived') and not r.get('skipped')]
             errors = sum(1 for r in real if r['error'])
             runs = len({r['config']['repeat'] for r in recs})
             secs = sum(r['wall_seconds'] for r in real) / len(real)
