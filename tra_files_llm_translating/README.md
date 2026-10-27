@@ -17,7 +17,7 @@ partially successful approaches so they are not accidentally reintroduced.
   user override, not an automatically selected smaller budget.
 - `num_predict=-1`: no fixed generation-token cap. No client timeout is imposed.
   Model context capacity and hardware remain finite.
-- No automatic splitting, retries, repair pass, inferred addressees, checkpoint
+- No automatic splitting, retries, repair pass, Python-inferred addressees, checkpoint
   cache or fallback to positional matching. These experimental mechanisms have
   been removed from the production translator.
 - **Get the user's agreement before adding new approaches, limits, guardrails or
@@ -63,7 +63,10 @@ overriding them.
 Default `actors.csv` and `dict.csv` paths are relative to the script, independent
 of the shell's current directory. An actor row is `identifier,gender/description`;
 a glossary row is `English,Russian,optional context,optional source mod`. Multiple
-senses are supported; longer phrases take priority. Glossary words may be
+senses are supported; longer phrases take priority. Proper nouns (entries
+whose Russian side is capitalised) match case-sensitively, so `Bane` does not match "the bane of"; an English
+plural also matches (`Cowled Wizards`, `fairies`, `dwarves`/`dwarfs`, `watchmen`/`humans`,
+but `Rob` no longer matches "Robes"). Glossary words may be
 inflected but their spelling/stems should be preserved. The existing dictionary
 contains `Cormyr,Кормир`; the direct-CSV diagnostic did **not** supply this glossary
 and produced `Кормирра`.
@@ -89,10 +92,13 @@ explicit, including when NPC information exists and when Player1 has no reply.
 NPC-only dialogue can still require variants because an NPC addresses Player1.
 
 **Speaker is not addressee or grammatical subject.** The graph describes incoming
-paths, not who every pronoun refers to. If an input CSV already has an `Addressee`
-column, that fact is supplied to the model along with the known actor gender.
-Missing addressees stay unknown; the script does not invent them from adjacency.
-The grammar parser does not currently extract addressees automatically.
+paths, not who every pronoun refers to. There is no `Addressee` field: the parser
+cannot fill it reliably, and in the 12-line test supplying it explicitly did not
+prevent the @18 error. The prompt gives speakers, their genders and predecessor
+links, and asks the model to infer who each line addresses; where that is genuinely
+unclear it should prefer wording that does not mark the addressee's gender.
+An `Addressee` column in an input CSV is ignored (preserved in the export only).
+The archived examples predate this and still contain addressee facts.
 
 Example: Player1 asks female Velcealle, “You said you came from Cormyr?” Both
 player versions should address her with feminine agreement: `Ты говорила, что
@@ -101,6 +107,20 @@ player versions should address her with feminine agreement: `Ты говорил
 
 The source `Line_ID`s and predecessor links stay unchanged in exports. The model
 uses short numeric request IDs; Python maps them back to the original rows.
+
+A TRA string used by several states (e.g. a "Farewell." reply offered in many places)
+appears in several CSV rows. It is sent to the model **once**, with the speakers and
+predecessors of all its uses, and every row gets that one translation. If its uses have
+different speakers (e.g. an NPC line that is also a PLAYER reply), `speaker` and
+`speaker_gender` become lists and the prompt says the one translation must agree with
+every listed speaker. Without this the model could word the copies differently and the
+TRA updater would reject the conflicting translations.
+
+The same string in two *different* CSV files: when a file is saved, rows whose TRA
+string already has a translation in another dialogue CSV in the target folder take
+that existing translation (the first file by name wins), and the console names the
+files it came from. So the earlier export, including one from a previous run, decides
+the wording. To re-translate a shared string, remove or edit the older export first.
 
 ## Two requests, one CSV
 
@@ -144,7 +164,11 @@ necessarily context-free: they may include dialogue from other files, journals,
 item descriptions or interface text.
 
 A failed request/validation stops processing that file and produces a failing
-exit status. There is no automatic retry or split. Previously exported CSVs remain
+exit status. A reply that fails validation is kept as
+`<name>.male.rejected.txt` / `<name>.female.rejected.txt` in the target folder for
+diagnosis; the TRA updater ignores these files. Processing a file again first removes
+its old rejected replies. If a rejected reply cannot be written, the error message
+still gives the validation failure. There is no automatic retry or split. Previously exported CSVs remain
 unchanged, so review failures before importing an existing output directory. Use
 fresh directories for separate experiments. `--test` copies English without any
 Ollama calls; it checks plumbing, not translation quality.
@@ -280,7 +304,7 @@ These are ideas, not implemented behavior:
   workflow unless the user explicitly reopens and agrees to that approach.
 - Add sentence-count/length heuristics, an automated linguistic reviewer, or a
   third model pass. None reliably proves completeness without further evaluation.
-- Infer addressees automatically from the graph or rewrite the grammar/flow
+- Infer addressees in Python/the parser or rewrite the grammar/flow
   architecture. More context is not a substitute for accurate role facts.
 - Introduce token/time caps, batching, retries, splitting, checkpoint/resume
   policies, CPU offload policies or automatic context reduction.
@@ -325,7 +349,7 @@ The review was performed against repository HEAD after the two-pass fixes:
   producing an unhelpful error, empty standalone files making unnecessary calls,
   and the client forcing a thinking option onto models that might not support it.
 - Confirmed exact original CSV metadata and multiline text round trips, both passes
-  receiving the full graph, fixed NPC addressee gender across passes, no automatic
+  receiving the full graph, fixed NPC gender across passes, no automatic
   retry after failure, no fixed generation/time allowance, and no export when the
   female response fails validation.
 - Retained structural rejection of corrupt IDs, tokens and conflicting TRA entries.

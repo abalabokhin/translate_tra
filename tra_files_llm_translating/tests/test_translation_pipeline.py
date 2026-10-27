@@ -77,7 +77,7 @@ class PipelineTests(unittest.TestCase):
         updater = TraUpdater(self.tra, self.target, self.output)
         updater.load_translations_from_csvs()
         updater.update_all_tra_files()
-        self.assertEqual((self.output / 'test.tra').read_text(), '@1 = ~Hello~ ~~\n')
+        self.assertEqual((self.output / 'test.tra').read_text(encoding='utf-8'), '@1 = ~Hello~ ~~\n')
 
 
     def test_cli_mock_from_another_working_directory(self):
@@ -106,7 +106,7 @@ class PipelineTests(unittest.TestCase):
         updater = TraUpdater(self.tra, self.target, self.output)
         updater.load_translations_from_csvs()
         updater.update_all_tra_files()
-        self.assertEqual((self.output / 'test.tra').read_text(),
+        self.assertEqual((self.output / 'test.tra').read_text(encoding='utf-8'),
                          '@1  =  "Новый" [M] /* keep */ "Новая" [F]\n')
 
 
@@ -174,7 +174,7 @@ class PipelineTests(unittest.TestCase):
         updater = TraUpdater(self.tra, self.target, self.output)
         updater.load_translations_from_csvs()
         updater.update_all_tra_files()
-        self.assertEqual((self.output / 'test.tra').read_text(), '@1 = ~One~\n@2 = ~Other~\n')
+        self.assertEqual((self.output / 'test.tra').read_text(encoding='utf-8'), '@1 = ~One~\n@2 = ~Other~\n')
 
 
     def test_legacy_gender_pairs_require_matching_ids(self):
@@ -209,7 +209,7 @@ class PipelineTests(unittest.TestCase):
         updater = TraUpdater(self.tra, self.target, self.output)
         updater.load_translations_from_csvs()
         updater.update_all_tra_files()
-        self.assertEqual((self.output / 'TEST.TRA').read_text(), original)
+        self.assertEqual((self.output / 'TEST.TRA').read_text(encoding='utf-8'), original)
 
 
     def translator(self, **kwargs):
@@ -244,18 +244,18 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(before, {k: after[k] for k in header})
         self.assertEqual(exported[1]['Russian_Female'], female['2'])
 
-    def test_addressee_female_npc_is_fixed_in_both_prompts(self):
-        row = dict(zip(DIALOGUE_COLUMNS, ['PLAYER','1','','You came here.','@1','TRA:test.tra:@1']))
-        row['Addressee'] = 'NPC'
-        write_csv(self.source/'dialogue.csv', DIALOGUE_COLUMNS + ['Addressee'], [row])
+    def test_prompt_has_no_addressee_fields(self):
+        self.dialogue([['NPC', '1', '', 'You came here.', '@1', 'TRA:test.tra:@1'],
+                       ['PLAYER', '2', '1', 'You said so?', '@2', 'TRA:test.tra:@2']])
         translator = self.translator(test_mode=True)
         with patch.object(translator, '_call_ollama', side_effect=lambda p, s: self.response(p)) as call:
             self.assertTrue(translator.translate_all_dialogs())
         for invocation in call.call_args_list:
-            line = json.loads(invocation.args[0])['dialogue'][0]
-            self.assertEqual(line['addressee'], 'NPC')
-            self.assertEqual(line['addressee_gender'], 'FEMALE')
+            for line in json.loads(invocation.args[0])['dialogue']:
+                self.assertNotIn('addressee', line)
+                self.assertNotIn('addressee_gender', line)
         self.assertIn('every sentence', TRANSLATION_RULES)
+        self.assertIn('Infer who each line addresses', TRANSLATION_RULES)
 
     def test_complete_35_line_graph_is_never_partitioned(self):
         self.dialogue([['PLAYER', f'original_{i}', f'original_{i-1}' if i else '',
@@ -297,9 +297,20 @@ class PipelineTests(unittest.TestCase):
             self.assertFalse(translator.translate_all_dialogs())
         self.assertEqual(call.call_count, 2)
         self.assertFalse((self.target/'dialogue.csv').exists())
+        self.assertEqual((self.target/'dialogue.female.rejected.txt').read_text(encoding='utf-8'),
+                         '{"translations":{}}')
         with patch.object(translator, '_call_ollama', side_effect=ValueError('offline')) as call:
             self.assertFalse(translator.translate_all_dialogs())
         self.assertEqual(call.call_count, 1)
+        # A new run removes the stale rejected reply of the earlier run.
+        self.assertFalse((self.target/'dialogue.female.rejected.txt').exists())
+
+    def test_rejected_reply_write_failure_keeps_validation_error(self):
+        translator = self.translator(test_mode=True)
+        rows = [DIALOGUE_COLUMNS, ['NPC','1','','Hi','@1','TRA:test.tra:@1']]
+        with patch.object(Path, 'write_text', side_effect=PermissionError('read-only')):
+            with self.assertRaisesRegex(ValueError, 'IDs do not match.*could not be kept: read-only'):
+                translator._parse_or_keep('{"translations":{}}', rows, Path('dialogue.csv'))
 
     def test_native_context_unlimited_generation_and_no_timeout(self):
         translator = self.translator()
@@ -336,6 +347,25 @@ class PipelineTests(unittest.TestCase):
         rules = translator._build_dictionary_context('Icewind Dale and Icewind')
         self.assertIn('"Icewind" should', rules)
 
+    def test_glossary_proper_nouns_case_sensitive_and_plural(self):
+        self.dictionary.write_text('Bane,Бейн\nCowled Wizard,Волшебник в рясе\nArchmage,архимаг\n',
+                                   encoding='utf-8')
+        translator = self.translator(test_mode=True)
+        self.assertEqual(translator._build_dictionary_context('He is the bane of my life.'), '')
+        self.assertIn('"Archmage"', translator._build_dictionary_context('The archmage left.'))
+        self.assertIn('"Bane"', translator._build_dictionary_context('Bane watches.'))
+        self.assertIn('"Cowled Wizard"', translator._build_dictionary_context('The Cowled Wizards came.'))
+        self.assertEqual(translator._build_dictionary_context('Cowled Wizardry'), '')
+
+    def test_glossary_plural_forms(self):
+        self.dictionary.write_text('Rob,Роб\nfairy,фея\ndwarf,дварф\nwatchman,стражник\nhuman,человек\n',
+                                   encoding='utf-8')
+        translator = self.translator(test_mode=True)
+        self.assertEqual(translator._build_dictionary_context('Robes and Robs.'), '"Rob" should be translated as "Роб".')
+        for text, entry in (('Fairies', 'fairy'), ('dwarves', 'dwarf'), ('dwarfs', 'dwarf'),
+                            ('Watchmen', 'watchman'), ('humans', 'human')):
+            self.assertIn(f'"{entry}"', translator._build_dictionary_context(text))
+
     def test_tra_import_after_two_json_passes(self):
         self.dialogue([['NPC','1','','You returned!','@1','TRA:test.tra:@1']])
         translator = self.translator()
@@ -353,6 +383,64 @@ class PipelineTests(unittest.TestCase):
         self.assertIn('@2 = ~Other~\r\n', result)
         self.assertEqual((self.tra/'TEST.TRA').read_bytes().decode(), original)
         self.assertTrue((self.output/'untouched.tra').exists())
+
+    def test_reused_tra_string_is_translated_once_and_exports(self):
+        self.dialogue([['NPC', 's0', '', 'Hello.', '@1', 'TRA:test.tra:@1'],
+                       ['PLAYER', 'r0', 's0', 'Bye.', '@2', 'TRA:test.tra:@2'],
+                       ['NPC', 's1', 'r0', 'Hello.', '@1', 'TRA:test.tra:@1'],
+                       ['PLAYER', 'r1', 's1', 'Bye.', '@2', 'TRA:test.tra:@2']])
+        translator = self.translator()
+        prompts = []
+        def reply(prompt, schema):
+            prompts.append(json.loads(prompt))
+            return self.response(prompt, {'1': 'Привет.', '2': 'Пока.'})
+        with patch.object(translator, '_call_ollama', side_effect=reply):
+            self.assertTrue(translator.translate_all_dialogs())
+        for prompt in prompts:
+            self.assertEqual([(l['id'], l['predecessors']) for l in prompt['dialogue']],
+                             [('1', ['2']), ('2', ['1'])])
+        _, exported = read_csv(self.target / 'dialogue.csv', DIALOGUE_COLUMNS + TRANSLATION_COLUMNS)
+        self.assertEqual([r['Line_ID'] for r in exported], ['s0', 'r0', 's1', 'r1'])
+        self.assertEqual([r['Russian_Male'] for r in exported], ['Привет.', 'Пока.', 'Привет.', 'Пока.'])
+        self.assertEqual([r['Predecessors'] for r in exported], ['', 's0', 'r0', 's1'])
+        (self.tra/'test.tra').write_text('@1 = ~Hello.~\n@2 = ~Bye.~\n', encoding='utf-8')
+        updater = TraUpdater(self.tra, self.target, self.output)
+        updater.load_translations_from_csvs()
+        updater.update_all_tra_files()
+        self.assertEqual((self.output/'test.tra').read_text(encoding='utf-8'), '@1 = ~Привет.~\n@2 = ~Пока.~\n')
+
+    def test_reused_tra_string_lists_every_speaker(self):
+        self.dialogue([['NPC', 's0', '', 'I am ready.', '@1', 'TRA:test.tra:@1'],
+                       ['PLAYER', 'r0', 's0', 'I am ready.', '@1', 'TRA:test.tra:@1']])
+        translator = self.translator()
+        prompts = []
+        def reply(prompt, schema):
+            prompts.append(json.loads(prompt))
+            return self.response(prompt, {'1': 'Я готова.'})
+        with patch.object(translator, '_call_ollama', side_effect=reply):
+            self.assertTrue(translator.translate_all_dialogs())
+        male, female = (p['dialogue'][0] for p in prompts)
+        self.assertEqual(male['speaker'], ['NPC', 'Player1'])
+        self.assertEqual(male['speaker_gender'], ['FEMALE', 'male'])
+        self.assertEqual(female['speaker_gender'], ['FEMALE', 'female'])
+        self.assertIn('several speakers', prompts[0]['graph_notes'])
+
+    def test_tra_string_shared_by_two_files_keeps_first_translation(self):
+        self.dialogue([['NPC', '1', '', 'Farewell.', '@1', 'TRA:test.tra:@1']], name='a.csv')
+        self.dialogue([['NPC', '1', '', 'Farewell.', '@1', 'TRA:test.tra:@1'],
+                       ['PLAYER', '2', '1', 'Bye.', '@2', 'TRA:test.tra:@2']], name='b.csv')
+        translator = self.translator()
+        words = iter([{'1': 'Прощай.'}, {'1': 'Прощай.'},
+                      {'1': 'Прощайте.', '2': 'Пока.'}, {'1': 'Прощайте.', '2': 'Пока.'}])
+        with patch.object(translator, '_call_ollama', side_effect=lambda p, s: self.response(p, next(words))):
+            self.assertTrue(translator.translate_all_dialogs())
+        _, exported = read_csv(self.target / 'b.csv', DIALOGUE_COLUMNS + TRANSLATION_COLUMNS)
+        self.assertEqual([r['Russian_Male'] for r in exported], ['Прощай.', 'Пока.'])
+        (self.tra/'test.tra').write_text('@1 = ~Farewell.~\n@2 = ~Bye.~\n', encoding='utf-8')
+        updater = TraUpdater(self.tra, self.target, self.output)
+        updater.load_translations_from_csvs()
+        updater.update_all_tra_files()
+        self.assertEqual((self.output/'test.tra').read_text(encoding='utf-8'), '@1 = ~Прощай.~\n@2 = ~Пока.~\n')
 
 
 if __name__ == '__main__':

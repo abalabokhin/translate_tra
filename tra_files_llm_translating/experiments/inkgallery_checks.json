@@ -1,0 +1,58 @@
+{
+  "description": "Expected Russian forms for the 12 archived InkGallery lines. Regexes are case-insensitive. 'require' must match, 'forbid' must not. Keys per line: both, male, female (Player1 gender of the pass).",
+  "input": "../examples/inkgallery-json-two-pass/input.csv",
+  "actors": "../examples/inkgallery-json-two-pass/actors.csv",
+  "all": [
+    {"name": "singular ты, not вы", "forbid": "\\b(вы|вас|вам|вами|ваш\\w*)\\b"}
+  ],
+  "lines": {
+    "@16": {
+      "both": [
+        {"name": "second sentence kept", "require": "галере"}
+      ],
+      "male": [
+        {"name": "feminine address noun for male Player1", "forbid": "\\b(путница|путешественница|странница|искательница|авантюристка|скиталица)\\b"}
+      ],
+      "female": [
+        {"name": "masculine address noun for female Player1", "forbid": "\\b(путник|путешественник|странник|искатель|авантюрист|скиталец)\\b"}
+      ]
+    },
+    "@23": {
+      "male": [{"name": "хотела for male Player1", "forbid": "\\bхотела\\b"}],
+      "female": [{"name": "хотел for female Player1", "forbid": "\\bхотел\\b"}]
+    },
+    "@48": {
+      "both": [
+        {"name": "idiom: not 'как я делаю'", "forbid": "как я делаю"},
+        {"name": "idiom: how I'm doing", "require": "\\bдела\\b|поживаешь|поживаю"}
+      ],
+      "male": [{"name": "feminine verb for male Player1", "forbid": "\\b(заглянула|зашла|пришла|забежала)\\b"}],
+      "female": [{"name": "masculine verb for female Player1", "forbid": "\\b(заглянул|заш[её]л|приш[её]л|забежал)\\b"}]
+    },
+    "@100": {
+      "both": [{"name": "seen, not read", "forbid": "\\bпроч(ёл|ел|ла|итал|итала)\\b"}],
+      "male": [{"name": "видела for male Player1", "forbid": "\\bвидела\\b"}],
+      "female": [{"name": "видел for female Player1", "forbid": "\\bвидел\\b"}]
+    },
+    "@17": {
+      "male": [{"name": "поняла for male Player1", "forbid": "\\bпоняла\\b"}],
+      "female": [{"name": "понял for female Player1", "forbid": "\\bпонял\\b"}]
+    },
+    "@24": {
+      "male": [{"name": "поняла for male Player1", "forbid": "\\bпоняла\\b"}],
+      "female": [{"name": "понял for female Player1", "forbid": "\\bпонял\\b"}]
+    },
+    "@18": {
+      "both": [
+        {"name": "Velcealle addressed as masculine", "forbid": "\\bговорил\\b|\\bсказал\\b|\\bприш[её]л\\b|\\bприехал\\b|\\bпереехал\\b"},
+        {"name": "Velcealle addressed as feminine", "require": "\\b(говорила|сказала|упоминала)\\b"},
+        {"name": "glossary stem Кормир", "require": "кормир"},
+        {"name": "no extra consonant (Кормирр)", "forbid": "кормирр"}
+      ]
+    },
+    "@21": {
+      "male": [{"name": "хотела for male Player1", "forbid": "\\bхотела\\b"}],
+      "female": [{"name": "хотел for female Player1", "forbid": "\\bхотел\\b"}]
+    }
+  }
+}

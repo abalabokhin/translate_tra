@@ -9,14 +9,15 @@ import os
 import sys
 import json
 import io
+import re
 import time
 from pathlib import Path
+import urllib.error
 import urllib.request
-import urllib.parse
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple
 
 from translation_common import (DIALOGUE_COLUMNS, TRANSLATION_COLUMNS, female_source,
-                                parse_reference, strict_json, validate_text, write_csv)
+                                parse_reference, read_csv, strict_json, validate_text, write_csv)
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TRANSLATION_RULES = """Translate English Infinity Engine text into faithful, natural Russian.
@@ -30,7 +31,9 @@ but never omit meaning or make Russian awkward just to avoid a gender distinctio
 PLAYER and Player1 mean the protagonist. First-person agreement follows the SPEAKER;
 second-person agreement follows the ADDRESSEE, not necessarily Player1.
 NPC genders stay fixed. If Player1 addresses a female NPC, she stays female even when Player1
-is male. Narrated men remain men. Never invent an unknown speaker's or addressee's gender.
+is male. Narrated men remain men. Never invent the gender of a speaker marked unknown.
+Infer who each line addresses from the speakers and predecessor links; if it is genuinely unclear,
+prefer wording that does not mark the addressee's gender.
 Preserve every engine token, formatting code and literal escape exactly, including case and
 occurrence count: <PLAYER1>, <CHARNAME>, <PRO_MANWOMAN>, %variables%, etc. Keep line breaks,
 quotation marks, asterisks and brackets; translate the words inside stage directions.
@@ -68,12 +71,11 @@ class DialogTranslator:
         actors = {}
         if not self.actors_file.is_file():
             raise ValueError(f"Actor file does not exist: {self.actors_file}")
-        if self.actors_file.exists():
-            with open(self.actors_file, 'r', encoding='utf-8-sig', newline='') as f:
-                reader = csv.reader(f)
-                for row in reader:
-                    if len(row) >= 2 and row[0].strip() and row[1].strip():
-                        actors[row[0].strip().casefold()] = row[1].strip()
+        with open(self.actors_file, 'r', encoding='utf-8-sig', newline='') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if len(row) >= 2 and row[0].strip() and row[1].strip():
+                    actors[row[0].strip().casefold()] = row[1].strip()
         return actors
     
     def _load_dictionary(self) -> Dict[str, List[Tuple[str, str]]]:
@@ -84,32 +86,42 @@ class DialogTranslator:
         dictionary = {}
         if not self.dict_file.is_file():
             raise ValueError(f"Glossary does not exist: {self.dict_file}")
-        if self.dict_file.exists():
-            with open(self.dict_file, 'r', encoding='utf-8-sig', newline='') as f:
-                reader = csv.reader(f)
-                for row in reader:
-                    if len(row) >= 2 and row[0].strip() and row[1].strip():
-                        english = row[0].strip()
-                        russian = row[1].strip()
-                        comment = row[2].strip() if len(row) >= 3 and row[2].strip() else ""
+        with open(self.dict_file, 'r', encoding='utf-8-sig', newline='') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if len(row) >= 2 and row[0].strip() and row[1].strip():
+                    english = row[0].strip()
+                    russian = row[1].strip()
+                    comment = row[2].strip() if len(row) >= 3 and row[2].strip() else ""
 
-                        # Add to list of translations for this word
-                        if english not in dictionary:
-                            dictionary[english] = []
-                        dictionary[english].append((russian, comment))
+                    # Add to list of translations for this word
+                    if english not in dictionary:
+                        dictionary[english] = []
+                    dictionary[english].append((russian, comment))
         return dictionary
     
-    def _get_actors_in_dialog(self, csv_file: Path) -> List[str]:
-        """Get list of unique actors in the dialog file"""
-        actors = set()
-        with open(csv_file, 'r', encoding='utf-8-sig', newline='') as f:
-            reader = csv.reader(f)
-            next(reader, None)  # Skip header
-            for row in reader:
-                if len(row) >= 1 and row[0].strip():
-                    actors.add(row[0].strip())
-        return sorted(actors)
-    
+    @staticmethod
+    def _get_actors_in_dialog(rows: List[List[str]]) -> List[str]:
+        """Get list of unique actors in the dialog rows (header excluded)"""
+        return sorted({row[0].strip() for row in rows if row[0].strip()})
+
+    def _established_translations(self, current: Path) -> Dict[Tuple[str, int], Tuple[str, str, str]]:
+        """TRA key -> (male, female, file) from dialogue CSVs already exported to the target
+        folder, so a string shared by several dialogue files gets one translation."""
+        established = {}
+        for path in sorted(self.target_folder.glob('*.csv'), key=lambda p: p.name.casefold()):
+            if path.name.casefold() in (current.name.casefold(), '_unused_tra_lines.csv'):
+                continue
+            try:
+                _, rows = read_csv(path, DIALOGUE_COLUMNS + TRANSLATION_COLUMNS)
+            except (ValueError, csv.Error):
+                continue  # not a translated dialogue export
+            for row in rows:
+                if row['TRA_Reference'] and row['Russian_Male']:
+                    established.setdefault(parse_reference(row['Additional_Info']),
+                                           (row['Russian_Male'], row['Russian_Female'], path.name))
+        return established
+
     def _build_actor_info(self, actors_in_dialog: List[str]) -> str:
         """Build actor information string for the prompt"""
         actor_info = []
@@ -118,10 +130,26 @@ class DialogTranslator:
                 actor_info.append(f'"{actor}": {self.actors.get(actor.casefold(), "unknown gender")}')
         return ". ".join(actor_info) + "." if actor_info else ""
     
+    @staticmethod
+    def _plurals(word: str) -> List[str]:
+        """Regular English plurals of an entry's last word, plus -men and -ves forms."""
+        if not word[-1:].isalpha():
+            return []
+        lower = word.casefold()
+        if lower.endswith('man'):
+            return [word[:-3] + 'men', word + 's']  # Watchmen, but Humans
+        if re.search(r'[^aeiou]y$', lower):
+            return [word[:-1] + 'ies']
+        if lower.endswith(('s', 'x', 'z', 'ch', 'sh')):
+            return [word + 'es']
+        if lower.endswith('f'):
+            return [word + 's', word[:-1] + 'ves']
+        if lower.endswith('fe'):
+            return [word + 's', word[:-2] + 'ves']
+        return [word + 's']
+
     def _build_dictionary_context(self, dialog_text: str) -> str:
         """Build dictionary context for words that appear in the dialog"""
-        import re
-
         relevant_translations = []
         matched_positions = set()  # Track which positions have been matched
 
@@ -129,11 +157,17 @@ class DialogTranslator:
         sorted_dict_items = sorted(self.dictionary.items(), key=lambda x: len(x[0]), reverse=True)
 
         for english_word, translations_list in sorted_dict_items:
-            # Match whole words/phrases, including entries ending in punctuation.
-            pattern = r'(?<!\w)' + re.escape(english_word) + r'(?!\w)'
+            # Match whole words/phrases, including entries ending in punctuation,
+            # and English plurals ("Cowled Wizards" for "Cowled Wizard").
+            forms = [english_word] + self._plurals(english_word)
+            pattern = r'(?<!\w)(?:' + '|'.join(map(re.escape, sorted(forms, key=len, reverse=True))) + r')(?!\w)'
+            # Proper nouns (Russian side capitalised too) match case-sensitively, so
+            # "Bane" (the god) does not match "the bane of my life". dict.csv
+            # capitalises every English entry, so English case alone is not a signal.
+            proper = all(russian[:1].isupper() for russian, _ in translations_list)
+            flags = 0 if proper else re.IGNORECASE
 
-            # Find all matches in the dialog text (case-insensitive)
-            for match in re.finditer(pattern, dialog_text, re.IGNORECASE):
+            for match in re.finditer(pattern, dialog_text, flags):
                 start, end = match.span()
 
                 # Check if this position range overlaps with already matched positions
@@ -247,17 +281,17 @@ class DialogTranslator:
         original_ids = {row[1]: str(i) for i, row in enumerate(rows[1:], 1)}
         previous = strict_json(previous_translation)['translations'] if previous_translation is not None else None
         dialogue = []
+        shared = False
         for i, row in enumerate(rows[1:], 1):
             source = dict(zip(header, row))
-            actor = 'Player1' if row[0].casefold() in ('player', 'player1') else row[0]
-            addressee = source.get('Addressee', '')
-            if addressee.casefold() in ('player', 'player1'):
-                addressee = 'Player1'
-            line = {'id': str(i), 'speaker': actor,
-                    'speaker_gender': player1_gender if actor == 'Player1' else self.actors.get(actor.casefold(), 'unknown'),
-                    'addressee': addressee or 'unknown',
-                    'addressee_gender': (player1_gender if addressee == 'Player1'
-                                        else self.actors.get(addressee.casefold(), 'unknown')),
+            # A reused TRA string may have several speakers (joined with ';').
+            actors = ['Player1' if a.casefold() in ('player', 'player1') else a for a in row[0].split(';')]
+            genders = [player1_gender if a == 'Player1' else self.actors.get(a.casefold(), 'unknown')
+                       for a in actors]
+            shared |= len(actors) > 1
+            # No addressee field: the model infers it from speakers and the graph.
+            line = {'id': str(i), 'speaker': actors[0] if len(actors) == 1 else actors,
+                    'speaker_gender': genders[0] if len(genders) == 1 else genders,
                     'predecessors': [original_ids.get(p, p) for p in row[2].split(';') if p],
                     'english': female_source(source, row[3]) if player1_gender == 'female' else row[3]}
             if previous is not None:
@@ -270,9 +304,13 @@ class DialogTranslator:
                            'Copy all unaffected Russian words and punctuation EXACTLY. NPC genders remain fixed. '
                            'Use the English source to resolve who speaks, is addressed, or is being described. '
                            'If an original female English variant differs in meaning, preserve that meaning too.')
+        graph_notes = 'Predecessors are alternative immediately preceding lines, not consecutive speech.'
+        if shared:
+            graph_notes += (' A line with several speakers is one game string spoken by each of them; '
+                            'its single translation must agree with every listed speaker.')
         return json.dumps({'instruction': instruction, 'kind': 'standalone' if standalone else 'dialogue',
                            'actors': actor_info, 'glossary': dict_context,
-                           'graph_notes': 'Predecessors are alternative immediately preceding lines, not consecutive speech.',
+                           'graph_notes': graph_notes,
                            'dialogue': dialogue,
                            'output': {'translations': {line['id']: 'Russian text for this line' for line in dialogue}}},
                           ensure_ascii=False)
@@ -299,6 +337,27 @@ class DialogTranslator:
             validate_text(text, values[str(i)], f'line {i}')
         return values
 
+    def _rejected_path(self, csv_file: Path, female: bool) -> Path:
+        return self.target_folder / f"{csv_file.stem}.{'female' if female else 'male'}.rejected.txt"
+
+    def _forget_rejected(self, csv_file: Path):
+        """Remove rejected replies of an earlier run, so they never describe the current one."""
+        for female in (False, True):
+            self._rejected_path(csv_file, female).unlink(missing_ok=True)
+
+    def _parse_or_keep(self, translation_text, rows, csv_file: Path, female=False):
+        """Validate a reply; on failure keep the raw reply for diagnosis (no retry)."""
+        try:
+            return self._parse_translation(translation_text, rows, female=female)
+        except ValueError as exc:
+            raw = self._rejected_path(csv_file, female)
+            try:
+                raw.write_text(translation_text, encoding='utf-8')
+                kept = f"raw reply kept in {raw}"
+            except OSError as write_error:
+                kept = f"raw reply could not be kept: {write_error}"
+            raise ValueError(f"{exc} ({kept})") from exc
+
     def translate_dialog_file(self, csv_file: Path):
         """Translate one complete dialogue: male first, then a female-only edit."""
         print(f"Processing {csv_file.name}...", flush=True)
@@ -310,12 +369,11 @@ class DialogTranslator:
         # Work with the known columns in the prompt; keep original ordering for export.
         if rows[0][:6] != DIALOGUE_COLUMNS:
             raise ValueError(f"{csv_file}: dialogue columns must follow the parser's order")
-        prompt_rows = rows
-        ids = [row[1] for row in prompt_rows[1:]]
+        ids = [row[1] for row in rows[1:]]
         if any(not value for value in ids) or len(set(ids)) != len(ids):
             raise ValueError(f"{csv_file}: empty or duplicate Line_ID")
         sources = {}
-        for row in prompt_rows[1:]:
+        for row in rows[1:]:
             if row[4]:
                 key = parse_reference(row[5])
                 _, number = key
@@ -330,24 +388,64 @@ class DialogTranslator:
             self._write_csv_content(self.target_folder / csv_file.name,
                                     [rows[0] + TRANSLATION_COLUMNS])
             return
+        self._forget_rejected(csv_file)
+        # A TRA string reused by several states is sent once, with the speakers and
+        # predecessors of all its uses; every row then gets that one translation. Otherwise
+        # the model may word the copies differently and the TRA export rejects the conflict.
+        slot, first, uses = {}, {}, []  # Line_ID -> prompt index; merge key -> index; index-1 -> rows
+        for row in rows[1:]:
+            key = parse_reference(row[5]) if row[4] else row[1]
+            if key not in first:
+                first[key] = len(first) + 1
+                uses.append([])
+            slot[row[1]] = first[key]
+            uses[slot[row[1]] - 1].append(row)
+        prompt_rows = [rows[0]]
+        for i, same in enumerate(uses, 1):
+            speakers, predecessors = [], []
+            for row in same:
+                if row[0] not in speakers:
+                    speakers.append(row[0])
+                for predecessor in filter(None, row[2].split(';')):
+                    predecessor = uses[slot[predecessor] - 1][0][1] if predecessor in slot else predecessor
+                    if predecessor != same[0][1] and predecessor not in predecessors:
+                        predecessors.append(predecessor)
+            prompt_rows.append([';'.join(speakers), same[0][1], ';'.join(predecessors)] + same[0][3:])
         buffer = io.StringIO(newline='')
         csv.writer(buffer).writerows(prompt_rows)
         csv_content = buffer.getvalue()
-        actor_info = self._build_actor_info(self._get_actors_in_dialog(csv_file))
+        actor_info = self._build_actor_info(self._get_actors_in_dialog(rows[1:]))
         dict_context = self._build_dictionary_context('\n'.join(
-            row[3] + '\n' + female_source(dict(zip(rows[0], row)), row[3]) for row in rows[1:]))
+            row[3] + '\n' + female_source(dict(zip(rows[0], row)), row[3]) for row in prompt_rows[1:]))
         schema = self._translation_schema(prompt_rows)
 
-        print(f"  Translating full dialogue for male Player1 ({len(rows)-1} lines)...", flush=True)
+        reused = len(rows) - len(prompt_rows)
+        print(f"  Translating full dialogue for male Player1 ({len(prompt_rows)-1} lines"
+              f"{f', {reused} reused TRA strings merged' if reused else ''})...", flush=True)
         start_time = time.time()
         male_prompt = self._create_translation_prompt(csv_content, 'male', actor_info, dict_context)
         male_translation = self._call_ollama(male_prompt, schema)
-        male = self._parse_translation(male_translation, prompt_rows)
+        male = self._parse_or_keep(male_translation, prompt_rows, csv_file)
         print(f"  Male pass finished in {time.time()-start_time:.2f}s; editing for female Player1...", flush=True)
         female_prompt = self._create_translation_prompt(csv_content, 'female', actor_info, dict_context,
                                                        json.dumps({'translations': male}, ensure_ascii=False))
         female_translation = self._call_ollama(female_prompt, schema)
-        female = self._parse_translation(female_translation, prompt_rows, female=True)
+        female = self._parse_or_keep(female_translation, prompt_rows, csv_file, female=True)
+        # Expand back to one translation per original row (shared for reused TRA strings).
+        index = {str(i): str(slot[row[1]]) for i, row in enumerate(rows[1:], 1)}
+        male = {i: male[p] for i, p in index.items()}
+        female = {i: female[p] for i, p in index.items()}
+        # A string already exported for another dialogue file keeps that translation, so
+        # the TRA export gets one translation per string across files.
+        established = self._established_translations(csv_file)
+        sources = set()
+        for i, row in enumerate(rows[1:], 1):
+            key = parse_reference(row[5]) if row[4] else None
+            if key in established:
+                male[str(i)], female[str(i)], source = established[key]
+                sources.add(source)
+        if sources:
+            print(f"  Kept existing translations of strings shared with {', '.join(sorted(sources))}", flush=True)
         self._save_translation_result(male, self.target_folder / csv_file.name, rows, female)
         print(f"  Saved {self.target_folder / csv_file.name} ({time.time()-start_time:.2f}s)", flush=True)
 
@@ -365,6 +463,7 @@ class DialogTranslator:
         if not rows or not {'Reference', 'Text'} <= set(rows[0]):
             raise ValueError(f"{csv_file}: expected Reference and Text columns")
         source_rows = [dict(zip(rows[0], row)) for row in rows[1:]]
+        self._forget_rejected(Path('_unused_tra_lines'))
         if not source_rows:
             self._write_csv_content(self.target_folder / csv_file.name,
                 [['Reference', 'English_Text', 'Source_Female_Text', 'Source_Has_Female'] + TRANSLATION_COLUMNS])
@@ -395,7 +494,7 @@ class DialogTranslator:
         self._write_csv_content(self.target_folder / csv_file.name, output)
 
     def _parse_unused_lines_result(self, translation_text, rows, female=False):
-        return self._parse_translation(translation_text, rows, female=female)
+        return self._parse_or_keep(translation_text, rows, Path('_unused_tra_lines'), female=female)
 
     def translate_all_dialogs(self):
         """Translate CSV files independently; report failures without silently succeeding."""
