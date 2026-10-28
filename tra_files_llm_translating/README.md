@@ -444,3 +444,19 @@ Conclusion: substantially faster in this configuration and promising for review,
 but not a clear overall quality winner under all the requested constraints.
 The output remains unapproved. Both models' prompts, raw responses and metrics
 are preserved; no extra request was made to improve or cherry-pick Qwen2.5's result.
+
+
+## Expanded diagnostic evaluation (2026-10-27)
+
+The baseline pilot, improved InkGallery checks, separate male/female wording
+review and four new synthetic dialogue fixtures are documented in
+[experiments/EVALUATION.md](experiments/EVALUATION.md). These are diagnostic tools,
+not production repair passes or evidence that automatic translation is solved.
+The first live comparison of both installed models is documented in
+[experiments/MODEL_COMPARISON_2026-10-27.md](experiments/MODEL_COMPARISON_2026-10-27.md).
+
+The uncapped Qwen3.5 thinking-on baseline is documented in
+[experiments/THINKING_BASELINE_2026-10-27.md](experiments/THINKING_BASELINE_2026-10-27.md).
+It completed one of fifteen dialogue pairs at the matched 8192-token context.
+
+Seven-model non-thinking batch completed: [results, manual review and limitations](experiments/NON_THINKING_RESULTS_2026-10-28.md).

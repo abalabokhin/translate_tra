@@ -267,7 +267,8 @@ def main():
         if not records:
             continue
         report += ['', f'## {title}', '', note, '',
-                   f'Details: [{folder}/summary.md]({folder}/summary.md), [{folder}/outputs.csv]({folder}/outputs.csv).']
+                   f'Details: [{folder}/summary.md]({folder}/summary.md), [{folder}/outputs.csv]({folder}/outputs.csv), '
+                   f'[{folder}/pair_reviews.csv]({folder}/pair_reviews.csv) (wording diagnostics, excluded from scores).']
         for fields in groupings:
             report += ['', f"### By {', '.join(fields)}", ''] + table(rate(records, *fields), list(fields))
     (out / 'REPORT.md').write_text('\n'.join(report) + '\n', encoding='utf-8')

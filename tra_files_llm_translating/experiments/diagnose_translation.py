@@ -26,6 +26,8 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR.parent))
 from translate_dialogs import TRANSLATION_RULES, DialogTranslator  # noqa: E402
+from translation_common import (DIALOGUE_COLUMNS, TOKEN_PATTERN, female_source,
+                                merge_dialogue_rows, read_csv)  # noqa: E402
 
 PROMPTS = ('production', 'reframed', 'reframed-addressee', 'examples', 'markup')
 SCOPES = ('full', 'pair')
@@ -112,9 +114,15 @@ class Experiment:
         # Reuse production prompt building, glossary and validation unchanged.
         self.prod = DialogTranslator(source_folder=str(self.input_path.parent), target_folder=str(self.out),
                                      actors_file=str(actors_path), dict_file=args.dictionary)
-        with open(self.input_path, encoding='utf-8-sig', newline='') as f:
-            self.rows = [row for row in csv.reader(f, strict=True) if row]
-        self.header = self.rows[0]
+        self.header, source = read_csv(self.input_path, DIALOGUE_COLUMNS)
+        if self.header[:6] != DIALOGUE_COLUMNS:
+            raise ValueError('Dialogue columns must follow the parser order')
+        self.rows = [self.header] + [[row[h] for h in self.header] for row in source]
+        ids = [row[1] for row in self.rows[1:]]
+        if len(set(ids)) != len(ids) or not all(ids):
+            raise ValueError('Empty or duplicate Line_ID')
+        if set(self.checks['lines']) - set(ids):
+            raise ValueError('Checks name Line_IDs missing from the input')
         self.base = 'http://' + args.url.split('://', 1)[-1].split('/api/', 1)[0].rstrip('/')
         self.native_ctx = {}
         self.gpu_checked = set()
@@ -142,11 +150,16 @@ class Experiment:
 
     def build(self, prompt, rows, gender, male=None):
         """Return (system, user) for one pass. For 'markup', gender is 'both' (single pass)."""
+        actors = self.prod._build_actor_info(sorted({r[0] for r in rows}))
+        merged, _ = merge_dialogue_rows([self.header] + rows)
+        if male is not None:
+            by_id = {r[1]: male[str(i)] for i, r in enumerate(rows, 1)}
+            male = {str(i): by_id[r[1]] for i, r in enumerate(merged[1:], 1)}
+        rows = merged[1:]
         text = self.csv_text(rows)
-        all_text = '\n'.join(r[3] for r in rows)
+        all_text = '\n'.join(r[3] + '\n' + female_source(dict(zip(self.header, r)), r[3]) for r in rows)
         glossary = self.prod._build_dictionary_context(all_text)
         if prompt == 'production':
-            actors = self.prod._build_actor_info(sorted({r[0] for r in rows}))
             previous = json.dumps({'translations': male}, ensure_ascii=False) if male else None
             return TRANSLATION_RULES, self.prod._create_translation_prompt(text, gender, actors, glossary, previous)
 
@@ -161,9 +174,11 @@ class Experiment:
         dialogue = []
         for i, row in enumerate(rows, 1):
             source = dict(zip(self.header, row))
-            speaker = 'Player1' if is_player(row[0]) else row[0]
-            names = [speaker]
-            note = f"я: {player if speaker == 'Player1' else gender_word(self.prod.actors.get(speaker.casefold()))} ({speaker})"
+            speakers = ['Player1' if is_player(a) else a for a in row[0].split(';')]
+            speaker = speakers[0] if len(speakers) == 1 else speakers
+            names = list(speakers)
+            note = '; '.join(f"я: {player if a == 'Player1' else gender_word(self.prod.actors.get(a.casefold()))} ({a})"
+                             for a in speakers)
             if use_addressee and source.get('Addressee'):
                 listener = 'Player1' if is_player(source['Addressee']) else source['Addressee']
                 names.append(listener)
@@ -173,7 +188,10 @@ class Experiment:
                 if name != 'Player1':
                     characters[name] = self.prod.actors.get(name.casefold(), 'unknown gender')
             line = {'id': str(i), 'speaker': speaker, 'grammar': note,
-                    'predecessors': [ids[p] for p in row[2].split(';') if p in ids], 'english': row[3]}
+                    'predecessors': [ids[p] for p in row[2].split(';') if p in ids],
+                    'english': female_source(source, row[3]) if gender == 'female' else row[3]}
+            if markup and female_source(source, row[3]) != row[3]:
+                line['female_english'] = female_source(source, row[3])
             if male:
                 line['male_translation'] = male[str(i)]
             dialogue.append(line)
@@ -182,16 +200,24 @@ class Experiment:
             task = ('Player1 is now female. Each line has male_translation, written for a male Player1. '
                     'Change only the words whose form depends on Player1 being female, following the grammar notes; '
                     'copy everything else exactly. Return every line in full.')
+            if any(female_source(dict(zip(self.header, row)), row[3]) != row[3] for row in rows):
+                task += ' If the original female English differs in meaning, preserve that meaning too.'
         if markup:
             task = ('Translate every line once, marking every word whose form depends on Player1\'s gender '
                     'as {masculine|feminine}.')
+            if any('female_english' in line for line in dialogue):
+                task += (' If female_english differs from english, preserve those meaning differences using '
+                         'the same {male text|female text} notation; empty alternatives are allowed.')
         request = {'task': task, 'characters': characters, 'glossary': glossary}
         if prompt in ('examples', 'markup'):
             # Show only the fields relevant to this pass, so the examples match the requested output.
             keep = ['markup'] if markup else (['male', 'female'] if male else ['male'])
             request['worked_examples'] = [{k: e[k] for k in ('case', 'speaker', 'listener', 'english', *keep)}
                                           for e in EXAMPLES]
-        request.update({'graph_notes': 'Predecessors are alternative immediately preceding lines.',
+        graph_notes = 'Predecessors are alternative immediately preceding lines.'
+        if any(isinstance(line['speaker'], list) for line in dialogue):
+            graph_notes += ' A list of speakers means one shared string: its translation must suit every speaker.'
+        request.update({'graph_notes': graph_notes,
                         'dialogue': dialogue,
                         'output': {'translations': {l['id']: 'Russian text' for l in dialogue}}})
         return REFRAMED_RULES + ('\n' + MARKUP_RULE if markup else ''), json.dumps(request, ensure_ascii=False)
@@ -270,12 +296,53 @@ class Experiment:
         for check in self.checks.get('all', []) + line_checks.get('both', []) + line_checks.get(gender, []):
             if text is None:
                 ok = False  # Missing output fails every expected check, including forbids.
+            elif check.get('no_latin'):
+                plain = TOKEN_PATTERN.sub('', text)
+                allowed = self.checks.get('allowed_latin', []) + line_checks.get('allowed_latin', [])
+                for word in sorted(allowed, key=len, reverse=True):
+                    plain = re.sub(r'(?<!\w)' + re.escape(word) + r'(?!\w)', '', plain)
+                ok = re.search(r'[A-Za-z]', plain) is None
             elif 'require' in check:
                 ok = re.search(check['require'], text, re.IGNORECASE) is not None
             else:
                 ok = re.search(check['forbid'], text, re.IGNORECASE) is None
             results.append({'line': line_id, 'gender': gender, 'check': check['name'], 'ok': ok})
         return results
+
+    def review_pairs(self, rows, targets, male, female):
+        """Flag edits outside explicit gender pairs; never rewrite translations."""
+        if 'pair_review' not in self.checks:
+            return []
+        review = []
+        for row in rows:
+            line_id = row[1]
+            if line_id not in targets:
+                continue
+            m, f = (male or {}).get(line_id), female.get(line_id)
+            if female_source(dict(zip(self.header, row)), row[3]) != row[3]:
+                status, reason = 'not_applicable', 'Original female source differs in meaning or form'
+            elif m is None or f is None:
+                status, reason = 'missing', 'Both validated translations are required'
+            else:
+                normalized = [m, f]
+                changes = (self.checks['pair_review'].get('allowed_changes', [])
+                           + self.checks['lines'].get(line_id, {}).get('allowed_changes', []))
+                groups = []
+                for forms in changes:
+                    group = set(forms)
+                    for existing in groups[:]:
+                        if existing & group:
+                            group |= existing
+                            groups.remove(existing)
+                    groups.append(group)
+                aliases = {form: f'⟦gender:{i}⟧' for i, group in enumerate(groups) for form in group}
+                if aliases:
+                    pattern = r'(?<!\w)(?:' + '|'.join(map(re.escape, sorted(aliases, key=len, reverse=True))) + r')(?!\w)'
+                    normalized = [re.sub(pattern, lambda m: aliases[m[0]], text) for text in normalized]
+                status = 'pass' if normalized[0] == normalized[1] else 'review'
+                reason = 'Exact equality after listed gender edits' if status == 'pass' else 'Unlisted wording, case or punctuation edit'
+            review.append(dict(line=line_id, status=status, reason=reason, male=m, female=f))
+        return review
 
     # ---------- running ----------
 
@@ -301,7 +368,7 @@ class Experiment:
                     if config['prompt'] == 'markup':
                         self.run_markup(handle, config, rows, targets)
                         continue
-                    schema = DialogTranslator._translation_schema([self.header] + rows)
+                    schema = DialogTranslator._translation_schema(merge_dialogue_rows([self.header] + rows)[0])
                     male = None
                     for gender in ('male', 'female'):
                         system, user = self.build(config['prompt'], rows, gender, male)
@@ -309,7 +376,8 @@ class Experiment:
                         record = self.record(config, gender, targets, payload, result)
                         if not record['error']:
                             self.parse(record, record['content'], rows, gender)
-                        self.write(handle, record, rows, targets)
+                        previous = {r[1]: male[str(i)] for i, r in enumerate(rows, 1)} if male is not None else None
+                        self.write(handle, record, rows, targets, previous)
                         if record['error']:
                             if gender == 'male':
                                 skipped = self.record(config, 'female', targets, None, {'wall_seconds': 0})
@@ -322,7 +390,7 @@ class Experiment:
     def run_markup(self, handle, config, rows, targets):
         """One request; the {masculine|feminine} reply becomes a male and a female record.
         The female record is marked 'derived' and carries no time/tokens of its own."""
-        schema = DialogTranslator._translation_schema([self.header] + rows)
+        schema = DialogTranslator._translation_schema(merge_dialogue_rows([self.header] + rows)[0])
         system, user = self.build('markup', rows, 'both')
         payload, result = self.chat(config, system, user, schema)
         male = self.record(config, 'male', targets, payload, result)
@@ -337,7 +405,7 @@ class Experiment:
             except (ValueError, TypeError, KeyError, AttributeError) as exc:
                 male['error'] = female['error'] = f'structural: {exc}'
         for record in (male, female):
-            self.write(handle, record, rows, targets)
+            self.write(handle, record, rows, targets, male['translations'])
 
     @staticmethod
     def record(config, gender, targets, payload, result):
@@ -351,15 +419,20 @@ class Experiment:
 
     def parse(self, record, content, rows, gender):
         try:
-            values = DialogTranslator._parse_translation(content, [self.header] + rows, female=gender == 'female')
-            record['translations'] = {r[1]: values[str(i)] for i, r in enumerate(rows, 1)}
+            merged, slots = merge_dialogue_rows([self.header] + rows)
+            values = DialogTranslator._parse_translation(content, merged, female=gender == 'female')
+            record['translations'] = {r[1]: values[str(slots[r[1]])] for r in rows}
         except ValueError as exc:
             record['error'] = f'structural: {exc}'
 
-    def write(self, handle, record, rows, targets):
+    def write(self, handle, record, rows, targets, male=None):
         for line_id in sorted(targets):
             text = None if record['error'] else record['translations'].get(line_id)
             record['checks'] += self.score(line_id, record['gender'], text)
+        if record['gender'] == 'female':
+            record['pair_reviews'] = self.review_pairs(rows, targets, male,
+                                                       {} if record['error'] else record['translations'])
+        record['evaluation_version'] = self.checks.get('version', 'unversioned')
         handle.write(json.dumps(record, ensure_ascii=False) + '\n')
         handle.flush()
         failed = [c for c in record['checks'] if not c['ok']]
@@ -378,6 +451,7 @@ def summarize(out):
         groups[(c['model'], c['prompt'], c['scope'], c['think'], c['temperature'])].append(r)
 
     lines = ['# Diagnostic results', '',
+             'Evaluation versions: ' + ', '.join(sorted({str(r.get('evaluation_version', 'legacy')) for r in records})), '',
              f'Source: `{out / "runs.jsonl"}` ({sum(not r.get("derived") and not r.get("skipped") for r in records)} requests). Checks = expected-form tests '
              'from the checks JSON, summed over repeats. Failed outputs and skipped female passes fail all expected checks. '
              'Time and tokens are per actual request.', '',
@@ -418,8 +492,30 @@ def summarize(out):
                         writer.writerow(list(key) + [r['config']['repeat'], r['gender'], line_id, failed,
                                                      r['translations'][line_id]])
     lines += ['', '## Failed checks by configuration'] + (details or ['', 'None.'])
+    reviews = [(r, review) for r in records for review in r.get('pair_reviews', [])]
+    if reviews:
+        lines += ['', '## Male/female wording review', '',
+                  'Diagnostic flags only; excluded from check scores and automatic selection. '
+                  'A pass does not establish correct gender or faithful meaning.', '',
+                  '| model | prompt | scope | think | temp | pass | review | missing | different source |',
+                  '|---|---|---|---|---|---|---|---|---|']
+        for key, recs in sorted(groups.items()):
+            counts = defaultdict(int)
+            for r in recs:
+                for review in r.get('pair_reviews', []):
+                    counts[review['status']] += 1
+            lines.append('| ' + ' | '.join(map(str, key)) + ' | '
+                         + ' | '.join(str(counts[s]) for s in ('pass', 'review', 'missing', 'not_applicable')) + ' |')
+    with open(out / 'pair_reviews.csv', 'w', encoding='utf-8-sig', newline='') as handle:
+        writer = csv.writer(handle)
+        writer.writerow(['model', 'prompt', 'scope', 'think', 'temperature', 'repeat',
+                         'Line_ID', 'status', 'reason', 'male', 'female'])
+        for r, review in reviews:
+            c = r['config']
+            writer.writerow([c[k] for k in ('model', 'prompt', 'scope', 'think', 'temperature', 'repeat')]
+                            + [review[k] for k in ('line', 'status', 'reason', 'male', 'female')])
     (out / 'summary.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
-    print(f"Wrote {out / 'summary.md'} and {out / 'outputs.csv'}")
+    print(f"Wrote {out / 'summary.md'}, {out / 'outputs.csv'} and {out / 'pair_reviews.csv'}")
 
 
 def split(value):

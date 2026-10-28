@@ -1,0 +1,85 @@
+{
+  "version": "original_female_variants-v1",
+  "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
+  "input": "input.csv",
+  "actors": "../actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    },
+    {
+      "name": "singular listener uses ты, not вы",
+      "forbid": "\\b(вы|вас|вам|вами|ваш\\w*)\\b"
+    }
+  ],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "401": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bего\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bе[её]\\b"
+        }
+      ]
+    },
+    "402": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bгерцог\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "герцогин"
+        }
+      ]
+    },
+    "403": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "серебр"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "бронз"
+        }
+      ]
+    },
+    "404": {
+      "male": [
+        {
+          "name": "male door statement",
+          "require": "двер"
+        }
+      ],
+      "female": [
+        {
+          "name": "explicit empty source remains empty",
+          "require": "^$"
+        }
+      ]
+    },
+    "405": {
+      "both": [
+        {
+          "name": "waiting retained",
+          "require": "подожду|буду\\s+ждать"
+        }
+      ]
+    }
+  }
+}

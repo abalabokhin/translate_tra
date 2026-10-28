@@ -1,6 +1,7 @@
 """Diagnostic scoring regressions; no running Ollama or model downloads."""
 
 import argparse
+import copy
 import contextlib
 import io
 import json
@@ -12,8 +13,9 @@ from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPTS / 'experiments'))
-from diagnose_translation import Experiment, summarize
+from diagnose_translation import Experiment, summarize, PROMPTS
 from run_all import rate, select_settings
+from translation_common import merge_dialogue_rows, read_csv, validate_text
 
 
 class ExperimentTests(unittest.TestCase):
@@ -45,7 +47,7 @@ class ExperimentTests(unittest.TestCase):
         full_targets = full[0][1]
         self.assertEqual(full_targets, {target for _, targets in pairs for target in targets})
         self.assertEqual(len(full[0][0]), 12)  # Full context remains available.
-        self.assertEqual(len(full_targets), 8)
+        self.assertEqual(len(full_targets), 12)
         for gender in ('male', 'female'):
             def checks(scopes):
                 return sorted((c['line'], c['gender'], c['check'])
@@ -101,6 +103,145 @@ class ExperimentTests(unittest.TestCase):
         interacting = [record('production', 'default', 9), record('production', '0.2', 8),
                        record('examples', 'default', 0), record('examples', '0.2', 10)]
         self.assertEqual(select_settings(interacting), ('examples', '0.2'))
+
+    def fixture(self, name):
+        args = copy.copy(self.experiment.args)
+        args.checks = str(SCRIPTS / 'experiments/fixtures' / name / 'checks.json')
+        return Experiment(args)
+
+    def test_latin_check_ignores_engine_tokens_and_explicit_names(self):
+        def latin_ok(text):
+            return next(c['ok'] for c in self.experiment.score('@48', 'male', text)
+                        if c['check'] == 'no untranslated Latin text outside engine tokens')
+        self.assertFalse(latin_ok('Поговорим downstairs.'))
+        self.assertTrue(latin_ok('Привет, <CHARNAME>! %gate_lock% %s \\n ^R'))
+        self.assertTrue(latin_ok('Жду здесь.'))
+        self.experiment.checks['allowed_latin'] = ['Boo']
+        self.assertTrue(latin_ok('Boo ждёт.'))
+        self.assertFalse(latin_ok('Book ждёт.'))
+
+    def test_inkgallery_names_and_idiom_accept_variants_but_reject_pilot_errors(self):
+        def named(lid, text, name):
+            return next(c['ok'] for c in self.experiment.score(lid, 'male', text) if c['check'] == name)
+        for text in ('Галерея Чернил', 'Чернильной галереи', 'галерею туши'):
+            self.assertTrue(named('@16', text, 'Ink Gallery name retains ink and gallery'))
+        for text in ('Талая Галерея', 'Галерея Травы', 'Галерея Инка'):
+            self.assertFalse(named('@16', text, 'Ink Gallery name retains ink and gallery'))
+        for text in ('как у меня дела', 'как я поживаю', 'как я себя чувствую', 'как я справляюсь'):
+            self.assertTrue(named('@48', text, 'idiom: how I\'m doing'), text)
+        self.assertFalse(named('@48', 'как я делаю', 'idiom: how I\'m doing'))
+        self.assertFalse(named('@48', 'Поговорим на кухне.', 'downstairs not an invented kitchen'))
+
+    def test_pair_review_distinguishes_gender_edits_rewrites_and_missing_outputs(self):
+        e = self.experiment
+        row = next(r for r in e.rows[1:] if r[1] == '@100')
+        male = {'@100': 'Привет! Ты видел книги и пришёл за сувенирами.'}
+        female = {'@100': 'Привет! Ты видела книги и пришла за сувенирами.'}
+        self.assertEqual(e.review_pairs([row], {'@100'}, male, female)[0]['status'], 'pass')
+        female['@100'] = 'Здравствуй! Ты видела книги и пришла за сувенирами.'
+        self.assertEqual(e.review_pairs([row], {'@100'}, male, female)[0]['status'], 'review')
+        self.assertEqual(e.review_pairs([row], {'@100'}, None, female)[0]['status'], 'missing')
+        # Equality is not proof of correct agreement: gender checks remain independent.
+        self.assertEqual(e.review_pairs([row], {'@100'}, male, male)[0]['status'], 'pass')
+        self.assertFalse(next(c['ok'] for c in e.score('@100', 'female', male['@100'])
+                              if c['check'] == 'видел for female Player1'))
+
+    def test_all_fixture_references_pass_checks_and_structural_validation(self):
+        for path in sorted((SCRIPTS / 'experiments/fixtures').glob('*/checks.json')):
+            with self.subTest(fixture=path.parent.name):
+                e = self.fixture(path.parent.name)
+                _, refs = read_csv(path.parent / 'reference.csv', ['Line_ID', 'Russian_Male', 'Russian_Female'])
+                by_id = {r['Line_ID']: r for r in refs}
+                self.assertEqual(set(by_id), {row[1] for row in e.rows[1:]})
+                for row in e.rows[1:]:
+                    self.assertTrue(set(filter(None, row[2].split(';'))) <= set(by_id))
+                male, female = {}, {}
+                for row in e.rows[1:]:
+                    for gender, field in [('male', 'Russian_Male'), ('female', 'Russian_Female')]:
+                        text = by_id[row[1]][field]
+                        source = dict(zip(e.header, row))
+                        english = row[3] if gender == 'male' or not source['Source_Has_Female'] else source['Source_Female_Text']
+                        validate_text(english, text)
+                        self.assertTrue(all(c['ok'] for c in e.score(row[1], gender, text)), (row[1], gender))
+                    male[row[1]], female[row[1]] = by_id[row[1]]['Russian_Male'], by_id[row[1]]['Russian_Female']
+                reviews = e.review_pairs(e.rows[1:], set(by_id), male, female)
+                self.assertTrue(all(r['status'] in ('pass', 'not_applicable') for r in reviews), reviews)
+
+    def test_all_prompt_variants_use_original_female_source_and_merge_references(self):
+        e = self.fixture('original_female_variants')
+        rows = e.rows[1:]
+        male = {str(i): 'текст' for i, _ in enumerate(rows, 1)}
+        for prompt in PROMPTS:
+            with self.subTest(prompt=prompt):
+                gender = 'both' if prompt == 'markup' else 'female'
+                _, user = e.build(prompt, rows, gender, None if prompt == 'markup' else male)
+                dialogue = json.loads(user)['dialogue']
+                field = 'female_english' if prompt == 'markup' else 'english'
+                self.assertEqual(dialogue[1][field], 'The duchess sent you to retrieve her seal.')
+                self.assertEqual(dialogue[3][field], '')
+        e = self.fixture('reused_strings')
+        merged, slots = merge_dialogue_rows(e.rows)
+        self.assertEqual(len(merged) - 1, 4)
+        self.assertEqual(slots['301_a'], slots['301_b'])
+        self.assertEqual(merged[1][e.header.index('Addressee')], '')
+        for prompt in PROMPTS:
+            _, user = e.build(prompt, e.rows[1:], 'male')
+            dialogue = json.loads(user)['dialogue']
+            self.assertEqual(len(dialogue), 4)
+            self.assertEqual(dialogue[0]['speaker'], ['Selene', 'Player1'])
+        record = {'translations': {}, 'error': None}
+        values = {str(i): row[3] for i, row in enumerate(merged[1:], 1)}
+        e.parse(record, json.dumps({'translations': values}), e.rows[1:], 'male')
+        self.assertIsNone(record['error'])
+        self.assertEqual(len(record['translations']), 6)
+        self.assertEqual(record['translations']['301_a'], record['translations']['301_b'])
+
+    def test_reference_replies_round_trip_all_fixtures_prompts_and_scopes(self):
+        for path in sorted((SCRIPTS / 'experiments/fixtures').glob('*/checks.json')):
+            with self.subTest(fixture=path.parent.name):
+                e = self.fixture(path.parent.name)
+                e.args.out = str(self.out / path.parent.name)
+                e.out = Path(e.args.out)
+                e.out.mkdir()
+                e.args.prompts = list(PROMPTS)
+                e.args.scopes = ['full', 'pair']
+                e.prod.dictionary = {}  # References test evaluation, not glossary selection.
+                _, references = read_csv(path.parent / 'reference.csv', ['Line_ID'])
+                references = {r['Line_ID']: r for r in references}
+                by_english = {}
+                for row in e.rows[1:]:
+                    by_english[row[3]] = references[row[1]]
+                    source = dict(zip(e.header, row))
+                    if source['Source_Has_Female']:
+                        by_english[source['Source_Female_Text']] = references[row[1]]
+                counts = {}
+                def reply(config, system, user, schema):
+                    self.assertNotIn('Review_Notes', user)
+                    self.assertNotIn('allowed_changes', user)
+                    key = tuple(config.values())
+                    count = counts.get(key, 0)
+                    counts[key] = count + 1
+                    gender = 'male' if count % 2 == 0 else 'female'
+                    values = {}
+                    for line in json.loads(user)['dialogue']:
+                        ref = by_english[line['english']]
+                        m, f = ref['Russian_Male'], ref['Russian_Female']
+                        if config['prompt'] == 'markup':
+                            text = m if m == f else '{' + m + '|' + f + '}'
+                        else:
+                            text = ref['Russian_' + gender.capitalize()]
+                        values[line['id']] = text
+                    self.assertEqual(set(values), set(schema['properties']['translations']['properties']))
+                    return None, {'wall_seconds': 1, 'message': {'content': json.dumps({'translations': values})}}
+                with contextlib.redirect_stdout(io.StringIO()), patch.object(e, 'chat', side_effect=reply):
+                    e.run()
+                    summarize(e.out)
+                records = [json.loads(line) for line in (e.out / 'runs.jsonl').read_text().splitlines()]
+                self.assertTrue(all(not r['error'] for r in records))
+                self.assertTrue(all(c['ok'] for r in records for c in r['checks']))
+                self.assertTrue(all(v['status'] in ('pass', 'not_applicable')
+                                    for r in records for v in r.get('pair_reviews', [])))
+                self.assertTrue((e.out / 'pair_reviews.csv').exists())
 
 
 if __name__ == '__main__':

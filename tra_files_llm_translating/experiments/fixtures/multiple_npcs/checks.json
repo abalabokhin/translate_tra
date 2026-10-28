@@ -1,0 +1,126 @@
+{
+  "version": "multiple_npcs-v1",
+  "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
+  "input": "input.csv",
+  "actors": "../actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    },
+    {
+      "name": "singular listener uses ты, not вы",
+      "forbid": "\\b(вы|вас|вам|вами|ваш\\w*)\\b"
+    }
+  ],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "101": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bвернулся\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bвернулась\\b"
+        }
+      ],
+      "both": [
+        {
+          "name": "Orin remains male",
+          "require": "Орин\\s+ждал"
+        },
+        {
+          "name": "downstairs",
+          "require": "внизу|нижн\\w*\\s+этаж"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "вернулся",
+          "вернулась"
+        ]
+      ]
+    },
+    "102": {
+      "both": [
+        {
+          "name": "Selene feminine",
+          "require": "была\\s+права"
+        },
+        {
+          "name": "no masculine listener",
+          "forbid": "\\bбыл\\s+прав\\b"
+        }
+      ]
+    },
+    "103": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bобещал\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bобещала\\b"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "обещал",
+          "обещала"
+        ]
+      ]
+    },
+    "104": {
+      "both": [
+        {
+          "name": "Orin injured masculine",
+          "require": "ранен\\b|пострадал\\b"
+        },
+        {
+          "name": "Selene worried feminine",
+          "require": "волновалась|беспокоилась"
+        }
+      ]
+    },
+    "105": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bспас\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bспасла\\b"
+        }
+      ],
+      "both": [
+        {
+          "name": "Orin never feminine",
+          "forbid": "\\bобязана\\b"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "спас",
+          "спасла"
+        ],
+        [
+          "путник",
+          "путница"
+        ]
+      ]
+    },
+    "106": {}
+  }
+}

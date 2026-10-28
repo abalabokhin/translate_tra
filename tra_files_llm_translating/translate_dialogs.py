@@ -17,7 +17,7 @@ import urllib.request
 from typing import Dict, List, Tuple
 
 from translation_common import (DIALOGUE_COLUMNS, TRANSLATION_COLUMNS, female_source,
-                                parse_reference, read_csv, strict_json, validate_text, write_csv)
+                                merge_dialogue_rows, parse_reference, read_csv, strict_json, validate_text, write_csv)
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TRANSLATION_RULES = """Translate English Infinity Engine text into faithful, natural Russian.
@@ -393,25 +393,7 @@ class DialogTranslator:
         # A TRA string reused by several states is sent once, with the speakers and
         # predecessors of all its uses; every row then gets that one translation. Otherwise
         # the model may word the copies differently and the TRA export rejects the conflict.
-        slot, first, uses = {}, {}, []  # Line_ID -> prompt index; merge key -> index; index-1 -> rows
-        for row in rows[1:]:
-            key = parse_reference(row[5]) if row[4] else row[1]
-            if key not in first:
-                first[key] = len(first) + 1
-                uses.append([])
-            slot[row[1]] = first[key]
-            uses[slot[row[1]] - 1].append(row)
-        prompt_rows = [rows[0]]
-        for i, same in enumerate(uses, 1):
-            speakers, predecessors = [], []
-            for row in same:
-                if row[0] not in speakers:
-                    speakers.append(row[0])
-                for predecessor in filter(None, row[2].split(';')):
-                    predecessor = uses[slot[predecessor] - 1][0][1] if predecessor in slot else predecessor
-                    if predecessor != same[0][1] and predecessor not in predecessors:
-                        predecessors.append(predecessor)
-            prompt_rows.append([';'.join(speakers), same[0][1], ';'.join(predecessors)] + same[0][3:])
+        prompt_rows, slot = merge_dialogue_rows(rows)
         buffer = io.StringIO(newline='')
         csv.writer(buffer).writerows(prompt_rows)
         csv_content = buffer.getvalue()

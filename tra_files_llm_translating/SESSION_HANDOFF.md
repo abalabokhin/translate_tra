@@ -4,9 +4,133 @@ Read [README.md](README.md) for the full workflow, experiment history, commands,
 limitations and code review. This handoff records the latest decisions so the next
 session does not restart abandoned experiments.
 
+## Completed seven-model comparison — 2026-10-28
+
+All seven models finished; no batch process remains active. Final results and
+manual review: [comparison](experiments/NON_THINKING_RESULTS_2026-10-28.md).
+In approved model order: Gemma3 570/660, T-lite 523/660, Aya 427/660,
+Vikhr 490/660, Mistral 592/660, Gemma4 564/660, Qwen3 503/660.
+None is approved for unattended export. Production settings remain unchanged.
+
+T-lite’s initial metadata-only exclusion was wrong. Actual probes found no
+reasoning; default non-streaming sometimes put translation JSON in the thinking
+field. Its digest-pinned explicit-off suite completed all 30 requests. The final
+manifest/report includes this backfill; prior attempts and main manifest are
+archived. Aya finished before the backfill; the order exception is documented.
+See [runtime evidence](experiments/TLITE_RUNTIME_VALIDATION_2026-10-28.md).
+
+Raw root: `experiments/results/non-thinking-20261028-013515/` (Git-ignored).
+Portable metrics, exact model digests and frozen hashes are in the comparison’s
+JSON companion. All outputs/repeats were manually read. Frozen inputs, settings,
+and identical male prompts were verified; no scored response contains thinking.
+All 45 tests passed after the final runner change. No further commit was requested.
+
+Potential next work needs agreement: improve evaluation blind spots and shared/
+empty-string handling, then compare shortlisted drafts on independent real
+examples. No new thinking phase or production model change is authorized.
+
+## Historical decisions (superseded where completion above says otherwise)
+
+## Ordered non-thinking batch authorized — 2026-10-27
+
+The user approved the seven-model order proposed after the thinking baseline:
+Gemma3 12B, T-lite 2.1, Aya Expanse 8B, Vikhr-Nemo 12B, Mistral Small3.2 24B,
+Gemma4 12B thinking off, Qwen3 14B thinking off. They explicitly requested
+**document everything before proceeding**, then download one model, test it,
+advance to the next. The pre-run plan is
+[experiments/NON_THINKING_PLAN_2026-10-27.md](experiments/NON_THINKING_PLAN_2026-10-27.md).
+Five tags are from the Ollama library; T-lite and Vikhr weights come from Hugging
+Face through Ollama's `hf.co` support. All inference stays in Ollama. Models are
+retained, no automatic deletion. This step does not authorize commits.
+
+The dedicated `experiments/run_non_thinking.py` reuses the pull client and frozen
+evaluator, implements per-model sequencing across all five dialogues, saves
+incremental manifest/report/CSV and snapshots, and checks thinking is off. It was
+documented and tested before the first download. Default settings match the
+previous non-thinking comparison: production/full/default sampling/3 repeats/8192
+context, no inference cap/timeout/retry. Exact tags and failure handling are in the
+plan. See the eventual linked report for actual outcomes; no production model is
+changed automatically based on scores.
+
+## Uncapped thinking baseline completed — 2026-10-27
+
+The user explicitly requested thinking on with no added limit, to establish a
+baseline. Qwen3.5 ran the same five datasets, production prompt, default sampling,
+full dialogues, 3 repeats and the prior 8192 context. Actual options were
+`num_ctx=8192`, `num_predict=-1`, `think=true`; no thinking budget, brief-reasoning
+instruction, timeout or retry. Runtime code/inputs/checks match the earlier
+thinking-off snapshot. No production code or settings were changed.
+
+Result: 19 actual requests, 14 empty answers at `done_reason=length`, 11 female
+passes skipped after male failure. Only 1/15 complete pairs, 65/660 checks
+(9.85%), versus thinking off 11/15 pairs and 523/660 (79.24%). Request wall time
+2232 seconds (37m 12s), versus 91.43 seconds off; 131,929 generated tokens.
+Every length failure has prompt + generated tokens exactly 8192. The few returned
+translations were good but are a selected subset; the context exhaustion prevents
+an assessment of most intended outputs. This is not evidence against thinking
+at all context sizes. Larger/native context and budgeted thinking remain separate,
+unperformed experiments and require an explicit decision.
+
+Details, manual review and reproduction:
+[experiments/THINKING_BASELINE_2026-10-27.md](experiments/THINKING_BASELINE_2026-10-27.md).
+Local ignored artifacts: `experiments/results/thinking-on-20261027-223158/`,
+including raw thinking/replies, manifests, hashes, input/code snapshots, metrics,
+per-request CSV, driver and analysis script. Changes remain uncommitted.
+
+## Installed-model comparison completed — 2026-10-27
+
+The user next requested the comparison of `qwen3.5:9b` and `qwen2.5:14b`. Both
+were run on InkGallery v2 and all four synthetic fixtures: production prompt,
+full dialogues, default sampling, 3 repeats, context 8192, thinking off for
+Qwen3.5 and default for non-thinking Qwen2.5. Sixty actual requests; no retries,
+model downloads, production model change or new commit. Checks were frozen.
+
+Qwen2.5: 541/660 checks (81.97%), 3/30 structurally rejected replies.
+Qwen3.5: 523/660 (79.24%), 4/30 rejected. Qwen2.5 copies unchanged female-pass
+wording more consistently but remains unreliable; both fail the shared-gender
+string and all three explicit-empty female cases. All valid outputs and seven
+rejected replies were read. Full results, examples, evaluation blind spots and
+reproducibility notes are in
+[experiments/MODEL_COMPARISON_2026-10-27.md](experiments/MODEL_COMPARISON_2026-10-27.md).
+Raw local logs, code/input snapshots, SHA-256 values, model metadata and commands:
+`experiments/results/comparison-20261027-221323/` (Git-ignored).
+
+The proposed Qwen3.5 thinking-on experiment was subsequently completed with the
+same frozen suite/settings; see the latest section above. Do not silently change regexes or salvage rejected lines when
+comparing to these scores. Genuine unseen mod text and independent Russian review
+remain desirable before deployment.
+
+## Latest evaluation work — 2026-10-27
+
+The user approved improving the checks and adding unseen fixtures, with full
+documentation. See [experiments/EVALUATION.md](experiments/EVALUATION.md) for the
+implementation, limits, validation and next steps. The original pilot is preserved
+in [experiments/PILOT_2026-10-27.md](experiments/PILOT_2026-10-27.md): 53 actual
+requests, production/default 127/138 on the original checks, with serious errors
+outside the checks. The raw local pilot logs remain in the ignored results folder.
+
+InkGallery v2 now scores all 12 lines, flags leftover Latin text and incorrect
+names/locations, and accepts more idiom variants. Separate male/female wording
+flags appear in `pair_reviews.csv`; they do not rewrite text or affect winner
+selection. Four synthetic fixtures (22 rows, 20 TRA strings) cover multiple NPCs,
+ambiguous listeners, reuse and original female source variants. They are new to
+the pilot, not independently curated or human-approved gold data. At fixture creation no live LLM
+fixture translation or model comparison had been run; the subsequent comparison
+is recorded above.
+
+The harness now honors female source variants for all experimental prompts and
+uses the same shared-string merge helper as production. Production's existing
+merge block was extracted to `translation_common.merge_dialogue_rows`; production
+instructions/settings are unchanged. References are only for tests/manual review,
+never included in model requests. Use fresh result folders: old scores are not
+comparable to v2. Test validation: 39 tests pass, including all-fixture/all-prompt/
+both-scope reference-reply round trips without Ollama. Current evaluation changes
+have not been committed; the user's earlier commit instruction applied to the
+review fixes already committed as `f01ac30`.
+
 ## User instructions that remain in force
 
-- **Do not commit** unless explicitly instructed. The assistant made no commits.
+- **Do not commit** unless explicitly instructed. Commit `f01ac30` was explicitly requested and contains the review fixes.
 - Agree on **any new approach or mechanism** with the user before implementing it.
   No silent limits, retries, partitioning, fallbacks, model changes or extra QA passes.
 - Keep changes minimal. Preserve existing function flow; avoid cosmetic moves or
