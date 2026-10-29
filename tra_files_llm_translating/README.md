@@ -6,6 +6,13 @@ state, user constraints and pending decisions.
 This is the current reference for these scripts. It also records failed and
 partially successful approaches so they are not accidentally reintroduced.
 
+Latest completed experiment: [native-context thinking comparison](experiments/THINKING_NATIVE_RESULTS_2026-10-28.md)
+across all five downloaded thinking configurations. Gemma4 scored 592/660,
+Qwen3.5 587/660, Qwen3 534/660 and Huihui Qwen3.5 460/660; Huihui Qwen3 failed
+JSON transport throughout. Native context avoided the standard Qwen3.5 length
+failures, but gender, meaning and empty-source failures remain. No production
+settings changed. See the report for timings, controls and limitations.
+
 ## Decisions and scope
 
 - Keep the original **male translation, then female edit** approach.

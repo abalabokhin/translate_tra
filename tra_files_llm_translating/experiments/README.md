@@ -17,6 +17,14 @@ in [PILOT_2026-10-27.md](PILOT_2026-10-27.md). The first live two-model comparis
 thinking-on baseline is documented in
 [THINKING_BASELINE_2026-10-27.md](THINKING_BASELINE_2026-10-27.md).
 
+The subsequent [native-context thinking comparison](THINKING_NATIVE_RESULTS_2026-10-28.md)
+completed all five downloaded thinking configurations, following the
+[pre-run plan](THINKING_NATIVE_PLAN_2026-10-28.md). The
+[Qwen3.5 three-way report](QWEN35_THINKING_NATIVE_2026-10-28.md) compares thinking
+off/on at 8192 with thinking on at 262144. Exact digests, metrics, frozen hashes
+and manual reviews are in the reports' JSON companions. Production settings and
+the frozen evaluator are unchanged.
+
 ## Requirements
 
 - Ollama running, with the models you want to test already pulled.

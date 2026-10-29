@@ -1,0 +1,1013 @@
+{
+  "model": "qwen3.5:9b",
+  "started_utc": "2026-10-28T09:48:42.274661+00:00",
+  "finished_utc": "2026-10-28T11:01:29.354154+00:00",
+  "settings": {
+    "think": "on",
+    "num_predict": -1,
+    "thinking_budget": null,
+    "brief_reasoning_instruction": false,
+    "prompt": "production",
+    "scope": "full",
+    "temperature": "default",
+    "repeats": 3,
+    "num_ctx": 262144,
+    "seed": null
+  },
+  "model_info": {
+    "qwen3.5:9b": {
+      "thinking": {
+        "values": [
+          false,
+          true
+        ],
+        "default": true
+      },
+      "license": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright 2026 Alibaba Cloud\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+      "modelfile": "# Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this, replace FROM with:\n# FROM qwen3.5:9b\n\nFROM /home/paladin/amd-ai-stack/models/ollama/blobs/sha256-02d45dc1cf451ba2475ac33b301c2dd8f985abe4c182ce04a1f2f5bf0260278d\nFROM /home/paladin/amd-ai-stack/models/ollama/blobs/sha256-f836f08f921193f4d6b6a6952dba0a6fb116759d26a757bcb395d570d73976ca\nTEMPLATE {{ .Prompt }}\nRENDERER qwen3.5\nPARSER qwen3.5\nPARAMETER presence_penalty 1.5\nPARAMETER temperature 1\nPARAMETER top_k 20\nPARAMETER top_p 0.95\nLICENSE \"\"\"\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright 2026 Alibaba Cloud\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\"\"\"\n",
+      "parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+      "template": "{{ .Prompt }}",
+      "renderer": "qwen3.5",
+      "parser": "qwen3.5",
+      "template_source": "renderer_parser",
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "9.0B",
+        "quantization_level": "Q4_K_M",
+        "runner": "llamacpp"
+      },
+      "model_info": {
+        "general.architecture": "qwen35",
+        "general.base_model.0.name": "Qwen3.5 9B Base",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen3.5-9B-Base",
+        "general.base_model.count": 1,
+        "general.file_type": 15,
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen3.5-9B/blob/main/LICENSE",
+        "general.parameter_count": 8953803264,
+        "general.quantization_version": 2,
+        "general.size_label": "9.0B",
+        "general.tags": [
+          "image-text-to-text"
+        ],
+        "general.type": "model",
+        "qwen35.attention.head_count": 16,
+        "qwen35.attention.head_count_kv": 4,
+        "qwen35.attention.key_length": 256,
+        "qwen35.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen35.attention.recurrent_layers": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ],
+        "qwen35.attention.value_length": 256,
+        "qwen35.block_count": 32,
+        "qwen35.context_length": 262144,
+        "qwen35.embedding_length": 4096,
+        "qwen35.feed_forward_length": 12288,
+        "qwen35.full_attention_interval": 4,
+        "qwen35.rope.dimension_count": 64,
+        "qwen35.rope.dimension_sections": [
+          11,
+          11,
+          10,
+          0
+        ],
+        "qwen35.rope.freq_base": 10000000,
+        "qwen35.ssm.conv_kernel": 4,
+        "qwen35.ssm.group_count": 16,
+        "qwen35.ssm.inner_size": 4096,
+        "qwen35.ssm.state_size": 128,
+        "qwen35.ssm.time_step_rank": 32,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.eos_token_id": 248046,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 248044,
+        "tokenizer.ggml.pre": "qwen35",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "projector_info": {
+        "clip.has_vision_encoder": true,
+        "clip.projector_type": "qwen3vl_merger",
+        "clip.use_gelu": true,
+        "clip.vision.attention.head_count": 16,
+        "clip.vision.attention.layer_norm_epsilon": 1e-06,
+        "clip.vision.block_count": 27,
+        "clip.vision.embedding_length": 1152,
+        "clip.vision.feed_forward_length": 4304,
+        "clip.vision.image_mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "clip.vision.image_size": 768,
+        "clip.vision.image_std": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "clip.vision.is_deepstack_layers": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "clip.vision.patch_size": 16,
+        "clip.vision.projection_dim": 4096,
+        "clip.vision.spatial_merge_size": 2,
+        "general.architecture": "clip",
+        "general.base_model.0.name": "Qwen3.5 9B Base",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen3.5-9B-Base",
+        "general.base_model.count": 1,
+        "general.file_type": 32,
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen3.5-9B/blob/main/LICENSE",
+        "general.name": "Source",
+        "general.parameter_count": 456010480,
+        "general.quantization_version": 2,
+        "general.size_label": "456M",
+        "general.tags": [
+          "image-text-to-text"
+        ],
+        "general.type": "mmproj"
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "modified_at": "2026-10-25T16:38:15.956368086-04:00",
+      "requires": "0.30.0"
+    }
+  },
+  "installed_models": {
+    "models": [
+      {
+        "name": "qwen3:14b",
+        "model": "qwen3:14b",
+        "modified_at": "2026-10-27T23:31:41.802338653-04:00",
+        "size": 9276198565,
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "gemma4:12b",
+        "model": "gemma4:12b",
+        "modified_at": "2026-10-27T23:18:23.937369026-04:00",
+        "size": 8021618941,
+        "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+        "details": {
+          "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+          "format": "gguf",
+          "family": "gemma4",
+          "families": [
+            "gemma4"
+          ],
+          "parameter_size": "11.9B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 3840,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "audio",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "mistral-small3.2:24b",
+        "model": "mistral-small3.2:24b",
+        "modified_at": "2026-10-27T23:03:57.258789091-04:00",
+        "size": 15177384862,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools"
+        ]
+      },
+      {
+        "name": "hf.co/VlSav/Vikhr-Nemo-12B-Instruct-R-21-09-24-Q6_K-GGUF:Q6_K",
+        "model": "hf.co/VlSav/Vikhr-Nemo-12B-Instruct-R-21-09-24-Q6_K-GGUF:Q6_K",
+        "modified_at": "2026-10-27T22:42:27.382914011-04:00",
+        "size": 10056227557,
+        "digest": "0a934a626d90c0124e404c788eac7c6e3107151a96bbe005a42af0e66b59bb86",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "12.2B",
+          "quantization_level": "Q6_K",
+          "context_length": 1024000,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion"
+        ]
+      },
+      {
+        "name": "aya-expanse:8b",
+        "model": "aya-expanse:8b",
+        "modified_at": "2026-10-27T22:01:10.009792041-04:00",
+        "size": 5057000121,
+        "digest": "65f986688a01b456158c57b042bc48afcb85d060646a82d491d1c0a01375b10e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "command-r",
+          "families": [
+            "command-r"
+          ],
+          "parameter_size": "8.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 8192,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+        "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+        "modified_at": "2026-10-27T21:54:34.602637277-04:00",
+        "size": 5027752397,
+        "digest": "24727915b419e9949ba993e59353f72b84650693c73af70d4a0886e0b5416cf9",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.19B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "gemma3:12b",
+        "model": "gemma3:12b",
+        "modified_at": "2026-10-27T21:45:42.623115535-04:00",
+        "size": 8164039732,
+        "digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+        "details": {
+          "parent_model": "dhiltgen/gemma3:12b-it-q4_K_M-llamacpp",
+          "format": "gguf",
+          "family": "gemma3",
+          "families": [
+            "gemma3",
+            "clip"
+          ],
+          "parameter_size": "11.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 3840,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision"
+        ]
+      },
+      {
+        "name": "qwen3.5:9b",
+        "model": "qwen3.5:9b",
+        "modified_at": "2026-10-25T16:38:15.956368086-04:00",
+        "size": 6550825550,
+        "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "qwen2.5:14b",
+        "model": "qwen2.5:14b",
+        "modified_at": "2026-07-25T18:13:45.794116824-04:00",
+        "size": 8988124069,
+        "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "huihui_ai/qwen3.5-abliterated:9b",
+        "model": "huihui_ai/qwen3.5-abliterated:9b",
+        "modified_at": "2026-05-17T04:44:50.406122967-04:00",
+        "size": 6594474755,
+        "digest": "92a443adb124f5e805bbdee23fdb38fcd22a7bf00a1016b53f764e741369c600",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.7B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      },
+      {
+        "name": "huihui_ai/qwen3-abliterated:14b",
+        "model": "huihui_ai/qwen3-abliterated:14b",
+        "modified_at": "2026-05-08T18:24:07.185904669-04:00",
+        "size": 9001762501,
+        "digest": "fa0eaa5098bc2a63a999917635534a3b0722c777346c81cc085fde4240b1e2cf",
+        "details": {
+          "parent_model": "C:\\Users\\admin\\.ollama\\models\\blobs\\sha256-25bb9ad6ab7dfe4b5fcff944facdf09e3a035a7d04dcf6e2de5f566e102efec8",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      }
+    ]
+  },
+  "sha256": {
+    "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+    "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+    "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+    "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+    "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+    "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+    "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+    "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+  },
+  "metrics": {
+    "off_8192": {
+      "by_dataset": {
+        "ambiguous_addressees": {
+          "ok": 53,
+          "expected": 66,
+          "percent": 80.3030303030303,
+          "valid_check_ok": 53,
+          "valid_check_total": 55,
+          "requests": 6,
+          "errors": 1,
+          "skipped": 0,
+          "complete_pairs": 2,
+          "request_wall_seconds": 12.92,
+          "median_seconds": 2.3049999999999997,
+          "max_seconds": 2.45,
+          "generated_tokens": 606,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "missing": 5,
+            "pass": 6,
+            "review": 4
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "inkgallery": {
+          "ok": 234,
+          "expected": 270,
+          "percent": 86.66666666666667,
+          "valid_check_ok": 234,
+          "valid_check_total": 270,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 41.1,
+          "median_seconds": 6.72,
+          "max_seconds": 8.4,
+          "generated_tokens": 2009,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "review": 18,
+            "pass": 18
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "multiple_npcs": {
+          "ok": 112,
+          "expected": 132,
+          "percent": 84.84848484848484,
+          "valid_check_ok": 112,
+          "valid_check_total": 132,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 17.93,
+          "median_seconds": 3.04,
+          "max_seconds": 3.21,
+          "generated_tokens": 889,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "review": 2,
+            "pass": 16
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "original_female_variants": {
+          "ok": 42,
+          "expected": 90,
+          "percent": 46.666666666666664,
+          "valid_check_ok": 42,
+          "valid_check_total": 45,
+          "requests": 6,
+          "errors": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_wall_seconds": 10.12,
+          "median_seconds": 1.74,
+          "max_seconds": 2.0,
+          "generated_tokens": 453,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "not_applicable": 12,
+            "missing": 3
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "reused_strings": {
+          "ok": 82,
+          "expected": 102,
+          "percent": 80.3921568627451,
+          "valid_check_ok": 82,
+          "valid_check_total": 102,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 9.36,
+          "median_seconds": 1.615,
+          "max_seconds": 1.86,
+          "generated_tokens": 433,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "pass": 18
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        }
+      },
+      "total": {
+        "ok": 523,
+        "expected": 660,
+        "percent": 79.24242424242425,
+        "valid_check_ok": 523,
+        "valid_check_total": 604,
+        "requests": 30,
+        "errors": 4,
+        "skipped": 0,
+        "complete_pairs": 11,
+        "request_wall_seconds": 91.43,
+        "median_seconds": 2.3049999999999997,
+        "max_seconds": 8.4,
+        "generated_tokens": 4390,
+        "thinking_characters": 0,
+        "pair_reviews": {
+          "missing": 8,
+          "pass": 58,
+          "review": 24,
+          "not_applicable": 12
+        },
+        "done_reasons": {
+          "stop": 30
+        },
+        "gpu_percentages": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "macro_percent": 75.77540106951872
+    },
+    "on_8192": {
+      "by_dataset": {
+        "ambiguous_addressees": {
+          "ok": 20,
+          "expected": 66,
+          "percent": 30.303030303030305,
+          "valid_check_ok": 20,
+          "valid_check_total": 22,
+          "requests": 4,
+          "errors": 2,
+          "skipped": 2,
+          "complete_pairs": 1,
+          "request_wall_seconds": 491.79,
+          "median_seconds": 125.535,
+          "max_seconds": 126.55,
+          "generated_tokens": 29112,
+          "thinking_characters": 110174,
+          "pair_reviews": {
+            "missing": 10,
+            "pass": 5
+          },
+          "done_reasons": {
+            "length": 2,
+            "stop": 2
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "inkgallery": {
+          "ok": 0,
+          "expected": 270,
+          "percent": 0.0,
+          "valid_check_ok": 0,
+          "valid_check_total": 0,
+          "requests": 3,
+          "errors": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_wall_seconds": 358.33,
+          "median_seconds": 117.66,
+          "max_seconds": 123.06,
+          "generated_tokens": 20967,
+          "thinking_characters": 77100,
+          "pair_reviews": {
+            "missing": 36
+          },
+          "done_reasons": {
+            "length": 3
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "multiple_npcs": {
+          "ok": 0,
+          "expected": 132,
+          "percent": 0.0,
+          "valid_check_ok": 0,
+          "valid_check_total": 0,
+          "requests": 3,
+          "errors": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_wall_seconds": 374.68,
+          "median_seconds": 124.74,
+          "max_seconds": 125.22,
+          "generated_tokens": 22221,
+          "thinking_characters": 79121,
+          "pair_reviews": {
+            "missing": 18
+          },
+          "done_reasons": {
+            "length": 3
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "original_female_variants": {
+          "ok": 45,
+          "expected": 90,
+          "percent": 50.0,
+          "valid_check_ok": 45,
+          "valid_check_total": 45,
+          "requests": 6,
+          "errors": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_wall_seconds": 626.73,
+          "median_seconds": 111.09,
+          "max_seconds": 124.98,
+          "generated_tokens": 37105,
+          "thinking_characters": 147302,
+          "pair_reviews": {
+            "not_applicable": 12,
+            "missing": 3
+          },
+          "done_reasons": {
+            "stop": 3,
+            "length": 3
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "reused_strings": {
+          "ok": 0,
+          "expected": 102,
+          "percent": 0.0,
+          "valid_check_ok": 0,
+          "valid_check_total": 0,
+          "requests": 3,
+          "errors": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_wall_seconds": 380.47,
+          "median_seconds": 126.81,
+          "max_seconds": 126.92,
+          "generated_tokens": 22524,
+          "thinking_characters": 91972,
+          "pair_reviews": {
+            "missing": 18
+          },
+          "done_reasons": {
+            "length": 3
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        }
+      },
+      "total": {
+        "ok": 65,
+        "expected": 660,
+        "percent": 9.848484848484848,
+        "valid_check_ok": 65,
+        "valid_check_total": 67,
+        "requests": 19,
+        "errors": 14,
+        "skipped": 11,
+        "complete_pairs": 1,
+        "request_wall_seconds": 2232.0,
+        "median_seconds": 124.74,
+        "max_seconds": 126.92,
+        "generated_tokens": 131929,
+        "thinking_characters": 505669,
+        "pair_reviews": {
+          "missing": 85,
+          "pass": 5,
+          "not_applicable": 12
+        },
+        "done_reasons": {
+          "length": 14,
+          "stop": 5
+        },
+        "gpu_percentages": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "macro_percent": 16.060606060606062
+    },
+    "on_262144": {
+      "by_dataset": {
+        "ambiguous_addressees": {
+          "ok": 62,
+          "expected": 66,
+          "percent": 93.93939393939394,
+          "valid_check_ok": 62,
+          "valid_check_total": 66,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 834.99,
+          "median_seconds": 139.9,
+          "max_seconds": 190.54,
+          "generated_tokens": 48742,
+          "thinking_characters": 183300,
+          "pair_reviews": {
+            "pass": 14,
+            "review": 1
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "inkgallery": {
+          "ok": 267,
+          "expected": 270,
+          "percent": 98.88888888888889,
+          "valid_check_ok": 267,
+          "valid_check_total": 270,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 995.95,
+          "median_seconds": 173.53500000000003,
+          "max_seconds": 189.83,
+          "generated_tokens": 57547,
+          "thinking_characters": 199438,
+          "pair_reviews": {
+            "pass": 34,
+            "review": 2
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "multiple_npcs": {
+          "ok": 123,
+          "expected": 132,
+          "percent": 93.18181818181819,
+          "valid_check_ok": 123,
+          "valid_check_total": 132,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 848.43,
+          "median_seconds": 116.085,
+          "max_seconds": 243.47,
+          "generated_tokens": 50469,
+          "thinking_characters": 183092,
+          "pair_reviews": {
+            "pass": 12,
+            "review": 6
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "original_female_variants": {
+          "ok": 45,
+          "expected": 90,
+          "percent": 50.0,
+          "valid_check_ok": 45,
+          "valid_check_total": 45,
+          "requests": 6,
+          "errors": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_wall_seconds": 752.64,
+          "median_seconds": 104.805,
+          "max_seconds": 230.6,
+          "generated_tokens": 44838,
+          "thinking_characters": 170506,
+          "pair_reviews": {
+            "not_applicable": 12,
+            "missing": 3
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "reused_strings": {
+          "ok": 90,
+          "expected": 102,
+          "percent": 88.23529411764706,
+          "valid_check_ok": 90,
+          "valid_check_total": 102,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 926.27,
+          "median_seconds": 164.395,
+          "max_seconds": 187.72,
+          "generated_tokens": 54299,
+          "thinking_characters": 213841,
+          "pair_reviews": {
+            "pass": 14,
+            "review": 4
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        }
+      },
+      "total": {
+        "ok": 587,
+        "expected": 660,
+        "percent": 88.93939393939394,
+        "valid_check_ok": 587,
+        "valid_check_total": 615,
+        "requests": 30,
+        "errors": 3,
+        "skipped": 0,
+        "complete_pairs": 12,
+        "request_wall_seconds": 4358.28,
+        "median_seconds": 149.85,
+        "max_seconds": 243.47,
+        "generated_tokens": 255895,
+        "thinking_characters": 950177,
+        "pair_reviews": {
+          "pass": 74,
+          "review": 13,
+          "not_applicable": 12,
+          "missing": 3
+        },
+        "done_reasons": {
+          "stop": 30
+        },
+        "gpu_percentages": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "macro_percent": 84.84907902554961
+    }
+  },
+  "raw_directory": "tra_files_llm_translating/experiments/results/thinking-native-20261028-094842",
+  "review": "Native-context thinking rerun: manual observations while running.\n\nInkGallery repeat 1: both replies structurally valid, 89/90 frozen checks. Female @16 retains masculine авантюрист. Other gender edits are correct, including заглянул/заглянула, видел/видела, понял/поняла, хотел/хотела. Female preserves unaffected wording. Male @18 correctly addresses Velcealle in feminine. Both @16 sentences retained. Awkward заплатив плату and научусь по всем этим книгам remain. First @48 renders Unless as Или, weakening the original condition. Pair-review flag on хотел/хотела is a regex blind spot, not an inappropriate rewrite.\n\nInkGallery repeat 2: female verbs handled, masculine noun приключенец retained; frozen noun regex misses this synonym (90/90 therefore not linguistically perfect). Both passes retain awkward научусь/учусь всем этим книгам, missing punctuation and weak/changed purpose question Или чтобы открыть... at @18. No inappropriate broad female rewrite observed.\n\nInkGallery repeat 3: male @100 changes seen to прочитал; female copies meaning error as прочитала. Female correctly changes странник to странница, verbs заглянул/заглянула, хотел/хотела, понял/поняла. @18 fixed female NPC remains feminine. Awkward Стоит нам поговорить and Или... weaken source conditional. All 6 InkGallery replies valid; 267/270 frozen checks, no length failures; 995.95 request seconds.\n\nAddressees repeat 1: male Поток слишком сильное is ungrammatical; female repairs to сильный though unrelated wording should be copied. Frozen current regex misses plausible поток synonym (but male grammar really wrong). Перевозчик can mean ferryman in context, less precise than паромщик. Plural Вы plausible for two possible listeners. Last line пока верёвка надёжно закреплена weakens until secure; should пока верёвка не будет надёжно закреплена. Both structurally valid, 20/22 checks.\n\nAddressees repeat 2: plausible переправщик, correct течение, natural until rope secure. Adds уже not explicit in source. Ambiguous listener assigned masculine должен in both passes instead of neutral wording; not covered by checks. Repeat 3: ferryman becomes проводник, a meaning error missed by checks. Поток synonym causes regex failure despite grammatical силен. Last rope instruction is faithful and neutral. Female repeat 3 copies exactly. Dataset 62/66, all pairs valid.\n\nMultiple NPCs repeat 1: correct fixed genders and female verbs, but female @105 keeps путник; this noun is not checked. пообещал/пообещала falsely rejected by promise regex. Male adds тебя to Orin waiting downstairs, plausible but absent source. Repeat 2 female takes 243.5 seconds/14357 tokens and introduces two substantive errors: @102 him changes from male его to female её, although narrated male stays male; @105 becomes Ты спас её, путница (noun corrected but verb left masculine). This is a regression from its correct male source, not a context-length failure.\n\nMultiple NPCs repeat 3: male @104 тебя не ранило is an acceptable impersonal injury question; frozen gender regex falsely rejects it. Prefixed promises also false negatives. Female inspected separately below.\n\nMultiple NPCs repeat 3 female: correct странница and спасла, fixed male NPC обязан retained. However @102 narrated him again changes его to её. This real error is not checked. Both injury and promise failures are regex limitations. Overall 123/132, all three pairs valid, but two female passes change a narrated male to female.\n\nOriginal female variants: all male replies pass 15/15; all female replies reject because @404 should be empty but model copies Дверь открыта. Rejected replies handle his/her, duke/duchess and silver/bronze source changes. Repeat 2 female has grammatical invention принела instead of принесла. No salvaged scoring; rejected female replies remain 0/15. Third pair raw output reviewed separately. Dataset 45/90, zero complete pairs.\n\nReused strings all repeats: one readiness string cannot serve male player and female NPC when translated Я готов (repeats 2/3) or Я готова (repeat 1). Female passes use Я готова, appropriate when both speakers female; frozen check wrongly penalizes this. All outputs preserve stage markers, literal newline, <CHARNAME> and %gate_lock%, with no extra female wording changes. Repeat 1 drops Then in reply. Dataset 90/102. All 30 native-context requests stop normally; 3 female explicit-empty-source rejections.\n"
+}

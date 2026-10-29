@@ -4,6 +4,60 @@ Read [README.md](README.md) for the full workflow, experiment history, commands,
 limitations and code review. This handoff records the latest decisions so the next
 session does not restart abandoned experiments.
 
+## Native-context thinking comparison completed — 2026-10-28
+
+The user requested Qwen3.5 thinking at native context, then the same suite for
+all other already downloaded thinking models. All five scheduled suites finished.
+No batch process remains active. See the [full comparison](experiments/THINKING_NATIVE_RESULTS_2026-10-28.md),
+its JSON companion, the [pre-run plan](experiments/THINKING_NATIVE_PLAN_2026-10-28.md)
+and the [Qwen3.5 three-way report](experiments/QWEN35_THINKING_NATIVE_2026-10-28.md).
+
+- Qwen3.5 9B: 587/660, 12/15 complete pairs, 4358.28 request seconds.
+- Gemma4 12B: 592/660, 12/15 pairs, 1027.74 seconds.
+- Qwen3 14B: 534/660, 12/15 pairs, 1002.91 seconds.
+- Huihui Qwen3.5 abliterated 9B: 460/660, 8/15 pairs, 10629.27 seconds.
+- Huihui Qwen3 abliterated 14B: 0/660 due to malformed JSON/channel contamination;
+  all 15 male replies reject and all female passes skip. This is a protocol
+  failure in the installed serving configuration, not zero linguistic ability.
+
+Same five datasets, production prompt, full dialogue graphs, model-default
+sampling, three repeats, thinking enabled and `num_predict=-1`. Native contexts:
+262144 for Qwen3.5/Gemma4/Huihui Qwen3.5; 40960 for Qwen3/Huihui Qwen3. All 25
+observed placements were 100% GPU. No downloads, imposed timeouts, token caps,
+retries, splitting, repairs, production changes or automatic promotion.
+
+There are 150 records, 133 actual calls and 17 skipped female passes. Frozen
+runtime/input hashes and identical male prompts/schema across all five models
+were verified. Standard-model digests match their non-thinking baselines. All
+returned translation texts, including rejected answer portions, were manually
+read. Missing/skipped female translations cannot be assessed. No new unit tests
+were needed for this inference-only run; production and evaluator code unchanged.
+
+Qwen3.5's native run avoids all length failures, unlike the old 8192 thinking run.
+Huihui Qwen3.5 addressees repeat 1 female exhausts even 262144 after 6438.77 s:
+870 prompt + 261274 generated; empty content; two reasoning lines repeated over
+6500 times each. Raw reasoning and serving logs are preserved. The optional user
+choice to stop that model was unanswered, so the authorized suite finished
+without intervention. No stop decision remains pending for this completed batch.
+
+Gender and meaning errors persist: Gemma4 retains masculine address nouns;
+Qwen3.5 female passes sometimes change narrated him to her. All four models that
+reach female source-variant requests fill the deliberately empty source and
+reject. Shared mixed-gender readiness strings remain wrong; Qwen3 sometimes
+passes the check by changing I to we. Frozen checks have documented blind spots.
+No model is approved for unattended export. Improvements versus thinking off
+also change context, so they do not isolate thinking. No native-context off
+control or new compatibility repair is authorized.
+
+Git-ignored raw roots:
+`experiments/results/thinking-native-20261028-094842/` and
+`experiments/results/thinking-native-remaining-20261028-214626/`. Both retain final
+comparison/metrics, manifests, exact settings, snapshots, driver copies, raw
+requests/replies, summaries and manual reviews. Do not repeat completed suites
+blindly. The temporary summarizer is archived in the remaining-model root.
+The user explicitly requested committing all completed reports, plan and handoff
+updates on 2026-10-29. Raw Git-ignored experiment artifacts remain local.
+
 ## Completed seven-model comparison — 2026-10-28
 
 All seven models finished; no batch process remains active. Final results and

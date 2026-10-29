@@ -1,0 +1,2211 @@
+{
+  "updated_utc": "2026-10-29T01:20:31.824470+00:00",
+  "models": [
+    {
+      "model": "qwen3.5:9b",
+      "status": "completed",
+      "num_ctx": 262144,
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "inventory": {
+        "name": "qwen3.5:9b",
+        "model": "qwen3.5:9b",
+        "modified_at": "2026-10-25T16:38:15.956368086-04:00",
+        "size": 6550825550,
+        "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      },
+      "model_metadata": {
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M",
+          "runner": "llamacpp"
+        },
+        "model_info": {
+          "general.architecture": "qwen35",
+          "general.base_model.0.name": "Qwen3.5 9B Base",
+          "general.base_model.0.organization": "Qwen",
+          "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen3.5-9B-Base",
+          "general.base_model.count": 1,
+          "general.file_type": 15,
+          "general.license": "apache-2.0",
+          "general.license.link": "https://huggingface.co/Qwen/Qwen3.5-9B/blob/main/LICENSE",
+          "general.parameter_count": 8953803264,
+          "general.quantization_version": 2,
+          "general.size_label": "9.0B",
+          "general.tags": [
+            "image-text-to-text"
+          ],
+          "general.type": "model",
+          "qwen35.attention.head_count": 16,
+          "qwen35.attention.head_count_kv": 4,
+          "qwen35.attention.key_length": 256,
+          "qwen35.attention.layer_norm_rms_epsilon": 1e-06,
+          "qwen35.attention.recurrent_layers": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false
+          ],
+          "qwen35.attention.value_length": 256,
+          "qwen35.block_count": 32,
+          "qwen35.context_length": 262144,
+          "qwen35.embedding_length": 4096,
+          "qwen35.feed_forward_length": 12288,
+          "qwen35.full_attention_interval": 4,
+          "qwen35.rope.dimension_count": 64,
+          "qwen35.rope.dimension_sections": [
+            11,
+            11,
+            10,
+            0
+          ],
+          "qwen35.rope.freq_base": 10000000,
+          "qwen35.ssm.conv_kernel": 4,
+          "qwen35.ssm.group_count": 16,
+          "qwen35.ssm.inner_size": 4096,
+          "qwen35.ssm.state_size": 128,
+          "qwen35.ssm.time_step_rank": 32,
+          "tokenizer.ggml.add_bos_token": false,
+          "tokenizer.ggml.eos_token_id": 248046,
+          "tokenizer.ggml.merges": [],
+          "tokenizer.ggml.model": "gpt2",
+          "tokenizer.ggml.padding_token_id": 248044,
+          "tokenizer.ggml.pre": "qwen35",
+          "tokenizer.ggml.token_type": [],
+          "tokenizer.ggml.tokens": []
+        },
+        "parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95\npresence_penalty               1.5",
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ],
+        "thinking": {
+          "values": [
+            false,
+            true
+          ],
+          "default": true
+        }
+      },
+      "raw_directory": "results/thinking-native-20261028-094842",
+      "folder": "qwen35",
+      "settings": {
+        "prompt": "production",
+        "scope": "full",
+        "repeats": 3,
+        "sampling": "model default",
+        "think": true,
+        "num_predict": -1,
+        "timeout": null,
+        "retries": 0,
+        "seed": null
+      },
+      "sha256": {
+        "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+        "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+        "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+        "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+        "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+        "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+        "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+        "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+      },
+      "datasets": {
+        "ambiguous_addressees": {
+          "passed": 62,
+          "expected": 66,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 834.99,
+          "generated_tokens": 48742,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 183300,
+          "gpu_samples": [
+            {
+              "size": 14326295428,
+              "size_vram": 14326295428,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 14,
+            "review": 1
+          }
+        },
+        "inkgallery": {
+          "passed": 267,
+          "expected": 270,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 995.95,
+          "generated_tokens": 57547,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 199438,
+          "gpu_samples": [
+            {
+              "size": 14326295428,
+              "size_vram": 14326295428,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 34,
+            "review": 2
+          }
+        },
+        "multiple_npcs": {
+          "passed": 123,
+          "expected": 132,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 848.43,
+          "generated_tokens": 50469,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 183092,
+          "gpu_samples": [
+            {
+              "size": 14326295428,
+              "size_vram": 14326295428,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 12,
+            "review": 6
+          }
+        },
+        "original_female_variants": {
+          "passed": 45,
+          "expected": 90,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_seconds": 752.64,
+          "generated_tokens": 44838,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 170506,
+          "gpu_samples": [
+            {
+              "size": 14326295428,
+              "size_vram": 14326295428,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "not_applicable": 12,
+            "missing": 3
+          }
+        },
+        "reused_strings": {
+          "passed": 90,
+          "expected": 102,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 926.27,
+          "generated_tokens": 54299,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 213841,
+          "gpu_samples": [
+            {
+              "size": 14326295428,
+              "size_vram": 14326295428,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 14,
+            "review": 4
+          }
+        }
+      },
+      "total": {
+        "passed": 587,
+        "expected": 660,
+        "actual_requests": 30,
+        "records": 30,
+        "rejected": 3,
+        "skipped": 0,
+        "complete_pairs": 12,
+        "request_seconds": 4358.28,
+        "generated_tokens": 255895,
+        "done_reasons": {
+          "stop": 30
+        },
+        "requests_with_thinking": 30,
+        "thinking_characters": 950177,
+        "gpu_samples": [
+          {
+            "size": 14326295428,
+            "size_vram": 14326295428,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14326295428,
+            "size_vram": 14326295428,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14326295428,
+            "size_vram": 14326295428,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14326295428,
+            "size_vram": 14326295428,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14326295428,
+            "size_vram": 14326295428,
+            "gpu_percent": 100.0
+          }
+        ],
+        "wording_flags": {
+          "pass": 74,
+          "review": 13,
+          "not_applicable": 12,
+          "missing": 3
+        }
+      },
+      "macro_percent": 84.84907902554961
+    },
+    {
+      "model": "gemma4:12b",
+      "status": "completed",
+      "num_ctx": 262144,
+      "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+      "inventory": {
+        "name": "gemma4:12b",
+        "model": "gemma4:12b",
+        "modified_at": "2026-10-27T23:18:23.937369026-04:00",
+        "size": 8021618941,
+        "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+        "details": {
+          "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+          "format": "gguf",
+          "family": "gemma4",
+          "families": [
+            "gemma4"
+          ],
+          "parameter_size": "11.9B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 3840,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "audio",
+          "tools",
+          "thinking"
+        ]
+      },
+      "model_metadata": {
+        "details": {
+          "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+          "format": "gguf",
+          "family": "gemma4",
+          "families": [
+            "gemma4"
+          ],
+          "parameter_size": "11.9B",
+          "quantization_level": "Q4_K_M",
+          "runner": "llamacpp"
+        },
+        "model_info": {
+          "gemma4.attention.head_count": 16,
+          "gemma4.attention.head_count_kv": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1,
+            8,
+            8,
+            8,
+            8,
+            8,
+            1
+          ],
+          "gemma4.attention.key_length": 512,
+          "gemma4.attention.key_length_swa": 256,
+          "gemma4.attention.layer_norm_rms_epsilon": 1e-06,
+          "gemma4.attention.shared_kv_layers": 0,
+          "gemma4.attention.sliding_window": 1024,
+          "gemma4.attention.sliding_window_pattern": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ],
+          "gemma4.attention.value_length": 512,
+          "gemma4.attention.value_length_swa": 256,
+          "gemma4.block_count": 48,
+          "gemma4.context_length": 262144,
+          "gemma4.embedding_length": 3840,
+          "gemma4.embedding_length_per_layer_input": 0,
+          "gemma4.feed_forward_length": 15360,
+          "gemma4.final_logit_softcapping": 30,
+          "gemma4.rope.dimension_count": 512,
+          "gemma4.rope.dimension_count_swa": 256,
+          "gemma4.rope.freq_base": 1000000,
+          "gemma4.rope.freq_base_swa": 10000,
+          "general.architecture": "gemma4",
+          "general.base_model.0.name": "Gemma 4 12B",
+          "general.base_model.0.organization": "Google",
+          "general.base_model.0.repo_url": "https://huggingface.co/google/gemma-4-12B",
+          "general.base_model.count": 1,
+          "general.file_type": 15,
+          "general.license": "apache-2.0",
+          "general.license.link": "https://ai.google.dev/gemma/docs/gemma_4_license",
+          "general.parameter_count": 11907350576,
+          "general.quantization_version": 2,
+          "general.sampling.temp": 1,
+          "general.sampling.top_k": 64,
+          "general.sampling.top_p": 0.95,
+          "general.size_label": "12B",
+          "general.tags": [
+            "any-to-any"
+          ],
+          "general.type": "model",
+          "quantize.imatrix.chunks_count": 128,
+          "quantize.imatrix.dataset": "/Users/daniel/code/gemma4-publish-20260925/.cache/gemma4-040/perplexity-20260927/wikitext-2-raw/wiki.train.raw",
+          "quantize.imatrix.entries_count": 328,
+          "quantize.imatrix.file": "/Users/daniel/code/gemma4-publish-20260925/.cache/gemma4-040/imatrix-20260927-12b/imatrix.gguf",
+          "tokenizer.ggml.add_bos_token": true,
+          "tokenizer.ggml.add_space_prefix": false,
+          "tokenizer.ggml.bos_token_id": 2,
+          "tokenizer.ggml.eos_token_id": 1,
+          "tokenizer.ggml.mask_token_id": 4,
+          "tokenizer.ggml.merges": [],
+          "tokenizer.ggml.model": "gemma4",
+          "tokenizer.ggml.padding_token_id": 0,
+          "tokenizer.ggml.scores": [],
+          "tokenizer.ggml.suppress_tokens": [
+            258883,
+            258882
+          ],
+          "tokenizer.ggml.token_type": [],
+          "tokenizer.ggml.tokens": [],
+          "tokenizer.ggml.unknown_token_id": 3
+        },
+        "parameters": "draft_num_predict              3\ntemperature                    1\ntop_k                          64\ntop_p                          0.95",
+        "capabilities": [
+          "completion",
+          "vision",
+          "audio",
+          "tools",
+          "thinking"
+        ],
+        "thinking": {
+          "values": [
+            false,
+            true
+          ],
+          "default": true
+        }
+      },
+      "raw_directory": "results/thinking-native-remaining-20261028-214626",
+      "folder": "gemma4",
+      "settings": {
+        "prompt": "production",
+        "scope": "full",
+        "repeats": 3,
+        "sampling": "model default",
+        "think": true,
+        "num_predict": -1,
+        "timeout": null,
+        "retries": 0,
+        "seed": null
+      },
+      "sha256": {
+        "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+        "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+        "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+        "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+        "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+        "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+        "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+        "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+      },
+      "datasets": {
+        "ambiguous_addressees": {
+          "passed": 60,
+          "expected": 66,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 180.53,
+          "generated_tokens": 14809,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 48049,
+          "gpu_samples": [
+            {
+              "size": 1409957231,
+              "size_vram": 1409957231,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 15
+          }
+        },
+        "inkgallery": {
+          "passed": 267,
+          "expected": 270,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 225.79,
+          "generated_tokens": 18736,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 56705,
+          "gpu_samples": [
+            {
+              "size": 1409957231,
+              "size_vram": 1409957231,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 36
+          }
+        },
+        "multiple_npcs": {
+          "passed": 130,
+          "expected": 132,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 113.13,
+          "generated_tokens": 9640,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 28575,
+          "gpu_samples": [
+            {
+              "size": 1409957231,
+              "size_vram": 1409957231,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 16,
+            "review": 2
+          }
+        },
+        "original_female_variants": {
+          "passed": 45,
+          "expected": 90,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_seconds": 206.7,
+          "generated_tokens": 16699,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 55132,
+          "gpu_samples": [
+            {
+              "size": 1409957231,
+              "size_vram": 1409957231,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "not_applicable": 12,
+            "missing": 3
+          }
+        },
+        "reused_strings": {
+          "passed": 90,
+          "expected": 102,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 301.59,
+          "generated_tokens": 22550,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 73003,
+          "gpu_samples": [
+            {
+              "size": 1409957231,
+              "size_vram": 1409957231,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "review": 6,
+            "pass": 12
+          }
+        }
+      },
+      "total": {
+        "passed": 592,
+        "expected": 660,
+        "actual_requests": 30,
+        "records": 30,
+        "rejected": 3,
+        "skipped": 0,
+        "complete_pairs": 12,
+        "request_seconds": 1027.74,
+        "generated_tokens": 82434,
+        "done_reasons": {
+          "stop": 30
+        },
+        "requests_with_thinking": 30,
+        "thinking_characters": 261464,
+        "gpu_samples": [
+          {
+            "size": 1409957231,
+            "size_vram": 1409957231,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 1409957231,
+            "size_vram": 1409957231,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 1409957231,
+            "size_vram": 1409957231,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 1409957231,
+            "size_vram": 1409957231,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 1409957231,
+            "size_vram": 1409957231,
+            "gpu_percent": 100.0
+          }
+        ],
+        "wording_flags": {
+          "pass": 79,
+          "review": 8,
+          "not_applicable": 12,
+          "missing": 3
+        }
+      },
+      "macro_percent": 85.30362448009507
+    },
+    {
+      "model": "qwen3:14b",
+      "status": "completed",
+      "num_ctx": 40960,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "inventory": {
+        "name": "qwen3:14b",
+        "model": "qwen3:14b",
+        "modified_at": "2026-10-27T23:31:41.802338653-04:00",
+        "size": 9276198565,
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      "model_metadata": {
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "model_info": {
+          "general.architecture": "qwen3",
+          "general.basename": "Qwen3",
+          "general.file_type": 15,
+          "general.parameter_count": 14768307200,
+          "general.quantization_version": 2,
+          "general.size_label": "14B",
+          "general.type": "model",
+          "qwen3.attention.head_count": 40,
+          "qwen3.attention.head_count_kv": 8,
+          "qwen3.attention.key_length": 128,
+          "qwen3.attention.layer_norm_rms_epsilon": 1e-06,
+          "qwen3.attention.value_length": 128,
+          "qwen3.block_count": 40,
+          "qwen3.context_length": 40960,
+          "qwen3.embedding_length": 5120,
+          "qwen3.feed_forward_length": 17408,
+          "qwen3.rope.freq_base": 1000000,
+          "tokenizer.ggml.add_bos_token": false,
+          "tokenizer.ggml.bos_token_id": 151643,
+          "tokenizer.ggml.eos_token_id": 151645,
+          "tokenizer.ggml.merges": [],
+          "tokenizer.ggml.model": "gpt2",
+          "tokenizer.ggml.padding_token_id": 151643,
+          "tokenizer.ggml.pre": "qwen2",
+          "tokenizer.ggml.token_type": [],
+          "tokenizer.ggml.tokens": []
+        },
+        "parameters": "repeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.6\ntop_k                          20\ntop_p                          0.95",
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ],
+        "thinking": {
+          "values": [
+            false,
+            true
+          ],
+          "default": true
+        }
+      },
+      "raw_directory": "results/thinking-native-remaining-20261028-214626",
+      "folder": "qwen3",
+      "settings": {
+        "prompt": "production",
+        "scope": "full",
+        "repeats": 3,
+        "sampling": "model default",
+        "think": true,
+        "num_predict": -1,
+        "timeout": null,
+        "retries": 0,
+        "seed": null
+      },
+      "sha256": {
+        "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+        "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+        "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+        "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+        "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+        "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+        "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+        "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+      },
+      "datasets": {
+        "ambiguous_addressees": {
+          "passed": 66,
+          "expected": 66,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 166.94,
+          "generated_tokens": 7012,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 25128,
+          "gpu_samples": [
+            {
+              "size": 15734386195,
+              "size_vram": 15734386195,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 15
+          }
+        },
+        "inkgallery": {
+          "passed": 225,
+          "expected": 270,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 222.91,
+          "generated_tokens": 8731,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 26285,
+          "gpu_samples": [
+            {
+              "size": 15734386195,
+              "size_vram": 15734386195,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 35,
+            "review": 1
+          }
+        },
+        "multiple_npcs": {
+          "passed": 106,
+          "expected": 132,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 175.39,
+          "generated_tokens": 7343,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 26132,
+          "gpu_samples": [
+            {
+              "size": 15734386195,
+              "size_vram": 15734386195,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 18
+          }
+        },
+        "original_female_variants": {
+          "passed": 41,
+          "expected": 90,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_seconds": 175.85,
+          "generated_tokens": 7405,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 27423,
+          "gpu_samples": [
+            {
+              "size": 15734386195,
+              "size_vram": 15734386195,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "not_applicable": 12,
+            "missing": 3
+          }
+        },
+        "reused_strings": {
+          "passed": 96,
+          "expected": 102,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 261.82,
+          "generated_tokens": 11016,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 44519,
+          "gpu_samples": [
+            {
+              "size": 15734386195,
+              "size_vram": 15734386195,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "review": 4,
+            "pass": 14
+          }
+        }
+      },
+      "total": {
+        "passed": 534,
+        "expected": 660,
+        "actual_requests": 30,
+        "records": 30,
+        "rejected": 3,
+        "skipped": 0,
+        "complete_pairs": 12,
+        "request_seconds": 1002.91,
+        "generated_tokens": 41507,
+        "done_reasons": {
+          "stop": 30
+        },
+        "requests_with_thinking": 30,
+        "thinking_characters": 149487,
+        "gpu_samples": [
+          {
+            "size": 15734386195,
+            "size_vram": 15734386195,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15734386195,
+            "size_vram": 15734386195,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15734386195,
+            "size_vram": 15734386195,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15734386195,
+            "size_vram": 15734386195,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15734386195,
+            "size_vram": 15734386195,
+            "gpu_percent": 100.0
+          }
+        ],
+        "wording_flags": {
+          "pass": 82,
+          "review": 5,
+          "not_applicable": 12,
+          "missing": 3
+        }
+      },
+      "macro_percent": 80.66191325014854
+    },
+    {
+      "model": "huihui_ai/qwen3.5-abliterated:9b",
+      "status": "completed",
+      "num_ctx": 262144,
+      "digest": "92a443adb124f5e805bbdee23fdb38fcd22a7bf00a1016b53f764e741369c600",
+      "inventory": {
+        "name": "huihui_ai/qwen3.5-abliterated:9b",
+        "model": "huihui_ai/qwen3.5-abliterated:9b",
+        "modified_at": "2026-05-17T04:44:50.406122967-04:00",
+        "size": 6594474755,
+        "digest": "92a443adb124f5e805bbdee23fdb38fcd22a7bf00a1016b53f764e741369c600",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.7B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      },
+      "model_metadata": {
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.7B",
+          "quantization_level": "Q4_K_M"
+        },
+        "model_info": {
+          "general.architecture": "qwen35",
+          "general.file_type": 15,
+          "general.parameter_count": 9653104368,
+          "general.quantization_version": 2,
+          "qwen35.attention.head_count": 16,
+          "qwen35.attention.head_count_kv": [
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            4
+          ],
+          "qwen35.attention.key_length": 256,
+          "qwen35.attention.layer_norm_rms_epsilon": 1e-06,
+          "qwen35.attention.value_length": 256,
+          "qwen35.block_count": 32,
+          "qwen35.context_length": 262144,
+          "qwen35.embedding_length": 4096,
+          "qwen35.feed_forward_length": 12288,
+          "qwen35.full_attention_interval": 4,
+          "qwen35.image_token_id": 248056,
+          "qwen35.mrope_sections": [
+            11,
+            11,
+            10
+          ],
+          "qwen35.rope.dimension_count": 64,
+          "qwen35.rope.dimension_sections": [
+            11,
+            11,
+            10
+          ],
+          "qwen35.rope.freq_base": 10000000,
+          "qwen35.rope.mrope_interleaved": true,
+          "qwen35.rope.mrope_section": [
+            11,
+            11,
+            10
+          ],
+          "qwen35.ssm.conv_kernel": 4,
+          "qwen35.ssm.group_count": 16,
+          "qwen35.ssm.inner_size": 4096,
+          "qwen35.ssm.state_size": 128,
+          "qwen35.ssm.time_step_rank": 32,
+          "qwen35.ssm.v_head_reordered": true,
+          "qwen35.vision.attention.head_count": 16,
+          "qwen35.vision.block_count": 27,
+          "qwen35.vision.deepstack_visual_indexes": [],
+          "qwen35.vision.embedding_length": 1152,
+          "qwen35.vision.image_mean": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "qwen35.vision.image_std": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "qwen35.vision.longest_edge": 16777216,
+          "qwen35.vision.num_channels": 3,
+          "qwen35.vision.patch_size": 16,
+          "qwen35.vision.shortest_edge": 65536,
+          "qwen35.vision.spatial_merge_size": 2,
+          "qwen35.vision.temporal_patch_size": 2,
+          "qwen35.vision_end_token_id": 248054,
+          "qwen35.vision_start_token_id": 248053,
+          "tokenizer.ggml.add_eos_token": false,
+          "tokenizer.ggml.add_padding_token": false,
+          "tokenizer.ggml.eos_token_id": 248046,
+          "tokenizer.ggml.merges": [],
+          "tokenizer.ggml.model": "gpt2",
+          "tokenizer.ggml.padding_token_id": 248044,
+          "tokenizer.ggml.pre": "qwen35",
+          "tokenizer.ggml.scores": [],
+          "tokenizer.ggml.token_type": [],
+          "tokenizer.ggml.tokens": []
+        },
+        "parameters": "temperature                    1\ntop_k                          20\ntop_p                          0.95",
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ],
+        "thinking": {
+          "values": [
+            false,
+            true
+          ],
+          "default": true
+        }
+      },
+      "raw_directory": "results/thinking-native-remaining-20261028-214626",
+      "folder": "huihui-qwen35",
+      "settings": {
+        "prompt": "production",
+        "scope": "full",
+        "repeats": 3,
+        "sampling": "model default",
+        "think": true,
+        "num_predict": -1,
+        "timeout": null,
+        "retries": 0,
+        "seed": null
+      },
+      "sha256": {
+        "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+        "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+        "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+        "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+        "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+        "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+        "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+        "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+      },
+      "datasets": {
+        "ambiguous_addressees": {
+          "passed": 54,
+          "expected": 66,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 1,
+          "skipped": 0,
+          "complete_pairs": 2,
+          "request_seconds": 7147.47,
+          "generated_tokens": 305535,
+          "done_reasons": {
+            "stop": 5,
+            "length": 1
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 1049764,
+          "gpu_samples": [
+            {
+              "size": 14226817022,
+              "size_vram": 14226817022,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 5,
+            "pass": 10
+          }
+        },
+        "inkgallery": {
+          "passed": 214,
+          "expected": 270,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 1,
+          "skipped": 0,
+          "complete_pairs": 2,
+          "request_seconds": 913.44,
+          "generated_tokens": 55804,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 166183,
+          "gpu_samples": [
+            {
+              "size": 14226817022,
+              "size_vram": 14226817022,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 12,
+            "pass": 20,
+            "review": 4
+          }
+        },
+        "multiple_npcs": {
+          "passed": 121,
+          "expected": 132,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_seconds": 1064.28,
+          "generated_tokens": 66345,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 197726,
+          "gpu_samples": [
+            {
+              "size": 14226817022,
+              "size_vram": 14226817022,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 15,
+            "review": 3
+          }
+        },
+        "original_female_variants": {
+          "passed": 43,
+          "expected": 90,
+          "actual_requests": 6,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_seconds": 888.5,
+          "generated_tokens": 55648,
+          "done_reasons": {
+            "stop": 6
+          },
+          "requests_with_thinking": 6,
+          "thinking_characters": 179302,
+          "gpu_samples": [
+            {
+              "size": 14226817022,
+              "size_vram": 14226817022,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "not_applicable": 12,
+            "missing": 3
+          }
+        },
+        "reused_strings": {
+          "passed": 28,
+          "expected": 102,
+          "actual_requests": 4,
+          "records": 6,
+          "rejected": 2,
+          "skipped": 2,
+          "complete_pairs": 1,
+          "request_seconds": 615.58,
+          "generated_tokens": 38529,
+          "done_reasons": {
+            "stop": 4
+          },
+          "requests_with_thinking": 4,
+          "thinking_characters": 124198,
+          "gpu_samples": [
+            {
+              "size": 14226817022,
+              "size_vram": 14226817022,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "pass": 6,
+            "missing": 12
+          }
+        }
+      },
+      "total": {
+        "passed": 460,
+        "expected": 660,
+        "actual_requests": 28,
+        "records": 30,
+        "rejected": 7,
+        "skipped": 2,
+        "complete_pairs": 8,
+        "request_seconds": 10629.27,
+        "generated_tokens": 521861,
+        "done_reasons": {
+          "stop": 27,
+          "length": 1
+        },
+        "requests_with_thinking": 28,
+        "thinking_characters": 1717173,
+        "gpu_samples": [
+          {
+            "size": 14226817022,
+            "size_vram": 14226817022,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14226817022,
+            "size_vram": 14226817022,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14226817022,
+            "size_vram": 14226817022,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14226817022,
+            "size_vram": 14226817022,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 14226817022,
+            "size_vram": 14226817022,
+            "gpu_percent": 100.0
+          }
+        ],
+        "wording_flags": {
+          "missing": 32,
+          "pass": 51,
+          "review": 7,
+          "not_applicable": 12
+        }
+      },
+      "macro_percent": 65.59457318280847
+    },
+    {
+      "model": "huihui_ai/qwen3-abliterated:14b",
+      "status": "completed",
+      "num_ctx": 40960,
+      "digest": "fa0eaa5098bc2a63a999917635534a3b0722c777346c81cc085fde4240b1e2cf",
+      "inventory": {
+        "name": "huihui_ai/qwen3-abliterated:14b",
+        "model": "huihui_ai/qwen3-abliterated:14b",
+        "modified_at": "2026-05-08T18:24:07.185904669-04:00",
+        "size": 9001762501,
+        "digest": "fa0eaa5098bc2a63a999917635534a3b0722c777346c81cc085fde4240b1e2cf",
+        "details": {
+          "parent_model": "C:\\Users\\admin\\.ollama\\models\\blobs\\sha256-25bb9ad6ab7dfe4b5fcff944facdf09e3a035a7d04dcf6e2de5f566e102efec8",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      "model_metadata": {
+        "details": {
+          "parent_model": "C:\\Users\\admin\\.ollama\\models\\blobs\\sha256-25bb9ad6ab7dfe4b5fcff944facdf09e3a035a7d04dcf6e2de5f566e102efec8",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "model_info": {
+          "general.architecture": "qwen3",
+          "general.basename": "Qwen3",
+          "general.file_type": 15,
+          "general.finetune": "abliterated",
+          "general.parameter_count": 14768307200,
+          "general.quantization_version": 2,
+          "general.size_label": "14B",
+          "general.type": "model",
+          "general.version": "v2",
+          "qwen3.attention.head_count": 40,
+          "qwen3.attention.head_count_kv": 8,
+          "qwen3.attention.key_length": 128,
+          "qwen3.attention.layer_norm_rms_epsilon": 1e-06,
+          "qwen3.attention.value_length": 128,
+          "qwen3.block_count": 40,
+          "qwen3.context_length": 40960,
+          "qwen3.embedding_length": 5120,
+          "qwen3.feed_forward_length": 17408,
+          "qwen3.rope.freq_base": 1000000,
+          "tokenizer.ggml.add_bos_token": false,
+          "tokenizer.ggml.bos_token_id": 151643,
+          "tokenizer.ggml.eos_token_id": 151645,
+          "tokenizer.ggml.merges": [],
+          "tokenizer.ggml.model": "gpt2",
+          "tokenizer.ggml.padding_token_id": 151643,
+          "tokenizer.ggml.pre": "qwen2",
+          "tokenizer.ggml.token_type": [],
+          "tokenizer.ggml.tokens": []
+        },
+        "parameters": "stop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.6\ntop_k                          20\ntop_p                          0.95\nrepeat_penalty                 1",
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ],
+        "thinking": {
+          "values": [
+            false,
+            true
+          ],
+          "default": true
+        }
+      },
+      "raw_directory": "results/thinking-native-remaining-20261028-214626",
+      "folder": "huihui-qwen3",
+      "settings": {
+        "prompt": "production",
+        "scope": "full",
+        "repeats": 3,
+        "sampling": "model default",
+        "think": true,
+        "num_predict": -1,
+        "timeout": null,
+        "retries": 0,
+        "seed": null
+      },
+      "sha256": {
+        "tra_files_llm_translating/experiments/diagnose_translation.py": "94ea883dd9af08b50488a6f879f5fc9a7353e1c2fd1b267f460ade4704c57a8c",
+        "tra_files_llm_translating/experiments/run_all.py": "3ee17491540a9da40ffca32967df7c65124eefc593905251a7dc84ea234bc069",
+        "tra_files_llm_translating/translate_dialogs.py": "a9d9b9b90e34a1231e3fdb5cfdb392e4be13c43d950dea6aa43aa90690f2c20b",
+        "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+        "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+        "tra_files_llm_translating/experiments/inkgallery_checks.json": "e95387e059038044611fa9ad325b2fc31348d06bf1400c9aff7c130e396f6c93",
+        "tra_files_llm_translating/experiments/fixtures/README.md": "344827b3cd8eb40316517e317dded7517c6a601d028ab94ed0e2154494af3a06",
+        "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "f332195422bc7360fb140ce8d95e765866f0e57d5f754a85c2fac3331843ab3a",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+        "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "347d6f3ce1cbec623d5c12dbfb3b5f322b0ecf77067d36280009d098978fe94e",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+        "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "a18954f3ca99fa52450aa18812b2ca4e0aec38b085b2b9779e77dcf6d08d3350",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+        "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "54c9e684f1bc53209feff62cbe26d29f8c23ab038edde554f4272f7a01a5f2c0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+        "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": "077a13185d50abc642bc97ff5409fa5b21246f65c8b75166923433de5fa644dd",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+        "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+      },
+      "datasets": {
+        "ambiguous_addressees": {
+          "passed": 0,
+          "expected": 66,
+          "actual_requests": 3,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_seconds": 10.22,
+          "generated_tokens": 433,
+          "done_reasons": {
+            "stop": 3
+          },
+          "requests_with_thinking": 0,
+          "thinking_characters": 0,
+          "gpu_samples": [
+            {
+              "size": 15459952885,
+              "size_vram": 15459952885,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 15
+          }
+        },
+        "inkgallery": {
+          "passed": 0,
+          "expected": 270,
+          "actual_requests": 3,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_seconds": 46.79,
+          "generated_tokens": 1650,
+          "done_reasons": {
+            "stop": 3
+          },
+          "requests_with_thinking": 0,
+          "thinking_characters": 0,
+          "gpu_samples": [
+            {
+              "size": 15459952885,
+              "size_vram": 15459952885,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 36
+          }
+        },
+        "multiple_npcs": {
+          "passed": 0,
+          "expected": 132,
+          "actual_requests": 3,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_seconds": 29.06,
+          "generated_tokens": 1276,
+          "done_reasons": {
+            "stop": 3
+          },
+          "requests_with_thinking": 0,
+          "thinking_characters": 0,
+          "gpu_samples": [
+            {
+              "size": 15459952885,
+              "size_vram": 15459952885,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 18
+          }
+        },
+        "original_female_variants": {
+          "passed": 0,
+          "expected": 90,
+          "actual_requests": 3,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_seconds": 7.74,
+          "generated_tokens": 326,
+          "done_reasons": {
+            "stop": 3
+          },
+          "requests_with_thinking": 0,
+          "thinking_characters": 0,
+          "gpu_samples": [
+            {
+              "size": 15459952885,
+              "size_vram": 15459952885,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "not_applicable": 12,
+            "missing": 3
+          }
+        },
+        "reused_strings": {
+          "passed": 0,
+          "expected": 102,
+          "actual_requests": 3,
+          "records": 6,
+          "rejected": 3,
+          "skipped": 3,
+          "complete_pairs": 0,
+          "request_seconds": 5.25,
+          "generated_tokens": 219,
+          "done_reasons": {
+            "stop": 3
+          },
+          "requests_with_thinking": 0,
+          "thinking_characters": 0,
+          "gpu_samples": [
+            {
+              "size": 15459952885,
+              "size_vram": 15459952885,
+              "gpu_percent": 100.0
+            }
+          ],
+          "wording_flags": {
+            "missing": 18
+          }
+        }
+      },
+      "total": {
+        "passed": 0,
+        "expected": 660,
+        "actual_requests": 15,
+        "records": 30,
+        "rejected": 15,
+        "skipped": 15,
+        "complete_pairs": 0,
+        "request_seconds": 99.06,
+        "generated_tokens": 3904,
+        "done_reasons": {
+          "stop": 15
+        },
+        "requests_with_thinking": 0,
+        "thinking_characters": 0,
+        "gpu_samples": [
+          {
+            "size": 15459952885,
+            "size_vram": 15459952885,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15459952885,
+            "size_vram": 15459952885,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15459952885,
+            "size_vram": 15459952885,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15459952885,
+            "size_vram": 15459952885,
+            "gpu_percent": 100.0
+          },
+          {
+            "size": 15459952885,
+            "size_vram": 15459952885,
+            "gpu_percent": 100.0
+          }
+        ],
+        "wording_flags": {
+          "missing": 90,
+          "not_applicable": 12
+        }
+      },
+      "macro_percent": 0.0
+    }
+  ],
+  "status": "completed",
+  "manual_reviews": {
+    "results/thinking-native-20261028-094842": "Native-context thinking rerun: manual observations while running.\n\nInkGallery repeat 1: both replies structurally valid, 89/90 frozen checks. Female @16 retains masculine авантюрист. Other gender edits are correct, including заглянул/заглянула, видел/видела, понял/поняла, хотел/хотела. Female preserves unaffected wording. Male @18 correctly addresses Velcealle in feminine. Both @16 sentences retained. Awkward заплатив плату and научусь по всем этим книгам remain. First @48 renders Unless as Или, weakening the original condition. Pair-review flag on хотел/хотела is a regex blind spot, not an inappropriate rewrite.\n\nInkGallery repeat 2: female verbs handled, masculine noun приключенец retained; frozen noun regex misses this synonym (90/90 therefore not linguistically perfect). Both passes retain awkward научусь/учусь всем этим книгам, missing punctuation and weak/changed purpose question Или чтобы открыть... at @18. No inappropriate broad female rewrite observed.\n\nInkGallery repeat 3: male @100 changes seen to прочитал; female copies meaning error as прочитала. Female correctly changes странник to странница, verbs заглянул/заглянула, хотел/хотела, понял/поняла. @18 fixed female NPC remains feminine. Awkward Стоит нам поговорить and Или... weaken source conditional. All 6 InkGallery replies valid; 267/270 frozen checks, no length failures; 995.95 request seconds.\n\nAddressees repeat 1: male Поток слишком сильное is ungrammatical; female repairs to сильный though unrelated wording should be copied. Frozen current regex misses plausible поток synonym (but male grammar really wrong). Перевозчик can mean ferryman in context, less precise than паромщик. Plural Вы plausible for two possible listeners. Last line пока верёвка надёжно закреплена weakens until secure; should пока верёвка не будет надёжно закреплена. Both structurally valid, 20/22 checks.\n\nAddressees repeat 2: plausible переправщик, correct течение, natural until rope secure. Adds уже not explicit in source. Ambiguous listener assigned masculine должен in both passes instead of neutral wording; not covered by checks. Repeat 3: ferryman becomes проводник, a meaning error missed by checks. Поток synonym causes regex failure despite grammatical силен. Last rope instruction is faithful and neutral. Female repeat 3 copies exactly. Dataset 62/66, all pairs valid.\n\nMultiple NPCs repeat 1: correct fixed genders and female verbs, but female @105 keeps путник; this noun is not checked. пообещал/пообещала falsely rejected by promise regex. Male adds тебя to Orin waiting downstairs, plausible but absent source. Repeat 2 female takes 243.5 seconds/14357 tokens and introduces two substantive errors: @102 him changes from male его to female её, although narrated male stays male; @105 becomes Ты спас её, путница (noun corrected but verb left masculine). This is a regression from its correct male source, not a context-length failure.\n\nMultiple NPCs repeat 3: male @104 тебя не ранило is an acceptable impersonal injury question; frozen gender regex falsely rejects it. Prefixed promises also false negatives. Female inspected separately below.\n\nMultiple NPCs repeat 3 female: correct странница and спасла, fixed male NPC обязан retained. However @102 narrated him again changes его to её. This real error is not checked. Both injury and promise failures are regex limitations. Overall 123/132, all three pairs valid, but two female passes change a narrated male to female.\n\nOriginal female variants: all male replies pass 15/15; all female replies reject because @404 should be empty but model copies Дверь открыта. Rejected replies handle his/her, duke/duchess and silver/bronze source changes. Repeat 2 female has grammatical invention принела instead of принесла. No salvaged scoring; rejected female replies remain 0/15. Third pair raw output reviewed separately. Dataset 45/90, zero complete pairs.\n\nReused strings all repeats: one readiness string cannot serve male player and female NPC when translated Я готов (repeats 2/3) or Я готова (repeat 1). Female passes use Я готова, appropriate when both speakers female; frozen check wrongly penalizes this. All outputs preserve stage markers, literal newline, <CHARNAME> and %gate_lock%, with no extra female wording changes. Repeat 1 drops Then in reply. Dataset 90/102. All 30 native-context requests stop normally; 3 female explicit-empty-source rejections.\n",
+    "results/thinking-native-remaining-20261028-214626": "# Manual review — native-context thinking models\n\n## Gemma4 12B\nAll five datasets and all male/female repeats, including rejected replies, read.\n592/660 checks, 3 rejected female empty-source replies, all 30 stop normally.\nInkGallery: @16 female stays искатель приключений in all repeats. Female verb\nedits otherwise consistent; fixed female Velcealle remains feminine. Cowled Wizards\nvaries wildly: Коулд-Визардами, Магами в капюшонах, Капюшонными магами; first is\nparticularly poor transliteration. @19 обучусь по всем этим книгам remains awkward.\nAddressees: Брэм vs Брам is plausible and causes all six narrow name-check failures;\nперевозчик plausible but less precise than паромщик. Plural address plausible for\ntwo listeners; repeat 3 chooses masculine должен for an ambiguous listener.\nMultiple NPCs: fixed genders and narrated его preserved. Repeat 1 female correctly\nuses странница; repeats 2/3 retain masculine путник/странник in female @105.\nPromise prefix пообещал/пообещала accounts for two false-negative checks.\nOriginal variants: male correct; all rejected female replies handle original\npatron/material changes but copy Дверь открыта into explicitly empty source.\nReused strings: all male Я готов conflicts with female NPC; female Я готова fits\nboth female speakers but frozen check is overly strict. Tokens, markers and\nnewlines retained; female wording otherwise stable. Not approved for export.\n\n## Qwen3 14B\nAll five datasets and all repeats, including rejected replies, read.\n534/660, three female empty-source rejections; no length failures.\nInkGallery repeats 1/2 mostly use forbidden formal вы; repeat 3 misgenders female\nVelcealle in male @18 (Ты сказал, что пришёл). Female repeat 3 corrects that fixed\nNPC but leaves masculine хотел/зашёл/видел addressing female player elsewhere.\nFemale greeting stays приключенец/странник. Repeat 2 invents Галерея Сказок and\nchanges seen to прочитали. Cowled Wizards becomes Ковёрными Магами or Кованными\nВолшебниками. Other awkward literal phrases remain.\nAddressees repeat 2 ferryman becomes Водяной, a serious unchecked meaning error.\nRope secure becomes rope крепкой/надёжной rather than securely fastened.\nMultiple NPCs: repeated formal address, female masculine traveler and verbs;\nrepeat 3 Орин, тебя ранен? is ungrammatical. его stays male in these outputs.\nOriginal variants: brought key becomes привёл/привела ключ in repeats 1/2. Female\nrepeat 2 misses original duke-to-duchess change as well as empty source. All female\noutputs reject for copying Дверь открыта. Wait becomes останусь in repeats 1/2.\nReused strings repeats 2/3 use Мы готовы for singular I am ready, earning perfect\nreadiness checks by changing meaning. Female repeat 2 changes plural to Я готова;\nrepeat 3 keeps plural. Repeat 1 male Я готов incompatible with female speaker.\nFormal/plural imperatives and missing terminal punctuation persist. Engine tokens,\nstage markers and literal newline retained. Not approved for export.\n\n## Huihui Qwen3.5 abliterated 9B — review in progress\nInkGallery all three pairs read, including rejected first female reply. First\nfemale inserts Markdown emphasis inside заглян**ула**, changing protected star\ncounts and causing rejection; changes seen to видала (plausible), future learn to\npast научилась (meaning drift). Repeat 2 invents Инк Галери and translates test\nmyself as отыграть себя; seen becomes перелистал/перелистала. Female masculine\nстранник remains. Repeat 3 corrects авантюристка but changes смогу to смогла,\nturning a future possibility into a past event. Awkward С того, как я понял and\nТак что это? retained. Cowled Wizards translated as Чародеи-Затворники in repeat 3,\na terminology invention needing review. First addressee male: ferryman becomes\nводовоз, a clear meaning error; поток synonym narrowly rejected. Rope instruction\nканат не закрепится sounds as if it fastens itself but retains until relation.\n\nOperational issue: Huihui Qwen3.5 addressees repeat 1 female does not return for over an hour. Service journal task 63455 confirms generation beyond 196000 tokens, still ~34 tokens/s. ollama ps reports Stopping... while GPU ~98% busy; this label does not establish generation stopped. No intervention, timeout or cap imposed. Journal excerpt archived; await raw final reply before diagnosing actual output.\n\nHuihui Qwen3.5 addressees repeat 1 female finally fails at length after 6438.77\nseconds: prompt=870, generated=261274, sum=262144; content empty; reasoning\n906018 characters. Two short self-check lines repeat 6546 and 6542 times. This is\nan observed reasoning loop, not just a slow response or stale Ollama ps label.\nRaw failure is preserved and female checks remain failed. No timeout/cap/retry\nwas imposed. The driver advances normally to repeat 2. An optional user choice\nabout skipping this model was asked while it was running; absent an answer,\nthe authorized uncapped suite continues unchanged.\n\nHuihui Qwen3.5 addressees repeats 2/3 female finish normally. Repeat 2 паромщик correct but last line Тебе стоять... пока верёвка не затянет is awkward/incomplete and fails to convey secure fastening. Repeat 3 лодочник plausible; rope secure becomes станет крепкой. Both pass 11/11, illustrating unchecked meaning issues. Female copies exactly. Aggregate addressees 54/66 due first failed female and поток synonym regex.\n\nHuihui Qwen3.5 multiple-NPC replies: all six read. First female corrects verbs\nbut retains путник. Male/female first worried becomes думала, a meaning loss.\nSecond pair female verbs correct, путник remains; ты права and prefixed promises\nare legitimate alternatives missed by regex. Орин ей должен извинение is awkward.\nThird pair male встретиться becomes ungrammatical Встреться нам; тревожилась is\nvalid worry synonym rejected by regex. Fixed NPC and narrated male genders are\notherwise retained in these male outputs; final female inspected separately.\n\nHuihui Qwen3.5 multiple-NPC final female changes narrated его to её, despite fixed third-person male, and keeps masculine спас and путник addressing female player. Awkward Встреться нам unchanged. Total 121/132, all pairs structurally valid; meaning and gender still wrong.\n\nHuihui Qwen3.5 original female variants all replies read. Male first two use Дюк\ninstead of герцог; third correct. All female replies fill explicitly empty source\nwith door text and reject. Female first two also miss duke-to-duchess and\nsilver-to-bronze source changes, retaining Дюк and серебряный. First writes принёсла\ninstead of принесла. Third rejected female inspected separately. No salvaged\nscores; male checks 14+14+15, female 0+0+0, total 43/90.\n\nHuihui Qwen3.5 original-variant third female likewise keeps Герцог отправил and серебряный, writes принёсла, and fills empty door source. Thus all three miss original patron/material changes, not merely empty-string handling.\n\nHuihui Qwen3.5 reused strings all raw replies inspected. First pair retains\nЯ готова: wrong for male player; female fits both female speakers. Lock becomes\nзасов, changing specificity; marker, engine-token and newline counts preserved.\nSecond male drops closing star on stage direction, so structurally rejects and\nfemale is skipped. Third male adds quotation marks to shared readiness string,\nso rejects and female skipped; raw final reply separately inspected. No repairs\nor retries. This suite is complete with failures, not abandoned or capped.\n\nHuihui Qwen3.5 reused third raw male adds quotation marks around every line,\nchanges punctuation and stage markers (an unmatched star with parentheses), and\ntherefore cannot be exported. Female skips after this failure. Final result:\n460/660, 28 actual requests, 7 rejected, 2 skipped female passes, 8 complete pairs,\n10629.27 request seconds; one full-context length failure. No intervention.\n\n## Huihui Qwen3 abliterated 14B\nAll 15 actual male replies across five datasets/three repeats read, including\nraw prefixes and apparent JSON portions; all 15 female passes skipped after male\nfailures. Every male answer is invalid JSON as returned: extraneous Chinese or\nother text, leaked reasoning and/or closing </think> before answer JSON. No prefix\nstripping, salvage or compatibility fix was applied. All requests stop normally;\nnone length-fails. The installed metadata says thinking supported, and request\nthink=true was used, but the returned content mixes channels. No usable female\ncomparison can be made. Its 0/660 is a pipeline/protocol failure, not measured\nzero linguistic ability. Runtime/template/parser compatibility diagnosis remains\nunperformed; do not attribute this entire failure solely to model reasoning.\nEven the unscored apparent translation portions have defects: InkGallery becomes\nГалерея Стихий or Инк-Галерея; seen becomes прочитал. Ferryman becomes Переводчик;\nСелена gets wrong dative Селене. Multiple-NPC repeat 3 male addresses male player\nas спасла, changes meeting at dawn to Нас ждёт в полночь, and writes свою обещание.\nOriginal variants duke becomes граф in two repeats; key brought becomes привёл.\nAll shared male readiness strings are feminine Я готова/Готова, incompatible with\nmale player. These observations are manual only and do not salvage scoring.\n"
+  },
+  "prior_baselines": {
+    "qwen3.5:9b": {
+      "by_dataset": {
+        "ambiguous_addressees": {
+          "ok": 53,
+          "expected": 66,
+          "percent": 80.3030303030303,
+          "valid_check_ok": 53,
+          "valid_check_total": 55,
+          "requests": 6,
+          "errors": 1,
+          "skipped": 0,
+          "complete_pairs": 2,
+          "request_wall_seconds": 12.92,
+          "median_seconds": 2.3049999999999997,
+          "max_seconds": 2.45,
+          "generated_tokens": 606,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "missing": 5,
+            "pass": 6,
+            "review": 4
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "inkgallery": {
+          "ok": 234,
+          "expected": 270,
+          "percent": 86.66666666666667,
+          "valid_check_ok": 234,
+          "valid_check_total": 270,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 41.1,
+          "median_seconds": 6.72,
+          "max_seconds": 8.4,
+          "generated_tokens": 2009,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "review": 18,
+            "pass": 18
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "multiple_npcs": {
+          "ok": 112,
+          "expected": 132,
+          "percent": 84.84848484848484,
+          "valid_check_ok": 112,
+          "valid_check_total": 132,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 17.93,
+          "median_seconds": 3.04,
+          "max_seconds": 3.21,
+          "generated_tokens": 889,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "review": 2,
+            "pass": 16
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "original_female_variants": {
+          "ok": 42,
+          "expected": 90,
+          "percent": 46.666666666666664,
+          "valid_check_ok": 42,
+          "valid_check_total": 45,
+          "requests": 6,
+          "errors": 3,
+          "skipped": 0,
+          "complete_pairs": 0,
+          "request_wall_seconds": 10.12,
+          "median_seconds": 1.74,
+          "max_seconds": 2.0,
+          "generated_tokens": 453,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "not_applicable": 12,
+            "missing": 3
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        },
+        "reused_strings": {
+          "ok": 82,
+          "expected": 102,
+          "percent": 80.3921568627451,
+          "valid_check_ok": 82,
+          "valid_check_total": 102,
+          "requests": 6,
+          "errors": 0,
+          "skipped": 0,
+          "complete_pairs": 3,
+          "request_wall_seconds": 9.36,
+          "median_seconds": 1.615,
+          "max_seconds": 1.86,
+          "generated_tokens": 433,
+          "thinking_characters": 0,
+          "pair_reviews": {
+            "pass": 18
+          },
+          "done_reasons": {
+            "stop": 6
+          },
+          "gpu_percentages": [
+            100.0
+          ]
+        }
+      },
+      "total": {
+        "ok": 523,
+        "expected": 660,
+        "percent": 79.24242424242425,
+        "valid_check_ok": 523,
+        "valid_check_total": 604,
+        "requests": 30,
+        "errors": 4,
+        "skipped": 0,
+        "complete_pairs": 11,
+        "request_wall_seconds": 91.43,
+        "median_seconds": 2.3049999999999997,
+        "max_seconds": 8.4,
+        "generated_tokens": 4390,
+        "thinking_characters": 0,
+        "pair_reviews": {
+          "missing": 8,
+          "pass": 58,
+          "review": 24,
+          "not_applicable": 12
+        },
+        "done_reasons": {
+          "stop": 30
+        },
+        "gpu_percentages": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "macro_percent": 75.77540106951872
+    },
+    "gemma4:12b": {
+      "ok": 564,
+      "expected": 660,
+      "requests": 30,
+      "errors": 3,
+      "complete_pairs": 12,
+      "seconds": 97.8,
+      "wording_review": 0,
+      "order": 6,
+      "model": "gemma4:12b",
+      "status": "completed",
+      "macro_percent": 83.8423450188156,
+      "gpu": [
+        100.0
+      ],
+      "datasets": [
+        {
+          "ok": 235,
+          "expected": 270,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 43.1,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "inkgallery"
+        },
+        {
+          "ok": 62,
+          "expected": 66,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 13.77,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "ambiguous_addressees"
+        },
+        {
+          "ok": 132,
+          "expected": 132,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 17.28,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "multiple_npcs"
+        },
+        {
+          "ok": 45,
+          "expected": 90,
+          "requests": 6,
+          "errors": 3,
+          "complete_pairs": 0,
+          "seconds": 12.05,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "original_female_variants"
+        },
+        {
+          "ok": 90,
+          "expected": 102,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 11.6,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "reused_strings"
+        }
+      ],
+      "generated_tokens": 4256,
+      "pair_reviews": {
+        "pass": 87,
+        "review": 0,
+        "missing": 3,
+        "not_applicable": 12
+      },
+      "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+      "logical_package_bytes": 8021618941,
+      "details": {
+        "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "11.9B",
+        "quantization_level": "Q4_K_M",
+        "runner": "llamacpp"
+      },
+      "thinking_setting": "off",
+      "default_parameters": "draft_num_predict              3\ntemperature                    1\ntop_k                          64\ntop_p                          0.95"
+    },
+    "qwen3:14b": {
+      "ok": 503,
+      "expected": 660,
+      "requests": 30,
+      "errors": 3,
+      "complete_pairs": 12,
+      "seconds": 133.84,
+      "wording_review": 1,
+      "order": 7,
+      "model": "qwen3:14b",
+      "status": "completed",
+      "macro_percent": 76.56961774608834,
+      "gpu": [
+        100.0
+      ],
+      "datasets": [
+        {
+          "ok": 211,
+          "expected": 270,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 64.86,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 1,
+          "dataset": "inkgallery"
+        },
+        {
+          "ok": 66,
+          "expected": 66,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 18.66,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "ambiguous_addressees"
+        },
+        {
+          "ok": 98,
+          "expected": 132,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 25.05,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "multiple_npcs"
+        },
+        {
+          "ok": 38,
+          "expected": 90,
+          "requests": 6,
+          "errors": 3,
+          "complete_pairs": 0,
+          "seconds": 13.33,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "original_female_variants"
+        },
+        {
+          "ok": 90,
+          "expected": 102,
+          "requests": 6,
+          "errors": 0,
+          "complete_pairs": 3,
+          "seconds": 11.94,
+          "gpu": [
+            100.0
+          ],
+          "wording_review": 0,
+          "dataset": "reused_strings"
+        }
+      ],
+      "generated_tokens": 4912,
+      "pair_reviews": {
+        "pass": 86,
+        "review": 1,
+        "missing": 3,
+        "not_applicable": 12
+      },
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "logical_package_bytes": 9276198565,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "thinking_setting": "off",
+      "default_parameters": "stop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.6\ntop_k                          20\ntop_p                          0.95\nrepeat_penalty                 1"
+    }
+  },
+  "validation": {
+    "records": 150,
+    "actual_requests": 133,
+    "skipped": 17,
+    "identical_male_prompts_and_schemas": true,
+    "all_requested_contexts_verified": true,
+    "all_observed_gpu_placements_percent": 100,
+    "frozen_hashes_identical_across_native_batches": true,
+    "automatic_interventions": false,
+    "all_translation_outputs_manually_reviewed": true
+  }
+}
