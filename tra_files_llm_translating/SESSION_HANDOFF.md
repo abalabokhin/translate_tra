@@ -4,6 +4,46 @@ Read [README.md](README.md) for the full workflow, experiment history, commands,
 limitations and code review. This handoff records the latest decisions so the next
 session does not restart abandoned experiments.
 
+## Fixes and two experiments prepared — 2026-10-29 (nothing run yet)
+
+The user agreed thinking adds little value for translation. Work done on a
+machine without Ollama. Everything below is tested offline (57 unit tests), and no
+model has been run.
+
+Production (`translate_dialogs.py`):
+- A line whose original female text is explicitly empty is no longer sent to the
+  female pass; it is exported empty. Every model had failed these lines by copying
+  the male translation.
+- A string shared by speakers of different genders, or of unknown gender, gets a
+  `note` asking for neutral wording, and is listed after export in
+  `<name>.shared_strings_review.txt` for a person to check.
+
+Evaluation:
+- [Evaluation v3](experiments/EVALUATION.md#evaluation-v3-2026-10-29): checks now
+  catch the errors found in manual reviews and accept the valid wording they rejected.
+  Old totals are not comparable. **On the experiment machine, run `rescore.py` on
+  the three 2026-10-28 result folders and commit the `rescored.csv` files.**
+- [Real-mod set](experiments/real_set/README.md) scaffolding plus
+  `make_real_fixture.py`. **Empty: the user needs to add and review real dialogues.**
+
+Experiments prepared, **not run**:
+- [Prompt A/B](experiments/PROMPT_AB_PLAN.md) (`run_prompt_ab.py`): female-pass noun
+  rule vs production prompt, Mistral by default. Production prompt unchanged until
+  measured.
+- [Translate + verify](experiments/TRANSLATE_VERIFY_PLAN.md) (`run_translate_verify.py`):
+  Mistral Small3.2 translates without thinking; Gemma4 verifies with thinking (both
+  configurable), plus a planted-error test of the verifier.
+
+**The actual results of both experiments (translations, verifier issues, reports,
+manual review) must be committed to the repo**, under `experiments/prompt_ab/` and
+`experiments/translate_verify/`, not left in the ignored `results/` folder. The raw
+outputs of earlier experiments exist only on the machine that ran them, so they
+could not be reviewed from another checkout.
+
+Test environment note: the tests need `chardet` and `antlr4-python3-runtime==4.9.2`
+(the generated parser requires exactly 4.9.2). On Windows, run them with
+`PYTHONUTF8=1`.
+
 ## Native-context thinking comparison completed — 2026-10-28
 
 The user requested Qwen3.5 thinking at native context, then the same suite for

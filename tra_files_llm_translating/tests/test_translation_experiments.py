@@ -167,6 +167,68 @@ class ExperimentTests(unittest.TestCase):
                 reviews = e.review_pairs(e.rows[1:], set(by_id), male, female)
                 self.assertTrue(all(r['status'] in ('pass', 'not_applicable') for r in reviews), reviews)
 
+    def test_v3_checks_match_observed_errors_and_accept_observed_valid_wording(self):
+        """Cases taken from the manual reviews of the 2026-10-28 runs."""
+        cases = [  # fixture, line, gender, text, expected all-ok
+            ('multiple_npcs', '105', 'female', 'Ты спасла её, путник. Я обязан тебе жизнью.', False),
+            ('multiple_npcs', '105', 'female', 'Ты спас её, путница. Я обязан тебе жизнью.', False),
+            ('multiple_npcs', '102', 'female', 'Селена, ты была права. Я слишком поспешил обвинить её.', False),
+            ('multiple_npcs', '103', 'female', 'Я пообещала Селене помочь ей. Орин должен перед ней извиниться.', True),
+            ('multiple_npcs', '104', 'male', 'Орин, тебя не ранило? Я тревожилась за тебя.', True),
+            ('multiple_npcs', '101', 'male', 'Ты вернулся, <CHARNAME>. Орин ждал этажом ниже.', True),
+            ('ambiguous_addressees', '201', 'male', 'Проводник пропал. Брэм и Селена на другом берегу.', False),
+            ('ambiguous_addressees', '201', 'male', 'Перевозчик пропал. Брэм и Селена на другом берегу.', True),
+            ('ambiguous_addressees', '204', 'male', 'Поток слишком сильное.', False),
+            ('ambiguous_addressees', '204', 'male', 'Поток слишком сильный.', True),
+            ('ambiguous_addressees', '205', 'male', 'Ты должен оставаться на том берегу, пока верёвка не закреплена.', False),
+            ('ambiguous_addressees', '205', 'male', 'Оставайся на том берегу, пока верёвка надёжно закреплена.', False),
+            ('original_female_variants', '403', 'male', 'Я привёл серебряный ключ.', False),
+            ('original_female_variants', '403', 'female', 'Я принёсла бронзовый ключ.', False),
+            ('original_female_variants', '401', 'female', 'Я был её учеником.', False),
+            ('reused_strings', '301_a', 'female', 'Я готова.', True),
+            ('reused_strings', '301_a', 'female', 'Я готов.', False),
+            ('reused_strings', '301_a', 'male', 'Я готова.', False),
+        ]
+        for fixture, line, gender, text, expected in cases:
+            with self.subTest(fixture=fixture, line=line, text=text):
+                checks = self.fixture(fixture).score(line, gender, text)
+                self.assertEqual(all(c['ok'] for c in checks), expected, checks)
+        ink = self.experiment.score('@16', 'female', 'Снова здравствуй, приключенец. Галерея Чернил приветствует тебя.')
+        self.assertFalse(all(c['ok'] for c in ink))
+
+    def test_noun_rule_variant_changes_only_the_female_instruction(self):
+        from diagnose_translation import FEMALE_NOUN_RULE
+        rows = self.experiment.rows[1:]
+        male = {str(i): 'текст' for i, _ in enumerate(rows, 1)}
+        for gender, previous in (('male', None), ('female', male)):
+            base = json.loads(self.experiment.build('production', rows, gender, previous)[1])
+            variant = json.loads(self.experiment.build('production-nouns', rows, gender, previous)[1])
+            if gender == 'male':
+                self.assertEqual(base, variant)
+            else:
+                self.assertEqual(variant['instruction'], base['instruction'] + ' ' + FEMALE_NOUN_RULE)
+                self.assertEqual({k: v for k, v in variant.items() if k != 'instruction'},
+                                 {k: v for k, v in base.items() if k != 'instruction'})
+
+    def test_rescore_applies_current_checks_and_keeps_rejected_replies_failed(self):
+        import rescore
+        folder = self.out / 'batch' / '05' / 'multiple_npcs'
+        folder.mkdir(parents=True)
+        config = dict(model='m', prompt='production', scope='full', think='off', temperature='default', repeat=1)
+        valid = 'Я пообещала Селене помочь ей. Орин должен перед ней извиниться.'
+        records = [dict(config=config, gender='female', targets=['103'], error=None, translations={'103': valid},
+                        checks=[{'ok': False}, {'ok': True}], evaluation_version='multiple_npcs-v1'),
+                   dict(config=config, gender='female', targets=['103'], error='structural: x', translations={},
+                        checks=[{'ok': False}, {'ok': False}], evaluation_version='multiple_npcs-v1')]
+        (folder / 'runs.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in records),
+                                           encoding='utf-8')
+        with contextlib.redirect_stdout(io.StringIO()):
+            rescore.rescore(self.out / 'batch')
+        _, [row] = read_csv(self.out / 'batch' / 'rescored.csv', ['new_ok'])
+        expected = len(self.fixture('multiple_npcs').score('103', 'female', valid))
+        self.assertEqual((row['old_ok'], row['old_expected'], row['new_version']), ('1', '4', 'multiple_npcs-v2'))
+        self.assertEqual((row['new_ok'], row['new_expected']), (str(expected), str(2 * expected)))
+
     def test_all_prompt_variants_use_original_female_source_and_merge_references(self):
         e = self.fixture('original_female_variants')
         rows = e.rows[1:]
@@ -178,7 +240,10 @@ class ExperimentTests(unittest.TestCase):
                 dialogue = json.loads(user)['dialogue']
                 field = 'female_english' if prompt == 'markup' else 'english'
                 self.assertEqual(dialogue[1][field], 'The duchess sent you to retrieve her seal.')
-                self.assertEqual(dialogue[3][field], '')
+                if prompt == 'markup':
+                    self.assertEqual(dialogue[3][field], '')
+                else:  # The explicitly empty female line is left empty without a request.
+                    self.assertEqual([line['id'] for line in dialogue], ['1', '2', '3', '5'])
         e = self.fixture('reused_strings')
         merged, slots = merge_dialogue_rows(e.rows)
         self.assertEqual(len(merged) - 1, 4)

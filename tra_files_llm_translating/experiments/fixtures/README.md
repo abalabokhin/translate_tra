@@ -19,6 +19,12 @@ facts are in [actors.csv](actors.csv). The reference CSV supplies illustrative
 Russian variants and line-by-line `Review_Notes`. It is used by tests and readers,
 never loaded into a model request. Alternative faithful Russian is acceptable.
 
+The checks are at `-v2` since 2026-10-29: they were revised after the manual reviews
+of the model runs ([Evaluation v3](../EVALUATION.md#evaluation-v3-2026-10-29)). The
+references also serve as correct text in the translate + verify planted-error test
+([verify_mutations.json](../verify_mutations.json)). These fixtures are synthetic;
+person-reviewed real dialogues belong in [real_set](../real_set/README.md).
+
 ## Manual review rubric
 
 For each output pair, read the English and follow the incoming alternatives.

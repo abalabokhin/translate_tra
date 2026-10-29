@@ -1,5 +1,5 @@
 {
-  "version": "ambiguous_addressees-v1",
+  "version": "ambiguous_addressees-v2",
   "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
   "input": "input.csv",
   "actors": "../actors.csv",
@@ -17,7 +17,11 @@
       "both": [
         {
           "name": "both names retained",
-          "require": "Брам.*Селен|Селен.*Брам"
+          "require": "Бр[аэе]м.*Селен|Селен.*Бр[аэе]м"
+        },
+        {
+          "name": "ferryman retained",
+          "require": "паромщик|перевозчик|переправщик|лодочник"
         }
       ]
     },
@@ -41,7 +45,11 @@
       "both": [
         {
           "name": "current retained",
-          "require": "течени"
+          "require": "течени|поток"
+        },
+        {
+          "name": "current/strong agreement",
+          "forbid": "течение\\s+(?:слишком\\s+)?сильн(?:ый|ая)\\b|поток\\s+(?:слишком\\s+)?сильн(?:ое|ая)\\b"
         }
       ]
     },
@@ -54,6 +62,14 @@
         {
           "name": "rope condition retained",
           "require": "вер[её]в|канат"
+        },
+        {
+          "name": "until-condition keeps пока … не",
+          "require": "пока\\b[^.!?]*\\bне\\b|до\\s+тех\\s+пор[^.!?]*\\bне\\b"
+        },
+        {
+          "name": "ambiguous listener not gendered",
+          "forbid": "\\bдолж(?:ен|на)\\b"
         }
       ]
     }

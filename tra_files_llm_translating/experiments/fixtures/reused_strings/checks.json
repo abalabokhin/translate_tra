@@ -1,5 +1,5 @@
 {
-  "version": "reused_strings-v1",
+  "version": "reused_strings-v2",
   "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
   "input": "input.csv",
   "actors": "../actors.csv",
@@ -18,10 +18,16 @@
   },
   "lines": {
     "301_a": {
-      "both": [
+      "male": [
         {
-          "name": "no form incompatible with shared speakers",
+          "name": "no form incompatible with male Player1 and female Selene",
           "forbid": "\\bготов\\b|\\bготова\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "no masculine form for female Player1 and female Selene",
+          "forbid": "\\bготов\\b"
         }
       ]
     },
@@ -34,10 +40,16 @@
       ]
     },
     "301_b": {
-      "both": [
+      "male": [
         {
-          "name": "no form incompatible with shared speakers",
+          "name": "no form incompatible with male Player1 and female Selene",
           "forbid": "\\bготов\\b|\\bготова\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "no masculine form for female Player1 and female Selene",
+          "forbid": "\\bготов\\b"
         }
       ]
     },

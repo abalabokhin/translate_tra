@@ -17,6 +17,26 @@ in [PILOT_2026-10-27.md](PILOT_2026-10-27.md). The first live two-model comparis
 thinking-on baseline is documented in
 [THINKING_BASELINE_2026-10-27.md](THINKING_BASELINE_2026-10-27.md).
 
+## Prepared 2026-10-29, not run yet
+
+Results of these runs must be committed. They write to `translate_verify/` and
+`prompt_ab/`, which, unlike `results/`, are not Git-ignored. Suggested order:
+
+1. **[Evaluation v3](EVALUATION.md#evaluation-v3-2026-10-29)**: checks fixed after the
+   manual reviews. `rescore.py <results folder>` re-scores old runs without inference.
+2. **[Real-mod set](real_set/README.md)**: empty until a person adds reviewed real
+   dialogues with `make_real_fixture.py`. Included automatically by the runners below.
+3. **[Prompt A/B](PROMPT_AB_PLAN.md)**: `run_prompt_ab.py`, production prompt vs an added
+   female-pass noun rule (`production-nouns`).
+4. **[Translate + verify](TRANSLATE_VERIFY_PLAN.md)**: `run_translate_verify.py`. The
+   translator runs without thinking (default Mistral Small3.2), a thinking verifier
+   (default Gemma4) proposes fragment fixes that code applies only when safe, and the
+   verifier is also tested on planted errors.
+
+Production changes the same day: explicitly empty female lines are no longer sent to
+the female pass, and strings shared by speakers of different genders get a
+neutral-wording note plus a review file. See the [main README](../README.md).
+
 The subsequent [native-context thinking comparison](THINKING_NATIVE_RESULTS_2026-10-28.md)
 completed all five downloaded thinking configurations, following the
 [pre-run plan](THINKING_NATIVE_PLAN_2026-10-28.md). The

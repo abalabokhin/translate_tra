@@ -80,6 +80,29 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual((self.output / 'test.tra').read_text(encoding='utf-8'), '@1 = ~Hello~ ~~\n')
 
 
+    def test_empty_female_text_is_not_sent_and_exports_empty(self):
+        path = self.source / 'dialogue.csv'
+        header = DIALOGUE_COLUMNS + ['Source_Female_Text', 'Source_Has_Female']
+        rows = [['NPC', '1', '', 'The door is open.', '@1', 'TRA:test.tra:@1', '', '1'],
+                ['Player1', '2', '1', 'I will wait.', '@2', 'TRA:test.tra:@2', '', '']]
+        write_csv(path, header, [dict(zip(header, row)) for row in rows])
+        translator = self.translator()
+        male = {'1': 'Дверь открыта.', '2': 'Я подожду.'}
+        with patch.object(translator, '_call_ollama', side_effect=lambda p, s: self.response(p, male)) as call:
+            self.assertTrue(translator.translate_all_dialogs())
+        female_prompt = json.loads(call.call_args_list[1].args[0])
+        female_schema = call.call_args_list[1].args[1]['properties']['translations']
+        self.assertEqual([line['id'] for line in female_prompt['dialogue']], ['2'])
+        self.assertEqual(female_prompt['dialogue'][0]['predecessors'], [])
+        self.assertEqual(female_schema['required'], ['2'])
+        _, exported = read_csv(self.target / 'dialogue.csv', TRANSLATION_COLUMNS)
+        self.assertEqual([(r['Russian_Male'], r['Russian_Female']) for r in exported],
+                         [('Дверь открыта.', ''), ('Я подожду.', 'Я подожду.')])
+        # A reply that fills the empty line is still rejected.
+        with self.assertRaises(ValueError):
+            DialogTranslator._parse_translation('{"translations":{"1":"Дверь открыта.","2":"Я подожду."}}',
+                                                [header] + rows, female=True)
+
     def test_cli_mock_from_another_working_directory(self):
         self.dialogue()
         result = subprocess.run([sys.executable, str(SCRIPTS / 'translate_dialogs.py'),
@@ -424,6 +447,24 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(male['speaker_gender'], ['FEMALE', 'male'])
         self.assertEqual(female['speaker_gender'], ['FEMALE', 'female'])
         self.assertIn('several speakers', prompts[0]['graph_notes'])
+        # Female NPC + male Player1 cannot share one gendered form; two female speakers can.
+        self.assertIn('no gendered form', male['note'])
+        self.assertNotIn('note', female)
+        review = (self.target / 'dialogue.shared_strings_review.txt').read_text(encoding='utf-8')
+        self.assertIn('TRA:test.tra:@1  speakers: NPC, PLAYER', review)
+        self.assertIn('male Player1 (speakers: female, male): Я готова.', review)
+        self.assertIn('  female Player1: Я готова.', review)
+        # A later run without a mixed shared string removes the stale review.
+        self.dialogue([['NPC', 's0', '', 'I am ready.', '@1', 'TRA:test.tra:@1']])
+        with patch.object(translator, '_call_ollama', side_effect=lambda p, s: self.response(p, {'1': 'Я готова.'})):
+            self.assertTrue(translator.translate_all_dialogs())
+        self.assertFalse((self.target / 'dialogue.shared_strings_review.txt').exists())
+
+    def test_unknown_gender_in_shared_string_is_flagged(self):
+        translator = self.translator(test_mode=True)
+        self.assertEqual(translator._mixed_speakers('NPC;Stranger', 'male'), ['female', 'unknown'])
+        self.assertEqual(translator._mixed_speakers('NPC;Player1', 'female'), None)
+        self.assertEqual(translator._mixed_speakers('NPC', 'male'), None)
 
     def test_tra_string_shared_by_two_files_keeps_first_translation(self):
         self.dialogue([['NPC', '1', '', 'Farewell.', '@1', 'TRA:test.tra:@1']], name='a.csv')

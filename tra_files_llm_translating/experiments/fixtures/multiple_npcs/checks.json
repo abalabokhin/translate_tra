@@ -1,5 +1,5 @@
 {
-  "version": "multiple_npcs-v1",
+  "version": "multiple_npcs-v2",
   "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
   "input": "input.csv",
   "actors": "../actors.csv",
@@ -37,7 +37,7 @@
         },
         {
           "name": "downstairs",
-          "require": "внизу|нижн\\w*\\s+этаж"
+          "require": "внизу|нижн\\w*\\s+этаж|этажом\\s+ниже"
         }
       ],
       "allowed_changes": [
@@ -56,6 +56,14 @@
         {
           "name": "no masculine listener",
           "forbid": "\\bбыл\\s+прав\\b"
+        },
+        {
+          "name": "narrated man stays male",
+          "require": "\\bего\\b"
+        },
+        {
+          "name": "narrated man not made female",
+          "forbid": "\\bе[её]\\b"
         }
       ]
     },
@@ -63,19 +71,23 @@
       "male": [
         {
           "name": "male form",
-          "require": "\\bобещал\\b"
+          "require": "\\b(?:по)?обещал\\b"
         }
       ],
       "female": [
         {
           "name": "female form",
-          "require": "\\bобещала\\b"
+          "require": "\\b(?:по)?обещала\\b"
         }
       ],
       "allowed_changes": [
         [
           "обещал",
           "обещала"
+        ],
+        [
+          "пообещал",
+          "пообещала"
         ]
       ]
     },
@@ -83,11 +95,11 @@
       "both": [
         {
           "name": "Orin injured masculine",
-          "require": "ранен\\b|пострадал\\b"
+          "require": "ранен\\b|пострадал\\b|ранило\\b"
         },
         {
           "name": "Selene worried feminine",
-          "require": "волновалась|беспокоилась"
+          "require": "волновалась|беспокоилась|тревожилась|переживала"
         }
       ]
     },
@@ -96,12 +108,20 @@
         {
           "name": "male form",
           "require": "\\bспас\\b"
+        },
+        {
+          "name": "feminine address noun for male Player1",
+          "forbid": "\\b(путница|путешественница|странница|скиталица)\\b"
         }
       ],
       "female": [
         {
           "name": "female form",
           "require": "\\bспасла\\b"
+        },
+        {
+          "name": "masculine address noun for female Player1",
+          "forbid": "\\b(путник|путешественник|странник|скиталец)\\b"
         }
       ],
       "both": [
@@ -118,6 +138,14 @@
         [
           "путник",
           "путница"
+        ],
+        [
+          "странник",
+          "странница"
+        ],
+        [
+          "путешественник",
+          "путешественница"
         ]
       ]
     },

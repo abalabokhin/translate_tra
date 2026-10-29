@@ -1,5 +1,5 @@
 {
-  "version": "original_female_variants-v1",
+  "version": "original_female_variants-v2",
   "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
   "input": "input.csv",
   "actors": "../actors.csv",
@@ -22,12 +22,20 @@
         {
           "name": "male form",
           "require": "\\bего\\b"
+        },
+        {
+          "name": "male apprentice",
+          "forbid": "\\bученицей\\b"
         }
       ],
       "female": [
         {
           "name": "female form",
           "require": "\\bе[её]\\b"
+        },
+        {
+          "name": "female apprentice",
+          "forbid": "\\bучеником\\b"
         }
       ]
     },
@@ -56,6 +64,16 @@
         {
           "name": "female form",
           "require": "бронз"
+        },
+        {
+          "name": "no misspelled female verb",
+          "forbid": "\\bпринёсла\\b|\\bпринесёла\\b|\\bпринела\\b"
+        }
+      ],
+      "both": [
+        {
+          "name": "key brought, not led",
+          "forbid": "\\bприв[её]л[аи]?\\b"
         }
       ]
     },

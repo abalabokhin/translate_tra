@@ -29,7 +29,11 @@ from translate_dialogs import TRANSLATION_RULES, DialogTranslator  # noqa: E402
 from translation_common import (DIALOGUE_COLUMNS, TOKEN_PATTERN, female_source,
                                 merge_dialogue_rows, read_csv)  # noqa: E402
 
-PROMPTS = ('production', 'reframed', 'reframed-addressee', 'examples', 'markup')
+PROMPTS = ('production', 'production-nouns', 'reframed', 'reframed-addressee', 'examples', 'markup')
+# production-nouns: the production prompt plus this sentence in the female-pass instruction.
+# Examples deliberately avoid the words the checks look for (путник, странник, приключенец...).
+FEMALE_NOUN_RULE = ('This includes every noun, adjective and participle that refers to Player1, not only verbs, '
+                    'e.g. гость → гостья, герой → героиня, чужак → чужачка, уставший → уставшая.')
 SCOPES = ('full', 'pair')
 # Worked examples. Deliberately unrelated to the scored InkGallery lines (other names,
 # no "seen", no "how I'm doing" idiom) so they teach the pattern, not the answers.
@@ -159,9 +163,14 @@ class Experiment:
         text = self.csv_text(rows)
         all_text = '\n'.join(r[3] + '\n' + female_source(dict(zip(self.header, r)), r[3]) for r in rows)
         glossary = self.prod._build_dictionary_context(all_text)
-        if prompt == 'production':
+        if prompt in ('production', 'production-nouns'):
             previous = json.dumps({'translations': male}, ensure_ascii=False) if male else None
-            return TRANSLATION_RULES, self.prod._create_translation_prompt(text, gender, actors, glossary, previous)
+            user = self.prod._create_translation_prompt(text, gender, actors, glossary, previous)
+            if prompt == 'production-nouns' and male:
+                request = json.loads(user)
+                request['instruction'] += ' ' + FEMALE_NOUN_RULE
+                user = json.dumps(request, ensure_ascii=False)
+            return TRANSLATION_RULES, user
 
         use_addressee = prompt == 'reframed-addressee'
         if use_addressee and 'Addressee' not in self.header:
@@ -174,6 +183,8 @@ class Experiment:
         dialogue = []
         for i, row in enumerate(rows, 1):
             source = dict(zip(self.header, row))
+            if male and not female_source(source, row[3]).strip():
+                continue  # Empty female text stays empty without a request, as in production.
             speakers = ['Player1' if is_player(a) else a for a in row[0].split(';')]
             speaker = speakers[0] if len(speakers) == 1 else speakers
             names = list(speakers)
@@ -368,9 +379,10 @@ class Experiment:
                     if config['prompt'] == 'markup':
                         self.run_markup(handle, config, rows, targets)
                         continue
-                    schema = DialogTranslator._translation_schema(merge_dialogue_rows([self.header] + rows)[0])
+                    merged = merge_dialogue_rows([self.header] + rows)[0]
                     male = None
                     for gender in ('male', 'female'):
+                        schema = DialogTranslator._translation_schema(merged, female=gender == 'female')
                         system, user = self.build(config['prompt'], rows, gender, male)
                         payload, result = self.chat(config, system, user, schema)
                         record = self.record(config, gender, targets, payload, result)
@@ -390,7 +402,9 @@ class Experiment:
     def run_markup(self, handle, config, rows, targets):
         """One request; the {masculine|feminine} reply becomes a male and a female record.
         The female record is marked 'derived' and carries no time/tokens of its own."""
-        schema = DialogTranslator._translation_schema(merge_dialogue_rows([self.header] + rows)[0])
+        merged = merge_dialogue_rows([self.header] + rows)[0]
+        schema = DialogTranslator._translation_schema(merged)
+        empty_female = DialogTranslator._empty_female_ids(merged)
         system, user = self.build('markup', rows, 'both')
         payload, result = self.chat(config, system, user, schema)
         male = self.record(config, 'male', targets, payload, result)
@@ -401,7 +415,8 @@ class Experiment:
                 values = json.loads(male['content'])['translations']
                 split = {k: self.expand_markup(v) for k, v in values.items()}
                 self.parse(male, json.dumps({'translations': {k: m for k, (m, _) in split.items()}}), rows, 'male')
-                self.parse(female, json.dumps({'translations': {k: f for k, (_, f) in split.items()}}), rows, 'female')
+                self.parse(female, json.dumps({'translations': {k: f for k, (_, f) in split.items()
+                                                                if k not in empty_female}}), rows, 'female')
             except (ValueError, TypeError, KeyError, AttributeError) as exc:
                 male['error'] = female['error'] = f'structural: {exc}'
         for record in (male, female):

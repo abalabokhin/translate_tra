@@ -13,6 +13,11 @@ JSON transport throughout. Native context avoided the standard Qwen3.5 length
 failures, but gender, meaning and empty-source failures remain. No production
 settings changed. See the report for timings, controls and limitations.
 
+Since then (2026-10-29): empty female lines and mixed-gender shared strings are
+handled in code (below), the checks were revised (evaluation v3), and two
+experiments are prepared but not yet run: a prompt A/B and translate + verify. See
+[the experiments README](experiments/README.md#prepared-2026-10-29-not-run-yet).
+
 ## Decisions and scope
 
 - Keep the original **male translation, then female edit** approach.
@@ -123,6 +128,18 @@ different speakers (e.g. an NPC line that is also a PLAYER reply), `speaker` and
 every listed speaker. Without this the model could word the copies differently and the
 TRA updater would reject the conflicting translations.
 
+**Speakers of different genders (since 2026-10-29).** A TRA string has one male-Player1
+and one female-Player1 variant. When it is spoken by, say, a female NPC and the
+player, the male-Player1 variant must suit both a woman and a man. "I am ready" cannot
+be `Я готов` or `Я готова`; it needs neutral wording such as `Можно начинать`. Every
+model tested failed this case. Now, for each pass in which a shared string's speakers
+differ in gender, or a speaker's gender is unknown, that line carries a `note` asking
+for wording with no gendered form. After a successful export, such strings are listed in
+`<name>.shared_strings_review.txt` in the target folder, with both translations, for a
+person to check. If no neutral wording works, the mod's D file needs separate strings.
+The TRA updater ignores this file, and processing the dialogue again removes an old one.
+NPC gender comes from `actors.csv`: a description containing the word `female` or `male`.
+
 The same string in two *different* CSV files: when a file is saved, rows whose TRA
 string already has a translation in another dialogue CSV in the target folder take
 that existing translation (the first file by name wins), and the console names the
@@ -139,6 +156,11 @@ the current file without replacing its previous export.
 2. Female pass: receive the same complete graph, original English and validated
    male Russian text. Edit only what depends on Player1 becoming female. Copy
    unaffected words and punctuation exactly. Return complete lines, not fragments.
+   A line whose original female text is explicitly empty (`Source_Has_Female=1`,
+   empty `Source_Female_Text`) is not sent; Python exports it empty. Before
+   2026-10-29 it was sent with its male translation, and every model copied that text
+   into it, so the reply was rejected. If all female texts are empty, no female request
+   is made.
 
 Each response has the same simple shape:
 

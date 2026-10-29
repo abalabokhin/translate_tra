@@ -164,3 +164,66 @@ mock-test statements above describe fixture creation before that live run. No
 production model or prompt was changed. The subsequent uncapped thinking-on baseline is also completed; see
 [THINKING_BASELINE_2026-10-27.md](THINKING_BASELINE_2026-10-27.md). Neither run
 changed the frozen evaluation or production instructions.
+
+## Evaluation v3 (2026-10-29)
+
+The manual reviews of the 2026-10-28 runs found checks that missed real errors and
+checks that rejected valid Russian. They are fixed here. Versions: `inkgallery-v3`,
+and `-v2` for each synthetic fixture. **Scores under v3 are not comparable with
+earlier totals:** denominators changed. Use `rescore.py` (below) to put old runs on
+the same footing. Every new check passes the reference translations. A regression
+test (`test_v3_checks_match_observed_errors_and_accept_observed_valid_wording`)
+pins each observed case listed here.
+
+Missed real errors, now caught:
+
+| Fixture / line | Change | Observed error it catches |
+|---|---|---|
+| InkGallery @16 female | masculine address nouns now include `приключенец`; male pass forbids `приключенка` | female greeting kept `приключенец` (Qwen3.5, Mistral) |
+| multiple_npcs 105 | male/female address-noun checks added (`путник`/`путница` etc.) | female `путник` with a correct verb (Gemma4, Mistral, Qwen3.5) |
+| multiple_npcs 102 | narrated man must stay `его`; `её` forbidden | female pass turned his `его` into `её` (Qwen3.5, Huihui) |
+| ambiguous_addressees 201 | ferryman required (`паромщик/перевозчик/переправщик/лодочник`) | `проводник`, `Водяной`, `водовоз`, `Переводчик` |
+| ambiguous_addressees 204 | `поток` now accepted, but agreement with сильный/сильное checked | `Поток слишком сильное` |
+| ambiguous_addressees 205 | until-condition `пока … не` required; `должен/должна` forbidden for the ambiguous listener | `пока верёвка надёжно закреплена`, `станет крепкой`; `Ты должен…` |
+| original_female_variants 401 | `учеником`/`ученицей` per pass | female pass kept the masculine apprentice |
+| original_female_variants 403 | `привёл/привела` (led) forbidden; misspelled `принёсла`, `принела` forbidden | Qwen3 key "led"; Qwen3.5 and Huihui misspellings |
+
+Valid Russian that was rejected, now accepted:
+
+| Fixture / line | Change |
+|---|---|
+| ambiguous_addressees 201 | `Брэм` and `Брем` accepted alongside `Брам` |
+| ambiguous_addressees 204 | `поток` accepted for current |
+| multiple_npcs 101 | `этажом ниже` accepted for downstairs |
+| multiple_npcs 103 | `пообещал/пообещала` accepted |
+| multiple_npcs 104 | impersonal `тебя (не) ранило` and `тревожилась`, `переживала` accepted |
+| reused_strings 301 | the readiness check is now per pass. Male pass (male Player1 + female Selene): any gendered `готов/готова` fails. Female pass (both speakers female): only `готов` fails, so `Я готова` passes. |
+
+Still unchecked: overall fluency, register, many meaning changes and context-dependent
+pronouns. The checks are targeted assertions, not a quality score.
+
+### Rescoring old runs
+
+`rescore.py <results folder>` re-scores every stored `runs.jsonl` in a batch folder
+whose dataset folder is named `inkgallery` or a fixture name, as the batch runners
+write them. It writes `rescored.csv` with the old and new totals. Rejected and skipped
+replies stay failed: rescoring never salvages them. Old runs still lose the three
+empty-female requests, because the fix to that pipeline step (2026-10-29) changes the
+request, not the scoring. Only a new run measures it. The raw logs of the 2026-10-28
+runs exist only on the machine that ran them, so rescore them there:
+
+```bash
+cd tra_files_llm_translating/experiments
+python3 rescore.py results/non-thinking-20261028-013515
+python3 rescore.py results/thinking-native-20261028-094842
+python3 rescore.py results/thinking-native-remaining-20261028-214626
+```
+
+Commit the resulting `rescored.csv` files, copied next to the result reports, for example
+as `NON_THINKING_RESCORED_V3.csv`, so the comparison can be reviewed elsewhere.
+
+## Real-mod set (2026-10-29)
+
+`real_set/` holds real mod dialogues with references written or reviewed by a person;
+see [real_set/README.md](real_set/README.md). It is empty until such dialogues are
+added. The translate + verify and prompt A/B runners include it automatically.
