@@ -1,5 +1,5 @@
 {
-  "state": "stopped",
+  "state": "interrupted_or_failed",
   "armed_utc": "2026-10-30T00:40:38.517003+00:00",
   "queue_pid": 64134,
   "ab_pid": 59881,
@@ -56,5 +56,7 @@
   "rule": "Start exactly once after A/B finishes. Exit on interruption/input drift; no automatic resume/retry.",
   "started_utc": "2026-10-30T09:53:25.409881+00:00",
   "output": "tra_files_llm_translating/experiments/translate_verify/20261030-095325",
-  "stopped_note": "2026-10-30: process no longer running (user). inkgallery complete; ambiguous_addressees partial (5/6 translations, no verifier); rest not started. Continue per translate_verify/CONTINUATION_2026-10-30.md in a new folder."
+  "stopped_note": "2026-10-30: process no longer running (user). inkgallery complete; ambiguous_addressees partial (5/6 translations, no verifier); rest not started. Continue per translate_verify/CONTINUATION_2026-10-30.md in a new folder.",
+  "ended_utc": "2026-10-30T10:55:39.822061+00:00",
+  "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))"
 }
