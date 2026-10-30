@@ -1,0 +1,122 @@
+{
+  "observed_utc": "2026-10-30T00:25:35.964352+00:00",
+  "model": "mistral-small3.2:24b",
+  "context": 131072,
+  "num_predict": -1,
+  "slow_request": {
+    "config": {
+      "model": "mistral-small3.2:24b",
+      "prompt": "production-nouns",
+      "scope": "full",
+      "think": "default",
+      "temperature": "default",
+      "repeat": 2
+    },
+    "gender": "male",
+    "wall_seconds": 3733.93,
+    "generated_tokens": 390,
+    "prompt_tokens": 1449,
+    "done_reason": "stop",
+    "error": null
+  },
+  "process_snapshot": {
+    "resident_kib": 29005400,
+    "major_faults": 1842,
+    "minor_faults": 5229034
+  },
+  "system_snapshot": {
+    "ram_total": "31 GiB",
+    "ram_available": "12 GiB (includes reclaimable mapped/file cache)",
+    "swap_total": "511 MiB",
+    "swap_used": "511 MiB",
+    "memory_pressure_full_avg300_percent": 21.58,
+    "observed_disk_reads_kib_per_second": [
+      38012,
+      51104
+    ]
+  },
+  "interpretation": "Successful short output with severe wall-time slowdown, not an unusually long answer. Memory/I/O pressure is plausible, not conclusively established as the sole cause. No settings changed.",
+  "user_decision": {
+    "recorded_utc": "2026-10-30T00:28:02.581311+00:00",
+    "decision": "Keep native context and continue uncapped (current decision)",
+    "effect": "Continue the same experiment and settings; no context reduction, translator change, timeout or generation cap."
+  },
+  "completed_slow_requests": [
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "config": {
+        "model": "mistral-small3.2:24b",
+        "prompt": "production-nouns",
+        "scope": "full",
+        "think": "default",
+        "temperature": "default",
+        "repeat": 2
+      },
+      "gender": "male",
+      "wall_seconds": 3733.93,
+      "generated_tokens": 390
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "config": {
+        "model": "mistral-small3.2:24b",
+        "prompt": "production-nouns",
+        "scope": "full",
+        "think": "default",
+        "temperature": "default",
+        "repeat": 2
+      },
+      "gender": "female",
+      "wall_seconds": 2123.53,
+      "generated_tokens": 370
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "config": {
+        "model": "mistral-small3.2:24b",
+        "prompt": "production-nouns",
+        "scope": "full",
+        "think": "default",
+        "temperature": "default",
+        "repeat": 3
+      },
+      "gender": "male",
+      "wall_seconds": 2831.58,
+      "generated_tokens": 393
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "config": {
+        "model": "mistral-small3.2:24b",
+        "prompt": "production-nouns",
+        "scope": "full",
+        "think": "default",
+        "temperature": "default",
+        "repeat": 3
+      },
+      "gender": "female",
+      "wall_seconds": 742.02,
+      "generated_tokens": 373
+    }
+  ],
+  "note": "All timings remain in the results; this evidence list does not change settings or discard observations.",
+  "serving_observation": {
+    "observed_utc": "2026-10-30T09:52:40.709543+00:00",
+    "last_backend_progress_utc": "2026-10-30T02:18:49Z",
+    "operation": "prompt_save: saving prompt with length 1831; state 286.116 MiB",
+    "generation_progress": "No subsequent generation progress appears in service log",
+    "source": "SERVING_LOG_2026-10-30.txt",
+    "status_probe": "A read-only GET /slots probe timed out after 5 seconds. The log later records cancellation of task 9603; no command to cancel the experiment was sent.",
+    "recovery_choice": "User asked whether to restart serving backend or continue waiting. No restart performed pending reply."
+  },
+  "serving_recovery_outcome": {
+    "authorization": "Restart serving backend and continue; record current pass as serving failure",
+    "agent_restart_performed": false,
+    "reason": "Preflight detected changed request state before pausing or restarting anything",
+    "service_restart_evidence": "2026-10-30T09:53:15Z old chat returned 500; service started 09:53:18Z",
+    "sewer_interrupted_female_seconds": 27271.85,
+    "additional_connection_refusals": 5,
+    "verification_output": "tra_files_llm_translating/experiments/translate_verify/20261030-095325",
+    "transport_continuation_queue": "AB_TRANSPORT_CONTINUATION_QUEUE_2026-10-30.json"
+  }
+}

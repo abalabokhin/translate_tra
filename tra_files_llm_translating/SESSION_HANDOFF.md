@@ -1,10 +1,117 @@
 # Session handoff — start here
 
+The user explicitly authorized **commit everything** on 2026-10-30. The current
+commit is an in-progress experiment snapshot; see
+`experiments/COMMIT_SNAPSHOT_2026-10-30.md`. At its pre-commit check six InkGallery
+translation replies and one verifier reply are saved. The third translation pair
+and that verifier reply still need review. Existing jobs continue; do not start
+duplicates. Earlier no-commit notes describe the prerequisite now satisfied by
+the explicit request. This authorization does not promote a production prompt/model.
+
+Latest review (2026-10-30, user requested review of finished dialogue): see
+`experiments/review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md` and
+`ASSISTANT_REVIEW_2026-10-30.csv` in the same directory. All saved translation
+replies at its hashed snapshot are annotated: 89 logical records / 767 cells,
+43 distinct full-line editorial proposals. Human approval remains pending;
+proposals are separate from raw replies/references and were not fed to the
+verifier. Two completed InkGallery translation pairs from the active verifier
+run are reviewed in that run's MANUAL_REVIEW.md; no Gemma result is claimed.
+Metadata confirms the dated source-log scope. Continue existing inference queues;
+do not duplicate them or commit. See later status sections for process IDs.
+
+Documentation check after that review: six InkGallery translation replies are
+now saved in the active verification run; the last pair arrived after the dated
+four-reply review snapshot and still needs manual review. No verifier/planted
+JSONL results existed at this check. Main README, experiment README, review index
+and A/B results summary now distinguish completed encounters from the serving
+interruption and queued continuation. Treat older timestamped status notes as history.
+
 Read [README.md](README.md) for the full workflow, experiment history, commands,
 limitations and code review. This handoff records the latest decisions so the next
 session does not restart abandoned experiments.
 
-## Fixes and two experiments prepared — 2026-10-29 (nothing run yet)
+## Experiment decisions confirmed — 2026-10-29
+
+The user confirmed both decisions after reviewing the latest commit:
+
+- **No imposed context limit for now.** Use each model's native context, discovered
+  from Ollama, for the prompt A/B translator and both translate + verify models.
+  Do not impose the prepared runners' 8192-token translator context. Native context
+  is the model's finite capacity, not an unlimited window. This decision concerns
+  context; it does not approve the verifier's separate generation-token cap.
+- **Verifier corrections must be complete lines.** Keep the error category and
+  explanation, but ask the LLM for the whole corrected line and validate/apply that
+  line. Do not splice proposed fragments into text with Python. The LLM must handle
+  all related noun, adjective, verb and pronoun agreement together. Continue measuring
+  false alarms, damaging edits and unrelated rewrites.
+
+The user subsequently authorized rescoring, both experiments, manual review and
+saving all artifacts, **without committing**. Do not commit until the user has
+reviewed everything and explicitly asks. This overrides earlier requests in these
+documents to commit experiment results automatically.
+
+The runners now default to native context. The verifier returns complete corrected
+lines (one issue per line/column), and Python validates and applies whole lines.
+Uncapped generation (`num_predict=-1`) follows the standing instruction below;
+no smaller context, generation cap, client timeout, retry or splitting is introduced.
+New results will be recorded below once the authorized runs finish.
+
+The user subsequently authorized assistant reference review, requested fresh text
+from the same mod (InkGallery), and offered to review translations afterwards.
+Three complete encounters (sewers, beholder, Moon Sisters; 36 rows) are now in
+`experiments/real_set/`, with references/checks written before inference and source
+snapshots/hashes. Human review is pending; do not call this independent human gold
+data. Keep the current five-dataset A/B batch frozen and run a three-fixture A/B
+extension separately. Translate + verify will include all eight datasets.
+
+
+## Runtime decision reaffirmed after slowdown
+
+The user explicitly chose **keep native context and continue uncapped** after a
+normal 390-token Mistral reply took 3733.93 seconds. The following request was
+also slow; read-only diagnostics showed memory pressure and substantial disk I/O.
+Do not reduce context, switch translators, impose time/token limits, or restart
+requests to improve timings. Preserve the slow observations. The job continues
+under the same authorized protocol. Evidence and the decision are in
+`experiments/prompt_ab/20261029-220151-recovered/RUNTIME_DIAGNOSTICS.json`.
+Current active unified session: 5879; client PID 59881 (verify liveness before any
+recovery). The original 60-request five-dataset run is finished; do not repeat it.
+
+## Authorized evaluation status — 2026-10-29
+
+- v3 rescoring complete: [report](experiments/RESCORED_V3_RESULTS_2026-10-29.md)
+  and three portable CSVs next to the old reports.
+- Five-dataset prompt A/B complete: production 703/717, nouns 704/717; 60 valid
+  replies, zero unrelated-edit flags. All outputs reviewed by the assistant.
+  Neither variant fixes either address noun in any repeat. Do not adopt the rule
+  on this evidence. [Results](experiments/PROMPT_AB_RESULTS_2026-10-29.md).
+- Three fresh InkGallery fixtures ready (36 rows); assistant references validated
+  before inference. The separate real-set A/B extension is running under
+  `experiments/prompt_ab/20261029-220151-recovered/` (session 5879).
+- The daemon restart ended the first extension client after one male reply was
+  saved. Original partial run `20261029-220151/` is preserved. A one-off documented
+  recovery in `20261029-220151-recovered/` reuses that successful male reply (exact
+  prompt/schema/options checked) and issues only the remaining 35 requests. The
+  lost in-flight female output is unavailable and unscored. Recovery driver and
+  metadata are archived; normal runners gain no automatic resume/retry behavior.
+- Translate + verify is actively queued after A/B via a one-off sequential launcher.
+  Unified session 94364; queue PID 64134. Check
+  `experiments/VERIFY_QUEUE_2026-10-29.json` before launching anything: **do not start
+  a second verifier run**. Once A/B reports finished, it starts all eight datasets
+  (up to 72 stage-1 and 54 planted/clean requests), native contexts, uncapped.
+  The launcher checks frozen inputs/runtime and exits on interruption or drift;
+  it adds no inference retry/resume behavior. Source is archived under
+  `experiments/translate_verify/SEQUENTIAL_LAUNCH_2026-10-29.py`.
+- 59 offline tests pass with system Python. The stale venv lacks chardet; no
+  environment changes needed. The experiment runners need no extra packages.
+- Source-selection finding: L#IGCS6 CHAIN-final EXTERN continuations are split by
+  the current parser. Those candidates were excluded; the selected sewers,
+  beholder and Moon Sisters graphs were checked through EXIT against their D files.
+  No parser behavior changed. See `experiments/real_set_source/20261029/README.md`.
+- [Review index](experiments/REVIEW_2026-10-29.md). User review pending; no commit.
+
+## Fixes and two experiments prepared — 2026-10-29 (historical preparation)
+
 
 The user agreed thinking adds little value for translation. Work done on a
 machine without Ollama. Everything below is tested offline (57 unit tests), and no
@@ -420,3 +527,44 @@ the tests and `translate_dialogs.py` have uncommitted changes. Nothing was commi
 Only extended transient traces/test runners live in `/tmp/translate-tra-inkgallery/`.
 The important examples, exact requests/replies and metrics are already copied into
 this repository; continuing should not depend solely on `/tmp`.
+
+## Serving observation — 2026-10-30 morning
+
+A/B has completed beholder and Moon Sisters. Sewers production repeat 1 male is
+saved (2439.48 s / 497 tokens); its female pass has been pending since 02:18 UTC.
+Host service logs show the last backend progress at 02:18:49 UTC saving prompt
+cache (1831 tokens, 286.116 MiB), then no generation progress for seven hours.
+This appears to be a serving/cache stall rather than active long generation.
+Evidence: `prompt_ab/20261029-220151-recovered/SERVING_LOG_2026-10-30.txt`.
+A new user choice is pending: restart serving backend and count current pass as
+serving failure, or keep waiting. Native context and uncapped generation remain
+unchanged either way. **Do not restart without the reply.** All three prior choices
+still stand: no caps, whole-line verifier corrections, no commits before review.
+Partial sewer male review sheet is under `experiments/review/20261029/`.
+
+## Status after serving restart — 2026-10-30
+
+The user approved restarting serving while preserving native context and uncapped
+generation, recording the current pass as serving failure. Before the guarded
+recovery script acted, the service restarted and the A/B request state changed,
+so the script safely performed no restart. Old sewer female pass ended with
+Remote end closed connection (27271.85 s); five subsequent male connections were
+refused and females skipped. Preserve those outage records, do not score them as
+linguistic ability. The original A/B manifest is finished with infrastructure errors.
+
+Verifier queue is now RUNNING at `tra_files_llm_translating/experiments/translate_verify/20261030-095325`; session 94364,
+queue/client PID 64134. It has four translation replies on InkGallery at
+this update, no completed verifier/planted records. Native contexts, num_predict=-1.
+Do not launch a duplicate verifier. Read current state before any recovery.
+
+A one-off continuation is queued after verification: session 99354, PID
+78159, state in `experiments/AB_TRANSPORT_CONTINUATION_QUEUE_2026-10-30.json`.
+It issues only production repeats 2/3 and nouns repeats 1/2/3 for Sewers, whose
+connections never reached Ollama; it excludes production repeat 1 entirely,
+retaining the saved male and the serving-failed female as the user instructed.
+No model response is retried. Inputs/options checked against frozen records.
+The regular runners gain no automatic retry/resume behavior.
+
+Completed review sheets: REFERENCE_REVIEW.csv, AB_BEHOLDER_REVIEW.csv,
+AB_MOON_SISTERS_REVIEW.csv, and partial AB_SEWERS_R1_MALE_REVIEW.csv under
+`experiments/review/20261029/`. Human review remains pending. No commits.

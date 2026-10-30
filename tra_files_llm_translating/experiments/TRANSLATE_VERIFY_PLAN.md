@@ -6,6 +6,21 @@ their raw outputs only in the Git-ignored `experiments/results/` folder on the m
 that ran them, so the translations could not be reviewed from another checkout. Do not
 repeat that.
 
+## Decisions confirmed 2026-10-29
+
+- Use each model's native context discovered from Ollama; impose no smaller context
+  limit for now. This applies to both translator and verifier.
+- The verifier returns complete corrected lines, with error categories and
+  explanations. Python validates and applies complete lines rather than replacing
+  fragments. This keeps responsibility for all Russian agreement with the LLM.
+
+**Implemented before inference:** both contexts default to `native`; the verifier
+returns whole lines, one issue per line/column. Generation defaults to uncapped
+(`num_predict=-1`) under the standing instruction in
+[SESSION_HANDOFF.md](../SESSION_HANDOFF.md). No retries, splitting or client timeouts.
+The user authorized the run and saving results, but explicitly requires review and
+a later explicit request before any commit.
+
 ## Question
 
 Does translating without thinking (fast) and then checking the result with a thinking
@@ -50,31 +65,36 @@ Suggested order on the experiment machine:
 
 ## Design
 
-Runner: [run_translate_verify.py](run_translate_verify.py). Defaults:
+Runner: [run_translate_verify.py](run_translate_verify.py). Agreed design below;
+implemented before this run.
 
 | Setting | Default | Parameter |
 |---|---|---|
 | Translator | `mistral-small3.2:24b`, thinking off (model has none) | `--translator`, `--translator-think` |
-| Translator context | 8192 (as in the non-thinking comparison) | `--translator-num-ctx` |
+| Translator context | model native; no imposed smaller limit | `--translator-num-ctx` |
 | Verifier | `gemma4:12b`, thinking on | `--verifier`, `--verifier-think` |
 | Verifier context | model native | `--verifier-num-ctx` |
-| Verifier generation cap | 32768 tokens; a capped reply counts as a verifier failure | `--verifier-num-predict` |
+| Verifier generation cap | uncapped (`-1`) | `--verifier-num-predict` |
 | Repeats | 3 | `--repeats` |
 
-The cap is deliberate. A thinking model looped for 1h47m in the previous experiment.
-Use `--verifier-num-predict -1` to remove it.
+The original 32768-token cap was removed to follow the standing uncapped-generation
+instruction. The earlier 1h47m loop remains documented in the previous results; no
+automatic intervention is added here.
 
-**Stage 1, translate-verify (all datasets, up to 45 requests for the five current ones).** The production
+**Stage 1, translate-verify (eight datasets, up to 72 requests: 45 original + 27 fresh InkGallery).** The production
 two-pass translation is scored as before. The verifier then receives each dialogue with
 English, original female English where it differs, speakers and their genders,
 predecessors, glossary, and both Russian columns. It returns a list of issues, each with
-a line, a column (male, female, both), a category, the exact wrong fragment and its
-replacement. Code applies a fix only if the fragment occurs exactly once in that
-column, the column's source is not empty, and the fixed line still passes structural
-validation (tokens, newlines, markers, quotes). Every decision is logged. The frozen
-checks are scored before and after.
+a line, a column (male or female), a category, an explanation and the complete
+corrected line. The LLM must correct all related agreement within that line while
+preserving unaffected wording. Code applies the complete line only for a valid
+line/column whose source is not empty, after structural validation (tokens,
+newlines, markers, quotes). It does not perform fragment substitution. Structural
+validation does not prove grammatical or semantic correctness. Every decision is
+logged. The frozen checks are scored before and after, and manual review checks
+for missed agreement and unwanted rewrites.
 
-**Stage 2, planted errors (four synthetic fixtures, up to 45 requests).** The verifier
+**Stage 2, planted errors (four synthetic fixtures plus three clean real fixtures, up to 54 requests).** The verifier
 reviews the hand-written reference translations: once unchanged, which counts false
 alarms and damaging edits, and once per case in
 [verify_mutations.json](verify_mutations.json). Its 11 cases plant 17 known errors:
@@ -119,7 +139,8 @@ Git-ignored. After a run:
 1. Read `REPORT.md`, `translate-verify/*/before_after.csv` and the `verifier.jsonl`
    files. Fill in the report's "Manual review" section: real errors caught, wrong
    "fixes", and errors missed.
-2. Commit the whole folder, including the translations, verifier issues, thinking text
-   and manifest (model digests, settings, file hashes).
+2. Save the whole folder for user review, including translations, verifier issues,
+   thinking text and manifest (model digests, settings, file hashes). Commit only
+   after the user reviews everything and explicitly asks.
 3. Write a dated summary `TRANSLATE_VERIFY_RESULTS_<date>.md` next to this plan, and link
    it from the experiments README and `SESSION_HANDOFF.md`.

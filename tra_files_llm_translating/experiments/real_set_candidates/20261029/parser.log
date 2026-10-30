@@ -1,0 +1,379 @@
+Loaded 6 TRA files into cache
+Loaded 332 TRA entries from BCMALOR.tra
+DEBUG: Extracted label target: chatmore
+DEBUG: Extracted label target: chatmore
+DEBUG: Extracted label target: notalk
+DEBUG: Extracted label target: notalk
+DEBUG: Extracted label target: rustlock
+DEBUG: Extracted label target: rustlock
+DEBUG: Extracted label target: notalk
+DEBUG: Extracted label target: notalk
+DEBUG: Extracted label target: meany
+DEBUG: Extracted label target: meany
+DEBUG: Extracted label target: okdokey
+DEBUG: Extracted label target: okdokey
+DEBUG: Extracted label target: yes_really
+DEBUG: Extracted label target: yes_really
+DEBUG: Extracted label target: mage_talk
+DEBUG: Extracted label target: mage_talk
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: mage_talk
+DEBUG: Extracted label target: yes_silly
+DEBUG: Extracted label target: yes_silly
+DEBUG: Extracted label target: yes_stuffy
+DEBUG: Extracted label target: yes_stuffy
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: it_is
+DEBUG: Extracted label target: it_is
+DEBUG: Extracted label target: happy_happy
+DEBUG: Extracted label target: happy_happy
+DEBUG: Extracted label target: grumpy_one
+DEBUG: Extracted label target: grumpy_one
+DEBUG: Extracted label target: why_yes
+DEBUG: Extracted label target: why_yes
+DEBUG: Extracted label target: grumpy_one
+DEBUG: Extracted label target: grumpy_one
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: bye_bye
+DEBUG: Extracted label target: u_funny
+DEBUG: Extracted label target: u_funny
+DEBUG: Extracted label target: u_funny
+DEBUG: Extracted label target: u_funny
+DEBUG: Extracted label target: u_funny2
+DEBUG: Extracted label target: u_funny2
+DEBUG: Extracted label target: u_funny2
+DEBUG: Extracted label target: u_funny2
+DEBUG: Extracted label target: u_funny3
+DEBUG: Extracted label target: u_funny3
+DEBUG: Extracted label target: alora_expl
+DEBUG: Extracted label target: alora_expl
+DEBUG: Extracted label target: u_sure
+DEBUG: Extracted label target: u_sure
+DEBUG: Extracted label target: alora_expl
+DEBUG: Extracted label target: alora_expl
+DEBUG: Extracted label target: alora_mad
+DEBUG: Extracted label target: alora_mad
+DEBUG: Extracted label target: alora_expl2
+DEBUG: Extracted label target: alora_expl2
+DEBUG: Extracted label target: alora_expl3
+DEBUG: Extracted label target: alora_expl3
+DEBUG: Extracted label target: alora_expl4
+DEBUG: Extracted label target: alora_expl4
+DEBUG: Extracted label target: alora_mad
+DEBUG: Extracted label target: alora_mad
+DEBUG: Registering chain root: (BCMALOR, alora_yoshi) -> alora_yoshi_INITIAL_0
+DEBUG: Registering chain root: (BJAHEIR, StickyFingers) -> StickyFingers_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, JahsChat) -> JahsChat_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, AerieAlora1) -> AerieAlora1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, AerieAlora2) -> AerieAlora2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_kel) -> alora_kel_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_kel2) -> alora_kel2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_korgan1) -> alora_korgan1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_korgan2) -> alora_korgan2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_ano) -> alora_ano_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_ano2) -> alora_ano2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_stuffy) -> alora_stuffy_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, alora_nalia1) -> alora_nalia1_INITIAL_0
+DEBUG: Registering chain root: (BNALIA, alora_nalia2) -> alora_nalia2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, EddyAlora1) -> EddyAlora1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, EddyAlora2) -> EddyAlora2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, EddyAloraTrans) -> EddyAloraTrans_INITIAL_0
+DEBUG: Registering chain root: (BEDWIN, thankyou) -> thankyou_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, eddyhurt) -> eddyhurt_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, CerndAlora1) -> CerndAlora1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, CerndAlora2) -> CerndAlora2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, MinscAlora1) -> MinscAlora1_INITIAL_0
+DEBUG: Registering chain root: (BMINSC, missingboo) -> missingboo_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, A_H1) -> A_H1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, ViconiaAlora1) -> ViconiaAlora1_INITIAL_0
+DEBUG: Registering chain root: (BVICONI, ViconiaAlora2) -> ViconiaAlora2_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, MazzyAlora1) -> MazzyAlora1_INITIAL_0
+DEBUG: Registering chain root: (BMAZZY, JokeOnYou) -> JokeOnYou_INITIAL_0
+DEBUG: Registering chain root: (BJAN, gotya) -> gotya_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, happy) -> happy_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, Alora_Immy2) -> Alora_Immy2_INITIAL_0
+DEBUG: Registering chain root: (BVALYGA, Alora_Vaggy1) -> Alora_Vaggy1_INITIAL_0
+DEBUG: Registering chain root: (BCMALOR, Alora_Vaggy2) -> Alora_Vaggy2_INITIAL_0
+Building dialogue flow for 300 states...
+DEBUG: Connected apc_chat1 -> chatmore
+DEBUG: Connected apc_chat1 -> notalk
+DEBUG: Connected chatmore -> rustlock
+DEBUG: Connected chatmore -> notalk
+DEBUG: Connected rustlock -> meany
+DEBUG: Connected rustlock -> okdokey
+DEBUG: Connected apc_chat2 -> yes_really
+DEBUG: Connected apc_chat2 -> mage_talk
+DEBUG: Connected apc_chat2 -> bye_bye
+DEBUG: Connected yes_really -> mage_talk
+DEBUG: Connected mage_talk -> yes_silly
+DEBUG: Connected mage_talk -> yes_stuffy
+DEBUG: Connected yes_silly -> bye_bye
+DEBUG: Connected yes_silly -> bye_bye
+DEBUG: Connected yes_silly -> it_is
+DEBUG: Connected apc_chat3 -> happy_happy
+DEBUG: Connected apc_chat3 -> grumpy_one
+DEBUG: Connected happy_happy -> why_yes
+DEBUG: Connected happy_happy -> grumpy_one
+DEBUG: Connected apc_chat4 -> alora_expl
+DEBUG: Connected apc_chat4 -> u_sure
+DEBUG: Connected u_funny -> u_funny2
+DEBUG: Connected u_funny -> u_funny2
+DEBUG: Connected u_funny -> u_funny3
+DEBUG: Connected u_sure -> alora_expl
+DEBUG: Connected u_sure -> alora_mad
+DEBUG: Connected alora_expl -> alora_expl2
+DEBUG: Connected alora_expl2 -> alora_expl3
+DEBUG: Connected alora_expl3 -> alora_expl4
+DEBUG: Connected alora_expl3 -> alora_mad
+DEBUG: Connected alora_yoshi_INITIAL_0 -> alora_yoshi_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_0_ELEMENT_0 -> alora_yoshi_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_1_ELEMENT_0 -> alora_yoshi_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_2_ELEMENT_0 -> alora_yoshi_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_3_ELEMENT_0 -> alora_yoshi_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_4_ELEMENT_0 -> alora_yoshi_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_5_ELEMENT_0 -> alora_yoshi_BLOCK_6_ELEMENT_0
+DEBUG: Connected alora_yoshi_BLOCK_6_ELEMENT_0 -> alora_yoshi_BLOCK_7_ELEMENT_0
+DEBUG: Connected StickyFingers_INITIAL_0 -> StickyFingers_BLOCK_0_ELEMENT_0
+DEBUG: Connected StickyFingers_BLOCK_0_ELEMENT_0 -> StickyFingers_BLOCK_1_ELEMENT_0
+DEBUG: Connected StickyFingers_BLOCK_1_ELEMENT_0 -> StickyFingers_BLOCK_2_ELEMENT_0
+DEBUG: Connected StickyFingers_BLOCK_2_ELEMENT_0 -> StickyFingers_BLOCK_3_ELEMENT_0
+DEBUG: Connected StickyFingers_BLOCK_3_ELEMENT_0 -> StickyFingers_BLOCK_4_ELEMENT_0
+DEBUG: Connected StickyFingers_BLOCK_4_ELEMENT_0 -> StickyFingers_BLOCK_5_ELEMENT_0
+DEBUG: Connected JahsChat_INITIAL_0 -> JahsChat_BLOCK_0_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_0_ELEMENT_0 -> JahsChat_BLOCK_1_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_1_ELEMENT_0 -> JahsChat_BLOCK_2_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_2_ELEMENT_0 -> JahsChat_BLOCK_3_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_3_ELEMENT_0 -> JahsChat_BLOCK_4_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_4_ELEMENT_0 -> JahsChat_BLOCK_5_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_5_ELEMENT_0 -> JahsChat_BLOCK_6_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_6_ELEMENT_0 -> JahsChat_BLOCK_7_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_7_ELEMENT_0 -> JahsChat_BLOCK_8_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_8_ELEMENT_0 -> JahsChat_BLOCK_9_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_9_ELEMENT_0 -> JahsChat_BLOCK_10_ELEMENT_0
+DEBUG: Connected JahsChat_BLOCK_10_ELEMENT_0 -> JahsChat_BLOCK_11_ELEMENT_0
+DEBUG: Connected AerieAlora1_INITIAL_0 -> AerieAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected AerieAlora1_BLOCK_0_ELEMENT_0 -> AerieAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected AerieAlora1_BLOCK_1_ELEMENT_0 -> AerieAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected AerieAlora1_BLOCK_2_ELEMENT_0 -> AerieAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected AerieAlora2_INITIAL_0 -> AerieAlora2_BLOCK_0_ELEMENT_0
+DEBUG: Connected AerieAlora2_BLOCK_0_ELEMENT_0 -> AerieAlora2_BLOCK_1_ELEMENT_0
+DEBUG: Connected AerieAlora2_BLOCK_1_ELEMENT_0 -> AerieAlora2_BLOCK_2_ELEMENT_0
+DEBUG: Connected AerieAlora2_BLOCK_2_ELEMENT_0 -> AerieAlora2_BLOCK_3_ELEMENT_0
+DEBUG: Connected AerieAlora2_BLOCK_3_ELEMENT_0 -> AerieAlora2_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_kel_INITIAL_0 -> alora_kel_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_kel_BLOCK_0_ELEMENT_0 -> alora_kel_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_kel_BLOCK_1_ELEMENT_0 -> alora_kel_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_kel_BLOCK_2_ELEMENT_0 -> alora_kel_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_kel_BLOCK_3_ELEMENT_0 -> alora_kel_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_kel2_INITIAL_0 -> alora_kel2_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_kel2_BLOCK_0_ELEMENT_0 -> alora_kel2_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_kel2_BLOCK_1_ELEMENT_0 -> alora_kel2_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_kel2_BLOCK_2_ELEMENT_0 -> alora_kel2_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_korgan1_INITIAL_0 -> alora_korgan1_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_0_ELEMENT_0 -> alora_korgan1_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_1_ELEMENT_0 -> alora_korgan1_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_2_ELEMENT_0 -> alora_korgan1_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_3_ELEMENT_0 -> alora_korgan1_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_4_ELEMENT_0 -> alora_korgan1_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_korgan1_BLOCK_5_ELEMENT_0 -> alora_korgan1_BLOCK_6_ELEMENT_0
+DEBUG: Connected alora_korgan2_INITIAL_0 -> alora_korgan2_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_korgan2_BLOCK_0_ELEMENT_0 -> alora_korgan2_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_korgan2_BLOCK_1_ELEMENT_0 -> alora_korgan2_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_korgan2_BLOCK_2_ELEMENT_0 -> alora_korgan2_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_korgan2_BLOCK_3_ELEMENT_0 -> alora_korgan2_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_korgan2_BLOCK_4_ELEMENT_0 -> alora_korgan2_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_ano_INITIAL_0 -> alora_ano_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_ano_BLOCK_0_ELEMENT_0 -> alora_ano_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_ano_BLOCK_1_ELEMENT_0 -> alora_ano_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_ano_BLOCK_2_ELEMENT_0 -> alora_ano_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_ano_BLOCK_3_ELEMENT_0 -> alora_ano_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_ano_BLOCK_4_ELEMENT_0 -> alora_ano_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_ano2_INITIAL_0 -> alora_ano2_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_ano2_BLOCK_0_ELEMENT_0 -> alora_ano2_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_ano2_BLOCK_1_ELEMENT_0 -> alora_ano2_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_ano2_BLOCK_2_ELEMENT_0 -> alora_ano2_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_stuffy_INITIAL_0 -> alora_stuffy_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_0_ELEMENT_0 -> alora_stuffy_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_1_ELEMENT_0 -> alora_stuffy_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_2_ELEMENT_0 -> alora_stuffy_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_3_ELEMENT_0 -> alora_stuffy_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_4_ELEMENT_0 -> alora_stuffy_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_5_ELEMENT_0 -> alora_stuffy_BLOCK_6_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_6_ELEMENT_0 -> alora_stuffy_BLOCK_7_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_8_ELEMENT_0 -> alora_stuffy_BLOCK_8_ELEMENT_1
+DEBUG: Connected alora_stuffy_BLOCK_7_ELEMENT_0 -> alora_stuffy_BLOCK_8_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_8_ELEMENT_1 -> alora_stuffy_BLOCK_9_ELEMENT_0
+DEBUG: Connected alora_stuffy_BLOCK_9_ELEMENT_0 -> alora_stuffy_BLOCK_10_ELEMENT_0
+DEBUG: Connected alora_nalia1_INITIAL_0 -> alora_nalia1_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_nalia1_BLOCK_0_ELEMENT_0 -> alora_nalia1_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_nalia1_BLOCK_1_ELEMENT_0 -> alora_nalia1_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_nalia1_BLOCK_2_ELEMENT_0 -> alora_nalia1_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_nalia2_INITIAL_0 -> alora_nalia2_BLOCK_0_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_0_ELEMENT_0 -> alora_nalia2_BLOCK_1_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_1_ELEMENT_0 -> alora_nalia2_BLOCK_2_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_2_ELEMENT_0 -> alora_nalia2_BLOCK_3_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_3_ELEMENT_0 -> alora_nalia2_BLOCK_4_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_4_ELEMENT_0 -> alora_nalia2_BLOCK_5_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_5_ELEMENT_0 -> alora_nalia2_BLOCK_6_ELEMENT_0
+DEBUG: Connected alora_nalia2_BLOCK_6_ELEMENT_0 -> alora_nalia2_BLOCK_7_ELEMENT_0
+DEBUG: Connected EddyAlora1_INITIAL_0 -> EddyAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_0_ELEMENT_0 -> EddyAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_1_ELEMENT_0 -> EddyAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_2_ELEMENT_0 -> EddyAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_3_ELEMENT_0 -> EddyAlora1_BLOCK_4_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_4_ELEMENT_0 -> EddyAlora1_BLOCK_5_ELEMENT_0
+DEBUG: Connected EddyAlora1_BLOCK_5_ELEMENT_0 -> EddyAlora1_BLOCK_6_ELEMENT_0
+DEBUG: Connected EddyAlora2_INITIAL_0 -> EddyAlora2_BLOCK_0_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_0_ELEMENT_0 -> EddyAlora2_BLOCK_1_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_1_ELEMENT_0 -> EddyAlora2_BLOCK_2_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_2_ELEMENT_0 -> EddyAlora2_BLOCK_3_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_3_ELEMENT_0 -> EddyAlora2_BLOCK_4_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_4_ELEMENT_0 -> EddyAlora2_BLOCK_5_ELEMENT_0
+DEBUG: Connected EddyAlora2_BLOCK_5_ELEMENT_0 -> EddyAlora2_BLOCK_6_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_INITIAL_0 -> EddyAloraTrans_BLOCK_0_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_0_ELEMENT_0 -> EddyAloraTrans_BLOCK_1_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_1_ELEMENT_0 -> EddyAloraTrans_BLOCK_2_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_2_ELEMENT_0 -> EddyAloraTrans_BLOCK_3_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_3_ELEMENT_0 -> EddyAloraTrans_BLOCK_4_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_4_ELEMENT_0 -> EddyAloraTrans_BLOCK_5_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_5_ELEMENT_0 -> EddyAloraTrans_BLOCK_6_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_6_ELEMENT_0 -> EddyAloraTrans_BLOCK_7_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_7_ELEMENT_0 -> EddyAloraTrans_BLOCK_8_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_8_ELEMENT_0 -> EddyAloraTrans_BLOCK_9_ELEMENT_0
+DEBUG: Connected EddyAloraTrans_BLOCK_9_ELEMENT_0 -> EddyAloraTrans_BLOCK_10_ELEMENT_0
+DEBUG: Connected thankyou_INITIAL_0 -> thankyou_BLOCK_0_ELEMENT_0
+DEBUG: Connected thankyou_BLOCK_0_ELEMENT_0 -> thankyou_BLOCK_1_ELEMENT_0
+DEBUG: Connected thankyou_BLOCK_1_ELEMENT_0 -> thankyou_BLOCK_2_ELEMENT_0
+DEBUG: Connected thankyou_BLOCK_2_ELEMENT_0 -> thankyou_BLOCK_3_ELEMENT_0
+DEBUG: Connected eddyhurt_INITIAL_0 -> eddyhurt_BLOCK_0_ELEMENT_0
+DEBUG: Connected eddyhurt_BLOCK_0_ELEMENT_0 -> eddyhurt_BLOCK_1_ELEMENT_0
+DEBUG: Connected eddyhurt_BLOCK_1_ELEMENT_0 -> eddyhurt_BLOCK_2_ELEMENT_0
+DEBUG: Connected eddyhurt_BLOCK_2_ELEMENT_0 -> eddyhurt_BLOCK_3_ELEMENT_0
+DEBUG: Connected eddyhurt_BLOCK_3_ELEMENT_0 -> eddyhurt_BLOCK_4_ELEMENT_0
+DEBUG: Connected CerndAlora1_INITIAL_0 -> CerndAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected CerndAlora1_BLOCK_0_ELEMENT_0 -> CerndAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected CerndAlora1_BLOCK_1_ELEMENT_0 -> CerndAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected CerndAlora1_BLOCK_2_ELEMENT_0 -> CerndAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected CerndAlora2_INITIAL_0 -> CerndAlora2_BLOCK_0_ELEMENT_0
+DEBUG: Connected CerndAlora2_BLOCK_0_ELEMENT_0 -> CerndAlora2_BLOCK_1_ELEMENT_0
+DEBUG: Connected CerndAlora2_BLOCK_1_ELEMENT_0 -> CerndAlora2_BLOCK_2_ELEMENT_0
+DEBUG: Connected CerndAlora2_BLOCK_2_ELEMENT_0 -> CerndAlora2_BLOCK_3_ELEMENT_0
+DEBUG: Connected CerndAlora2_BLOCK_3_ELEMENT_0 -> CerndAlora2_BLOCK_4_ELEMENT_0
+DEBUG: Connected MinscAlora1_INITIAL_0 -> MinscAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_0_ELEMENT_0 -> MinscAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_1_ELEMENT_0 -> MinscAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_2_ELEMENT_0 -> MinscAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_3_ELEMENT_0 -> MinscAlora1_BLOCK_4_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_4_ELEMENT_0 -> MinscAlora1_BLOCK_5_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_5_ELEMENT_0 -> MinscAlora1_BLOCK_6_ELEMENT_0
+DEBUG: Connected MinscAlora1_BLOCK_6_ELEMENT_0 -> MinscAlora1_BLOCK_7_ELEMENT_0
+DEBUG: Connected missingboo_INITIAL_0 -> missingboo_BLOCK_0_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_0_ELEMENT_0 -> missingboo_BLOCK_1_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_1_ELEMENT_0 -> missingboo_BLOCK_2_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_2_ELEMENT_0 -> missingboo_BLOCK_3_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_3_ELEMENT_0 -> missingboo_BLOCK_4_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_4_ELEMENT_0 -> missingboo_BLOCK_5_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_5_ELEMENT_0 -> missingboo_BLOCK_6_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_6_ELEMENT_0 -> missingboo_BLOCK_7_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_7_ELEMENT_0 -> missingboo_BLOCK_8_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_8_ELEMENT_0 -> missingboo_BLOCK_9_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_9_ELEMENT_0 -> missingboo_BLOCK_10_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_10_ELEMENT_0 -> missingboo_BLOCK_11_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_11_ELEMENT_0 -> missingboo_BLOCK_12_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_12_ELEMENT_0 -> missingboo_BLOCK_13_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_14_ELEMENT_0 -> missingboo_BLOCK_14_ELEMENT_1
+DEBUG: Connected missingboo_BLOCK_13_ELEMENT_0 -> missingboo_BLOCK_14_ELEMENT_0
+DEBUG: Connected missingboo_BLOCK_14_ELEMENT_1 -> missingboo_BLOCK_15_ELEMENT_0
+DEBUG: Connected A_H1_INITIAL_0 -> A_H1_BLOCK_0_ELEMENT_0
+DEBUG: Connected A_H1_BLOCK_0_ELEMENT_0 -> A_H1_BLOCK_1_ELEMENT_0
+DEBUG: Connected A_H1_BLOCK_1_ELEMENT_0 -> A_H1_BLOCK_2_ELEMENT_0
+DEBUG: Connected A_H1_BLOCK_2_ELEMENT_0 -> A_H1_BLOCK_3_ELEMENT_0
+DEBUG: Connected A_H1_BLOCK_3_ELEMENT_0 -> A_H1_BLOCK_4_ELEMENT_0
+DEBUG: Connected ViconiaAlora1_INITIAL_0 -> ViconiaAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected ViconiaAlora1_BLOCK_0_ELEMENT_0 -> ViconiaAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected ViconiaAlora1_BLOCK_1_ELEMENT_0 -> ViconiaAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected ViconiaAlora1_BLOCK_2_ELEMENT_0 -> ViconiaAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_INITIAL_0 -> ViconiaAlora2_BLOCK_0_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_0_ELEMENT_0 -> ViconiaAlora2_BLOCK_1_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_1_ELEMENT_0 -> ViconiaAlora2_BLOCK_2_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_2_ELEMENT_0 -> ViconiaAlora2_BLOCK_3_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_3_ELEMENT_0 -> ViconiaAlora2_BLOCK_4_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_4_ELEMENT_0 -> ViconiaAlora2_BLOCK_5_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_5_ELEMENT_0 -> ViconiaAlora2_BLOCK_6_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_6_ELEMENT_0 -> ViconiaAlora2_BLOCK_7_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_7_ELEMENT_0 -> ViconiaAlora2_BLOCK_8_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_8_ELEMENT_0 -> ViconiaAlora2_BLOCK_9_ELEMENT_0
+DEBUG: Connected ViconiaAlora2_BLOCK_9_ELEMENT_0 -> ViconiaAlora2_BLOCK_10_ELEMENT_0
+DEBUG: Connected MazzyAlora1_INITIAL_0 -> MazzyAlora1_BLOCK_0_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_0_ELEMENT_0 -> MazzyAlora1_BLOCK_1_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_1_ELEMENT_0 -> MazzyAlora1_BLOCK_2_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_2_ELEMENT_0 -> MazzyAlora1_BLOCK_3_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_3_ELEMENT_0 -> MazzyAlora1_BLOCK_4_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_4_ELEMENT_0 -> MazzyAlora1_BLOCK_5_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_5_ELEMENT_0 -> MazzyAlora1_BLOCK_6_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_6_ELEMENT_0 -> MazzyAlora1_BLOCK_7_ELEMENT_0
+DEBUG: Connected MazzyAlora1_BLOCK_7_ELEMENT_0 -> MazzyAlora1_BLOCK_8_ELEMENT_0
+DEBUG: Connected JokeOnYou_INITIAL_0 -> JokeOnYou_BLOCK_0_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_0_ELEMENT_0 -> JokeOnYou_BLOCK_1_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_1_ELEMENT_0 -> JokeOnYou_BLOCK_2_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_2_ELEMENT_0 -> JokeOnYou_BLOCK_3_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_3_ELEMENT_0 -> JokeOnYou_BLOCK_4_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_4_ELEMENT_0 -> JokeOnYou_BLOCK_5_ELEMENT_0
+DEBUG: Connected JokeOnYou_BLOCK_5_ELEMENT_0 -> JokeOnYou_BLOCK_6_ELEMENT_0
+DEBUG: Connected gotya_INITIAL_0 -> gotya_BLOCK_0_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_0_ELEMENT_0 -> gotya_BLOCK_1_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_1_ELEMENT_0 -> gotya_BLOCK_2_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_2_ELEMENT_0 -> gotya_BLOCK_3_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_3_ELEMENT_0 -> gotya_BLOCK_4_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_4_ELEMENT_0 -> gotya_BLOCK_5_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_5_ELEMENT_0 -> gotya_BLOCK_6_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_6_ELEMENT_0 -> gotya_BLOCK_7_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_7_ELEMENT_0 -> gotya_BLOCK_8_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_8_ELEMENT_0 -> gotya_BLOCK_9_ELEMENT_0
+DEBUG: Connected gotya_BLOCK_9_ELEMENT_0 -> gotya_BLOCK_10_ELEMENT_0
+DEBUG: Connected happy_INITIAL_0 -> happy_BLOCK_0_ELEMENT_0
+DEBUG: Connected happy_BLOCK_0_ELEMENT_0 -> happy_BLOCK_1_ELEMENT_0
+DEBUG: Connected happy_BLOCK_1_ELEMENT_0 -> happy_BLOCK_2_ELEMENT_0
+DEBUG: Connected happy_BLOCK_2_ELEMENT_0 -> happy_BLOCK_3_ELEMENT_0
+DEBUG: Connected happy_BLOCK_3_ELEMENT_0 -> happy_BLOCK_4_ELEMENT_0
+DEBUG: Connected happy_BLOCK_4_ELEMENT_0 -> happy_BLOCK_5_ELEMENT_0
+DEBUG: Connected happy_BLOCK_5_ELEMENT_0 -> happy_BLOCK_6_ELEMENT_0
+DEBUG: Connected happy_BLOCK_6_ELEMENT_0 -> happy_BLOCK_7_ELEMENT_0
+DEBUG: Connected Alora_Immy2_INITIAL_0 -> Alora_Immy2_BLOCK_0_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_0_ELEMENT_0 -> Alora_Immy2_BLOCK_1_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_1_ELEMENT_0 -> Alora_Immy2_BLOCK_2_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_2_ELEMENT_0 -> Alora_Immy2_BLOCK_3_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_3_ELEMENT_0 -> Alora_Immy2_BLOCK_4_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_4_ELEMENT_0 -> Alora_Immy2_BLOCK_5_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_5_ELEMENT_0 -> Alora_Immy2_BLOCK_6_ELEMENT_0
+DEBUG: Connected Alora_Immy2_BLOCK_6_ELEMENT_0 -> Alora_Immy2_BLOCK_7_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_INITIAL_0 -> Alora_Vaggy1_BLOCK_0_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_0_ELEMENT_0 -> Alora_Vaggy1_BLOCK_1_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_1_ELEMENT_0 -> Alora_Vaggy1_BLOCK_2_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_2_ELEMENT_0 -> Alora_Vaggy1_BLOCK_3_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_3_ELEMENT_0 -> Alora_Vaggy1_BLOCK_4_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_4_ELEMENT_0 -> Alora_Vaggy1_BLOCK_5_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_5_ELEMENT_0 -> Alora_Vaggy1_BLOCK_6_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_6_ELEMENT_0 -> Alora_Vaggy1_BLOCK_7_ELEMENT_0
+DEBUG: Connected Alora_Vaggy1_BLOCK_7_ELEMENT_0 -> Alora_Vaggy1_BLOCK_8_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_INITIAL_0 -> Alora_Vaggy2_BLOCK_0_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_0_ELEMENT_0 -> Alora_Vaggy2_BLOCK_1_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_1_ELEMENT_0 -> Alora_Vaggy2_BLOCK_2_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_2_ELEMENT_0 -> Alora_Vaggy2_BLOCK_3_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_3_ELEMENT_0 -> Alora_Vaggy2_BLOCK_4_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_4_ELEMENT_0 -> Alora_Vaggy2_BLOCK_5_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_5_ELEMENT_0 -> Alora_Vaggy2_BLOCK_6_ELEMENT_0
+DEBUG: Connected Alora_Vaggy2_BLOCK_6_ELEMENT_0 -> Alora_Vaggy2_BLOCK_7_ELEMENT_0
+Flow building completed. Connected 332 lines.
+Grouping 300 states into connected dialogues...
+Created 38 connected dialogue groups
+Created BCMALOR_dialogue_1.csv with 13 lines
+Created BCMALOR_dialogue_2.csv with 12 lines
+Created BCMALOR_dialogue_3.csv with 15 lines
+Created BMINSC_dialogue_4.csv with 18 lines
+
+Total CSV files created: 4

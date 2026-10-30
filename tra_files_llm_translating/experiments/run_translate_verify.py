@@ -2,12 +2,12 @@
 """Translate with one model, then verify both gender columns with a second (thinking) model.
 
 Two stages, both scored with the frozen checks:
-  translate-verify  translator (production prompt, two passes) -> verifier -> fragment fixes
+  translate-verify  translator (production prompt, two passes) -> verifier -> complete lines
                     applied by code; compares checks before and after verification.
   planted           verifier only, on the synthetic reference translations: once unmodified
                     (false alarms) and once per case of known planted errors (recall).
-The verifier reports issues; it never rewrites the table. A fix is applied only when its
-fragment occurs exactly once and the line still passes structural validation.
+The verifier reports issues with complete corrected lines; it never rewrites the table.
+A corrected line is applied only after structural validation.
 See TRANSLATE_VERIFY_PLAN.md.
 """
 
@@ -54,8 +54,12 @@ alternative wordings. Check every line for:
 9. shared_string: a line with several speakers is one game string; its single wording must suit the
    gender of every speaker.
 Speaker and gender facts are given; the addressee follows from the speakers and predecessors.
-For each error give the line id, the column to change (male, female or both), the exact wrong
-fragment copied from that column (problem: short, but unique within the line) and its replacement.
+For each erroneous line and column give the line id, column (male or female), category,
+problem description, reason and replacement containing the COMPLETE corrected line.
+Return one issue per line and column, combining all corrections needed there. If both columns
+need correction, return a separate issue with a complete line for each column.
+Correct all related nouns, adjectives, participles, verbs and pronouns together. Preserve all
+unaffected wording; never return only a replacement fragment.
 Keep engine tokens such as <CHARNAME> and %var%, line breaks, quotes, asterisks and brackets.
 Do not rewrite correct text. Report nothing for a correct line. Return only the requested JSON."""
 
@@ -81,6 +85,7 @@ def reference_complete(checks):
     _, rows = read_csv(checks.parent / e['input'], ['Line_ID', 'Dialogue_Text'])
     by_id = {r['Line_ID']: r for r in refs}
     return all(r['Line_ID'] in by_id and (by_id[r['Line_ID']]['Russian_Male'] or not r['Dialogue_Text'].strip())
+               and (by_id[r['Line_ID']]['Russian_Female'] or not female_source(r, r['Dialogue_Text']).strip())
                for r in rows)
 
 
@@ -126,7 +131,7 @@ def verify_schema(merged):
     item = {'type': 'object', 'additionalProperties': False,
             'required': ['id', 'column', 'category', 'problem', 'replacement', 'reason'],
             'properties': {'id': {'type': 'string', 'enum': [str(i) for i in range(1, len(merged))]},
-                           'column': {'type': 'string', 'enum': ['male', 'female', 'both']},
+                           'column': {'type': 'string', 'enum': ['male', 'female']},
                            'category': {'type': 'string', 'enum': CATEGORIES},
                            'problem': {'type': 'string'}, 'replacement': {'type': 'string'},
                            'reason': {'type': 'string'}}}
@@ -142,11 +147,16 @@ def parse_issues(content):
     for issue in result['issues']:
         if not isinstance(issue, dict) or set(issue) != keys or not all(isinstance(v, str) for v in issue.values()):
             raise ValueError(f'Malformed issue: {issue!r}')
+        if issue['column'] not in ('male', 'female') or issue['category'] not in CATEGORIES:
+            raise ValueError(f'Invalid issue column or category: {issue!r}')
+    cells = [(issue['id'], issue['column']) for issue in result['issues']]
+    if len(cells) != len(set(cells)):
+        raise ValueError('Expected at most one complete correction per line and column')
     return result['issues']
 
 
 def apply_issues(merged, male, female, issues):
-    """Return (male, female, decisions). Each fragment fix applies only if unambiguous and valid."""
+    """Return (male, female, decisions), validating complete LLM-written lines."""
     header, rows = merged[0], merged[1:]
     sources = {str(i): {'male': row[3], 'female': female_source(dict(zip(header, row)), row[3])}
                for i, row in enumerate(rows, 1)}
@@ -154,20 +164,17 @@ def apply_issues(merged, male, female, issues):
     decisions = []
     for issue in issues:
         outcome = {}
-        for column in (('male', 'female') if issue['column'] == 'both' else (issue['column'],)):
+        for column in (issue['column'],):
             line = issue['id']
             text = texts.get(column, {}).get(line)
-            count = text.count(issue['problem']) if text is not None and issue['problem'] else 0
             if text is None:
                 outcome[column] = 'rejected: unknown line or column'
             elif not sources[line][column].strip():
                 outcome[column] = 'rejected: source is empty, so the translation stays empty'
-            elif issue['problem'] == issue['replacement']:
-                outcome[column] = 'rejected: replacement equals problem'
-            elif count != 1:
-                outcome[column] = f'rejected: fragment found {count} times'
+            elif text == issue['replacement']:
+                outcome[column] = 'rejected: corrected line equals original'
             else:
-                fixed = text.replace(issue['problem'], issue['replacement'])
+                fixed = issue['replacement']
                 try:
                     validate_text(sources[line][column], fixed, f'line {line} {column}')
                 except ValueError as exc:
@@ -364,8 +371,8 @@ def report(out, manifest):
              f"ctx {manifest['settings']['translator_num_ctx']}); verifier `{manifest['settings']['verifier']}` "
              f"(think {manifest['settings']['verifier_think']}, ctx {manifest['settings']['verifier_num_ctx']}, "
              f"num_predict {manifest['settings']['verifier_num_predict']}); {manifest['settings']['repeats']} repeats.", '',
-             'Checks are the frozen targeted assertions, not overall quality. Fixes are applied by code only when the '
-             'fragment is unique and the line stays structurally valid. Manual review of before_after.csv and '
+             'Checks are the frozen targeted assertions, not overall quality. Complete corrected lines are '
+             'applied after structural validation; grammar and meaning still need review. Read before_after.csv and '
              'verifier.jsonl is required before drawing conclusions.']
     if tv:
         lines += ['', '## Stage 1: translate, then verify', '',
@@ -421,11 +428,11 @@ def main():
     parser.add_argument('--translator', default=TRANSLATOR)
     parser.add_argument('--translator-think', default='auto', choices=['auto', 'default', 'on', 'off'],
                         help="auto: off when the model supports thinking, otherwise the model default")
-    parser.add_argument('--translator-num-ctx', type=int, default=8192)
+    parser.add_argument('--translator-num-ctx', default='native', help="context tokens, or 'native' (default)")
     parser.add_argument('--verifier', default=VERIFIER)
     parser.add_argument('--verifier-think', default='on', choices=['default', 'on', 'off'])
     parser.add_argument('--verifier-num-ctx', default='native', help="tokens, or 'native'")
-    parser.add_argument('--verifier-num-predict', type=int, default=32768,
+    parser.add_argument('--verifier-num-predict', type=int, default=-1,
                         help='generation cap per verifier request (-1 = uncapped); a capped reply is a failure')
     parser.add_argument('--stages', default='translate-verify,planted')
     parser.add_argument('--datasets', help='comma-separated subset (default: all five)')
@@ -437,7 +444,8 @@ def main():
     stages = [s.strip() for s in args.stages.split(',') if s.strip()]
     if not stages or set(stages) - {'translate-verify', 'planted'}:
         parser.error('--stages must be a subset of translate-verify,planted')
-    if args.repeats < 1 or args.translator_num_ctx < 1:
+    if args.repeats < 1 or (args.translator_num_ctx != 'native' and
+                           (not args.translator_num_ctx.isdigit() or int(args.translator_num_ctx) < 1)):
         parser.error('Context and repeats must be positive')
     names = [n.strip() for n in args.datasets.split(',')] if args.datasets else None
     chosen = datasets(names)

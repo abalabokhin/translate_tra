@@ -1,0 +1,77 @@
+{
+  "version": "ambiguous_addressees-v2",
+  "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
+  "input": "input.csv",
+  "actors": "../actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    }
+  ],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "201": {
+      "both": [
+        {
+          "name": "both names retained",
+          "require": "Бр[аэе]м.*Селен|Селен.*Бр[аэе]м"
+        },
+        {
+          "name": "ferryman retained",
+          "require": "паромщик|перевозчик|переправщик|лодочник"
+        }
+      ]
+    },
+    "202": {
+      "both": [
+        {
+          "name": "hearing retained",
+          "require": "слыш"
+        }
+      ]
+    },
+    "203": {
+      "both": [
+        {
+          "name": "Selene retained",
+          "require": "Селен"
+        }
+      ]
+    },
+    "204": {
+      "both": [
+        {
+          "name": "current retained",
+          "require": "течени|поток"
+        },
+        {
+          "name": "current/strong agreement",
+          "forbid": "течение\\s+(?:слишком\\s+)?сильн(?:ый|ая)\\b|поток\\s+(?:слишком\\s+)?сильн(?:ое|ая)\\b"
+        }
+      ]
+    },
+    "205": {
+      "both": [
+        {
+          "name": "bank retained",
+          "require": "берег"
+        },
+        {
+          "name": "rope condition retained",
+          "require": "вер[её]в|канат"
+        },
+        {
+          "name": "until-condition keeps пока … не",
+          "require": "пока\\b[^.!?]*\\bне\\b|до\\s+тех\\s+пор[^.!?]*\\bне\\b"
+        },
+        {
+          "name": "ambiguous listener not gendered",
+          "forbid": "\\bдолж(?:ен|на)\\b"
+        }
+      ]
+    }
+  }
+}

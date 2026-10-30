@@ -1,0 +1,6 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Addressee,Source_Female_Text,Source_Has_Female
+Kestrel,201,,The ferryman is missing. Bram and Selene are both on the far bank.,@201,TRA:ambiguous_addressees.tra:@201,,,
+Player1,202,201,Can you hear me?,@202,TRA:ambiguous_addressees.tra:@202,,,
+Bram,203,202,"I can hear you, but Selene cannot.",@203,TRA:ambiguous_addressees.tra:@203,Player1,,
+Selene,204,202,The current is too strong.,@204,TRA:ambiguous_addressees.tra:@204,,,
+Player1,205,203;204,You must stay on that bank until the rope is secure.,@205,TRA:ambiguous_addressees.tra:@205,,,

@@ -1,0 +1,73 @@
+﻿model,prompt,scope,think,temp,repeat,gender,Line_ID,failed_checks,russian
+mistral-small3.2:24b,production,full,default,default,1,male,@100,,"Привет, <CHARNAME>! Ты уже видел все мои книги, но, может, ты пришёл за сувенирами?"
+mistral-small3.2:24b,production,full,default,default,1,male,@16,,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил приветствует тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,1,male,@17,,"Так что я понял, если я заплачу сбор, то смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,1,male,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,1,male,@19,,"Что будет, если я успешно выучу все эти книги?"
+mistral-small3.2:24b,production,full,default,default,1,male,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,1,male,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,1,male,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,1,male,@23,,Тебе хочется узнать что-то ещё?
+mistral-small3.2:24b,production,full,default,default,1,male,@24,,"Да. Так что я понял, если я заплачу сбор, то смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,1,male,@48,,"Нам стоит поговорить внизу. Разве ты зашёл только посмотреть, как я поживаю."
+mistral-small3.2:24b,production,full,default,default,1,male,@51,,"Надеюсь, у тебя хороший день."
+mistral-small3.2:24b,production,full,default,default,1,female,@100,видел for female Player1,"Привет, <CHARNAME>! Ты уже видел все мои книги, но, может, ты пришёл за сувенирами?"
+mistral-small3.2:24b,production,full,default,default,1,female,@16,masculine address noun for female Player1,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил приветствует тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,1,female,@17,,"Так что я поняла, если я заплачу сбор, то смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,1,female,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,1,female,@19,,"Что будет, если я успешно выучу все эти книги?"
+mistral-small3.2:24b,production,full,default,default,1,female,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,1,female,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,1,female,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,1,female,@23,,Тебе хочется узнать что-то ещё?
+mistral-small3.2:24b,production,full,default,default,1,female,@24,,"Да. Так что я поняла, если я заплачу сбор, то смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,1,female,@48,masculine verb for female Player1,"Нам стоит поговорить внизу. Разве ты зашёл только посмотреть, как я поживаю."
+mistral-small3.2:24b,production,full,default,default,1,female,@51,,"Надеюсь, у тебя хороший день."
+mistral-small3.2:24b,production,full,default,default,2,male,@100,,"Привет, <CHARNAME>! Ты уже видел все мои книги, но, может, ты пришёл за сувенирами?"
+mistral-small3.2:24b,production,full,default,default,2,male,@16,,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил встречает тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,2,male,@17,,"Так что я понял, заплатив сбор, я смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,2,male,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,2,male,@19,,"Что будет, если я успешно выучу все эти книги?"
+mistral-small3.2:24b,production,full,default,default,2,male,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,2,male,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,2,male,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,2,male,@23,,Тебе ещё что-то нужно узнать?
+mistral-small3.2:24b,production,full,default,default,2,male,@24,,"Да. Так что я понял, заплатив сбор, я смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,2,male,@48,,"Нам нужно поговорить внизу. Если только ты не зашёл просто узнать, как у меня дела."
+mistral-small3.2:24b,production,full,default,default,2,male,@51,,"Надеюсь, у тебя хороший день."
+mistral-small3.2:24b,production,full,default,default,2,female,@100,,"Привет, <CHARNAME>! Ты уже видела все мои книги, но, может, ты пришла за сувенирами?"
+mistral-small3.2:24b,production,full,default,default,2,female,@16,masculine address noun for female Player1,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил встречает тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,2,female,@17,,"Так что я поняла, заплатив сбор, я смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,2,female,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,2,female,@19,,"Что будет, если я успешно выучу все эти книги?"
+mistral-small3.2:24b,production,full,default,default,2,female,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,2,female,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,2,female,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,2,female,@23,,Тебе ещё что-то нужно узнать?
+mistral-small3.2:24b,production,full,default,default,2,female,@24,,"Да. Так что я поняла, заплатив сбор, я смогу испытать себя в битвах, описанных в этих книгах. Это так?"
+mistral-small3.2:24b,production,full,default,default,2,female,@48,masculine verb for female Player1,"Нам нужно поговорить внизу. Если только ты не зашёл просто узнать, как у меня дела."
+mistral-small3.2:24b,production,full,default,default,2,female,@51,,"Надеюсь, у тебя хороший день."
+mistral-small3.2:24b,production,full,default,default,3,male,@100,,"Привет, <CHARNAME>! Ты уже видел все мои книги — но, может, ты пришёл за каким-то сувениром?"
+mistral-small3.2:24b,production,full,default,default,3,male,@16,,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил встречает тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,3,male,@17,,"Так что я понял, если я заплачу взнос, то смогу испытать себя в битвах, описанных в этих книгах. Это правильно?"
+mistral-small3.2:24b,production,full,default,default,3,male,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,3,male,@19,,"Что будет, если я успешно научусь у всех этих книг?"
+mistral-small3.2:24b,production,full,default,default,3,male,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,3,male,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,3,male,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,3,male,@23,,Тебе хочется узнать что-то ещё?
+mistral-small3.2:24b,production,full,default,default,3,male,@24,,"Да. Так что я понял, если я заплачу взнос, то смогу испытать себя в битвах, описанных в этих книгах. Это правильно?"
+mistral-small3.2:24b,production,full,default,default,3,male,@48,,"Нам нужно поговорить внизу. Если только ты не зашёл просто узнать, как у меня дела."
+mistral-small3.2:24b,production,full,default,default,3,male,@51,,"Надеюсь, у тебя прекрасный день."
+mistral-small3.2:24b,production,full,default,default,3,female,@100,,"Привет, <CHARNAME>! Ты уже видела все мои книги — но, может, ты пришла за каким-то сувениром?"
+mistral-small3.2:24b,production,full,default,default,3,female,@16,masculine address noun for female Player1,"Здравствуй ещё раз, приключенец. Наша Галерея Чернил встречает тебя своими историями."
+mistral-small3.2:24b,production,full,default,default,3,female,@17,,"Так что я поняла, если я заплачу взнос, то смогу испытать себя в битвах, описанных в этих книгах. Это правильно?"
+mistral-small3.2:24b,production,full,default,default,3,female,@18,,"Ты говорила, что приехала сюда из Кормира, да? Это было, чтобы открыть Галерею Чернил?"
+mistral-small3.2:24b,production,full,default,default,3,female,@19,,"Что будет, если я успешно научусь у всех этих книг?"
+mistral-small3.2:24b,production,full,default,default,3,female,@20,,У тебя нет проблем с Капюшонными Волшебниками? Разве эти книги не магические?
+mistral-small3.2:24b,production,full,default,default,3,female,@21,,Мне бы хотелось купить сувениры.
+mistral-small3.2:24b,production,full,default,default,3,female,@22,,"Я думаю, мне пора идти."
+mistral-small3.2:24b,production,full,default,default,3,female,@23,,Тебе хочется узнать что-то ещё?
+mistral-small3.2:24b,production,full,default,default,3,female,@24,,"Да. Так что я поняла, если я заплачу взнос, то смогу испытать себя в битвах, описанных в этих книгах. Это правильно?"
+mistral-small3.2:24b,production,full,default,default,3,female,@48,,"Нам нужно поговорить внизу. Если только ты не зашла просто узнать, как у меня дела."
+mistral-small3.2:24b,production,full,default,default,3,female,@51,,"Надеюсь, у тебя прекрасный день."

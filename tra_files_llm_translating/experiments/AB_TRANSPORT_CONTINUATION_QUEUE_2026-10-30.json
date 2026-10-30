@@ -1,0 +1,31 @@
+{
+  "state": "waiting_for_verify",
+  "armed_utc": "2026-10-30T10:05:11.298028+00:00",
+  "queue_pid": 78159,
+  "selected_configs": [
+    [
+      "production",
+      2
+    ],
+    [
+      "production",
+      3
+    ],
+    [
+      "production-nouns",
+      1
+    ],
+    [
+      "production-nouns",
+      2
+    ],
+    [
+      "production-nouns",
+      3
+    ]
+  ],
+  "planned_new_requests": 10,
+  "source_outage_run": "tra_files_llm_translating/experiments/prompt_ab/20261029-220151-recovered",
+  "excluded": "production repeat 1: preserve male reply and keep interrupted female as serving failure",
+  "method": "One-off execution of unsubmitted transport-failure slots; no recorded model response is retried; same native context and uncapped generation."
+}

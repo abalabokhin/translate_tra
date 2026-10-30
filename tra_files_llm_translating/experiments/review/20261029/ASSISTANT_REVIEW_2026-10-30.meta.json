@@ -1,0 +1,69 @@
+{
+  "reviewed_utc": "2026-10-30T10:28:42.039057+00:00",
+  "reviewer": "assistant; human approval pending",
+  "counts": {
+    "reviewed_reply_records": 89,
+    "excluded_failed_or_skipped_records": 11
+  },
+  "cells": 767,
+  "proposed_cells": 241,
+  "source_snapshots": [
+    {
+      "path": "prompt_ab/20261029-212402/ambiguous_addressees/runs.jsonl",
+      "sha256": "4bc98fba5961c7ddf1b844908621c843f65fc2a75ad826e680b6b936bcf5cabd",
+      "records_at_review": 12,
+      "input_sha256": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c"
+    },
+    {
+      "path": "prompt_ab/20261029-212402/inkgallery/runs.jsonl",
+      "sha256": "2d89ee72e6710cc7872cc58db1ed27c7a93a8b27635e01a645983d59a52c1aab",
+      "records_at_review": 12,
+      "input_sha256": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1"
+    },
+    {
+      "path": "prompt_ab/20261029-212402/multiple_npcs/runs.jsonl",
+      "sha256": "a7243dc987e0911d1a39f01d0ab6a308e5b5e65f9eff659a9ffb54c15d38e58f",
+      "records_at_review": 12,
+      "input_sha256": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51"
+    },
+    {
+      "path": "prompt_ab/20261029-212402/original_female_variants/runs.jsonl",
+      "sha256": "2fbcba205839bc720ddbfbd6a7826cca506a5efa9ecdbbba95a3259039fed7ce",
+      "records_at_review": 12,
+      "input_sha256": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce"
+    },
+    {
+      "path": "prompt_ab/20261029-212402/reused_strings/runs.jsonl",
+      "sha256": "a6b8707d9dfd553f0f4b586c27410502ee8c0fe968386d505a318a2bc4c19804",
+      "records_at_review": 12,
+      "input_sha256": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37"
+    },
+    {
+      "path": "prompt_ab/20261029-220151-recovered/inkgallery_beholder/runs.jsonl",
+      "sha256": "557ae909405384b0d046f0216c5fcd0b888901cd0270f9d23e8fe0589a40ff1d",
+      "records_at_review": 12,
+      "input_sha256": "fd636045ce21a7516868d510aa4e631e0c2a7d7ef52e0c9d236c395212d505d5"
+    },
+    {
+      "path": "prompt_ab/20261029-220151-recovered/inkgallery_moon_sisters/runs.jsonl",
+      "sha256": "3469c89b8225fee2c93c2f26eee3127546c807fe13ad96ea73b1b585ba5a75ee",
+      "records_at_review": 12,
+      "input_sha256": "913105077a04598735e4c67f9532b838e8dcc7860235674d359326e2521de0ce"
+    },
+    {
+      "path": "prompt_ab/20261029-220151-recovered/inkgallery_sewers/runs.jsonl",
+      "sha256": "925a51abbd42e23563d3a733a7e7c0be8bb7f0a5d75cd40d0f9f2c18e1c6c107",
+      "records_at_review": 12,
+      "input_sha256": "8eeaa091cada9dcd09d7531659edc747d09c6ef8ffef5f49fee417ad538041f5"
+    },
+    {
+      "path": "translate_verify/20261030-095325/translate-verify/inkgallery/translation/runs.jsonl",
+      "sha256": "4940f8825415bd80fa48bc8067f7b8884504fb83c88623a926bc0566df96a201",
+      "records_at_review": 4,
+      "input_sha256": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1"
+    }
+  ],
+  "review_sha256": "e765a1ec7e10cb17589d0280c83d571f2fb25f062d5bbdfb7f2c87da4e75ffd5",
+  "scope": "Saved translation replies only. No Gemma verifier or planted controls reviewed. Failed replies excluded, preserved in raw logs.",
+  "policy": "Editorial proposals only; no changes to raw output, references, scores, glossary or production files."
+}

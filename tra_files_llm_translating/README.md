@@ -6,17 +6,26 @@ state, user constraints and pending decisions.
 This is the current reference for these scripts. It also records failed and
 partially successful approaches so they are not accidentally reintroduced.
 
-Latest completed experiment: [native-context thinking comparison](experiments/THINKING_NATIVE_RESULTS_2026-10-28.md)
-across all five downloaded thinking configurations. Gemma4 scored 592/660,
-Qwen3.5 587/660, Qwen3 534/660 and Huihui Qwen3.5 460/660; Huihui Qwen3 failed
-JSON transport throughout. Native context avoided the standard Qwen3.5 length
-failures, but gender, meaning and empty-source failures remain. No production
-settings changed. See the report for timings, controls and limitations.
+Latest evaluation (2026-10-29): [v3 rescoring](experiments/RESCORED_V3_RESULTS_2026-10-29.md)
+and the original five-dataset [prompt A/B](experiments/PROMPT_AB_RESULTS_2026-10-29.md)
+are complete. Production scored 703/717; the noun rule 704/717, with no improvement
+on either target address noun. Do not adopt the rule on this evidence. The fresh
+InkGallery extension completed Beholder and Moon Sisters; Sewers was interrupted
+by a serving failure, with unsubmitted cases queued after the active translate +
+verify run. The [finished-dialogue review](experiments/review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md)
+and annotated full-line proposals are ready. Verifier/control results remain pending. See the
+[review index](experiments/REVIEW_2026-10-29.md). No commit until the user reviews
+and explicitly asks.
 
-Since then (2026-10-29): empty female lines and mixed-gender shared strings are
-handled in code (below), the checks were revised (evaluation v3), and two
-experiments are prepared but not yet run: a prompt A/B and translate + verify. See
-[the experiments README](experiments/README.md#prepared-2026-10-29-not-run-yet).
+The [native-context thinking comparison](experiments/THINKING_NATIVE_RESULTS_2026-10-28.md)
+remains the earlier model comparison. Scores there use the old checks; use the v3
+rescoring CSVs for comparisons under the revised checks. No model is approved for
+unattended export.
+
+Empty female lines and mixed-gender shared strings are handled in code (below).
+The new A/B run confirms the empty-source fix, while the mixed-speaker note alone
+still fails to produce neutral readiness wording. Experiments use native contexts,
+uncapped generation and complete-line verifier corrections.
 
 ## Decisions and scope
 

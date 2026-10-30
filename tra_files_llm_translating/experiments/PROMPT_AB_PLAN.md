@@ -1,7 +1,15 @@
 # Prompt A/B: female-pass noun rule — plan (2026-10-29)
 
-**Status: not run yet.** Its actual results must be committed to the repository under
-`experiments/prompt_ab/<UTC timestamp>/`. That folder is not Git-ignored.
+**Status:** original five-dataset run completed; fresh InkGallery extension running.
+See [results](PROMPT_AB_RESULTS_2026-10-29.md). Artifacts are saved under
+`experiments/prompt_ab/<UTC timestamp>/` outside Git-ignore. Commit only after
+the user reviews and explicitly requests it.
+
+**Decision confirmed 2026-10-29:** no imposed context limit for now. Use the
+translator model's native context discovered from Ollama. The runner now defaults
+to `native`; generation remains uncapped. This is an implementation update, not
+a model result. The user authorized the run and saving results, but explicitly
+requires review and a later explicit request before any commit.
 
 ## Question
 
@@ -27,7 +35,7 @@ unchanged production prompt, so the two effects are not mixed.
 ## Design
 
 `run_prompt_ab.py`: one model (default `mistral-small3.2:24b`, thinking off/model
-default, context 8192), both prompts, all datasets including `real_set/`, full
+default, model-native context), both prompts, all datasets including `real_set/`, full
 dialogues, three repeats, model-default sampling. With five datasets that is up to 60
 requests. It is scored with evaluation v3.
 
@@ -56,5 +64,6 @@ python3 run_prompt_ab.py --dry-run
 python3 -u run_prompt_ab.py                 # or --model gemma4:12b
 ```
 
-Afterwards, fill in the "Manual review" section of `REPORT.md`, commit the whole
-output folder, and write `PROMPT_AB_RESULTS_<date>.md` with the decision.
+Afterwards, fill in the "Manual review" section of `REPORT.md`, save the whole
+output folder for user review, and write `PROMPT_AB_RESULTS_<date>.md` with the
+decision. Commit only after the user reviews everything and explicitly asks.

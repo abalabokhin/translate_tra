@@ -1,0 +1,8 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Addressee,Source_Female_Text,Source_Has_Female
+Selene,301_a,,I am ready.,@301,TRA:reused_strings.tra:@301,Player1,,
+Player1,302_a,301_a,Then open the gate.,@302,TRA:reused_strings.tra:@302,Selene,,
+Player1,301_b,302_a,I am ready.,@301,TRA:reused_strings.tra:@301,Selene,,
+Selene,303,301_b,*She checks the lock.* The gate is open.,@303,TRA:reused_strings.tra:@303,Player1,,
+Player1,302_b,303,Then open the gate.,@302,TRA:reused_strings.tra:@302,Selene,,
+Orin,304,302_b,"Wait for <CHARNAME>.
+Do not touch %gate_lock%.",@304,TRA:reused_strings.tra:@304,Player1,,

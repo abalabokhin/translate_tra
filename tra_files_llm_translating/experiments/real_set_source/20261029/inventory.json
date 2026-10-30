@@ -1,0 +1,1792 @@
+[
+  {
+    "file": "L#IGB11.d",
+    "group": 0,
+    "lines": [
+      {
+        "speaker": "L#IGB11",
+        "line_id": "100_INITIAL_0_SAY_0",
+        "text": "\"The lone adventurer, left and betrayed by his own group, was wading through layers of slime and sewage. All of his former friends thought he was dead, but he has always been a stubborn one, and he still had a few aces up his sleeve. He survived. But the sewers weren't a safe place, or at least not these tunnels. Lately, they were taken over by strange worm-like creatures. They already knew he was there, and they were preparing for an attack.\"",
+        "state_id": "100_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "100_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "original_ref": "@0",
+        "source_info": "TRA:l#igb11.tra:@0"
+      },
+      {
+        "speaker": "JANJ",
+        "line_id": "100_BLOCK_0_ELEMENT_0_SAY_1",
+        "text": "Ah, that sounds like something that happened to one of my cousins, and—perhaps she should actually write her story down. Perhaps it could become a recognized piece of writing, just like some of those books around us. Mmm, I believe I should tell her that, or maybe even offer some help.",
+        "state_id": "100_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "original_ref": "@1",
+        "source_info": "TRA:l#igb11.tra:@1"
+      },
+      {
+        "speaker": "L#IGSTA",
+        "line_id": "100_BLOCK_1_ELEMENT_0_SAY_2",
+        "text": "This one is a one-on-one fight for survival. The fee for learning from most of those books is 3,500 gold pieces, but using this one costs only 3,000 gold pieces.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "targets": [
+          "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "100_BLOCK_1_ELEMENT_0_REPLY_9"
+        ],
+        "original_ref": "@2",
+        "source_info": "TRA:l#igb11.tra:@2"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+        "text": "Fine. It's only fair for the original leader, <PLAYER1>, to face these creatures.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@3",
+        "source_info": "TRA:l#igb11.tra:@3"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+        "text": "Fine. <PLAYER2> shall face these things.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@4",
+        "source_info": "TRA:l#igb11.tra:@4"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+        "text": "Fine. <PLAYER3> shall face these things.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@5",
+        "source_info": "TRA:l#igb11.tra:@5"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+        "text": "Fine. <PLAYER4> shall face these things.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@6",
+        "source_info": "TRA:l#igb11.tra:@6"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+        "text": "Fine. <PLAYER5> shall face these things.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@7",
+        "source_info": "TRA:l#igb11.tra:@7"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+        "text": "Fine. <PLAYER6> shall face these things.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igb11.tra:@8"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+        "text": "No. I'll pass. At least for now.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "EXIT"
+        ],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igb11.tra:@9"
+      },
+      {
+        "speaker": "L#IGSTA",
+        "line_id": "101_INITIAL_0_SAY_10",
+        "text": "Right! Well, I hope you picked the right person to go through this test.",
+        "state_id": "101_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "100_BLOCK_1_ELEMENT_0_REPLY_8"
+        ],
+        "targets": [],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igb11.tra:@10"
+      }
+    ]
+  },
+  {
+    "file": "L#IGB2.d",
+    "group": 1,
+    "lines": [
+      {
+        "speaker": "L#IGB2",
+        "line_id": "200_INITIAL_0_SAY_8",
+        "text": "\"The archon was called back to her deity, to Kwan Ying. On one hand, she understood Chin Yi's anger, as well as her grief. On the other hand, her archon's fury saddened her. In the end, Kwan Ying gave new shape to her trusted celestial: she let her rage become the scream of the Celestial Fury, a powerful sword, born from her beloved one's sword.\"",
+        "state_id": "200_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "200_BLOCK_0_ELEMENT_0_SAY_9"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igb2.tra:@8"
+      },
+      {
+        "speaker": "L#IGB1",
+        "line_id": "200_BLOCK_0_ELEMENT_0_SAY_9",
+        "text": "Who shall learn from this tale? Who shall embrace the fury? Or shall you rather focus on the heavenly peace that was rejected once the storm came?",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_INITIAL_0_SAY_8"
+        ],
+        "targets": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_10",
+          "200_BLOCK_0_ELEMENT_0_REPLY_11"
+        ],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igb2.tra:@9"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_BLOCK_0_ELEMENT_0_REPLY_10",
+        "text": "I chose to see this as a story of wrath and revenge. I can understand where all that anger came from.",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_SAY_9"
+        ],
+        "targets": [
+          "L#IGB2:201",
+          "201_INITIAL_0_SAY_12"
+        ],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igb2.tra:@10"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_BLOCK_0_ELEMENT_0_REPLY_11",
+        "text": "I chose to see this as a story of heavenly love, so electric, and a rejection of peace that felt more like ignorance.",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_SAY_9"
+        ],
+        "targets": [
+          "L#IGB2:201b",
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "original_ref": "@11",
+        "source_info": "TRA:l#igb2.tra:@11"
+      },
+      {
+        "speaker": "L#IGB2",
+        "line_id": "201_INITIAL_0_SAY_12",
+        "text": "And who shall learn from it? Who shall know the wrath?",
+        "state_id": "201_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_10"
+        ],
+        "targets": [
+          "201_INITIAL_0_REPLY_13",
+          "201_INITIAL_0_REPLY_14",
+          "201_INITIAL_0_REPLY_15",
+          "201_INITIAL_0_REPLY_16",
+          "201_INITIAL_0_REPLY_17",
+          "201_INITIAL_0_REPLY_18"
+        ],
+        "original_ref": "@12",
+        "source_info": "TRA:l#igb2.tra:@12"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_13",
+        "text": "<PLAYER1>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@13",
+        "source_info": "TRA:l#igb2.tra:@13"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_14",
+        "text": "<PLAYER2>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@14",
+        "source_info": "TRA:l#igb2.tra:@14"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_15",
+        "text": "<PLAYER3>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@15",
+        "source_info": "TRA:l#igb2.tra:@15"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_16",
+        "text": "<PLAYER4>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@16",
+        "source_info": "TRA:l#igb2.tra:@16"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_17",
+        "text": "<PLAYER5>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@17",
+        "source_info": "TRA:l#igb2.tra:@17"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_18",
+        "text": "<PLAYER6>.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_12"
+        ],
+        "targets": [
+          "L#IGB2:202",
+          "202_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@18",
+        "source_info": "TRA:l#igb2.tra:@18"
+      },
+      {
+        "speaker": "L#IGB2",
+        "line_id": "201b_INITIAL_0_SAY_19",
+        "text": "Who shall learn to understand that electrifying feeling you speak of?",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_11"
+        ],
+        "targets": [
+          "201b_INITIAL_0_REPLY_20",
+          "201b_INITIAL_0_REPLY_21",
+          "201b_INITIAL_0_REPLY_22",
+          "201b_INITIAL_0_REPLY_23",
+          "201b_INITIAL_0_REPLY_24",
+          "201b_INITIAL_0_REPLY_25"
+        ],
+        "original_ref": "@19",
+        "source_info": "TRA:l#igb2.tra:@19"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_20",
+        "text": "<PLAYER1>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@13",
+        "source_info": "TRA:l#igb2.tra:@13"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_21",
+        "text": "<PLAYER2>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@14",
+        "source_info": "TRA:l#igb2.tra:@14"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_22",
+        "text": "<PLAYER3>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@15",
+        "source_info": "TRA:l#igb2.tra:@15"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_23",
+        "text": "<PLAYER4>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@16",
+        "source_info": "TRA:l#igb2.tra:@16"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_24",
+        "text": "<PLAYER5>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@17",
+        "source_info": "TRA:l#igb2.tra:@17"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201b_INITIAL_0_REPLY_25",
+        "text": "<PLAYER6>.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201b_INITIAL_0_SAY_19"
+        ],
+        "targets": [
+          "L#IGB2:202b",
+          "202b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@18",
+        "source_info": "TRA:l#igb2.tra:@18"
+      },
+      {
+        "speaker": "L#IGB2",
+        "line_id": "202_INITIAL_0_SAY_26",
+        "text": "It shall be as you've decided. They shall understand the power of true fury.",
+        "state_id": "202_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "201_INITIAL_0_REPLY_13",
+          "201_INITIAL_0_REPLY_14",
+          "201_INITIAL_0_REPLY_15",
+          "201_INITIAL_0_REPLY_16",
+          "201_INITIAL_0_REPLY_17",
+          "201_INITIAL_0_REPLY_18"
+        ],
+        "targets": [],
+        "original_ref": "@20",
+        "source_info": "TRA:l#igb2.tra:@20"
+      },
+      {
+        "speaker": "L#IGB2",
+        "line_id": "202b_INITIAL_0_SAY_27",
+        "text": "It shall be as you've decided. They shall understand the power of true fury.",
+        "state_id": "202b_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "201b_INITIAL_0_REPLY_20",
+          "201b_INITIAL_0_REPLY_21",
+          "201b_INITIAL_0_REPLY_22",
+          "201b_INITIAL_0_REPLY_23",
+          "201b_INITIAL_0_REPLY_24",
+          "201b_INITIAL_0_REPLY_25"
+        ],
+        "targets": [],
+        "original_ref": "@20",
+        "source_info": "TRA:l#igb2.tra:@20"
+      }
+    ]
+  },
+  {
+    "file": "L#IGB5.d",
+    "group": 1,
+    "lines": [
+      {
+        "speaker": "L#IGB5",
+        "line_id": "200_INITIAL_0_SAY_7",
+        "text": "\"The devils fell. It must have been the one they were sent to kill; sent by another devil for... whatever reason. What's important is that their target is dead. Now, the heroes shall hope that the devil will grant them the knowledge they needed.\"",
+        "state_id": "200_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "200_BLOCK_0_ELEMENT_0_SAY_8"
+        ],
+        "original_ref": "@7",
+        "source_info": "TRA:l#igb5.tra:@7"
+      },
+      {
+        "speaker": "L#IGB5",
+        "line_id": "200_BLOCK_0_ELEMENT_0_SAY_8",
+        "text": "Who shall be given that book's gift?",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_INITIAL_0_SAY_7"
+        ],
+        "targets": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_9",
+          "200_BLOCK_0_ELEMENT_0_REPLY_10"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igb5.tra:@8"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_BLOCK_0_ELEMENT_0_REPLY_9",
+        "text": "The lore shall be the prize. And it should be ours too, by proxy.",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_SAY_8"
+        ],
+        "targets": [
+          "L#IGB5:200a",
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igb5.tra:@9"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_BLOCK_0_ELEMENT_0_REPLY_10",
+        "text": "I never really cared about the deal. I was there to test myself. And while that devil has not surprised me much, those women and their bows: avoiding them was quite a task.",
+        "state_id": "200_BLOCK_0_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_SAY_8"
+        ],
+        "targets": [
+          "L#IGB5:200b",
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igb5.tra:@10"
+      },
+      {
+        "speaker": "L#IGB5",
+        "line_id": "200a_INITIAL_0_SAY_11",
+        "text": "Of course. But who shall be the very person to learn it?",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_9"
+        ],
+        "targets": [
+          "200a_INITIAL_0_REPLY_12",
+          "200a_INITIAL_0_REPLY_13",
+          "200a_INITIAL_0_REPLY_14",
+          "200a_INITIAL_0_REPLY_15",
+          "200a_INITIAL_0_REPLY_16",
+          "200a_INITIAL_0_REPLY_17"
+        ],
+        "original_ref": "@11",
+        "source_info": "TRA:l#igb5.tra:@11"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_12",
+        "text": "<PLAYER1>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@12",
+        "source_info": "TRA:l#igb5.tra:@12"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_13",
+        "text": "<PLAYER2>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@13",
+        "source_info": "TRA:l#igb5.tra:@13"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_14",
+        "text": "<PLAYER3>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@14",
+        "source_info": "TRA:l#igb5.tra:@14"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_15",
+        "text": "<PLAYER4>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@15",
+        "source_info": "TRA:l#igb5.tra:@15"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_16",
+        "text": "<PLAYER5>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@16",
+        "source_info": "TRA:l#igb5.tra:@16"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200a_INITIAL_0_REPLY_17",
+        "text": "<PLAYER6>.",
+        "state_id": "200a_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200a_INITIAL_0_SAY_11"
+        ],
+        "targets": [
+          "L#IGB5:201a",
+          "201a_INITIAL_0_SAY_25"
+        ],
+        "original_ref": "@17",
+        "source_info": "TRA:l#igb5.tra:@17"
+      },
+      {
+        "speaker": "L#IGB5",
+        "line_id": "200b_INITIAL_0_SAY_18",
+        "text": "Yes, that is also a lesson. One that may help you stand your ground, even when facing archers of keen eyes and steady hands. Who shall benefit from that lesson?",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_BLOCK_0_ELEMENT_0_REPLY_10"
+        ],
+        "targets": [
+          "200b_INITIAL_0_REPLY_19",
+          "200b_INITIAL_0_REPLY_20",
+          "200b_INITIAL_0_REPLY_21",
+          "200b_INITIAL_0_REPLY_22",
+          "200b_INITIAL_0_REPLY_23",
+          "200b_INITIAL_0_REPLY_24"
+        ],
+        "original_ref": "@18",
+        "source_info": "TRA:l#igb5.tra:@18"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_19",
+        "text": "<PLAYER1>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@12",
+        "source_info": "TRA:l#igb5.tra:@12"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_20",
+        "text": "<PLAYER2>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@13",
+        "source_info": "TRA:l#igb5.tra:@13"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_21",
+        "text": "<PLAYER3>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@14",
+        "source_info": "TRA:l#igb5.tra:@14"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_22",
+        "text": "<PLAYER4>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@15",
+        "source_info": "TRA:l#igb5.tra:@15"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_23",
+        "text": "<PLAYER5>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@16",
+        "source_info": "TRA:l#igb5.tra:@16"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200b_INITIAL_0_REPLY_24",
+        "text": "<PLAYER6>.",
+        "state_id": "200b_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200b_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGB5:201b",
+          "201b_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@17",
+        "source_info": "TRA:l#igb5.tra:@17"
+      },
+      {
+        "speaker": "L#IGB5",
+        "line_id": "201a_INITIAL_0_SAY_25",
+        "text": "Their knowledge shall become even greater!",
+        "state_id": "201a_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200a_INITIAL_0_REPLY_12",
+          "200a_INITIAL_0_REPLY_13",
+          "200a_INITIAL_0_REPLY_14",
+          "200a_INITIAL_0_REPLY_15",
+          "200a_INITIAL_0_REPLY_16",
+          "200a_INITIAL_0_REPLY_17"
+        ],
+        "targets": [],
+        "original_ref": "@19",
+        "source_info": "TRA:l#igb5.tra:@19"
+      },
+      {
+        "speaker": "L#IGB5",
+        "line_id": "201b_INITIAL_0_SAY_26",
+        "text": "So be it!",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200b_INITIAL_0_REPLY_19",
+          "200b_INITIAL_0_REPLY_20",
+          "200b_INITIAL_0_REPLY_21",
+          "200b_INITIAL_0_REPLY_22",
+          "200b_INITIAL_0_REPLY_23",
+          "200b_INITIAL_0_REPLY_24"
+        ],
+        "targets": [],
+        "original_ref": "@20",
+        "source_info": "TRA:l#igb5.tra:@20"
+      }
+    ]
+  },
+  {
+    "file": "L#IGB9.d",
+    "group": 0,
+    "lines": [
+      {
+        "speaker": "L#IGB9",
+        "line_id": "100_INITIAL_0_SAY_0",
+        "text": "\"The rotting orb was levitating in the center of a damp cave. A zombie beholder, who was believed to be dead for a century, or mayhap more. Undead and wild, at the very same time. When it saw any living creature, it would bite them with its powerful maw. This is a dead magic area, so it was used to fighting the unfortunate with its sharp teeth.\"",
+        "state_id": "100_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "100_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "original_ref": "@0",
+        "source_info": "TRA:l#igb9.tra:@0"
+      },
+      {
+        "speaker": "ANOMENJ",
+        "line_id": "100_BLOCK_0_ELEMENT_0_SAY_1",
+        "text": "A zombie beholder? And most likely an angered one. It deserves to be destroyed, and that is exactly what we should do to it.",
+        "state_id": "100_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "original_ref": "@1",
+        "source_info": "TRA:l#igb9.tra:@1"
+      },
+      {
+        "speaker": "L#IGSTA",
+        "line_id": "100_BLOCK_1_ELEMENT_0_SAY_2",
+        "text": "This one can only be faced in a one-on-one battle. That is why the fee for this one isn't 3,500 gold pieces, but slightly lower: 3,000 coins, and you may face it. The same person will learn from that book.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "targets": [
+          "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "100_BLOCK_1_ELEMENT_0_REPLY_9"
+        ],
+        "original_ref": "@2",
+        "source_info": "TRA:l#igb9.tra:@2"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+        "text": "Fine. It's only fair for the original leader, <PLAYER1>, to face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@3",
+        "source_info": "TRA:l#igb9.tra:@3"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+        "text": "Fine. <PLAYER2> shall face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@4",
+        "source_info": "TRA:l#igb9.tra:@4"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+        "text": "Fine. <PLAYER3> shall face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@5",
+        "source_info": "TRA:l#igb9.tra:@5"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+        "text": "Fine. <PLAYER4> shall face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@6",
+        "source_info": "TRA:l#igb9.tra:@6"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+        "text": "Fine. <PLAYER5> shall face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@7",
+        "source_info": "TRA:l#igb9.tra:@7"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+        "text": "Fine. <PLAYER6> shall face this thing.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "L#IGSTA:101",
+          "101_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igb9.tra:@8"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+        "text": "No. I'll pass. At least for now.",
+        "state_id": "100_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "EXIT"
+        ],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igb9.tra:@9"
+      },
+      {
+        "speaker": "L#IGSTA",
+        "line_id": "101_INITIAL_0_SAY_10",
+        "text": "Of course! So, let's start the process.",
+        "state_id": "101_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "100_BLOCK_1_ELEMENT_0_REPLY_8"
+        ],
+        "targets": [],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igb9.tra:@10"
+      }
+    ]
+  },
+  {
+    "file": "L#IGCS6.d",
+    "group": 0,
+    "lines": [
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "000_INITIAL_0_SAY_0",
+        "text": "You come. We can finally look each other in the eye, my vessel.",
+        "state_id": "000_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "000_INITIAL_0_REPLY_1",
+          "000_INITIAL_0_REPLY_2",
+          "000_INITIAL_0_REPLY_3"
+        ],
+        "original_ref": "@0",
+        "source_info": "TRA:l#igcs6.tra:@0"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "000_INITIAL_0_REPLY_1",
+        "text": "Who are you?",
+        "state_id": "000_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "000_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "L#IGCS6:002",
+          "002_INITIAL_0_SAY_5"
+        ],
+        "original_ref": "@1",
+        "source_info": "TRA:l#igcs6.tra:@1"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "000_INITIAL_0_REPLY_2",
+        "text": "What are you?",
+        "state_id": "000_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "000_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "L#IGCS6:002",
+          "002_INITIAL_0_SAY_5"
+        ],
+        "original_ref": "@2",
+        "source_info": "TRA:l#igcs6.tra:@2"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "000_INITIAL_0_REPLY_3",
+        "text": "Oh great. Another monster. Perhaps we should skip the pleasantries and move right on to the unavoidable fight?",
+        "state_id": "000_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "000_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "L#IGCS6:001",
+          "001_INITIAL_0_SAY_4"
+        ],
+        "original_ref": "@3",
+        "source_info": "TRA:l#igcs6.tra:@3"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "001_INITIAL_0_SAY_4",
+        "text": "It is most entertaining that you say this. It truly is proof that we are but one thing.",
+        "state_id": "001_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_INITIAL_0_REPLY_3"
+        ],
+        "targets": [],
+        "original_ref": "@4",
+        "source_info": "TRA:l#igcs6.tra:@4"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "002_INITIAL_0_SAY_5",
+        "text": "I am your blood. I am every drop of this red tincture that's running through your veins; I am what keeps you alive, and bound with who you truly are, <CHARNAME>. I suppose that makes me... you.",
+        "state_id": "002_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_INITIAL_0_REPLY_1",
+          "000_INITIAL_0_REPLY_2"
+        ],
+        "targets": [
+          "002_INITIAL_0_REPLY_6",
+          "002_INITIAL_0_REPLY_7",
+          "002_INITIAL_0_REPLY_8"
+        ],
+        "original_ref": "@5",
+        "source_info": "TRA:l#igcs6.tra:@5"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "002_INITIAL_0_REPLY_6",
+        "text": "I'm not sure I understand.",
+        "state_id": "002_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "002_INITIAL_0_SAY_5"
+        ],
+        "targets": [
+          "L#IGCS6:003",
+          "003_INITIAL_0_SAY_9"
+        ],
+        "original_ref": "@6",
+        "source_info": "TRA:l#igcs6.tra:@6"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "002_INITIAL_0_REPLY_7",
+        "text": "What sort of trick is this?",
+        "state_id": "002_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "002_INITIAL_0_SAY_5"
+        ],
+        "targets": [
+          "L#IGCS6:003",
+          "003_INITIAL_0_SAY_9"
+        ],
+        "original_ref": "@7",
+        "source_info": "TRA:l#igcs6.tra:@7"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "002_INITIAL_0_REPLY_8",
+        "text": "I suppose that makes sense. I should have expected that the Bloody Pages of Bhaal would be somehow connected to me.",
+        "state_id": "002_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "002_INITIAL_0_SAY_5"
+        ],
+        "targets": [
+          "L#IGCS6:004",
+          "004_INITIAL_0_SAY_10"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igcs6.tra:@8"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "003_INITIAL_0_SAY_9",
+        "text": "It's simple: the book you just touched has connected to your blood. To me. That is what allows us to speak the way we do right now.",
+        "state_id": "003_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "002_INITIAL_0_REPLY_6",
+          "002_INITIAL_0_REPLY_7"
+        ],
+        "targets": [],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igcs6.tra:@9"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "004_INITIAL_0_SAY_10",
+        "text": "It does make sense, doesn't it? The book has connected to your blood, allowing us to speak the way we do right now.",
+        "state_id": "004_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "002_INITIAL_0_REPLY_8"
+        ],
+        "targets": [],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igcs6.tra:@10"
+      }
+    ]
+  },
+  {
+    "file": "L#IGCS6.d",
+    "group": 3,
+    "lines": [
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "200_INITIAL_0_SAY_18",
+        "text": "There are times when an obstacle needs to be thrown a couple of floors down.",
+        "state_id": "200_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "200_INITIAL_0_REPLY_19",
+          "200_INITIAL_0_REPLY_20",
+          "200_INITIAL_0_REPLY_21"
+        ],
+        "original_ref": "@18",
+        "source_info": "TRA:l#igcs6.tra:@18"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_INITIAL_0_REPLY_19",
+        "text": "What is this? Is this the roof of the Iron Throne headquarters?",
+        "state_id": "200_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGCS6:201",
+          "201_INITIAL_0_SAY_22"
+        ],
+        "original_ref": "@19",
+        "source_info": "TRA:l#igcs6.tra:@19"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_INITIAL_0_REPLY_20",
+        "text": "I do know that, and I am not going to hesitate when someone needs to be pushed and taught how to fly.",
+        "state_id": "200_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGCS6:202",
+          "202_INITIAL_0_SAY_29"
+        ],
+        "original_ref": "@20",
+        "source_info": "TRA:l#igcs6.tra:@20"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "200_INITIAL_0_REPLY_21",
+        "text": "I am not going to be like Sarevok!",
+        "state_id": "200_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "200_INITIAL_0_SAY_18"
+        ],
+        "targets": [
+          "L#IGCS6:203",
+          "203_INITIAL_0_SAY_30"
+        ],
+        "original_ref": "@21",
+        "source_info": "TRA:l#igcs6.tra:@21"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "201_INITIAL_0_SAY_22",
+        "text": "Yes. So you remember how we climbed up this tower. Perhaps you also remember how it felt to stand here, look at everything and everyone. Those people were so small. Like ants.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_INITIAL_0_REPLY_19"
+        ],
+        "targets": [
+          "201_INITIAL_0_REPLY_23",
+          "201_INITIAL_0_REPLY_24",
+          "201_INITIAL_0_REPLY_25"
+        ],
+        "original_ref": "@22",
+        "source_info": "TRA:l#igcs6.tra:@22"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_23",
+        "text": "I never thought that way about them.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_22"
+        ],
+        "targets": [
+          "L#IGCS6:201a",
+          "201a_INITIAL_0_SAY_26"
+        ],
+        "original_ref": "@23",
+        "source_info": "TRA:l#igcs6.tra:@23"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_24",
+        "text": "Yes. That's more or less what I thought when I was here.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_22"
+        ],
+        "targets": [
+          "L#IGCS6:201b",
+          "201b_INITIAL_0_SAY_27"
+        ],
+        "original_ref": "@24",
+        "source_info": "TRA:l#igcs6.tra:@24"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "201_INITIAL_0_REPLY_25",
+        "text": "I don't think I ever reached the roof. But I must have been on the floor just below us.",
+        "state_id": "201_INITIAL_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "201_INITIAL_0_SAY_22"
+        ],
+        "targets": [
+          "L#IGCS6:201c",
+          "201c_INITIAL_0_SAY_28"
+        ],
+        "original_ref": "@25",
+        "source_info": "TRA:l#igcs6.tra:@25"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "201a_INITIAL_0_SAY_26",
+        "text": "Are you sure? Why wouldn't we have that thought?",
+        "state_id": "201a_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "201_INITIAL_0_REPLY_23"
+        ],
+        "targets": [],
+        "original_ref": "@26",
+        "source_info": "TRA:l#igcs6.tra:@26"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "201b_INITIAL_0_SAY_27",
+        "text": "I know. We are the same.",
+        "state_id": "201b_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "201_INITIAL_0_REPLY_24"
+        ],
+        "targets": [],
+        "original_ref": "@27",
+        "source_info": "TRA:l#igcs6.tra:@27"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "201c_INITIAL_0_SAY_28",
+        "text": "But you must have at least imagined how it would feel to stand here.",
+        "state_id": "201c_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "201_INITIAL_0_REPLY_25"
+        ],
+        "targets": [],
+        "original_ref": "@28",
+        "source_info": "TRA:l#igcs6.tra:@28"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "202_INITIAL_0_SAY_29",
+        "text": "Good. I'm glad to hear that.",
+        "state_id": "202_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_INITIAL_0_REPLY_20"
+        ],
+        "targets": [],
+        "original_ref": "@29",
+        "source_info": "TRA:l#igcs6.tra:@29"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "203_INITIAL_0_SAY_30",
+        "text": "Aren't we already like your brother?",
+        "state_id": "203_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "200_INITIAL_0_REPLY_21"
+        ],
+        "targets": [],
+        "original_ref": "@30",
+        "source_info": "TRA:l#igcs6.tra:@30"
+      }
+    ]
+  },
+  {
+    "file": "L#IGCS6.d",
+    "group": 7,
+    "lines": [
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "303_INITIAL_0_SAY_49",
+        "text": "The book you just touched is your story. And we are the ink. I am the ink.",
+        "state_id": "303_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "303_BLOCK_0_ELEMENT_0_SAY_50"
+        ],
+        "original_ref": "@49",
+        "source_info": "TRA:l#igcs6.tra:@49"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "303_BLOCK_0_ELEMENT_0_SAY_50",
+        "text": "Our story is written in blood, <CHARNAME>, and no matter what you do, it's always going to be that way. No matter if you are the first to raise your blade, you will be the last one to hold it.",
+        "state_id": "303_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "303_INITIAL_0_SAY_49"
+        ],
+        "targets": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "original_ref": "@50",
+        "source_info": "TRA:l#igcs6.tra:@50"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "303_BLOCK_1_ELEMENT_0_SAY_51",
+        "text": "Aren't you happy because of it?",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "303_BLOCK_0_ELEMENT_0_SAY_50"
+        ],
+        "targets": [
+          "303_BLOCK_1_ELEMENT_0_REPLY_52",
+          "303_BLOCK_1_ELEMENT_0_REPLY_53",
+          "303_BLOCK_1_ELEMENT_0_REPLY_54",
+          "303_BLOCK_1_ELEMENT_0_REPLY_55",
+          "303_BLOCK_1_ELEMENT_0_REPLY_56"
+        ],
+        "original_ref": "@51",
+        "source_info": "TRA:l#igcs6.tra:@51"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "303_BLOCK_1_ELEMENT_0_REPLY_52",
+        "text": "I'm not.",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "targets": [
+          "L#IGCS6:304",
+          "304_INITIAL_0_SAY_57"
+        ],
+        "original_ref": "@52",
+        "source_info": "TRA:l#igcs6.tra:@52"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "303_BLOCK_1_ELEMENT_0_REPLY_53",
+        "text": "Of course I am.",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "targets": [
+          "L#IGCS6:305",
+          "305_INITIAL_0_SAY_58"
+        ],
+        "original_ref": "@53",
+        "source_info": "TRA:l#igcs6.tra:@53"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "303_BLOCK_1_ELEMENT_0_REPLY_54",
+        "text": "I just want to be left alone.",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "targets": [
+          "L#IGCS6:304",
+          "304_INITIAL_0_SAY_57"
+        ],
+        "original_ref": "@54",
+        "source_info": "TRA:l#igcs6.tra:@54"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "303_BLOCK_1_ELEMENT_0_REPLY_55",
+        "text": "I'm doing this because I am given no other choice!",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "targets": [
+          "L#IGCS6:304",
+          "304_INITIAL_0_SAY_57"
+        ],
+        "original_ref": "@55",
+        "source_info": "TRA:l#igcs6.tra:@55"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "303_BLOCK_1_ELEMENT_0_REPLY_56",
+        "text": "I'm living the life I was given and... I just got used to it.",
+        "state_id": "303_BLOCK_1_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_SAY_51"
+        ],
+        "targets": [
+          "L#IGCS6:304",
+          "304_INITIAL_0_SAY_57"
+        ],
+        "original_ref": "@56",
+        "source_info": "TRA:l#igcs6.tra:@56"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "304_INITIAL_0_SAY_57",
+        "text": "You should learn how to enjoy it more. How to be proud of who we are.",
+        "state_id": "304_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_REPLY_52",
+          "303_BLOCK_1_ELEMENT_0_REPLY_54",
+          "303_BLOCK_1_ELEMENT_0_REPLY_55",
+          "303_BLOCK_1_ELEMENT_0_REPLY_56"
+        ],
+        "targets": [],
+        "original_ref": "@57",
+        "source_info": "TRA:l#igcs6.tra:@57"
+      },
+      {
+        "speaker": "L#IGCS6",
+        "line_id": "305_INITIAL_0_SAY_58",
+        "text": "Yes. Yes, I can feel that pride. It's in me, too.",
+        "state_id": "305_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "303_BLOCK_1_ELEMENT_0_REPLY_53"
+        ],
+        "targets": [],
+        "original_ref": "@58",
+        "source_info": "TRA:l#igcs6.tra:@58"
+      }
+    ]
+  },
+  {
+    "file": "l#igb8e.d",
+    "group": 0,
+    "lines": [
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "000_INITIAL_0_SAY_0",
+        "text": "Thou hast come here. Thou hast come for the judgement of the Moon Sisters! We are the COSMOS that fills this place.",
+        "state_id": "000_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [],
+        "targets": [
+          "000_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "original_ref": "@0",
+        "source_info": "TRA:l#igb8e.tra:@0"
+      },
+      {
+        "speaker": "L#IGB8E2",
+        "line_id": "000_BLOCK_0_ELEMENT_0_SAY_1",
+        "text": "We are the DREAMS that give hope to the scared ones.",
+        "state_id": "000_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_INITIAL_0_SAY_0"
+        ],
+        "targets": [
+          "000_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "original_ref": "@1",
+        "source_info": "TRA:l#igb8e.tra:@1"
+      },
+      {
+        "speaker": "L#IGB8E3",
+        "line_id": "000_BLOCK_1_ELEMENT_0_SAY_2",
+        "text": "And finally, we are the LOVE that can cut even through the darkest nights!",
+        "state_id": "000_BLOCK_1_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_BLOCK_0_ELEMENT_0_SAY_1"
+        ],
+        "targets": [
+          "000_BLOCK_2_ELEMENT_0_SAY_3"
+        ],
+        "original_ref": "@2",
+        "source_info": "TRA:l#igb8e.tra:@2"
+      },
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "000_BLOCK_2_ELEMENT_0_SAY_3",
+        "text": "Thou hast come here for a reason, but—strange. Thou art not the soul we have expected. Nay. Thou art something else.",
+        "state_id": "000_BLOCK_2_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_BLOCK_1_ELEMENT_0_SAY_2"
+        ],
+        "targets": [
+          "000_BLOCK_3_ELEMENT_0_SAY_4"
+        ],
+        "original_ref": "@3",
+        "source_info": "TRA:l#igb8e.tra:@3"
+      },
+      {
+        "speaker": "L#IGB8E2",
+        "line_id": "000_BLOCK_3_ELEMENT_0_SAY_4",
+        "text": "Thou art the Bloodied Child.",
+        "state_id": "000_BLOCK_3_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_BLOCK_2_ELEMENT_0_SAY_3"
+        ],
+        "targets": [
+          "000_BLOCK_4_ELEMENT_0_SAY_5"
+        ],
+        "original_ref": "@4",
+        "source_info": "TRA:l#igb8e.tra:@4"
+      },
+      {
+        "speaker": "L#IGB8E3",
+        "line_id": "000_BLOCK_4_ELEMENT_0_SAY_5",
+        "text": "Thou art marked with bloody tears; with fear. With chaos. Why do we see a different soul? One that shall have a different face?!",
+        "state_id": "000_BLOCK_4_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_BLOCK_3_ELEMENT_0_SAY_4"
+        ],
+        "targets": [
+          "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "000_BLOCK_4_ELEMENT_0_REPLY_7"
+        ],
+        "original_ref": "@5",
+        "source_info": "TRA:l#igb8e.tra:@5"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+        "text": "It is strange. It's almost as if you saw the true me, and not the character from this book.",
+        "state_id": "000_BLOCK_4_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "000_BLOCK_4_ELEMENT_0_SAY_5"
+        ],
+        "targets": [
+          "L#IGB8E1:001",
+          "001_INITIAL_0_SAY_8"
+        ],
+        "original_ref": "@6",
+        "source_info": "TRA:l#igb8e.tra:@6"
+      },
+      {
+        "speaker": "PLAYER",
+        "line_id": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+        "text": "This is but nonsense. I am not going to listen to this!",
+        "state_id": "000_BLOCK_4_ELEMENT_0",
+        "line_type": "REPLY",
+        "predecessors": [
+          "000_BLOCK_4_ELEMENT_0_SAY_5"
+        ],
+        "targets": [
+          "L#IGB8E1:001",
+          "001_INITIAL_0_SAY_8"
+        ],
+        "original_ref": "@7",
+        "source_info": "TRA:l#igb8e.tra:@7"
+      },
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "001_INITIAL_0_SAY_8",
+        "text": "Silence! None of this be right!",
+        "state_id": "001_INITIAL_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "000_BLOCK_4_ELEMENT_0_REPLY_7"
+        ],
+        "targets": [
+          "001_BLOCK_0_ELEMENT_0_SAY_9"
+        ],
+        "original_ref": "@8",
+        "source_info": "TRA:l#igb8e.tra:@8"
+      },
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "001_BLOCK_0_ELEMENT_0_SAY_9",
+        "text": "But we are still the Moon Sisters, and we can see through the COSMOS. Thine path is marked with blood. That be enough for us to know that thine hand must be stopped.",
+        "state_id": "001_BLOCK_0_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "001_INITIAL_0_SAY_8"
+        ],
+        "targets": [
+          "001_BLOCK_1_ELEMENT_0_SAY_10"
+        ],
+        "original_ref": "@9",
+        "source_info": "TRA:l#igb8e.tra:@9"
+      },
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "001_BLOCK_1_ELEMENT_0_SAY_10",
+        "text": "Sisters! Take thine weapons!",
+        "state_id": "001_BLOCK_1_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "001_BLOCK_0_ELEMENT_0_SAY_9"
+        ],
+        "targets": [
+          "001_BLOCK_2_ELEMENT_0_SAY_11"
+        ],
+        "original_ref": "@10",
+        "source_info": "TRA:l#igb8e.tra:@10"
+      },
+      {
+        "speaker": "L#IGB8E2",
+        "line_id": "001_BLOCK_2_ELEMENT_0_SAY_11",
+        "text": "For the DREAMS!",
+        "state_id": "001_BLOCK_2_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "001_BLOCK_1_ELEMENT_0_SAY_10"
+        ],
+        "targets": [
+          "001_BLOCK_3_ELEMENT_0_SAY_12"
+        ],
+        "original_ref": "@11",
+        "source_info": "TRA:l#igb8e.tra:@11"
+      },
+      {
+        "speaker": "L#IGB8E3",
+        "line_id": "001_BLOCK_3_ELEMENT_0_SAY_12",
+        "text": "For all the LOVE!",
+        "state_id": "001_BLOCK_3_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "001_BLOCK_2_ELEMENT_0_SAY_11"
+        ],
+        "targets": [
+          "001_BLOCK_4_ELEMENT_0_SAY_13"
+        ],
+        "original_ref": "@12",
+        "source_info": "TRA:l#igb8e.tra:@12"
+      },
+      {
+        "speaker": "L#IGB8E1",
+        "line_id": "001_BLOCK_4_ELEMENT_0_SAY_13",
+        "text": "And against those that bring nothing but death!",
+        "state_id": "001_BLOCK_4_ELEMENT_0",
+        "line_type": "SAY",
+        "predecessors": [
+          "001_BLOCK_3_ELEMENT_0_SAY_12"
+        ],
+        "targets": [],
+        "original_ref": "@13",
+        "source_info": "TRA:l#igb8e.tra:@13"
+      }
+    ]
+  }
+]

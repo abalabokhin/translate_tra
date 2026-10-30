@@ -36,7 +36,7 @@ class FakeClient:
             return {'model_info': {'general.architecture': 'x', 'x.context_length': 4096}}
         self.requests.append(payload)
         dialogue = json.loads(payload['messages'][1]['content'])['dialogue']
-        issues = [dict(id=line['id'], column=column, category='other', problem=wrong, replacement=right, reason='')
+        issues = [dict(id=line['id'], column=column, category='other', problem=wrong, replacement=line['russian_' + column].replace(wrong, right), reason='')
                   for line in dialogue for (column, wrong), right in self.fixes.items()
                   if wrong in line['russian_' + column]]
         return {'message': {'content': json.dumps({'issues': issues}, ensure_ascii=False), 'thinking': 'x'},
@@ -72,28 +72,56 @@ class TranslateVerifyTests(unittest.TestCase):
                     self.assertEqual(changed, len(case['mutations']))
                     self.assertIn(case['mutations'][0]['category'], runner.CATEGORIES)
 
-    def test_fixes_apply_only_when_unique_valid_and_source_nonempty(self):
+    def test_complete_lines_apply_with_agreement_and_preserve_structural_checks(self):
         e, merged, slots = self.merged('original_female_variants')
         refs = references('original_female_variants')
         male = runner.by_slot(merged, slots, {k: v['Russian_Male'] for k, v in refs.items()})
         female = runner.by_slot(merged, slots, {k: v['Russian_Female'] for k, v in refs.items()})
         issue = dict(category='other', reason='')
-        issues = [dict(issue, id='1', column='female', problem='была', replacement='был'),
-                  dict(issue, id='4', column='female', problem='', replacement='Дверь открыта.'),
-                  dict(issue, id='4', column='male', problem='Дверь открыта.', replacement='Дверь "открыта".'),
-                  dict(issue, id='5', column='both', problem='здесь', replacement='тут'),
-                  dict(issue, id='2', column='male', problem='е', replacement='ё')]
+        issues = [dict(issue, id='1', column='female', problem='Incorrect agreement',
+                       replacement='Я была её ученицей.'),
+                  dict(issue, id='4', column='female', problem='Missing text', replacement='Дверь открыта.'),
+                  dict(issue, id='4', column='male', problem='Quotes', replacement='Дверь "открыта".'),
+                  dict(issue, id='5', column='male', problem='Wording', replacement='Я подожду тут.'),
+                  dict(issue, id='99', column='male', problem='Unknown', replacement='Текст.')]
+        female['1'] = 'Я был её учеником.'
         new_male, new_female, decisions = runner.apply_issues(merged, male, female, issues)
         outcomes = [d['outcome'] for d in decisions]
         self.assertEqual(outcomes[0], {'female': 'applied'})
         self.assertTrue(outcomes[1]['female'].startswith('rejected: source is empty'))
         self.assertIn('quotation', outcomes[2]['male'])
-        self.assertEqual(outcomes[3], {'male': 'applied', 'female': 'applied'})
-        self.assertIn('found', outcomes[4]['male'])
-        self.assertEqual(new_female['1'], 'Я был её ученицей.')
+        self.assertEqual(outcomes[3], {'male': 'applied'})
+        self.assertIn('unknown', outcomes[4]['male'])
+        self.assertEqual(new_female['1'], 'Я была её ученицей.')
         self.assertEqual(new_female['4'], '')
-        self.assertEqual((new_male['5'], new_female['5']), ('Я подожду тут.', 'Я подожду тут.'))
+        self.assertEqual((new_male['5'], new_female['5']), ('Я подожду тут.', 'Я подожду здесь.'))
         self.assertEqual(new_male['4'], male['4'])
+
+    def test_complete_line_cannot_drop_engine_tokens_and_duplicate_cells_reject(self):
+        e, merged, slots = self.merged('multiple_npcs')
+        refs = references('multiple_npcs')
+        male = runner.by_slot(merged, slots, {k: v['Russian_Male'] for k, v in refs.items()})
+        female = runner.by_slot(merged, slots, {k: v['Russian_Female'] for k, v in refs.items()})
+        issue = dict(id='1', column='female', category='player_gender', problem='Gender',
+                     replacement='Ты вернулась. Орин ждал внизу.', reason='')
+        _, corrected, decisions = runner.apply_issues(merged, male, female, [issue])
+        self.assertEqual(corrected, female)
+        self.assertTrue(decisions[0]['outcome']['female'].startswith('rejected:'))
+        with self.assertRaisesRegex(ValueError, 'at most one'):
+            runner.parse_issues(json.dumps({'issues': [issue, issue]}))
+        with self.assertRaisesRegex(ValueError, 'column'):
+            runner.parse_issues(json.dumps({'issues': [dict(issue, column='both')]}))
+
+    def test_native_translator_context_and_uncapped_generation_are_defaults(self):
+        import run_prompt_ab
+        for module in (runner, run_prompt_ab):
+            with patch.object(sys, 'argv', ['runner', '--dry-run']), contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(module.main(), 0)
+        self.args.translator_num_ctx = 'native'
+        e, _, _ = self.merged('multiple_npcs')
+        with patch.object(Experiment, 'post', return_value={
+                'model_info': {'general.architecture': 'x', 'x.context_length': 131072}}):
+            self.assertEqual(e.context_for('t'), 131072)
 
     def test_verifier_request_has_both_columns_female_source_and_no_references(self):
         e, merged, slots = self.merged('original_female_variants')
@@ -168,6 +196,10 @@ class TranslateVerifyTests(unittest.TestCase):
         self.assertEqual(refs[4]['English_Female'], '')
         self.assertFalse(runner.reference_complete(folder / 'checks.json'))
         filled = references('original_female_variants')
+        for r in refs:
+            r['Russian_Male'] = filled[r['Line_ID']]['Russian_Male']
+        write_csv(folder / 'reference.csv', make_real_fixture.REFERENCE_COLUMNS, refs)
+        self.assertFalse(runner.reference_complete(folder / 'checks.json'))
         for r in refs:
             r.update(Russian_Male=filled[r['Line_ID']]['Russian_Male'], Russian_Female=filled[r['Line_ID']]['Russian_Female'])
         write_csv(folder / 'reference.csv', make_real_fixture.REFERENCE_COLUMNS, refs)

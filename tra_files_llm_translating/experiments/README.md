@@ -17,21 +17,39 @@ in [PILOT_2026-10-27.md](PILOT_2026-10-27.md). The first live two-model comparis
 thinking-on baseline is documented in
 [THINKING_BASELINE_2026-10-27.md](THINKING_BASELINE_2026-10-27.md).
 
-## Prepared 2026-10-29, not run yet
+## Evaluation and experiments — 2026-10-29
 
-Results of these runs must be committed. They write to `translate_verify/` and
-`prompt_ab/`, which, unlike `results/`, are not Git-ignored. Suggested order:
+**Confirmed decisions (2026-10-29):** use model-native context with no imposed
+smaller limit for now, and have the verifier return complete corrected lines with
+categories/explanations. Python validates and applies whole lines. The runners
+now use native context and uncapped generation. The user authorized running and
+saving results, **without committing until their review and explicit request**.
+See the [handoff](../SESSION_HANDOFF.md) for the decisions and current status.
+
+Current results: [v3 rescoring](RESCORED_V3_RESULTS_2026-10-29.md) is complete.
+[Five-dataset prompt A/B](PROMPT_AB_RESULTS_2026-10-29.md) is complete (703/717 vs
+704/717; no target noun improvement). The fresh three-encounter InkGallery A/B
+extension completed Beholder and Moon Sisters; Sewers was interrupted by a serving
+failure. Translate + verify is running; unsubmitted Sewers cases are queued after
+it. The [finished-dialogue review](review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md)
+and complete editorial proposals are ready. Verifier/control results remain pending. See the
+[review index](REVIEW_2026-10-29.md) for artifacts and status.
+
+Results must be saved for review under `translate_verify/` and `prompt_ab/`,
+which, unlike `results/`, are not Git-ignored. Commit only after the user explicitly
+requests it following review. Suggested order:
 
 1. **[Evaluation v3](EVALUATION.md#evaluation-v3-2026-10-29)**: checks fixed after the
    manual reviews. `rescore.py <results folder>` re-scores old runs without inference.
-2. **[Real-mod set](real_set/README.md)**: empty until a person adds reviewed real
-   dialogues with `make_real_fixture.py`. Included automatically by the runners below.
+2. **[Real-mod set](real_set/README.md)**: three fresh InkGallery encounters, 36 rows,
+   with references reviewed by the assistant at the user's request; human review pending.
+   Included automatically by the runners below.
 3. **[Prompt A/B](PROMPT_AB_PLAN.md)**: `run_prompt_ab.py`, production prompt vs an added
    female-pass noun rule (`production-nouns`).
 4. **[Translate + verify](TRANSLATE_VERIFY_PLAN.md)**: `run_translate_verify.py`. The
    translator runs without thinking (default Mistral Small3.2), a thinking verifier
-   (default Gemma4) proposes fragment fixes that code applies only when safe, and the
-   verifier is also tested on planted errors.
+   (default Gemma4) will propose complete corrected lines for validation and application,
+   and the verifier is also tested on planted errors. Whole-line correction is implemented.
 
 Production changes the same day: explicitly empty female lines are no longer sent to
 the female pass, and strings shared by speakers of different genders get a
@@ -77,7 +95,7 @@ non-streaming could misroute translation JSON into the thinking field. See the
 
 All seven models completed: [final comparison and limitations](NON_THINKING_RESULTS_2026-10-28.md).
 
-## One-command run (recommended)
+## Historical grid runner (not used for the current authorized batch)
 
 `run_all.py` does everything: pulls the candidate models, runs the three stages
 below, and writes one `REPORT.md`.

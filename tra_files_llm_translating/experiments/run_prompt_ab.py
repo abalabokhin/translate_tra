@@ -77,14 +77,14 @@ def main():
     parser.add_argument('--model', default=MODEL)
     parser.add_argument('--think', default='auto', choices=['auto', 'default', 'on', 'off'],
                         help='auto: off when the model supports thinking, otherwise the model default')
-    parser.add_argument('--num-ctx', type=int, default=8192)
+    parser.add_argument('--num-ctx', default='native', help="context tokens, or 'native' (default)")
     parser.add_argument('--repeats', type=int, default=3)
     parser.add_argument('--datasets', help='comma-separated subset (default: all, including real_set)')
     parser.add_argument('--url', default='http://localhost:11434')
     parser.add_argument('--out', help='default: experiments/prompt_ab/<UTC timestamp>')
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
-    if args.repeats < 1 or args.num_ctx < 1:
+    if args.repeats < 1 or (args.num_ctx != 'native' and (not args.num_ctx.isdigit() or int(args.num_ctx) < 1)):
         parser.error('Context and repeats must be positive')
     names = [n.strip() for n in args.datasets.split(',')] if args.datasets else None
     chosen = datasets(names)

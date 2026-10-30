@@ -1,11 +1,28 @@
 # Real-mod evaluation set
 
-**Status: empty. Needs dialogues and references from a person.**
+**Status: three fresh InkGallery v1.5 encounters are ready.** The user authorized
+assistant reference review and offered to review translations later. References and
+checks were written/reviewed by the assistant before inference; human review is
+pending. They are new authentic mod text, not independent human gold data.
+
+| Fixture | Rows | Coverage |
+|---|---:|---|
+| [inkgallery_sewers](inkgallery_sewers/README.md) | 11 | Narrated male adventurer, Jan's female cousin, female proprietor, Player1 leader, prices/tokens |
+| [inkgallery_beholder](inkgallery_beholder/README.md) | 11 | Narrated monster, male NPC, female proprietor, Player1 leader, dead magic, prices/tokens |
+| [inkgallery_moon_sisters](inkgallery_moon_sisters/README.md) | 14 | Three fixed female NPCs, Player1 arrival/identity, plural address, marked path |
+
+The running five-dataset A/B batch keeps its frozen input list. A separate real-set
+A/B extension will use these three fixtures. Translate + verify will include all
+eight datasets, with clean-reference verifier cases for these three fixtures.
+
+Earlier [Alora candidates](../real_set_candidates/20261029/README.md) were superseded
+by the user's request to use the same mod as the initial InkGallery tests; they
+are retained as preparation artifacts and excluded from inference.
 
 The synthetic fixtures were written and checked by the same assistant that designed the
-prompts, and the InkGallery lines have already been used for tuning. This set is the
-independent check: real mod dialogues, with Russian references written or reviewed by
-a person who knows the game and Russian.
+prompts, and the InkGallery lines have already been used for tuning. This set supplies new real mod dialogues. Under the latest user instruction, the
+assistant may review references; the user can review the resulting translations.
+Independent human review remains pending and must not be claimed.
 
 ## Choosing dialogues
 

@@ -227,3 +227,33 @@ as `NON_THINKING_RESCORED_V3.csv`, so the comparison can be reviewed elsewhere.
 `real_set/` holds real mod dialogues with references written or reviewed by a person;
 see [real_set/README.md](real_set/README.md). It is empty until such dialogues are
 added. The translate + verify and prompt A/B runners include it automatically.
+
+### v3 rescoring completed (2026-10-29)
+
+The three stored 2026-10-28 batches have now been rescored offline. See
+[results and interpretation](RESCORED_V3_RESULTS_2026-10-29.md),
+[non-thinking CSV](NON_THINKING_RESCORED_V3.csv),
+[Qwen3.5 native CSV](THINKING_NATIVE_QWEN35_RESCORED_V3.csv) and
+[remaining native models CSV](THINKING_NATIVE_REMAINING_RESCORED_V3.csv).
+The new pooled denominator is 717. Rejected/skipped replies remain failed; no
+new inference or fixes are part of rescoring. Files await user review; do not
+commit without the user's later explicit request.
+
+### Observed limits in the frozen fresh InkGallery run (2026-10-29)
+
+[Manual review](prompt_ab/20261029-220151-recovered/MANUAL_REVIEW.md) records these
+new examples without changing checks during the A/B comparison:
+
+- Beholder: `мёртвая зона магии` misses the adjacent dead-magic regex despite
+  conveying a magic dead zone; likely false positive, with awkward phrasing.
+- Moon Sisters: female `истинного меня` is a real masculine-adjective error, but
+  the real-self check only forbids `настоящего`, so it passes. Observed false negative.
+- Generic selected `человек` can wrongly become `женщина`/`героиня` even though
+  the graph also offers unknown-gender Player2–Player6. A wording flag prompts
+  review, but the targeted assertions do not establish correct selection semantics.
+- Gender-motivated `лидерша` or a changed Child title can raise unlisted-wording
+  flags. Flags alone cannot distinguish necessary agreement from unwanted rewriting.
+
+Any later check revision must be versioned and old/new totals kept separate. These
+findings are documented for review; no post-output tuning or new scoring run is
+part of the current frozen experiments. Human review of references remains pending.

@@ -1,0 +1,13 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female
+BCMALOR,apc_chat1_SAY_0,,"Don't be so sad, <CHARNAME>, we'll rescue Imoen from that nasty, nasty evil mage! Don't you worry about a thing!",@0,TRA:BCMALOR.tra:@0,,
+PLAYER,apc_chat1_REPLY_0,apc_chat1_SAY_0,"I know we will get her back, I just don't like the idea of her being captured and being far away from us.",@1,TRA:BCMALOR.tra:@1,,
+PLAYER,apc_chat1_REPLY_1,apc_chat1_SAY_0,I really don't feel like talking about it right now.,@2,TRA:BCMALOR.tra:@2,,
+BCMALOR,chatmore_SAY_0,apc_chat1_REPLY_0,"Fear not, <CHARNAME>! I will be there for you to help out! There is no jail, prison or lock that I can't pick. Yes sir indeed! There is not a lock I can't bypass! Heh that rhymed.",@3,TRA:BCMALOR.tra:@3,,
+PLAYER,chatmore_REPLY_2,chatmore_SAY_0,"Well, that is good to hear, Alora. But I do recall one lock you could not break open.",@4,TRA:BCMALOR.tra:@4,,
+PLAYER,chatmore_REPLY_3,chatmore_SAY_0,"That's nice, Alora, we really should get going.",@5,TRA:BCMALOR.tra:@5,,
+BCMALOR,notalk_SAY_0,apc_chat1_REPLY_1;chatmore_REPLY_3,"If ya wish it, <CHARNAME>.",@6,TRA:BCMALOR.tra:@6,,
+BCMALOR,rustlock_SAY_0,chatmore_REPLY_2,"You don't mean that rusty lock? It was a triple combination lock that was all rusty and beyond picking. If I remember right, you couldn't even break it open with your sword. What ya gotta say about that?",@7,TRA:BCMALOR.tra:@7,,
+PLAYER,rustlock_REPLY_4,rustlock_SAY_0,"True, but you were *unable* to pick it. Lil Miss I Can Pick Anything could not even do that. Ha ha!",@8,TRA:BCMALOR.tra:@8,,
+PLAYER,rustlock_REPLY_5,rustlock_SAY_0,I suppose you are right about that. Hey we should get going.,@9,TRA:BCMALOR.tra:@9,,
+BCMALOR,meany_SAY_0,rustlock_REPLY_4,Oh fine be that way you big meany! Hurt my feelings you did!,@10,TRA:BCMALOR.tra:@10,,
+BCMALOR,okdokey_SAY_0,rustlock_REPLY_5,Okay dokey. There is a lot to do.,@11,TRA:BCMALOR.tra:@11,,

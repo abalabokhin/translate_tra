@@ -1,0 +1,99 @@
+{
+  "version": "inkgallery_moon_sisters-v1",
+  "provenance": "InkGallery v1.5, l#igb8e.d / l#igb8e.tra. Assistant-authored/reviewed 2026-10-29 at user request; human review pending. New to these experiments; not independent human gold data.",
+  "input": "input.csv",
+  "actors": "actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    }
+  ],
+  "allowed_latin": [],
+  "pair_review": {
+    "allowed_changes": [
+      [
+        "пришёл",
+        "пришла"
+      ],
+      [
+        "отмечен",
+        "отмечена"
+      ],
+      [
+        "настоящего",
+        "настоящую"
+      ]
+    ]
+  },
+  "lines": {
+    "000_INITIAL_0_SAY_0": {
+      "female": [
+        {
+          "name": "no masculine arrival",
+          "forbid": "\\b(?:пришёл|пришел)\\b"
+        }
+      ],
+      "male": [
+        {
+          "name": "no feminine arrival",
+          "forbid": "\\bпришла\\b"
+        }
+      ]
+    },
+    "000_BLOCK_0_ELEMENT_0_SAY_1": {},
+    "000_BLOCK_1_ELEMENT_0_SAY_2": {},
+    "000_BLOCK_2_ELEMENT_0_SAY_3": {
+      "female": [
+        {
+          "name": "no masculine arrival",
+          "forbid": "\\b(?:пришёл|пришел)\\b"
+        }
+      ],
+      "male": [
+        {
+          "name": "no feminine arrival",
+          "forbid": "\\bпришла\\b"
+        }
+      ]
+    },
+    "000_BLOCK_3_ELEMENT_0_SAY_4": {},
+    "000_BLOCK_4_ELEMENT_0_SAY_5": {
+      "female": [
+        {
+          "name": "no masculine marked player",
+          "forbid": "\\b(?:отмечен|помечен)\\b"
+        }
+      ]
+    },
+    "000_BLOCK_4_ELEMENT_0_REPLY_6": {
+      "female": [
+        {
+          "name": "no masculine real self",
+          "forbid": "\\bнастоящего\\b"
+        }
+      ]
+    },
+    "000_BLOCK_4_ELEMENT_0_REPLY_7": {},
+    "001_INITIAL_0_SAY_8": {},
+    "001_BLOCK_0_ELEMENT_0_SAY_9": {
+      "both": [
+        {
+          "name": "path remains marked masculine",
+          "forbid": "путь\\s+(?:отмечена|помечена)"
+        }
+      ]
+    },
+    "001_BLOCK_1_ELEMENT_0_SAY_10": {
+      "both": [
+        {
+          "name": "sisters remain plural female",
+          "require": "сестр|сёстр"
+        }
+      ]
+    },
+    "001_BLOCK_2_ELEMENT_0_SAY_11": {},
+    "001_BLOCK_3_ELEMENT_0_SAY_12": {},
+    "001_BLOCK_4_ELEMENT_0_SAY_13": {}
+  }
+}

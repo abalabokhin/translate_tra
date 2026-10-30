@@ -1,0 +1,830 @@
+Loaded 26 TRA files into cache
+Loaded 17 TRA entries from l#igb1.tra
+DEBUG: Registering chain root: (L#IGB1, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB1, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Extracted EXTERN target: L#IGB1:201
+DEBUG: Registering chain root: (L#IGB1, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB1, 300) -> 300_INITIAL_0
+Building dialogue flow for 9 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB1:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 100_BLOCK_2_ELEMENT_0
+DEBUG: Connected 100_BLOCK_2_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 16 lines.
+Grouping 9 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 16 TRA entries from l#igb10.tra
+DEBUG: Registering chain root: (L#IGB10, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB10, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Extracted EXTERN target: L#IGB10:201
+DEBUG: Registering chain root: (L#IGB10, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB10, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB10:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 7 TRA entries from l#igb10e.tra
+DEBUG: Registering chain root: (L#IGB10A, 000) -> 000_INITIAL_0
+Building dialogue flow for 7 states...
+DEBUG: Connected 000_INITIAL_0 -> 000_BLOCK_0_ELEMENT_0
+DEBUG: Connected 000_BLOCK_0_ELEMENT_0 -> 000_BLOCK_1_ELEMENT_0
+DEBUG: Connected 000_BLOCK_1_ELEMENT_0 -> 000_BLOCK_2_ELEMENT_0
+DEBUG: Connected 000_BLOCK_2_ELEMENT_0 -> 000_BLOCK_3_ELEMENT_0
+DEBUG: Connected 000_BLOCK_3_ELEMENT_0 -> 000_BLOCK_4_ELEMENT_0
+DEBUG: Connected 000_BLOCK_4_ELEMENT_0 -> 000_BLOCK_5_ELEMENT_0
+Flow building completed. Connected 7 lines.
+Grouping 7 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 14 TRA entries from l#igb11.tra
+DEBUG: Registering chain root: (L#IGB11, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB11, 200) -> 200_INITIAL_0
+DEBUG: Registering chain root: (L#IGB11, 300) -> 300_INITIAL_0
+Building dialogue flow for 7 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 13 lines.
+Grouping 7 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 16 TRA entries from l#igb12.tra
+DEBUG: Registering chain root: (L#IGB12, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB12, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Extracted EXTERN target: L#IGB12:201
+DEBUG: Registering chain root: (L#IGB12, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB12, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB12:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 2 TRA entries from l#igb1e.tra
+DEBUG: Registering chain root: (L#IGB1E, 000) -> 000_INITIAL_0
+Building dialogue flow for 2 states...
+DEBUG: Connected 000_INITIAL_0 -> 000_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 2 lines.
+Grouping 2 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 22 TRA entries from l#igb2.tra
+DEBUG: Registering chain root: (L#IGB2, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB2, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB2:201
+DEBUG: Extracted EXTERN target: L#IGB2:201
+DEBUG: Extracted EXTERN target: L#IGB2:201b
+DEBUG: Extracted EXTERN target: L#IGB2:201b
+DEBUG: Registering chain root: (L#IGB2, 201) -> 201_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Extracted EXTERN target: L#IGB2:202
+DEBUG: Registering chain root: (L#IGB2, 201b) -> 201b_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Extracted EXTERN target: L#IGB2:202b
+DEBUG: Registering chain root: (L#IGB2, 202) -> 202_INITIAL_0
+DEBUG: Registering chain root: (L#IGB2, 202b) -> 202b_INITIAL_0
+DEBUG: Registering chain root: (L#IGB2, 300) -> 300_INITIAL_0
+Building dialogue flow for 13 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2:202b -> 202b_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 100_BLOCK_2_ELEMENT_0
+DEBUG: Connected 100_BLOCK_2_ELEMENT_0 -> 100_BLOCK_3_ELEMENT_0
+DEBUG: Connected 100_BLOCK_3_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201b_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+DEBUG: Connected 201b_INITIAL_0 -> 202b_INITIAL_0
+Flow building completed. Connected 28 lines.
+Grouping 13 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 6 TRA entries from l#igb2e1.tra
+DEBUG: Registering chain root: (L#IGB2E1, 000) -> 000_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB2E1:001
+DEBUG: Extracted EXTERN target: L#IGB2E1:001
+DEBUG: Extracted EXTERN target: L#IGB2E1:001
+DEBUG: Extracted EXTERN target: L#IGB2E1:001
+DEBUG: Extracted EXTERN target: L#IGB2E1:002
+DEBUG: Extracted EXTERN target: L#IGB2E1:002
+DEBUG: Registering chain root: (L#IGB2E1, 001) -> 001_INITIAL_0
+DEBUG: Registering chain root: (L#IGB2E1, 002) -> 002_INITIAL_0
+Building dialogue flow for 3 states...
+DEBUG: Resolved EXTERN L#IGB2E1:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2E1:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB2E1:002 -> 002_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 002_INITIAL_0
+Flow building completed. Connected 6 lines.
+Grouping 3 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 2 TRA entries from l#igb2e2.tra
+DEBUG: Registering chain root: (L#IGB2E2, 000) -> 000_INITIAL_0
+Building dialogue flow for 2 states...
+DEBUG: Connected 000_INITIAL_0 -> 000_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 2 lines.
+Grouping 2 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 16 TRA entries from l#igb3.tra
+DEBUG: Registering chain root: (L#IGB3, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB3, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Extracted EXTERN target: L#IGB3:201
+DEBUG: Registering chain root: (L#IGB3, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB3, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB3:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 16 TRA entries from l#igb4.tra
+DEBUG: Registering chain root: (L#IGB4, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB4, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Extracted EXTERN target: L#IGB4:201
+DEBUG: Registering chain root: (L#IGB4, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB4, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB4:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 22 TRA entries from l#igb5.tra
+DEBUG: Registering chain root: (L#IGB5, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB5, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB5:200a
+DEBUG: Extracted EXTERN target: L#IGB5:200a
+DEBUG: Extracted EXTERN target: L#IGB5:200b
+DEBUG: Extracted EXTERN target: L#IGB5:200b
+DEBUG: Registering chain root: (L#IGB5, 200a) -> 200a_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Extracted EXTERN target: L#IGB5:201a
+DEBUG: Registering chain root: (L#IGB5, 200b) -> 200b_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Extracted EXTERN target: L#IGB5:201b
+DEBUG: Registering chain root: (L#IGB5, 201a) -> 201a_INITIAL_0
+DEBUG: Registering chain root: (L#IGB5, 201b) -> 201b_INITIAL_0
+DEBUG: Registering chain root: (L#IGB5, 300) -> 300_INITIAL_0
+Building dialogue flow for 12 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:200a -> 200a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:200b -> 200b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB5:201b -> 201b_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 100_BLOCK_2_ELEMENT_0
+DEBUG: Connected 100_BLOCK_2_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 200a_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 200b_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200a_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 200b_INITIAL_0 -> 201b_INITIAL_0
+Flow building completed. Connected 27 lines.
+Grouping 12 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 1 TRA entries from l#igb5e.tra
+DEBUG: Registering chain root: (L#IGB5E, 000) -> 000_INITIAL_0
+Building dialogue flow for 1 states...
+Flow building completed. Connected 0 lines.
+Grouping 1 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 16 TRA entries from l#igb6.tra
+DEBUG: Registering chain root: (L#IGB6, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB6, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Extracted EXTERN target: L#IGB6:201
+DEBUG: Registering chain root: (L#IGB6, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB6, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 5 TRA entries from l#igb6e.tra
+DEBUG: Registering chain root: (L#IGB6E, 000) -> 000_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Extracted EXTERN target: L#IGB6E:001
+DEBUG: Registering chain root: (L#IGB6E, 001) -> 001_INITIAL_0
+Building dialogue flow for 2 states...
+DEBUG: Resolved EXTERN L#IGB6E:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6E:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB6E:001 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+Flow building completed. Connected 5 lines.
+Grouping 2 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 16 TRA entries from l#igb7.tra
+DEBUG: Registering chain root: (L#IGB7, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB7, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Extracted EXTERN target: L#IGB7:201
+DEBUG: Registering chain root: (L#IGB7, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB7, 300) -> 300_INITIAL_0
+Building dialogue flow for 8 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB7:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 15 lines.
+Grouping 8 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 17 TRA entries from l#igb8.tra
+DEBUG: Registering chain root: (L#IGB8, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB8, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Extracted EXTERN target: L#IGB8:201
+DEBUG: Registering chain root: (L#IGB8, 201) -> 201_INITIAL_0
+DEBUG: Registering chain root: (L#IGB8, 300) -> 300_INITIAL_0
+Building dialogue flow for 9 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8:201 -> 201_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 100_BLOCK_2_ELEMENT_0
+DEBUG: Connected 100_BLOCK_2_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+DEBUG: Connected 200_BLOCK_0_ELEMENT_0 -> 201_INITIAL_0
+Flow building completed. Connected 16 lines.
+Grouping 9 states into connected dialogues...
+Created 3 connected dialogue groups
+Loaded 14 TRA entries from l#igb9.tra
+DEBUG: Registering chain root: (L#IGB9, 100) -> 100_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Extracted EXTERN target: L#IGSTA:101
+DEBUG: Registering chain root: (L#IGSTA, 101) -> 101_INITIAL_0
+DEBUG: Registering chain root: (L#IGB9, 200) -> 200_INITIAL_0
+DEBUG: Registering chain root: (L#IGB9, 300) -> 300_INITIAL_0
+Building dialogue flow for 7 states...
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Resolved EXTERN L#IGSTA:101 -> 101_INITIAL_0
+DEBUG: Connected 100_INITIAL_0 -> 100_BLOCK_0_ELEMENT_0
+DEBUG: Connected 100_BLOCK_0_ELEMENT_0 -> 100_BLOCK_1_ELEMENT_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 100_BLOCK_1_ELEMENT_0 -> 101_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 200_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 13 lines.
+Grouping 7 states into connected dialogues...
+Created 3 connected dialogue groups
+Building dialogue flow for 0 states...
+Flow building completed. Connected 0 lines.
+Grouping 0 states into connected dialogues...
+Created 0 connected dialogue groups
+Loaded 61 TRA entries from l#igcs6.tra
+DEBUG: Registering chain root: (L#IGCS6, 000) -> 000_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:002
+DEBUG: Extracted EXTERN target: L#IGCS6:002
+DEBUG: Extracted EXTERN target: L#IGCS6:002
+DEBUG: Extracted EXTERN target: L#IGCS6:002
+DEBUG: Extracted EXTERN target: L#IGCS6:001
+DEBUG: Extracted EXTERN target: L#IGCS6:001
+DEBUG: Registering chain root: (L#IGCS6, 001) -> 001_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 002) -> 002_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:003
+DEBUG: Extracted EXTERN target: L#IGCS6:003
+DEBUG: Extracted EXTERN target: L#IGCS6:003
+DEBUG: Extracted EXTERN target: L#IGCS6:003
+DEBUG: Extracted EXTERN target: L#IGCS6:004
+DEBUG: Extracted EXTERN target: L#IGCS6:004
+DEBUG: Registering chain root: (L#IGCS6, 003) -> 003_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 004) -> 004_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 005) -> 005_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:006
+DEBUG: Extracted EXTERN target: L#IGCS6:006
+DEBUG: Extracted EXTERN target: L#IGCS6:007
+DEBUG: Extracted EXTERN target: L#IGCS6:007
+DEBUG: Registering chain root: (L#IGCS6, 006) -> 006_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 007) -> 007_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 008) -> 008_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 200) -> 200_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:201
+DEBUG: Extracted EXTERN target: L#IGCS6:201
+DEBUG: Extracted EXTERN target: L#IGCS6:202
+DEBUG: Extracted EXTERN target: L#IGCS6:202
+DEBUG: Extracted EXTERN target: L#IGCS6:203
+DEBUG: Extracted EXTERN target: L#IGCS6:203
+DEBUG: Registering chain root: (L#IGCS6, 201) -> 201_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:201a
+DEBUG: Extracted EXTERN target: L#IGCS6:201a
+DEBUG: Extracted EXTERN target: L#IGCS6:201b
+DEBUG: Extracted EXTERN target: L#IGCS6:201b
+DEBUG: Extracted EXTERN target: L#IGCS6:201c
+DEBUG: Extracted EXTERN target: L#IGCS6:201c
+DEBUG: Registering chain root: (L#IGCS6, 201a) -> 201a_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 201b) -> 201b_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 201c) -> 201c_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 202) -> 202_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 203) -> 203_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 204) -> 204_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:205
+DEBUG: Extracted EXTERN target: L#IGCS6:205
+DEBUG: Extracted EXTERN target: L#IGCS6:206
+DEBUG: Extracted EXTERN target: L#IGCS6:206
+DEBUG: Registering chain root: (L#IGCS6, 205) -> 205_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 206) -> 206_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 207) -> 207_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:208
+DEBUG: Extracted EXTERN target: L#IGCS6:208
+DEBUG: Extracted EXTERN target: L#IGCS6:208
+DEBUG: Extracted EXTERN target: L#IGCS6:208
+DEBUG: Extracted EXTERN target: L#IGCS6:209
+DEBUG: Extracted EXTERN target: L#IGCS6:209
+DEBUG: Registering chain root: (L#IGCS6, 208) -> 208_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 209) -> 209_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 300) -> 300_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:301
+DEBUG: Extracted EXTERN target: L#IGCS6:301
+DEBUG: Extracted EXTERN target: L#IGCS6:302
+DEBUG: Extracted EXTERN target: L#IGCS6:302
+DEBUG: Extracted EXTERN target: L#IGCS6:302
+DEBUG: Extracted EXTERN target: L#IGCS6:302
+DEBUG: Registering chain root: (L#IGCS6, 301) -> 301_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 302) -> 302_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 303) -> 303_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:305
+DEBUG: Extracted EXTERN target: L#IGCS6:305
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Extracted EXTERN target: L#IGCS6:304
+DEBUG: Registering chain root: (L#IGCS6, 304) -> 304_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 305) -> 305_INITIAL_0
+DEBUG: Registering chain root: (L#IGCS6, 306) -> 306_INITIAL_0
+Building dialogue flow for 34 states...
+DEBUG: Resolved EXTERN L#IGCS6:002 -> 002_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:002 -> 002_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:003 -> 003_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:003 -> 003_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:004 -> 004_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:006 -> 006_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:007 -> 007_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:201 -> 201_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:202 -> 202_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:203 -> 203_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:201a -> 201a_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:201b -> 201b_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:201c -> 201c_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:205 -> 205_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:206 -> 206_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:208 -> 208_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:208 -> 208_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:209 -> 209_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:301 -> 301_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:302 -> 302_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:302 -> 302_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:304 -> 304_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:305 -> 305_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:304 -> 304_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:304 -> 304_INITIAL_0
+DEBUG: Resolved EXTERN L#IGCS6:304 -> 304_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 002_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 002_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 001_INITIAL_0
+DEBUG: Connected 002_INITIAL_0 -> 003_INITIAL_0
+DEBUG: Connected 002_INITIAL_0 -> 003_INITIAL_0
+DEBUG: Connected 002_INITIAL_0 -> 004_INITIAL_0
+DEBUG: Connected 005_INITIAL_0 -> 005_BLOCK_0_ELEMENT_0
+DEBUG: Connected 005_BLOCK_0_ELEMENT_0 -> 006_INITIAL_0
+DEBUG: Connected 005_BLOCK_0_ELEMENT_0 -> 007_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 201_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 202_INITIAL_0
+DEBUG: Connected 200_INITIAL_0 -> 203_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 201a_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 201b_INITIAL_0
+DEBUG: Connected 201_INITIAL_0 -> 201c_INITIAL_0
+DEBUG: Connected 204_INITIAL_0 -> 204_BLOCK_0_ELEMENT_0
+DEBUG: Connected 204_BLOCK_0_ELEMENT_0 -> 205_INITIAL_0
+DEBUG: Connected 204_BLOCK_0_ELEMENT_0 -> 206_INITIAL_0
+DEBUG: Connected 207_INITIAL_0 -> 208_INITIAL_0
+DEBUG: Connected 207_INITIAL_0 -> 208_INITIAL_0
+DEBUG: Connected 207_INITIAL_0 -> 209_INITIAL_0
+DEBUG: Connected 300_INITIAL_0 -> 301_INITIAL_0
+DEBUG: Connected 300_INITIAL_0 -> 302_INITIAL_0
+DEBUG: Connected 300_INITIAL_0 -> 302_INITIAL_0
+DEBUG: Connected 303_INITIAL_0 -> 303_BLOCK_0_ELEMENT_0
+DEBUG: Connected 303_BLOCK_0_ELEMENT_0 -> 303_BLOCK_1_ELEMENT_0
+DEBUG: Connected 303_BLOCK_1_ELEMENT_0 -> 304_INITIAL_0
+DEBUG: Connected 303_BLOCK_1_ELEMENT_0 -> 305_INITIAL_0
+DEBUG: Connected 303_BLOCK_1_ELEMENT_0 -> 304_INITIAL_0
+DEBUG: Connected 303_BLOCK_1_ELEMENT_0 -> 304_INITIAL_0
+DEBUG: Connected 303_BLOCK_1_ELEMENT_0 -> 304_INITIAL_0
+DEBUG: Connected 306_INITIAL_0 -> 306_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 60 lines.
+Grouping 34 states into connected dialogues...
+Created 9 connected dialogue groups
+Loaded 2 TRA entries from L#IGSTAW.tra
+DEBUG: Registering chain root: (L#IGSTAW, 000) -> 000_INITIAL_0
+Building dialogue flow for 2 states...
+DEBUG: Connected 000_INITIAL_0 -> 000_BLOCK_0_ELEMENT_0
+Flow building completed. Connected 2 lines.
+Grouping 2 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 1 TRA entries from l#igb3e.tra
+DEBUG: Registering chain root: (L#IGB3E, 000) -> 000_INITIAL_0
+Building dialogue flow for 1 states...
+Flow building completed. Connected 0 lines.
+Grouping 1 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 1 TRA entries from l#igb7e.tra
+DEBUG: Registering chain root: (L#IGB7E, 000) -> 000_INITIAL_0
+Building dialogue flow for 1 states...
+Flow building completed. Connected 0 lines.
+Grouping 1 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 14 TRA entries from l#igb8e.tra
+DEBUG: Registering chain root: (L#IGB8E1, 000) -> 000_INITIAL_0
+DEBUG: Extracted EXTERN target: L#IGB8E1:001
+DEBUG: Extracted EXTERN target: L#IGB8E1:001
+DEBUG: Extracted EXTERN target: L#IGB8E1:001
+DEBUG: Extracted EXTERN target: L#IGB8E1:001
+DEBUG: Registering chain root: (L#IGB8E1, 001) -> 001_INITIAL_0
+Building dialogue flow for 12 states...
+DEBUG: Resolved EXTERN L#IGB8E1:001 -> 001_INITIAL_0
+DEBUG: Resolved EXTERN L#IGB8E1:001 -> 001_INITIAL_0
+DEBUG: Connected 000_INITIAL_0 -> 000_BLOCK_0_ELEMENT_0
+DEBUG: Connected 000_BLOCK_0_ELEMENT_0 -> 000_BLOCK_1_ELEMENT_0
+DEBUG: Connected 000_BLOCK_1_ELEMENT_0 -> 000_BLOCK_2_ELEMENT_0
+DEBUG: Connected 000_BLOCK_2_ELEMENT_0 -> 000_BLOCK_3_ELEMENT_0
+DEBUG: Connected 000_BLOCK_3_ELEMENT_0 -> 000_BLOCK_4_ELEMENT_0
+DEBUG: Connected 000_BLOCK_4_ELEMENT_0 -> 001_INITIAL_0
+DEBUG: Connected 000_BLOCK_4_ELEMENT_0 -> 001_INITIAL_0
+DEBUG: Connected 001_INITIAL_0 -> 001_BLOCK_0_ELEMENT_0
+DEBUG: Connected 001_BLOCK_0_ELEMENT_0 -> 001_BLOCK_1_ELEMENT_0
+DEBUG: Connected 001_BLOCK_1_ELEMENT_0 -> 001_BLOCK_2_ELEMENT_0
+DEBUG: Connected 001_BLOCK_2_ELEMENT_0 -> 001_BLOCK_3_ELEMENT_0
+DEBUG: Connected 001_BLOCK_3_ELEMENT_0 -> 001_BLOCK_4_ELEMENT_0
+Flow building completed. Connected 14 lines.
+Grouping 12 states into connected dialogues...
+Created 1 connected dialogue groups
+Loaded 1 TRA entries from l#igb9e.tra
+DEBUG: Registering chain root: (L#IGB9E, 000) -> 000_INITIAL_0
+Building dialogue flow for 1 states...
+Flow building completed. Connected 0 lines.
+Grouping 1 states into connected dialogues...
+Created 1 connected dialogue groups

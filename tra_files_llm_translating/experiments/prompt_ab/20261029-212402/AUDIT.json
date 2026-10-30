@@ -1,0 +1,63 @@
+{
+  "records": 60,
+  "valid_requests": 60,
+  "rejected": 0,
+  "skipped": 0,
+  "all_options": {
+    "num_ctx": 131072,
+    "num_predict": -1
+  },
+  "unexpected_thinking": 0,
+  "identical_male_prompts": true,
+  "extra_rule_only_in_noun_variant_female": true,
+  "all_six_empty_female_cases_excluded_and_exported_empty": true,
+  "scores": {
+    "production": [
+      703,
+      717
+    ],
+    "production-nouns": [
+      704,
+      717
+    ]
+  },
+  "request_wall_seconds": 2249.58,
+  "snapshotted_input_hashes_checked": {
+    "tra_files_llm_translating/experiments/run_prompt_ab.py": true,
+    "tra_files_llm_translating/experiments/run_all.py": true,
+    "tra_files_llm_translating/experiments/run_non_thinking.py": true,
+    "tra_files_llm_translating/experiments/diagnose_translation.py": true,
+    "tra_files_llm_translating/experiments/inkgallery_checks.json": true,
+    "tra_files_llm_translating/translate_dialogs.py": true,
+    "tra_files_llm_translating/translation_common.py": true,
+    "tra_files_llm_translating/tra_format.py": true,
+    "tra_files_llm_translating/actors.csv": true,
+    "tra_files_llm_translating/dict.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/actors.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": true,
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": true,
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": true,
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": true,
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": true,
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/translated.csv": true,
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": true,
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": true
+  },
+  "imported_helper_module": {
+    "snapshot_sha256": "f3e28a730028a1e886f68d14fbc2660262105a0378546f2376bb159364de7517",
+    "current_sha256": "4755d15d61c31a82d8376d6315e55fb84631037348aa0e2578097638f422e60c",
+    "imported_function_sources_unchanged": {
+      "datasets": true,
+      "model_facts": true,
+      "now": true
+    },
+    "changes_after_batch_start": "Unused verifier report wording and female-reference completeness guard updated; A/B imports only the unchanged datasets/model_facts/now functions. Original module source is snapshotted."
+  }
+}
