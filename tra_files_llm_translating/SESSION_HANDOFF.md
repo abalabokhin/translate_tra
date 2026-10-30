@@ -1,5 +1,21 @@
 # Session handoff — start here
 
+## Current state — 2026-10-30 (supersedes the "running" notes below)
+
+**No job is running.** The translate + verify run `experiments/translate_verify/20261030-095325/`
+stopped after InkGallery (complete) and 5 of 6 ambiguous_addressees translations; the
+queued Sewers A/B continuation never started. Both queue files now say so. The user
+agreed to **finish the translate + verify test before deciding** anything. To continue
+on another machine follow
+[experiments/translate_verify/CONTINUATION_2026-10-30.md](experiments/translate_verify/CONTINUATION_2026-10-30.md):
+a new run folder for the remaining seven datasets and the planted stage, same settings,
+then the 10 Sewers A/B requests, then review. Interim InkGallery result: 264→268/270,
+6 real fixes, 1 harmful edit, a non-standard `приключенница` in all 3 repeats
+([STOPPED.md](experiments/translate_verify/20261030-095325/STOPPED.md)). Process IDs
+and "running" statements below are history.
+
+## Earlier status
+
 The user explicitly authorized **commit everything** on 2026-10-30. The current
 commit is an in-progress experiment snapshot; see
 `experiments/COMMIT_SNAPSHOT_2026-10-30.md`. At its pre-commit check six InkGallery

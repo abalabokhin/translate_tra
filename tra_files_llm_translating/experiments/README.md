@@ -30,8 +30,9 @@ Current results: [v3 rescoring](RESCORED_V3_RESULTS_2026-10-29.md) is complete.
 [Five-dataset prompt A/B](PROMPT_AB_RESULTS_2026-10-29.md) is complete (703/717 vs
 704/717; no target noun improvement). The fresh three-encounter InkGallery A/B
 extension completed Beholder and Moon Sisters; Sewers was interrupted by a serving
-failure. Translate + verify is running; unsubmitted Sewers cases are queued after
-it. The [finished-dialogue review](review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md)
+failure. Translate + verify stopped after InkGallery (264→268/270); the remaining
+datasets, planted controls and the unsubmitted Sewers A/B cases are to be run per
+[the continuation plan](translate_verify/CONTINUATION_2026-10-30.md). The [finished-dialogue review](review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md)
 and complete editorial proposals are ready. Verifier/control results remain pending. See the
 [review index](REVIEW_2026-10-29.md) for artifacts and status.
 
