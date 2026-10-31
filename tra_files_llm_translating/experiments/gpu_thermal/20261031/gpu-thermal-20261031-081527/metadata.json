@@ -1,0 +1,13 @@
+{
+  "kernel": "7.3.0-9-generic",
+  "hwmon": "/sys/bus/pci/devices/0000:0c:00.0/hwmon/hwmon2",
+  "cutoffs_C": {
+    "edge": 85,
+    "junction": 95,
+    "memory": 85
+  },
+  "sample_interval_s": 0.25,
+  "max_request_s": 120,
+  "note": "Fans fixed at 60%.",
+  "context_note": "Exact archived successful Beholder request; external 120-second diagnostic limit retained."
+}

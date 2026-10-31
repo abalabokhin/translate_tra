@@ -1,0 +1,5 @@
+2026-10-31T08:10:44.166602-04:00 LOG DIRECTORY: /home/paladin/source/translate_tra/results/gpu-thermal-20261031-081044
+2026-10-31T08:10:44.167191-04:00 10-second idle baseline; then gemma4:12b starts. Watch the GPU fans.
+2026-10-31T08:10:54.269369-04:00 STARTING gemma4:12b NOW: comparison 4096 context, batch 64, maximum 256 output tokens.
+2026-10-31T08:10:57.302246-04:00 REQUEST EXIT 0; temperatures mC=[40000, 44000, 42000]. Stopping request and unloading model.
+2026-10-31T08:11:12.457570-04:00 TEST FINISHED: REQUEST EXIT 0

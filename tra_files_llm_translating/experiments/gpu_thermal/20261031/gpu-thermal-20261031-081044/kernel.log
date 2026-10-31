@@ -1,0 +1,1 @@
+2026-10-31T08:10:56-04:00 paladin-desktop kernel: workqueue: svm_range_deferred_list_work [amdgpu] hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND

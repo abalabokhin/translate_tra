@@ -1,0 +1,51 @@
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b955d000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00801A31
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          Faulty UTCL2 client ID: SDMA0 (0xd)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MORE_FAULTS: 0x1
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          WALKER_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          PERMISSION_FAULTS: 0x3
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MAPPING_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          RW: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b955e000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00801A31
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          Faulty UTCL2 client ID: SDMA0 (0xd)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MORE_FAULTS: 0x1
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          WALKER_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          PERMISSION_FAULTS: 0x3
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MAPPING_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          RW: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b955f000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00801A31
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          Faulty UTCL2 client ID: SDMA0 (0xd)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MORE_FAULTS: 0x1
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          WALKER_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          PERMISSION_FAULTS: 0x3
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          MAPPING_ERROR: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:          RW: 0x0
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9560000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9561000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9562000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9563000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9564000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9565000 from client 0x1b (UTCL2)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:8 pasid:227)
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:  Process llama-server pid 12346 thread llama-server pid 12346
+2026-10-31T08:15:47-04:00 paladin-desktop kernel: amdgpu 0000:0c:00.0:   in page starting at address 0x00007014b9566000 from client 0x1b (UTCL2)

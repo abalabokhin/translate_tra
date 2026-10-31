@@ -1,0 +1,12 @@
+{
+  "kernel": "7.3.0-10-generic",
+  "hwmon": "/sys/bus/pci/devices/0000:0c:00.0/hwmon/hwmon2",
+  "cutoffs_C": {
+    "edge": 85,
+    "junction": 95,
+    "memory": 85
+  },
+  "sample_interval_s": 0.25,
+  "max_request_s": 120,
+  "note": "Automatic fan control unchanged. Request context matches failed run."
+}

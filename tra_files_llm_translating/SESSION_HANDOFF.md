@@ -1,5 +1,31 @@
 # Session handoff — start here
 
+## Current status — GPU investigation documented, 2026-10-31
+
+Read the [thermal results and decisions](experiments/gpu_thermal/20261031/README.md)
+and [ROCm investigation](experiments/gpu_thermal/20261031/ROCM_INVESTIGATION.md).
+User requested documenting everything and committing the necessary investigation
+artifacts. Translation outputs predating this investigation remain separate.
+
+- Thermal spikes reproduced on both kernels, with Mistral at 131K and 4K,
+  and Gemma4 at 4K. Manual 60% fans did not prevent them.
+- Default interactive Mistral at 4K completed with all 41 layers on GPU. Peak
+  temperature during that interactive request was not recorded. A longer
+  synthetic prompt at the same 4K context reached 99°C junction.
+- Gemma batch 64 failed model initialization, not a successful cool inference.
+  Qwen2.5 14B at 4K / batch 64 completed, peak 87°C junction / 261 W.
+- Exact archived successful Mistral request was replayed without JSON changes.
+  It failed with ROCm illegal memory access during weight upload, peak only
+  44°C; kernel identifies SDMA0 page faults. Same backend build and offload
+  layout as earlier success, model SHA256 valid. No root cause proven.
+- User wants earlier successful settings and is interested in Mistral fully
+  on GPU. Stop synthetic sweeps. Real dialogue at 4K was discussed but **not
+  run**; no production context change or full-queue restart performed.
+- No drivers/services/tuning changed during the latest audit. Manual fans
+  restored to automatic and models unloaded at last check. Do not resume the
+  long translation queue automatically. Historic running statements below
+  need live verification before any recovery.
+
 ## Active power-loss recovery — 2026-10-31 02:11 UTC
 
 User requested **commit everything, find the stopping point, and continue tests**.

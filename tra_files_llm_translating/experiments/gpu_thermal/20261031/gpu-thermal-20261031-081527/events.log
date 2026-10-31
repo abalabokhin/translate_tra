@@ -1,0 +1,5 @@
+2026-10-31T08:15:27.207852-04:00 LOG DIRECTORY: /home/paladin/source/translate_tra/results/gpu-thermal-20261031-081527
+2026-10-31T08:15:27.208496-04:00 10-second idle baseline; then Mistral starts. Watch the GPU fans.
+2026-10-31T08:15:37.315784-04:00 STARTING MISTRAL NOW: archived successful Beholder request; original options, uncapped generation.
+2026-10-31T08:15:48.962203-04:00 REQUEST EXIT 0; temperatures mC=[39000, 43000, 40000]. Stopping request and unloading model.
+2026-10-31T08:16:04.087014-04:00 TEST FINISHED: REQUEST EXIT 0
