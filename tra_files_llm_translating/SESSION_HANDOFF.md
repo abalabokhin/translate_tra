@@ -1,5 +1,29 @@
 # Session handoff — start here
 
+## Active power-loss recovery — 2026-10-31 02:11 UTC
+
+User requested **commit everything, find the stopping point, and continue tests**.
+Commit `6b42b6e` preserves all then-uncommitted work (90 files). After host reboot,
+no inference client or loaded model remained. All 59 offline tests pass; frozen
+input/runtime hashes and both model digests match.
+
+The 22:06 continuation completed ambiguous_addressees, multiple_npcs,
+original_female_variants and reused_strings (three successful verifier replies each).
+Beholder's first male request failed transport and its female pass was skipped.
+No other real-set translation or planted control was saved. See that run's STOPPED.md.
+Together with original InkGallery, **five datasets are complete; do not repeat them**.
+
+New continuation: `tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation`.
+Driver: `experiments/translate_verify/POWER_LOSS_CONTINUATION_2026-10-30.py`.
+Live execution session at launch: `63431`; check queue/process before any inference.
+It runs Beholder, Moon Sisters and Sewers under `remaining-translations/` (27 calls),
+then all seven complete-reference datasets under `planted-controls/` (54 calls),
+then ten pending Sewers A/B requests. These are separate stage manifests.
+Native contexts, uncapped generation, three repeats, no automatic retry/resume.
+Do not relaunch the earlier seven-dataset driver: that would repeat completed work.
+Manual review and final combined report remain pending; no production change approved.
+The prior active-status sections below are historical.
+
 ## Active continuation — 2026-10-30 22:06 UTC
 
 The user requested conflict resolution and continued testing. Rebase completed at

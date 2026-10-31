@@ -1,0 +1,28 @@
+{
+  "source_run": "tra_files_llm_translating/experiments/translate_verify/20261030-095325",
+  "datasets": [
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "completed_inkgallery_reused": true,
+  "completed_continuation_datasets": [
+    "ambiguous_addressees",
+    "multiple_npcs",
+    "original_female_variants",
+    "reused_strings"
+  ],
+  "previous_continuation": "tra_files_llm_translating/experiments/translate_verify/20261030-220610-continuation",
+  "planted_datasets": [
+    "ambiguous_addressees",
+    "multiple_npcs",
+    "original_female_variants",
+    "reused_strings",
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "beholder": "Previous male request failed transport; female skipped; remaining requests lost at shutdown. Fresh dataset run explicitly authorized.",
+  "offline_tests": "59 passed",
+  "started_utc": "2026-10-31T02:11:08.225431+00:00"
+}

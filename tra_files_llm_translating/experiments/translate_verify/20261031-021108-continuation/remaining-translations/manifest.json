@@ -1,0 +1,95 @@
+{
+  "status": "running",
+  "started_utc": "2026-10-31T02:11:08.254834+00:00",
+  "stages": [
+    "translate-verify"
+  ],
+  "settings": {
+    "translator": "mistral-small3.2:24b",
+    "translator_think": "default",
+    "translator_num_ctx": "native",
+    "verifier": "gemma4:12b",
+    "verifier_think": "on",
+    "verifier_num_ctx": "native",
+    "verifier_num_predict": -1,
+    "stages": "translate-verify",
+    "datasets": "inkgallery_beholder,inkgallery_moon_sisters,inkgallery_sewers",
+    "repeats": 3,
+    "url": "http://localhost:11434",
+    "out": "/home/paladin/source/translate_tra/tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation/remaining-translations",
+    "dry_run": false
+  },
+  "models": {
+    "translator": {
+      "tag": "mistral-small3.2:24b",
+      "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools"
+      ],
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "mistral3",
+        "families": [
+          "mistral3"
+        ],
+        "parameter_size": "24.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "verifier": {
+      "tag": "gemma4:12b",
+      "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+      "capabilities": [
+        "completion",
+        "vision",
+        "audio",
+        "tools",
+        "thinking"
+      ],
+      "details": {
+        "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "11.9B",
+        "quantization_level": "Q4_K_M",
+        "runner": "llamacpp"
+      }
+    }
+  },
+  "ollama_version": {
+    "version": "0.40.11"
+  },
+  "git_head": "6b42b6ed7f39399271a1dd312d412cbc82c5c10d",
+  "working_tree_diff": "diff --git a/tra_files_llm_translating/experiments/VERIFY_QUEUE_2026-10-29.json b/tra_files_llm_translating/experiments/VERIFY_QUEUE_2026-10-29.json\nindex 40ef39c..1753301 100644\n--- a/tra_files_llm_translating/experiments/VERIFY_QUEUE_2026-10-29.json\n+++ b/tra_files_llm_translating/experiments/VERIFY_QUEUE_2026-10-29.json\n@@ -1,7 +1,7 @@\n {\n   \"state\": \"running\",\n   \"armed_utc\": \"2026-10-30T00:40:38.517003+00:00\",\n-  \"queue_pid\": 10533,\n+  \"queue_pid\": 6565,\n   \"ab_pid\": 59881,\n   \"waiting_on\": \"tra_files_llm_translating/experiments/prompt_ab/20261029-220151-recovered\",\n   \"datasets\": [\n@@ -60,13 +60,21 @@\n   \"ended_utc\": \"2026-10-30T10:55:39.822061+00:00\",\n   \"error\": \"URLError(ConnectionRefusedError(111, 'Connection refused'))\",\n   \"previous_run\": {\n-    \"state\": \"interrupted_or_failed\",\n-    \"queue_pid\": 64134,\n+    \"state\": \"stopped\",\n+    \"queue_pid\": 10533,\n     \"output\": \"tra_files_llm_translating/experiments/translate_verify/20261030-095325\",\n     \"ended_utc\": \"2026-10-30T10:55:39.822061+00:00\",\n     \"error\": \"URLError(ConnectionRefusedError(111, 'Connection refused'))\",\n     \"stopped_note\": \"2026-10-30: process no longer running (user). inkgallery complete; ambiguous_addressees partial (5/6 translations, no verifier); rest not started. Continue per translate_verify/CONTINUATION_2026-10-30.md in a new folder.\"\n   },\n-  \"continuation_started_utc\": \"2026-10-30T22:06:11.003768+00:00\",\n-  \"continuation_output\": \"tra_files_llm_translating/experiments/translate_verify/20261030-220610-continuation\"\n+  \"continuation_started_utc\": \"2026-10-31T02:11:08.225511+00:00\",\n+  \"continuation_output\": \"tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation\",\n+  \"power_loss_previous_continuation\": {\n+    \"state\": \"running\",\n+    \"queue_pid\": 10533,\n+    \"continuation_started_utc\": \"2026-10-30T22:06:11.003768+00:00\",\n+    \"continuation_output\": \"tra_files_llm_translating/experiments/translate_verify/20261030-220610-continuation\"\n+  },\n+  \"power_loss_audit_utc\": \"2026-10-31T02:10:49.608875+00:00\",\n+  \"power_loss_note\": \"PC shutdown; host reboot confirmed, no inference client or loaded model. Four continuation datasets complete (12 successful verifier replies). Beholder male failed transport, female skipped; remaining three datasets and all planted controls pending. Resume explicitly authorized by user.\"\n }\n",
+  "sha256": {
+    "tra_files_llm_translating/experiments/run_translate_verify.py": "4755d15d61c31a82d8376d6315e55fb84631037348aa0e2578097638f422e60c",
+    "tra_files_llm_translating/experiments/verify_mutations.json": "f45e5f789dc731e097c8b5d463bc625bb0c6fd0e562d15ced098b11b0a5768e0",
+    "tra_files_llm_translating/experiments/diagnose_translation.py": "a246c32c0850455b2c72230cba022d18c1cea8ced60ac1acd84a9574b42ffce4",
+    "tra_files_llm_translating/translate_dialogs.py": "07a9f13c85e1d86335a20e523021d42fb4529190f263c9f69a7a2adf81669fb0",
+    "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+    "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_beholder/checks.json": "4cdf194ab6db1dc1889d6d258929662c22c27f49a1bda612155bb510065534dc",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_moon_sisters/checks.json": "86e7f5fb641e76a4103a349f0e9f9d0d752f103104c42bc160bf21bb9fcdefa9",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_sewers/checks.json": "3d9c598a4c2c0158b4dccfc4294598585af932a78539894766f20d6838eac7ca",
+    "tra_files_llm_translating/experiments/fixtures/README.md": "93a6531c6f8008a433d9c993df65948d96ae8e28919f1d94d7829d342b339b54",
+    "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "24d420be73167da41df980a5d68dd033d07fb2dbc5c59abf27e5b01ca99ed417",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/reference.csv": "fb4e38d8e900398e108d9f68d5e415fc2404ef0632c628a1ee2aae5466534f19",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "5ba8e4bc62a05c696eab975e4d8c01af4e2636257fdeaee69e718af97f3aec47",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/reference.csv": "9d99d8cd788a0013bfd1f6c7ba8d50b97c344cf5b013ea057b1ca5d33330af6c",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "47d2433a15d316d6768fb5a0e032f7790ff88ff80502a2b7fbb7b8ddfd5ffac0",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/reference.csv": "f23a8245617302b735ea5b3a19bf8c004fe727d0498ca99519a7be18c55bf953",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "b6652119e9d7acb8860f4455fdd25f7f10061ccac2a3b1d3a7829cbd64b89328",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c"
+  }
+}

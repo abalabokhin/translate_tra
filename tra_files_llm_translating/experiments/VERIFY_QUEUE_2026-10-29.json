@@ -1,7 +1,7 @@
 {
   "state": "running",
   "armed_utc": "2026-10-30T00:40:38.517003+00:00",
-  "queue_pid": 10533,
+  "queue_pid": 6565,
   "ab_pid": 59881,
   "waiting_on": "tra_files_llm_translating/experiments/prompt_ab/20261029-220151-recovered",
   "datasets": [
@@ -60,13 +60,21 @@
   "ended_utc": "2026-10-30T10:55:39.822061+00:00",
   "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))",
   "previous_run": {
-    "state": "interrupted_or_failed",
-    "queue_pid": 64134,
+    "state": "stopped",
+    "queue_pid": 10533,
     "output": "tra_files_llm_translating/experiments/translate_verify/20261030-095325",
     "ended_utc": "2026-10-30T10:55:39.822061+00:00",
     "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))",
     "stopped_note": "2026-10-30: process no longer running (user). inkgallery complete; ambiguous_addressees partial (5/6 translations, no verifier); rest not started. Continue per translate_verify/CONTINUATION_2026-10-30.md in a new folder."
   },
-  "continuation_started_utc": "2026-10-30T22:06:11.003768+00:00",
-  "continuation_output": "tra_files_llm_translating/experiments/translate_verify/20261030-220610-continuation"
+  "continuation_started_utc": "2026-10-31T02:11:08.225511+00:00",
+  "continuation_output": "tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation",
+  "power_loss_previous_continuation": {
+    "state": "running",
+    "queue_pid": 10533,
+    "continuation_started_utc": "2026-10-30T22:06:11.003768+00:00",
+    "continuation_output": "tra_files_llm_translating/experiments/translate_verify/20261030-220610-continuation"
+  },
+  "power_loss_audit_utc": "2026-10-31T02:10:49.608875+00:00",
+  "power_loss_note": "PC shutdown; host reboot confirmed, no inference client or loaded model. Four continuation datasets complete (12 successful verifier replies). Beholder male failed transport, female skipped; remaining three datasets and all planted controls pending. Resume explicitly authorized by user."
 }

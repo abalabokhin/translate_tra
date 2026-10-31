@@ -1,0 +1,14 @@
+@0    = ~"The lone adventurer, left and betrayed by his own group, was wading through layers of slime and sewage. All of his former friends thought he was dead, but he has always been a stubborn one, and he still had a few aces up his sleeve. He survived. But the sewers weren't a safe place, or at least not these tunnels. Lately, they were taken over by strange worm-like creatures. They already knew he was there, and they were preparing for an attack."~
+@1    = ~Ah, that sounds like something that happened to one of my cousins, and—perhaps she should actually write her story down. Perhaps it could become a recognized piece of writing, just like some of those books around us. Mmm, I believe I should tell her that, or maybe even offer some help.~
+@2    = ~This one is a one-on-one fight for survival. The fee for learning from most of those books is 3,500 gold pieces, but using this one costs only 3,000 gold pieces.~
+@3    = ~Fine. It's only fair for the original leader, <PLAYER1>, to face these creatures.~
+@4    = ~Fine. <PLAYER2> shall face these things.~
+@5    = ~Fine. <PLAYER3> shall face these things.~
+@6    = ~Fine. <PLAYER4> shall face these things.~
+@7    = ~Fine. <PLAYER5> shall face these things.~
+@8    = ~Fine. <PLAYER6> shall face these things.~
+@9    = ~No. I'll pass. At least for now.~
+@10   = ~Right! Well, I hope you picked the right person to go through this test.~
+@11   = ~"Even the worms weren't able to end the life of the betrayed adventurer."~
+@12   = ~The one who fought these monsters shall be the one to receive the gift.~
+@13   = ~You've already faced the battle this book describes.~

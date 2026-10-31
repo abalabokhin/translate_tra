@@ -1,3 +1,11 @@
+Latest recovery (2026-10-31 02:11 UTC): the PC shutdown interrupted the 22:06
+continuation after four complete datasets. Including original InkGallery, five
+datasets are complete. Commit `6b42b6e` preserves the interrupted artifacts.
+All 59 offline tests pass. The remaining three translate+verify datasets, all 54
+planted-control requests and ten Sewers A/B calls are continuing sequentially via
+`translate_verify/POWER_LOSS_CONTINUATION_2026-10-30.py`, output `tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation`.
+See `../SESSION_HANDOFF.md` and the queue for current state. Review is pending.
+
 # Translation diagnostic experiment
 
 Answers one question: **why does the local LLM get the Russian wrong?** Is it the
