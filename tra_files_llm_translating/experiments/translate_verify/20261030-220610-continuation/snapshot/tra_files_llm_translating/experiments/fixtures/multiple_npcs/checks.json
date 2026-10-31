@@ -1,0 +1,154 @@
+{
+  "version": "multiple_npcs-v2",
+  "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
+  "input": "input.csv",
+  "actors": "../actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    },
+    {
+      "name": "singular listener uses ты, not вы",
+      "forbid": "\\b(вы|вас|вам|вами|ваш\\w*)\\b"
+    }
+  ],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "101": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bвернулся\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bвернулась\\b"
+        }
+      ],
+      "both": [
+        {
+          "name": "Orin remains male",
+          "require": "Орин\\s+ждал"
+        },
+        {
+          "name": "downstairs",
+          "require": "внизу|нижн\\w*\\s+этаж|этажом\\s+ниже"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "вернулся",
+          "вернулась"
+        ]
+      ]
+    },
+    "102": {
+      "both": [
+        {
+          "name": "Selene feminine",
+          "require": "была\\s+права"
+        },
+        {
+          "name": "no masculine listener",
+          "forbid": "\\bбыл\\s+прав\\b"
+        },
+        {
+          "name": "narrated man stays male",
+          "require": "\\bего\\b"
+        },
+        {
+          "name": "narrated man not made female",
+          "forbid": "\\bе[её]\\b"
+        }
+      ]
+    },
+    "103": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\b(?:по)?обещал\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\b(?:по)?обещала\\b"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "обещал",
+          "обещала"
+        ],
+        [
+          "пообещал",
+          "пообещала"
+        ]
+      ]
+    },
+    "104": {
+      "both": [
+        {
+          "name": "Orin injured masculine",
+          "require": "ранен\\b|пострадал\\b|ранило\\b"
+        },
+        {
+          "name": "Selene worried feminine",
+          "require": "волновалась|беспокоилась|тревожилась|переживала"
+        }
+      ]
+    },
+    "105": {
+      "male": [
+        {
+          "name": "male form",
+          "require": "\\bспас\\b"
+        },
+        {
+          "name": "feminine address noun for male Player1",
+          "forbid": "\\b(путница|путешественница|странница|скиталица)\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "female form",
+          "require": "\\bспасла\\b"
+        },
+        {
+          "name": "masculine address noun for female Player1",
+          "forbid": "\\b(путник|путешественник|странник|скиталец)\\b"
+        }
+      ],
+      "both": [
+        {
+          "name": "Orin never feminine",
+          "forbid": "\\bобязана\\b"
+        }
+      ],
+      "allowed_changes": [
+        [
+          "спас",
+          "спасла"
+        ],
+        [
+          "путник",
+          "путница"
+        ],
+        [
+          "странник",
+          "странница"
+        ],
+        [
+          "путешественник",
+          "путешественница"
+        ]
+      ]
+    },
+    "106": {}
+  }
+}

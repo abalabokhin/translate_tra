@@ -1,0 +1,31 @@
+﻿model,prompt,scope,think,temp,repeat,gender,Line_ID,failed_checks,russian
+mistral-small3.2:24b,production,full,default,default,1,male,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,1,male,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,1,male,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,1,male,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,1,male,205,,"Вы должны остаться на том берегу, пока верёвка не будет закреплена."
+mistral-small3.2:24b,production,full,default,default,1,female,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,1,female,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,1,female,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,1,female,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,1,female,205,,"Вы должны остаться на том берегу, пока верёвка не будет закреплена."
+mistral-small3.2:24b,production,full,default,default,2,male,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,2,male,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,2,male,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,2,male,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,2,male,205,,"Тебе нужно остаться на том берегу, пока верёвка не будет надёжно закреплена."
+mistral-small3.2:24b,production,full,default,default,2,female,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,2,female,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,2,female,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,2,female,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,2,female,205,,"Тебе нужно остаться на том берегу, пока верёвка не будет надёжно закреплена."
+mistral-small3.2:24b,production,full,default,default,3,male,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,3,male,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,3,male,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,3,male,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,3,male,205,,"Вы должны остаться на том берегу, пока верёвка не будет надёжно закреплена."
+mistral-small3.2:24b,production,full,default,default,3,female,201,,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,3,female,202,,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,3,female,203,,"Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,3,female,204,,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,3,female,205,,"Вы должны остаться на том берегу, пока верёвка не будет надёжно закреплена."

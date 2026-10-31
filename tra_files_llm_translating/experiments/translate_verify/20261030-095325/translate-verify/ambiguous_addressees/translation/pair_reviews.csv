@@ -1,0 +1,16 @@
+﻿model,prompt,scope,think,temperature,repeat,Line_ID,status,reason,male,female
+mistral-small3.2:24b,production,full,default,default,1,201,pass,Exact equality after listed gender edits,Паромщик пропал. Брэм и Селена оба на дальнем берегу.,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,1,202,pass,Exact equality after listed gender edits,Ты меня слышишь?,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,1,203,pass,Exact equality after listed gender edits,"Я тебя слышу, но Селена — нет.","Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,1,204,pass,Exact equality after listed gender edits,Течение слишком сильное.,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,1,205,pass,Exact equality after listed gender edits,"Вы должны остаться на том берегу, пока верёвка не будет закреплена.","Вы должны остаться на том берегу, пока верёвка не будет закреплена."
+mistral-small3.2:24b,production,full,default,default,2,201,pass,Exact equality after listed gender edits,Паромщик пропал. Брэм и Селена оба на дальнем берегу.,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,2,202,pass,Exact equality after listed gender edits,Ты меня слышишь?,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,2,203,pass,Exact equality after listed gender edits,"Я тебя слышу, но Селена — нет.","Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,2,204,pass,Exact equality after listed gender edits,Течение слишком сильное.,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,2,205,pass,Exact equality after listed gender edits,"Тебе нужно остаться на том берегу, пока верёвка не будет надёжно закреплена.","Тебе нужно остаться на том берегу, пока верёвка не будет надёжно закреплена."
+mistral-small3.2:24b,production,full,default,default,3,201,pass,Exact equality after listed gender edits,Паромщик пропал. Брэм и Селена оба на дальнем берегу.,Паромщик пропал. Брэм и Селена оба на дальнем берегу.
+mistral-small3.2:24b,production,full,default,default,3,202,pass,Exact equality after listed gender edits,Ты меня слышишь?,Ты меня слышишь?
+mistral-small3.2:24b,production,full,default,default,3,203,pass,Exact equality after listed gender edits,"Я тебя слышу, но Селена — нет.","Я тебя слышу, но Селена — нет."
+mistral-small3.2:24b,production,full,default,default,3,204,pass,Exact equality after listed gender edits,Течение слишком сильное.,Течение слишком сильное.
+mistral-small3.2:24b,production,full,default,default,3,205,pass,Exact equality after listed gender edits,"Вы должны остаться на том берегу, пока верёвка не будет надёжно закреплена.","Вы должны остаться на том берегу, пока верёвка не будет надёжно закреплена."

@@ -1,6 +1,29 @@
 # Session handoff — start here
 
-## Current state — 2026-10-30 (supersedes the "running" notes below)
+## Active continuation — 2026-10-30 22:06 UTC
+
+The user requested conflict resolution and continued testing. Rebase completed at
+`3eaee4f`; both the remote stop note and local connection-failure evidence were
+preserved. All 59 offline tests passed. Frozen input/runtime hashes and both model
+digests match the original run.
+
+**Continuation is running** in
+`experiments/translate_verify/20261030-220610-continuation/` under
+`experiments/translate_verify/CONTINUATION_LAUNCH_2026-10-30.py`.
+Check `experiments/VERIFY_QUEUE_2026-10-29.json` and live process status before
+starting any inference. It runs the seven remaining datasets plus planted controls,
+then launches the ten pending Sewers A/B requests sequentially. Native contexts,
+uncapped generation, three repeats; no automatic retries/resume. InkGallery is
+reused from the completed original dataset. Manual review/report consolidation is
+still pending after inference. No production change is approved.
+
+Local artifacts clarify the original stop: ambiguous_addressees has six saved
+translation replies and one failed verifier request (`Remote end closed connection
+without response`), followed by connection refusal. There is no successful verifier
+reply for it. The other PC's five-reply snapshot is historical; the fresh rerun
+remains appropriate. Existing untracked raw outputs were preserved.
+
+## Previous stopped state — 2026-10-30
 
 **No job is running.** The translate + verify run `experiments/translate_verify/20261030-095325/`
 stopped after InkGallery (complete) and 5 of 6 ambiguous_addressees translations; the

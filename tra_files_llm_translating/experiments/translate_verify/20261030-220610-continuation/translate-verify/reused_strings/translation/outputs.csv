@@ -1,0 +1,43 @@
+﻿model,prompt,scope,think,temp,repeat,gender,Line_ID,failed_checks,russian
+mistral-small3.2:24b,production,full,default,default,1,male,301_a,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,1,male,301_b,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,1,male,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,male,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,male,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,1,male,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,1,female,301_a,,Я готова.
+mistral-small3.2:24b,production,full,default,default,1,female,301_b,,Я готова.
+mistral-small3.2:24b,production,full,default,default,1,female,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,female,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,female,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,1,female,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,2,male,301_a,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,2,male,301_b,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,2,male,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,male,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,male,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,2,male,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,2,female,301_a,,Я готова.
+mistral-small3.2:24b,production,full,default,default,2,female,301_b,,Я готова.
+mistral-small3.2:24b,production,full,default,default,2,female,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,female,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,female,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,2,female,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,3,male,301_a,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,3,male,301_b,no form incompatible with male Player1 and female Selene,Я готов.
+mistral-small3.2:24b,production,full,default,default,3,male,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,male,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,male,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,3,male,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,3,female,301_a,,Я готова.
+mistral-small3.2:24b,production,full,default,default,3,female,301_b,,Я готова.
+mistral-small3.2:24b,production,full,default,default,3,female,302_a,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,female,302_b,,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,female,303,,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,3,female,304,,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%."

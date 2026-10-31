@@ -1,0 +1,31 @@
+﻿model,prompt,scope,think,temp,repeat,gender,Line_ID,failed_checks,russian
+mistral-small3.2:24b,production,full,default,default,1,male,401,,Я был его учеником.
+mistral-small3.2:24b,production,full,default,default,1,male,402,,Герцог послал тебя забрать его печать.
+mistral-small3.2:24b,production,full,default,default,1,male,403,,Я принес серебряный ключ.
+mistral-small3.2:24b,production,full,default,default,1,male,404,,Дверь открыта.
+mistral-small3.2:24b,production,full,default,default,1,male,405,,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,1,female,401,,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,1,female,402,,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production,full,default,default,1,female,403,,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,1,female,404,,
+mistral-small3.2:24b,production,full,default,default,1,female,405,,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,2,male,401,,Я был его учеником.
+mistral-small3.2:24b,production,full,default,default,2,male,402,,Герцог послал тебя забрать его печать.
+mistral-small3.2:24b,production,full,default,default,2,male,403,,Я принес серебряный ключ.
+mistral-small3.2:24b,production,full,default,default,2,male,404,,Дверь открыта.
+mistral-small3.2:24b,production,full,default,default,2,male,405,,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,2,female,401,,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,2,female,402,,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production,full,default,default,2,female,403,,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,2,female,404,,
+mistral-small3.2:24b,production,full,default,default,2,female,405,,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,3,male,401,,Я был его учеником.
+mistral-small3.2:24b,production,full,default,default,3,male,402,,Герцог послал тебя забрать его печать.
+mistral-small3.2:24b,production,full,default,default,3,male,403,,Я принес серебряный ключ.
+mistral-small3.2:24b,production,full,default,default,3,male,404,,Дверь открыта.
+mistral-small3.2:24b,production,full,default,default,3,male,405,,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,3,female,401,,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,3,female,402,,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production,full,default,default,3,female,403,,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,3,female,404,,
+mistral-small3.2:24b,production,full,default,default,3,female,405,,Я подожду здесь.

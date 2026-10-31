@@ -1,5 +1,18 @@
 # Translate + verify — continuation after the stop (2026-10-30)
 
+## Continuation launched — 22:06 UTC
+
+The user authorized continuing on this PC. Run
+`20261030-220610-continuation/` is active via
+`CONTINUATION_LAUNCH_2026-10-30.py`; check the queue/process before launching anything.
+All 59 offline tests passed; frozen hashes and both model digests match. The launcher
+runs steps 1 and 2 sequentially. Step 3 review remains pending.
+
+The rebased local failure records include the sixth ambiguous_addressees translation
+and a failed first verifier request, followed by connection refusal. No successful
+verifier reply exists; the fresh dataset rerun below still applies. Five-reply
+counts below describe the earlier other-PC snapshot.
+
 ## Where it stopped
 
 Run `20261030-095325/` is **stopped**, not running (confirmed by the user on

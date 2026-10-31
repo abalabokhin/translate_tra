@@ -1,0 +1,16 @@
+{
+  "source_run": "tra_files_llm_translating/experiments/translate_verify/20261030-095325",
+  "datasets": [
+    "ambiguous_addressees",
+    "multiple_npcs",
+    "original_female_variants",
+    "reused_strings",
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "completed_inkgallery_reused": true,
+  "ambiguous_addressees": "Fresh run as requested; prior verifier failed transport, no successful correction.",
+  "offline_tests": "59 passed",
+  "started_utc": "2026-10-30T22:06:11.003654+00:00"
+}

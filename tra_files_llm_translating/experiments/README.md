@@ -33,7 +33,12 @@ extension completed Beholder and Moon Sisters; Sewers was interrupted by a servi
 failure. Translate + verify stopped after InkGallery (264→268/270); the remaining
 datasets, planted controls and the unsubmitted Sewers A/B cases are to be run per
 [the continuation plan](translate_verify/CONTINUATION_2026-10-30.md). The [finished-dialogue review](review/20261029/FINISHED_DIALOGUE_REVIEW_2026-10-30.md)
-and complete editorial proposals are ready. Verifier/control results remain pending. See the
+and complete editorial proposals are ready. The continuation started at 22:06 UTC in
+`translate_verify/20261030-220610-continuation/` after frozen hashes/model digests
+matched and all 59 offline tests passed. Seven remaining datasets and planted
+controls run first, then ten pending Sewers A/B requests. Check the queue files
+before starting another job. Verifier/control results and combined review remain
+pending. See the
 [review index](REVIEW_2026-10-29.md) for artifacts and status.
 
 Results must be saved for review under `translate_verify/` and `prompt_ab/`,
