@@ -1,0 +1,6 @@
+Line_ID,Russian_Male,Russian_Female,Review_Notes
+201,Паромщик пропал. Брам и Селена на другом берегу.,Паромщик пропал. Брам и Селена на другом берегу.,"Setup: two possible listeners, different genders."
+202,Ты меня слышишь?,Ты меня слышишь?,Do not invent listener gender. Also accept plural if read as addressing both; no singular-address check.
+203,"Я тебя слышу, а Селена — нет.","Я тебя слышу, а Селена — нет.",Male speaker; no gendered tense required.
+204,Течение слишком сильное.,Течение слишком сильное.,Alternative branch; not consecutive with Bram.
+205,"Оставайся на том берегу, пока верёвка не будет закреплена.","Оставайся на том берегу, пока верёвка не будет закреплена.",Listener ambiguous across alternatives; singular/plural both plausible. Preserve bank and rope condition; no invented gender.

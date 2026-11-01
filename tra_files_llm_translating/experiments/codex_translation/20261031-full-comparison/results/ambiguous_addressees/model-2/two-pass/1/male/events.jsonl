@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19361-c21b-74b0-874a-aa86bf5647d7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Паромщик пропал. Брам и Селена оба на дальнем берегу.\",\"2\":\"Вы меня слышите?\",\"3\":\"Я тебя слышу, а Селена — нет.\",\"4\":\"Течение слишком сильное.\",\"5\":\"Вы должны оставаться на том берегу, пока верёвка не будет надёжно закреплена.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15483,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":124,"reasoning_output_tokens":34}}

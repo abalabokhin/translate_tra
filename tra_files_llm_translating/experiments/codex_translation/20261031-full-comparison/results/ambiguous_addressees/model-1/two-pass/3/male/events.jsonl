@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19360-ff60-7fc2-ac89-3bc4bfac1482"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Перевозчик пропал. Брам и Селена оба на том берегу.\",\"2\":\"Ты меня слышишь?\",\"3\":\"Я тебя слышу, а Селена — нет.\",\"4\":\"Течение слишком сильное.\",\"5\":\"Ты должен оставаться на том берегу, пока верёвка не будет надёжно закреплена.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":14793,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":88,"reasoning_output_tokens":0}}

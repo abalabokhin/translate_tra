@@ -1,0 +1,255 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "translations"
+  ],
+  "properties": {
+    "translations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "properties": {
+        "1": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "2": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "4": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "5": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "6": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "7": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "8": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "9": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "10": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "11": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "12": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "13": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "14": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

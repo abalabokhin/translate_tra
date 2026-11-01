@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19365-16cc-7663-93fc-ecdf19b04439"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Я была её ученицей.\",\"2\":\"Герцогиня послала тебя забрать её печать.\",\"3\":\"Я принесла бронзовый ключ.\",\"5\":\"Я подожду здесь.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15517,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":142,"reasoning_output_tokens":82}}

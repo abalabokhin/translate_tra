@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19365-967f-7182-b973-6155331b0619"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":{\"male\":\"Я готов.\",\"female\":\"Я готова.\"},\"2\":{\"male\":\"Тогда открой ворота.\",\"female\":\"Тогда открой ворота.\"},\"3\":{\"male\":\"*Она проверяет замок.* Ворота открыты.\",\"female\":\"*Она проверяет замок.* Ворота открыты.\"},\"4\":{\"male\":\"Жди <CHARNAME>.\\nНе трогай %gate_lock%.\",\"female\":\"Жди <CHARNAME>.\\nНе трогай %gate_lock%.\"}}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15078,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":125,"reasoning_output_tokens":0}}

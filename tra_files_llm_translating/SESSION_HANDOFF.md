@@ -1,5 +1,56 @@
 # Session handoff — start here
 
+## Commit snapshot authorized — 2026-10-31
+
+User explicitly requested **document and commit everything** after the full
+Codex comparison and subscription-capacity discussion. This overrides the
+earlier no-new-commit notes for the current workspace snapshot. All current
+project changes, including previous interrupted translation artifacts and root
+results/ diagnostics, are included; ignored caches/credentials remain excluded.
+No push, production adoption, new inference or quota experiment requested.
+User says their next request will be how to read the translations personally
+and verify them. Next session should help navigate the saved English/male/female
+CSV outputs and assistant notes; do not infer permission for more tests or a
+production switch. Sol simultaneous output is the leading review candidate.
+See [subscription capacity](experiments/CODEX_SUBSCRIPTION_CAPACITY.md): plan and
+actual five-hour allowance were not measured; the 1.7k–18.2k source-word range
+is only illustrative arithmetic, not a calibrated capacity estimate.
+
+
+## Full Codex comparison completed — 2026-10-31
+
+User authorized the whole comparison after the pilot. Completed all **96 pairs /
+144 CLI requests**: Luna and Sol, both-genders and two-pass, all eight datasets,
+three repeats. Canonical results are under
+`experiments/codex_translation/20261031-full-comparison/`:
+[summary](experiments/codex_translation/20261031-full-comparison/SUMMARY.md),
+[assistant review](experiments/codex_translation/20261031-full-comparison/MANUAL_REVIEW.md),
+COMPARISON.json, outputs.csv, ASSISTANT_REVIEW.csv and INTEGRITY.json.
+
+- Sol both: **1014/1020**, 24/24 structurally valid; all six failed checks are
+  assistant-adjudicated false alarms (neutral injury phrasing / dead-magic
+  paraphrases). Strongest candidate in this suite, human approval pending.
+- Sol two-pass: **1002/1020**, 24/24 valid; some female-source and fixed third-
+  person errors introduced by female editing.
+- Luna both: **876/1020** all attempted; 22/24 valid, two quote rejections.
+  Accepted pairs alone: 876/900. Luna two-pass: **986/1020**, 24/24 valid.
+  Both Luna methods have real gender/source/meaning errors, including one
+  fee reversal and one feminized male third-person narration.
+- All **371 distinct raw line pairs** (covering 840 source-row occurrences)
+  reviewed by the assistant, including rejected replies. All 144 CLI calls
+  completed without tool use; source/runtime hashes unchanged. No retry.
+- Initial runner stopped at the second reply's structural rejection. Archived
+  one-off continue_unattempted.py completed only the unattempted cases. The
+  original results/manifest.json remains historical; COMPARISON.json is final.
+- Frozen scores/raw replies/references unchanged. No production switch, new
+  local GPU inference or evaluator change. User subsequently authorized the
+  documentation/results commit snapshot above. All 65 offline tests passed
+  at runner preparation. No Codex comparison job remains active.
+
+User's prior GPU questions and investigation remain documented below. The
+working local translation queue remains stopped. Next decision is human review
+of Sol simultaneous output before any production adoption.
+
 ## Current status — GPU investigation documented, 2026-10-31
 
 Read the [thermal results and decisions](experiments/gpu_thermal/20261031/README.md)

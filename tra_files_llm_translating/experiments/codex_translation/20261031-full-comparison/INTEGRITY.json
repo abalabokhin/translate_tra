@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "planned_pairs": 96,
+  "unique_attempted_pairs": 96,
+  "cli_requests": 144,
+  "cli_successes": 144,
+  "structurally_accepted_pairs": 94,
+  "structurally_rejected_pairs": 2,
+  "output_rows": 840,
+  "unique_raw_line_pairs_reviewed": 371,
+  "frozen_inputs_unchanged": true,
+  "no_observed_tool_activity": true,
+  "manual_review": "assistant completed; human pending"
+}

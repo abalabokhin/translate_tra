@@ -1,0 +1,26 @@
+{
+  "unique_line_pairs": 371,
+  "labels": {
+    "pass": 301,
+    "gender_error": 11,
+    "meaning_review": 4,
+    "spelling_error": 2,
+    "editorial_review": 9,
+    "terminology_review": 7,
+    "format_error": 2,
+    "format_spelling_error": 1,
+    "meaning_terminology_review": 1,
+    "grammar_error": 1,
+    "addressee_gender_error": 5,
+    "third_person_error": 4,
+    "meaning_error": 3,
+    "female_source_error": 4,
+    "shared_string_error": 4,
+    "address_form_review": 1,
+    "gendered_role_review": 1,
+    "numeric_format_review": 8,
+    "omission_error": 1,
+    "placeholder_attachment_review": 1
+  },
+  "note": "Assistant labels per distinct line pair; not independent wrong cells. Human review pending."
+}

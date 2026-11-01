@@ -1,3 +1,13 @@
+Current (2026-10-31): local inference is stopped during the
+[GPU/ROCm investigation](gpu_thermal/20261031/README.md). The
+[full Codex CLI comparison](codex_translation/20261031-full-comparison/SUMMARY.md)
+completed 96 pairs / 144 requests across two models, both methods, eight datasets
+and three repeats. Sol simultaneous leads at 1014/1020 targeted checks;
+[assistant review](codex_translation/20261031-full-comparison/MANUAL_REVIEW.md)
+completed, human approval pending. No production change. See the
+[runner guide](CODEX_TRANSLATION.md). The recovery status below
+is historical; check the handoff before resuming local work.
+
 Latest recovery (2026-10-31 02:11 UTC): the PC shutdown interrupted the 22:06
 continuation after four complete datasets. Including original InkGallery, five
 datasets are complete. Commit `6b42b6e` preserves the interrupted artifacts.
@@ -5,6 +15,10 @@ All 59 offline tests pass. The remaining three translate+verify datasets, all 54
 planted-control requests and ten Sewers A/B calls are continuing sequentially via
 `translate_verify/POWER_LOSS_CONTINUATION_2026-10-30.py`, output `tra_files_llm_translating/experiments/translate_verify/20261031-021108-continuation`.
 See `../SESSION_HANDOFF.md` and the queue for current state. Review is pending.
+
+The user subsequently authorized committing all current work after reviewing
+the Codex comparison. [Subscription capacity notes](CODEX_SUBSCRIPTION_CAPACITY.md)
+record the measured token usage and uncertainty of five-hour throughput estimates.
 
 # Translation diagnostic experiment
 

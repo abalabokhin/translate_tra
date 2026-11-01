@@ -91,5 +91,67 @@
     "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "b6652119e9d7acb8860f4455fdd25f7f10061ccac2a3b1d3a7829cbd64b89328",
     "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/reference.csv": "f74b7dcd707935c6a76111a4781be7d34cd6034efeaebb30a1857ea71ea2f4b0",
     "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c"
-  }
+  },
+  "translate_verify": [
+    {
+      "dataset": "inkgallery_beholder",
+      "repeat": 1,
+      "expected_checks": 30,
+      "verifier_error": null,
+      "verifier_seconds": 110.41,
+      "verifier_tokens": 8420,
+      "gpu": {
+        "size": 1409957231,
+        "size_vram": 1409957231,
+        "gpu_percent": 100.0
+      },
+      "issues": 5,
+      "applied": 2,
+      "checks_before": 30,
+      "checks_after": 30,
+      "checks_fixed": 0,
+      "checks_broken": 0,
+      "lines_changed": 2
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "repeat": 2,
+      "expected_checks": 30,
+      "verifier_error": null,
+      "verifier_seconds": 72.27,
+      "verifier_tokens": 5858,
+      "gpu": {
+        "size": 1409957231,
+        "size_vram": 1409957231,
+        "gpu_percent": 100.0
+      },
+      "issues": 3,
+      "applied": 3,
+      "checks_before": 30,
+      "checks_after": 30,
+      "checks_fixed": 0,
+      "checks_broken": 0,
+      "lines_changed": 3
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "repeat": 3,
+      "expected_checks": 30,
+      "verifier_error": null,
+      "verifier_seconds": 112.95,
+      "verifier_tokens": 8554,
+      "gpu": {
+        "size": 1409957231,
+        "size_vram": 1409957231,
+        "gpu_percent": 100.0
+      },
+      "issues": 0,
+      "applied": 0,
+      "checks_before": 30,
+      "checks_after": 30,
+      "checks_fixed": 0,
+      "checks_broken": 0,
+      "lines_changed": 0
+    }
+  ]
 }
