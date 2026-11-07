@@ -1,0 +1,1624 @@
+
+//BOOK 1
+
+IF
+Global("L#IGBook1","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB1S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook1","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB1",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook1","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT1",FALSE)
+DisplayStringHead("L#IGSTA",@129)
+AddStoreItem("L#IGSTO","L#IGFLA",1,1)
+SetGlobal("L#IGBook1","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook1RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB1R",Player1) 
+DisplayStringHead(Player1,@130)
+SetGlobal("L#IGBook1RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook1RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB1R",Player2) 
+DisplayStringHead(Player2,@130)
+SetGlobal("L#IGBook1RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook1RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB1R",Player3) 
+DisplayStringHead(Player3,@130)
+SetGlobal("L#IGBook1RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook1RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB1R",Player4) 
+DisplayStringHead(Player4,@130)
+SetGlobal("L#IGBook1RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook1RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB1R",Player5) 
+DisplayStringHead(Player5,@130)
+SetGlobal("L#IGBook1RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook1RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB1R",Player6) 
+DisplayStringHead(Player6,@130)
+SetGlobal("L#IGBook1RewPla6","GLOBAL",2)
+END
+
+//BOOK 2
+
+IF
+Global("L#IGBook2","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB2S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook2","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB2",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook2","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT2",FALSE)
+DisplayStringHead("L#IGSTA",@131)
+AddStoreItem("L#IGSTO","L#IGTRU",1,1)
+SetGlobal("L#IGBook2","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook2RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ActionOverride(Player1,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player1,@132)
+SetGlobal("L#IGBook2RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ActionOverride(Player2,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player2,@132)
+SetGlobal("L#IGBook2RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ActionOverride(Player3,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player3,@132)
+SetGlobal("L#IGBook2RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ActionOverride(Player4,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player4,@132)
+SetGlobal("L#IGBook2RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ActionOverride(Player5,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player5,@132)
+SetGlobal("L#IGBook2RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ActionOverride(Player6,AddSpecialAbility("SPCL321"))
+DisplayStringHead(Player6,@132)
+SetGlobal("L#IGBook2RewPla6","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla1b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB2R",Player1) 
+DisplayStringHead(Player1,@133)
+SetGlobal("L#IGBook2RewPla1b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla2b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB2R",Player2) 
+DisplayStringHead(Player2,@133)
+SetGlobal("L#IGBook2RewPla2b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla3b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB2R",Player3) 
+DisplayStringHead(Player3,@133)
+SetGlobal("L#IGBook2RewPla3b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla4b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB2R",Player4) 
+DisplayStringHead(Player4,@133)
+SetGlobal("L#IGBook2RewPla4b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla5b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB2R",Player5) 
+DisplayStringHead(Player5,@133)
+SetGlobal("L#IGBook2RewPla5b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook2RewPla6b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB2R",Player6) 
+DisplayStringHead(Player6,@133)
+SetGlobal("L#IGBook2RewPla6b","GLOBAL",2)
+END
+
+//BOOK 3
+
+IF
+Global("L#IGBook3","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB3S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook3","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB3",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook3","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT3",FALSE)
+DisplayStringHead("L#IGSTA",@134)
+AddStoreItem("L#IGSTO","L#IGBRA",1,1)
+SetGlobal("L#IGBook3","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook3RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB3R",Player1) 
+DisplayStringHead(Player1,@135)
+SetGlobal("L#IGBook3RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook3RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB3R",Player2) 
+DisplayStringHead(Player2,@135)
+SetGlobal("L#IGBook3RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook3RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB3R",Player3) 
+DisplayStringHead(Player3,@135)
+SetGlobal("L#IGBook3RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook3RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB3R",Player4) 
+DisplayStringHead(Player4,@135)
+SetGlobal("L#IGBook3RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook3RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB3R",Player5) 
+DisplayStringHead(Player5,@135)
+SetGlobal("L#IGBook3RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook3RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB3R",Player6) 
+DisplayStringHead(Player6,@135)
+SetGlobal("L#IGBook3RewPla6","GLOBAL",2)
+END
+
+//BOOK 4
+
+IF
+Global("L#IGBook4","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB4S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook4","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB4",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook4","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT4",FALSE)
+DisplayStringHead("L#IGSTA",@136)
+AddStoreItem("L#IGSTO","L#IGAAR",1,1)
+SetGlobal("L#IGBook4","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook4RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB4R",Player1) 
+DisplayStringHead(Player1,@137)
+SetGlobal("L#IGBook4RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook4RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB4R",Player2) 
+DisplayStringHead(Player2,@137)
+SetGlobal("L#IGBook4RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook4RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB4R",Player3) 
+DisplayStringHead(Player3,@137)
+SetGlobal("L#IGBook4RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook4RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB4R",Player4) 
+DisplayStringHead(Player4,@137)
+SetGlobal("L#IGBook4RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook4RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB4R",Player5) 
+DisplayStringHead(Player5,@137)
+SetGlobal("L#IGBook4RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook4RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB4R",Player6) 
+DisplayStringHead(Player6,@137)
+SetGlobal("L#IGBook4RewPla6","GLOBAL",2)
+END
+
+//BOOK 5
+
+IF
+Global("L#IGBook5","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB5S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook5","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB5",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook5","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT5",FALSE)
+DisplayStringHead("L#IGSTA",@138)
+AddStoreItem("L#IGSTO","L#IGBEL",1,1)
+SetGlobal("L#IGBook5","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook5RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB5R",Player1) 
+DisplayStringHead(Player1,@139)
+SetGlobal("L#IGBook5RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB5R",Player2) 
+DisplayStringHead(Player2,@139)
+SetGlobal("L#IGBook5RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB5R",Player3) 
+DisplayStringHead(Player3,@139)
+SetGlobal("L#IGBook5RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB5R",Player4) 
+DisplayStringHead(Player4,@139)
+SetGlobal("L#IGBook5RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB5R",Player5) 
+DisplayStringHead(Player5,@139)
+SetGlobal("L#IGBook5RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB5R",Player6) 
+DisplayStringHead(Player6,@139)
+SetGlobal("L#IGBook5RewPla6","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla1b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB5Rb",Player1) 
+DisplayStringHead(Player1,@140)
+SetGlobal("L#IGBook5RewPla1b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla2b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB5Rb",Player2) 
+DisplayStringHead(Player2,@140)
+SetGlobal("L#IGBook5RewPla2b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla3b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB5Rb",Player3) 
+DisplayStringHead(Player3,@140)
+SetGlobal("L#IGBook5RewPla3b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla4b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB5Rb",Player4) 
+DisplayStringHead(Player4,@140)
+SetGlobal("L#IGBook5RewPla4b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla5b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB5Rb",Player5) 
+DisplayStringHead(Player5,@140)
+SetGlobal("L#IGBook5RewPla5b","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook5RewPla6b","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB5Rb",Player6) 
+DisplayStringHead(Player6,@140)
+SetGlobal("L#IGBook5RewPla6b","GLOBAL",2)
+END
+
+//BOOK 6
+
+IF
+Global("L#IGBook6","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB6S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook6","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB6",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook6","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT6",FALSE)
+DisplayStringHead("L#IGSTA",@141)
+AddStoreItem("L#IGSTO","L#IGSCI",1,1)
+SetGlobal("L#IGBook6","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook6RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB6R",Player1) 
+DisplayStringHead(Player1,@142)
+SetGlobal("L#IGBook6RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook6RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB6R",Player2) 
+DisplayStringHead(Player2,@142)
+SetGlobal("L#IGBook6RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook6RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB6R",Player3) 
+DisplayStringHead(Player3,@142)
+SetGlobal("L#IGBook6RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook6RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB6R",Player4) 
+DisplayStringHead(Player4,@142)
+SetGlobal("L#IGBook6RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook6RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB6R",Player5) 
+DisplayStringHead(Player5,@142)
+SetGlobal("L#IGBook6RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook6RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB6R",Player6) 
+DisplayStringHead(Player6,@142)
+SetGlobal("L#IGBook6RewPla6","GLOBAL",2)
+END
+
+//BOOK 7
+
+IF
+Global("L#IGBook7","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB7S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook7","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB7",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook7","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT7",FALSE)
+DisplayStringHead("L#IGSTA",@143)
+AddStoreItem("L#IGSTO","L#IGRIN",1,1)
+SetGlobal("L#IGBook7","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook7RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB7R",Player1) 
+DisplayStringHead(Player1,@144)
+SetGlobal("L#IGBook7RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook7RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB7R",Player2) 
+DisplayStringHead(Player2,@144)
+SetGlobal("L#IGBook7RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook7RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB7R",Player3) 
+DisplayStringHead(Player3,@144)
+SetGlobal("L#IGBook7RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook7RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB7R",Player4) 
+DisplayStringHead(Player4,@144)
+SetGlobal("L#IGBook7RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook7RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB7R",Player5) 
+DisplayStringHead(Player5,@144)
+SetGlobal("L#IGBook7RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook7RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB7R",Player6) 
+DisplayStringHead(Player6,@144)
+SetGlobal("L#IGBook7RewPla6","GLOBAL",2)
+END
+
+//BOOK 8
+
+IF
+Global("L#IGBook8","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB8S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook8","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB8",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook8","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT8",FALSE)
+DisplayStringHead("L#IGSTA",@145)
+AddStoreItem("L#IGSTO","L#IGSHI",1,1)
+SetGlobal("L#IGBook8","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook8RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB8R",Player1) 
+DisplayStringHead(Player1,@146)
+SetGlobal("L#IGBook8RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook8RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB8R",Player2) 
+DisplayStringHead(Player2,@146)
+SetGlobal("L#IGBook8RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook8RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB8R",Player3) 
+DisplayStringHead(Player3,@146)
+SetGlobal("L#IGBook8RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook8RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB8R",Player4) 
+DisplayStringHead(Player4,@146)
+SetGlobal("L#IGBook8RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook8RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB8R",Player5) 
+DisplayStringHead(Player5,@146)
+SetGlobal("L#IGBook8RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook8RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB8R",Player6) 
+DisplayStringHead(Player6,@146)
+SetGlobal("L#IGBook8RewPla6","GLOBAL",2)
+END
+
+//BOOK 9
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S1")
+END
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S2")
+END
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S3")
+END
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S4")
+END
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S5")
+END
+
+IF
+Global("L#IGBook9","GLOBAL",1)
+Global("L#IGBook9RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB9S6")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9Finished","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB9",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook9","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT9",FALSE)
+DisplayStringHead("L#IGSTA",@147)
+AddStoreItem("L#IGSTO","L#IGIOU",1,1)
+SetGlobal("L#IGBook9","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook9RewPla1","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB9R",Player1) 
+DisplayStringHead(Player1,@148)
+SetGlobal("L#IGBook9RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook9RewPla2","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB9R",Player2) 
+DisplayStringHead(Player2,@148)
+SetGlobal("L#IGBook9RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook9RewPla3","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB9R",Player3) 
+DisplayStringHead(Player3,@148)
+SetGlobal("L#IGBook9RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook9RewPla4","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB9R",Player4) 
+DisplayStringHead(Player4,@148)
+SetGlobal("L#IGBook9RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook9RewPla5","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB9R",Player5) 
+DisplayStringHead(Player5,@148)
+SetGlobal("L#IGBook9RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook9RewPla6","GLOBAL",1)
+Global("L#IGBook9","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB9R",Player6) 
+DisplayStringHead(Player6,@148)
+SetGlobal("L#IGBook9RewPla6","GLOBAL",2)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla1","GLOBAL",1)
+OR(7)
+StateCheck(Player1,STATE_DEAD)
+StateCheck(Player1,STATE_REALLY_DEAD)
+StateCheck(Player1,STATE_ACID_DEATH)
+StateCheck(Player1,STATE_FLAME_DEATH)
+StateCheck(Player1,STATE_EXPLODING_DEATH)
+StateCheck(Player1,STATE_STONE_DEATH)
+StateCheck(Player1,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla1","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla2","GLOBAL",1)
+OR(7)
+StateCheck(Player2,STATE_DEAD)
+StateCheck(Player2,STATE_REALLY_DEAD)
+StateCheck(Player2,STATE_ACID_DEATH)
+StateCheck(Player2,STATE_FLAME_DEATH)
+StateCheck(Player2,STATE_EXPLODING_DEATH)
+StateCheck(Player2,STATE_STONE_DEATH)
+StateCheck(Player2,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla2","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla3","GLOBAL",1)
+OR(7)
+StateCheck(Player3,STATE_DEAD)
+StateCheck(Player3,STATE_REALLY_DEAD)
+StateCheck(Player3,STATE_ACID_DEATH)
+StateCheck(Player3,STATE_FLAME_DEATH)
+StateCheck(Player3,STATE_EXPLODING_DEATH)
+StateCheck(Player3,STATE_STONE_DEATH)
+StateCheck(Player3,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla3","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla4","GLOBAL",1)
+OR(7)
+StateCheck(Player4,STATE_DEAD)
+StateCheck(Player4,STATE_REALLY_DEAD)
+StateCheck(Player4,STATE_ACID_DEATH)
+StateCheck(Player4,STATE_FLAME_DEATH)
+StateCheck(Player4,STATE_EXPLODING_DEATH)
+StateCheck(Player4,STATE_STONE_DEATH)
+StateCheck(Player4,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla4","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla5","GLOBAL",1)
+OR(7)
+StateCheck(Player5,STATE_DEAD)
+StateCheck(Player5,STATE_REALLY_DEAD)
+StateCheck(Player5,STATE_ACID_DEATH)
+StateCheck(Player5,STATE_FLAME_DEATH)
+StateCheck(Player5,STATE_EXPLODING_DEATH)
+StateCheck(Player5,STATE_STONE_DEATH)
+StateCheck(Player5,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla5","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook9","GLOBAL",1)
+ Global("L#IGBook9","GLOBAL",2)
+Global("L#IGBook9RewPla6","GLOBAL",1)
+OR(7)
+StateCheck(Player6,STATE_DEAD)
+StateCheck(Player6,STATE_REALLY_DEAD)
+StateCheck(Player6,STATE_ACID_DEATH)
+StateCheck(Player6,STATE_FLAME_DEATH)
+StateCheck(Player6,STATE_EXPLODING_DEATH)
+StateCheck(Player6,STATE_STONE_DEATH)
+StateCheck(Player6,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook9","GLOBAL",0)
+SetGlobal("L#IGB9StartBattle","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook9RewPla6","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+
+//BOOK 10
+
+IF
+Global("L#IGBook10","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB10S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook10","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB10",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook10","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT10",FALSE)
+DisplayStringHead("L#IGSTA",@149)
+AddStoreItem("L#IGSTO","L#IGDAR",1,1)
+SetGlobal("L#IGBook10","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook10RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB10R",Player1) 
+DisplayStringHead(Player1,@150)
+SetGlobal("L#IGBook10RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook10RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB10R",Player2) 
+DisplayStringHead(Player2,@150)
+SetGlobal("L#IGBook10RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook10RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB10R",Player3) 
+DisplayStringHead(Player3,@150)
+SetGlobal("L#IGBook10RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook10RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB10R",Player4) 
+DisplayStringHead(Player4,@150)
+SetGlobal("L#IGBook10RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook10RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB10R",Player5) 
+DisplayStringHead(Player5,@150)
+SetGlobal("L#IGBook10RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook10RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB10R",Player6) 
+DisplayStringHead(Player6,@150)
+SetGlobal("L#IGBook10RewPla6","GLOBAL",2)
+END
+
+//BOOK 11
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB111")
+END
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB112")
+END
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB113")
+END
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB114")
+END
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB115")
+END
+
+IF
+Global("L#IGBook11","GLOBAL",1)
+Global("L#IGBook11RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB116")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11Finished","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB11",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook11","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT11",FALSE)
+DisplayStringHead("L#IGSTA",@151)
+AddStoreItem("L#IGSTO","L#IGSTA",1,1)
+SetGlobal("L#IGBook11","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook11RewPla1","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB11R",Player1) 
+DisplayStringHead(Player1,@152)
+SetGlobal("L#IGBook11RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook11RewPla2","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB11R",Player2) 
+DisplayStringHead(Player2,@152)
+SetGlobal("L#IGBook11RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook11RewPla3","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB11R",Player3) 
+DisplayStringHead(Player3,@152)
+SetGlobal("L#IGBook11RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook11RewPla4","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB11R",Player4) 
+DisplayStringHead(Player4,@152)
+SetGlobal("L#IGBook11RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook11RewPla5","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB11R",Player5) 
+DisplayStringHead(Player5,@152)
+SetGlobal("L#IGBook11RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook11RewPla6","GLOBAL",1)
+Global("L#IGBook11","GLOBAL",4)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB11R",Player6) 
+DisplayStringHead(Player6,@152)
+SetGlobal("L#IGBook11RewPla6","GLOBAL",2)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla1","GLOBAL",1)
+OR(7)
+StateCheck(Player1,STATE_DEAD)
+StateCheck(Player1,STATE_REALLY_DEAD)
+StateCheck(Player1,STATE_ACID_DEATH)
+StateCheck(Player1,STATE_FLAME_DEATH)
+StateCheck(Player1,STATE_EXPLODING_DEATH)
+StateCheck(Player1,STATE_STONE_DEATH)
+StateCheck(Player1,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla1","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla2","GLOBAL",1)
+OR(7)
+StateCheck(Player2,STATE_DEAD)
+StateCheck(Player2,STATE_REALLY_DEAD)
+StateCheck(Player2,STATE_ACID_DEATH)
+StateCheck(Player2,STATE_FLAME_DEATH)
+StateCheck(Player2,STATE_EXPLODING_DEATH)
+StateCheck(Player2,STATE_STONE_DEATH)
+StateCheck(Player2,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla2","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla3","GLOBAL",1)
+OR(7)
+StateCheck(Player3,STATE_DEAD)
+StateCheck(Player3,STATE_REALLY_DEAD)
+StateCheck(Player3,STATE_ACID_DEATH)
+StateCheck(Player3,STATE_FLAME_DEATH)
+StateCheck(Player3,STATE_EXPLODING_DEATH)
+StateCheck(Player3,STATE_STONE_DEATH)
+StateCheck(Player3,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla3","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla4","GLOBAL",1)
+OR(7)
+StateCheck(Player4,STATE_DEAD)
+StateCheck(Player4,STATE_REALLY_DEAD)
+StateCheck(Player4,STATE_ACID_DEATH)
+StateCheck(Player4,STATE_FLAME_DEATH)
+StateCheck(Player4,STATE_EXPLODING_DEATH)
+StateCheck(Player4,STATE_STONE_DEATH)
+StateCheck(Player4,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla4","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla5","GLOBAL",1)
+OR(7)
+StateCheck(Player5,STATE_DEAD)
+StateCheck(Player5,STATE_REALLY_DEAD)
+StateCheck(Player5,STATE_ACID_DEATH)
+StateCheck(Player5,STATE_FLAME_DEATH)
+StateCheck(Player5,STATE_EXPLODING_DEATH)
+StateCheck(Player5,STATE_STONE_DEATH)
+StateCheck(Player5,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla5","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+IF
+OR(2)
+ Global("L#IGBook11","GLOBAL",1)
+ Global("L#IGBook11","GLOBAL",2)
+Global("L#IGBook11RewPla6","GLOBAL",1)
+OR(7)
+StateCheck(Player6,STATE_DEAD)
+StateCheck(Player6,STATE_REALLY_DEAD)
+StateCheck(Player6,STATE_ACID_DEATH)
+StateCheck(Player6,STATE_FLAME_DEATH)
+StateCheck(Player6,STATE_EXPLODING_DEATH)
+StateCheck(Player6,STATE_STONE_DEATH)
+StateCheck(Player6,STATE_FROZEN_DEATH)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBook11","GLOBAL",0)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+SetGlobal("L#IGBook11RewPla6","GLOBAL",0)
+MoveViewObject(Player1,INSTANT)
+END
+
+//BOOK 12
+
+IF
+Global("L#IGBook12","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutScene("L#IGB12S")
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook12","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("L#IGB12",StartDialogueNoSet(Player1))
+END
+
+IF
+AreaCheckObject("L#IG00",Player1)
+Global("L#IGBook12","GLOBAL",3)
+THEN
+RESPONSE #100
+AmbientActivate("BOOKLIGHT12",FALSE)
+DisplayStringHead("L#IGSTA",@153)
+AddStoreItem("L#IGSTO","L#IGHEL",1,1)
+SetGlobal("L#IGBook12","GLOBAL",4)
+END
+
+IF
+Global("L#IGBook12RewPla1","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player1,5000) 
+ApplySpellRES("L#IGB12R",Player1) 
+DisplayStringHead(Player1,@154)
+SetGlobal("L#IGBook12RewPla1","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook12RewPla2","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player2,5000) 
+ApplySpellRES("L#IGB12R",Player2) 
+DisplayStringHead(Player2,@154)
+SetGlobal("L#IGBook12RewPla2","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook12RewPla3","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player3,5000) 
+ApplySpellRES("L#IGB12R",Player3) 
+DisplayStringHead(Player3,@154)
+SetGlobal("L#IGBook12RewPla3","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook12RewPla4","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player4,5000) 
+ApplySpellRES("L#IGB12R",Player4) 
+DisplayStringHead(Player4,@154)
+SetGlobal("L#IGBook12RewPla4","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook12RewPla5","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player5,5000) 
+ApplySpellRES("L#IGB12R",Player5) 
+DisplayStringHead(Player5,@154)
+SetGlobal("L#IGBook12RewPla5","GLOBAL",2)
+END
+
+IF
+Global("L#IGBook12RewPla6","GLOBAL",1)
+THEN
+RESPONSE #100
+AddXPObject(Player6,5000) 
+ApplySpellRES("L#IGB12R",Player6) 
+DisplayStringHead(Player6,@154)
+SetGlobal("L#IGBook12RewPla6","GLOBAL",2)
+END
+
+//ALL COMPLETED
+
+IF
+Global("L#IGBook1","GLOBAL",4)
+Global("L#IGBook2","GLOBAL",4)
+Global("L#IGBook3","GLOBAL",4)
+Global("L#IGBook4","GLOBAL",4)
+Global("L#IGBook5","GLOBAL",4)
+Global("L#IGBook6","GLOBAL",4)
+Global("L#IGBook7","GLOBAL",4)
+Global("L#IGBook8","GLOBAL",4)
+Global("L#IGBook9","GLOBAL",4)
+Global("L#IGBook10","GLOBAL",4)
+Global("L#IGBook11","GLOBAL",4)
+Global("L#IGBook12","GLOBAL",4)
+Global("L#IGBooksCompleted","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGBooksCompleted","GLOBAL",1)
+END
+
+IF
+Global("L#IGBooksCompleted","GLOBAL",2)
+THEN
+RESPONSE #100
+TriggerActivation("Secretb",TRUE)
+PlaySound("L#IGOPE")
+DisplayStringHead("Secretb",@155)
+SetGlobal("L#IGBooksCompleted","GLOBAL",3)
+END

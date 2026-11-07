@@ -1,0 +1,9 @@
+IF
+Range(Player1,5)
+Global("L#IGCosmicScene","GLOBAL",3)
+THEN
+RESPONSE #100
+CreateVisualEffect("SPSTRENH",[800.600])
+SetGlobal("L#IGCosmicScene","GLOBAL",4)
+DestroySelf()
+END

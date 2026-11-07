@@ -1,0 +1,426 @@
+@0    = ~Requiere una versión Enhanced Edition del juego.~
+@1    = ~Terrenos de Athkatla: La Galería de Tinta~
+@2    = ~La Galería de Tinta~
+@3    = ~Crónica de la Viajante de Ocho Patas~
+@4    = ~El Nacimiento de la Furia~
+@5    = ~Los Gemidos de la Muerte~
+@6    = ~La Guerra en las Profundidades~
+@7    = ~El Abrazo del Glabrezu~
+@8    = ~La Danza de las Espadas~
+@9    = ~De Semilla y Fuego~
+@10   = ~La Historia de las Hermanas de la Luna~
+@11   = ~Crónica del Ojo Muerto~
+@12   = ~Los Tres Bribones Sedientos~
+@13   = ~Las Oleadas de los Devoradores de Carne~
+@14   = ~La Luz en la Nieve~
+@15   = ~Vizcondesa Velcealle~
+@16   = ~Vsnaa, la Partera de las Arañas~
+@17   = ~Drow Grotesca~
+@18   = ~Araña Poco Desarrollada~
+@19   = ~Espadachín Shou~
+@20   = ~Chin Yi~
+@21   = ~Oammanf, el Xvart Nigromante~
+@22   = ~Xvart Zombi~
+@23   = ~Ankheg de Lava Titánico~
+@24   = ~Uumo'elë, el Glabrezu Airado~
+@25   = ~Brachina Arquera~
+@26   = ~Maestro~
+@27   = ~Espada Danzante~
+@28   = ~Tomkuast, el Druida Gigante~
+@29   = ~Saviaa Moonrift~
+@30   = ~Safima Moonrift~
+@31   = ~Saba Moonrift~
+@32   = ~Beholder Zombi - En Descomposición~
+@33   = ~Oozm, el Sorbedor~
+@34   = ~Aba-Kamp, el Engullidor~
+@35   = ~Czo, el Lamedor~
+@36   = ~Gusano Verde~
+@37   = ~Remorhaz Anciano~
+@38   = ~Elemental de Aire Menor~
+@39   = ~Alaundo~
+@40   = ~Gorion~
+@41   = ~Sarevok~
+@42   = ~Imoen~
+@43   = ~Jon Irenicus~
+@44   = ~Figura de Sangre~
+@45   = ~Oruga Hambrienta~
+@46   = ~La Tienda de Recuerdos de la Galería de Tinta~
+@47   = ~La Furia~
+@48   = ~Escupitajo de Lava~
+@49   = ~Mordisco de Lava~
+@50   = ~Mordisco de Gusano~
+@51   = ~Remorhaz - Mordisco~
+@52   = ~Remorhaz Airado - Mordisco~
+@53   = ~Zapatillas Silenciosas~
+@54   = ~Estas zapatillas son muy cómodas y, gracias a lo suaves que son, permiten moverse sin hacer demasiado ruido. Además lucen bastante bien; son algo esponjosas.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Moverse en Silencio: +5%
+
+Peso: 2~
+@55   = ~Galería de Tinta: La Lista de Exhibiciones~
+@56   = ~La lista incluye todos los libros que actualmente se presentan al público. Estos son:
+
+– Crónica de la Viajante de Ocho Patas: una historia sobre un grupo que atraviesa los Pozos de la Telaraña Demoníaca intentando escapar del dominio de la Reina Araña.
+
+– El Nacimiento de la Furia: una historia de lejano Kara-Tur, sobre Chin Yi y un espadachín de Shou Lung, y el amor entre ellos.
+
+– Los Gemidos de la Muerte: esta novela presenta una terrible historia sobre un nigromante y el ejército de xvarts no-muertos que decidió despertar de su letargo.
+
+– La Guerra en las Profundidades: este relato narra una de las aventuras menos conocidas de los Héroes del Valle del Viento Helado y cómo, durante su intento de detener una guerra entre extraños seres, descubrieron una cueva hogar de una enorme y peligrosa criatura.
+
+– El Abrazo del Glabrezu: esta historia aleccionadora describe un enfrentamiento entre un glabrezu, protegido por diablesas arqueras, y un grupo de aventureros enviados al Averno para encontrar y matar a dicho glabrezu.
+
+– La Danza de las Espadas: el libro describe un baile organizado por un misterioso Maestro y la inusual danza de espadas literales controladas por el bardo.
+
+– De Semilla y Fuego: una historia sobre un airado druida gigante de fuego que ha reclamado una buena parte del pantano y ataca a todo aquel que ose adentrarse en él.
+
+– La Historia de las Hermanas de la Luna: un relato sobre tres hermanas celestiales, las juezas que habitan en un extraño lugar parecido a la luna, cubierto de arenas plateadas.
+
+– Crónica del Ojo Muerto: una novela en la que un viajero solitario debe atravesar un lugar insólito, una zona de magia muerta, donde se encuentra con un beholder zombi, hambriento y furioso, dispuesto a atacar.
+
+– Los Tres Bribones Sedientos: una historia algo experimental, una comedia macabra sobre tres vampiros kobold que aterrorizan a un pueblo cercano.
+
+– Las Oleadas de los Devoradores de Carne: un libro que describe la lucha de un único superviviente que recorre un viejo sistema de alcantarillas donde debe enfrentarse a docenas de gusanos devoradores de carne ocultos en el agua turbia y las sombras.
+
+– La Luz en la Nieve: la historia de un viejo remorhaz que vaga por el lejano norte acompañado por criaturas que parecen vientos conscientes.
+
+Todos los interesados en aprender más de estos relatos son bienvenidos a visitar la Galería de Tinta y comprobar los libros con sus propios ojos.
+
+ESTADÍSTICAS:
+
+Peso: 1~
+@57   = ~Galería de Tinta: Testimonios~
+@58   = ~Este folleto muestra algunos dibujos de la Galería de Tinta ubicada en Athkatla, en el Distrito Gubernamental. También incluye algunos testimonios de otros clientes:
+
+"¡Algunas de esas historias son verdaderamente maravillosas! Si bien son una gran oportunidad para aprender, ¡recuerda prepararte antes de aventurarte!"
+- Brienda Falcontrade, Portaescudos de Neverwinter
+
+"¡La Galería de Tinta me enseñó que la literatura puede deparar muchas emociones y aventuras! ¡Os lo agradezco de corazón!"
+- Al'Mand Silloan, Sacerdote de Helm de Calimport
+
+"Jamás me gustaron los libros y ahora... ¡me parecen magníficos!"
+- John Bubblovich, figura de la moda de... ¡algún lugar!
+
+ESTADÍSTICAS:
+
+Peso: 1~
+@59   = ~Mayal~
+@60   = ~Emasculador de la Sacerdotisa +3~
+@61   = ~Esta arma fue en su día el arma predilecta de una sacerdotisa drow. Era una cruel matriarca, conocida por su odio hacia los hombres, incluso para los estándares drow. Le gustaba torturarlos y convertirlo en un espectáculo para que otros hombres observaran. Dicen que era su manera de emascular no solo a un hombre, sino a todos ellos a la vez.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Inmunidad al Veneno
+
+THAC0: +3
+Daño: 1d6+4, +1d4+1 Ácido contra Varones
+Tipo de daño: Aplastamiento
+Factor de velocidad: 5
+Tipo de pericia: Mayal/Maza estrellada
+Tipo: Una mano
+Requiere:
+ 9 de Fuerza
+
+Peso: 10~
+@62   = ~Cuerno~
+@63   = ~Trompeta de las Celebraciones Delirantes~
+@64   = ~Cuentan las historias que esta trompeta perteneció en su día a uno de los archones de Kwan Ying, compañero de Chin Yi, otro archon que más tarde se convirtió en la fuente del verdadero poder de la Furia Celestial. Se dice que cuando suena la Trompeta de las Celebraciones Delirantes, quienes la rodean comienzan a comportarse como si estuvieran ebrios y les cuesta golpear a quien la toca.
+
+ESTADÍSTICAS:
+
+Habilidades de carga:
+– Celebración Delirante una vez por día
+  Especial: Los enemigos en el radio deben superar una salvación contra conjuros con -4 o sufrir una poderosa embriaguez mágica que dura 5 turnos. Para quienes fallen la salvación, existe también un 5% de posibilidades de caer inconscientes al suelo durante 2 asaltos. El personaje que toca el instrumento recibe además bonificaciones de +1 a la Clase de Armadura y +1 al Carisma durante toda la duración.
+  Área de efecto: Radio de 4,5 m
+
+Peso: 2~
+@65   = ~Brazaletes~
+@66   = ~Brazaletes del Xvart Nigromante~
+@67   = ~Estos brazaletes pertenecieron a un poderoso xvart nigromante. Es difícil explicar cómo alguien como él logró convertirse en un verdadero maestro de la magia oscura, pero así fue. Consiguió devolver la vida a muchos de los suyos caídos convirtiéndolos en no-muertos.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Clase de Armadura: 7
+– Constitución: +1
+– Puede memorizar un conjuro arcano adicional de cada nivel del 1.º al 3.º (solo nigromante)
+
+Peso: 1~
+@68   = ~Armadura de Placas del Ankheg de Lava Titánico~
+@69   = ~Esta armadura de placas fue fabricada con el caparazón de un ankheg de lava titánico. Si bien los ankhegs de lava ya son bastante escasos, la versión titánica de esta criatura debió de ser algo verdaderamente único. Era enorme y poderosa, capaz de escupir una sustancia corrosiva. Pero ni siquiera eso pudo salvarla de la muerte.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Resistencia al Fuego: +30%
+– Resistencia al Daño Físico: +5%
+
+Clase de Armadura: 0 (-3 contra tajo, -1 contra perforación y proyectil)
+Requiere:
+ 8 de Fuerza
+
+Peso: 25~
+@70   = ~Cinturón~
+@71   = ~La Excitación del Glabrezu~
+@72   = ~Según los relatos, este cinturón fue confeccionado con la piel y los huesos de un poderoso glabrezu, temido tanto por mortales como por otros diablos. Se decía que sentía una excitación sádica al matar a todo aquel que se atrevía a cruzarse en su camino.
+
+Al parecer, este cinturón posee también ciertas propiedades parasitarias y es la sangre quien canaliza su magia. La naturaleza diabólica de esta arma impide que los paladines puedan usarla.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Resistencia a la Magia: +8%
+– Ataques por asalto: +1/2
+– THAC0: +1
+– Constitución: -1
+– Solo puede retirarse con un conjuro de Eliminar Maldición
+
+Peso: 2~
+@73   = ~Cimitarra~
+@74   = ~El Eón del Maestro +3~
+@75   = ~Muchas cimitarras mágicas serían bienvenidas entre bardos y otros artistas. Pero esta tiene bastante reputación. No solo es un arma bien elaborada, sino que también fue encantada con una magia bastante singular. Permite al usuario regenerarse y afectar tanto la capacidad del portador como la del objetivo para resistir ataques mágicos.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Regenera 1 punto de golpe cada dos asaltos
+
+Habilidades en combate:
+– Cada golpe exitoso reduce las Tiradas de Salvación contra Magia durante 1 asalto (cada impacto reduce la salvación contra magia del objetivo en 1 punto, mejorando en 1 la misma del portador; el efecto se acumula)
+
+THAC0: +3
+Daño: 1d8+3 (tajo)
+Factor de velocidad: 2
+Tipo de pericia: Cimitarra/Wakizashi/Ninjatō
+Tipo: Una mano
+Requiere:
+ 10 de Fuerza
+
+Peso: 3~
+@76   = ~Anillo~
+@77   = ~Anillo del Serbal de Fuego~
+@78   = ~Este anillo fue fabricado con serbal de fuego seco y encantado con poderosa magia. Cuentan las historias que lo creó un druida poderoso pero bastante perturbado, un gigante de fuego que intentó reclamar parte del pantano para sí.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Clase de Armadura: +2
+– Tiradas de Salvación: +2
+
+Habilidades de carga:
+– Semilla de Fuego una vez por día
+  Efecto: Crea 4 semillas de fuego que aparecerán en el inventario del lanzador. Las semillas permanecen activas 3 turnos tras lanzar el conjuro. Si se arrojan contra un enemigo, se producirá una bola de fuego que causará 2d8 puntos de daño a todos en un radio de 2 m, a menos que superen una Tirada de Salvación contra Conjuros para recibir la mitad del daño.
+
+Peso: 1~
+@79   = ~Escudo Pequeño~
+@80   = ~Las Tres Fases de la Luna +3~
+@81   = ~Este escudo pequeño fue creado por seres celestiales alados, las Hermanas de la Luna. Si las leyendas son ciertas, cada una de ellas fue responsable de una parte del escudo y luego las unieron, creando una pieza de equipo extraordinaria aún más impresionante durante la noche.
+
+El escudo, aunque no protege de los proyectiles de la manera habitual, puede debilitar los impactos quemándolos con luz de luna.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Clase de Armadura: +4
+– No proporciona bonificación de Clase de Armadura contra ataques de proyectil
+– Resistencia al Daño por Proyectil: 50%
+– Resistencia a la Magia: +3%
+
+Habilidades especiales:
+– Durante la noche, cada asalto, el portador del escudo obtiene uno de tres bonificadores adicionales al azar: +1 a la Suerte, Regeneración (3 puntos de golpe en 1 asalto) o Protección contra la Petrificación.
+
+Requiere:
+ 4 de Fuerza
+
+Peso: 2~
+@82   = ~Piedra de Ioun~
+@83   = ~Ojo Levitante Muerto~
+@84   = ~Esta singular piedra de ioun fue tallada para parecerse a un ojo de cristal, u ojo muerto, de ahí su nombre: Ojo Levitante Muerto. Puede ayudar mágicamente a ver lo que normalmente es difícil de detectar, por lo que los ladrones sacarán el mayor provecho de su uso.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Detectar Trampas: +10%
+– Detectar Ilusiones: +10%
+– THAC0 a distancia: +1
+
+Peso: 0~
+@85   = ~Dardo~
+@86   = ~Colmillo del Pequeño Bribón +2~
+@87   = ~Este dardo es en realidad un colmillo vampírico pulido y encantado convertido en arma. Si los relatos son ciertos, el colmillo conserva algunas interesantes propiedades vampíricas.
+
+ESTADÍSTICAS:
+
+Habilidades en combate:
+– Regresa a la mano del portador tras ser lanzado
+– Cada golpe exitoso cura 1 punto de golpe al propietario
+– Cada golpe exitoso tiene un 3% de posibilidades de drenar 1 nivel al objetivo (Salvación contra Muerte -2 para anularlo)
+
+THAC0: +2
+Daño: 1d3+2 (proyectil)
+Factor de velocidad: 0
+Tipo de pericia: Dardo
+Tipo: Una mano
+
+Peso: 0~
+@88   = ~Bastón~
+@89   = ~Bastón Cubierto de Orugas +3~
+@90   = ~Este bastón está cubierto de orugas verdes y bastante hambrientas. El bastón en sí parece mágico y capaz de mantenerlas vivas, aunque quizás su hambre puede... aprovecharse como arma.
+
+ESTADÍSTICAS:
+
+Habilidades de carga:
+– Puede invocar orugas hambrientas durante 1 turno una vez por día
+  Especial: Las orugas causan 1d4+1 puntos de daño, pero sus ataques causan 6 veces más daño contra miconides, que parecen ser su alimento favorito
+
+Habilidades equipadas:
+– Clase de Armadura y Tiradas de Salvación contra escarabajos, ankhegs y rastreadoras carroñeras: +2
+
+Habilidades en combate:
+– Puede usarse tanto como arma cuerpo a cuerpo como a distancia: agítalo para lanzar una de las orugas al enemigo
+– Los ataques a distancia tienen un 10% de posibilidades de causar 1 punto adicional de daño ácido al impactar
+
+THAC0: +3
+Daño cuerpo a cuerpo: 1d6+3 (aplastamiento)
+Daño a distancia: 1d2+3 (aplastamiento)
+Factor de velocidad: 1
+Tipo de pericia: Bastón
+Tipo: Dos manos
+Requiere:
+ 5 de Fuerza
+
+Peso: 2~
+@91   = ~Yelmo~
+@92   = ~Yelmo de Caparazón de Remorhaz~
+@93   = ~Fabricado a partir de escamas quitinosas, este pesado yelmo conserva parte de las resistencias naturales del remorhaz del que fue obtenido.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Protege contra los golpes críticos
+– Clase de Armadura: +1
+– Resistencia a la Magia: +10%
+– Resistencia al Daño Mágico: +20%
+
+Peso: 10~
+@94   = ~Mordisco~
+@95   = ~Máscara de los Tres Rubíes Sublimes~
+@96   = ~Este objeto era en su día una máscara funeraria, pero cuando fue encontrada por un bardo curioso, la transformó en un casco que los vivos podían usar para potenciar su dominio de la magia. Algunos dicen que, al llevarse puesta, los rubíes susurran secretos y pistas sobre todo cuanto rodea a quien la porta.
+
+Aunque debió de ser difícil transformarla de máscara funeraria a una ordinaria, claramente mereció todo el esfuerzo y los recursos invertidos.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Protege contra los golpes críticos
+– Saber: +50%
+– Sabiduría: +1
+– Inteligencia: +1
+– Mejora la velocidad de lanzamiento en 1
+
+Peso: 1~
+@97   = ~Obtenido +1 a la Salvación contra Muerte/Veneno~
+@98   = ~Obtenida +5% de Resistencia Eléctrica~
+@99   = ~Obtenida +3% de Resistencia Mágica~
+@100  = ~Obtenida +5% de Resistencia al Fuego~
+@101  = ~Obtenido +5 de Saber~
+@102  = ~Obtenida +5% de Resistencia al Daño por Proyectil~
+@103  = ~Obtenida +5% de Resistencia al Daño por Tajo~
+@104  = ~Obtenidos +2 Puntos de Golpe~
+@105  = ~Obtenida +5% de Resistencia al Frío~
+@106  = ~Obtenido +1 a la Salvación contra Conjuros~
+@107  = ~Obtenida +5% de Resistencia al Daño por Perforación~
+@108  = ~Obtenida +5% de Resistencia al Ácido~
+@109  = ~Obtenida +5% de Resistencia al Daño por Aplastamiento~
+@110  = ~No se encontró ningún espacio libre para la animación de criatura.~
+@111  = ~Galería de Tinta~
+@112  = ~Galería de Tinta
+Encontré un lugar interesante en el Distrito Gubernamental de Athkatla: La Galería de Tinta. Si entendí bien a su propietaria, es un lugar donde se guardan tomos de gran poder; tomos que permiten a sus lectores revivir ciertos momentos inmortalizados en sus historias y aprender de ellos.~
+@113  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado Crónica de la Viajante de Ocho Patas.~
+@114  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado El Nacimiento de la Furia.~
+@115  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado Los Gemidos de la Muerte.~
+@116  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado La Guerra en las Profundidades.~
+@117  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado El Abrazo del Glabrezu.~
+@118  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado La Danza de las Espadas.~
+@119  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado De Semilla y Fuego.~
+@120  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado La Historia de las Hermanas de la Luna.~
+@121  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado Crónica del Ojo Muerto.~
+@122  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado Las Oleadas de los Devoradores de Carne.~
+@123  = ~Galería de Tinta
+He revivido y superado el desafío que propone un libro titulado La Luz en la Nieve.~
+@124  = ~Galería de Tinta
+La Vizcondesa me ha pedido que la encuentre en el sótano de la Galería de Tinta. Le gustaría hablar conmigo allá abajo.~
+@125  = ~Galería de Tinta
+La Vizcondesa me ha pedido que la ayude a investigar Las Páginas Sangrientas de Bhaal. Le dije que lo pensaría.~
+@126  = ~Galería de Tinta
+Se me ha pedido que investigue Las Páginas Sangrientas de Bhaal, guardadas en el sótano de la Galería de Tinta de Athkatla. He aceptado el encargo. Veamos si es tan impresionante como parece.~
+@127  = ~Galería de Tinta
+La Galería de Tinta es un lugar repleto de poderosos libros. Se me permitió aprender de ellos; enfrentarme a todas las luchas inmortalizadas en sus páginas. Uno de esos tomos se llamaba Las Páginas Sangrientas de Bhaal. Me mostró escenas y personajes de mi propia historia. Fue una misión verdaderamente extraña, pero logré terminar el trabajo.~
+@128  = ~Galería de Tinta
+La Galería de Tinta es un lugar repleto de poderosos libros. Se me permitió aprender de ellos; enfrentarme a todas las luchas inmortalizadas en sus páginas. Uno de esos tomos se llamaba Las Páginas Sangrientas de Bhaal. La Vizcondesa me pidió que la ayudara a investigar ese libro, pero rechacé el encargo. Aunque lo tomó bastante bien.~
+@129  = ~Ah, veo que sigues entero. Me alegra que hayas sobrevivido al enfrentamiento con la Partera. ¡Bien hecho!~
+@130  = ~(Obtenido +1 a la Tirada de Salvación contra Muerte/Veneno. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@131  = ~¡Ganaste la batalla contra nuestro pobre espadachín. Bien hecho!~
+@132  = ~(Obtenida Habilidad Especial: Enfurecer. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@133  = ~(Obtenida +5% de Resistencia Eléctrica. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@134  = ~Siempre odié a los zombis, pero... ¡claramente sabes cómo tratar con esa clase de criaturas!~
+@135  = ~(Obtenida +3% de Resistencia Mágica. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@136  = ~¿Has matado a esa cosa titánica, eh? Debes admitir que era una bestia bastante descomunal.~
+@137  = ~(Obtenida +5% de Resistencia al Fuego. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@138  = ~¡Parece que ni los enemigos más poderosos, como los diablos, te asustan!~
+@139  = ~(Obtenido +5 de Conocimiento. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@140  = ~(Obtenida +5% de Resistencia al Daño por Proyectil. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@141  = ~Ah, debió de ser todo un baile. Ojalá hubiera podido ver tu actuación. En fin, me alegra verte con vida.~
+@142  = ~(Obtenida +5% de Resistencia al Daño cortante. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@143  = ~¿Ya has vuelto? ¡Impresionante!~
+@144  = ~(Obtenidos +2 Puntos de Golpe. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@145  = ~Esto es extraño... Noté que el libro reaccionó de una manera peculiar contigo. Lo siento. Debió de ser alguna anomalía. Lo investigaré, te lo prometo.~
+@146  = ~(Obtenida +5% de Resistencia al Frío. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@147  = ~¡Y aquí está nuestro héroe! ¡Bienvenido de vuelta!~
+@148  = ~(Obtenido +1 a la Tirada de Salvación contra Conjuros. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@149  = ~¡Ah! ¡Veo que derrotaste a esos locos kobolds! ¡Bien!~
+@150  = ~(Obtenida +5% de Resistencia al Daño por Perforación. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@151  = ~Debió de ser toda una exterminación. Mmm. Menos mal que sobreviviste a los ataques.~
+@152  = ~(Obtenida +5% de Resistencia al Ácido. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@153  = ~¿Así que derrotaste al remorhaz, eh? ¡Debió de ser todo un desafío!~
+@154  = ~(Obtenida +5% de Resistencia al Daño por Aplastamiento. Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@155  = ~(Se abre un pasaje secreto al sótano... Se ha añadido un nuevo recuerdo a la tienda de la Galería de Tinta.)~
+@156  = ~(El enemigo principal y sus secuaces han muerto. Ya puedes marcharte.)~
+@157  = ~(La batalla ha concluido. El espadachín ha muerto y el archon ha desaparecido.)~
+@158  = ~(El nigromante y sus secuaces han sido detenidos. Eres libre de marcharte.)~
+@159  = ~(La criatura ha muerto. Ya puedes marcharte.)~
+@160  = ~(El glabrezu y las arqueras han sido derrotados. Ya puedes abandonar este lugar.)~
+@161  = ~(El baile ha terminado. Ya puedes abandonar este lugar.)~
+@162  = ~(Los pantanos comienzan a agitarse. Quizás cuanto antes te vayas, mejor.)~
+@163  = ~(Las Hermanas de la Luna han caído. Ya puedes abandonar este lugar insólito.)~
+@164  = ~(El monstruo ha desaparecido. Ya puedes marcharte.)~
+@165  = ~(Debes asegurarte de que los vampiros kobold no vuelvan a levantarse antes de poder abandonar esta zona.)~
+@166  = ~(Al clavar una estaca de madera en el corazón de los kobolds, abres el camino de salida de este reino.)~
+@167  = ~(Los enjambres han sido eliminados y has sobrevivido al ataque. Ya puedes marcharte.)~
+@168  = ~(El remorhaz y los elementales han desaparecido.)~
+@169  = ~Las protuberancias en el lomo de este remorhaz se encienden, como si un pedernal rozara el acero, cuando te acercas.~
+@170  = ~¡Lolth! ¡Permíteme llamar a tus hijos y a todos los seres rastreros, y derrotar a tus enemigos! ¡Contra todo pronóstico!~
+@171  = ~(Este enorme libro tiene un aspecto bastante siniestro.)~
+@172  = ~(El libro se siente cálido al tocarlo. De repente, sientes cómo la tinta se reúne en torno a tu mano.)~
+@173  = ~(La tinta alcanza un pequeño corte en tu mano y se mezcla con tu sangre. Entonces sientes el impulso de pasar la página.)~
+@174  = ~(Este tosco ataúd está vacío.)~
+@175  = ~(Un vampiro kobold se regenera en este ataúd. Si tienes una estaca de madera, ya puedes matarlo.)~
+@176  = ~(Clavas una estaca de madera en el corazón del kobold y el pequeño vampiro encuentra su fin definitivo.)~
+@177  = ~(Necesitas una estaca de madera para destruir al vampiro kobold.)~
+@178  = ~(El pequeño sujeto está muerto.)~
+@179  = ~Ankheg de Lava~
+@180  = ~Escarabajo Escupidor~

@@ -1,0 +1,6 @@
+BEGIN L#IGB2E2
+
+CHAIN IF ~Global("L#IGB2E2Start","GLOBAL",1)~ THEN L#IGB2E2 000
+@0
+==L#IGB2E2 @1
+DO ~SetGlobal("L#IGB2E2Start","GLOBAL",2) Enemy()~ EXIT

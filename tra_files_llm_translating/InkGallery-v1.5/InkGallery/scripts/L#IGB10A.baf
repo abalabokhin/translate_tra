@@ -1,0 +1,40 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+	  SetGlobal("L#IGBook10killed_a","GLOBAL",1)
+		ReallyForceSpellDead(Myself,VAMPIRE_GAS_FORM_CHANGE)  // SPIN964.SPL (No such index)
+END
+
+IF
+ NumTimesTalkedTo(0)
+THEN
+ RESPONSE #100
+  StartDialogueNoSet(Player1)
+END
+
+IF
+	See([PC])
+	Allegiance(Myself,ENEMY)
+	Global("L#IGB10E_PREPARE","LOCALS",0)
+THEN
+	RESPONSE #100
+    SetGlobal("L#IGB10E_PREPARE","LOCALS",1)
+		ApplySpellRES("OHHSUMM",Myself)
+END
+
+IF
+	ActionListEmpty()
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END

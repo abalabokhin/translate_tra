@@ -1,0 +1,57 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("L#IGBook10killed_a","GLOBAL",0)
+	Global("L#IGB10InfoA","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@174)  
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("L#IGBook10killed_a","GLOBAL",1)
+	Global("L#IGB10InfoA","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@175)  
+		SetGlobal("L#IGB10InfoA","GLOBAL",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	PartyHasItem("MISC6W") 
+	Global("L#IGB10InfoA","GLOBAL",1)
+	Global("L#IGBook10killed_a","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@176)  
+		CreateVisualEffectObject("SPDEATH3",Myself)
+		SetGlobal("L#IGBook10killed_a","GLOBAL",2)
+		PlaySound("EFF_M89")
+		TakePartyItemNum("misc6w",1)
+		DestroyItem("MISC6W")
+		AddexperienceParty(3000)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	!PartyHasItem("MISC6W") 
+	Global("L#IGB10InfoA","GLOBAL",1)
+	Global("L#IGBook10killed_a","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@177)  
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("L#IGBook10killed_a","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@178)  
+END

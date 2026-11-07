@@ -1,0 +1,16 @@
+@0    = ~[O ziarnie i ogniu] „Na Zmiennych Bagnach panował upał. Człowiek czuł się niemal tak, jakby brodził w zupie, którą dopiero zaczęto podgrzewać. Zwiadowcy nie mogli jednak odejść, dopóki nie odnaleźli obłąkanego druida, olbrzyma, który uczynił bagno swoim domem. Tomkuast topił w błocie każdego, kto zapuścił się na jego teren, obwiniając nieszczęśników o zakłócanie mu spokoju. Większość z nich nie miała jednak pojęcia, że olbrzym w ogóle tam mieszka”.~
+@1    = ~[Jaheira] Wiem, że to tylko księga. Magiczna, owszem, lecz gdyby ta historia wydarzyła się naprawdę, Harfiarze zapewne wysłaliby jednego ze swoich agentów, by zbadał zarówno to bagno, jak i samego druida.~
+@2    = ~[Wicehrabina Velcealle] Opłata wynosi 3500 sztuk złota. Chcesz przeczytać tę księgę i poddać się jej próbie?~
+@3    = ~[Player] Tak. Jestem gotów zapłacić.~ ~[Player] Tak. Jestem gotowa zapłacić.~
+@4    = ~[Player] Nie. Na razie zrezygnuję.~
+@5    = ~[Wicehrabina Velcealle] Wspaniale!~
+@6    = ~[O ziarnie i ogniu] „Druida już nie ma. Jego olbrzymie ciało stanie się częścią bagna. Nawet dzicz zdaje się teraz spokojniejsza”.~
+@7    = ~[O ziarnie i ogniu] Kogo ożywi moc natury?~
+@8    = ~[Player] <PLAYER1>.~
+@9    = ~[Player] <PLAYER2>.~
+@10   = ~[Player] <PLAYER3>.~
+@11   = ~[Player] <PLAYER4>.~
+@12   = ~[Player] <PLAYER5>.~
+@13   = ~[Player] <PLAYER6>.~
+@14   = ~[O ziarnie i ogniu] Decyzja została podjęta.~
+@15   = ~Już mierzyłeś się z tą próbą.~ ~Już mierzyłaś się z tą próbą.~

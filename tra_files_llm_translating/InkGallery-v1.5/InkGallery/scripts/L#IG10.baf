@@ -1,0 +1,25 @@
+IF
+Global("L#IGBook10killed_a","GLOBAL",1)
+Global("L#IGBook10killed_b","GLOBAL",1)
+Global("L#IGBook10killed_c","GLOBAL",1)
+Global("L#IGBook10Coffin","GLOBAL",0)
+THEN 
+RESPONSE #100
+DisplayStringHead(Player1,@165)
+SetGlobal("L#IGBook10Coffin","GLOBAL",1)
+END
+
+IF
+Global("L#IGBook10killed_a","GLOBAL",2)
+Global("L#IGBook10killed_b","GLOBAL",2)
+Global("L#IGBook10killed_c","GLOBAL",2)
+Global("L#IGBook10Coffin","GLOBAL",1)
+Global("L#IGActivateExit","L#IG10",0)
+THEN 
+RESPONSE #100
+TriggerActivation("Leave",TRUE)
+AmbientActivate("Leaveani",TRUE)
+DisplayStringHead(Player1,@166)
+SetGlobal("L#IGActivateExit","L#IG10",1)
+END
+

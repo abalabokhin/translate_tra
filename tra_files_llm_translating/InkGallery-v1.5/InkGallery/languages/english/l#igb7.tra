@@ -1,0 +1,16 @@
+@0    = ~"The weather at the Changing Swamps was warm. It almost felt like walking through a soup someone had just started to heat. But the scouts couldn't leave, not before they found the mad druid: a giant who turned the bog into his home. Tomkuast, the druid, would drown the wanderers in the mud, blaming the unfortunate men and women for this, for bothering him in his home. Most of them, however, didn't know the giant was there."~
+@1    = ~I know this is just a book. Well, a magical one, but if that was all real, Those Who Harp would probably send one of their agents to investigate this swamp, and the druid himself.~
+@2    = ~The fee is 3,500 gold pieces. Are you interested in reading this book, and letting it test you?~
+@3    = ~Yes. I'm ready to pay.~
+@4    = ~No. I'll pass. At least for now.~
+@5    = ~Splendid!~
+@6    = ~"The druid is gone. His giant body shall become one with the bog. Even the wilderness seems calmer now."~
+@7    = ~Who shall become invigorated by nature's power?~
+@8    = ~<PLAYER1>.~
+@9    = ~<PLAYER2>.~
+@10   = ~<PLAYER3>.~
+@11   = ~<PLAYER4>.~
+@12   = ~<PLAYER5>.~
+@13   = ~<PLAYER6>.~
+@14   = ~The decision has been made.~
+@15   = ~You've already faced the battle this book describes.~

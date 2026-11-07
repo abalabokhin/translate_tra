@@ -1,0 +1,13 @@
+IF
+Global("L#IGCosmicScene","GLOBAL",12)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",13)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

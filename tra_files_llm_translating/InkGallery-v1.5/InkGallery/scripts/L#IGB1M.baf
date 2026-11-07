@@ -1,0 +1,19 @@
+IF
+    Die()
+THEN
+  RESPONSE #100
+    DropInventory()
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+Global("L#IGB1StartBattle","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Enemy()
+END

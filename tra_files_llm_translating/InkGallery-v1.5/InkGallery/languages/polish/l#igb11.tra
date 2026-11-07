@@ -1,0 +1,14 @@
+@0    = ~[Fale mięsożerców] „Samotny poszukiwacz przygód, porzucony i zdradzony przez własnych towarzyszy, brnął przez warstwy szlamu i ścieków. Wszyscy jego dawni druhowie uznali go za martwego, lecz zawsze był uparty i wciąż miał w zanadrzu kilka sztuczek. Przeżył. Kanały nie były jednak bezpiecznym miejscem, a przynajmniej nie te tunele. Od jakiegoś czasu roiło się w nich od dziwnych, robakowatych stworzeń. Wiedziały już, że tam jest, i szykowały się do ataku”.~
+@1    = ~[Jan] Ach, przypomina mi to coś, co przydarzyło się jednej z moich kuzynek i... może rzeczywiście powinna spisać swoją historię. Kto wie, może zyskałaby uznanie niczym niektóre z tych ksiąg wokół nas. Mmm, chyba powinienem jej to zasugerować. Może nawet zaoferuję pomoc.~
+@2    = ~[Wicehrabina Velcealle] Ta próba to samotna walka o przetrwanie. Możliwość czerpania nauki z większości tych ksiąg kosztuje 3500 sztuk złota, lecz skorzystanie z tej kosztuje tylko 3000.~
+@3    = ~[Player] Dobrze. Niech z tymi stworzeniami zmierzy się <PLAYER1>, osoba przewodząca drużynie.~
+@4    = ~[Player] Dobrze. Z tymi stworzeniami zmierzy się <PLAYER2>.~
+@5    = ~[Player] Dobrze. Z tymi stworzeniami zmierzy się <PLAYER3>.~
+@6    = ~[Player] Dobrze. Z tymi stworzeniami zmierzy się <PLAYER4>.~
+@7    = ~[Player] Dobrze. Z tymi stworzeniami zmierzy się <PLAYER5>.~
+@8    = ~[Player] Dobrze. Z tymi stworzeniami zmierzy się <PLAYER6>.~
+@9    = ~[Player] Nie. Na razie zrezygnuję.~
+@10   = ~[Wicehrabina Velcealle] Dobrze! Oby wybrana osoba poradziła sobie z tą próbą.~
+@11   = ~[Fale mięsożerców] „Nawet robactwo nie zdołało odebrać życia zdradzonemu poszukiwaczowi przygód”.~
+@12   = ~[Fale mięsożerców] Dar otrzyma osoba, która stawiła czoła tym potworom.~
+@13   = ~[Fale mięsożerców] Już mierzyłeś się z tą próbą.~ ~Już mierzyłaś się z tą próbą.~

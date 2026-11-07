@@ -1,0 +1,16 @@
+@0    = ~"El tiempo en los Pantanos Cambiantes era cálido. Casi parecía caminar por una sopa que alguien acababa de empezar a calentar. Pero los exploradores no podían marcharse, no antes de encontrar al druida enloquecido: un gigante que había convertido el pantano en su hogar. Tomkuast, el druida, ahogaba en el barro a los transeuntes, culpando a los desafortunados hombres y mujeres por importunarlo en su morada. La mayoría de ellos, sin embargo, ni siquiera sabían que el gigante estaba allí."~
+@1    = ~Sé que esto es tan solo un libro. Bueno, uno mágico, pero si todo aquello fuera real, Los que tocan el arpa probablemente enviarían a uno de sus agentes a investigar ese pantano, y al druida en persona.~
+@2    = ~El precio es de 3.500 piezas de oro. ¿Te interesa leer este libro y dejar que te ponga a prueba?~
+@3    = ~Sí. Estoy listo para pagar.~
+@4    = ~No. Paso. Al menos por ahora.~
+@5    = ~¡Espléndido!~
+@6    = ~"El druida ha desaparecido. Su cuerpo gigantesco se fundirá con el pantano. Incluso el entorno natural parece más tranquilo ahora."~
+@7    = ~¿Quién se vigorizará con el poder de la naturaleza?~
+@8    = ~<PLAYER1>.~
+@9    = ~<PLAYER2>.~
+@10   = ~<PLAYER3>.~
+@11   = ~<PLAYER4>.~
+@12   = ~<PLAYER5>.~
+@13   = ~<PLAYER6>.~
+@14   = ~La decisión ha sido tomada.~
+@15   = ~Ya te has enfrentado a la batalla que describe este libro.~

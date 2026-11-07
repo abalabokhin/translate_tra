@@ -1,0 +1,12 @@
+IF
+Global("L#IGMapNotes","AR1000",0)
+THEN
+RESPONSE #100
+RemoveMapNote([4330.1005],48364)
+AddMapNote([4980.450],48364)
+AddMapNote([4045.30],48364)
+AddMapNote([4430.250],@111)
+SetGlobal("L#IGMapNotes","AR1000",1)
+Continue()
+END
+

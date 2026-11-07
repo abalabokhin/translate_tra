@@ -1,0 +1,478 @@
+@0    = ~Wymaga gry w wersji Enhanced Edition.~
+@1    = ~Athkatlan Grounds: The Ink Gallery~
+@2    = ~Galeria Atramentu~
+@3    = ~Opowieść o Ośmionogim Wędrowcu~
+@4    = ~Narodziny Furii~
+@5    = ~Jęki śmierci~
+@6    = ~Wojna w głębinach~
+@7    = ~Uścisk glabrezu~
+@8    = ~Taniec mieczy~
+@9    = ~Ziarno i ogień~
+@10   = ~Opowieść o Siostrach Księżyca~
+@11   = ~Opowieść o Martwym Oku~
+@12   = ~Trzej spragnieni hultaje~
+@13   = ~Fale mięsożerców~
+@14   = ~Światło w śniegu~
+@15   = ~Wicehrabina Velcealle~
+@16   = ~Vsnaa, pajęcza akuszerka~
+@17   = ~Groteskowy drow~
+@18   = ~Niedorozwinięty pająk~
+@19   = ~Szermierz Shou~
+@20   = ~Chin Yi~
+@21   = ~Oammanf, xvart nekromanta~
+@22   = ~Xvart zombie~
+@23   = ~Monumentalny ankheg lawy~
+@24   = ~Uumo'ele, rozgniewany glabrezu~
+@25   = ~Łuczniczka Brachina~
+@26   = ~Maestro~
+@27   = ~Tańczący miecz~
+@28   = ~Tomkuast, druid-olbrzym~
+@29   = ~Saviaa Księżycorys~
+@30   = ~Safima Księżycorys~
+@31   = ~Saba Księżycorys~
+@32   = ~Gnijący zombie-obserwator~
+@33   = ~Uzm Siorbacz~
+@34   = ~Aba-Kamp Łykacz~
+@35   = ~Czo Lizacz~
+@36   = ~Zielona larwa~
+@37   = ~Pradawny remorhaz~
+@38   = ~Pomniejszy żywiołak powietrza~
+@39   = ~Alaundo~
+@40   = ~Gorion~
+@41   = ~Sarevok~
+@42   = ~Imoen~
+@43   = ~Jon Irenicus~
+@44   = ~Krwawa postać~
+@45   = ~Głodna gąsienica~
+@46   = ~Sklep z pamiątkami Galerii Atramentu~
+@47   = ~Furia~
+@48   = ~Plunięcie lawą~
+@49   = ~Ugryzienie lawą~
+@50   = ~Ugryzienie larwy~
+@51   = ~Ugryzienie remorhaza~
+@52   = ~Ugryzienie rozwścieczonego remorhaza~
+@53   = ~Ciche pantofle~
+@54   = ~Te pantofle są niezwykle wygodne, a dzięki miękkiemu wykończeniu pozwalają poruszać się niemal bezszelestnie. Do tego prezentują się całkiem schludnie, choć są nieco puszyste.
+
+PARAMETRY:
+
+Specjalne:
+– Ciche chodzenie: +5%
+
+Waga: 2~
+@55   = ~Galeria Atramentu: Lista eksponatów~
+@56   = ~Lista obejmuje wszystkie księgi udostępnione obecnie zwiedzającym. Są to:
+
+– Opowieść o Ośmionogim Wędrowcu: historia grupy przedzierającej się przez Demoniczne Otchłanie w poszukiwaniu drogi z domeny Pajęczej Królowej.
+
+– Narodziny Furii: pochodząca z dalekiego Kara-Tur opowieść o Chin Yi, jak również o szermierzu z Shou Lung i łączącej ich miłości.
+
+– Jęki śmierci: nowela przedstawiająca posępną historię nekromanty oraz armii nieumarłych xvartów, które postanowił wyrwać z wiecznego spoczynku.
+
+– Wojna w głębinach: opowieść o jednej z mniej znanych przygód Bohaterów Doliny Lodowego Wichru. Próbując powstrzymać wojnę między dziwnymi istotami, odkryli jaskinię zamieszkaną przez ogromne i niezwykle niebezpieczne stworzenie.
+
+– Uścisk glabrezu: przestroga opisująca walkę glabrezu, chronionego przez uzbrojone w łuki diablice, z grupą poszukiwaczy przygód wysłanych do Avernusa, by odnaleźć i zgładzić demona.
+
+– Taniec mieczy: księga opisująca bal urządzony przez tajemniczego Maestro oraz niezwykły taniec prawdziwych mieczy, kontrolowanych przez barda.
+
+– Ziarno i ogień: historia rozgniewanego druida-olbrzyma ognia, który zagarnął znaczną część bagien i napada na każdego, kto ośmieli się wkroczyć na jego ziemie.
+
+– Opowieść o Siostrach Księżyca: historia trzech niebiańskich sióstr, pełniących rolę sędziów w dziwnym, przypominającym księżyc miejscu pokrytym srebrzystymi piaskami.
+
+– Opowieść o Martwym Oku: powieść, w której samotny wędrowiec przemierza osobliwą martwą strefę magii i napotyka wygłodniałego, rozwścieczonego zombie-obserwatora, gotowego rzucić się do ataku.
+
+– Trzej spragnieni hultaje: dość osobliwa opowieść, będąca makabryczną komedią o trzech koboldach-wampirach terroryzujących pobliską wioskę.
+
+– Fale mięsożerców: księga opisująca zmagania samotnego ocalałego przemierzającego stary system kanałów, gdzie musi stawić czoła tuzinom mięsożernych larw, czających się w mętnej wodzie i pośród cieni.
+
+– Światło w śniegu: historia starego remorhaza wędrującego po dalekiej północy w towarzystwie stworzeń przypominających rozumne wiatry.
+
+Wszystkich, którzy pragną lepiej poznać te opowieści, zapraszamy do Galerii Atramentu, gdzie mogą na własne oczy obejrzeć prezentowane księgi.
+
+PARAMETRY:
+
+Waga: 1~
+@57   = ~Galeria Atramentu: Opinie zwiedzających~
+@58   = ~Broszura zawiera kilka rysunków przedstawiających Galerię Atramentu, położoną w Dzielnicy Rządowej Athkatli, oraz opinie pozostawione przez jej gości:
+
+„Niektóre z tych opowieści są doprawdy cudowne! To wspaniała okazja do nauki, lecz pamiętajcie, by najpierw dobrze się przygotować!”
+– Brienda Sokołotarg, tarczowniczka z Neverwinter
+
+„Dzięki Galerii Atramentu zrozumiałem, że literatura może dostarczyć wielu emocji i niezapomnianych wrażeń! Dziękuję!”
+– Al'Mand Silloan, kapłan Helma z Calimportu
+
+„Nigdy nie lubiłem książek, a teraz... uważam, że są świetne!”
+– John Bąblovich, osobistość ze świata mody pochodząca... właściwie nie wiadomo skąd!
+
+PARAMETRY:
+
+Waga: 1~
+@59   = ~Cep bojowy~
+@60   = ~Kastrator kapłanki +3~
+@61   = ~Broń ta należała niegdyś do kapłanki drowów. Była okrutną matroną, słynącą z nienawiści do mężczyzn, która – nawet jak na drowie standardy – uchodziła za skrajną. Lubiła ich torturować, a z zadawanych im cierpień urządzała widowiska dla pozostałych mężczyzn. Powiadają, że w ten sposób kastrowała nie jednego, lecz wszystkich naraz.
+
+PARAMETRY:
+
+Specjalne:
+– Niewrażliwość na truciznę
+
+Obrażenia: 1k6 +4, +1k4 +1 obrażenie od kwasu przeciw mężczyznom
+TraK0: +3
+Typ obrażeń: obuchowe
+Opóźnienie: 5
+Rodzaj biegłości: cep bojowy/morgensztern
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 9
+
+Waga: 10~
+@62   = ~Róg~
+@63   = ~Trąba obłąkańczej hulanki~
+@64   = ~Według opowieści trąba ta należała niegdyś do jednego z archontów Kwan Ying, towarzysza Chin Yi, innego archonta, który później stał się źródłem prawdziwej mocy Furii niebios. Powiadają, że gdy rozbrzmiewa Trąba obłąkańczej hulanki, wszyscy w pobliżu zaczynają zachowywać się jak pijani i z trudem trafiają tego, kto na niej zagrał.
+
+PARAMETRY:
+
+Właściwości ładunków:
+– Obłąkańcza hulanka, raz dziennie
+Specjalne: Przeciwnicy w zasięgu działania muszą wykonać rzut obronny przeciw czarom z modyfikatorem -4 lub dozna potężnego magicznego upojenia na 5 tur. Istnieje także 5% szans, że ofiara, której nie powiedzie się rzut, padnie na ziemię nieprzytomna na 2 rundy. Grający na instrumencie otrzymuje na cały czas działania +1 do Klasy Pancerza i Charyzmy.
+Obszar działania: w promieniu 5 metrów
+
+Waga: 2~
+@65   = ~Bransolety~
+@66   = ~Bransolety xvarta nekromanty~
+@67   = ~Bransolety te należały niegdyś do potężnego xvarta nekromanty. Trudno powiedzieć, jak ktoś taki zdołał zostać prawdziwym mistrzem czarnej magii, lecz tak właśnie się stało. Zdołał wskrzesić wielu poległych pobratymców, przemieniając ich w żywe trupy.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: 7
+– Kondycja: +1
+– Może zapamiętać po jednym dodatkowym czarze maga poziomów od 1. do 3. (tylko nekromanta)
+
+Waga: 1~
+@68   = ~Zbroja z monumentalnego ankhega lawy~
+@69   = ~Zbroję tę wykonano ze skorupy monumentalnego ankhega lawy. Ankhegi lawy należą do rzadkości, a ich monumentalna odmiana musiała być stworzeniem doprawdy wyjątkowym. Była ogromna i potężna, a do tego potrafiła pluć żrącą substancją. Nawet to nie uchroniło jej jednak przed śmiercią.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na ogień: +30%
+– Odporność na obrażenia fizyczne: +5%
+
+Klasa Pancerza: 0 (-3 przeciw broniom siecznym, -1 przeciw broniom kłutym i pociskom)
+
+Wymagania:
+– Siła: 8
+
+Waga: 25~
+@70   = ~Pas~
+@71   = ~Podniecenie glabrezu~
+@72   = ~Jeśli wierzyć opowieściom, pas ten wykonano ze skóry i kości potężnego glabrezu, którego obawiali się zarówno śmiertelnicy, jak i inne demony. Powiadano, że zabijanie każdego, kto ośmielił się stanąć mu na drodze, budziło w nim sadystyczne podniecenie.
+
+Pas zdaje się również wykazywać pasożytnicze właściwości, a jego magię zasila krew noszącego. Demoniczna natura przedmiotu nie pozwala używać go paladynom.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na magię: +8%
+– Liczba ataków na rundę: +1/2
+– TraK0: +1
+– Kondycja: -1
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
+Waga: 2~
+@73   = ~Sejmitar~
+@74   = ~Eon Maestra +3~
+@75   = ~Istnieje wiele magicznych sejmitarów, po które chętnie sięgnęliby bardowie i inni artyści. Ten jednak cieszy się szczególną sławą. Jest nie tylko kunsztownie wykonaną bronią, lecz także zaklęto w nim niezwykłą magię. Pozwala właścicielowi regenerować siły, a każde trafienie osłabia odporność ofiary na czary, jednocześnie wzmacniając ją u dzierżącego.
+
+PARAMETRY:
+
+Specjalne:
+– Regeneracja punktów życia: 1/2 rundy
+– Każde trafienie na 1 rundę pogarsza o 1 rzuty obronne ofiary przeciw czarom i poprawia o 1 takie same rzuty obronne dzierżącego (efekt kumuluje się)
+
+Obrażenia: 1k8 +3
+TraK0: +3
+Typ obrażeń: sieczne
+Opóźnienie: 2
+Rodzaj biegłości: sejmitar/wakizashi/ninja-to
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 10
+
+Waga: 3~
+@76   = ~Pierścień~
+@77   = ~Pierścień ognistej jarzębiny~
+@78   = ~Pierścień ten wykonano z wysuszonego drewna ognistej jarzębiny i zaklęto potężną magią. Według opowieści stworzył go potężny, lecz całkiem obłąkany druid, olbrzym ognia, który próbował zagarnąć dla siebie część bagien.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +2
+– Rzuty obronne: +2
+
+Właściwości ładunków:
+– Ogniste nasiona, raz dziennie
+Efekt: Tworzy 4 ogniste nasiona, które pojawiają się w ekwipunku rzucającego na 3 tury. Rzucone w przeciwnika wybuchają kulą ognia.
+Obrażenia: 2k8 obrażeń od ognia (połowa po rzucie obronnym przeciw czarom)
+Obszar działania: w promieniu 2 metrów
+
+Waga: 1~
+@79   = ~Mała tarcza~
+@80   = ~Trzy fazy księżyca +3~
+@81   = ~Tę niewielką tarczę stworzyły skrzydlate istoty niebiańskie zwane Siostrami Księżyca. Jeśli wierzyć legendom, każda z nich wykonała inną część tarczy, a następnie połączyły je w niezwykły przedmiot, który nocą staje się jeszcze bardziej imponujący.
+
+Choć tarcza nie chroni przed pociskami w zwykły sposób, potrafi osłabiać je, spalając księżycowym blaskiem.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +4
+– Nie zapewnia premii do Klasy Pancerza przeciw pociskom
+– Odporność na obrażenia od pocisków: 50%
+– Odporność na magię: +3%
+– Nocą w każdej rundzie posiadacz otrzymuje losowo jeden z trzech dodatkowych efektów: +1 do Szczęścia, regenerację 3 punktów życia w ciągu 1 rundy albo ochronę przed petryfikacją
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~
+@82   = ~Kamień ioun~
+@83   = ~Martwe lewitujące oko~
+@84   = ~Ten niezwykły kamień ioun uformowano na kształt szklanego, martwego oka, stąd jego nazwa: Martwe lewitujące oko. Dzięki magii pomaga dostrzegać to, co zwykle trudno zauważyć, dlatego najwięcej pożytku przyniesie łotrzykom.
+
+PARAMETRY:
+
+Specjalne:
+– Znajdowanie pułapek: +10%
+– Wykrycie iluzji: +10%
+– TraK0 broni dystansowej: +1
+
+Waga: 0~
+@85   = ~Strzałka~
+@86   = ~Ząb małego hultaja +2~
+@87   = ~Ta strzałka jest w istocie wypolerowanym i zaklętym kłem wampira, który przerobiono na broń. Jeśli wierzyć opowieściom, ząb zachował część niezwykłych wampirycznych właściwości.
+
+PARAMETRY:
+
+Specjalne:
+– Po rzucie wraca do właściciela
+– Każde trafienie przywraca właścicielowi 1 punkt życia
+– Każde trafienie ma 3% szans na odebranie ofierze 1 poziomu (rzut obronny przeciw śmierci z modyfikatorem -2 neguje)
+
+Obrażenia: 1k3 +2
+TraK0: +2
+Typ obrażeń: pocisk
+Opóźnienie: 0
+Rodzaj biegłości: strzałka
+Typ broni: 1-ręczna
+
+Waga: 0~
+@88   = ~Kij~
+@89   = ~Pokryty gąsienicami kij +3~
+@90   = ~Kij ten pokrywają zielone i bardzo wygłodniałe gąsienice. Sama broń zdaje się być magiczna i potrafi utrzymać te małe stworzenia przy życiu, lecz być może ich głód da się jakoś... wykorzystać w walce?
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza i rzuty obronne przeciw chrząszczom, ankhegom i pełzaczom ścierwojadom: +2
+– Można używać zarówno w walce wręcz, jak i na dystans, wyrzucając zamachem jedną z gąsienic w stronę przeciwnika
+– Ataki dystansowe mają 10% szans na zadanie dodatkowego 1 obrażenia od kwasu
+
+Właściwości ładunków:
+– Przyzywa wygłodniałe gąsienice na 1 turę, raz dziennie
+Specjalne: Gąsienice zadają 1k4 +1 obrażeń, lecz ich ataki zadają sześciokrotnie większe obrażenia mykonidom, które najwyraźniej są ich ulubionym pożywieniem
+
+Obrażenia (walka wręcz): 1k6 +3
+Obrażenia (atak dystansowy): 1k2 +3
+TraK0: +3
+Typ obrażeń: obuchowe
+Opóźnienie: 1
+Rodzaj biegłości: kij
+Typ broni: 2-ręczna
+
+Wymagania:
+– Siła: 5
+
+Waga: 2~
+@91   = ~Hełm~
+@92   = ~Hełm ze skorupy remorhaza~
+@93   = ~Ten ciężki hełm wykonano z chitynowych łusek remorhaza. Zachował część naturalnych odporności stworzenia, z którego go sporządzono.
+
+PARAMETRY:
+
+Specjalne:
+– Chroni przed trafieniami krytycznymi
+– Klasa Pancerza: +1
+– Odporność na magię: +10%
+– Odporność na obrażenia od magii: +20%
+
+Waga: 10~
+@94   = ~Ugryzienie~
+@95   = ~Maska trzech wzniosłych rubinów~
+@96   = ~Gdy tę niegdysiejszą maskę pogrzebową odnalazł pewien ciekawski bard, przerobił ją na nakrycie głowy, umożliwiając wykorzystywanie jej przez żywych do łatwiejszego panowania nad magią. Powiadają, że po założeniu maski rubiny szepczą tajemnice i podpowiedzi dotyczące wszystkiego, co otacza jej właściciela.
+
+Zmiana charakteru maski z pewnością nie zaliczała się do łatwych, efekt jednak wyraźnie wart był całego wysiłku i poniesionych kosztów.
+
+PARAMETRY:
+
+Specjalne:
+– Wiedza: +50%
+– Mądrość: +1
+– Inteligencja: +1
+– Szybkość rzucania czarów: +1
+– Chroni przed trafieniami krytycznymi
+
+Waga: 1~
+@97   = ~Otrzymano +1 do rzutów obronnych przeciw śmierci~
+@98   = ~Otrzymano +5% odporności na elektryczność~
+@99   = ~Otrzymano +3% odporności na magię~
+@100  = ~Otrzymano +5% odporności na ogień~
+@101  = ~Otrzymano +5 do Wiedzy~
+@102  = ~Otrzymano +5% odporności na obrażenia od pocisków~
+@103  = ~Otrzymano +5% odporności na obrażenia sieczne~
+@104  = ~Otrzymano +2 punkty życia~
+@105  = ~Otrzymano +5% odporności na zimno~
+@106  = ~Otrzymano +1 do rzutów obronnych przeciw czarom~
+@107  = ~Otrzymano +5% odporności na obrażenia kłute~
+@108  = ~Otrzymano +5% odporności na kwas~
+@109  = ~Otrzymano +5% odporności na obrażenia obuchowe~
+@110  = ~Nie znaleziono wolnego miejsca na animację stworzenia.~
+@111  = ~Galeria Atramentu~
+@112  = ~Galeria Atramentu
+
+W Dzielnicy Rządowej Athkatli znalazłem interesujące miejsce zwane Galerią Atramentu. Jeśli dobrze zrozumiałem jego właścicielkę, przechowuje się tam potężne księgi, które pozwalają czytelnikom przeżyć wydarzenia uwiecznione w opowieściach i wyciągnąć z nich naukę.~ ~Galeria Atramentu
+
+W Dzielnicy Rządowej Athkatli znalazłam interesujące miejsce zwane Galerią Atramentu. Jeśli dobrze zrozumiałam jego właścicielkę, przechowuje się tam potężne księgi, które pozwalają czytelnikom przeżyć wydarzenia uwiecznione w opowieściach i wyciągnąć z nich naukę.~
+@113  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Opowieść o Ośmionogim Wędrowcu i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Opowieść o Ośmionogim Wędrowcu i wyszłam z niej cało.~
+@114  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Narodziny Furii i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Narodziny Furii i wyszłam z niej cało.~
+@115  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Jęki śmierci i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Jęki śmierci i wyszłam z niej cało.~
+@116  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Wojna w głębinach i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Wojna w głębinach i wyszłam z niej cało.~
+@117  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Uścisk glabrezu i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Uścisk glabrezu i wyszłam z niej cało.~
+@118  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Taniec mieczy i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Taniec mieczy i wyszłam z niej cało.~
+@119  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Ziarno i ogień i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Ziarno i ogień i wyszłam z niej cało.~
+@120  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Opowieść o Siostrach Księżyca i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Opowieść o Siostrach Księżyca i wyszłam z niej cało.~
+@121  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Opowieść o Martwym Oku i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Opowieść o Martwym Oku i wyszłam z niej cało.~
+@122  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Fale mięsożerców i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Fale mięsożerców i wyszłam z niej cało.~
+@123  = ~Galeria Atramentu
+
+Przeżyłem próbę opisaną w księdze zatytułowanej Światło w śniegu i wyszedłem z niej cało.~ ~Galeria Atramentu
+
+Przeżyłam próbę opisaną w księdze zatytułowanej Światło w śniegu i wyszłam z niej cało.~
+@124  = ~Galeria Atramentu
+
+Wicehrabina poprosiła mnie, bym spotkał się z nią w piwnicy Galerii Atramentu. Chce tam ze mną o czymś porozmawiać.~ ~Galeria Atramentu
+
+Wicehrabina poprosiła mnie, bym spotkała się z nią w piwnicy Galerii Atramentu. Chce tam ze mną o czymś porozmawiać.~
+@125  = ~Galeria Atramentu
+
+Wicehrabina poprosiła mnie o pomoc w zbadaniu Krwawych Kart Bhaala. Powiedziałem jej, że muszę się nad tym zastanowić.~ ~Galeria Atramentu
+
+Wicehrabina poprosiła mnie o pomoc w zbadaniu Krwawych Kart Bhaala. Powiedziałam jej, że muszę się nad tym zastanowić.~
+@126  = ~Galeria Atramentu
+
+Poproszono mnie o zbadanie Krwawych Kart Bhaala, przechowywanych w piwnicy Galerii Atramentu w Athkatli. Przyjąłem to zadanie. Przekonam się, czy księga naprawdę jest tak niezwykła, jak się wydaje.~ ~Galeria Atramentu
+
+Poproszono mnie o zbadanie Krwawych Kart Bhaala, przechowywanych w piwnicy Galerii Atramentu w Athkatli. Przyjęłam to zadanie. Przekonam się, czy księga naprawdę jest tak niezwykła, jak się wydaje.~
+@127  = ~Galeria Atramentu
+
+Galeria Atramentu to miejsce pełne potężnych ksiąg. Pozwolono mi czerpać z nich wiedzę i stawić czoła wszystkim próbom uwiecznionym na ich kartach. Jedną z tych ksiąg były Krwawe Karty Bhaala. Ukazały mi sceny i postacie z mojej własnej historii. Było to doprawdy osobliwe zadanie, lecz udało mi się je ukończyć.~
+@128  = ~Galeria Atramentu
+
+Galeria Atramentu to miejsce pełne potężnych ksiąg. Pozwolono mi czerpać z nich wiedzę i stawić czoła wszystkim próbom uwiecznionym na ich kartach. Jedną z tych ksiąg były Krwawe Karty Bhaala. Wicehrabina poprosiła mnie o pomoc w jej zbadaniu, lecz odmówiłem. Przyjęła to jednak całkiem spokojnie.~ ~Galeria Atramentu
+
+Galeria Atramentu to miejsce pełne potężnych ksiąg. Pozwolono mi czerpać z nich wiedzę i stawić czoła wszystkim próbom uwiecznionym na ich kartach. Jedną z tych ksiąg były Krwawe Karty Bhaala. Wicehrabina poprosiła mnie o pomoc w jej zbadaniu, lecz odmówiłam. Przyjęła to jednak całkiem spokojnie.~
+@129  = ~Ach, jesteś w jednym kawałku. Cieszę się, że udało ci się przeżyć starcie z Akuszerką. Dobra robota!~
+@130  = ~(Otrzymano +1 do rzutów obronnych przeciw śmierci; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@131  = ~Udało ci się pokonać naszego biednego szermierza. Dobra robota!~
+@132  = ~(Otrzymano specjalną zdolność: Rozwścieczenie; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@133  = ~(Otrzymano +5% odporności na elektryczność; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@134  = ~Zawsze nienawidziłam zombie, lecz... najwyraźniej doskonale wiesz, jak sobie z nimi radzić!~
+@135  = ~(Otrzymano +3% odporności na magię; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@136  = ~Udało ci się zgładzić to monstrualne coś, tak? Musisz przyznać, że bestia była naprawdę ogromna.~
+@137  = ~(Otrzymano +5% odporności na ogień; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@138  = ~Wygląda na to, że nie lękasz się nawet najpotężniejszych przeciwników, takich jak diabły!~
+@139  = ~(Otrzymano +5 do Wiedzy; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@140  = ~(Otrzymano +5% odporności na obrażenia od pocisków; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@141  = ~Ach, to musiał być doprawdy niezwykły bal. Żałuję, że nie mogłam zobaczyć twojego występu. Tak czy inaczej, cieszę się, że udało ci się wrócić cało.~
+@142  = ~(Otrzymano +5% odporności na obrażenia sieczne; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@143  = ~Już wracasz? Imponujące!~
+@144  = ~(Otrzymano +2 punkty życia; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@145  = ~To dziwne... Wyczułam, że księga zareagowała na ciebie w osobliwy sposób. Przepraszam. To musiała być jakaś anomalia. Obiecuję, że ją zbadam.~
+@146  = ~(Otrzymano +5% odporności na zimno; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@147  = ~A oto i nasz bohater! Witaj z powrotem!~ ~A oto i nasza bohaterka! Witaj z powrotem!~
+@148  = ~(Otrzymano +1 do rzutów obronnych przeciw czarom; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@149  = ~Ach! Widzę, że udało ci się pokonać te szalone koboldy! Doskonale!~
+@150  = ~(Otrzymano +5% odporności na obrażenia kłute; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@151  = ~To musiała być prawdziwa eksterminacja. Mhm. Dobrze, że udało ci się przeżyć ich ataki.~
+@152  = ~(Otrzymano +5% odporności na kwas; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@153  = ~A więc udało ci się pokonać remorhaza? To musiało być nie lada wyzwanie!~
+@154  = ~(Otrzymano +5% odporności na obrażenia obuchowe; do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@155  = ~(Otwiera się tajne przejście do piwnicy... Do sklepu Galerii Atramentu dodano nową pamiątkę).~
+@156  = ~(Główna przeciwniczka i jej sługi nie żyją. Możesz już odejść).~
+@157  = ~(Walka dobiegła końca. Szermierz nie żyje, a archont zniknął).~
+@158  = ~(Nekromanta i jego sługi zostali powstrzymani. Możesz już odejść).~
+@159  = ~(Stworzenie nie żyje. Możesz już odejść).~
+@160  = ~(Glabrezu i łuczniczki zostali pokonani. Możesz opuścić to miejsce).~
+@161  = ~(Bal dobiegł końca. Możesz opuścić to miejsce).~
+@162  = ~(Bagna zaczynają się zmieniać. Lepiej czym prędzej stąd odejść).~
+@163  = ~(Siostry Księżyca poległy. Możesz opuścić to niezwykłe miejsce).~
+@164  = ~(Potwór zniknął. Możesz już odejść).~
+@165  = ~(Nim opuścisz ten obszar, musisz dopilnować, by koboldy-wampiry już nie powstały).~
+@166  = ~(Przebijając serca koboldów drewnianymi kołkami, otwierasz drogę wyjścia z tej krainy).~
+@167  = ~(Roje zostały wybite, a tobie udało się przeżyć ich atak. Możesz już odejść).~
+@168  = ~(Remorhaz i żywiołaki zniknęły).~
+@169  = ~(Gdy się zbliżasz, wypustki na grzbiecie remorhaza rozbłyskują niczym iskry krzesane krzemieniem o stal).~
+@170  = ~Lolth! Pozwól mi przyzwać twoje dzieci i inne pełzające stworzenia, bym mogła pokonać twych wrogów! Wbrew wszystkiemu!~
+@171  = ~(Ta ogromna księga wygląda bardzo złowieszczo).~
+@172  = ~(Księga jest ciepła w dotyku. Po chwili atrament zaczyna zbierać się wokół twojej dłoni).~
+@173  = ~(Atrament dociera do niewielkiego skaleczenia na twojej dłoni i miesza się z krwią. Po chwili ogarnia cię przemożna chęć przewrócenia strony).~
+@174  = ~(Ta prymitywna trumna jest pusta).~
+@175  = ~(W tej trumnie regeneruje się kobold-wampir. Jeśli masz drewniany kołek, teraz możesz go zabić).~
+@176  = ~(Przebijasz serce kobolda drewnianym kołkiem, tym samym kładąc ostateczny kres istnieniu małego wampira).~
+@177  = ~(Potrzebujesz drewnianego kołka, by zniszczyć kobolda-wampira).~
+@178  = ~(Malec nie żyje).~
+@179  = ~Ankheg lawy~
+@180  = ~Plujący chrząszcz~

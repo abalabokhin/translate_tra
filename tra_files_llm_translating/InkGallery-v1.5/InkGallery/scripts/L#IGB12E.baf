@@ -1,0 +1,27 @@
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("Angry","LOCALS",0)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@169)  
+		XEquipItem("L#IG12R2",Myself,SLOT_WEAPON1,EQUIP)
+		SetGlobal("Angry","LOCALS",1)
+END
+
+IF
+	ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	ActionListEmpty()
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
