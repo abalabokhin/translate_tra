@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Dialog Translation Script for Game Dialogs
-Translates CSV dialog files from English to Russian using local LLM (Ollama)
+Translates CSV dialog files from English to Russian using Ollama or Codex CLI.
 """
 
 import csv
@@ -11,10 +11,13 @@ import json
 import io
 import re
 import time
+import tempfile
 from pathlib import Path
 import urllib.error
 import urllib.request
 from typing import Dict, List, Tuple
+
+from codex_backend import run_cli, save, now
 
 from translation_common import (DIALOGUE_COLUMNS, TRANSLATION_COLUMNS, female_source,
                                 merge_dialogue_rows, parse_reference, read_csv, strict_json, validate_text, write_csv)
@@ -47,15 +50,34 @@ MIXED_SPEAKERS_NOTE = ('Speakers of this one string differ in gender, or a gende
 class DialogTranslator:
     def __init__(self, source_folder: str = "english", target_folder: str = "russian",
                  actors_file: str = None, dict_file: str = None,
-                 model: str = "qwen3.5:9b", test_mode: bool = False,
-                 ollama_url: str = None, num_ctx: int = None, think: bool = None):
+                 model: str = None, test_mode: bool = False,
+                 ollama_url: str = None, num_ctx: int = None, think: bool = None,
+                 backend: str = 'ollama', method: str = None, effort: str = None,
+                 codex_bin: str = 'codex', requests_dir: str = None):
+        if backend not in ('ollama', 'codex'):
+            raise ValueError('Backend must be ollama or codex')
+        self.backend = backend
+        self.method = method or ('both' if backend == 'codex' else 'two-pass')
+        if self.method not in ('both', 'two-pass'):
+            raise ValueError('Method must be both or two-pass')
+        if backend == 'codex' and any(value is not None for value in (ollama_url, num_ctx, think)):
+            raise ValueError('--url, --num-ctx and --think/--no-think apply only to Ollama')
+        if backend == 'ollama' and (effort is not None or codex_bin != 'codex' or requests_dir is not None):
+            raise ValueError('--effort, --codex-bin and --requests-dir apply only to Codex')
+        if effort is not None and effort not in ('low', 'medium', 'high', 'xhigh', 'max', 'ultra'):
+            raise ValueError('Unsupported reasoning effort')
+        self.effort = (effort or 'low') if backend == 'codex' else None
+        self.codex_bin = codex_bin
         self.source_folder = Path(source_folder)
         self.target_folder = Path(target_folder)
         if self.source_folder.resolve() == self.target_folder.resolve():
             raise ValueError("Source and target folders must be different")
         self.actors_file = Path(actors_file) if actors_file else SCRIPT_DIR / "actors.csv"
         self.dict_file = Path(dict_file) if dict_file else SCRIPT_DIR / "dict.csv"
-        self.model = model
+        self.model = model or ('gpt-6.1-sol' if backend == 'codex' else 'qwen3.5:9b')
+        self.requests_dir = Path(requests_dir) if requests_dir else self.target_folder / '_requests'
+        self.request_run = None
+        self.request_count = 0
         endpoint = ollama_url or os.getenv("OLLAMA_URL", "http://localhost:11434")
         self.ollama_url = endpoint.rstrip('/')
         if not self.ollama_url.endswith(('/api/chat', '/api/generate')):
@@ -257,6 +279,33 @@ class DialogTranslator:
         except (urllib.error.URLError, OSError) as exc:
             raise ValueError(f"Cannot complete Ollama request at {self.ollama_url}: {exc}") from exc
 
+    def _call_model(self, prompt, schema, csv_file, stage):
+        """Select transport without fallback; preserve Codex evidence in a fresh run folder."""
+        if self.test_mode:
+            data = json.loads(prompt)
+            values = {line['id']: ({'male': line['english'], 'female': line['english_female']}
+                                  if stage == 'both' else line['english'])
+                      for line in data['dialogue']}
+            return json.dumps({'translations': values}, ensure_ascii=False)
+        if self.backend == 'ollama':
+            return self._call_ollama(prompt, schema)
+        if self.request_run is None:
+            self.requests_dir.mkdir(parents=True, exist_ok=True)
+            self.request_run = Path(tempfile.mkdtemp(prefix='codex-', dir=self.requests_dir))
+            save(self.request_run / 'run.json', {
+                'started_utc': now(), 'backend': self.backend, 'model': self.model,
+                'method': self.method, 'reasoning_effort': self.effort,
+                'source_folder': str(self.source_folder.resolve()),
+                'target_folder': str(self.target_folder.resolve())})
+            print(f'  Codex request evidence: {self.request_run}', flush=True)
+        self.request_count += 1
+        out = self.request_run / f'{self.request_count:04d}-{csv_file.stem}-{stage}'
+        call, content = run_cli(self.codex_bin, self.model, TRANSLATION_RULES, prompt,
+                                schema, out, effort=self.effort)
+        if content is None:
+            raise ValueError(f"Codex request failed: {call['error']}; evidence in {out}")
+        return content
+
     def _read_csv_content(self, csv_file: Path) -> List[List[str]]:
         """Read CSV file and return all rows"""
         rows = []
@@ -393,6 +442,88 @@ class DialogTranslator:
             validate_text(text, values[str(i)], f'line {i}')
         return values
 
+    def _both_request(self, csv_content, rows, actor_info, dict_context, standalone=False):
+        """The simultaneous prompt/schema evaluated in the Codex comparison."""
+        data = json.loads(self._create_translation_prompt(
+            csv_content, 'male', actor_info, dict_context, standalone=standalone))
+        data['instruction'] = (
+            'Translate every line for BOTH male and female Player1 in this one response. '
+            'Return complete male and female Russian strings. All words about Player1 '
+            '(including nouns, adjectives, participles, verbs and pronouns) must agree '
+            'with that version. Other characters retain their fixed genders in BOTH. '
+            'Use english_female for the female version, including differences in meaning. '
+            'When english_female is empty, return an empty female string. '
+            'Copy unaffected wording and punctuation exactly between versions; do not '
+            'paraphrase one version independently. Do not use gender markup or fragments.'
+        )
+        properties = {}
+        for line, row in zip(data['dialogue'], rows[1:]):
+            line['english_female'] = female_source(dict(zip(rows[0], row)), row[3])
+            speakers = line['speaker'] if isinstance(line['speaker'], list) else [line['speaker']]
+            genders = line['speaker_gender']
+            genders = genders if isinstance(genders, list) else [genders]
+            genders = ['male in male, female in female' if name == 'Player1' else gender
+                       for name, gender in zip(speakers, genders)]
+            line['speaker_gender'] = genders if isinstance(line['speaker'], list) else genders[0]
+            if any(self._mixed_speakers(row[0], gender) for gender in ('male', 'female')):
+                line['note'] = MIXED_SPEAKERS_NOTE
+            female = {'type': 'string'}
+            if not line['english_female'].strip():
+                female['enum'] = ['']
+            properties[line['id']] = {
+                'type': 'object', 'additionalProperties': False,
+                'required': ['male', 'female'],
+                'properties': {'male': {'type': 'string'}, 'female': female}}
+        data['output'] = {'translations': {
+            key: {'male': 'Complete Russian male line', 'female': '' if 'enum' in value['properties']['female']
+                  else 'Complete Russian female line'} for key, value in properties.items()}}
+        schema = {'type': 'object', 'additionalProperties': False, 'required': ['translations'],
+                  'properties': {'translations': {'type': 'object', 'additionalProperties': False,
+                                 'required': list(properties), 'properties': properties}}}
+        return json.dumps(data, ensure_ascii=False), schema
+
+    @staticmethod
+    def _parse_both(translation_text, rows):
+        data = strict_json(translation_text)
+        if not isinstance(data, dict) or set(data) != {'translations'}:
+            raise ValueError('Expected only translations')
+        values = data['translations']
+        expected = {str(i) for i in range(1, len(rows))}
+        if not isinstance(values, dict) or set(values) != expected:
+            raise ValueError('Translation IDs do not match source rows exactly')
+        empty = DialogTranslator._empty_female_ids(rows)
+        for key, pair in values.items():
+            if not isinstance(pair, dict) or set(pair) != {'male', 'female'}:
+                raise ValueError(f'ID {key}: expected only male and female')
+            if key in empty and pair['female'] != '':
+                raise ValueError(f'ID {key}: explicitly empty female source must stay empty')
+        result = {}
+        for gender in ('male', 'female'):
+            payload = {'translations': {key: pair[gender] for key, pair in values.items()
+                                       if gender != 'female' or key not in empty}}
+            result[gender] = DialogTranslator._parse_translation(
+                json.dumps(payload), rows, female=gender == 'female')
+        return result['male'], result['female']
+
+    def _translate_rows(self, csv_content, rows, actor_info, dict_context, csv_file, standalone=False):
+        if self.method == 'both':
+            print(f'  Translating both genders together ({len(rows)-1} lines)...', flush=True)
+            prompt, schema = self._both_request(csv_content, rows, actor_info, dict_context, standalone)
+            reply = self._call_model(prompt, schema, csv_file, 'both')
+            try:
+                return self._parse_both(reply, rows)
+            except ValueError as exc:
+                raw = self.target_folder / f'{csv_file.stem}.both.rejected.txt'
+                raw.write_text(reply, encoding='utf-8')
+                raise ValueError(f'{exc} (raw reply kept in {raw})') from exc
+        print(f'  Translating male Player1, then editing for female ({len(rows)-1} lines)...', flush=True)
+        prompt = self._create_translation_prompt(csv_content, 'male', actor_info, dict_context,
+                                                 standalone=standalone)
+        reply = self._call_model(prompt, self._translation_schema(rows), csv_file, 'male')
+        male = self._parse_or_keep(reply, rows, csv_file)
+        female = self._translate_female(csv_content, rows, actor_info, dict_context, male, csv_file, standalone)
+        return male, female
+
     def _translate_female(self, csv_content, rows, actor_info, dict_context, male, rejected_name,
                           standalone=False):
         """Edit the validated male pass for female Player1; no request if every female text is empty."""
@@ -401,7 +532,7 @@ class DialogTranslator:
         prompt = self._create_translation_prompt(csv_content, 'female', actor_info, dict_context,
                                                  json.dumps({'translations': male}, ensure_ascii=False),
                                                  standalone=standalone)
-        reply = self._call_ollama(prompt, self._translation_schema(rows, female=True))
+        reply = self._call_model(prompt, self._translation_schema(rows, female=True), rejected_name, 'female')
         return self._parse_or_keep(reply, rows, rejected_name, female=True)
 
     def _rejected_path(self, csv_file: Path, female: bool) -> Path:
@@ -411,6 +542,7 @@ class DialogTranslator:
         """Remove rejected replies of an earlier run, so they never describe the current one."""
         for female in (False, True):
             self._rejected_path(csv_file, female).unlink(missing_ok=True)
+        (self.target_folder / f'{csv_file.stem}.both.rejected.txt').unlink(missing_ok=True)
         self._shared_strings_review_path(csv_file).unlink(missing_ok=True)
 
     def _parse_or_keep(self, translation_text, rows, csv_file: Path, female=False):
@@ -427,7 +559,7 @@ class DialogTranslator:
             raise ValueError(f"{exc} ({kept})") from exc
 
     def translate_dialog_file(self, csv_file: Path):
-        """Translate one complete dialogue: male first, then a female-only edit."""
+        """Translate one complete dialogue using the selected backend and gender method."""
         print(f"Processing {csv_file.name}...", flush=True)
         rows = self._read_csv_content(csv_file)
         if not rows or not set(DIALOGUE_COLUMNS) <= set(rows[0]):
@@ -467,17 +599,11 @@ class DialogTranslator:
         actor_info = self._build_actor_info(self._get_actors_in_dialog(rows[1:]))
         dict_context = self._build_dictionary_context('\n'.join(
             row[3] + '\n' + female_source(dict(zip(rows[0], row)), row[3]) for row in prompt_rows[1:]))
-        schema = self._translation_schema(prompt_rows)
-
         reused = len(rows) - len(prompt_rows)
-        print(f"  Translating full dialogue for male Player1 ({len(prompt_rows)-1} lines"
-              f"{f', {reused} reused TRA strings merged' if reused else ''})...", flush=True)
+        if reused:
+            print(f'  Merged {reused} reused TRA strings; retaining the full dialogue.', flush=True)
         start_time = time.time()
-        male_prompt = self._create_translation_prompt(csv_content, 'male', actor_info, dict_context)
-        male_translation = self._call_ollama(male_prompt, schema)
-        male = self._parse_or_keep(male_translation, prompt_rows, csv_file)
-        print(f"  Male pass finished in {time.time()-start_time:.2f}s; editing for female Player1...", flush=True)
-        female = self._translate_female(csv_content, prompt_rows, actor_info, dict_context, male, csv_file)
+        male, female = self._translate_rows(csv_content, prompt_rows, actor_info, dict_context, csv_file)
         prompt_male, prompt_female = male, female
         # Expand back to one translation per original row (shared for reused TRA strings).
         index = {str(i): str(slot[row[1]]) for i, row in enumerate(rows[1:], 1)}
@@ -536,11 +662,8 @@ class DialogTranslator:
         csv.writer(buffer).writerows(prompt_rows)
         dict_context = self._build_dictionary_context('\n'.join(
             row['Text'] + '\n' + female_source(row, row['Text']) for row in source_rows))
-        prompt = self._create_translation_prompt(buffer.getvalue(), 'male', '', dict_context, standalone=True)
-        schema = self._translation_schema(prompt_rows)
-        male = self._parse_unused_lines_result(self._call_ollama(prompt, schema), prompt_rows)
-        female = self._translate_female(buffer.getvalue(), prompt_rows, '', dict_context, male,
-                                        Path('_unused_tra_lines'), standalone=True)
+        male, female = self._translate_rows(buffer.getvalue(), prompt_rows, '', dict_context,
+                                           Path('_unused_tra_lines'), standalone=True)
         output = [['Reference', 'English_Text', 'Source_Female_Text', 'Source_Has_Female'] + TRANSLATION_COLUMNS]
         for i, row in enumerate(source_rows, 1):
             output.append([row['Reference'], row['Text'], row.get('Source_Female_Text', ''),
@@ -577,13 +700,20 @@ class DialogTranslator:
         return not failures
 
 
-def main():
+def main(argv=None):
     """Main function."""
     import argparse
-    parser = argparse.ArgumentParser(description='Translate dialogue CSVs: male first, then female edit')
+    parser = argparse.ArgumentParser(description='Translate dialogue CSVs using Ollama or Codex CLI')
     parser.add_argument('source_folder', nargs='?', default='english')
-    parser.add_argument('--test', action='store_true', help='Mock plumbing only; no Ollama requests')
-    parser.add_argument('--model', default='qwen3.5:9b')
+    parser.add_argument('--test', action='store_true', help='Mock plumbing only; no model requests')
+    parser.add_argument('--backend', choices=['ollama', 'codex'], default='ollama')
+    parser.add_argument('--model', help='Model ID; default: qwen3.5:9b for Ollama, gpt-6.1-sol for Codex')
+    parser.add_argument('--method', choices=['both', 'two-pass'],
+                        help='Gender method; default: both for Codex, two-pass for Ollama')
+    parser.add_argument('--effort', choices=['low', 'medium', 'high', 'xhigh', 'max', 'ultra'],
+                        help='Codex reasoning effort; default: explicitly low')
+    parser.add_argument('--codex-bin', default='codex', help='Codex CLI executable; default: codex')
+    parser.add_argument('--requests-dir', help='Codex request evidence root; default: TARGET/_requests')
     parser.add_argument('--url', help='Ollama base URL or full /api/chat or /api/generate endpoint')
     parser.add_argument('--target', default='russian')
     parser.add_argument('--actors', help='Actor descriptions; default: actors.csv beside the script')
@@ -591,11 +721,13 @@ def main():
     parser.add_argument('--num-ctx', type=int, help='Explicit context override; default: model-native context')
     parser.add_argument('--think', action=argparse.BooleanOptionalAction, default=None,
                         help='Explicit thinking override; default: use the model setting')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     try:
         translator = DialogTranslator(source_folder=args.source_folder, target_folder=args.target,
             actors_file=args.actors, dict_file=args.dictionary, model=args.model,
-            test_mode=args.test, ollama_url=args.url, num_ctx=args.num_ctx, think=args.think)
+            test_mode=args.test, ollama_url=args.url, num_ctx=args.num_ctx, think=args.think,
+            backend=args.backend, method=args.method, effort=args.effort,
+            codex_bin=args.codex_bin, requests_dir=args.requests_dir)
         return 0 if translator.translate_all_dialogs() else 1
     except KeyboardInterrupt:
         print('Interrupted; no automatic retry.', file=sys.stderr)

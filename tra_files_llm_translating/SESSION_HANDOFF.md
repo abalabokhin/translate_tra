@@ -1,5 +1,56 @@
 # Session handoff — start here
 
+## Selectable production Codex backend implemented — 2026-11-07
+
+User accepted the explicit-low verdict and requested documenting it and changing
+the scripts so Codex can be used instead of a local LLM, with parameter control.
+`translate_dialogs.py --backend codex` now defaults to `gpt-6.1-sol`, explicit
+`--effort low`, `--method both`. All are configurable. `--backend ollama` remains
+the default for old invocations, retaining Qwen3.5 and two-pass defaults.
+Both methods work with either backend and with dialogue/unused-TRA CSVs.
+
+`--codex-bin` selects the executable and `--requests-dir` the request evidence
+root, default `TARGET/_requests`. Every real Codex invocation gets a fresh
+subdirectory containing run settings and per-request prompts, schemas, raw
+replies, events, stderr and timing/token metadata. Existing CSV-to-TRA export
+format, full-dialogue context, validation and shared-string behavior remain.
+No retries/splitting/fallback provider or automatic corrective pass was added.
+Ollama-only options reject with Codex rather than being silently ignored.
+
+Production and the experiment runner share the tested CLI transport and
+simultaneous prompt/parser. All 71 offline tests passed, including fake-CLI
+round trips through TRA export, failures preserving previous CSVs and exact
+prompt/schema matches against saved explicit-low evidence. No new live
+inference, mod translation or commit was performed for this implementation.
+Read README.md and experiments/CODEX_TRANSLATION.md for commands and decisions.
+CLAUDE.md routing remains deferred until the complete translation cycle.
+
+## Explicit-low Sol reproduction completed — 2026-11-07
+
+User requested repeating the Sol comparison with explicit low effort, then chose
+one repeat per dialogue. All eight datasets and both methods completed: 16 valid
+pairs, 24 CLI requests. Results and all raw evidence are under
+`experiments/codex_translation/20261107-sol-low-one-repeat/`; read SUMMARY.md and
+MANUAL_REVIEW.md. SIDE_BY_SIDE.csv includes all three historical Sol repeats;
+ASSISTANT_REVIEW.csv annotates all 140 new source-row pairs.
+
+- Simultaneous: 338/340, the same aggregate rate as historical 1014/1020.
+  Both failed checks are false alarms for neutral `тебя ранили`; no definite
+  gender/meaning error found by assistant review in this sample.
+- Two-pass: 333/340 versus historical 1002/1020. Four female lines have definite
+  third-person/source-contamination errors; two other failed checks concern
+  awkward but meaningful dead-magic terminology.
+- CLI commands explicitly set `model_reasoning_effort="low"`; runner now exposes
+  `--effort`. Inputs, glossary, prompt builders, schemas and evaluator match the
+  prior run. CLI changed 0.166.0 → 0.167.0; historical resolved effort remains
+  unknown. This does not isolate an effort effect or measure subscription quota.
+- 65 offline tests passed; focused six-test suite passed after effort assertions.
+  No inference job remains active, no mod translation/export or commit performed.
+
+User added the full InkGallery v1.5 and wants a complete Russian translation cycle
+to assess five-hour subscription capacity. Full-mod work has not started. Do not
+update CLAUDE.md routing yet: user wants that after the complete cycle.
+
 ## Commit snapshot authorized — 2026-10-31
 
 User explicitly requested **document and commit everything** after the full

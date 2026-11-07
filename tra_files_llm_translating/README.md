@@ -1,4 +1,4 @@
-# Local LLM dialogue translation: workflow and experiment record
+# Dialogue translation with Codex or Ollama: workflow and experiment record
 
 For a new session, read [SESSION_HANDOFF.md](SESSION_HANDOFF.md) first for the latest
 state, user constraints and pending decisions.
@@ -6,7 +6,28 @@ state, user constraints and pending decisions.
 This is the current reference for these scripts. It also records failed and
 partially successful approaches so they are not accidentally reintroduced.
 
-Latest evaluation (2026-10-29): [v3 rescoring](experiments/RESCORED_V3_RESULTS_2026-10-29.md)
+## Current choice — 2026-11-07
+
+Use **Codex CLI, `gpt-6.1-sol`, explicit `low` effort, both genders in one request**
+for the full-mod trial. The user authorized making this approach selectable in
+the production translator. The [explicit-low reproduction](experiments/codex_translation/20261107-sol-low-one-repeat/SUMMARY.md)
+completed all eight dialogues with both methods, one repeat, 24 requests.
+Simultaneous output passed 338/340 targeted checks, the same rate as historical
+1014/1020. Its two failures were valid neutral wording; assistant review found no
+definite gender/meaning error in this sample. Two-pass scored 333/340 and had
+four definite erroneous female lines. See the
+[review](experiments/codex_translation/20261107-sol-low-one-repeat/MANUAL_REVIEW.md).
+
+This supports the next complete-mod translation cycle with editorial review.
+It does not establish unattended translation quality, full parser coverage or
+five-hour subscription capacity. Historical resolved effort was not recorded;
+the CLI version also changed, so the comparison does not isolate effort effects.
+InkGallery's full cycle has not started. A known parser gap splits some
+L#IGCS6 CHAIN-final EXTERN continuations; check complete graph coverage first.
+
+### Earlier local-model evaluation (historical)
+
+2026-10-29: [v3 rescoring](experiments/RESCORED_V3_RESULTS_2026-10-29.md)
 and the original five-dataset [prompt A/B](experiments/PROMPT_AB_RESULTS_2026-10-29.md)
 are complete. Production scored 703/717; the noun rule 704/717, with no improvement
 on either target address noun. Do not adopt the rule on this evidence. The fresh
@@ -29,14 +50,17 @@ uncapped generation and complete-line verifier corrections.
 
 ## Decisions and scope
 
-- Keep the original **male translation, then female edit** approach.
+- `--backend codex`: default to Sol, explicit low effort, simultaneous male/female
+  output. `--backend ollama`: retain Qwen3.5 and male-then-female editing defaults.
+  Select a different model or method explicitly with `--model` / `--method`.
 - Send the **complete connected dialogue graph** in each request. Never silently
   partition it into a fixed number of rows or discard context lines.
 - Ask for JSON containing translated text only. Python owns CSV metadata, escaping
   and TRA references. Do not ask the model to regenerate CSV.
-- Use the selected model's native context by default. `--num-ctx` is an explicit
-  user override, not an automatically selected smaller budget.
-- `num_predict=-1`: no fixed generation-token cap. No client timeout is imposed.
+- Ollama uses model-native context by default. `--num-ctx` is an explicit
+  Ollama override. Codex uses its client/model context configuration.
+- Ollama uses `num_predict=-1`; neither backend adds a fixed generation-token cap
+  or an inference timeout.
   Model context capacity and hardware remain finite.
 - No automatic splitting, retries, repair pass, Python-inferred addressees, checkpoint
   cache or fallback to positional matching. These experimental mechanisms have
@@ -63,8 +87,14 @@ python3 tra_files_llm_translating/parse_d_grammar.py \
   /path/to/dialogue /path/to/languages/english /path/to/english_csv
 
 python3 tra_files_llm_translating/translate_dialogs.py /path/to/english_csv \
-  --target /path/to/russian_csv --model qwen3.5:9b \
+  --target /path/to/russian_csv --backend codex \
+  --model gpt-6.1-sol --effort low --method both \
   --actors /path/to/actors.csv --dictionary /path/to/dict.csv
+
+# Local alternative:
+python3 tra_files_llm_translating/translate_dialogs.py /path/to/english_csv \
+  --target /path/to/local_russian_csv --backend ollama \
+  --model qwen3.5:9b --method two-pass
 
 # After reviewing the translations, export to a separate directory:
 python3 tra_files_llm_translating/update_tra_from_csv.py \
@@ -73,7 +103,34 @@ python3 tra_files_llm_translating/update_tra_from_csv.py \
 python3 -m unittest discover -s tra_files_llm_translating/tests -v
 ```
 
-Ollama must already be running and the model installed. Nothing downloads models
+### Backend parameters
+
+| Parameter | Behavior |
+| --- | --- |
+| `--backend ollama\|codex` | Default `ollama` preserves existing invocations; select `codex` for the recommended trial. |
+| `--model ID` | Provider-specific default: `qwen3.5:9b` / `gpt-6.1-sol`. |
+| `--method both\|two-pass` | Available for either backend; default `two-pass` for Ollama, `both` for Codex. |
+| `--effort LEVEL` | Codex only; defaults to explicit `low`. Accepts low, medium, high, xhigh, max, ultra; model/client must support the selection. |
+| `--codex-bin PATH` | Codex executable; default `codex` on PATH. |
+| `--requests-dir PATH` | Codex evidence root; default `TARGET/_requests`. Each invocation creates a fresh run folder. |
+| `--url`, `--num-ctx`, `--think` / `--no-think` | Ollama only; rejected with Codex rather than ignored. |
+| `--test` | Copy English through the selected output method; no model request or subscription usage. |
+
+Codex must already be installed and authenticated (`codex login status`). It uses
+the existing login; Python does not extract credentials or implement an API-key
+client. User config is ignored, while selected model and effort are passed
+explicitly. Unsupported settings fail without substituting a model or backend.
+The CLI runs in a fresh temporary directory with a read-only sandbox and the
+tested instruction to use no tools. Non-message/tool activity rejects the reply.
+
+Each Codex request saves its prompt, schema, response, JSONL events, stderr and
+`call.json` containing the command, selected effort, timing, reported token usage
+and failure status. `run.json` records backend/model/method/effort and source/target
+paths. These files are evidence, not a retry/resume cache. Token usage does not
+measure remaining subscription allowance; that needs a separate before/after
+measurement for the full-mod trial.
+
+For Ollama, the server must already be running and the model installed. Nothing downloads models
 or changes the Ollama service configuration. `--url` accepts a server base URL or
 a full `/api/chat` or `/api/generate` endpoint; `OLLAMA_URL` is also supported.
 The default is the chat API. Thinking follows the model's default (enabled for
@@ -158,7 +215,20 @@ Reuse requires identical male and female English source text, and both reused
 translations must pass structural validation against that source. A mismatch fails
 the current file without replacing its previous export.
 
-## Two requests, one CSV
+## Gender methods and CSV output
+
+`--method both` (recommended with Codex) translates the entire graph in one
+request with both original English variants. It returns complete strings:
+
+```json
+{"translations":{"1":{"male":"Я понял.","female":"Я поняла."}}}
+```
+
+Original female meaning and explicit empty female strings are included in the
+prompt and validated separately. NPC genders stay fixed. The same shared-string,
+placeholder and metadata checks apply to both methods.
+
+`--method two-pass` uses the earlier sequence:
 
 1. Male pass: translate the complete English graph with Player1 male, fixed NPC
    genders, existing role facts and the relevant glossary.
@@ -190,11 +260,12 @@ instruction to the model, not an automatic guarantee.
 Python requires exact ID coverage, string values, no duplicate JSON keys, preserved
 placeholders/counts, line breaks, quotation marks, asterisks and brackets. It then
 writes one CSV per original file, retaining English/metadata and appending
-`Russian_Male,Russian_Female`. Both responses must validate before export. Commas,
+`Russian_Male,Russian_Female`. Both gender versions must validate before export. Commas,
 quotes, pipes and multiline strings are handled by Python's CSV writer.
 
-The entire `_unused_tra_lines.csv` also uses two requests and JSON, with no batching
-or positional fallback. Output is:
+The entire `_unused_tra_lines.csv` uses the selected backend and method: one
+request for `both`, up to two for `two-pass`, with no batching or positional
+fallback. Output is:
 
 ```text
 Reference,English_Text,Source_Female_Text,Source_Has_Female,Russian_Male,Russian_Female
@@ -206,13 +277,14 @@ item descriptions or interface text.
 
 A failed request/validation stops processing that file and produces a failing
 exit status. A reply that fails validation is kept as
-`<name>.male.rejected.txt` / `<name>.female.rejected.txt` in the target folder for
+`<name>.both.rejected.txt`, `<name>.male.rejected.txt` or
+`<name>.female.rejected.txt` in the target folder for
 diagnosis; the TRA updater ignores these files. Processing a file again first removes
 its old rejected replies. If a rejected reply cannot be written, the error message
 still gives the validation failure. There is no automatic retry or split. Previously exported CSVs remain
 unchanged, so review failures before importing an existing output directory. Use
 fresh directories for separate experiments. `--test` copies English without any
-Ollama calls; it checks plumbing, not translation quality.
+model calls; it checks plumbing, not translation quality.
 
 ## TRA export and parser boundaries
 

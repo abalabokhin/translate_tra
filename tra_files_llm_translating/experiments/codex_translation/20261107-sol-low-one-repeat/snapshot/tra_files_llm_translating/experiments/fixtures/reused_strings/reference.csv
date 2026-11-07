@@ -1,0 +1,9 @@
+Line_ID,Russian_Male,Russian_Female,Review_Notes
+301_a,Можно начинать.,Можно начинать.,Shared by female NPC and Player1: one translation must fit both genders.
+302_a,Тогда открой ворота.,Тогда открой ворота.,Repeated reply joins several graph locations.
+301_b,Можно начинать.,Можно начинать.,"Same TRA key as 301_a; must use same text, not male-only Я готов."
+303,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,Stage direction translated; punctuation preserved.
+302_b,Тогда открой ворота.,Тогда открой ворота.,Same TRA as 302_a even if redundant in this branch.
+304,"Подожди <CHARNAME>.
+Не трогай %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",Literal engine tokens and actual newline preserved.

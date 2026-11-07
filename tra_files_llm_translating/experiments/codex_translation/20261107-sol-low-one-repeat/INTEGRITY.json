@@ -1,0 +1,176 @@
+{
+  "explicit_low_in_all_calls": true,
+  "successful_event_logs": 24,
+  "no_tool_activity": true,
+  "runtime_hashes_unchanged_during_run": true,
+  "prompt_comparisons": [
+    {
+      "dataset": "inkgallery",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "ambiguous_addressees",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "ambiguous_addressees",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "ambiguous_addressees",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "multiple_npcs",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "multiple_npcs",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "multiple_npcs",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "original_female_variants",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "original_female_variants",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "original_female_variants",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "reused_strings",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "reused_strings",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "reused_strings",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_sewers",
+      "mode": "both",
+      "stage": "both",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_sewers",
+      "mode": "two-pass",
+      "stage": "male",
+      "prompt_matches_old_repeat1": true,
+      "schema_matches_old_repeat1": true
+    },
+    {
+      "dataset": "inkgallery_sewers",
+      "mode": "two-pass",
+      "stage": "female",
+      "prompt_matches_old_repeat1": false,
+      "schema_matches_old_repeat1": true
+    }
+  ]
+}

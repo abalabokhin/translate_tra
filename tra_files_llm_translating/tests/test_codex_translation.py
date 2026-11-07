@@ -80,7 +80,10 @@ class CodexTranslationTests(unittest.TestCase):
         binary.write_text('#!/usr/bin/env python3\nimport sys\nsys.stdin.read()\n'
                           'print(\'{"type":"turn.failed","error":{"message":"quota"}}\')\n')
         binary.chmod(0o755)
-        call, content = runner.run_cli(str(binary), 'test', 'rules', '{}', {'type': 'object'}, self.out / 'call')
+        call, content = runner.run_cli(str(binary), 'test', 'rules', '{}', {'type': 'object'},
+                                       self.out / 'call', effort='low')
+        self.assertEqual(call['reasoning_effort'], 'low')
+        self.assertEqual(call['command'][2:4], ['-c', 'model_reasoning_effort="low"'])
         self.assertIsNone(content)
         self.assertEqual(call['status'], 'failed')
         self.assertIn('quota', call['error'])

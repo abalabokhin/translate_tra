@@ -5,8 +5,37 @@ For measured token usage and the limits of five-hour capacity estimates, see
 words-per-window estimate has been measured yet.
 
 `run_codex_translation.py` evaluates the existing dialogue fixtures using Codex
-CLI instead of Ollama. Production translation scripts and saved references are
-unchanged. The user reopened simultaneous male/female output as an experiment.
+CLI instead of Ollama. Saved references remain unchanged. This guide records the
+diagnostic runner; arbitrary parser CSVs now use the production translator below.
+
+## Production backend — 2026-11-07
+
+The user accepted **Sol / explicit low / simultaneous male and female output**
+for the next full-mod trial and authorized adding selectable backend support.
+The one-repeat reproduction passed 338/340 simultaneous checks; its two failed
+checks are false alarms. Two-pass had four definitely erroneous female lines.
+See [review and comparison](codex_translation/20261107-sol-low-one-repeat/MANUAL_REVIEW.md).
+
+```bash
+python3 tra_files_llm_translating/translate_dialogs.py /path/to/english_csv \
+  --target /path/to/russian_csv --backend codex \
+  --model gpt-6.1-sol --effort low --method both \
+  --actors /path/to/actors.csv --dictionary /path/to/dict.csv
+```
+
+Backend/model/method/effort are configurable. `--codex-bin` selects the executable;
+`--requests-dir` selects the evidence root (default `TARGET/_requests`). Existing
+invocations still default to Ollama; `--backend codex` supplies Sol/low/both
+defaults. Both methods support dialogue and unused-TRA CSVs and produce the
+existing combined CSV format for `update_tra_from_csv.py`. Export still requires
+editorial review. No full-mod translation or quota measurement has been run.
+
+Production and experiments now share `codex_backend.py` and the simultaneous
+prompt/parser in `translate_dialogs.py`. Offline tests verify prompt/schema
+equivalence against the saved explicit-low run. Transport behavior remains the
+tested no-tool CLI workflow. Read the [main workflow](../README.md) for parameter
+defaults, authentication, evidence files and error behavior. Historical
+"no production switch" statements below describe the earlier experiment stage.
 
 The installed CLI smoke test succeeded with `gpt-6-luna` through the existing
 ChatGPT login (`CODEX_CLI_OK`, process exit 0). The first user-launched translation
@@ -51,6 +80,14 @@ are explicit and recorded; unsupported models fail rather than being substituted
 Reasoning effort and context use the chosen CLI model's defaults. No generation
 cap, inference timeout, automatic retry/resume, splitting or corrective pass is
 added. The CLI itself may perform transport recovery; its event stream is saved.
+
+Use `--effort low` (or another supported effort) to explicitly set
+`model_reasoning_effort` for every request. The manifest, per-call metadata and
+saved CLI commands record this setting. Omitting the option retains historical
+model-default behavior. The historical comparison did not record the resolved
+default effort. The explicit-low reproduction uses Sol, both methods, all eight
+datasets and one repeat; see
+[20261107-sol-low-one-repeat](codex_translation/20261107-sol-low-one-repeat/SUMMARY.md).
 
 `both` asks for two complete strings per unique TRA entry:
 
