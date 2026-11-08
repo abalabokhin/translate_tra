@@ -88,15 +88,15 @@ The agreed order is: collect new names → review/translate dictionary entries �
 associate CRE genders with dialogue actors → build source CSVs → translate CSVs
 with Codex → rebuild Russian TRA files → install and review in game.
 
-**Stopped before step 1: the complete routine is not ready yet.** The commands
-below document the intended use of the existing scripts; blocked steps must be
-fixed before running this sequence on the real dictionary/mod. No dictionary
+**Step 1 is ready under the skip-existing policy below; later steps still have
+gaps.** The commands below document the existing scripts; blocked steps must be
+fixed before running the entire sequence on the real dictionary/mod. No dictionary
 entries were added, no live translation was requested, and no mod source was
 modified during this audit. Tests write only to temporary directories.
 
 | Step | Existing script | Audit result |
 | --- | --- | --- |
-| 1. Collect new names | `collect_english_names.py` | Dependencies and complete TRA reading are ready, including both gender variants. Remaining fix: merge can collapse rows for different meanings. |
+| 1. Collect new names | `collect_english_names.py` | Ready: complete TRA reading, skip-existing dictionary entries, deduplicated new locations and reporting only actual additions. |
 | 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only, requires existing parallel Russian TRA files and still uses a narrow line parser. |
 | 3. Associate CRE genders | `extract_actors_using_grammar.py` | Runs on InkGallery: 47 actors, 30 nonempty gender labels and 17 unresolved. Requires review; not every actor is resolved from mod CREs. |
 | 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 65 dialogue CSVs, 181 in the catch-all CSV. No general BAF/WeiDU text/context extractor; dialogue graph limitation remains. |
@@ -104,9 +104,9 @@ modified during this audit. Tests write only to temporary directories.
 | 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
 | 7. Install/review | Game/WeiDU plus human review | Not performed; Russian language registration, unresolved strings, terminology and in-game review remain. |
 
-The current 94-test offline suite passes, including shared TRA parsing, name
-collection from both gender variants and complete-literal regressions. This does not validate the legacy dictionary
-merge/finder or guarantee correct CRE classification, graph completeness
+The current 98-test offline suite passes, including shared TRA parsing, name
+collection and dictionary saving. This does not validate the legacy dictionary
+translation finder or guarantee correct CRE classification, graph completeness
 or Russian translation quality. The initial audit used system Python and found
 `wordfreq` missing. Dependency installation is an environment preparation step,
 not a script defect. The project `venv` is now the environment for the routine;
@@ -128,7 +128,7 @@ mkdir -p "$work_dir"
 
 ### 1. Collect new English names into the versioned dictionary
 
-Intended command **after fixing the collector**:
+Collect new entries and review the dictionary diff:
 
 ```bash
 python3 tra_files_llm_translating/collect_english_names.py \
@@ -143,7 +143,7 @@ git diff -- "$glossary"
 `tra_path` accepts one TRA file or a flat directory. `--dictionary` selects the
 file to update; `--blacklist` excludes listed candidates; `--comment` puts the mod
 name in column four. The collector finds uncommon capitalized words/name parts,
-not every English word. It preserves existing translations for retained entries;
+not every English word. It preserves all existing dictionary rows and translations;
 new rows contain `English,empty translation,source locations,mod comment`.
 
 The collector reads complete literals with the shared TRA parser and encoding
@@ -180,11 +180,27 @@ All 104 InkGallery TRA files were checked: English, Spanish and Chinese each hav
 The collector accepts paired literals too; their rarity in English does not
 require a special restriction during name collection.
 
-Required fix before dictionary use: preserve all rows, including context-specific
-translations. The current save function uses a dictionary keyed by the
-English term. A temporary fixture with two Watch meanings lost one row when a
-new unrelated term was added. The current big dictionary has 5,210 rows and no
-exact duplicate English keys, but multi-meaning rows must remain supported.
+**Current dictionary policy (user decision): if an English entry already exists,
+skip it.** Matching is case-insensitive and ignores surrounding key whitespace.
+This applies whether or not the existing row has a translation. Existing
+translations, context, source locations and mod comments are not changed; no new
+sense is inferred or added for a known name. This is a pragmatic collection
+policy, not a declaration that every English key can only ever have one meaning.
+Revisit it if an existing dictionary translation produces a wrong result.
+
+Existing duplicate rows, if present, are retained without interpretation. The
+current big dictionary has 5,210 rows and no exact duplicate English keys. The
+old lossy key-to-row merge has been removed. Newly added rows keep the collected
+locations deduplicated across source variants/entries. The existing singular-form
+suppression remains: a candidate plural is skipped when a corresponding singular
+key is already known. When adding rows, the output remains alphabetically sorted
+and is written atomically. If nothing is added, the file is not rewritten.
+
+`New names found` reports only entries actually added when `--dictionary` is
+supplied. Without a dictionary, it reports all extracted candidates. A second run
+on the same input therefore reports no additions and leaves the dictionary
+unchanged; it does not append duplicate locations or replace an old mod comment.
+Untranslated existing entries remain for the separate review/translation step.
 The `wordfreq` dependency is provided by the preparation step above.
 
 ### 2. Translate new dictionary entries or remove unsuitable candidates

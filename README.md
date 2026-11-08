@@ -7,9 +7,10 @@ Collection of Python scripts for working with TRA files (localization files for 
 See the [seven-step workflow, commands and script-readiness audit](tra_files_llm_translating/README.md#complete-mod-routine-and-readiness-audit--2026-11-07):
 collect new dictionary names, review/translate them, associate CRE genders with
 dialogue actors, extract CSVs, translate with Codex, rebuild Russian TRA files,
-then install and review. The audit found blocking gaps in dictionary handling
-and all-source extraction, so the full InkGallery translation is stopped before
-step 1. Codex/Sol/low/simultaneous output is the chosen workflow; commands specify
+then install and review. Dictionary collection is ready under the documented
+skip-existing policy; later steps still have gaps in dictionary translation,
+actor coverage and all-source extraction. Full InkGallery translation has not
+started. Codex/Sol/low/simultaneous output is the chosen workflow; commands specify
 it explicitly because the current bare CLI still defaults to Ollama.
 
 ## Main Scripts

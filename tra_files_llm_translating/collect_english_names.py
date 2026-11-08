@@ -4,8 +4,8 @@ import argparse
 import os
 import sys
 from wordfreq import zipf_frequency
-from collections import OrderedDict
 from tra_format import parse_tra, read_text
+from translation_common import atomic_write
 
 ZIPF_THRESH = 2.5  # threshold for common English words
 TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
@@ -181,82 +181,35 @@ def get_singular_forms(word):
     return singular_candidates
 
 def save_to_dictionary(dictionary_csv, new_word_locations, comment=""):
-    """Add new words with locations to dictionary file in alphabetical order."""
+    """Add only unknown terms; existing rows and metadata are never merged/edited.
+
+    Candidate locations have already been grouped by the collector. Keep the
+    existing singular-form suppression and return only names actually added.
+    """
     if not dictionary_csv or not new_word_locations:
-        return
+        return []
 
-    # Load existing rows (preserving translations if they exist)
-    # Use case-insensitive lookup: map uppercase key to actual row
-    existing_rows = {}
-    existing_rows_upper = {}  # Map uppercase word to original word for case-insensitive lookup
     try:
-        with open(dictionary_csv, newline="", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                if row and row[0].strip():  # Skip empty rows
-                    # Extend row to 4 columns if needed
-                    while len(row) < 4:
-                        row.append("")
-                    existing_rows[row[0]] = row
-                    existing_rows_upper[row[0].upper()] = row[0]
+        with open(dictionary_csv, newline="", encoding="utf-8-sig") as f:
+            existing_rows = list(csv.reader(f))
     except FileNotFoundError:
-        # Dictionary file doesn't exist yet
-        pass
-
-    # Process new word locations
+        existing_rows = []
+    known = {row[0].strip().upper() for row in existing_rows if row and row[0].strip()}
+    additions = []
     for word, location in new_word_locations:
-        # Check case-insensitively if word exists
-        word_upper = word.upper()
+        word = word.strip()
+        if not word or word.upper() in known:
+            continue
+        if any(singular.upper() in known for singular in get_singular_forms(word)):
+            continue
+        additions.append([word, "", location, comment])
+        known.add(word.upper())
 
-        # Check if this word is a plural and its singular form already exists
-        singular_forms = get_singular_forms(word)
-        singular_exists = False
-        for singular in singular_forms:
-            if singular.upper() in existing_rows_upper:
-                # Singular form exists in dictionary, skip this plural
-                singular_exists = True
-                break
-
-        if singular_exists:
-            continue  # Skip adding plural form
-
-        if word_upper in existing_rows_upper:
-            # Use the existing word's original case
-            existing_word = existing_rows_upper[word_upper]
-            # Word exists - check if translation exists (column 1 not empty)
-            if existing_rows[existing_word][1].strip():
-                # Translation exists, don't add location
-                continue
-            else:
-                # No translation, add/update location info
-                if len(existing_rows[existing_word]) < 3:
-                    existing_rows[existing_word].extend(["", location, comment])
-                elif len(existing_rows[existing_word]) < 4:
-                    # Append to existing locations
-                    if existing_rows[existing_word][2].strip():
-                        existing_rows[existing_word][2] += "; " + location
-                    else:
-                        existing_rows[existing_word][2] = location
-                    existing_rows[existing_word].append(comment)
-                else:
-                    # Append to existing locations
-                    if existing_rows[existing_word][2].strip():
-                        existing_rows[existing_word][2] += "; " + location
-                    else:
-                        existing_rows[existing_word][2] = location
-                    # Update comment if provided
-                    if comment:
-                        existing_rows[existing_word][3] = comment
-        else:
-            # New word - add with empty translation, location, and comment
-            existing_rows[word] = [word, "", location, comment]
-            existing_rows_upper[word_upper] = word
-
-    # Write back in alphabetical order
-    with open(dictionary_csv, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        for word in sorted(existing_rows.keys()):
-            writer.writerow(existing_rows[word])
+    if not additions:
+        return []  # In particular, repeat runs do not rewrite the dictionary.
+    rows = sorted(existing_rows + additions, key=lambda row: row[0] if row else "")
+    atomic_write(dictionary_csv, lambda handle: csv.writer(handle, lineterminator='\n').writerows(rows))
+    return [row[0] for row in additions]
 
 def get_tra_files(path):
     """Get list of TRA files from a file or folder path."""
@@ -276,7 +229,6 @@ def get_tra_files(path):
         raise ValueError(f"Path {path} does not exist")
 
 def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklist_file=None, comment=""):
-    existing = load_dictionary(dictionary_csv) if dictionary_csv else set()
     blacklist = load_blacklist(blacklist_file) if blacklist_file else set()
 
     # Get list of TRA files to process
@@ -332,7 +284,7 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
 
     # Save new words to dictionary file
     if dictionary_csv and final_word_locations:
-        save_to_dictionary(dictionary_csv, final_word_locations, comment)
+        return save_to_dictionary(dictionary_csv, final_word_locations, comment)
 
     return [word for word, _ in final_word_locations]
 

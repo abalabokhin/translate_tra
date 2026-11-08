@@ -94,6 +94,9 @@ Other pipeline stages may impose narrower constraints on IDs/routing than the
 shared syntax reader. These are documented boundaries, not a claim that every
 valid WeiDU program can be evaluated by this parser.
 
-Dictionary merge behavior is a separate issue: the legacy save routine can still
-collapse context-specific rows sharing an English key. This parser work does not
-change that routine or write to the real dictionary.
+Dictionary collection follows the user's skip-existing policy: known English
+keys are not added or modified, including untranslated entries. Existing rows
+are retained, including any duplicates. Only genuinely new entries are saved and
+reported; repeated runs do not append duplicate source locations. Tests cover
+this separately from TRA parsing. The real dictionary was not modified by this
+implementation or its tests.

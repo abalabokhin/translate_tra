@@ -1,5 +1,32 @@
 # Session handoff — start here
 
+## Step 1 skip-existing policy and dictionary bugs fixed — 2026-11-07
+
+User chose to defer alternate-meaning detection: if a term already exists in the
+dictionary, do not add it. This is a pragmatic policy, not a uniqueness rule;
+revisit if a dictionary-supplied translation causes an actual wrong result.
+User also explicitly requested fixing duplicate saved locations on repeat runs
+and "New names found" listing terms already present in the dictionary.
+
+Collector saving now retains the existing CSV row list (including duplicates),
+skips known keys case-insensitively after stripping key whitespace, and does not
+edit translations/context/locations/mod comments, even for untranslated entries.
+Existing singular-form suppression remains. Only new rows are added; saved output
+is alphabetically sorted and replaced atomically. If there are no additions the
+file is not rewritten. Collection returns only names actually added when a
+dictionary is provided, fixing misleading CLI reporting. Without a dictionary it
+continues to report all extracted candidates. Repeat runs add no duplicate
+locations because existing entries are skipped entirely.
+
+README documents the decision and current behavior; step 1 is now marked ready.
+All 98 offline tests passed, including 12 collector tests. Tests cover translated
+and untranslated existing entries, duplicate-row retention, repeated runs with
+different mod comments, existing singular forms, actual-addition reporting and
+failed atomic replacement preserving the original. Focused collector tests pass
+after the final LF-output adjustment. The real dictionary was not modified.
+Later steps' dictionary finder, actor coverage and all-source extraction issues
+remain; no full-mod translation or new inference was started.
+
 ## TRA parser coverage expanded against WeiDU sources — 2026-11-07
 
 User requested internet verification of TRA syntax and comprehensive parser and

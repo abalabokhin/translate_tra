@@ -122,5 +122,60 @@ Qyzzorin~
                 words=collector.collect_fantasy_names_from_tra_files(str(root))
             self.assertEqual(set(words),{'Zyxxara','Qyzzorin'})
 
+    def test_existing_translated_untranslated_and_duplicate_rows_are_untouched(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            dictionary=Path(temporary)/'dict.csv'
+            original=[['Zyxxara','Зиксара','meaning one','ModA'],
+                      ['Zyxxara','Зиксара-другая','meaning two','ModB'],
+                      ['Qyzzorin','','old.tra@3; old.tra@7','OldMod'],
+                      ['Kryzzara','Криззара']]
+            with dictionary.open('w',newline='',encoding='utf-8') as handle:
+                csv.writer(handle).writerows(original)
+            added=collector.save_to_dictionary(dictionary,
+                [('zyxxara','new.tra@1'),('Qyzzorin','new.tra@2'),('Kryzzara','new.tra@3'),
+                 ('Vraxxala','new.tra@4')],'NewMod')
+            self.assertEqual(added,['Vraxxala'])
+            with dictionary.open(newline='',encoding='utf-8') as handle:rows=list(csv.reader(handle))
+            self.assertEqual([r for r in rows if r[0]!='Vraxxala'],
+                             sorted(original,key=lambda row:row[0]))
+            self.assertIn(['Vraxxala','','new.tra@4','NewMod'],rows)
+
+    def test_repeat_collection_reports_no_new_names_and_does_not_rewrite_file(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            source=root/'english.tra'
+            source.write_text('@1=~Zyxxara~ ~Qyzzorin~ @2=~Zyxxara~')
+            dictionary=root/'dict.csv';dictionary.write_text('')
+            with contextlib.redirect_stdout(io.StringIO()):
+                first=collector.collect_fantasy_names_from_tra_files(str(source),str(dictionary),comment='ModA')
+                original=dictionary.read_bytes()
+                with patch.object(collector,'atomic_write',side_effect=AssertionError('must not rewrite')):
+                    second=collector.collect_fantasy_names_from_tra_files(str(source),str(dictionary),comment='ModB')
+            self.assertEqual(first,['Zyxxara','Qyzzorin'])
+            self.assertEqual(second,[])
+            self.assertEqual(dictionary.read_bytes(),original)
+
+    def test_known_names_and_existing_singular_forms_are_not_reported_as_new(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            source=root/'english.tra';source.write_text('@1=~Zyxxara Qyzzorin Vraxxala Vraxxalas~')
+            dictionary=root/'dict.csv'
+            original=b'Zyxxara,translation,context,ModA\nQyzzorin,,old.tra@1,ModB\nVraxxala,translation,,ModA\n'
+            dictionary.write_bytes(original)
+            with patch.object(collector,'is_common_word',return_value=False), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                added=collector.collect_fantasy_names_from_tra_files(str(source),str(dictionary))
+            self.assertEqual(added,[])
+            self.assertEqual(dictionary.read_bytes(),original)
+
+    def test_failed_dictionary_replacement_preserves_original(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            dictionary=Path(temporary)/'dict.csv'
+            original=b'Zyxxara,translation,context,ModA\n';dictionary.write_bytes(original)
+            with patch('translation_common.os.replace',side_effect=OSError('write failed')), \
+                 self.assertRaises(OSError):
+                collector.save_to_dictionary(dictionary,[('Qyzzorin','test.tra@1')])
+            self.assertEqual(dictionary.read_bytes(),original)
+
 
 if __name__=='__main__':unittest.main()
