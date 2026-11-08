@@ -1,5 +1,69 @@
 # Session handoff — start here
 
+## TRA parser coverage expanded against WeiDU sources — 2026-11-07
+
+User requested internet verification of TRA syntax and comprehensive parser and
+dictionary-collector tests, particularly comments and sounds on both gender
+variants. Consulted official WeiDU docs plus upstream dparser.mly and tlexer.in.
+There was no dedicated local TRA grammar; added TRA.ebnf documenting the static
+subset and TRA_FORMAT.md with source links, behavior, tests and boundaries.
+
+Shared tra_format.py now accepts comments between ID/=, signed IDs and an initial
+BOM, and handles CR-only // comments correctly. It retains all existing literal,
+concatenation, sound and male/female span-preserving behavior. Optional inspection
+mode records reference-only values/forced-reference metadata without executing
+WeiDU; default export parsing still rejects runtime-dependent values and duplicate
+IDs. Collector opts into inspection and last-definition-wins IDs, scanning only
+literal variants and skipping reference metadata. Mixed-case .TrA discovery works.
+
+94 offline tests pass: 15 dedicated TRA parser/replacement tests (including 48
+delimiter/line-ending/gender-sound combinations), 8 collector tests and existing
+pipeline/backend tests. In-memory parse/replace/reparse of 104 InkGallery TRAs
+preserved all 2,392 entries' literal variants and sound metadata (89 gender pairs).
+No real dictionary/mod source changes or live inference were performed.
+Bare identifier-like strings and arbitrary WeiDU runtime evaluation are not
+supported; this is an explicitly documented static parser, not a full interpreter.
+Dictionary context-row merging is still the remaining step-1 defect.
+
+## Dictionary collection scans both source variants — 2026-11-07
+
+User clarified that dictionary collection only needs uncommon words/names, not
+speaker/gender interpretation, and requested removing the paired-source rejection.
+`collect_english_names.py` now reads complete TRA literals with the shared parser
+and encoding reader, scanning both male and female variants. Multiline text and
+other delimiters/concatenation are supported. Empty variants contribute no names;
+identical candidates/file-ID locations are deduplicated. Malformed TRA input
+still stops before saving anything. The earlier paired-source error policy is
+superseded for dictionary collection; no such restriction was added elsewhere.
+
+Four collector tests cover a CLI dictionary update with different/multiline,
+identical and empty variants; deduplicated names/locations; preserved existing
+translations; multiline/other literal formats; common-word/blacklist filtering;
+and malformed later input leaving the dictionary unchanged. The real dictionary
+has not been updated. The remaining step-1 defect is preserving context-specific
+rows with the same English key in the legacy save/merge routine.
+All 75 offline tests pass in the project virtual environment.
+
+## Environment preparation completed — 2026-11-07
+
+User clarified that missing Python libraries are preparation, not a script issue,
+and requested a complete dependency list in README plus installing `wordfreq`.
+README.md now has a preparation section for the entire seven-step workflow:
+Python 3.10+, chardet, antlr4-python3-runtime==4.9.2 and wordfreq, with environment
+setup/verification commands and separate non-Python tool requirements. The root
+README links to it and distinguishes optional older utility dependencies.
+
+System Python rejects pip installs as externally managed. The existing ignored
+project `venv` lacked pip; bootstrapped it with ensurepip and installed workflow
+dependencies there using pip: wordfreq 3.1.1, chardet 7.7.0 and ANTLR runtime 4.9.2,
+plus automatically resolved transitive dependencies. Use `source venv/bin/activate`
+or `venv/bin/python` for future commands. System Python was not modified.
+
+`pip check`, all workflow imports, wordfreq English lookup and collector `--help`
+pass. All 71 offline tests pass in this venv. No dictionary/mod source changes
+or live translation were made. The next actual collector fixes are full TRA
+parsing and preserving dictionary context rows, as discussed with the user.
+
 ## Seven-step workflow documented; stopped for script fixes — 2026-11-07
 
 User requested auditing all scripts for the complete routine and documenting

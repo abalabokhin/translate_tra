@@ -41,10 +41,23 @@ python3 parse_d_complete.py <d_folder> <tra_folder> <output_folder>
 
 ## Installation
 
-Install required Python packages:
+For the complete mod workflow, follow the
+[preparation instructions and complete workflow dependency list](tra_files_llm_translating/README.md#preparation-python-environment-and-tools).
+Use Python 3.10+ and the repository virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m ensurepip --upgrade
+python -m pip install chardet antlr4-python3-runtime==4.9.2 wordfreq
+python -m pip check
+```
+
+Additional optional packages for older translation/text-processing utilities
+outside that workflow:
 ```bash
 pip install googletrans==4.0.0rc1 textblob pycld2 google-cloud-translate
-pip install deepl colorama click chardet levenshtein nltk antlr4-python3-runtime
+pip install deepl colorama click levenshtein nltk
 ```
 
 ## Translation Engines

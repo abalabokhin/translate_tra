@@ -1,0 +1,30 @@
+(* Supported static TRA syntax; see TRA_FORMAT.md for scope and upstream sources.
+   Original specification written for this repository, not a copied WeiDU grammar.
+   Whitespace, // line comments and nested /* block comments */ may separate tokens.
+   No trivia is removed inside a literal or sound token. An initial BOM is allowed.
+   Prefixes and decimal digits within @N, #N and !N form one contiguous token. *)
+
+file        = { entry } ;
+entry       = translation, "=", value ;
+translation = "@", integer ;
+integer     = [ "-" ], digit, { digit } ;
+digit       = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+value       = { forced }, ( local | reference ) ;
+forced      = "!", integer ;
+local       = variant, [ variant ] ;
+variant     = sequence, [ sound ] ;
+sequence    = literal, { "^", literal } ;
+literal     = tilde | quoted | percent | wide ;
+tilde       = "~", ? any characters except ~ ?, "~" ;
+quoted      = '"', ? any characters except double quote ?, '"' ;
+percent     = "%", ? any characters except % ?, "%" ;
+wide        = "~~~~~", ? any characters except the sequence ~~~~~ ?, "~~~~~" ;
+sound       = "[", ? any characters except ] ?, "]" ;
+reference   = "#", integer | "@", integer | "(", "AT", literal, ")" ;
+
+(* Literal and sound contents may be empty. Literals can span multiple lines.
+   Five-tilde opening delimiters take precedence over a one-tilde opening.
+   Concatenation adds no whitespace. Backslashes do not escape delimiters.
+   Forced/reference values require allow_references=True and are never evaluated.
+   Unlike the full upstream lexer, this subset requires delimited strings; bare
+   identifier-like strings and runtime evaluation are deliberately unsupported. *)

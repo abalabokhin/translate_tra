@@ -2,10 +2,10 @@ import re
 import csv
 import argparse
 import os
-import glob
 import sys
 from wordfreq import zipf_frequency
 from collections import OrderedDict
+from tra_format import parse_tra, read_text
 
 ZIPF_THRESH = 2.5  # threshold for common English words
 TOKEN_OK_RE = re.compile(r"^[A-Z][A-Za-z''-]*$")
@@ -43,10 +43,6 @@ def is_valid_fantasy_name(word):
         return False
 
     return True
-
-def extract_text_from_tra_line(line):
-    match = re.search(r'~(.*?)~', line)
-    return match.group(1) if match else None
 
 def collect_fantasy_names_from_text(text, min_words=1, location_info=None):
     """Extract consecutive capitalized words and filter common words."""
@@ -271,7 +267,8 @@ def get_tra_files(path):
             raise ValueError(f"File {path} is not a .tra file")
     elif os.path.isdir(path):
         # Find all .tra files in the directory
-        tra_files = glob.glob(os.path.join(path, "*.tra")) + glob.glob(os.path.join(path, "*.TRA"))
+        tra_files = [os.path.join(path, name) for name in os.listdir(path)
+                     if name.casefold().endswith('.tra') and os.path.isfile(os.path.join(path, name))]
         if not tra_files:
             raise ValueError(f"No .tra files found in directory {path}")
         return sorted(tra_files)  # Sort for consistent processing order
@@ -286,23 +283,28 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
     tra_files = get_tra_files(tra_path)
     print(f"Processing {len(tra_files)} TRA file(s)...")
 
-    all_word_locations = []
+    # Read complete literals, including both gender variants. Parse all files
+    # before saving so malformed input cannot produce a partial dictionary update.
+    sources = []
     for tra_file in tra_files:
+        try:
+            entries = parse_tra(read_text(tra_file), allow_references=True, duplicate_policy='last')
+        except ValueError as exc:
+            raise ValueError(f'{tra_file}: {exc}') from exc
+        sources.append((tra_file, entries))
+
+    all_word_locations = []
+    for tra_file, entries in sources:
         print(f"Processing: {os.path.basename(tra_file)}")
         abs_path = os.path.abspath(tra_file)
-        with open(tra_file, encoding="utf-8") as f:
-            for line_num, line in enumerate(f, 1):
-                # Look for @number pattern to get the TRA line identifier
-                tra_match = re.match(r'^@(\d+)', line.strip())
-                if tra_match:
-                    tra_number = tra_match.group(1)
-                    text = extract_text_from_tra_line(line)
-                    if text:
-                        location = f"{abs_path}@{tra_number}"
-                        word_location_pairs = collect_fantasy_names_from_text(text, location_info=location)
-                        for word, loc in word_location_pairs:
-                            if word.upper() not in blacklist:
-                                all_word_locations.append((word, loc))
+        for tra_number, entry in entries.items():
+            for variant in entry.variants:
+                if variant.text:
+                    location = f"{abs_path}@{tra_number}"
+                    word_location_pairs = collect_fantasy_names_from_text(variant.text, location_info=location)
+                    for word, loc in word_location_pairs:
+                        if word.upper() not in blacklist:
+                            all_word_locations.append((word, loc))
 
     # Group locations by word and handle case normalization
     word_locations_map = {}
@@ -337,7 +339,7 @@ def collect_fantasy_names_from_tra_files(tra_path, dictionary_csv=None, blacklis
 # ---------------- CLI ----------------
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Extract fantasy names from .tra files or folders (text inside ~…~)"
+        description="Extract fantasy names from complete TRA strings, including multiline text and both gender variants"
     )
     parser.add_argument("tra_path", help="Path to .tra file or folder containing .tra files")
     parser.add_argument("-d", "--dictionary", help="Optional CSV dictionary file (first column = names)")

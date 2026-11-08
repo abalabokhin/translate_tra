@@ -25,6 +25,63 @@ the CLI version also changed, so the comparison does not isolate effort effects.
 InkGallery's full cycle has not started. A known parser gap splits some
 L#IGCS6 CHAIN-final EXTERN continuations; check complete graph coverage first.
 
+## Preparation: Python environment and tools
+
+Use Python 3.10+ and the repository's virtual environment for every step. From
+the repository root, create it if needed, activate it, and install all direct
+Python dependencies of the seven-step workflow:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip
+python -m pip install chardet antlr4-python3-runtime==4.9.2 wordfreq
+python -m pip check
+```
+
+If `venv` is already healthy, start with activation. `ensurepip` repairs an
+environment missing pip; it is harmless when pip is already available. Use this
+environment rather than installing into an externally managed system Python.
+After activation, the `python3` commands below use the virtual environment too.
+Without activation, invoke `venv/bin/python` explicitly.
+
+Verified in the project `venv` on 2026-11-07: `wordfreq 3.1.1`, `chardet 7.7.0`
+and `antlr4-python3-runtime 4.9.2`. Package consistency, imports, a common-word
+lookup and the collector's CLI startup pass; all 71 then-existing offline tests
+passed in this environment. Dependency setup is complete. The collector now uses
+the shared TRA parser; preserving dictionary context rows remains outstanding.
+
+| Python package | Used by |
+| --- | --- |
+| `chardet` | TRA encoding detection, dialogue parsing, CRE/actor extraction. |
+| `antlr4-python3-runtime==4.9.2` | Generated D grammar parser and actor extraction. Keep this version aligned with the checked-in generated parser. |
+| `wordfreq` | Common-word filtering when collecting new English names. |
+
+Pip installs these packages' transitive dependencies automatically. The remaining
+workflow imports, including CSV/JSON, HTTP, subprocesses, binary reading and
+`unittest`/mocking, are Python standard-library modules. There is no additional
+Python OpenAI SDK or Ollama SDK requirement: Codex uses its executable and the
+Ollama helpers use standard-library HTTP calls. The dependencies above cover the
+name collector, dictionary finder, actor extractor, CSV extraction/translation,
+TRA export and their offline tests; older unrelated utilities have separate
+optional dependencies listed in the root README.
+
+Verify the environment before modifying the dictionary or translating:
+
+```bash
+python -c "import chardet, antlr4, wordfreq; print('Workflow imports OK')"
+python tra_files_llm_translating/collect_english_names.py --help
+python -m unittest discover -s tra_files_llm_translating/tests -q
+```
+
+Non-Python tools: install/authenticate the Codex CLI for the chosen translation
+backend (`codex login status` checks the existing login). For a local backend or
+the current legacy dictionary translation finder, have Ollama running with the
+chosen model installed. The final installation/review step needs WeiDU and a
+supported game installation. Generated ANTLR Python files are already checked in;
+the workflow does not need to regenerate the grammar to run.
+
 ## Complete mod routine and readiness audit — 2026-11-07
 
 The agreed order is: collect new names → review/translate dictionary entries →
@@ -39,20 +96,22 @@ modified during this audit. Tests write only to temporary directories.
 
 | Step | Existing script | Audit result |
 | --- | --- | --- |
-| 1. Collect new names | `collect_english_names.py` | Blocked: `wordfreq` is missing in the audited system Python; parser misses multiline/other-delimiter text; merge can collapse rows for different meanings. |
-| 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only and requires existing parallel Russian TRA files; it shares the narrow line parser. |
+| 1. Collect new names | `collect_english_names.py` | Dependencies and complete TRA reading are ready, including both gender variants. Remaining fix: merge can collapse rows for different meanings. |
+| 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only, requires existing parallel Russian TRA files and still uses a narrow line parser. |
 | 3. Associate CRE genders | `extract_actors_using_grammar.py` | Runs on InkGallery: 47 actors, 30 nonempty gender labels and 17 unresolved. Requires review; not every actor is resolved from mod CREs. |
 | 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 65 dialogue CSVs, 181 in the catch-all CSV. No general BAF/WeiDU text/context extractor; dialogue graph limitation remains. |
 | 5. Translate CSVs | `translate_dialogs.py` | Codex backend works in offline tests and shares the live-tested transport. Use explicit Codex options below; bare CLI still defaults to Ollama, so changing the global default is outstanding. |
 | 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
 | 7. Install/review | Game/WeiDU plus human review | Not performed; Russian language registration, unresolved strings, terminology and in-game review remain. |
 
-The current 71-test offline suite passes. Its passing result does not cover the
-legacy dictionary tools or guarantee correct CRE classification, graph completeness
-or Russian translation quality. The dependency audit found `chardet 5.2.0` and
-`antlr4-python3-runtime 4.9.2`; the generated ANTLR parser identifies itself as 4.9.2.
-`wordfreq` is not installed in that Python environment. No dependencies were
-installed during this audit.
+The current 94-test offline suite passes, including shared TRA parsing, name
+collection from both gender variants and complete-literal regressions. This does not validate the legacy dictionary
+merge/finder or guarantee correct CRE classification, graph completeness
+or Russian translation quality. The initial audit used system Python and found
+`wordfreq` missing. Dependency installation is an environment preparation step,
+not a script defect. The project `venv` is now the environment for the routine;
+follow the preparation instructions above. The generated ANTLR parser identifies
+itself as 4.9.2, which is why that runtime is pinned.
 
 ### Example paths
 
@@ -87,15 +146,46 @@ name in column four. The collector finds uncommon capitalized words/name parts,
 not every English word. It preserves existing translations for retained entries;
 new rows contain `English,empty translation,source locations,mod comment`.
 
-Required fixes before use: read complete TRA literals (including multiline,
-quoted, concatenated and original female variants) with the shared TRA parser;
-preserve all dictionary rows, including context-specific translations; handle
-encoding consistently. The current save function uses a dictionary keyed by the
+The collector reads complete literals with the shared TRA parser and encoding
+reader, including multiline, quoted, percent-delimited, five-tilde and concatenated
+strings. It does not extract text from comments or sound references.
+
+See [TRA format, grammar sources and test coverage](TRA_FORMAT.md) and the local
+[TRA EBNF](TRA.ebnf). Tests cover comments between tokens, nested comments,
+optional sounds after either gender, concatenation, all delimiters, empty values,
+LF/CRLF/CR endings, encodings and format-preserving replacements. An in-memory
+parse/replace/reparse audit of all 104 InkGallery TRA files preserved 2,392 entries,
+including all 89 gender pairs and their sound metadata.
+
+Dictionary collection needs words, not dialogue roles or grammatical gender.
+Both male and female source literals are scanned, including multiline text in
+either variant. Empty variants contribute no names. Identical names across the
+variants are deduplicated, and their shared file/@ID source location is recorded
+once. Names appearing in different entries retain each distinct source location.
+Single-string gender tokens such as `<PRO_SIRMAAM>` are allowed and are not names.
+Paired source strings are valid input here; the earlier rejection policy has
+been removed. All files are parsed before names are saved, so malformed TRA input
+still fails without a partial dictionary update.
+
+For dictionary collection, duplicate TRA IDs use the last definition, matching
+WeiDU's documented lookup rule. This is separate from duplicate rows in the
+dictionary itself. Reference-only values (`#123`, `@123`, `(AT "variable")`)
+contain no literal names and are skipped; embedded literal text after a forced
+reference is scanned without executing it. Default parsing for TRA export still
+rejects duplicate IDs and reference-dependent values. See the format document
+for the supported static syntax and explicit runtime/undelimited-string limits.
+
+All 104 InkGallery TRA files were checked: English, Spanish and Chinese each have
+26 files / 598 entries with no explicit pairs. Polish has 89 paired entries.
+The collector accepts paired literals too; their rarity in English does not
+require a special restriction during name collection.
+
+Required fix before dictionary use: preserve all rows, including context-specific
+translations. The current save function uses a dictionary keyed by the
 English term. A temporary fixture with two Watch meanings lost one row when a
 new unrelated term was added. The current big dictionary has 5,210 rows and no
 exact duplicate English keys, but multi-meaning rows must remain supported.
-The missing `wordfreq` dependency also needs to be available in the selected
-Python environment. Do not treat its absence as evidence about extraction quality.
+The `wordfreq` dependency is provided by the preparation step above.
 
 ### 2. Translate new dictionary entries or remove unsuitable candidates
 
