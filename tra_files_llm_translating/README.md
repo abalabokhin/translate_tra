@@ -98,7 +98,7 @@ modified during this audit. Tests write only to temporary directories.
 | --- | --- | --- |
 | 1. Collect new names | `collect_english_names.py` | Ready: complete TRA reading, skip-existing dictionary entries, deduplicated new locations and reporting only actual additions. |
 | 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only, requires existing parallel Russian TRA files and still uses a narrow line parser. |
-| 3. Associate CRE genders | `extract_actors_using_grammar.py` | Runs on InkGallery: 47 actors, 30 nonempty gender labels and 17 unresolved. Requires review; not every actor is resolved from mod CREs. |
+| 3. Associate CRE genders | `extract_actors_using_grammar.py` | With mod CREs and the BG2EE reference CREs/dialogue tables: all 42 speaking actors resolve (28 MALE, 10 FEMALE, 4 NEITHER). Empty declarations are excluded; NEITHER still needs translation context. |
 | 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 65 dialogue CSVs, 181 in the catch-all CSV. No general BAF/WeiDU text/context extractor; dialogue graph limitation remains. |
 | 5. Translate CSVs | `translate_dialogs.py` | Codex backend works in offline tests and shares the live-tested transport. Use explicit Codex options below; bare CLI still defaults to Ollama, so changing the global default is outstanding. |
 | 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
@@ -120,7 +120,7 @@ keep actor CSVs outside the source/translated CSV directories, because those
 folders are interpreted as translation inputs by their respective scripts.
 
 ```bash
-mod_dir=tra_files_llm_translating/InkGallery-v1.5/InkGallery
+mod_dir=work/InkGallery/InkGallery-v1.5/InkGallery
 work_dir=work/InkGallery
 glossary=tra_files_llm_translating/dict.csv
 mkdir -p "$work_dir"
@@ -289,27 +289,64 @@ outstanding for this utility. Do not run it expecting the main translator's
 python3 tra_files_llm_translating/extract_actors_using_grammar.py \
   "$mod_dir/dialogue" \
   --cre-folder "$mod_dir" \
+  --cre-folder tra_files_llm_translating/bg2ee_cre \
+  --pdialog-file tra_files_llm_translating/bg2ee_cre/PDIALOG.2DA \
+  --interdia-file tra_files_llm_translating/bg2ee_cre/INTERDIA.2DA \
   --tp2-file "$mod_dir/InkGallery.tp2" \
   --csv-output "$work_dir/actors.csv" \
   --output "$work_dir/actor_mapping.txt"
 ```
 
-The D-folder argument supplies actor/dialogue identifiers. `--cre-folder` scans
-CRE files recursively, reads their gender/dialogue/death-variable fields and
-associates them with those identifiers. `--tp2-file` additionally recognizes
-PDIALOG/INTERDIA APPEND mappings. `--csv-output` produces headerless
+The D-folder argument supplies actors with actual NPC text (SAY, CHAIN/CHAIN2,
+interjection speaker blocks and replacement text). Empty dialogue declarations,
+external references alone, player replies and trigger/action changes alone do not
+require a speaker gender and are excluded from D-derived actors. An explicit
+empty SAY still counts as a text entry. Dialogue tables provide mappings only;
+they do not add unrelated speakers to the output.
+
+Repeat `--cre-folder` to search any number of mod/game folders, including external
+absolute paths. Folders are recursive; the first occurrence of a CRE resource
+name wins, case-insensitively, so put the mod before base-game resources. The
+script reads short CRE headers to find dialogue/death-variable identities, then
+retains gender data only for resources matching the selected speaking actors or
+their mapped death variables. It does not load entire CRE files or export the
+game's whole actor inventory.
+
+`bg2ee_cre/` contains the user-provided BG2EE CRE reference files and dialogue
+tables copied from the user's existing `~/source/temp` exports. Game dialogue
+tables are needed because a companion CRE may reference `AERIE`, whereas the
+mod adds text to `AERIEJ`. `--pdialog-file` and `--interdia-file` read the real
+2DA mappings to associate those dialogue names with CRE death variables. Both
+options can be repeated; later table rows override earlier rows for the same
+character. PDIALOG dream/override script columns are excluded. For a different
+game or installation, supply matching exported resources via these parameters.
+`--tp2-file` additionally recognizes the mod's PDIALOG/INTERDIA APPEND mappings,
+which override supplied table rows for the same character.
+`--csv-output` produces headerless
 `actor,gender/description` rows accepted by the translator; `--output` saves the
 mapping details. `--verbose` adds per-file diagnostics. Existing actor CSVs are
 appended to and existing identifiers are skipped, so rerunning does not refresh
 previously unknown or wrong genders; generate a fresh file when reassessing them.
 
-On InkGallery the script completed successfully: 20 MALE, 6 FEMALE, 4 NEITHER,
-and 17 blank rows. For example, L#IGSTA is FEMALE. Unresolved identifiers include
-base-game companions such as AERIEJ/ANOMENJ and mod identifiers L#IGCS2–L#IGCS5.
-Review the mapping against available game/mod resources and supply known genders
-or descriptions. NEITHER/OTHER/UNKNOWN/MIXED are not automatically a grammatical
-male/female decision. The script uses fixed CRE field offsets without version
-validation and supports only limited TP2 patterns; it does not interpret arbitrary
+On InkGallery, mod CREs alone resolve 29 actors (19 MALE, 6 FEMALE, 4 NEITHER),
+leaving 13 base-game companions unresolved. With the reference game CREs and
+dialogue tables, all 42 speakers resolve: 28 MALE, 10 FEMALE, 4 NEITHER. Of 4,780
+CRE headers inspected, only 104 resources match the speakers or mapped death
+variables; multiple level variants of a companion are checked for consistency.
+L#IGCS1–L#IGCS5 declare empty dialogues and are excluded; their gender is not
+needed for dialogue translation. Regenerate an existing actor CSV to remove rows
+produced by the older declaration-based extraction.
+Review the mapping against available game/mod resources. Keep NEITHER as NEITHER;
+every actor does not need a manually assigned male/female gender. The translation
+prompt treats NEITHER/OTHER/unknown as unspecified, rather than Russian neuter.
+It uses source context when grammatical agreement matters, prefers natural wording
+without gender agreement when unsupported, preserves plural self-reference and
+keeps necessary grammatical choices consistent for each actor across both Player1
+versions. Consistency across separate LLM requests still needs translation review.
+MIXED indicates resources with differing labels and remains a separate review case.
+The scanner validates V1.0 CRE signatures/header lengths,
+rejects unsupported or truncated files and supports only limited TP2 patterns;
+it does not interpret arbitrary
 WeiDU transformations/includes. A complete association for every mod is not proven.
 Pass the reviewed file with `translate_dialogs.py --actors "$work_dir/actors.csv"`;
 the translator joins it to CSV Actor identifiers when building prompts, rather

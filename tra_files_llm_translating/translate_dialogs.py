@@ -33,8 +33,13 @@ Prefer natural wording suitable for either Player1 gender, e.g. 'Мне бы х�
 but never omit meaning or make Russian awkward just to avoid a gender distinction.
 PLAYER and Player1 mean the protagonist. First-person agreement follows the SPEAKER;
 second-person agreement follows the ADDRESSEE, not necessarily Player1.
-NPC genders stay fixed. If Player1 addresses a female NPC, she stays female even when Player1
-is male. Narrated men remain men. Never invent the gender of a speaker marked unknown.
+Known NPC genders stay fixed. If Player1 addresses a female NPC, she stays female even when Player1
+is male. Narrated men remain men. NEITHER, OTHER and unknown mean the speaker's gender is
+unspecified; they do not prescribe Russian neuter agreement. Do not invent a biological sex.
+Only resolve grammatical gender where the translation needs it, using the source context.
+Without evidence, prefer natural wording that does not require gender agreement. Keep any
+necessary grammatical choice consistent across that actor's lines and both Player1 versions;
+do not change it just because Player1's gender changes. Preserve plural self-reference such as we.
 Infer who each line addresses from the speakers and predecessor links; if it is genuinely unclear,
 prefer wording that does not mark the addressee's gender.
 Preserve every engine token, formatting code and literal escape exactly, including case and

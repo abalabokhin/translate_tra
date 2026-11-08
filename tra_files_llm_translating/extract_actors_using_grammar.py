@@ -106,53 +106,86 @@ def extract_dialog_file_from_cre(cre_filepath):
         return None
 
 
-def scan_cre_files_in_folder(folder_path):
-    """Recursively scan CRE files and extract death variables, dialog file names, and genders."""
+def scan_cre_files_in_folder(folder_path, actors=None, death_variables=None):
+    """Compatibility wrapper for a single CRE source."""
+    return scan_cre_files_in_folders([folder_path], actors, death_variables)
+
+
+def scan_cre_files_in_folders(folder_paths, actors=None, death_variables=None):
+    """Index CRE identities; retain gender data only for relevant resources.
+
+    Folders are searched in order. The first resource with a given basename wins,
+    case-insensitively, allowing mod resources to override base-game resources.
+    Only V1.0 CRE files are supported; identities are read from their headers.
+    """
     cre_to_dialog = {}
     dialog_to_cre = defaultdict(set)
     cre_to_death_var = {}
     death_var_to_cre = defaultdict(set)
     cre_to_gender = {}
-
-    if not os.path.exists(folder_path):
-        print(f"Warning: CRE folder {folder_path} does not exist")
-        return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender
-
-    print(f"Scanning CRE files in {folder_path}...")
-
-    cre_count = 0
-    death_var_count = 0
-    gender_count = 0
-    for root, dirs, files in os.walk(folder_path):
-        for filename in files:
-            if filename.lower().endswith('.cre'):
-                cre_filepath = os.path.join(root, filename)
-                dialog_name = extract_dialog_file_from_cre(cre_filepath)
-                death_variable = extract_death_variable_from_cre(cre_filepath)
-                gender = extract_gender_from_cre(cre_filepath)
-
-                cre_count += 1
-                cre_basename = os.path.basename(filename)
-                cre_to_dialog[cre_basename] = dialog_name
-                cre_to_death_var[cre_basename] = death_variable
-                cre_to_gender[cre_basename] = gender
-
-                if dialog_name and is_valid_actor_name(dialog_name):
-                    dialog_to_cre[dialog_name].add(cre_basename)
-
-                if death_variable:
-                    death_var_to_cre[death_variable].add(cre_basename)
-                    death_var_count += 1
-
-                if gender:
-                    gender_count += 1
-
-    print(f"Processed {cre_count} CRE files")
-    print(f"Found {len([d for d in cre_to_dialog.values() if d and is_valid_actor_name(d)])} CRE files with valid dialog actors")
-    print(f"Found {death_var_count} CRE files with death variables")
-    print(f"Found {gender_count} CRE files with gender information")
-
+    actors = None if actors is None else {a.upper() for a in actors}
+    death_variables = {a.upper() for a in (death_variables or ())}
+    seen = set()
+    scanned = 0
+    for folder_path in folder_paths:
+        if not os.path.isdir(folder_path):
+            raise ValueError(f'CRE folder does not exist: {folder_path}')
+        for root, dirs, files in os.walk(folder_path):
+            dirs.sort()
+            for filename in sorted(files):
+                if not filename.lower().endswith('.cre'):
+                    continue
+                resource = filename.upper()
+                if resource in seen:
+                    continue
+                seen.add(resource)
+                filepath = os.path.join(root, filename)
+                with open(filepath, 'rb') as handle:
+                    header = handle.read(0x2d4)
+                scanned += 1
+                if len(header) < 0x2d4 or header[:8] != b'CRE V1.0':
+                    raise ValueError(f'Unsupported or truncated CRE header: {filepath}')
+                def identifier(start, end):
+                    return header[start:end].split(b'\0')[0].decode('ascii').strip().upper()
+                dialog = identifier(0x2cc, 0x2d4)
+                death_var = identifier(0x280, 0x2a0)
+                if actors is not None and dialog not in actors and death_var not in death_variables:
+                    continue
+                cre_to_dialog[filename] = dialog or None
+                cre_to_death_var[filename] = death_var or None
+                cre_to_gender[filename] = {1: 'MALE', 2: 'FEMALE', 3: 'OTHER',
+                                           4: 'NEITHER'}.get(header[0x275], 'UNKNOWN')
+                if dialog:
+                    dialog_to_cre[dialog].add(filename)
+                if death_var:
+                    death_var_to_cre[death_var].add(filename)
+    print(f'Inspected {scanned} CRE headers; retained {len(cre_to_gender)} matching resources')
     return cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender
+
+
+def read_dialogue_table(filepath, table_type):
+    """Read actual game 2DA aliases, excluding dream/override script columns."""
+    with open(filepath, encoding=detect_encoding(filepath)) as handle:
+        lines = [line.split('//', 1)[0].strip() for line in handle]
+    lines = [line for line in lines if line]
+    if len(lines) < 3 or lines[0].upper().split() != ['2DA', 'V1.0']:
+        raise ValueError(f'Invalid 2DA table: {filepath}')
+    default = lines[1].upper()
+    headers = [h.upper() for h in lines[2].split()]
+    if table_type == 'PDIALOG':
+        indices = [i for i, h in enumerate(headers) if h.endswith('DIALOG_FILE')]
+    else:
+        indices = [i for i, h in enumerate(headers) if h in ('FILE', '25FILE')]
+    if not indices:
+        raise ValueError(f'No dialogue columns in {filepath}')
+    entries = {}
+    for line in lines[3:]:
+        cells = line.upper().split()
+        dialogs = [cells[i + 1] for i in indices if i + 1 < len(cells)
+                   and cells[i + 1] not in {default, '***', '*', 'NONE', '0'}]
+        if dialogs:
+            entries[cells[0]] = {'all_dialogs': list(dict.fromkeys(dialogs))}
+    return entries
 
 
 def parse_tp2_table_modifications(tp2_filepath):
@@ -230,11 +263,12 @@ def parse_tp2_table_modifications(tp2_filepath):
 
 
 class ActorExtractionListener(ParseTreeListener):
-    """ANTLR4 listener to extract only actor names from D files."""
+    """Track speaking actors separately from dialogue declarations/references."""
 
     def __init__(self, d_filename):
         self.d_filename = d_filename
         self.actors = set()
+        self.referenced_actors = set()
 
     def get_speaker_from_file_rule(self, file_rule):
         """Extract speaker name from fileRule."""
@@ -248,9 +282,28 @@ class ActorExtractionListener(ParseTreeListener):
         return None
 
     def add_actor_if_valid(self, actor):
-        """Add actor to set if it's a valid actor name."""
+        """Record a dialogue identifier without assuming it has speech."""
         if actor and is_valid_actor_name(actor):
-            self.actors.add(actor)
+            self.referenced_actors.add(actor)
+
+    def enterSayTextRule(self, ctx):
+        """Attribute NPC text to its enclosing speaker, excluding player replies.
+
+        The nearest dialogue owner handles SAY, REPLACE_SAY, CHAIN/CHAIN2,
+        APPENDI and interjection speaker blocks. Interjection targets and EXTERN
+        destinations alone do not establish that an actor has text to translate.
+        """
+        owner = ctx.parentCtx
+        while owner is not None:
+            if isinstance(owner, DParser.ReplyTransitionContext):
+                return
+            if getattr(owner, 'dlg', None) is not None:
+                actor = self.get_speaker_from_file_rule(owner.dlg)
+                self.add_actor_if_valid(actor)
+                if actor and is_valid_actor_name(actor):
+                    self.actors.add(actor)
+                return
+            owner = owner.parentCtx
 
     def enterBeginDAction(self, ctx: DParser.BeginDActionContext):
         """Handle BEGIN dialogueName action."""
@@ -408,7 +461,7 @@ class ActorExtractionListener(ParseTreeListener):
 
 
 def extract_actors_from_d_file(d_filepath):
-    """Extract all unique actors from a D file using ANTLR grammar."""
+    """Extract actors with NPC text; ignore declarations and references alone."""
     try:
         encoding = detect_encoding(d_filepath)
         with open(d_filepath, 'r', encoding=encoding) as file:
@@ -477,7 +530,7 @@ def process_d_files_in_folder(folder_path):
                 all_actors.update(actors)
                 print(f"  Found {len(actors)} actors: {', '.join(sorted(actors))}")
             else:
-                print(f"  No actors found")
+                print(f"  No speaking actors found (declarations/references only)")
         except Exception as e:
             print(f"  Error processing {d_filename}: {e}")
 
@@ -493,7 +546,7 @@ def resolve_actor_gender(actor, all_cre_files, cre_to_gender):
     genders = []
     cre_gender_details = []
 
-    for cre_file in all_cre_files:
+    for cre_file in sorted(all_cre_files):
         gender = cre_to_gender.get(cre_file)
         if gender:
             genders.append(gender)
@@ -514,17 +567,14 @@ def resolve_actor_gender(actor, all_cre_files, cre_to_gender):
 
 def main():
     parser = argparse.ArgumentParser(description='''
-Extract unique actors from D files using ANTLR grammar and map them to CRE files via death variables.
+Extract speaking actors from D files using ANTLR grammar and map them to CRE files via death variables.
 
 This script uses the proper ANTLR4 grammar to parse D files and extract
-all unique actor names from various dialogue constructs:
-- APPEND/APPEND_EARLY statements
-- BEGIN statements
-- CHAIN statements
-- INTERJECT statements
-- EXTERN references
-- Action statements (EXTEND, REPLACE, etc.)
-- Chain speaker lines (== ACTOR)
+actors with NPC text from SAY states, CHAIN/CHAIN2, interjection speaker blocks,
+APPEND/APPEND_EARLY/APPENDI, REPLACE and REPLACE_SAY.
+Empty declarations, reference-only targets, player replies and changes to triggers
+or actions alone do not establish a speaking actor. Explicit empty SAY text still
+counts as a text entry. Game 2DA and TP2 mappings resolve only these speaking actors.
 
 It also scans CRE files to extract both dialog file references and death variables,
 then parses TP2 files to map death variables to dialog files. This creates a complete
@@ -537,7 +587,12 @@ to the TP2 entries to complete the actor-to-CRE mapping.
 ''')
 
     parser.add_argument('d_folder', help='Folder containing D files')
-    parser.add_argument('--cre-folder', '-c', help='Folder containing CRE files (optional)')
+    parser.add_argument('--cre-folder', '-c', action='append', default=[],
+                        help='CRE folder; repeat for additional sources. First folder wins resource conflicts.')
+    parser.add_argument('--pdialog-file', action='append', default=[],
+                        help='Game PDIALOG.2DA; repeat for additional tables')
+    parser.add_argument('--interdia-file', action='append', default=[],
+                        help='Game INTERDIA.2DA; repeat for additional tables')
     parser.add_argument('--tp2-file', '-t', help='TP2 file to parse for table modifications (optional)')
     parser.add_argument('--output', '-o', help='Output file to save enhanced actor mapping')
     parser.add_argument('--csv-output', help='CSV output file for actor-gender mapping')
@@ -554,36 +609,49 @@ to the TP2 entries to complete the actor-to-CRE mapping.
         print("No valid actors found in any D files")
         return 1
 
-    # Process CRE files if folder is specified
-    dialog_to_cre = defaultdict(set)
-    death_var_to_cre = defaultdict(set)
-    cre_to_death_var = {}
-    cre_to_gender = {}
-    if args.cre_folder:
-        print(f"\n=== PROCESSING CRE FILES ===")
-        cre_to_dialog, dialog_to_cre, cre_to_death_var, death_var_to_cre, cre_to_gender = scan_cre_files_in_folder(args.cre_folder)
-
     # Process TP2 file if specified
     pdialog_entries = {}
     interdia_entries = {}
     tp2_actors = set()
+    for filepath in args.pdialog_file:
+        pdialog_entries.update(read_dialogue_table(filepath, 'PDIALOG'))
+    for filepath in args.interdia_file:
+        interdia_entries.update(read_dialogue_table(filepath, 'INTERDIA'))
     if args.tp2_file:
         print(f"\n=== PROCESSING TP2 FILE ===")
         if os.path.exists(args.tp2_file):
-            pdialog_entries, interdia_entries = parse_tp2_table_modifications(args.tp2_file)
+            mod_pdialog, mod_interdia = parse_tp2_table_modifications(args.tp2_file)
+            pdialog_entries.update(mod_pdialog)
+            interdia_entries.update(mod_interdia)
 
-            # Collect all actors from TP2 entries
-            for character, data in pdialog_entries.items():
+            # Only mod-added aliases for speakers in the selected D files.
+            for character, data in mod_pdialog.items():
                 tp2_actors.update(data['all_dialogs'])
-            for character, data in interdia_entries.items():
+            for character, data in mod_interdia.items():
                 tp2_actors.update(data['all_dialogs'])
+            tp2_actors.intersection_update(all_actors)
 
             print(f"Total TP2 dynamic actors found: {len(tp2_actors)}")
         else:
             print(f"Warning: TP2 file {args.tp2_file} does not exist")
 
-    # Combine all actors (from D files + TP2 dynamic actors)
-    all_combined_actors = all_actors.union(tp2_actors)
+    # Tables resolve aliases; they must not introduce unrelated game actors.
+    all_combined_actors = all_actors
+    relevant_death_vars = {
+        character
+        for table in (pdialog_entries, interdia_entries)
+        for character, data in table.items()
+        if all_actors.intersection(data['all_dialogs'])
+    }
+    dialog_to_cre = defaultdict(set)
+    death_var_to_cre = defaultdict(set)
+    cre_to_death_var = {}
+    cre_to_gender = {}
+    if args.cre_folder:
+        print("\n=== PROCESSING CRE FILES ===")
+        (cre_to_dialog, dialog_to_cre, cre_to_death_var,
+         death_var_to_cre, cre_to_gender) = scan_cre_files_in_folders(
+             args.cre_folder, all_actors, relevant_death_vars)
 
     # Create enhanced actor mapping
     print(f"\n{'='*80}")
@@ -602,24 +670,15 @@ to the TP2 entries to complete the actor-to-CRE mapping.
         dynamic_type = None
         cre_files_by_death_var = []
 
-        # Check PDIALOG entries
-        for char, data in pdialog_entries.items():
-            if actor in data['all_dialogs']:
-                character_info = char
-                dynamic_type = "PDIALOG"
-                # Get CRE files with this death variable
-                cre_files_by_death_var = list(death_var_to_cre.get(char, []))
-                break
-
-        # Check INTERDIA entries if not found in PDIALOG
-        if not character_info:
-            for char, data in interdia_entries.items():
+        matches = []
+        for table_type, table in [('PDIALOG', pdialog_entries), ('INTERDIA', interdia_entries)]:
+            for char, data in table.items():
                 if actor in data['all_dialogs']:
-                    character_info = char
-                    dynamic_type = "INTERDIA"
-                    # Get CRE files with this death variable
-                    cre_files_by_death_var = list(death_var_to_cre.get(char, []))
-                    break
+                    matches.append((table_type, char))
+                    cre_files_by_death_var.extend(death_var_to_cre.get(char, ()))
+        if matches:
+            character_info = ','.join(sorted({char for _, char in matches}))
+            dynamic_type = '+'.join(sorted({kind for kind, _ in matches}))
 
         # Combine CRE files from both sources (remove duplicates)
         all_cre_files = list(set(cre_files_by_dialog + cre_files_by_death_var))
@@ -659,7 +718,7 @@ to the TP2 entries to complete the actor-to-CRE mapping.
 
     print(f"Actors with CRE files: {actors_with_cre}")
     print(f"Actors without CRE files: {actors_without_cre}")
-    print(f"Actors with TP2 dynamic mapping: {actors_with_dynamic}")
+    print(f"Actors with dialogue-table mapping: {actors_with_dynamic}")
     print(f"Actors from D files only: {actors_d_only}")
     print(f"Actors from TP2 only: {actors_tp2_only}")
 
