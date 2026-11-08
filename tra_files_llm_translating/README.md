@@ -99,7 +99,7 @@ modified during this audit. Tests write only to temporary directories.
 | 1. Collect new names | `collect_english_names.py` | Ready: complete TRA reading, skip-existing dictionary entries, deduplicated new locations and reporting only actual additions. |
 | 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only, requires existing parallel Russian TRA files and still uses a narrow line parser. |
 | 3. Associate CRE genders | `extract_actors_using_grammar.py` | With mod CREs and the BG2EE reference CREs/dialogue tables: all 42 speaking actors resolve (28 MALE, 10 FEMALE, 4 NEITHER). Empty declarations are excluded; NEITHER still needs translation context. |
-| 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 65 dialogue CSVs, 181 in the catch-all CSV. No general BAF/WeiDU text/context extractor; dialogue graph limitation remains. |
+| 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 56 dialogue CSVs, 181 in the catch-all CSV. Direct CHAIN continuations and actor-local state identities are fixed. No general BAF/WeiDU text/context extractor; cross-file dialogue linking remains unsupported. |
 | 5. Translate CSVs | `translate_dialogs.py` | Codex backend works in offline tests and shares the live-tested transport. Use explicit Codex options below; bare CLI still defaults to Ollama, so changing the global default is outstanding. |
 | 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
 | 7. Install/review | Game/WeiDU plus human review | Not performed; Russian language registration, unresolved strings, terminology and in-game review remain. |
@@ -377,8 +377,13 @@ Outstanding: arbitrary hardcoded BAF/TP2/TPA/TPH text is not collected; hardcode
 D text is not written back by the TRA updater. A complete all-source cycle needs
 an explicit extraction/TRAification and write-back strategy. The root `traify.sh`
 is only a hardcoded Wine/WeiDU command for another mod, not a general mod builder.
-Known L#IGCS6 CHAIN-final EXTERN continuations are split into separate graphs;
-complete string coverage does not prove complete dialogue context. These gaps
+Direct CHAIN endings (`EXTERN dialogue label` and `END dialogue label`) connect
+to their destinations, and state identities include the dialogue actor so that
+different actors may reuse labels. This produces 56 InkGallery dialogue CSVs;
+L#IGCS6 contains three connected scenes instead of nine fragments. Player replies
+retain their own destinations, so EXIT alternatives do not acquire continuation
+edges. Dialogue graphs are still built per D file: targets defined only in another
+D file are not linked, and unresolved destinations produce warnings. These gaps
 must be resolved before calling this a general all-file conversion script.
 
 ### 5. Translate CSVs with Codex as the chosen workflow default

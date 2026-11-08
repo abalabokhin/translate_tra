@@ -208,7 +208,7 @@ class ImprovedDialogueListener(ParseTreeListener):
             last_state_id = None
             
             for i, block in enumerate(ctx.blocks):
-                block_state_id = f"{new_label}_BLOCK_{i}"
+                block_state_id = self.state_key(target_dlg, f"{new_label}_BLOCK_{i}")
                 
                 entry_state, exit_state = self.process_chain_block(block, block_state_id)
                 
@@ -236,7 +236,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         if hasattr(ctx, 'blocks') and ctx.blocks:
             for i, block in enumerate(ctx.blocks):
-                block_state_id = f"{new_label}_BLOCK_{i}"
+                block_state_id = self.state_key(target_dlg, f"{new_label}_BLOCK_{i}")
                 
                 entry_state, exit_state = self.process_chain_block(block, block_state_id)
                 
@@ -282,7 +282,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         target_states = []
         if ctx.states:
             for state_ctx in ctx.states:
-                state_id = self.resolve_text(state_ctx)
+                state_id = self.state_key(speaker, self.resolve_text(state_ctx))
                 target_states.append(state_id)
         
         # Ensure speaker initialized
@@ -355,7 +355,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         # Process initial speaker lines
         if hasattr(chain_ctx, 'initialSpeakerLines') and chain_ctx.initialSpeakerLines:
             for i, element in enumerate(chain_ctx.initialSpeakerLines):
-                state_id = f"{chain_label}_INITIAL_{i}"
+                state_id = self.state_key(self.current_speaker, f"{chain_label}_INITIAL_{i}")
                 if not root_recorded:
                     print(f"DEBUG: Registering chain root: ({self.current_speaker}, {chain_label}) -> {state_id}")
                     self.chain_roots[(self.current_speaker, chain_label)] = state_id
@@ -371,7 +371,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         # Process chain blocks
         if hasattr(chain_ctx, 'blocks') and chain_ctx.blocks:
             for i, block in enumerate(chain_ctx.blocks):
-                block_state_id = f"{chain_label}_BLOCK_{i}"
+                block_state_id = self.state_key(self.current_speaker, f"{chain_label}_BLOCK_{i}")
                 
                 entry_state, exit_state = self.process_chain_block(block, block_state_id)
                 
@@ -488,6 +488,13 @@ class ImprovedDialogueListener(ParseTreeListener):
         if not epilog_ctx:
             return
 
+        if isinstance(epilog_ctx, (DParser.ExternChainActionEpilogContext,
+                                   DParser.EndChainActionEpilogContext)):
+            speaker = self.get_speaker_from_file_rule(epilog_ctx.dlg)
+            label = self.resolve_text(epilog_ctx.label)
+            self.add_transition(parent_state_id, self.state_key(speaker, label))
+            return
+
         # Check if this is an endWithTransitionsChainActionEpilog (has transitions)
         if hasattr(epilog_ctx, 'transitions') and epilog_ctx.transitions:
             # Ensure current speaker is initialized
@@ -531,7 +538,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         if not ctx.label:
             return
             
-        state_id = self.resolve_text(ctx.label)
+        state_id = self.state_key(self.current_speaker, self.resolve_text(ctx.label))
         self.current_state_id = state_id
         self.current_state_context = ctx
         
@@ -744,14 +751,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                     # the parent state. Otherwise EXIT alternatives incorrectly
                     # precede the result of accepting a quest, purchase, etc.
                     if source_line.line_type == "REPLY":
-                        resolved = set()
-                        for target in source_line.targets:
-                            if ':' in target:
-                                speaker, label = target.split(':', 1)
-                                resolved.add(self.chain_roots.get((speaker, label), label)
-                                             if speaker in self.all_speakers else target)
-                            else:
-                                resolved.add(self.chain_roots.get((source_state.speaker, target), target))
+                        resolved = {self.resolve_state_target(target, source_state.speaker)
+                                    for target in source_line.targets}
                         if target_state_id not in resolved:
                             continue
                     for target_line in target_first_lines:
@@ -766,43 +767,34 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         print(f"Flow building completed. Connected {len([line for line in self.all_lines if line.targets or line.predecessors])} lines.")
     
+    @staticmethod
+    def state_key(speaker, label):
+        """State labels are local to a dialogue resource, not globally unique."""
+        return f"{speaker}:{label}"
+
+    def resolve_state_target(self, target, source_speaker):
+        """Resolve local/EXTERN labels and already-internal CHAIN state IDs."""
+        if target == 'EXIT' or target in self.all_states_by_id:
+            return target
+        if ':' in target:
+            speaker, label = target.split(':', 1)
+        else:
+            speaker, label = source_speaker, target
+        return self.chain_roots.get((speaker, label), self.state_key(speaker, label))
+
     def resolve_extern_references(self):
-        """Resolve EXTERN ~speaker~ state_id references."""
+        """Resolve transitions only after all states and CHAIN roots are known."""
         for state_id, transitions in list(self.state_transitions.items()):
-            resolved_transitions = []
-            
-            # Get current speaker for resolving local chain references
-            source_state = self.all_states_by_id.get(state_id)
-            current_speaker = source_state.speaker if source_state else "UNKNOWN"
-            
-            for transition in transitions:
-                if ':' in transition:
-                    # Format: SPEAKER:STATE_ID
-                    speaker, target_state_id = transition.split(':', 1)
-                    
-                    # Look for target state in the specified speaker's states
-                    if speaker in self.all_speakers and target_state_id in self.all_speakers[speaker]:
-                        resolved_transitions.append(target_state_id)
-                    # Check chain roots
-                    elif (speaker, target_state_id) in self.chain_roots:
-                        resolved = self.chain_roots[(speaker, target_state_id)]
-                        print(f"DEBUG: Resolved EXTERN {transition} -> {resolved}")
-                        resolved_transitions.append(resolved)
-                    else:
-                        print(f"Warning: EXTERN reference {transition} not found. Available roots for {speaker}: {[k[1] for k in self.chain_roots.keys() if k[0] == speaker]}")
-                        resolved_transitions.append(transition)  # Keep unresolved
-                else:
-                    # Local reference
-                    # Check if it matches a chain root for the current speaker
-                    if (current_speaker, transition) in self.chain_roots:
-                        resolved = self.chain_roots[(current_speaker, transition)]
-                        print(f"DEBUG: Resolved local CHAIN target {transition} -> {resolved}")
-                        resolved_transitions.append(resolved)
-                    else:
-                        resolved_transitions.append(transition)
-            
-            self.state_transitions[state_id] = resolved_transitions
-    
+            state = self.all_states_by_id.get(state_id)
+            speaker = state.speaker if state else "UNKNOWN"
+            resolved = []
+            for target in transitions:
+                destination = self.resolve_state_target(target, speaker)
+                if destination != 'EXIT' and destination not in self.all_states_by_id:
+                    print(f"Warning: dialogue target {destination} not found in {self.d_filename}")
+                resolved.append(destination)
+            self.state_transitions[state_id] = resolved
+
     def group_connected_dialogues(self):
         """Group dialogues using state-level connectivity."""
         print(f"Grouping {len(self.all_states)} states into connected dialogues...")
