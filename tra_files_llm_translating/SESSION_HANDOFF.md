@@ -1,5 +1,26 @@
 # Session handoff — start here
 
+## InkGallery dictionary collection run and verified — 2026-11-07
+
+User requested running the collector for the whole mod and verifying the result.
+Ran it on all 26 English TRA files (598 entries), using the repository dict.csv,
+blacklist.txt and `--comment InkGallery`. Added 29 untranslated candidates:
+dictionary grew from 5,210 to 5,239 rows. Git diff contains exactly 29 added rows,
+no removed/modified rows. All existing row values were checked as a multiset;
+all new keys are absent from the baseline, unique, have blank translations and
+the InkGallery comment. Every saved location resolves to an entry containing the
+candidate, and per-term locations contain no duplicates. A second real run added
+zero names and left dict.csv byte-for-byte unchanged.
+
+Manual review/translation remains next. Candidates include ordinary low-frequency
+words/titles such as Levitating and Viscountess. Kamp was extracted from Aba-Kamp;
+Paginae / Sanguinariae / Bhaalensis are separate words of one book title. Do not
+assume all candidates are approved standalone glossary entries. Nothing was
+removed/translated automatically and the blacklist was not changed. No mod CSV
+translation or live LLM inference was run. Before/after snapshots and audit JSON
+are in `/tmp/inkgallery-dictionary-run-nz_ev37y` on this machine; the dictionary
+diff itself is version-controlled and remains available for review.
+
 ## Step 1 skip-existing policy and dictionary bugs fixed — 2026-11-07
 
 User chose to defer alternate-meaning detection: if a term already exists in the

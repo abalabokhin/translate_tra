@@ -189,7 +189,7 @@ policy, not a declaration that every English key can only ever have one meaning.
 Revisit it if an existing dictionary translation produces a wrong result.
 
 Existing duplicate rows, if present, are retained without interpretation. The
-current big dictionary has 5,210 rows and no exact duplicate English keys. The
+dictionary before InkGallery collection had 5,210 rows and no exact duplicate English keys. The
 old lossy key-to-row merge has been removed. Newly added rows keep the collected
 locations deduplicated across source variants/entries. The existing singular-form
 suppression remains: a candidate plural is skipped when a corresponding singular
@@ -206,10 +206,60 @@ The `wordfreq` dependency is provided by the preparation step above.
 ### 2. Translate new dictionary entries or remove unsuitable candidates
 
 Review the dictionary diff before translating the mod. Fill the Russian column,
-add disambiguating context where needed, and remove false positives. Preserve
+add an English context comment for every new translated entry (a short comment
+such as `Personal name` or `Nickname` is sufficient when unambiguous), and remove
+false positives. Replace collected source locations in the context column with
+these comments. Keep comments concise and useful to translators and LLMs:
+explain the meaning or identity, and mention an existing translation when relevant.
+Avoid file paths, string IDs and review history. Preserve
 existing meanings/translations. Use the blacklist for recurring false positives.
 The dialogue translator ignores dictionary rows whose Russian column is empty,
 so leaving them unresolved does not supply terminology to the model.
+
+#### Required context review of new candidates
+
+This review is always required after automatic collection, whether performed by
+a person or with LLM assistance. Limit edits to the new candidates; preserve
+previous dictionary entries under the skip-existing policy.
+
+1. Read each new candidate's referenced TRA text and search the entire English
+   text for its other uses, case-insensitively. Include complete multiline strings
+   and both source variants. A candidate's first capitalized occurrence alone is
+   not enough to determine its meaning or whether it is part of a larger name.
+2. Judge whether an entry helps preserve a specific name or a consistent translation.
+   Remove ordinary English vocabulary that needs no glossary guidance. Keep names,
+   invented-language terms, setting-specific terms and nicknames that require a
+   stable rendering, even when made from ordinary words. Capitalization alone is
+   insufficient: inspect the actual use in the source text.
+3. Check fixed expressions and multiword/hyphenated names. Keep or add a complete
+   name when it helps preserve a consistent translation, including full book,
+   item and spell names made from ordinary words. If components occur only inside
+   the complete expression, remove unnecessary fragment entries. Retain reusable
+   components such as a surname shared by different characters. Ordinary
+   descriptive titles are assessed separately. Exclude mechanical suffixes such
+   as an item's `+3` enchantment bonus from the dictionary name.
+4. Check suspicious spellings against their context, other occurrences, existing
+   glossary entries and references where needed. Report confirmed typos with the
+   source filename/@ID and suggested spelling. Distinguish suspected typos from
+   attested variants or unusual invented names. Do not silently change English
+   mod sources or invent a corrected dictionary key.
+5. Check the final diff: retained terms have real source uses, removed terms are
+   explained, old rows are unchanged and remaining translations are reviewed
+   separately. The user verifies the edited dictionary before translation proceeds.
+
+The collector only knows the current dictionary and blacklist; rerunning it after
+manual deletions can reintroduce those candidates. Treat this as a separate review
+stage. Store per-mod review results separately under `reviews/`; this README
+records the procedure. Do not globally blacklist a valid name component just because it is part
+of a fixed expression in one mod. Blacklist changes should be explicit.
+
+Translation-time case matching is conditional: it is case-sensitive only when
+every Russian translation for the key starts with an uppercase letter. Otherwise
+it is case-insensitive. For example, `Licker → Лизун` does not match lowercase
+`licker`, while `Licker → лизун` does. Empty translations are not loaded. This is
+a heuristic, not an explicit proper-name flag. It controls glossary hints supplied
+to the LLM, not a guaranteed distinction in generated translations. Dictionary
+collection's skip-existing comparison is separately case-insensitive.
 
 Manual editing is supported. For LLM help, the existing legacy command is:
 
