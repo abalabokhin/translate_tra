@@ -25,6 +25,222 @@ the CLI version also changed, so the comparison does not isolate effort effects.
 InkGallery's full cycle has not started. A known parser gap splits some
 L#IGCS6 CHAIN-final EXTERN continuations; check complete graph coverage first.
 
+## Complete mod routine and readiness audit — 2026-11-07
+
+The agreed order is: collect new names → review/translate dictionary entries →
+associate CRE genders with dialogue actors → build source CSVs → translate CSVs
+with Codex → rebuild Russian TRA files → install and review in game.
+
+**Stopped before step 1: the complete routine is not ready yet.** The commands
+below document the intended use of the existing scripts; blocked steps must be
+fixed before running this sequence on the real dictionary/mod. No dictionary
+entries were added, no live translation was requested, and no mod source was
+modified during this audit. Tests write only to temporary directories.
+
+| Step | Existing script | Audit result |
+| --- | --- | --- |
+| 1. Collect new names | `collect_english_names.py` | Blocked: `wordfreq` is missing in the audited system Python; parser misses multiline/other-delimiter text; merge can collapse rows for different meanings. |
+| 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only and requires existing parallel Russian TRA files; it shares the narrow line parser. |
+| 3. Associate CRE genders | `extract_actors_using_grammar.py` | Runs on InkGallery: 47 actors, 30 nonempty gender labels and 17 unresolved. Requires review; not every actor is resolved from mod CREs. |
+| 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 65 dialogue CSVs, 181 in the catch-all CSV. No general BAF/WeiDU text/context extractor; dialogue graph limitation remains. |
+| 5. Translate CSVs | `translate_dialogs.py` | Codex backend works in offline tests and shares the live-tested transport. Use explicit Codex options below; bare CLI still defaults to Ollama, so changing the global default is outstanding. |
+| 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
+| 7. Install/review | Game/WeiDU plus human review | Not performed; Russian language registration, unresolved strings, terminology and in-game review remain. |
+
+The current 71-test offline suite passes. Its passing result does not cover the
+legacy dictionary tools or guarantee correct CRE classification, graph completeness
+or Russian translation quality. The dependency audit found `chardet 5.2.0` and
+`antlr4-python3-runtime 4.9.2`; the generated ANTLR parser identifies itself as 4.9.2.
+`wordfreq` is not installed in that Python environment. No dependencies were
+installed during this audit.
+
+### Example paths
+
+Run from the repository root. Use fresh work directories for separate trials;
+keep actor CSVs outside the source/translated CSV directories, because those
+folders are interpreted as translation inputs by their respective scripts.
+
+```bash
+mod_dir=tra_files_llm_translating/InkGallery-v1.5/InkGallery
+work_dir=work/InkGallery
+glossary=tra_files_llm_translating/dict.csv
+mkdir -p "$work_dir"
+```
+
+### 1. Collect new English names into the versioned dictionary
+
+Intended command **after fixing the collector**:
+
+```bash
+python3 tra_files_llm_translating/collect_english_names.py \
+  "$mod_dir/languages/english" \
+  --dictionary "$glossary" \
+  --blacklist tra_files_llm_translating/blacklist.txt \
+  --comment InkGallery
+
+git diff -- "$glossary"
+```
+
+`tra_path` accepts one TRA file or a flat directory. `--dictionary` selects the
+file to update; `--blacklist` excludes listed candidates; `--comment` puts the mod
+name in column four. The collector finds uncommon capitalized words/name parts,
+not every English word. It preserves existing translations for retained entries;
+new rows contain `English,empty translation,source locations,mod comment`.
+
+Required fixes before use: read complete TRA literals (including multiline,
+quoted, concatenated and original female variants) with the shared TRA parser;
+preserve all dictionary rows, including context-specific translations; handle
+encoding consistently. The current save function uses a dictionary keyed by the
+English term. A temporary fixture with two Watch meanings lost one row when a
+new unrelated term was added. The current big dictionary has 5,210 rows and no
+exact duplicate English keys, but multi-meaning rows must remain supported.
+The missing `wordfreq` dependency also needs to be available in the selected
+Python environment. Do not treat its absence as evidence about extraction quality.
+
+### 2. Translate new dictionary entries or remove unsuitable candidates
+
+Review the dictionary diff before translating the mod. Fill the Russian column,
+add disambiguating context where needed, and remove false positives. Preserve
+existing meanings/translations. Use the blacklist for recurring false positives.
+The dialogue translator ignores dictionary rows whose Russian column is empty,
+so leaving them unresolved does not supply terminology to the model.
+
+Manual editing is supported. For LLM help, the existing legacy command is:
+
+```bash
+python3 tra_files_llm_translating/find_translations_with_llm.py \
+  --dictionary "$glossary" --model qwen2.5:72b-instruct \
+  --url http://localhost:11434/api/generate
+
+git diff -- "$glossary"
+```
+
+This finder identifies a term's translation in **already translated** parallel
+English/Russian TRA lines. It replaces `english` with `russian` in recorded paths
+and pairs entries by TRA ID; it does not translate novel names from English alone.
+An exact whole-line term match is copied without inference; other matches use
+Ollama. It processes all untranslated rows with recorded locations, not just the
+latest mod's additions. It clears the locations column when filling a translation.
+For InkGallery there is currently no Russian source folder, so this automatic
+backfill route cannot supply its new translations before the first mod translation.
+Codex support, reliable full-TRA parsing and a new-entry selection mechanism are
+outstanding for this utility. Do not run it expecting the main translator's
+`--backend`, `--effort` or `--method` parameters to work here.
+
+### 3. Extract CRE genders and associate them with dialogue actors
+
+```bash
+python3 tra_files_llm_translating/extract_actors_using_grammar.py \
+  "$mod_dir/dialogue" \
+  --cre-folder "$mod_dir" \
+  --tp2-file "$mod_dir/InkGallery.tp2" \
+  --csv-output "$work_dir/actors.csv" \
+  --output "$work_dir/actor_mapping.txt"
+```
+
+The D-folder argument supplies actor/dialogue identifiers. `--cre-folder` scans
+CRE files recursively, reads their gender/dialogue/death-variable fields and
+associates them with those identifiers. `--tp2-file` additionally recognizes
+PDIALOG/INTERDIA APPEND mappings. `--csv-output` produces headerless
+`actor,gender/description` rows accepted by the translator; `--output` saves the
+mapping details. `--verbose` adds per-file diagnostics. Existing actor CSVs are
+appended to and existing identifiers are skipped, so rerunning does not refresh
+previously unknown or wrong genders; generate a fresh file when reassessing them.
+
+On InkGallery the script completed successfully: 20 MALE, 6 FEMALE, 4 NEITHER,
+and 17 blank rows. For example, L#IGSTA is FEMALE. Unresolved identifiers include
+base-game companions such as AERIEJ/ANOMENJ and mod identifiers L#IGCS2–L#IGCS5.
+Review the mapping against available game/mod resources and supply known genders
+or descriptions. NEITHER/OTHER/UNKNOWN/MIXED are not automatically a grammatical
+male/female decision. The script uses fixed CRE field offsets without version
+validation and supports only limited TP2 patterns; it does not interpret arbitrary
+WeiDU transformations/includes. A complete association for every mod is not proven.
+Pass the reviewed file with `translate_dialogs.py --actors "$work_dir/actors.csv"`;
+the translator joins it to CSV Actor identifiers when building prompts, rather
+than copying gender columns into every source CSV.
+
+### 4. Build CSVs from the mod's text
+
+```bash
+python3 tra_files_llm_translating/parse_d_grammar.py \
+  "$mod_dir/dialogue" "$mod_dir/languages/english" "$work_dir/english_csv"
+```
+
+The three positional arguments are a flat D directory, a flat source-language
+TRA directory and an output directory. The script creates connected-dialogue
+CSVs and `_unused_tra_lines.csv`. D inline dialogue text can appear in dialogue
+CSVs; TRA-backed text retains its physical filename/ID and original female source.
+The parser currently assumes a D file's matching TRA basename rather than
+executing general LOAD_TRA/AUTO_TRA routing.
+
+All entries not marked used by D parsing go into the catch-all CSV. Therefore
+TRA entries referenced only by BAF/TP2/TPA/TPH still appear there, including
+InkGallery's `setup.tra` installer text, item names/descriptions and BAF journal
+entries. This is **coverage through the TRA inventory**, not extraction of BAF
+control flow or WeiDU usage context. Catch-all categorization and richer context
+are deferred until the user's proposed approach is discussed.
+
+Outstanding: arbitrary hardcoded BAF/TP2/TPA/TPH text is not collected; hardcoded
+D text is not written back by the TRA updater. A complete all-source cycle needs
+an explicit extraction/TRAification and write-back strategy. The root `traify.sh`
+is only a hardcoded Wine/WeiDU command for another mod, not a general mod builder.
+Known L#IGCS6 CHAIN-final EXTERN continuations are split into separate graphs;
+complete string coverage does not prove complete dialogue context. These gaps
+must be resolved before calling this a general all-file conversion script.
+
+### 5. Translate CSVs with Codex as the chosen workflow default
+
+```bash
+python3 tra_files_llm_translating/translate_dialogs.py "$work_dir/english_csv" \
+  --target "$work_dir/russian_csv" \
+  --backend codex --model gpt-6.1-sol --effort low --method both \
+  --actors "$work_dir/actors.csv" --dictionary "$glossary"
+```
+
+Codex/Sol/low/both is the agreed workflow choice. The current program's bare
+`--backend` default is still Ollama for compatibility, so the explicit flags above
+are required until the user-requested Codex default is implemented. `--model`,
+`--effort`, `--method`, `--codex-bin` and `--requests-dir` remain configurable.
+The installed Codex CLI must already be logged in. `--backend ollama` selects the
+local alternative; its `--url`, `--num-ctx` and `--think` options apply only there.
+Both backends generate JSON text and Python writes CSV metadata/escaping.
+
+`--test` copies English for a no-inference plumbing run; it is never a Russian
+translation. It can check the CSV/TRA path without spending subscription allowance.
+Review actual Russian output for omissions, speaker/addressee agreement, glossary
+consistency, repeated strings and natural language. Keep request evidence; measure
+subscription allowance before/after the future real-mod batch rather than
+inferring it from speed or token counts.
+
+### 6. Convert reviewed CSVs into the Russian TRA folder
+
+```bash
+python3 tra_files_llm_translating/update_tra_from_csv.py \
+  "$mod_dir/languages/english" "$work_dir/russian_csv" \
+  --output "$mod_dir/languages/russian"
+```
+
+The updater reads combined dialogue and catch-all translations, validates source
+references/formatting and rejects conflicting translations for one TRA entry.
+It writes UTF-8 TRA files, preserving comments, placeholders, sound references
+and original formatting. Equal male/female text can use a single literal;
+different translations use the TRA male/female pair. It creates the output folder.
+Always supply `--output`: omitting it updates the input TRA folder in place.
+Untranslated entries remain English, so creating a Russian directory alone is
+not proof of complete translation. It only applies rows with TRA references;
+it does not rewrite inline D/BAF/WeiDU literals or alter the installer.
+
+### 7. Profit: install, check coverage and review in game
+
+Register the Russian language in the mod's TP2 and review its encoding/loading
+requirements, then install and inspect dialogue, item descriptions, journal
+entries and both protagonist genders. No existing script performs the entire
+registration/install/review step. InkGallery currently declares English, Spanish,
+Chinese and Polish; writing `languages/russian` does not make it selectable.
+Do not label the result complete while source strings, unresolved actors or
+untranslated entries remain. General CLAUDE.md routing is still deferred until
+this complete translation cycle has actually been exercised.
+
 ### Earlier local-model evaluation (historical)
 
 2026-10-29: [v3 rescoring](experiments/RESCORED_V3_RESULTS_2026-10-29.md)
@@ -76,7 +292,7 @@ of translations**. JSON validation does not prove Russian agreement or fidelity.
 ## Scripts and commands
 
 Python 3.10+ is required. The grammar parser uses `chardet` and
-`antlr4-python3-runtime==4.9.3` in the Python environment actually running the
+`antlr4-python3-runtime==4.9.2` in the Python environment actually running the
 command. The repository's `venv` did not contain ANTLR during the trials; the
 system Python did. No package installation is performed by these scripts.
 

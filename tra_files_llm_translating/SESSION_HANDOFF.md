@@ -1,5 +1,39 @@
 # Session handoff — start here
 
+## Seven-step workflow documented; stopped for script fixes — 2026-11-07
+
+User requested auditing all scripts for the complete routine and documenting
+steps/examples in README, stopping if scripts are missing or do not work. See
+README.md's "Complete mod routine and readiness audit" and the root README link.
+No pipeline script was modified or production dictionary/mod output written
+during this audit. No LLM inference or dependency installation was performed.
+
+- Dictionary collector cannot start in system Python: missing `wordfreq`.
+  Its old line parser misses multiline/other literal forms. A temporary fixture
+  confirmed its save routine collapses two context rows with one English key.
+  The real dictionary currently has 5,210 rows with no exact duplicate keys.
+- Dictionary translation finder is Ollama-only, needs existing parallel Russian
+  TRA files and applies to all unresolved dictionary entries with locations.
+  It does not provide a Codex/new-English-only workflow for new InkGallery terms.
+- Actor extractor ran successfully on InkGallery: 47 actors, 20 MALE, 6 FEMALE,
+  4 NEITHER, 17 blank. Base-game actors and L#IGCS2–L#IGCS5 need review/additional
+  source facts. Fixed CRE offsets lack version validation; TP2 patterns are limited.
+- Fresh extraction gives 65 dialogue CSVs plus catch-all: 417 + 181 = 598 unique
+  TRA entries, none missing. BAF/WeiDU usage context and hardcoded text are not
+  extracted. Inline D text is not written back to sources by the TRA updater;
+  CHAIN-final EXTERN graph gap remains. Catch-all redesign is explicitly deferred.
+- All 71 offline tests pass. A full InkGallery mock (Codex backend, `--test`)
+  extraction→CSV→TRA round trip preserved all 598 source text variants in 26
+  output TRA files. This used default actor facts solely for plumbing, not proof
+  of reviewed actor mappings or translation quality.
+- User's agreed routine calls for Codex by default, but the implemented bare
+  CLI still defaults to Ollama. This mismatch is documented as outstanding;
+  use explicit Codex flags in examples. Russian TP2 registration is also missing.
+
+Stop the real cycle before dictionary collection while these fixes are addressed.
+Detailed commands and boundaries for all seven steps are in README.md. General
+CLAUDE.md routing remains deferred until the full cycle is completed.
+
 ## Selectable production Codex backend implemented — 2026-11-07
 
 User accepted the explicit-low verdict and requested documenting it and changing
