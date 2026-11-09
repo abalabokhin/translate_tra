@@ -1,0 +1,22 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Scimitar,@73,TRA:setup.tra:@73,,,item_name,unknown,,InkGallery/items/l#igsci.itm,NAME1,InkGallery.tp2:727 SAY NAME1,
+NARRATOR,2,,Maestro's Aeon +3,@74,TRA:setup.tra:@74,,,item_name,unknown,,InkGallery/items/l#igsci.itm,NAME2,InkGallery.tp2:728 SAY NAME2,
+NARRATOR,3,,"There are many magical scimitars that would be happily used by bards and other artists. This one, however, has quite a reputation. It is not only a well-crafted weapon, but also one that was enchanted with quite interesting magic. It allows the user to regenerate and affect both the wielder's and the target's ability to withstand magic attacks.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerates 1 Hit Point every two rounds
+
+Combat abilities:
+– Each successful hit drains Saving Throws vs. Magic for 1 round (each hit lowers the target's Save vs. Magic by 1 point, and that same Save of the weapon wielder is improved by 1; the effect stacks)
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3",@75,TRA:setup.tra:@75,,,item_description,unknown,,InkGallery/items/l#igsci.itm,DESC,InkGallery.tp2:729 SAY DESC,

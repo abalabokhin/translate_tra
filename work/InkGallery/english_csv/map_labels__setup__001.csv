@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Ink Gallery,@111,TRA:setup.tra:@111,,,map_label,unknown,,,,"scripts/AR1000.baf:8; block 1, RESPONSE #100; conditions: Global ( ""L#IGMapNotes"" , ""AR1000"" , 0 )",

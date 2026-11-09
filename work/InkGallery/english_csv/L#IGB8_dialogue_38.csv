@@ -1,0 +1,10 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB8,L#IGB8_6ecb9937::L#IGB8:200_INITIAL_0_SAY_7,,"""The sisters have fallen. Their judgement shall never reach the group.""",@7,TRA:l#igb8.tra:@7,,,,dialogue,MALE,
+L#IGB8,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,L#IGB8_6ecb9937::L#IGB8:200_INITIAL_0_SAY_7,"Who shall learn from this book? Who shall learn how to protect themselves even in the emptiest, coldest of places?",@8,TRA:l#igb8.tra:@8,,,,dialogue,MALE,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_9,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER1>.,@9,TRA:l#igb8.tra:@9,,,,dialogue,player,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_10,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER2>.,@10,TRA:l#igb8.tra:@10,,,,dialogue,player,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_11,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER3>.,@11,TRA:l#igb8.tra:@11,,,,dialogue,player,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_12,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER4>.,@12,TRA:l#igb8.tra:@12,,,,dialogue,player,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_13,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER5>.,@13,TRA:l#igb8.tra:@13,,,,dialogue,player,
+PLAYER,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_14,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER6>.,@14,TRA:l#igb8.tra:@14,,,,dialogue,player,
+L#IGB8,L#IGB8_6ecb9937::L#IGB8:201_INITIAL_0_SAY_15,L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_9;L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_10;L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_11;L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_12;L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_13;L#IGB8_6ecb9937::L#IGB8:200_BLOCK_0_ELEMENT_0_REPLY_14,They shall no longer fear the coldest winds.,@15,TRA:l#igb8.tra:@15,,,,dialogue,MALE,

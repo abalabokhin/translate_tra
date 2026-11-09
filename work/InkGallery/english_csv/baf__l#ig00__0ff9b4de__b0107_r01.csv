@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+L#IGSTA,l1,,Ah! I can see you defeated these crazy kobolds! Good!,@149,TRA:setup.tra:@149,,,baf_dialogue,FEMALE,L#IGSTA,,,"scripts/L#IG00.baf:1149; block 107, RESPONSE #100; conditions: AreaCheckObject ( ""L#IG00"" , Player1 ) Global ( ""L#IGBook10"" , ""GLOBAL"" , 3 ); action: DisplayStringHead; actions: AmbientActivate, DisplayStringHead, AddStoreItem, SetGlobal",

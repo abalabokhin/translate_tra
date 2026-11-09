@@ -22,8 +22,9 @@ This supports the next complete-mod translation cycle with editorial review.
 It does not establish unattended translation quality, full parser coverage or
 five-hour subscription capacity. Historical resolved effort was not recorded;
 the CLI version also changed, so the comparison does not isolate effort effects.
-InkGallery's full cycle has not started. A known parser gap splits some
-L#IGCS6 CHAIN-final EXTERN continuations; check complete graph coverage first.
+InkGallery's full translation cycle has not started. CHAIN-final EXTERN
+continuations are linked by the current parser; broader graph boundaries are
+listed below.
 
 ## Preparation: Python environment and tools
 
@@ -50,7 +51,7 @@ Verified in the project `venv` on 2026-11-07: `wordfreq 3.1.1`, `chardet 7.7.0`
 and `antlr4-python3-runtime 4.9.2`. Package consistency, imports, a common-word
 lookup and the collector's CLI startup pass; all 71 then-existing offline tests
 passed in this environment. Dependency setup is complete. The collector now uses
-the shared TRA parser; preserving dictionary context rows remains outstanding.
+the shared TRA parser and preserves existing dictionary context rows.
 
 | Python package | Used by |
 | --- | --- |
@@ -99,12 +100,12 @@ modified during this audit. Tests write only to temporary directories.
 | 1. Collect new names | `collect_english_names.py` | Ready: complete TRA reading, skip-existing dictionary entries, deduplicated new locations and reporting only actual additions. |
 | 2. Review/translate dictionary | Manual editing; `find_translations_with_llm.py` | Manual route available. Automatic finder is legacy Ollama-only, requires existing parallel Russian TRA files and still uses a narrow line parser. |
 | 3. Associate CRE genders | `extract_actors_using_grammar.py` | With mod CREs and the BG2EE reference CREs/dialogue tables: all 42 speaking actors resolve (28 MALE, 10 FEMALE, 4 NEITHER). Empty declarations are excluded; NEITHER still needs translation context. |
-| 4. Build source CSVs | `parse_d_grammar.py` | All 598 InkGallery TRA entries covered: 417 unique references across 56 dialogue CSVs, 181 in the catch-all CSV. Direct CHAIN continuations and actor-local state identities are fixed. No general BAF/WeiDU text/context extractor; cross-file dialogue linking remains unsupported. |
+| 4. Build source CSVs | `parse_d_grammar.py` | With TP2 analysis: 417 unique references across 56 dialogue CSVs; the other 178 entries are split into contextual BAF, journal and resource CSVs. Three installer-only entries deliberately stay English. Cross-file D targets are linked after parsing all sources; arbitrary runtime-generated resource transformations remain a boundary. |
 | 5. Translate CSVs | `translate_dialogs.py` | Codex backend works in offline tests and shares the live-tested transport. Use explicit Codex options below; bare CLI still defaults to Ollama, so changing the global default is outstanding. |
 | 6. Rebuild Russian TRA | `update_tra_from_csv.py` | Synthetic tests and an InkGallery mock round trip pass: all 598 entries/original variants preserved in 26 output TRA files. Does not register a new WeiDU language. |
 | 7. Install/review | Game/WeiDU plus human review | Not performed; Russian language registration, unresolved strings, terminology and in-game review remain. |
 
-The current 98-test offline suite passes, including shared TRA parsing, name
+The offline regression suite passes, including shared TRA parsing, name
 collection and dictionary saving. This does not validate the legacy dictionary
 translation finder or guarantee correct CRE classification, graph completeness
 or Russian translation quality. The initial audit used system Python and found
@@ -147,8 +148,8 @@ not every English word. It preserves all existing dictionary rows and translatio
 new rows contain `English,empty translation,source locations,mod comment`.
 
 The collector reads complete literals with the shared TRA parser and encoding
-reader, including multiline, quoted, percent-delimited, five-tilde and concatenated
-strings. It does not extract text from comments or sound references.
+reader, including multiline, quoted, percent-delimited, five-tilde, bare and
+concatenated strings. It does not extract text from comments or sound references.
 
 See [TRA format, grammar sources and test coverage](TRA_FORMAT.md) and the local
 [TRA EBNF](TRA.ebnf). Tests cover comments between tokens, nested comments,
@@ -289,9 +290,9 @@ outstanding for this utility. Do not run it expecting the main translator's
 python3 tra_files_llm_translating/extract_actors_using_grammar.py \
   "$mod_dir/dialogue" \
   --cre-folder "$mod_dir" \
-  --cre-folder tra_files_llm_translating/bg2ee_cre \
-  --pdialog-file tra_files_llm_translating/bg2ee_cre/PDIALOG.2DA \
-  --interdia-file tra_files_llm_translating/bg2ee_cre/INTERDIA.2DA \
+  --cre-folder tra_files_llm_translating/reference/bg2ee_cre \
+  --pdialog-file tra_files_llm_translating/reference/bg2ee_cre/PDIALOG.2DA \
+  --interdia-file tra_files_llm_translating/reference/bg2ee_cre/INTERDIA.2DA \
   --tp2-file "$mod_dir/InkGallery.tp2" \
   --csv-output "$work_dir/actors.csv" \
   --output "$work_dir/actor_mapping.txt"
@@ -312,7 +313,7 @@ retains gender data only for resources matching the selected speaking actors or
 their mapped death variables. It does not load entire CRE files or export the
 game's whole actor inventory.
 
-`bg2ee_cre/` contains the user-provided BG2EE CRE reference files and dialogue
+`reference/bg2ee_cre/` contains the user-provided BG2EE CRE reference files and dialogue
 tables copied from the user's existing `~/source/temp` exports. Game dialogue
 tables are needed because a companion CRE may reference `AERIE`, whereas the
 mod adds text to `AERIEJ`. `--pdialog-file` and `--interdia-file` read the real
@@ -339,52 +340,207 @@ produced by the older declaration-based extraction.
 Review the mapping against available game/mod resources. Keep NEITHER as NEITHER;
 every actor does not need a manually assigned male/female gender. The translation
 prompt treats NEITHER/OTHER/unknown as unspecified, rather than Russian neuter.
-It uses source context when grammatical agreement matters, prefers natural wording
-without gender agreement when unsupported, preserves plural self-reference and
-keeps necessary grammatical choices consistent for each actor across both Player1
-versions. Consistency across separate LLM requests still needs translation review.
+For unspecified gender it requires natural wording that works for both male and
+female speakers/addressees, unless the source clearly establishes gender. It
+preserves plural self-reference ("we" needs plural agreement, not an inferred sex)
+and keeps source-supported choices consistent across both Player1 versions. Consistency across separate LLM requests still needs translation review.
 MIXED indicates resources with differing labels and remains a separate review case.
 The scanner validates V1.0 CRE signatures/header lengths,
 rejects unsupported or truncated files and supports only limited TP2 patterns;
 it does not interpret arbitrary
 WeiDU transformations/includes. A complete association for every mod is not proven.
 Pass the reviewed file with `translate_dialogs.py --actors "$work_dir/actors.csv"`;
-the translator joins it to CSV Actor identifiers when building prompts, rather
-than copying gender columns into every source CSV.
+the translator joins it to CSV Actor identifiers when building prompts. The
+categorized extractor also records known source genders in `Speaker_Gender`;
+party slots 2–6 remain unspecified.
 
 ### 4. Build CSVs from the mod's text
 
 ```bash
 python3 tra_files_llm_translating/parse_d_grammar.py \
-  "$mod_dir/dialogue" "$mod_dir/languages/english" "$work_dir/english_csv"
+  "$mod_dir/dialogue" "$mod_dir/languages/english" "$work_dir/english_csv" \
+  --tp2-file "$mod_dir/InkGallery.tp2" \
+  --source-language english \
+  --actors-file "$work_dir/actors.csv" \
+  --unused-layout categorized --category-batch-size 40 \
+  --usage-report "$work_dir/tra_usage.json"
 ```
 
-The three positional arguments are a flat D directory, a flat source-language
+The three positional arguments are a D directory (searched recursively), a flat source-language
 TRA directory and an output directory. The script creates connected-dialogue
-CSVs and `_unused_tra_lines.csv`. D inline dialogue text can appear in dialogue
-CSVs; TRA-backed text retains its physical filename/ID and original female source.
-The parser currently assumes a D file's matching TRA basename rather than
-executing general LOAD_TRA/AUTO_TRA routing.
+CSVs plus categorized script, journal and resource CSVs when `--tp2-file` is
+supplied. Without TP2 analysis the default remains `_unused_tra_lines.csv`.
+Hardcoded D dialogue can supply read-only context; editable CSV rows retain
+their physical TRA filename/ID and original female source.
+**Agreed routing policy:** resolve `@number` in the source file's corresponding
+TRA file first (the same basename as the D or BAF file, with case-insensitive
+filename comparison). If the entry is absent there, resolve it in the fallback
+files declared by the selected TP2 `LANGUAGE`, rather than assuming the filename
+is `setup.tra`. Multiple fallback files follow load order (later definitions win).
+`LOAD_TRA`, scoped `WITH_TRA`, charset-helper reload arrays, and
+`COMPILE`/`EXTEND_* ... USING` additions are associated with the compilation site. Paths are matched case-insensitively, including Windows path
+separators. WeiDU references use the active declared fallback files.
+If neither file defines the entry, report the source file/reference and stop;
+do not search arbitrary TRA files or guess a translation source. This policy
+deliberately assumes the common mod layout rather than interpreting arbitrary
+`AUTO_TRA` routing. Revisit it when a mod contradicts the assumption. Supply
+`--tp2-file` to enable TP2 analysis. `--source-language` matches a LANGUAGE name
+or directory and defaults to the TRA-folder basename. Without a TP2, the legacy
+matching-file then `setup.tra` lookup remains available, without usage exclusions.
+The source language folder is currently flat: dialogue references to TRA files
+outside it are reported rather than written with misleading source metadata.
 
-All entries not marked used by D parsing go into the catch-all CSV. Therefore
-TRA entries referenced only by BAF/TP2/TPA/TPH still appear there, including
-InkGallery's `setup.tra` installer text, item names/descriptions and BAF journal
-entries. This is **coverage through the TRA inventory**, not extraction of BAF
-control flow or WeiDU usage context. Catch-all categorization and richer context
-are deferred until the user's proposed approach is discussed.
+**Translation scope:** translate the physical English literals in the mod's TRA
+files, except entries proven to be used only by the installer. Installer prompts,
+component labels, errors and debug messages stay English when identified as
+installer-only. Hardcoded text in D, BAF, TP2, TPA or TPH is intentionally outside
+this scope: leave it unchanged, do not write translated text back into those
+sources, and do not stop because a mod was not fully TRAified. Such text may be
+retained as read-only context around TRA-backed lines. Improving a mod's
+TRAification is not a prerequisite or a planned part of this translation cycle.
 
-Outstanding: arbitrary hardcoded BAF/TP2/TPA/TPH text is not collected; hardcoded
-D text is not written back by the TRA updater. A complete all-source cycle needs
-an explicit extraction/TRAification and write-back strategy. The root `traify.sh`
-is only a hardcoded Wine/WeiDU command for another mod, not a general mod builder.
-Direct CHAIN endings (`EXTERN dialogue label` and `END dialogue label`) connect
-to their destinations, and state identities include the dialogue actor so that
-different actors may reuse labels. This produces 56 InkGallery dialogue CSVs;
-L#IGCS6 contains three connected scenes instead of nine fragments. Player replies
-retain their own destinations, so EXIT alternatives do not acquire continuation
-edges. Dialogue graphs are still built per D file: targets defined only in another
-D file are not linked, and unresolved destinations produce warnings. These gaps
-must be resolved before calling this a general all-file conversion script.
+`weidu_usage.py` tokenizes nested comments and strings before scanning commands.
+It follows reachable INCLUDE/REINCLUDE/PATCH_INCLUDE/PATCH_REINCLUDE/LOAD files,
+selected LANGUAGE fallbacks and literal compilation inputs. Only TRA entries
+whose observed uses are exclusively recognized installer uses are excluded from
+translation inputs. Shared game references, unreferenced entries and uncertain
+uses remain included. D and BAF references protect shared entries. The contextual
+extractor below builds BAF response CSVs and groups resource fields; it does not
+execute arbitrary item-patching code.
+
+The scanner follows called functions/macros with their static arguments, inline
+files, copied source aliases and charset-conversion paths. It evaluates known
+path/parameter tests and finite string-list helpers; unknown game conditions
+retain both possible branches. Action and patch functions have separate
+namespaces. Function variables follow WeiDU scope and escape only through
+explicit returns; macros share the caller scope.
+Missing optional TRA overrides are skipped, matching WeiDU; a game reference
+still must resolve in another loaded file. Uncalled helper definitions are not
+executed. Reference-valued TRA entries (`@alias` or native TLK `#number`) are
+preserved: aliases route to their literal target; native TLK text is omitted from
+translation CSVs because its English text is not in the mod.
+
+Unknown include/compile paths and unresolved game references disable installer
+exclusions for that analysis, retaining text rather than dropping it. Opaque
+external asset generators also retain all entries. Conditional loads protect
+all possible bindings; the dialogue builder rejects conflicting text instead of
+choosing a source. This is static analysis; it does not execute installers or
+reproduce arbitrary WeiDU patch operations.
+The optional usage report lists excluded entries with their reasons/locations and
+any limitations. Excluded entries remain English in the rebuilt Russian TRA files.
+Always use a fresh CSV output folder after changing filtering: stale old CSVs
+are not removed automatically.
+
+Audit every TP2 under a source tree without running any installer:
+
+```bash
+python3 tra_files_llm_translating/weidu_usage.py \
+  --audit-root ~/source --source-language english \
+  --report "$work_dir/weidu_audit.json"
+```
+
+The JSON report includes every TP2, including those with no selected language,
+missing source-language files and unresolved runtime inputs. `skip_reason` and
+`source_data_issues` distinguish nonlocalized helpers, absent English resources,
+and malformed language declarations. Warnings identify the actual source paths;
+these cases are not reported as successful full coverage.
+
+#### Categorized CSVs and context
+
+`text_categories.py` extends the existing builder. `--unused-layout auto` (the
+default) chooses categorized extraction when `--tp2-file` is present. Explicit
+`--unused-layout legacy` keeps the old single `_unused_tra_lines.csv`. Use a fresh
+output directory for categorized extraction; the CLI refuses existing CSVs so
+old catch-all files cannot duplicate the new categories.
+
+All new files use the same dialogue CSV columns accepted by the translator and
+TRA updater. Additional metadata includes `Text_Type`, `Speaker_Gender`,
+`Display_Target`, `Resource`, `Field`, `Source_Context`, and `Usage_Context`.
+The model receives this context, while the exporter keeps physical TRA filenames
+and IDs as the authoritative write-back keys.
+
+| CSV group | Grouping and translation context |
+| --- | --- |
+| `baf__…` | One IF block's RESPONSE branch per file; all `DisplayString` / `DisplayStringHead` actions remain in order, including cutscenes. Alternative responses are separate files with no invented links. D `DO` action strings are also inspected for these actions. |
+| `journal__…` | Journal entries from BAF actions, D journal clauses/DO strings and installer `ADD_JOURNAL`; grouped by source TRA and explicit journal title when present. Player1 supplies the male/female narrator agreement. |
+| `item__…`, `spell__…` | Each resource's names and descriptions together. Shared names appear with each applicable resource and keep one physical TRA translation. |
+| `character_sound__…` | One actor's soundset together, with known gender and sound-slot metadata. |
+| Creature/name/store/biography groups | Split by type, source TRA and known gender/actor where applicable. |
+| Map/area labels | Native `AddMapNote` text and recognized area-structure string fields, kept separate from speech. |
+| Other game text / `unclassified__…` | Remaining physical TRA literals, grouped by type/source file; no unknown or unreferenced text is discarded. |
+
+`--category-batch-size` limits standalone groups (default 40). BAF response
+branches, individual item/spell resource groups and actor soundsets stay intact.
+It controls grouping, not model generation limits. `--cre-folder` can be repeated
+to supply additional game CRE folders; mod resources take precedence.
+`--actors-file` supplies reviewed actor genders. CRE V1.0 script slots and ARE
+V1.0 area/region scripts identify BAF owners; unsupported/ambiguous owners remain
+unknown. `ActionOverride` and `CutSceneId` are tracked, including nested overrides.
+A D DO action's `Myself` stays unknown when its executing actor is not proven.
+
+CRE sound text assigned by TP2/include `SAY` statements is associated with the
+copied CRE resource, including assignments inside supported patch helpers.
+Named slots such as `BATTLE_CRY1`, `DAMAGE`, `DYING` and `SELECT_COMMON1`, and
+numeric CRE V1 sound offsets, become `character_sound` rows. The translation
+prompt receives the CRE actor's gender, resource filename and sound slot, so
+short cries follow the NPC's agreement in both protagonist versions. A shared
+TRA entry retains all its associated speakers/genders and one physical
+translation; differing or unspecified genders require wording suitable for all
+of them. Use the CRE-folder and reviewed-actor options above for gender context
+when the resource is outside the mod. These hints come from source CRE headers
+and reviewed actor data; arbitrary installer changes to CRE gender are not
+executed or inferred.
+
+A display target is distinct from the speaker. Parenthesized display narration
+is exported with `NARRATOR` and `Text_Type=notification`, retaining its original
+target separately. Other display text retains the target/owner and available
+gender context; the prompt preserves impersonal descriptions rather than
+inventing character speech. Player2–Player6 stay unspecified even if another
+column or actor table claims a fixed gender.
+
+Every copy of a shared TRA entry receives its observed usage contexts, including
+D dialogue uses. The translator reuses established translations consistently;
+if every string in a later file is already translated, it makes no model call.
+Source mismatches and invalid cached formatting still stop export.
+
+`_extraction_manifest.json` lists generated files, category counts, unclassified
+references, reused native TLK references and coverage against the full source TRA
+inventory. Row counts can exceed distinct-entry counts because one string can
+have several uses. Native TLK text has no mod English literal to translate.
+Hardcoded DisplayString text remains unchanged and can supply read-only context.
+Dynamic resource paths/offsets that cannot be classified retain their text and
+source usage metadata; they do not receive a guessed item or actor identity.
+
+The same translation/export commands work for both layouts:
+
+```bash
+python3 tra_files_llm_translating/translate_dialogs.py "$work_dir/english_csv" \
+  --target "$work_dir/russian_csv" --backend codex --model gpt-6.1-sol \
+  --effort low --method both --actors "$work_dir/actors.csv" \
+  --dictionary tra_files_llm_translating/dict.csv
+
+python3 tra_files_llm_translating/update_tra_from_csv.py \
+  "$mod_dir/languages/english" "$work_dir/russian_csv" \
+  --output "$mod_dir/languages/russian"
+```
+
+All D sources are parsed before building the combined graph. Direct CHAIN endings
+(`EXTERN dialogue label` and `END dialogue label`), ordinary EXTERN/GOTO transitions
+and EXTEND additions can connect across files. State identities include source file
+and dialogue actor, so reused labels do not merge unrelated scenes. Local definitions
+take precedence; TP2 compilation groups disambiguate targets when available.
+Ambiguous definitions stop extraction rather than selecting an arbitrary file.
+Numeric destinations across separate compilation actions are linked only when a
+complete BEGIN resource establishes their state indices; APPEND-only resources
+have an unknown base-game state count.
+
+This produces 56 InkGallery dialogue CSVs; L#IGCS6 contains three connected scenes
+instead of nine fragments. Player replies retain their own destinations, so EXIT
+alternatives do not acquire continuation edges. Targets outside the available D
+sources remain external boundaries and do not merge separate scenes that happen
+to reference the same base-game state. `_dialogue_graph.json` records these targets
+and the number of cross-file line edges. Hardcoded nodes can connect TRA-backed
+lines and supply read-only context, but do not become editable CSV rows.
 
 ### 5. Translate CSVs with Codex as the chosen workflow default
 
@@ -409,6 +565,84 @@ Review actual Russian output for omissions, speaker/addressee agreement, glossar
 consistency, repeated strings and natural language. Keep request evidence; measure
 subscription allowance before/after the future real-mod batch rather than
 inferring it from speed or token counts.
+
+#### Item statistics templates
+
+Any source description with a `STATISTICS:` heading (case-insensitive, on its own
+line) receives item-specific prompt instructions, regardless of its CSV category.
+This applies to categorized CSVs and the legacy unused-lines CSV, with either
+translation backend and either gender method. The ordinary glossary still applies.
+
+`find_closest_item.py` selects a paired BG1EE English/Russian **statistics section**.
+The references are `reference/bg1-english.tra` and `reference/bgee.tra`, relative
+to this README. Statistics labels supply a vocabulary of short matching concepts,
+including `THAC0`, `Damage`, `Speed Factor`, requirements and ability fields.
+These concepts are then recognized throughout the statistics section, including
+ability sentences without colon-labelled fields. Rare concepts carry more weight
+than common ones such as `Weight`.
+For matching, `Target receives Acid/Cold/Electrical/Fire Resistance` is normalized
+to the corresponding `Acid/Cold/Electrical/Fire Resistance` label. The recipient
+wording remains unchanged in the reference example; it is not a separate statistic.
+`Chance to score a critical hit` supplies the independent concepts `Chance` and
+`Critical Hit`; `Damage done to user` supplies `Damage`. The globe-of-antimagic
+sentence supplies `Anti-magic`. Specific `Save vs. …` labels and `Saving Throws`
+remain distinct; `Save` matches generic mentions. Matching uses word boundaries and longer phrases first:
+the words in `Magic Resistance` do not also count as a generic `Resistance` match.
+Each concept contributes once per description, regardless of repeated occurrences;
+separate non-overlapping statistics may still supply distinct concepts.
+Weighted coverage favors matching the target's fields, penalizes unrelated
+sections, and prefers compatible weapon/armor structures. Ties prefer shorter
+examples and then the lower TRA number. Narrative prose and numeric values do
+not influence matching. Unmatched target fields are reported and must still be
+translated; the vocabulary is collected from the references, not a fixed list
+of allowed item properties.
+
+Only the example's statistics are sent to the model. Its Russian headings,
+terminology, section order, indentation and quotation style serve as a template.
+Its abilities, numbers and item identity must never be copied to the target.
+The target's narrative follows the ordinary faithful-translation rules. Each
+description gets its own example, including a separate example for a differing
+original female description when necessary. Selection loads once per translator
+and reuses cached matches; it requires no extra LLM request.
+
+Inspect a match for an actual InkGallery item CSV:
+
+```bash
+python3 tra_files_llm_translating/find_closest_item.py \
+  "$work_dir/english_csv/item__l#ig12r1.csv"
+
+# Also accepts a text description or a TRA file (optionally one entry):
+python3 tra_files_llm_translating/find_closest_item.py \
+  tra_files_llm_translating/reference/bg1-english.tra --tra-ref 6653
+
+# Regenerate the reviewable English/Russian keyword inventory:
+python3 tra_files_llm_translating/find_closest_item.py --list-keywords \
+  --output tra_files_llm_translating/reference/item_statistics_keywords.json
+```
+
+The checked-in inventory contains 61 English matching concepts and 65 Russian labels from 615
+paired descriptions, with item counts for each label. Matching derives its data
+from the paired TRA files; regenerate the
+inventory after updating those references. Pairing uses the same TRA number,
+so custom references must be corresponding English/Russian exports. Entries
+without a paired `ПАРАМЕТРЫ:` section are skipped and listed in the inventory;
+an entirely unusable reference set fails clearly. Reference narrative differences
+do not matter because narrative is excluded from examples.
+
+Templates are enabled by default. Override their sources with
+`translate_dialogs.py --item-reference-english PATH --item-reference-russian PATH`,
+or disable retrieval with `--no-item-templates`. The standalone selector uses
+`--reference-english PATH --reference-russian PATH`; `--output PATH` saves its JSON
+report. Reference files load only when a statistics description needs a template.
+Missing files fail that translation rather than silently dropping its template.
+
+Translation and TRA export validate the statistics' numeric inventory, including
+signs, percentages and dice expressions. Requirements may reorder (`5 Strength`
+→ `Сила 5`) and decimal commas are accepted. Statistics may adopt reference
+spacing/quotes, while narrative formatting and engine-token checks remain in
+force. This does not verify which property each number belongs to, units or
+semantic correctness; those still need review. `--test` remains an English-copy
+plumbing check and is not evidence of Russian item quality.
 
 ### 6. Convert reviewed CSVs into the Russian TRA folder
 
@@ -583,6 +817,34 @@ preserved in the final CSV.
 explicit, including when NPC information exists and when Player1 has no reply.
 NPC-only dialogue can still require variants because an NPC addresses Player1.
 
+`Player2`–`Player6` are current party slots, not fixed companion identities. Their
+gender remains unspecified in both protagonist versions, even if an actor CSV
+contains a fixed gender for that slot. Use wording suitable for either gender
+unless the source clearly establishes otherwise. Named NPC identities still use
+their known CRE genders.
+
+A display target is not necessarily a speaker. Impersonal narration, area/object
+descriptions and reward/status messages remain gender-neutral in both versions:
+"Gained +5% Fire Resistance" → "Получено +5% сопротивления огню", rather than
+"получил/получила". A known display-target gender does not turn narration into
+that character's speech.
+
+Journal entries are an exception: their first-person narrator is the protagonist,
+so they follow the same male/female agreement rules as Player1 dialogue replies.
+For example, "I spoke to a strange vampire today" becomes "Я сегодня поговорил со
+странным вампиром" / "Я сегодня поговорила со странным вампиром". Preserve plural
+"we", the original viewpoint, tense, and other characters' own genders; do not
+invent first-person narration where the source has none.
+
+With `--tp2-file`, extraction identifies journal references consumed by BAF
+`AddJournalEntry`/`EraseJournalEntry`, D `JOURNAL`/`SOLVED_JOURNAL`/`UNSOLVED_JOURNAL`,
+and TP2 `ADD_JOURNAL`, including journal actions in D `DO` strings. Journal rows
+carry `Text_Type=journal`; the translator routes those rows to Player1 and
+preserves the role in its CSV export. Other
+standalone rows retain unspecified speaker gender. Regenerate older CSVs with
+TP2 analysis to obtain this metadata; the translator does not guess a journal
+role from an arbitrary first-person sentence.
+
 **Speaker is not addressee or grammatical subject.** The graph describes incoming
 paths, not who every pronoun refers to. There is no `Addressee` field: the parser
 cannot fill it reliably, and in the 12-line test supplying it explicitly did not
@@ -723,16 +985,15 @@ encoding setup; these scripts do not compile or install the mod.
 
 Known extraction boundaries:
 
-- D-to-TRA mapping assumes matching basenames, case-insensitively; it does not
-  evaluate TP2 `LOAD_TRA`/`AUTO_TRA` overrides or conditional compilation.
-- EXTERN links across separate D-file parse walks are not resolved globally.
+- D-to-TRA mapping uses matching basenames, case-insensitively, plus the selected
+  TP2 fallback context when `--tp2-file` is supplied. Arbitrary runtime-generated
+  routing is not interpreted; conflicting possible sources stop extraction.
+- Targets in unavailable base-game DLG resources remain external graph boundaries;
+  arbitrary runtime changes to compiled state indices are not reconstructed.
 - Graph extraction does not prove who a line addresses. Do not infer gender from
   the speaker label alone.
-- Some direct CHAIN epilog EXTERN links are not joined by the current flow builder;
-  the full L#IGSTA file was split into nine extracted groups. Do not call these
-  group boundaries a complete model of every game dialogue transition.
-- Direct strings embedded in D files are translated for review but are not written
-  back by the TRA updater.
+- Hardcoded strings outside TRA files remain unchanged; extraction and write-back
+  target TRA-backed text only.
 - Subdirectories are not traversed by the translator/updater; supply the actual
   directory containing CSV/TRA files.
 

@@ -1,0 +1,15 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Titanic Lava Ankheg Plate,@68,TRA:setup.tra:@68,,,item_name,unknown,,InkGallery/items/l#igaar.itm,NAME1; NAME2,InkGallery.tp2:717 SAY NAME1; InkGallery.tp2:718 SAY NAME2,
+NARRATOR,2,,"This plate armor was created from a titanic lava ankheg shell. While lava ankhegs are quite rare, the titanic version of the creature must have been somewhat unique. It was huge and powerful, and it could spit some corrosive substance. But even that could not save it from death.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +30%
+– Physical Damage Resistance: +5%
+
+Armor Class: 0 (-3 vs. slashing, -1 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25",@69,TRA:setup.tra:@69,,,item_description,unknown,,InkGallery/items/l#igaar.itm,DESC,InkGallery.tp2:719 SAY DESC,

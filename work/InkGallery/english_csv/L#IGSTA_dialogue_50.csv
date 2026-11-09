@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGSTA,L#IGSTA_de6e5db0::L#IGSTA:04.0XX_INITIAL_0_SAY_81,,Just look at this book...,@73,TRA:l#igsta.tra:@73,,,,dialogue,FEMALE,

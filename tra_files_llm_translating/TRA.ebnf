@@ -14,7 +14,8 @@ forced      = "!", integer ;
 local       = variant, [ variant ] ;
 variant     = sequence, [ sound ] ;
 sequence    = literal, { "^", literal } ;
-literal     = tilde | quoted | percent | wide ;
+literal     = tilde | quoted | percent | wide | bare ;
+bare        = ? [0-9A-Za-z_][0-9A-Za-z_#.-]* excluding exact Dlexer keywords ? ;
 tilde       = "~", ? any characters except ~ ?, "~" ;
 quoted      = '"', ? any characters except double quote ?, '"' ;
 percent     = "%", ? any characters except % ?, "%" ;
@@ -26,5 +27,5 @@ reference   = "#", integer | "@", integer | "(", "AT", literal, ")" ;
    Five-tilde opening delimiters take precedence over a one-tilde opening.
    Concatenation adds no whitespace. Backslashes do not escape delimiters.
    Forced/reference values require allow_references=True and are never evaluated.
-   Unlike the full upstream lexer, this subset requires delimited strings; bare
-   identifier-like strings and runtime evaluation are deliberately unsupported. *)
+   Bare identifier-like strings follow Dlexer tokenization; its exact uppercase
+   keywords are reserved. Runtime evaluation remains unsupported. *)

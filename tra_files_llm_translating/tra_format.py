@@ -16,6 +16,25 @@ ENTRY_START = re.compile(r'@(-?[0-9]+)')
 REFERENCE = re.compile(r'[#@]-?[0-9]+')
 FORCED_REFERENCE = re.compile(r'!(-?[0-9]+)')
 LINE_END = re.compile(r'[\r\n]')
+BARE_STRING = re.compile(r'[0-9A-Za-z_][0-9A-Za-z_#.-]*')
+# Dlexer supplies TRA's String token too. Its exact uppercase keywords are
+# reserved; ordinary bare identifiers (including EXIT2) are literal strings.
+RESERVED_STRINGS = set('''ADD_STATE_TRIGGER ADD_TRANS_ACTION ADD_TRANS_TRIGGER
+ALTER_TRANS APPEND APPENDI APPEND_EARLY AT A_S_T A_T_T BEGIN BRANCH CHAIN CHAIN2
+CHAIN3 COPY_TRANS COPY_TRANS_LATE DO END EXTEND EXTEND_BOTTOM EXTEND_BOTTOM_REGEXP
+EXTEND_TOP EXTEND_TOP_REGEXP EXTERN EXIT FLAGS GOTO IF IF_FILE_EXISTS INTERJECT
+INTERJECT_COPY_TRANS INTERJECT_COPY_TRANS2 INTERJECT_COPY_TRANS3 INTERJECT_COPY_TRANS4
+I_C_T I_C_T2 I_C_T3 I_C_T4 JOURNAL REPLACE REPLACE_ACTION_TEXT
+REPLACE_ACTION_TEXT_PROCESS REPLACE_ACTION_TEXT_PROCESS_REGEXP
+REPLACE_ACTION_TEXT_REGEXP REPLACE_SAY REPLACE_STATE_TRIGGER REPLACE_TRIGGER_TEXT
+REPLACE_TRIGGER_TEXT_REGEXP REPLACE_TRANS_ACTION REPLACE_TRANS_TRIGGER REPLY
+R_A_T R_A_T_P_R R_S_T R_T_T SAFE SAY SET_WEIGHT SOLVED_JOURNAL THEN UNLESS
+UNSOLVED_JOURNAL WEIGHT'''.split())
+
+
+def _bare_string(content, pos):
+    match = BARE_STRING.match(content, pos)
+    return match if match and match[0] not in RESERVED_STRINGS else None
 
 
 @dataclass
@@ -42,7 +61,13 @@ def read_text(path):
     try:
         return raw.decode('utf-8-sig')
     except UnicodeDecodeError:
-        encoding = chardet.detect(raw)['encoding']
+        # Recent chardet versions sample only the first 200 KB by default. A
+        # long ASCII header must not hide legacy characters later in the file.
+        try:
+            encoding = chardet.detect(raw, max_bytes=len(raw))['encoding']
+        except TypeError:
+            # Older versions inspect the complete input and lack max_bytes.
+            encoding = chardet.detect(raw)['encoding']
         if not encoding:
             raise ValueError(f'Cannot detect encoding of {path}')
         return raw.decode(encoding)
@@ -78,6 +103,9 @@ def _trivia(content, pos):
 def _literal(content, pos):
     delimiter = '~~~~~' if content.startswith('~~~~~', pos) else content[pos:pos + 1]
     if delimiter not in ('~', '"', '%', '~~~~~'):
+        bare = _bare_string(content, pos)
+        if bare:
+            return bare[0], bare.end(), ''
         raise ValueError(f'Expected TRA string at character {pos}')
     end = content.find(delimiter, pos + len(delimiter))
     if end < 0:
@@ -158,7 +186,7 @@ def parse_tra(content, *, allow_references=False, duplicate_policy='error'):
         first = _variant(content, start)
         variants = [first]
         pos = _trivia(content, first.end)
-        if content[pos:pos + 1] in ('~', '"', '%'):
+        if content[pos:pos + 1] in ('~', '"', '%') or _bare_string(content, pos):
             second = _variant(content, pos)
             variants.append(second)
             pos = _trivia(content, second.end)

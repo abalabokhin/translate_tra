@@ -12,7 +12,7 @@ from unittest.mock import patch
 SCRIPTS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPTS))
 sys.path.insert(0, str(SCRIPTS / 'experiments'))
-from translate_dialogs import DialogTranslator, main, TRANSLATION_RULES
+from translate_dialogs import DialogTranslator, main, TRANSLATION_RULES, UNSPECIFIED_GENDER_NOTE
 from translation_common import DIALOGUE_COLUMNS, TRANSLATION_COLUMNS, read_csv, write_csv
 from update_tra_from_csv import TraUpdater
 import run_codex_translation as runner
@@ -153,16 +153,24 @@ class BackendTests(unittest.TestCase):
                 self.assertTrue((self.target/'dialogue.both.rejected.txt').is_file())
                 self.assertTrue(calls[0].with_name('response.txt').is_file())
 
-    def test_production_payloads_and_schemas_match_saved_comparison(self):
+    def test_production_graphs_and_schemas_match_saved_comparison(self):
         historical=SCRIPTS/'experiments/codex_translation/20261107-sol-low-one-repeat/results'
         for name,checks in runner.datasets():
             e=runner.experiment(checks,self.root/name)
             system,user,schema=runner.both_request(e)
             saved=historical/name/'model-1/both/1/both'
-            # Preserve the experiment's original instructions. Production rules
-            # can improve while its dialogue payload/schema remain reproducible.
+            # Archived experiment instructions stay unchanged. Production
+            # instructions now also cover unspecified party slots/narration;
+            # compare the source graph, metadata and schema independently.
             saved_user=(saved/'prompt.txt').read_text().split('\n\nDIALOGUE DATA:\n',1)[1]
-            self.assertEqual(user,saved_user)
+            current_data, saved_data = json.loads(user), json.loads(saved_user)
+            current_data.pop('instruction')
+            saved_data.pop('instruction')
+            for line in current_data['dialogue']:
+                if line.get('note') == UNSPECIFIED_GENDER_NOTE:
+                    self.assertNotIn(line['speaker_gender'], ('MALE', 'FEMALE', 'male', 'female'))
+                    line.pop('note')
+            self.assertEqual(current_data,saved_data)
             self.assertEqual(schema,json.loads((saved/'schema.json').read_text()))
             self.assertEqual(system,TRANSLATION_RULES)
 

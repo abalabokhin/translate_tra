@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+L#IGSTA,l1,,And here is our hero! Welcome back!,@147,TRA:setup.tra:@147,,,baf_dialogue,FEMALE,L#IGSTA,,,"scripts/L#IG00.baf:891; block 92, RESPONSE #100; conditions: AreaCheckObject ( ""L#IG00"" , Player1 ) Global ( ""L#IGBook9"" , ""GLOBAL"" , 3 ); action: DisplayStringHead; actions: AmbientActivate, DisplayStringHead, AddStoreItem, SetGlobal",

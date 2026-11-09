@@ -1,0 +1,22 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Small Shield,@79,TRA:setup.tra:@79,,,item_name,unknown,,InkGallery/items/l#igshi.itm,NAME1,InkGallery.tp2:737 SAY NAME1,
+NARRATOR,2,,Three Moon Phases +3,@80,TRA:setup.tra:@80,,,item_name,unknown,,InkGallery/items/l#igshi.itm,NAME2,InkGallery.tp2:738 SAY NAME2,
+NARRATOR,3,,"This small shield was created by winged celestial beings, the Moon Sisters. If legends are true, each of them was responsible for one part of this shield, and then they were put together, creating an unusual piece of gear that's even more impressive during the nighttime.
+
+The shield, while it does not protect from missiles in the usual way, can weaken projectiles by burning them with moonlight.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– Does not provide an Armor Class bonus against missile attacks
+– Missile Damage Resistance: 50%
+– Magic Resistance: +3%
+
+Special abilities:
+– During nighttime, each round, the wielder of the shield gains one of three additional bonuses at random: +1 Luck, Regeneration (3 Hit Points over 1 round), or Protection from Petrification.
+
+Requires:
+ 4 Strength
+
+Weight: 2",@81,TRA:setup.tra:@81,,,item_description,unknown,,InkGallery/items/l#igshi.itm,DESC,InkGallery.tp2:739 SAY DESC,

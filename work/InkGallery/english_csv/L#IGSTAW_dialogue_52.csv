@@ -1,0 +1,3 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGSTAW,L#IGSTAW_90f14632::L#IGSTAW:000_INITIAL_0_SAY_0,,"** We too came out of little eggs, laid on a leaf in the light of the moon. **",@0,TRA:L#IGSTAW.tra:@0,,,,dialogue,NEITHER,
+L#IGSTAW,L#IGSTAW_90f14632::L#IGSTAW:000_BLOCK_0_ELEMENT_0_SAY_1,L#IGSTAW_90f14632::L#IGSTAW:000_INITIAL_0_SAY_0,"** But we never liked apples, no. So we went down, deep underground. And we tasted these... mushrooms. And they were so wonderul! **",@1,TRA:L#IGSTAW.tra:@1,,,,dialogue,NEITHER,

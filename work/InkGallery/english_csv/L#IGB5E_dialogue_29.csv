@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB5E,L#IGB5E_42ed35e2::L#IGB5E:000_INITIAL_0_SAY_0,,"** Ah! There you are! I knew my rival would sent someone to slay me! Hahaha! Pathetic thing, what were you promissed? Well—it doesn't matter. I know already what I am going to do with you. Come. Let me and my faithful huntresses tear you apart. **",@0,TRA:l#igb5e.tra:@0,,,,dialogue,NEITHER,

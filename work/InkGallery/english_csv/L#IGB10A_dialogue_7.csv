@@ -1,0 +1,8 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB10A,L#IGB10E_9727545c::L#IGB10A:000_INITIAL_0_SAY_0,,Brothersss! It looksss like a good meal! A bit one! And it come here on itsss own!,@0,TRA:l#igb10e.tra:@0,,,,dialogue,MALE,
+L#IGB10B,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_0_ELEMENT_0_SAY_1,L#IGB10E_9727545c::L#IGB10A:000_INITIAL_0_SAY_0,They be ssstupid? They must be ssstupid! People know we be here! And they come anyway? Sss-hah!,@1,TRA:l#igb10e.tra:@1,,,,dialogue,MALE,
+L#IGB10C,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_1_ELEMENT_0_SAY_2,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_0_ELEMENT_0_SAY_1,But them may be tasssty anywaysss... No?,@2,TRA:l#igb10e.tra:@2,,,,dialogue,MALE,
+L#IGB10A,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_2_ELEMENT_0_SAY_3,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_1_ELEMENT_0_SAY_2,"Oh, of courssse they can ssstill be quite tasssty. Mmm. Brothersss...?",@3,TRA:l#igb10e.tra:@3,,,,dialogue,MALE,
+L#IGB10B,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_3_ELEMENT_0_SAY_4,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_2_ELEMENT_0_SAY_3,Yesss?,@4,TRA:l#igb10e.tra:@4,,,,dialogue,MALE,
+L#IGB10C,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_4_ELEMENT_0_SAY_5,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_3_ELEMENT_0_SAY_4,...,@5,TRA:l#igb10e.tra:@5,,,,dialogue,MALE,
+L#IGB10A,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_5_ELEMENT_0_SAY_6,L#IGB10E_9727545c::L#IGB10A:000_BLOCK_4_ELEMENT_0_SAY_5,The meal is ssserved!,@6,TRA:l#igb10e.tra:@6,,,,dialogue,MALE,

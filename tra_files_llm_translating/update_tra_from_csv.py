@@ -133,7 +133,7 @@ class TraUpdater:
 
     def parse_tra_file(self, tra_file: Path) -> Dict[int, TraEntry]:
         """Parse real literals and both gender/sound variants, ignoring comments."""
-        return parse_tra(read_text(tra_file))
+        return parse_tra(read_text(tra_file), allow_references=True, duplicate_policy='last')
 
     def update_tra_file(self, tra_file: Path, write: bool = True):
         """Replace only literal spans, leaving original comments and sounds in place."""
@@ -143,6 +143,9 @@ class TraUpdater:
         missing = tra_translations.keys() - original_entries.keys()
         if missing:
             raise ValueError(f"{tra_file}: missing original entries {sorted(missing)}")
+        nonliteral = [n for n in tra_translations if not original_entries[n].variants]
+        if nonliteral:
+            raise ValueError(f'{tra_file}: cannot overwrite reference-valued entries {nonliteral}')
         updated_content = original_content
         for number in sorted(tra_translations, key=lambda n: original_entries[n].variants[0].start, reverse=True):
             data = tra_translations[number]
@@ -150,7 +153,7 @@ class TraUpdater:
             validate_text(entry.variants[0].text, data['male'], f'{tra_file}:@{number}/male')
             validate_text(entry.variants[-1].text, data['female'], f'{tra_file}:@{number}/female')
             updated_content = replace_entry(updated_content, entry, data['male'], data['female'])
-        if parse_tra(updated_content).keys() != original_entries.keys():
+        if parse_tra(updated_content, allow_references=True, duplicate_policy='last').keys() != original_entries.keys():
             raise ValueError(f"{tra_file}: generated TRA entries differ from original")
         if write:
             atomic_write(self.output_folder / tra_file.name, lambda handle: handle.write(updated_content))

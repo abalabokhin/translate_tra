@@ -37,7 +37,7 @@ Supported features and regression checks:
 
 | Feature | Behavior / coverage |
 | --- | --- |
-| Delimiters | Tilde, double quote, percent and five tildes; multiline and empty literals. |
+| Delimiters | Tilde, double quote, percent and five tildes; multiline and empty literals. Bare identifier-like strings follow the D/TRA lexer; its exact uppercase keywords remain reserved. |
 | Gender pairs | Both variants; identical or empty variants; sounds on either, both or neither. |
 | Sounds | Optional bracketed tokens, including empty sounds; preserved verbatim, outside text. |
 | Concatenation | `^` joins literal parts without inserting spaces; each gender can concatenate independently. |
@@ -45,7 +45,7 @@ Supported features and regression checks:
 | Literal punctuation | Comment syntax, `@N`, brackets, engine tags and other delimiters inside a string remain literal content. Backslashes are not C-style escapes. |
 | Layout | LF, CRLF and CR line endings; adjacent entries; EOF comments; initial Unicode BOM. |
 | IDs | Signed decimal IDs and leading zeros; values normalize to Python integers. |
-| Duplicate IDs | Strict updater mode rejects them; dictionary inspection explicitly selects the last definition. |
+| Duplicate IDs | Default parser mode rejects them; pipeline inspection explicitly selects the last definition, matching WeiDU. Earlier physical definitions are preserved during export. |
 | Encoding | UTF-8/BOM, UTF-16/BOM, UTF-32/BOM and CP1251 regression cases through the encoding reader. Other legacy encodings use chardet and depend on detection. |
 | Updates | Male/female sounds, intervening comments, concatenation trivia, unrelated entries and line endings survive literal replacement. A safe alternate delimiter is chosen if needed. |
 | Errors | Truncated literals/comments/sounds, missing `=`, bad concatenations, excess variants/sounds and trailing unsupported syntax fail explicitly. |
@@ -88,8 +88,10 @@ Literal names reached only through an external TLK/reference are outside the
 collector's physical input-text scope; dictionary collection does not need to
 execute WeiDU to discover them.
 
-The upstream lexer also allows some bare identifier-like strings. This reader
-requires delimited literals; it rejects bare strings and arbitrary expressions.
+Bare identifier-like strings are accepted: `@1=Hello` is a literal, and
+`@2=~Text~ EXIT2` has the female literal `EXIT2`. Sound metadata and concatenation
+work with these tokens too. Replacements use safe delimiters. Arbitrary runtime
+expressions remain unsupported.
 Other pipeline stages may impose narrower constraints on IDs/routing than the
 shared syntax reader. These are documented boundaries, not a claim that every
 valid WeiDU program can be evaluated by this parser.

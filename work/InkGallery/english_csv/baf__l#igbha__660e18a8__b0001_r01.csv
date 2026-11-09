@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,l1,,(This huge book is looking quite ominous.),@171,TRA:setup.tra:@171,,,notification,unknown,REGION:Bhaalbook,,,"scripts/L#IGBHA.baf:7; block 1, RESPONSE #100; conditions: Clicked ( [ ANYONE ] ) Range ( LastTrigger , 12 ) ! Global ( ""L#IGBooksCompleted"" , ""GLOBAL"" , 7 ); action: DisplayString; actions: DisplayString",

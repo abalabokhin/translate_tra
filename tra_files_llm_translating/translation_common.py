@@ -7,6 +7,7 @@ import re
 import tempfile
 from collections import Counter
 from pathlib import Path
+from find_closest_item import statistics_section, statistics_parts, statistics_numbers
 
 DIALOGUE_COLUMNS = ['Actor', 'Line_ID', 'Predecessors', 'Dialogue_Text',
                     'TRA_Reference', 'Additional_Info']
@@ -25,11 +26,22 @@ def validate_text(source, translated, label='translation'):
         raise ValueError(f'{label}: empty/nonempty text does not match the source')
     if Counter(TOKEN_PATTERN.findall(source)) != Counter(TOKEN_PATTERN.findall(translated)):
         raise ValueError(f'{label}: engine placeholders or formatting tokens changed')
+    source_layout, translated_layout = source, translated
+    if statistics_section(source) is not None:
+        original_parts, translated_parts = statistics_parts(source), statistics_parts(translated)
+        if translated_parts is None:
+            raise ValueError(f'{label}: item statistics heading is missing')
+        if statistics_numbers(original_parts[1]) != statistics_numbers(translated_parts[1]):
+            raise ValueError(f'{label}: item statistics numbers, signs, percentages or dice changed')
+        # Statistics can adopt reference spacing/quotes. Narrative keeps the
+        # existing formatting checks; engine tokens are still checked globally.
+        source_layout, translated_layout = original_parts[0], translated_parts[0]
     for marker in ('\n', '*', '[', ']'):
-        if source.count(marker) != translated.count(marker):
+        a, b = (source_layout, translated_layout) if marker == '\n' else (source, translated)
+        if a.count(marker) != b.count(marker):
             raise ValueError(f'{label}: changed number of {marker!r} markers')
     quote_chars = '\"«»“”„'
-    if sum(source.count(c) for c in quote_chars) != sum(translated.count(c) for c in quote_chars):
+    if sum(source_layout.count(c) for c in quote_chars) != sum(translated_layout.count(c) for c in quote_chars):
         raise ValueError(f'{label}: changed number of quotation marks')
 
 
@@ -124,6 +136,23 @@ def merge_dialogue_rows(rows):
                 if predecessor != same[0][1] and predecessor not in predecessors:
                     predecessors.append(predecessor)
         merged = [';'.join(speakers), same[0][1], ';'.join(predecessors)] + same[0][3:]
+        if 'Speaker_Gender' in rows[0]:
+            column = rows[0].index('Speaker_Gender')
+            by_actor = {}
+            for row in same:
+                names, genders = row[0].split(';'), row[column].split(';')
+                if len(names) != len(genders):
+                    genders = ['unknown'] * len(names)
+                for name, gender in zip(names, genders):
+                    if name in by_actor and by_actor[name] != gender:
+                        by_actor[name] = 'unknown'
+                    else:
+                        by_actor[name] = gender
+            merged[column] = ';'.join(by_actor.get(name, 'unknown') for speaker in speakers for name in speaker.split(';'))
+        for name in ('Source_Context', 'Usage_Context', 'Display_Target', 'Resource', 'Field'):
+            if name in rows[0]:
+                column = rows[0].index(name)
+                merged[column] = ' | '.join(dict.fromkeys(row[column] for row in same if row[column]))
         if 'Addressee' in rows[0]:
             column = rows[0].index('Addressee')
             if len({r[column] for r in same}) > 1:

@@ -114,7 +114,7 @@ class TraFormatTests(unittest.TestCase):
                  '@1=~~~~~Open', '@1=~Text~ [OPEN', '@1=~Text~ /* OPEN',
                  '/* outer /* inner */', '@1=~A~ ^', '@1=~A~ ^ [sound]',
                  '@1=~A~ [S] ^ ~B~', '@1=~A~ ~B~ ~C~', '@1=~A~ [S] [T]',
-                 '@1=~A~ garbage', '@1=#', '@1=(AT "name"', '@1=(OTHER "name")',
+                 '@1=~A~ END', '@1=#', '@1=(AT "name"', '@1=(OTHER "name")',
                  '@1=(AT "name" ^ "suffix")']
         for source in sources:
             with self.subTest(source=source),self.assertRaises(ValueError):
@@ -145,6 +145,26 @@ class TraFormatTests(unittest.TestCase):
                     path.write_bytes(text.encode(encoding))
                     self.assertEqual(read_text(path),text)
                     self.assertEqual(parse_tra(read_text(path))[1].variants[0].text,'Привет')
+
+    def test_legacy_character_after_large_ascii_header_is_detected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'long.tra'
+            path.write_bytes(b'// ASCII header\n' * 17000 + b'@1=~Don\x92t lose me.~')
+            self.assertEqual(parse_tra(read_text(path))[1].variants[0].text,
+                             'Don’t lose me.')
+
+
+    def test_bare_strings_match_native_tra_lexer(self):
+        entries = parse_tra('@1=Hello [M] Female-2 [F] @2=~Good luck~ EXIT2 @3=123^_suffix')
+        self.assertEqual([v.text for v in entries[1].variants], ['Hello', 'Female-2'])
+        self.assertEqual(entries[2].variants[1].text, 'EXIT2')
+        self.assertEqual(entries[3].variants[0].text, '123_suffix')
+        self.assertEqual(entries[1].variants[0].sound, '[M]')
+        with self.assertRaises(ValueError):
+            parse_tra('@1=Hello Female Third')
+        with self.assertRaises(ValueError):
+            parse_tra('@1=END')
+        self.assertEqual(parse_tra('@1=end')[1].variants[0].text, 'end')
 
 
 if __name__=='__main__':unittest.main()

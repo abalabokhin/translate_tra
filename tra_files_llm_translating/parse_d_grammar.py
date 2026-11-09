@@ -4,6 +4,8 @@ import argparse
 import os
 import csv
 import chardet
+import json
+from pathlib import Path
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Set
@@ -12,6 +14,7 @@ from antlr4 import *
 from DLexer import DLexer
 from DParser import DParser
 from tra_format import parse_tra, read_text
+from weidu_usage import WeiduUsage
 from antlr4.error.ErrorListener import ErrorListener
 
 
@@ -55,10 +58,15 @@ class DialogueState:
 class ImprovedDialogueListener(ParseTreeListener):
     """Enhanced ANTLR4 listener with proper state tracking and transition resolution."""
 
-    def __init__(self, d_filename, tra_folder):
+    def __init__(self, d_filename, tra_folder, usage=None, source_path=None):
         self.d_filename = d_filename
         self.tra_folder = tra_folder
         self.tra_cache = {}
+        self.usage = usage
+        self.source_path = Path(source_path or d_filename).resolve()
+        self.resolved_ref_files = {}
+        self.resolved_ref_numbers = {}
+        self.tlk_refs = {}
         self.used_tra_entries = set()  # Track which TRA entries are used
 
         # Enhanced state tracking
@@ -75,6 +83,10 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         # Chain tracking
         self.chain_roots = {}  # (speaker, label) -> root_state_id
+        self.public_states = {}  # actual source labels -> entry state, including CHAIN roots
+        self.automatic_transitions = defaultdict(list)
+        self.created_dialogues = set()
+        self.unknown_numeric_layout = set()
 
         # Error tracking
         self.missing_tra_refs = set()
@@ -116,9 +128,14 @@ class ImprovedDialogueListener(ParseTreeListener):
     
     def create_source_info(self, text_node, tra_ref=None):
         """Create source information for translation purposes."""
+        if text_node and text_node.getText().startswith('@'):
+            number = int(text_node.getText()[1:])
+            if number in self.tlk_refs:
+                return f'TLK:{self.tlk_refs[number]}'
         if tra_ref:
             # This text comes from TRA file
-            return f"TRA:{self.tra_filename}:{tra_ref}"
+            filename = self.resolved_ref_files.get(int(tra_ref[1:]), self.tra_filename)
+            return f"TRA:{filename}:{tra_ref}"
         else:
             # This text comes from D file - find line number
             if text_node:
@@ -138,8 +155,9 @@ class ImprovedDialogueListener(ParseTreeListener):
             # D files with only direct strings need no corresponding TRA file.
             return {}
         self.tra_filename = matches[0]
-        entries = parse_tra(read_text(os.path.join(self.tra_folder, self.tra_filename)))
-        tra_dict = {number: entry.variants[0].text for number, entry in entries.items()}
+        entries = parse_tra(read_text(os.path.join(self.tra_folder, self.tra_filename)),
+                            allow_references=True, duplicate_policy='last')
+        tra_dict = {number: entry.variants[0].text for number, entry in entries.items() if entry.variants}
         self.tra_cache[self.tra_filename] = tra_dict
         print(f"Loaded {len(tra_dict)} TRA entries from {self.tra_filename}")
         return tra_dict
@@ -152,14 +170,35 @@ class ImprovedDialogueListener(ParseTreeListener):
         text = text_node.getText()
 
         # Handle TRA references (@123)
-        if text.startswith('@') and text[1:].isdigit():
+        if text.startswith('@') and text[1:].lstrip('-').isdigit():
             tra_number = int(text[1:])
-            if tra_number in self.tra_dict:
+            if self.usage is not None:
+                path, entry = self.usage.resolve(self.source_path, tra_number)
+                if not entry.variants:
+                    self.tlk_refs[tra_number] = entry.reference
+                    return ''
+                if path.parent != Path(self.tra_folder).resolve():
+                    raise ValueError(f'{self.d_filename}: TRA source {path} is outside the supplied flat TRA folder')
+                self.resolved_ref_files[tra_number] = path.name
+                self.resolved_ref_files[entry.number] = path.name
+                self.resolved_ref_numbers[tra_number] = entry.number
+                self.used_tra_entries.add((path.name.casefold(), entry.number))
+                return entry.variants[0].text
+            elif tra_number in self.tra_dict:
                 # Track this TRA entry as used
                 self.used_tra_entries.add((self.tra_filename.casefold(), tra_number))
+                self.resolved_ref_files[tra_number] = self.tra_filename
                 return self.tra_dict[tra_number]
             else:
-                raise ValueError(f"{self.d_filename}: unresolved {text} in {self.tra_filename}")
+                original = self.tra_filename
+                fallback = self.load_tra_file('setup.tra')
+                filename = self.tra_filename
+                self.tra_filename = original
+                if tra_number in fallback:
+                    self.resolved_ref_files[tra_number] = filename
+                    self.used_tra_entries.add((filename.casefold(), tra_number))
+                    return fallback[tra_number]
+                raise ValueError(f"{self.d_filename}: unresolved {text} in corresponding TRA or setup.tra")
 
         # Clean direct text (remove quotes/tildes)
         if (text.startswith('~') and text.endswith('~')) or \
@@ -184,8 +223,11 @@ class ImprovedDialogueListener(ParseTreeListener):
         if text_node is None:
             return None
         text = text_node.getText()
-        if text.startswith('@') and text[1:].isdigit():
-            return text
+        if text.startswith('@') and text[1:].lstrip('-').isdigit():
+            number = int(text[1:])
+            if number in self.tlk_refs:
+                return None
+            return '@' + str(self.resolved_ref_numbers.get(number, number))
         return None
     
     def enterInterjectCopyTransDAction(self, ctx: DParser.InterjectCopyTransDActionContext):
@@ -254,6 +296,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         """Handle BEGIN dialogueName action."""
         if ctx.dlg:
             self.current_speaker = self.get_speaker_from_file_rule(ctx.dlg)
+            self.created_dialogues.add(self.current_speaker.casefold())
             if self.current_speaker not in self.all_speakers:
                 self.all_speakers[self.current_speaker] = {}
     
@@ -268,6 +311,7 @@ class ImprovedDialogueListener(ParseTreeListener):
         """Handle APPEND_EARLY dialogueName action."""
         if ctx.dlg:
             self.current_speaker = self.get_speaker_from_file_rule(ctx.dlg)
+            self.unknown_numeric_layout.add(self.current_speaker.casefold())
             if self.current_speaker not in self.all_speakers:
                 self.all_speakers[self.current_speaker] = {}
     
@@ -316,10 +360,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                     # Extract and store transition targets
                     targets = self.extract_transition_targets(trans_ctx)
                     if targets:
-                        self.add_transition(state_id, targets[0]) # add_transition takes single target
-                        # Use internal logic if multiple targets (though add_transition implies list append)
-                        for t in targets[1:]:
-                             self.add_transition(state_id, t)
+                        for target in targets:
+                            self.add_transition(state_id, target, automatic=not reply_lines)
 
     def enterChainDAction(self, ctx: DParser.ChainDActionContext):
         """Handle CHAIN dialogue action."""
@@ -359,6 +401,7 @@ class ImprovedDialogueListener(ParseTreeListener):
                 if not root_recorded:
                     print(f"DEBUG: Registering chain root: ({self.current_speaker}, {chain_label}) -> {state_id}")
                     self.chain_roots[(self.current_speaker, chain_label)] = state_id
+                    self.register_public_state(self.current_speaker, chain_label, state_id)
                     root_recorded = True
                 
                 # Connect from previous state if exists
@@ -512,6 +555,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                 # Extract transition targets
                 targets = self.extract_transition_targets(trans_ctx)
                 transition_targets.extend(targets)
+                if not reply_lines:
+                    self.automatic_transitions[parent_state_id].extend(targets)
 
             # Store transitions for parent state
             if transition_targets:
@@ -538,7 +583,9 @@ class ImprovedDialogueListener(ParseTreeListener):
         if not ctx.label:
             return
             
-        state_id = self.state_key(self.current_speaker, self.resolve_text(ctx.label))
+        label = self.resolve_text(ctx.label)
+        state_id = self.state_key(self.current_speaker, label)
+        self.register_public_state(self.current_speaker, label, state_id)
         self.current_state_id = state_id
         self.current_state_context = ctx
         
@@ -580,6 +627,8 @@ class ImprovedDialogueListener(ParseTreeListener):
                 # Extract transition targets
                 targets = self.extract_transition_targets(trans_ctx)
                 transition_targets.extend(targets)
+                if not reply_lines:
+                    self.automatic_transitions[state_id].extend(targets)
         
         # Store transitions
         self.state_transitions[state_id] = transition_targets
@@ -670,11 +719,19 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         return replies
     
-    def add_transition(self, from_state, to_state):
+    def register_public_state(self, speaker, label, state_id):
+        key = (speaker.casefold(), label)
+        if key in self.public_states:
+            raise ValueError(f'{self.d_filename}: duplicate state label {speaker}:{label}')
+        self.public_states[key] = state_id
+
+    def add_transition(self, from_state, to_state, automatic=True):
         """Add a transition between states."""
         if from_state not in self.state_transitions:
             self.state_transitions[from_state] = []
         self.state_transitions[from_state].append(to_state)
+        if automatic:
+            self.automatic_transitions[from_state].append(to_state)
 
     def extract_transition_targets(self, trans_ctx):
         """Extract target states from transition context."""
@@ -698,168 +755,47 @@ class ImprovedDialogueListener(ParseTreeListener):
         
         return targets
     
-    def build_enhanced_dialogue_flow(self):
-        """Build dialogue connections using state transition information."""
-        print(f"Building dialogue flow for {len(self.all_states)} states...")
-        
-        # Step 1: Connect SAY lines to REPLY lines within same state
-        for state in self.all_states:
-            state_lines = [line for line in self.all_lines if line.state_id == state.state_id]
-            say_lines = [line for line in state_lines if line.line_type == "SAY"]
-            reply_lines = [line for line in state_lines if line.line_type == "REPLY"]
-            
-            # SAY lines precede REPLY lines within the same state
-            for reply_line in reply_lines:
-                for say_line in say_lines:
-                    if say_line.line_id not in reply_line.predecessors:
-                        reply_line.predecessors.append(say_line.line_id)
-                    if reply_line.line_id not in say_line.targets:
-                        say_line.targets.append(reply_line.line_id)
-        
-        # Step 2: Resolve cross-references and connect states
-        self.resolve_extern_references()
-        
-        # Step 3: Connect states using transition information
-        for state_id, target_states in self.state_transitions.items():
-            source_state = self.all_states_by_id.get(state_id)
-            if not source_state:
-                print(f"DEBUG: Source state {state_id} not found")
-                continue
-                
-            # Get the last lines of the source state
-            source_lines = [line for line in self.all_lines if line.state_id == state_id]
-            source_reply_lines = [line for line in source_lines if line.line_type == "REPLY"]
-            source_last_lines = source_reply_lines if source_reply_lines else [line for line in source_lines if line.line_type == "SAY"]
-            
-            for target_state_id in target_states:
-                if target_state_id == 'EXIT':
-                    continue
-                    
-                target_state = self.all_states_by_id.get(target_state_id)
-                if not target_state:
-                    print(f"DEBUG: Target state {target_state_id} not found (from {state_id})")
-                    continue
-                
-                # Get the first lines of the target state
-                target_lines = [line for line in self.all_lines if line.state_id == target_state_id]
-                target_first_lines = [line for line in target_lines if line.line_type == "SAY"]
-                
-                # Connect last lines of source to first lines of target
-                connected = False
-                for source_line in source_last_lines:
-                    # Replies follow their own transition, not every transition of
-                    # the parent state. Otherwise EXIT alternatives incorrectly
-                    # precede the result of accepting a quest, purchase, etc.
-                    if source_line.line_type == "REPLY":
-                        resolved = {self.resolve_state_target(target, source_state.speaker)
-                                    for target in source_line.targets}
-                        if target_state_id not in resolved:
-                            continue
-                    for target_line in target_first_lines:
-                        if target_line.line_id not in source_line.targets:
-                            source_line.targets.append(target_line.line_id)
-                        if source_line.line_id not in target_line.predecessors:
-                            target_line.predecessors.append(source_line.line_id)
-                        connected = True
-                
-                if connected:
-                    print(f"DEBUG: Connected {state_id} -> {target_state_id}")
-        
-        print(f"Flow building completed. Connected {len([line for line in self.all_lines if line.targets or line.predecessors])} lines.")
-    
     @staticmethod
     def state_key(speaker, label):
-        """State labels are local to a dialogue resource, not globally unique."""
+        """State labels belong to a dialogue resource; source files are qualified later."""
         return f"{speaker}:{label}"
 
-    def resolve_state_target(self, target, source_speaker):
-        """Resolve local/EXTERN labels and already-internal CHAIN state IDs."""
-        if target == 'EXIT' or target in self.all_states_by_id:
-            return target
-        if ':' in target:
-            speaker, label = target.split(':', 1)
-        else:
-            speaker, label = source_speaker, target
-        return self.chain_roots.get((speaker, label), self.state_key(speaker, label))
-
-    def resolve_extern_references(self):
-        """Resolve transitions only after all states and CHAIN roots are known."""
-        for state_id, transitions in list(self.state_transitions.items()):
-            state = self.all_states_by_id.get(state_id)
-            speaker = state.speaker if state else "UNKNOWN"
-            resolved = []
-            for target in transitions:
-                destination = self.resolve_state_target(target, speaker)
-                if destination != 'EXIT' and destination not in self.all_states_by_id:
-                    print(f"Warning: dialogue target {destination} not found in {self.d_filename}")
-                resolved.append(destination)
-            self.state_transitions[state_id] = resolved
+    def build_enhanced_dialogue_flow(self):
+        """Compatibility entry point for callers parsing one D source directly."""
+        if not hasattr(self, '_built_groups'):
+            from dialogue_graph import ModDialogueGraph
+            self.all_states, self.all_lines, self._built_groups, self.graph_report = ModDialogueGraph(
+                [self], self.source_path.parent).build()
+            self.all_states_by_id = {state.state_id: state for state in self.all_states}
 
     def group_connected_dialogues(self):
-        """Group dialogues using state-level connectivity."""
-        print(f"Grouping {len(self.all_states)} states into connected dialogues...")
-        
-        # Build state-level connectivity graph
-        state_connections = defaultdict(set)
-        
-        for source_state, target_states in self.state_transitions.items():
-            for target_state in target_states:
-                if target_state != 'EXIT':
-                    state_connections[source_state].add(target_state)
-                    state_connections[target_state].add(source_state)
-        
-        # Find connected state components
-        visited_states = set()
-        dialogue_groups = []
-        
-        def dfs_states(state_id, current_group):
-            if state_id in visited_states or state_id == 'EXIT':
-                return
-            visited_states.add(state_id)
-            current_group.add(state_id)
-            
-            for connected_state in sorted(state_connections.get(state_id, [])):
-                if connected_state not in visited_states:
-                    dfs_states(connected_state, current_group)
-        
-        # Group states into connected components
-        all_state_ids = set(self.state_transitions.keys()) | set(self.all_states_by_id.keys())
-        
-        for state_id in sorted(all_state_ids):
-            if state_id not in visited_states:
-                state_group = set()
-                dfs_states(state_id, state_group)
-                
-                if state_group:
-                    # Collect all lines from these connected states
-                    dialogue_lines = [
-                        line for line in self.all_lines 
-                        if line.state_id in state_group
-                    ]
-                    if dialogue_lines:  # Only add non-empty groups
-                        dialogue_groups.append(dialogue_lines)
-        
-        print(f"Created {len(dialogue_groups)} connected dialogue groups")
-        return dialogue_groups
+        self.build_enhanced_dialogue_flow()
+        return self._built_groups
 
 
 class ImprovedGrammarDialogueParser:
     """Improved grammar-based D file parser with better state tracking."""
 
-    def __init__(self, d_folder, tra_folder):
+    def __init__(self, d_folder, tra_folder, tp2_file=None, source_language=None):
         self.d_folder = d_folder
         self.tra_folder = tra_folder
         self.all_dialogues = {}
         self.used_tra_entries = set()  # Global set of used TRA entries
         self.tra_cache = {}  # Global TRA cache
         self.tra_female_cache = {}
-        
-    def parse_d_file(self, d_filepath):
+        self.tp2_file = tp2_file
+        self.source_language = source_language or Path(tra_folder).name
+        self.usage = None
+        self.excluded_tra_entries = set()
+        self.listeners = {}
+        self.graph_report = None
+
+    def parse_d_file(self, d_filepath, defer_graph=False):
         """Parse a D file using the improved ANTLR4 grammar."""
         try:
-            encoding = detect_encoding(d_filepath)
-            with open(d_filepath, 'r', encoding=encoding) as file:
-                content = file.read()
+            source_path = Path(d_filepath).resolve()
+            content = (self.usage.virtual_files[source_path] if self.usage and source_path in self.usage.virtual_files
+                       else read_text(d_filepath))
         except Exception as e:
             print(f"Error reading {d_filepath}: {e}")
             raise ValueError(f"Cannot read D file {d_filepath}: {e}") from e
@@ -886,7 +822,7 @@ class ImprovedGrammarDialogueParser:
         tree = parser.dFileRule()
         
         # Create improved listener
-        listener = ImprovedDialogueListener(d_filename, self.tra_folder)
+        listener = ImprovedDialogueListener(d_filename, self.tra_folder, self.usage, d_filepath)
         listener.set_d_file_content(content)  # Set content for line number tracking
         
         # Walk the parse tree
@@ -896,11 +832,11 @@ class ImprovedGrammarDialogueParser:
         # Collect used TRA entries from this file
         self.used_tra_entries.update(listener.used_tra_entries)
 
-        # Build enhanced dialogue flow
-        listener.build_enhanced_dialogue_flow()
-
-        # Group connected dialogues
-        dialogue_groups = listener.group_connected_dialogues()
+        self.listeners[Path(d_filepath).resolve()] = listener
+        if defer_graph:
+            return listener.all_states, listener.all_lines, []
+        from dialogue_graph import ModDialogueGraph
+        states, lines, dialogue_groups, _ = ModDialogueGraph([listener], self.d_folder).build()
 
         # Report any missing TRA references
         if listener.missing_tra_refs:
@@ -913,48 +849,36 @@ class ImprovedGrammarDialogueParser:
             for error in listener.syntax_errors[:5]:  # Show first 5
                 print(f"    - {error}")
 
-        return listener.all_states, listener.all_lines, dialogue_groups
+        return states, lines, dialogue_groups
     
     def sort_lines_by_flow(self, lines):
-        """Sort dialogue lines by logical flow."""
+        """Iterative predecessor-first ordering; cycles and long chains are safe."""
         line_dict = {line.line_id: line for line in lines}
-        result = []
-        visited = set()
-        
-        def visit(line_id):
-            if line_id in visited or line_id not in line_dict:
-                return
-            
-            visited.add(line_id)
-            line = line_dict[line_id]
-            
-            # Visit predecessors first
-            for pred in line.predecessors:
-                if pred in line_dict:
-                    visit(pred)
-            
-            result.append(line)
-        
-        # Start with lines that have no predecessors
-        for line in lines:
-            if not line.predecessors:
-                visit(line.line_id)
-        
-        # Add any remaining lines
-        for line in lines:
-            if line.line_id not in visited:
-                visit(line.line_id)
-        
+        result, visited = [], set()
+        starts = [line for line in lines if not line.predecessors] + list(lines)
+        for line in starts:
+            pending = [(line.line_id, False)]
+            while pending:
+                line_id, expanded = pending.pop()
+                if expanded:
+                    result.append(line_dict[line_id])
+                    continue
+                if line_id in visited or line_id not in line_dict:
+                    continue
+                visited.add(line_id)
+                pending.append((line_id, True))
+                pending.extend((pred, False) for pred in reversed(line_dict[line_id].predecessors))
         return result
-    
+
     def load_all_tra_files(self):
         """Read each physical TRA file once, including original female source text."""
         tra_files = sorted(f for f in os.listdir(self.tra_folder) if f.casefold().endswith('.tra'))
         if len({f.casefold() for f in tra_files}) != len(tra_files):
             raise ValueError("TRA filenames differ only by case")
         for filename in tra_files:
-            entries = parse_tra(read_text(os.path.join(self.tra_folder, filename)))
-            self.tra_cache[filename] = {n: e.variants[0].text for n, e in entries.items()}
+            entries = parse_tra(read_text(os.path.join(self.tra_folder, filename)),
+                                allow_references=True, duplicate_policy='last')
+            self.tra_cache[filename] = {n: e.variants[0].text for n, e in entries.items() if e.variants}
             self.tra_female_cache[filename.casefold()] = {
                 n: e.variants[1].text for n, e in entries.items() if len(e.variants) == 2}
         print(f"Loaded {len(self.tra_cache)} TRA files into cache")
@@ -976,25 +900,53 @@ class ImprovedGrammarDialogueParser:
         # Pre-load all TRA files so we can detect unused lines
         self.load_all_tra_files()
 
-        d_files = sorted(f for f in os.listdir(self.d_folder) if f.lower().endswith('.d'))
-        print(f"Found {len(d_files)} D files to process")
+        if self.tp2_file:
+            self.usage = WeiduUsage(self.tp2_file, self.source_language, self.tra_folder).analyze()
+            self.excluded_tra_entries = {
+                (path.name.casefold(), number) for path, number in self.usage.excluded
+                if path.parent == Path(self.tra_folder).resolve()
+            }
+            print(f'Excluded {len(self.excluded_tra_entries)} proven installer-only TRA entries')
+            if not self.usage.complete:
+                print('Usage analysis incomplete: installer exclusions disabled; uncertain entries retained.')
+                for warning in (self.usage.warnings + self.usage.unresolved)[:5]:
+                    print(f'  Warning: {warning}')
+
+        d_files = {path.resolve() for path in Path(self.d_folder).rglob('*') if path.suffix.casefold() == '.d'}
+        if self.usage:
+            d_files.update(path for path in self.usage.source_fallbacks if path.suffix.casefold() == '.d')
+        d_files = sorted(d_files)
+        print(f"Found {len(d_files)} D sources to process")
 
         # Process all files
         all_dialogue_groups = []
         total_lines = 0
 
-        for d_filename in d_files:
-            d_filepath = os.path.join(self.d_folder, d_filename)
-            print(f"Processing {d_filename}...")
+        for d_filepath in d_files:
+            print(f"Processing {d_filepath}...")
 
             try:
-                states, all_lines, dialogue_groups = self.parse_d_file(d_filepath)
-                if dialogue_groups:
-                    all_dialogue_groups.extend(dialogue_groups)
-                    total_lines += len(all_lines)
-                    print(f"  Found {len(dialogue_groups)} dialogue groups with {len(all_lines)} lines")
+                states, all_lines, _ = self.parse_d_file(d_filepath, defer_graph=True)
+                total_lines += len(all_lines)
+                print(f"  Read {len(states)} states with {len(all_lines)} lines")
             except Exception as e:
-                raise ValueError(f"Cannot safely extract {d_filename}: {e}") from e
+                raise ValueError(f"Cannot safely extract {d_filepath}: {e}") from e
+
+        from dialogue_graph import ModDialogueGraph
+        _, _, all_dialogue_groups, self.graph_report = ModDialogueGraph(
+            self.listeners.values(), self.d_folder,
+            self.usage.compilation_units if self.usage else None).build()
+        print(f"Linked {self.graph_report['cross_file_line_edges']} cross-file dialogue edges")
+
+        # D parsing can discover uses outside static COMPILE paths. A dialogue
+        # reference always overrides an installer-only exclusion.
+        self.excluded_tra_entries.difference_update(self.used_tra_entries)
+        if self.usage:
+            for filename in self.tra_cache:
+                for number in self.tra_cache[filename]:
+                    if (filename.casefold(), number) in self.used_tra_entries:
+                        key = ((Path(self.tra_folder) / filename).resolve(), number)
+                        self.usage.usage[key].add('game')
 
         self.all_dialogues['combined'] = all_dialogue_groups
         print(f"\nTotal: {len(all_dialogue_groups)} dialogue groups with {total_lines} lines")
@@ -1008,6 +960,30 @@ class ImprovedGrammarDialogueParser:
         
         for d_filename, dialogues in self.all_dialogues.items():
             for dialogue_idx, dialogue_lines in enumerate(dialogues, 1):
+                visible = {line.line_id: line for line in dialogue_lines
+                           if line.original_ref and line.source_info.startswith('TRA:')}
+                if not visible:
+                    continue
+                all_lines = {line.line_id: line for line in dialogue_lines}
+                def visible_predecessors(line):
+                    result, visited = [], set()
+                    pending = list(reversed(line.predecessors))
+                    while pending:
+                        predecessor = pending.pop()
+                        if predecessor in visited:
+                            continue
+                        visited.add(predecessor)
+                        if predecessor in visible:
+                            result.append(predecessor)
+                        elif predecessor in all_lines:
+                            pending.extend(reversed(all_lines[predecessor].predecessors))
+                    return list(dict.fromkeys(result))
+                readonly = [{'actor': line.speaker, 'text': line.text,
+                             'line_id': line.line_id, 'predecessors': line.predecessors}
+                            for line in dialogue_lines if line.line_id not in visible and line.text.strip()
+                            and not line.source_info.startswith('TLK:')]
+                readonly_context = ('Read-only hardcoded dialogue; leave unchanged: ' + json.dumps(readonly, ensure_ascii=False)
+                                    if readonly else '')
                 # Create CSV filename
                 if dialogue_lines:
                     first_speaker = dialogue_lines[0].speaker
@@ -1022,14 +998,16 @@ class ImprovedGrammarDialogueParser:
                         writer = csv.writer(csvfile)
                         
                         # Write header
-                        writer.writerow(['Actor', 'Line_ID', 'Predecessors', 'Dialogue_Text', 'TRA_Reference', 'Additional_Info', 'Source_Female_Text', 'Source_Has_Female'])
+                        writer.writerow(['Actor', 'Line_ID', 'Predecessors', 'Dialogue_Text', 'TRA_Reference', 'Additional_Info', 'Source_Female_Text', 'Source_Has_Female', 'Source_Context'])
                         
                         # Sort lines logically
                         sorted_lines = self.sort_lines_by_flow(dialogue_lines)
                         
                         # Write dialogue lines
                         for line in sorted_lines:
-                            predecessors_str = ";".join(line.predecessors) if line.predecessors else ""
+                            if line.line_id not in visible:
+                                continue
+                            predecessors_str = ";".join(visible_predecessors(line))
                             tra_ref = line.original_ref or ""
                             writer.writerow([
                                 line.speaker,
@@ -1039,7 +1017,8 @@ class ImprovedGrammarDialogueParser:
                                 tra_ref,
                                 line.source_info,  # Source information for translation
                                 self.source_female_text(line.source_info),
-                                self.source_has_female(line.source_info)
+                                self.source_has_female(line.source_info),
+                                readonly_context
                             ])
                     
                     total_csvs += 1
@@ -1049,6 +1028,9 @@ class ImprovedGrammarDialogueParser:
                     raise ValueError(f"Error writing {csv_filename}: {e}") from e
         
         print(f"\nTotal CSV files created: {total_csvs}")
+        if self.graph_report is not None:
+            (Path(output_folder) / '_dialogue_graph.json').write_text(
+                json.dumps(self.graph_report, ensure_ascii=False, indent=2) + '\n')
 
     def write_unused_lines_csv(self, output_folder):
         """Write CSV file containing all TRA lines not used in dialogues."""
@@ -1059,12 +1041,15 @@ class ImprovedGrammarDialogueParser:
             for tra_number, tra_text in tra_dict.items():
                 # Check if this entry was NOT used in dialogues
                 # used_tra_entries stores lowercase filenames
-                if (tra_filename.lower(), tra_number) not in self.used_tra_entries:
+                key = (tra_filename.casefold(), tra_number)
+                if key not in self.used_tra_entries and key not in self.excluded_tra_entries:
                     # Create reference in format "filename.tra:@123"
                     reference = f"{tra_filename}:@{tra_number}"
                     female = self.tra_female_cache.get(tra_filename.casefold(), {}).get(tra_number, '')
                     has_female = '1' if tra_number in self.tra_female_cache.get(tra_filename.casefold(), {}) else ''
-                    unused_lines.append((reference, tra_text, female, has_female))
+                    physical_key = ((Path(self.tra_folder) / tra_filename).resolve(), tra_number)
+                    text_type = 'journal' if self.usage and physical_key in self.usage.journal_entries else ''
+                    unused_lines.append((reference, tra_text, female, has_female, text_type))
 
         if not unused_lines:
             print("No unused TRA lines found")
@@ -1082,11 +1067,11 @@ class ImprovedGrammarDialogueParser:
                 writer = csv.writer(csvfile)
 
                 # Write header (simplified format for unused lines)
-                writer.writerow(['Reference', 'Text', 'Source_Female_Text', 'Source_Has_Female'])
+                writer.writerow(['Reference', 'Text', 'Source_Female_Text', 'Source_Has_Female', 'Text_Type'])
 
                 # Write all unused lines
-                for reference, text, female, has_female in unused_lines:
-                    writer.writerow([reference, text, female, has_female])
+                for reference, text, female, has_female, text_type in unused_lines:
+                    writer.writerow([reference, text, female, has_female, text_type])
 
             print(f"\nCreated {csv_filename} with {len(unused_lines)} unused TRA lines")
 
@@ -1118,8 +1103,27 @@ CSV format:
     parser.add_argument('d_folder', help='Folder containing D files')
     parser.add_argument('tra_folder', help='Folder containing TRA files') 
     parser.add_argument('output_folder', help='Output folder for CSV files')
+    parser.add_argument('--tp2-file', help='Main TP2: read language fallbacks and exclude proven installer-only entries')
+    parser.add_argument('--source-language', help='LANGUAGE directory/name (default: TRA folder basename)')
+    parser.add_argument('--usage-report', help='Optional JSON report of fallback resolution and excluded entries')
+    parser.add_argument('--unused-layout', choices=['auto', 'categorized', 'legacy'], default='auto',
+                        help='auto: categorized with --tp2-file, otherwise the legacy catch-all CSV')
+    parser.add_argument('--category-batch-size', type=int, default=40,
+                        help='Maximum standalone rows per categorized CSV; BAF response branches stay intact')
+    parser.add_argument('--actors-file', help='Optional reviewed Actor,Gender CSV for categorized extraction')
+    parser.add_argument('--cre-folder', action='append', default=[],
+                        help='Additional game/mod CRE folder for BAF speakers (repeatable; mod resources win)')
     
     args = parser.parse_args()
+    categorized = args.unused_layout == 'categorized' or (args.unused_layout == 'auto' and args.tp2_file)
+    if categorized and not args.tp2_file:
+        parser.error('Categorized extraction requires --tp2-file')
+    if args.category_batch_size < 1:
+        parser.error('--category-batch-size must be positive')
+    if categorized and Path(args.output_folder).exists() and (
+            any(Path(args.output_folder).glob('*.csv')) or
+            (Path(args.output_folder) / '_extraction_manifest.json').exists()):
+        parser.error('Use a fresh output folder for categorized extraction')
     
     if not os.path.exists(args.d_folder):
         print(f"Error: D folder {args.d_folder} does not exist")
@@ -1130,11 +1134,20 @@ CSV format:
         return 1
     
     # Create parser and process files
-    parser_obj = ImprovedGrammarDialogueParser(args.d_folder, args.tra_folder)
+    parser_obj = ImprovedGrammarDialogueParser(args.d_folder, args.tra_folder,
+                                             args.tp2_file, args.source_language)
     try:
         parser_obj.process_all_d_files()
         parser_obj.write_csv_files(args.output_folder)
-        parser_obj.write_unused_lines_csv(args.output_folder)
+        if categorized:
+            from text_categories import CategorizedTextBuilder
+            CategorizedTextBuilder(parser_obj, args.category_batch_size, args.cre_folder,
+                                   args.actors_file).write(args.output_folder)
+        else:
+            parser_obj.write_unused_lines_csv(args.output_folder)
+        if args.usage_report and parser_obj.usage:
+            Path(args.usage_report).write_text(json.dumps(parser_obj.usage.report(),
+                                                        ensure_ascii=False, indent=2) + '\n')
     except (ValueError, OSError) as exc:
         parser.exit(1, f"Error: {exc}\n")
 

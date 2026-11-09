@@ -1,6 +1,7 @@
 """Synthetic regressions: no model downloads or running Ollama required."""
 
 import contextlib
+import csv
 import io
 import json
 import subprocess
@@ -459,6 +460,85 @@ class PipelineTests(unittest.TestCase):
         with patch.object(translator, '_call_ollama', side_effect=lambda p, s: self.response(p, {'1': 'Я готова.'})):
             self.assertTrue(translator.translate_all_dialogs())
         self.assertFalse((self.target / 'dialogue.shared_strings_review.txt').exists())
+
+    def test_party_slots_remain_unspecified_in_every_player1_version(self):
+        self.actors.write_text('NPC,FEMALE\n' + ''.join(f'Player{n},MALE\n' for n in range(2, 7)))
+        path = self.dialogue([[f'Player{n}', str(n), '', 'I am ready.', f'@{n}',
+                               f'TRA:test.tra:@{n}'] for n in range(1, 7)])
+        translator = self.translator(test_mode=True)
+        content = path.read_text()
+        for gender in ('male', 'female'):
+            payload = json.loads(translator._create_translation_prompt(content, gender, '', ''))
+            self.assertEqual(payload['dialogue'][0]['speaker_gender'], gender)
+            for line in payload['dialogue'][1:]:
+                self.assertEqual(line['speaker_gender'], 'unknown')
+                self.assertIn('works for both male and female', line['note'])
+            self.assertIn('"Player2": unknown', translator._build_actor_info(['Player2']))
+            self.assertEqual(translator._mixed_speakers('NPC;Player2', gender), ['female', 'unknown'])
+        both, _ = translator._both_request(content, list(csv.reader(io.StringIO(content))), '', '')
+        payload = json.loads(both)
+        self.assertEqual(payload['dialogue'][0]['speaker_gender'], 'male in male, female in female')
+        self.assertTrue(all(line['speaker_gender'] == 'unknown' for line in payload['dialogue'][1:]))
+        self.assertIn('remain unspecified', payload['instruction'])
+
+    def test_single_unspecified_actor_gets_neutral_wording_instruction(self):
+        self.actors.write_text('NPC,NEITHER\nOther,OTHER\nMixed,MIXED\n')
+        path = self.dialogue([[name, str(i), '', 'We are ready.', f'@{i}', f'TRA:test.tra:@{i}']
+                              for i, name in enumerate(['NPC', 'Other', 'Mixed', 'Stranger'], 1)])
+        translator = self.translator(test_mode=True)
+        payload = json.loads(translator._create_translation_prompt(path.read_text(), 'male', '', ''))
+        for line in payload['dialogue']:
+            self.assertIn('works for both male and female', line['note'])
+            self.assertIn('source clearly establishes gender', line['note'])
+            self.assertIn('Preserve plural', line['note'])
+        self.assertIn('not arbitrarily choose masculine, feminine or neuter', TRANSLATION_RULES)
+        self.assertIn('plural does not establish sex', TRANSLATION_RULES)
+        self.assertIn('reward/status notifications gender-neutral', TRANSLATION_RULES)
+        self.assertIn('Получено +5%', TRANSLATION_RULES)
+
+    def test_journal_entries_follow_player1_gender_in_two_passes_and_both(self):
+        fields = ['Reference', 'Text', 'Text_Type']
+        write_csv(self.source / '_unused_tra_lines.csv', fields, [
+            {'Reference': 'test.tra:@1', 'Text': 'I spoke to a strange vampire today.', 'Text_Type': 'journal'},
+            {'Reference': 'test.tra:@2', 'Text': 'Gained +5% Fire Resistance.', 'Text_Type': ''}])
+        translations = {
+            'male': {'1': 'Я сегодня поговорил со странным вампиром.', '2': 'Получено +5% сопротивления огню.'},
+            'female': {'1': 'Я сегодня поговорила со странным вампиром.', '2': 'Получено +5% сопротивления огню.'}}
+        for method in ('two-pass', 'both'):
+            with self.subTest(method=method):
+                translator = self.translator(method=method)
+                prompts = []
+                def reply(prompt, schema):
+                    data = json.loads(prompt)
+                    prompts.append(data)
+                    journal, notification = data['dialogue']
+                    self.assertEqual(journal['speaker'], 'Player1')
+                    self.assertEqual(journal['text_type'], 'journal')
+                    self.assertIn('dialogue REPLY', journal['note'])
+                    self.assertNotIn('unspecified', journal['note'])
+                    self.assertEqual(notification['speaker_gender'], 'unknown')
+                    if method == 'both':
+                        self.assertEqual(journal['speaker_gender'], 'male in male, female in female')
+                        return json.dumps({'translations': {n: {g: translations[g][n] for g in translations}
+                                                            for n in ('1', '2')}})
+                    gender = 'female' if 'now FEMALE' in data['instruction'] else 'male'
+                    self.assertEqual(journal['speaker_gender'], gender)
+                    return self.response(prompt, translations[gender])
+                with patch.object(translator, '_call_ollama', side_effect=reply):
+                    self.assertTrue(translator.translate_all_dialogs())
+                _, rows = read_csv(self.target / '_unused_tra_lines.csv', ['Text_Type'] + TRANSLATION_COLUMNS)
+                self.assertEqual(rows[0]['Text_Type'], 'journal')
+                self.assertEqual(rows[0]['Russian_Male'], translations['male']['1'])
+                self.assertEqual(rows[0]['Russian_Female'], translations['female']['1'])
+                self.assertEqual(rows[1]['Russian_Male'], rows[1]['Russian_Female'])
+                self.assertEqual(len(prompts), 1 if method == 'both' else 2)
+        (self.tra / 'test.tra').write_text('@1=~I spoke to a strange vampire today.~\n@2=~Gained +5% Fire Resistance.~')
+        updater = TraUpdater(self.tra, self.target, self.output)
+        updater.load_translations_from_csvs()
+        updater.update_all_tra_files()
+        entries = parse_tra((self.output / 'test.tra').read_text())
+        self.assertEqual([v.text for v in entries[1].variants],
+                         [translations[g]['1'] for g in ('male', 'female')])
 
     def test_unknown_gender_in_shared_string_is_flagged(self):
         translator = self.translator(test_mode=True)

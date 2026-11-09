@@ -1,0 +1,3 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB11,L#IGB11_be3c841a::L#IGB11:200_INITIAL_0_SAY_11,,"""Even the worms weren't able to end the life of the betrayed adventurer.""",@11,TRA:l#igb11.tra:@11,,,,dialogue,MALE,
+L#IGB11,L#IGB11_be3c841a::L#IGB11:200_BLOCK_0_ELEMENT_0_SAY_12,L#IGB11_be3c841a::L#IGB11:200_INITIAL_0_SAY_11,The one who fought these monsters shall be the one to receive the gift.,@12,TRA:l#igb11.tra:@12,,,,dialogue,MALE,

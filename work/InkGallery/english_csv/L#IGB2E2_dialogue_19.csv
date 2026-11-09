@@ -1,0 +1,3 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB2E2,L#IGB2E2_4253de15::L#IGB2E2:000_INITIAL_0_SAY_0,,"No!!! You killed him... you killed my beloved one! None of this was supposed to be like this. And I—I should have been here, I should have—saved him.",@0,TRA:l#igb2e2.tra:@0,,,,dialogue,FEMALE,
+L#IGB2E2,L#IGB2E2_4253de15::L#IGB2E2:000_BLOCK_0_ELEMENT_0_SAY_1,L#IGB2E2_4253de15::L#IGB2E2:000_INITIAL_0_SAY_0,"I am sorry, my lady. I am sorry, Kwan Ying. You asked me to give myself to compassion; you wanted us not to take part in this war, but now—I have no choice...",@1,TRA:l#igb2e2.tra:@1,,,,dialogue,FEMALE,

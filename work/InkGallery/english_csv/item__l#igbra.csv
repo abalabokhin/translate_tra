@@ -1,0 +1,13 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Bracers,@65,TRA:setup.tra:@65,,,item_name,unknown,,InkGallery/items/l#igbra.itm,NAME1,InkGallery.tp2:712 SAY NAME1,
+NARRATOR,2,,Bracelets of the Xvart Necromancer,@66,TRA:setup.tra:@66,,,item_name,unknown,,InkGallery/items/l#igbra.itm,NAME2,InkGallery.tp2:713 SAY NAME2,
+NARRATOR,3,,"These bracelets used to belong to a powerful xvart necromancer. It's hard to say how it was possible for someone like him to become a true master of dark magic, but it happened. He managed to raise many of his fallen kin by turning them into the living dead.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 7
+– Constitution: +1
+– Can memorize one extra arcane spell of each level from 1st to 3rd (necromancer only)
+
+Weight: 1",@67,TRA:setup.tra:@67,,,item_description,unknown,,InkGallery/items/l#igbra.itm,DESC,InkGallery.tp2:714 SAY DESC,

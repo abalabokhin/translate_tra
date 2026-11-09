@@ -1,0 +1,9 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+L#IGSTA,1,,Viscountess Velcealle,@15,TRA:setup.tra:@15,,,creature_name,FEMALE,,InkGallery/creatures/l#igsta.cre,NAME1; NAME2,InkGallery.tp2:519 SAY NAME1; InkGallery.tp2:520 SAY NAME2,
+L#IGB1E,2,,"Vsnaa, The Midwife of Spiders",@16,TRA:setup.tra:@16,,,creature_name,FEMALE,,InkGallery/creatures/l#igb1e.cre,NAME1; NAME2,InkGallery.tp2:523 SAY NAME1; InkGallery.tp2:524 SAY NAME2,
+L#IGB2E2,3,,Chin Yi,@20,TRA:setup.tra:@20,,,creature_name,FEMALE,,InkGallery/creatures/l#igb2e2.cre,NAME1; NAME2,InkGallery.tp2:539 SAY NAME1; InkGallery.tp2:540 SAY NAME2,
+L#IGB5M,4,,Bow-Wielding Brachina,@25,TRA:setup.tra:@25,,,creature_name,FEMALE,,InkGallery/creatures/l#igb5m.cre,NAME1; NAME2,InkGallery.tp2:565 SAY NAME1; InkGallery.tp2:566 SAY NAME2,
+L#IGB8E1,5,,Saviaa Moonrift,@29,TRA:setup.tra:@29,,,creature_name,FEMALE,,InkGallery/creatures/l#igb8e1.cre,NAME1; NAME2,InkGallery.tp2:585 SAY NAME1; InkGallery.tp2:586 SAY NAME2,
+L#IGB8E2,6,,Safima Moonrift,@30,TRA:setup.tra:@30,,,creature_name,FEMALE,,InkGallery/creatures/l#igb8e2.cre,NAME1; NAME2,InkGallery.tp2:589 SAY NAME1; InkGallery.tp2:590 SAY NAME2,
+L#IGB8E3,7,,Saba Moonrift,@31,TRA:setup.tra:@31,,,creature_name,FEMALE,,InkGallery/creatures/l#igb8e3.cre,NAME1; NAME2,InkGallery.tp2:593 SAY NAME1; InkGallery.tp2:594 SAY NAME2,
+L#IGCS4,8,,Imoen,@42,TRA:setup.tra:@42,,,creature_name,FEMALE,,InkGallery/creatures/l#igcs4.cre,NAME1; NAME2,InkGallery.tp2:639 SAY NAME1; InkGallery.tp2:640 SAY NAME2,

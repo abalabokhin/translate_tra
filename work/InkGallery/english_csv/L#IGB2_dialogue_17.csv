@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB2,L#IGB2_7419123f::L#IGB2:300_INITIAL_0_SAY_28,,You've already faced the battle this book describes.,@21,TRA:l#igb2.tra:@21,,,,dialogue,MALE,
