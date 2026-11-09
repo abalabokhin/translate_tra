@@ -4,6 +4,7 @@ No model tools, retries, output cap or inference timeout. Preserve every request
 """
 import json
 import os
+import re
 import signal
 import subprocess
 import tempfile
@@ -16,6 +17,25 @@ CLI_INSTRUCTION = (
     'Do not use tools, inspect files, browse, delegate, or change any files. '
     'Return only the JSON required by the output schema.\n\n'
 )
+
+
+class CodexAllowanceExhausted(ValueError):
+    """A reported quota/time failure stops the batch without retrying later files."""
+
+
+def failure_kind(error):
+    """Classify CLI error diagnostics only, never prompts or translated content."""
+    text = str(error).casefold()
+    if re.search(r'\bquota\b|quota[_ -]+(?:exceeded|exhausted|reached)|insufficient[_ -]+(?:quota|credits)|'
+                 r'(?:usage|rate|token|credit|spending|subscription)[_ -]*(?:limit|budget)|'
+                 r'(?:out[_ -]+of|exhausted|depleted)[_ -]+(?:tokens|credits)|'
+                 r'(?:tokens|credits)[_ -]+(?:exhausted|depleted)', text):
+        return 'quota'
+    if re.search(r'(?<![a-z])(?:timeout|timed?[_ -]*out|deadline[_ -]+exceeded)|'
+                 r'(?:time|wall[_ -]*time|execution)[_ -]+(?:budget|limit)|'
+                 r'request[_ -]+expired', text):
+        return 'time'
+    return None
 
 
 def now():
@@ -94,6 +114,11 @@ def run_cli(binary, model, system, user, schema, out, dry_run=False, effort=None
         raise
     except (OSError, ValueError) as exc:
         record.update(status='failed', error=str(exc))
+        stderr = out / 'stderr.txt'
+        diagnostic = str(exc) + '\n' + (stderr.read_text(encoding='utf-8', errors='replace') if stderr.exists() else '')
+        record['failure_kind'] = failure_kind(diagnostic)
+        if record.get('returncode') == 124:
+            record['failure_kind'] = record['failure_kind'] or 'time'
         return record, None
     finally:
         record['wall_seconds'] = round(time.monotonic() - started, 3)

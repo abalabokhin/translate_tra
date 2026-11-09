@@ -17,7 +17,7 @@ import urllib.error
 import urllib.request
 from typing import Dict, List, Tuple
 
-from codex_backend import run_cli, save, now
+from codex_backend import CodexAllowanceExhausted, failure_kind, run_cli, save, now
 from find_closest_item import (DEFAULT_ENGLISH, DEFAULT_RUSSIAN, ITEM_INSTRUCTION,
                                ItemTemplateIndex, statistics_section)
 
@@ -94,7 +94,7 @@ class DialogTranslator:
                  backend: str = 'ollama', method: str = None, effort: str = None,
                  codex_bin: str = 'codex', requests_dir: str = None,
                  item_templates: bool = True, item_reference_english=None,
-                 item_reference_russian=None):
+                 item_reference_russian=None, resume: bool = False):
         if backend not in ('ollama', 'codex'):
             raise ValueError('Backend must be ollama or codex')
         self.backend = backend
@@ -111,6 +111,7 @@ class DialogTranslator:
         self.codex_bin = codex_bin
         self.source_folder = Path(source_folder)
         self.target_folder = Path(target_folder)
+        self.resume = resume
         if self.source_folder.resolve() == self.target_folder.resolve():
             raise ValueError("Source and target folders must be different")
         self.actors_file = Path(actors_file) if actors_file else SCRIPT_DIR / "actors.csv"
@@ -361,7 +362,10 @@ class DialogTranslator:
         call, content = run_cli(self.codex_bin, self.model, TRANSLATION_RULES, prompt,
                                 schema, out, effort=self.effort)
         if content is None:
-            raise ValueError(f"Codex request failed: {call['error']}; evidence in {out}")
+            error = f"Codex request failed: {call['error']}; evidence in {out}"
+            if (call.get('failure_kind') or failure_kind(call['error'])) in {'quota', 'time'}:
+                raise CodexAllowanceExhausted(error)
+            raise ValueError(error)
         return content
 
     def _read_csv_content(self, csv_file: Path) -> List[List[str]]:
@@ -802,17 +806,31 @@ class DialogTranslator:
         if self.test_mode:
             print('MOCK MODE: copies English for plumbing checks; not a real translation.')
         failures = []
+        completed = skipped = 0
         for csv_file in csv_files:
+            if self.resume and (self.target_folder / csv_file.name).is_file():
+                skipped += 1
+                print(f'Skipping {csv_file.name}: output CSV already exists (--resume).', flush=True)
+                continue
             try:
                 if csv_file.name.casefold() == '_unused_tra_lines.csv':
                     self.translate_unused_lines_file(csv_file)
                 else:
                     self.translate_dialog_file(csv_file)
+                completed += 1
+            except CodexAllowanceExhausted as exc:
+                failures.append(csv_file.name)
+                print(f'Stopping batch at {csv_file.name}: {exc}. '
+                      'Completed CSVs are preserved; rerun with --resume after allowance is available.',
+                      file=sys.stderr)
+                break
             except (ValueError, OSError, csv.Error) as exc:
                 failures.append(csv_file.name)
                 print(f"Error processing {csv_file.name}: {exc}. No new export; any old CSV remains unchanged.",
                       file=sys.stderr)
-        print(f"Completed {len(csv_files)-len(failures)}/{len(csv_files)} files; {len(failures)} failed.")
+        pending = len(csv_files) - completed - skipped - len(failures)
+        print(f"Completed {completed}/{len(csv_files)} files; {skipped} skipped; "
+              f"{len(failures)} failed; {pending} not attempted.")
         return not failures
 
 
@@ -832,6 +850,8 @@ def main(argv=None):
     parser.add_argument('--requests-dir', help='Codex request evidence root; default: TARGET/_requests')
     parser.add_argument('--url', help='Ollama base URL or full /api/chat or /api/generate endpoint')
     parser.add_argument('--target', default='russian')
+    parser.add_argument('--resume', action='store_true',
+                        help='Skip source CSVs with an existing same-name CSV in the target folder')
     parser.add_argument('--actors', help='Actor descriptions; default: actors.csv beside the script')
     parser.add_argument('--dictionary', help='Glossary; default: dict.csv beside the script')
     parser.add_argument('--item-templates', action=argparse.BooleanOptionalAction, default=True,
@@ -849,7 +869,7 @@ def main(argv=None):
             backend=args.backend, method=args.method, effort=args.effort,
             codex_bin=args.codex_bin, requests_dir=args.requests_dir,
             item_templates=args.item_templates, item_reference_english=args.item_reference_english,
-            item_reference_russian=args.item_reference_russian)
+            item_reference_russian=args.item_reference_russian, resume=args.resume)
         return 0 if translator.translate_all_dialogs() else 1
     except KeyboardInterrupt:
         print('Interrupted; no automatic retry.', file=sys.stderr)

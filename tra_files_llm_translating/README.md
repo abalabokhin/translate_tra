@@ -548,7 +548,7 @@ lines and supply read-only context, but do not become editable CSV rows.
 python3 tra_files_llm_translating/translate_dialogs.py "$work_dir/english_csv" \
   --target "$work_dir/russian_csv" \
   --backend codex --model gpt-6.1-sol --effort low --method both \
-  --actors "$work_dir/actors.csv" --dictionary "$glossary"
+  --actors "$work_dir/actors.csv" --dictionary "$glossary" --resume
 ```
 
 Codex/Sol/low/both is the agreed workflow choice. The current program's bare
@@ -558,6 +558,31 @@ are required until the user-requested Codex default is implemented. `--model`,
 The installed Codex CLI must already be logged in. `--backend ollama` selects the
 local alternative; its `--url`, `--num-ctx` and `--think` options apply only there.
 Both backends generate JSON text and Python writes CSV metadata/escaping.
+
+CSVs are processed sequentially. `--resume` skips a source CSV if a same-name
+file already exists in the target folder, including the legacy unused-lines CSV.
+This is deliberately a filename check: it does not inspect the output, compare
+source versions or create a checkpoint database. Keep source CSVs unchanged
+during a translation run. To retranslate an edited source or a rejected existing
+translation, remove its target CSV first. Without `--resume`, existing outputs
+do not skip translation. Use a separate target folder for English-copy mock runs.
+
+Reported Codex quota/usage/rate/token-limit exhaustion or timeout/time-limit
+failure stops the whole batch immediately after the current request fails.
+The translator preserves request evidence and previously completed outputs,
+does not export a partial failed CSV, makes no request for later CSVs and exits
+with status 1. The summary distinguishes completed, skipped, failed and
+not-attempted files. After the allowance resets, rerun the same command with
+`--resume`: completed files are skipped and the failed/unattempted files are
+processed. Two-pass translation saves a CSV only after both passes succeed;
+if the second pass fails, the next run translates that CSV from the start.
+Other per-file errors are reported while processing continues. Ctrl-C exits
+with status 130 and also leaves completed outputs intact.
+
+Quota/time failures are recognized from CLI error events/codes, failure stderr,
+or timeout exit status 124. This does not impose an arbitrary five-hour timer,
+predict the subscription reset, or add a request timeout/retry policy. A CLI
+which hangs without reporting an error can still be interrupted with Ctrl-C.
 
 `--test` copies English for a no-inference plumbing run; it is never a Russian
 translation. It can check the CSV/TRA path without spending subscription allowance.
@@ -952,7 +977,8 @@ necessarily context-free: they may include dialogue from other files, journals,
 item descriptions or interface text.
 
 A failed request/validation stops processing that file and produces a failing
-exit status. A reply that fails validation is kept as
+exit status. Codex quota/time failures stop the whole batch as described in step 5;
+other per-file failures allow following CSVs to be processed. A reply that fails validation is kept as
 `<name>.both.rejected.txt`, `<name>.male.rejected.txt` or
 `<name>.female.rejected.txt` in the target folder for
 diagnosis; the TRA updater ignores these files. Processing a file again first removes
@@ -1094,8 +1120,9 @@ These are ideas, not implemented behavior:
   third model pass. None reliably proves completeness without further evaluation.
 - Infer addressees in Python/the parser or rewrite the grammar/flow
   architecture. More context is not a substitute for accurate role facts.
-- Introduce token/time caps, batching, retries, splitting, checkpoint/resume
-  policies, CPU offload policies or automatic context reduction.
+- Introduce token/time caps, batching, retries, splitting, more elaborate
+  checkpoint/resume policies than the agreed same-name-output check,
+  CPU offload policies or automatic context reduction.
 - Change models, sampling settings or use context extension beyond the model's
   native context as a new experiment.
 

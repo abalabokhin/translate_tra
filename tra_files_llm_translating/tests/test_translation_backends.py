@@ -15,6 +15,7 @@ sys.path.insert(0, str(SCRIPTS / 'experiments'))
 from translate_dialogs import DialogTranslator, main, TRANSLATION_RULES, UNSPECIFIED_GENDER_NOTE
 from translation_common import DIALOGUE_COLUMNS, TRANSLATION_COLUMNS, read_csv, write_csv
 from update_tra_from_csv import TraUpdater
+from codex_backend import failure_kind
 import run_codex_translation as runner
 
 FAKE_CLI = '''#!/usr/bin/env python3
@@ -132,6 +133,120 @@ class BackendTests(unittest.TestCase):
              patch('translate_dialogs.run_cli',side_effect=AssertionError('must not call Codex')):
             self.assertTrue(translator.translate_all_dialogs())
         self.assertEqual(ollama.call_count,2)
+
+    def test_resume_skips_same_name_outputs_without_inspecting_their_contents(self):
+        self.inputs()
+        translator = self.translator(backend='codex', resume=True)
+        for name in ('dialogue.csv', '_unused_tra_lines.csv'):
+            (self.target / name).write_text('existing reviewed output\n')
+        with patch('translate_dialogs.run_cli', side_effect=AssertionError('must not call model')):
+            self.assertTrue(translator.translate_all_dialogs())
+        self.assertIsNone(translator.request_run)
+        self.assertEqual((self.target / 'dialogue.csv').read_text(), 'existing reviewed output\n')
+
+    def test_resume_translates_only_missing_csv_and_cli_supports_the_flag(self):
+        self.inputs()
+        self.target.mkdir()
+        existing = self.target / '_unused_tra_lines.csv'
+        existing.write_text('old standalone export\n')
+        args = [str(self.source), '--target', str(self.target), '--backend', 'codex', '--resume',
+                '--codex-bin', str(self.binary), '--actors', str(self.actors), '--dictionary', str(self.dictionary)]
+        self.assertEqual(main(args), 0)
+        self.assertEqual(existing.read_text(), 'old standalone export\n')
+        self.assertTrue((self.target / 'dialogue.csv').is_file())
+        self.assertEqual(len(list((self.target / '_requests').rglob('call.json'))), 1)
+        self.assertEqual(main(args), 0)
+        self.assertEqual(len(list((self.target / '_requests').rglob('call.json'))), 1)
+
+    def test_quota_and_time_error_classification(self):
+        for message in ('quota', 'quota_exceeded', 'insufficient_quota', 'usage_limit_reached',
+                        "You've hit your usage limit", 'rate_limit_exceeded', 'Out of tokens',
+                        'credits depleted', 'token_limit_reached', 'UsageLimitReached', 'token budget exceeded'):
+            with self.subTest(message=message):
+                self.assertEqual(failure_kind(message), 'quota')
+        for message in ('request_timeout', 'Request timed out', 'deadline_exceeded',
+                        'time_budget_exceeded', 'Time limit reached', 'request expired'):
+            with self.subTest(message=message):
+                self.assertEqual(failure_kind(message), 'time')
+        for message in ('offline', 'invalid schema', 'context_window_exceeded'):
+            self.assertIsNone(failure_kind(message))
+
+    def test_quota_time_and_stderr_only_failures_stop_before_the_next_csv(self):
+        self.inputs()
+        # The standalone CSV sorts first; verify that no dialogue request follows.
+        for message, stderr_only, expected in [('usage_limit_reached', False, 'quota'),
+                                               ('request_timeout', False, 'time'),
+                                               ('You have hit your usage limit', True, 'quota'),
+                                               ('Time limit exceeded', True, 'time')]:
+            with self.subTest(message=message):
+                translator = self.translator(backend='codex', codex_bin=str(self.binary))
+                if stderr_only:
+                    body = f'import sys\nsys.stdin.read()\nprint({message!r}, file=sys.stderr)\nsys.exit(1)\n'
+                else:
+                    body = ('import sys,json\nsys.stdin.read()\nprint(json.dumps('
+                            + repr({'type': 'turn.failed', 'error': {'code': message}}) + '))\n')
+                self.binary.write_text('#!/usr/bin/env python3\n' + body)
+                with contextlib.redirect_stderr(io.StringIO()) as errors:
+                    self.assertFalse(translator.translate_all_dialogs())
+                self.assertIn('Stopping batch', errors.getvalue())
+                calls = list(translator.request_run.rglob('call.json'))
+                self.assertEqual(len(calls), 1)
+                self.assertEqual(json.loads(calls[0].read_text())['failure_kind'], expected)
+                self.assertFalse((self.target / '_unused_tra_lines.csv').exists())
+                self.assertFalse((self.target / 'dialogue.csv').exists())
+
+    def test_cli_timeout_exit_code_stops_even_without_error_text(self):
+        self.inputs()
+        self.binary.write_text('#!/usr/bin/env python3\nimport sys\nsys.stdin.read()\nsys.exit(124)\n')
+        translator = self.translator(backend='codex', codex_bin=str(self.binary))
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertFalse(translator.translate_all_dialogs())
+        calls = list(translator.request_run.rglob('call.json'))
+        self.assertEqual(len(calls), 1)
+        record = json.loads(calls[0].read_text())
+        self.assertEqual((record['returncode'], record['failure_kind']), (124, 'time'))
+
+    def test_resume_after_quota_preserves_finished_csv_and_retries_failed_one(self):
+        self.inputs()
+        translator = self.translator(backend='codex')
+        calls = []
+        def request(binary, model, system, prompt, schema, out, **kwargs):
+            calls.append(out.name)
+            if len(calls) == 2:
+                return {'error': 'usage_limit_reached', 'failure_kind': 'quota'}, None
+            data = json.loads(prompt)
+            return {}, json.dumps({'translations': {row['id']: {'male': row['english'], 'female': row['english_female']}
+                                                    for row in data['dialogue']}})
+        with patch('translate_dialogs.run_cli', side_effect=request), contextlib.redirect_stderr(io.StringIO()):
+            self.assertFalse(translator.translate_all_dialogs())
+        completed = self.target / '_unused_tra_lines.csv'
+        saved = completed.read_bytes()
+        self.assertFalse((self.target / 'dialogue.csv').exists())
+        resumed = self.translator(backend='codex', codex_bin=str(self.binary), resume=True)
+        self.assertTrue(resumed.translate_all_dialogs())
+        self.assertEqual(completed.read_bytes(), saved)
+        self.assertTrue((self.target / 'dialogue.csv').exists())
+        self.assertEqual(resumed.request_count, 1)
+
+    def test_two_pass_time_failure_does_not_export_half_a_csv(self):
+        self.inputs()
+        (self.source / '_unused_tra_lines.csv').unlink()
+        translator = self.translator(backend='codex', method='two-pass')
+        replies = iter([({}, json.dumps({'translations': {'1': 'Я вернулся, <CHARNAME>.', '2': 'Дверь открыта.'}})),
+                        ({'error': 'request timed out', 'failure_kind': 'time'}, None)])
+        with patch('translate_dialogs.run_cli', side_effect=lambda *a, **k: next(replies)), \
+                contextlib.redirect_stderr(io.StringIO()):
+            self.assertFalse(translator.translate_all_dialogs())
+        self.assertFalse((self.target / 'dialogue.csv').exists())
+        self.assertEqual(translator.request_count, 2)
+
+    def test_ordinary_failures_still_allow_following_csvs(self):
+        self.inputs()
+        translator = self.translator(backend='codex')
+        with patch('translate_dialogs.run_cli', return_value=({'error': 'offline'}, None)) as call, \
+                contextlib.redirect_stderr(io.StringIO()):
+            self.assertFalse(translator.translate_all_dialogs())
+        self.assertEqual(call.call_count, 2)
 
     def test_cli_failure_and_structural_rejection_keep_old_export_and_evidence(self):
         self.inputs()
