@@ -1,0 +1,22 @@
+{
+  "01_male": {
+    "elapsed_seconds": 21.58,
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 1456,
+    "eval_count": 374,
+    "total_duration": 21568060023,
+    "load_duration": 11218215973,
+    "eval_duration": 8576736000
+  },
+  "02_female": {
+    "elapsed_seconds": 10.86,
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 1887,
+    "eval_count": 375,
+    "total_duration": 10860660049,
+    "load_duration": 3672777,
+    "eval_duration": 8637326000
+  }
+}

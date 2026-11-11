@@ -1,0 +1,12 @@
+﻿model,prompt,scope,think,temp,repeat,gender,Line_ID,failed_checks,russian
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_0_ELEMENT_0_SAY_1,,"Ах, это звучит так, будто это произошло с одной из моих кузин, и — может, ей действительно стоит записать свою историю. Возможно, она станет признанным произведением, как некоторые из этих книг вокруг нас. Ммм, я думаю, я должен сказать ей об этом, или даже предложить помощь."
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_3,,"Хорошо. Только справедливо, чтобы оригинальный лидер, <PLAYER1>, столкнулся с этими существами."
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_4,,Хорошо. <PLAYER2> столкнётся с этими вещами.
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_5,,Хорошо. <PLAYER3> столкнётся с этими вещами.
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_6,,Хорошо. <PLAYER4> столкнётся с этими вещами.
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_7,,Хорошо. <PLAYER5> столкнётся с этими вещами.
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_8,,Хорошо. <PLAYER6> столкнётся с этими вещами.
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_REPLY_9,,"Нет. Я пропущу. По крайней мере, пока."
+mistral-small3.2:24b,production,full,default,default,1,male,100_BLOCK_1_ELEMENT_0_SAY_2,,"Это один-на-один бой за выживание. Плата за изучение большинства этих книг составляет 3500 золотых монет, но использование этой книги стоит всего 3000 золотых монет."
+mistral-small3.2:24b,production,full,default,default,1,male,100_INITIAL_0_SAY_0,,"""Одинокий авантюрист, оставленный и преданный своей группой, пробирался сквозь слои слизи и сточных вод. Все его бывшие друзья думали, что он мёртв, но он всегда был упрямым, и у него ещё оставались несколько козырей в рукаве. Он выжил. Но канализация не была безопасным местом, или хотя бы не эти туннели. Недавно их захватили странные червеобразные существа. Они уже знали, что он там, и готовились к атаке."""
+mistral-small3.2:24b,production,full,default,default,1,male,101_INITIAL_0_SAY_10,,"Правильно! Ну, я надеюсь, ты выбрал правильного человека, чтобы пройти это испытание."

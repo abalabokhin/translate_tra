@@ -1,0 +1,5 @@
+results/
+
+# Preserve raw CLI experiment evidence despite the generic transient-results rule.
+!codex_translation/*/results/
+!codex_translation/*/results/**

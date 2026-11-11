@@ -1,0 +1,10 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Quiet Slippers,@53,TRA:setup.tra:@53,,,item_name,unknown,,InkGallery/items/l#igbts.itm,NAME1; NAME2,InkGallery.tp2:687 SAY NAME1; InkGallery.tp2:688 SAY NAME2,
+NARRATOR,2,,"These slippers are very comfortable and, because of how soft they are, they allow one to move without making too much noise. But they also look quite neat; they are somewhat fluffy.
+
+STATISTICS:
+
+Equipped abilities:
+– Move Silently: +5%
+
+Weight: 2",@54,TRA:setup.tra:@54,,,item_description,unknown,,InkGallery/items/l#igbts.itm,DESC,InkGallery.tp2:689 SAY DESC,

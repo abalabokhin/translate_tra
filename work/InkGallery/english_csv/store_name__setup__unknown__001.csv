@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,The Ink Gallery Souvenir Shop,@46,TRA:setup.tra:@46,,,store_name,unknown,,InkGallery/sto/l#igsto.sto,0xc,InkGallery.tp2:658 SAY 0xc,

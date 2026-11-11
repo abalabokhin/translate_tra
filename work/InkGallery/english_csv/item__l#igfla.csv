@@ -1,0 +1,20 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Flail,@59,TRA:setup.tra:@59,,,item_name,unknown,,InkGallery/items/l#igfla.itm,NAME1,InkGallery.tp2:702 SAY NAME1,
+NARRATOR,2,,Priestess' Emasculator +3,@60,TRA:setup.tra:@60,,,item_name,unknown,,InkGallery/items/l#igfla.itm,NAME2,InkGallery.tp2:703 SAY NAME2,
+NARRATOR,3,,"This weapon was once a favorite weapon of a drow priestess. She was a cruel matron, known for her hatred of men—even for drow standards. She liked to torture them, and make it all a spectacle for other men to observe. They say it was her way to emasculate not just one man, but all of them, all at once.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to Poison
+
+THAC0: +3
+Damage: 1d6+4, +1d4+1 Acid vs. Males
+Damage type: Crushing
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 10",@61,TRA:setup.tra:@61,,,item_description,unknown,,InkGallery/items/l#igfla.itm,DESC,InkGallery.tp2:704 SAY DESC,

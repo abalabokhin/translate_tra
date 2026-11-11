@@ -1,0 +1,18 @@
+@0    = ~[Taniec mieczy] „Muzyka wprawiała powietrze w sali balowej w drżenie. W głębi sali stał Maestro, otoczony parami tańczących mieczy, które ścierały się ze sobą z pasją podszytą odrobiną gniewu. Wtedy na środek wkroczyli niezapowiedziani goście. Pojawili się jakby znikąd. Maestro spojrzał na nich z rozbawionym uśmiechem”.~
+@1    = ~[Haer'Dalis] No cóż, moja kruczyco, brzmi to niczym sztuka, którą mogłem już kiedyś czytać! Albo... o której mogłem śnić. Zapowiada się doprawdy niezwykłe widowisko. Wkroczymy do środka i zmierzymy się z tym Maestrem?~
+@2    = ~[Wicehrabina Velcealle] Z tą księgą wiąże się dość zabawna historia. Dostałam ją od kogoś, lecz... nigdy nie dowiedziałam się, kto ją przysłał. Być może po prostu była mi przeznaczona i miała trafić na wystawę! Zapłać 3500 sztuk złota, a wkroczysz do sali balowej z należytą gracją. O ile oczywiście stać cię na opłatę.~
+@3    = ~[Player] Mam. Proszę, weź je. Dawno nie byłem na żadnym balu.
+~ ~[Player] Mam. Proszę, weź je. Dawno nie byłam na żadnym balu.
+~
+@4    = ~[Player] Nie. Na razie zrezygnuję.~
+@5    = ~[Wicehrabina Velcealle] Mam nadzieję, że masz odpowiednie obuwie! Niech rozpocznie się bal!~
+@6    = ~[Taniec mieczy] „Maestro poległ, a wraz z nim jego miecze. Walka dobiegła końca. Pozostała jedynie muzyka, tańcząca nad połamanymi ostrzami i zwłokami martwego barda”.~
+@7    = ~[Taniec mieczy] Kto nauczy się poskramiać nawet najostrzejsze miecze?~
+@8    = ~[Player] <PLAYER1>.~
+@9    = ~[Player] <PLAYER2>.~
+@10   = ~[Player] <PLAYER3>.~
+@11   = ~[Player] <PLAYER4>.~
+@12   = ~[Player] <PLAYER5>.~
+@13   = ~[Player] <PLAYER6>.~
+@14   = ~[Taniec mieczy] A więc to ta osoba otrzyma dar. Niech tak będzie.~
+@15   = ~[Taniec mieczy] Już mierzyłeś się z tą próbą.~ ~Już mierzyłaś się z tą próbą.~

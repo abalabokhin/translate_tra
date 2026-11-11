@@ -47,6 +47,10 @@ This is a collection of Python scripts for working with TRA files (localization 
   - Uses `actors.csv` for character information
   - Uses `dict.csv` for translation dictionary with context
   - Dictionary features: word boundaries, prioritizes longer phrases, supports multiple translations with context
+  - Explicitly empty original female lines are not sent to the female pass; they are exported empty
+  - Strings shared by speakers of different genders are listed in `<name>.shared_strings_review.txt` for manual review
+  - Experiments, evaluation and their results: `tra_files_llm_translating/experiments/README.md`. Commit experiment
+    results to the repo (`experiments/translate_verify/`, `experiments/prompt_ab/`), not only the ignored `results/`
 
 - `update_tra_from_csv.py` - Updates TRA files with translations from CSV files
   ```bash

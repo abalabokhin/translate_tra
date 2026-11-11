@@ -1,0 +1,1 @@
+{"error":"llama-server process has terminated: ROCm error: an illegal memory access was encountered\nROCm error: ROCm error: an illegal memory access was encountered\nROCm error"}{"model":"mistral-small3.2:24b","created_at":"2026-10-31T12:15:48.978499348Z","response":"","done":true,"done_reason":"unload"}

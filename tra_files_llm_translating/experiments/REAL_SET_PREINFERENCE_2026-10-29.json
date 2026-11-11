@@ -1,0 +1,33 @@
+{
+  "frozen_utc": "2026-10-29T21:54:36.830931+00:00",
+  "status": "references and checks fixed before first real-set inference",
+  "reviewer": "Codex assistant at user request",
+  "human_review": "pending; user offered to review translated outputs",
+  "fixtures": [
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "rows": 36,
+  "sha256": {
+    "real_set/inkgallery_beholder/README.md": "4c34034281841a8c7d08efc29c6f0cac847add638055bc7e6910d34ceaf25c3e",
+    "real_set/inkgallery_beholder/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62",
+    "real_set/inkgallery_beholder/checks.json": "4cdf194ab6db1dc1889d6d258929662c22c27f49a1bda612155bb510065534dc",
+    "real_set/inkgallery_beholder/input.csv": "fd636045ce21a7516868d510aa4e631e0c2a7d7ef52e0c9d236c395212d505d5",
+    "real_set/inkgallery_beholder/reference.csv": "62868fe174f4916ac4d1700c4b0cead09d69e482ffe16659a7894112770b1c24",
+    "real_set/inkgallery_beholder/source_sha256.json": "d3c034cdfb070f2138437a58b26b46bbf473c7ae376d9f36de7879af2a3fc5b8",
+    "real_set/inkgallery_moon_sisters/README.md": "a35404ce175196447607cc1f588979a53c986fde76879934c49ad8ee96181b9b",
+    "real_set/inkgallery_moon_sisters/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62",
+    "real_set/inkgallery_moon_sisters/checks.json": "86e7f5fb641e76a4103a349f0e9f9d0d752f103104c42bc160bf21bb9fcdefa9",
+    "real_set/inkgallery_moon_sisters/input.csv": "913105077a04598735e4c67f9532b838e8dcc7860235674d359326e2521de0ce",
+    "real_set/inkgallery_moon_sisters/reference.csv": "befdca092ede09875f07c66a7487f737395ec0fa825bd3f55165257be3fa8421",
+    "real_set/inkgallery_moon_sisters/source_sha256.json": "aeedf4ed03fa7cb1787c783f30c8101dffb4057597174faa5ceb9aa4200209cf",
+    "real_set/inkgallery_sewers/README.md": "c3f5502d5083165704fde9881b0055975eee8ffd6ababae57d896016810674d7",
+    "real_set/inkgallery_sewers/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62",
+    "real_set/inkgallery_sewers/checks.json": "3d9c598a4c2c0158b4dccfc4294598585af932a78539894766f20d6838eac7ca",
+    "real_set/inkgallery_sewers/input.csv": "8eeaa091cada9dcd09d7531659edc747d09c6ef8ffef5f49fee417ad538041f5",
+    "real_set/inkgallery_sewers/reference.csv": "546529740f165f449a669288b3428de3bcc8a4218f1fd89ed0233fbf2ddaa7f2",
+    "real_set/inkgallery_sewers/source_sha256.json": "27784b94a834e5a3f9cf4f932c40cbb84f41217d0adb88e38cc4f04d1b753ee6"
+  },
+  "pre_inference_revision": "Before any real-set requests: tightened Bloodied Child reference to Окровавленное Дитя for source fidelity. No model outputs used."
+}

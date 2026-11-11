@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19364-07df-7360-882c-6f67bc39327e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":{\"male\":\"Я был его учеником.\",\"female\":\"Я была её ученицей.\"},\"2\":{\"male\":\"Селена послала тебя забрать его печать.\",\"female\":\"Герцогиня послала тебя забрать её печать.\"},\"3\":{\"male\":\"Я принёс серебряный ключ.\",\"female\":\"Я принесла бронзовый ключ.\"},\"4\":{\"male\":\"Дверь открыта.\",\"female\":\"\"},\"5\":{\"male\":\"Я буду ждать здесь.\",\"female\":\"Я буду ждать здесь.\"}}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15057,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":123,"reasoning_output_tokens":0}}

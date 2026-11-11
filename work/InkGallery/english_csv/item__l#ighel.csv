@@ -1,0 +1,14 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Helmet,@91,TRA:setup.tra:@91,,,item_name,unknown,,InkGallery/items/l#ighel.itm,NAME1,InkGallery.tp2:757 SAY NAME1; InkGallery.tp2:766 SAY NAME1,Same physical TRA string; one translation must suit all these uses: NARRATOR [unknown]; item_name; InkGallery.tp2:757 SAY NAME1; InkGallery.tp2:766 SAY NAME1
+NARRATOR,2,,Remorhaz Shell Helm,@92,TRA:setup.tra:@92,,,item_name,unknown,,InkGallery/items/l#ighel.itm,NAME2,InkGallery.tp2:758 SAY NAME2,
+NARRATOR,3,,"Crafted from chitinous scales, this heavy helmet retains some of the natural resistances of the remorhaz from which it was made.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Armor Class: +1
+– Magic Resistance: +10%
+– Magic Damage Resistance: +20%
+
+Weight: 10",@93,TRA:setup.tra:@93,,,item_description,unknown,,InkGallery/items/l#ighel.itm,DESC,InkGallery.tp2:759 SAY DESC,

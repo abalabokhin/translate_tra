@@ -1,0 +1,12 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female
+L#IGB9,100_INITIAL_0_SAY_0,,"""The rotting orb was levitating in the center of a damp cave. A zombie beholder, who was believed to be dead for a century, or mayhap more. Undead and wild, at the very same time. When it saw any living creature, it would bite them with its powerful maw. This is a dead magic area, so it was used to fighting the unfortunate with its sharp teeth.""",@0,TRA:l#igb9.tra:@0,,
+ANOMENJ,100_BLOCK_0_ELEMENT_0_SAY_1,100_INITIAL_0_SAY_0,"A zombie beholder? And most likely an angered one. It deserves to be destroyed, and that is exactly what we should do to it.",@1,TRA:l#igb9.tra:@1,,
+L#IGSTA,100_BLOCK_1_ELEMENT_0_SAY_2,100_BLOCK_0_ELEMENT_0_SAY_1,"This one can only be faced in a one-on-one battle. That is why the fee for this one isn't 3,500 gold pieces, but slightly lower: 3,000 coins, and you may face it. The same person will learn from that book.",@2,TRA:l#igb9.tra:@2,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_3,100_BLOCK_1_ELEMENT_0_SAY_2,"Fine. It's only fair for the original leader, <PLAYER1>, to face this thing.",@3,TRA:l#igb9.tra:@3,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_4,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER2> shall face this thing.,@4,TRA:l#igb9.tra:@4,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_5,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER3> shall face this thing.,@5,TRA:l#igb9.tra:@5,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_6,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER4> shall face this thing.,@6,TRA:l#igb9.tra:@6,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_7,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER5> shall face this thing.,@7,TRA:l#igb9.tra:@7,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_8,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER6> shall face this thing.,@8,TRA:l#igb9.tra:@8,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_9,100_BLOCK_1_ELEMENT_0_SAY_2,No. I'll pass. At least for now.,@9,TRA:l#igb9.tra:@9,,
+L#IGSTA,101_INITIAL_0_SAY_10,100_BLOCK_1_ELEMENT_0_REPLY_3;100_BLOCK_1_ELEMENT_0_REPLY_4;100_BLOCK_1_ELEMENT_0_REPLY_5;100_BLOCK_1_ELEMENT_0_REPLY_6;100_BLOCK_1_ELEMENT_0_REPLY_7;100_BLOCK_1_ELEMENT_0_REPLY_8,"Of course! So, let's start the process.",@10,TRA:l#igb9.tra:@10,,

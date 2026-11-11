@@ -1,0 +1,17 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Belt,@70,TRA:setup.tra:@70,,,item_name,unknown,,InkGallery/items/l#igbel.itm,NAME1,InkGallery.tp2:722 SAY NAME1,
+NARRATOR,2,,Glabrezu's Arousal,@71,TRA:setup.tra:@71,,,item_name,unknown,,InkGallery/items/l#igbel.itm,NAME2,InkGallery.tp2:723 SAY NAME2,
+NARRATOR,3,,"If tales are to be believed, this belt was created from the skin and bones of a powerful glabrezu, feared by both mortals and other devils. He was said to feel sadistic arousal from killing all those that were ready to stand in his way.
+
+It looks like this belt also has some parasitic properties, and that it is blood that channels the belt's magic. The diabolical nature of this weapon does not allow paladins to wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +8%
+– Attacks per round: +1/2
+– THAC0: +1
+– Constitution: -1
+– May only be removed with a Remove Curse spell
+
+Weight: 2",@72,TRA:setup.tra:@72,,,item_description,unknown,,InkGallery/items/l#igbel.itm,DESC,InkGallery.tp2:724 SAY DESC,

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19364-dd3f-7b21-8a98-66fa3454d481"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Я была его ученицей.\",\"2\":\"Герцог послал тебя забрать его печать.\",\"3\":\"Я принесла серебряный ключ.\",\"5\":\"Я подожду здесь.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":14969,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":156,"reasoning_output_tokens":99}}

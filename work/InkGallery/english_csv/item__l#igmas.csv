@@ -1,0 +1,17 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Helmet,@91,TRA:setup.tra:@91,,,item_name,unknown,,InkGallery/items/l#igmas.itm,NAME1,InkGallery.tp2:757 SAY NAME1; InkGallery.tp2:766 SAY NAME1,Same physical TRA string; one translation must suit all these uses: NARRATOR [unknown]; item_name; InkGallery.tp2:757 SAY NAME1; InkGallery.tp2:766 SAY NAME1
+NARRATOR,2,,Mask of Three Sublime Rubies,@95,TRA:setup.tra:@95,,,item_name,unknown,,InkGallery/items/l#igmas.itm,NAME2,InkGallery.tp2:767 SAY NAME2,
+NARRATOR,3,,"This item used to be a burial mask, but when it was found by a curious bard, he turned it into a headgear that could be used by the living to enhance their ability to control magic. Some say that when worn, the rubies whisper secrets and hints regarding everything around the one who wears it.
+
+While it must have been difficult to change it from a burial mask to a normal one, it clearly was worth all the effort and resources.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Lore: +50%
+– Wisdom: +1
+– Intelligence: +1
+– Improves casting speed by 1
+
+Weight: 1",@96,TRA:setup.tra:@96,,,item_description,unknown,,InkGallery/items/l#igmas.itm,DESC,InkGallery.tp2:768 SAY DESC,

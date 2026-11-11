@@ -1,0 +1,10 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB6,L#IGB6_b5fccee1::L#IGB6:200_INITIAL_0_SAY_6,,"""The Maestro fell, and so did his swords. The battle has finished, and only the music remained, dancing over the broken swords and the corpse of one dead bard.""",@6,TRA:l#igb6.tra:@6,,,,dialogue,MALE,
+L#IGB6,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,L#IGB6_b5fccee1::L#IGB6:200_INITIAL_0_SAY_6,Who shall learn how to tame even the sharpest swords?,@7,TRA:l#igb6.tra:@7,,,,dialogue,MALE,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_8,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER1>.,@8,TRA:l#igb6.tra:@8,,,,dialogue,player,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_9,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER2>.,@9,TRA:l#igb6.tra:@9,,,,dialogue,player,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_10,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER3>.,@10,TRA:l#igb6.tra:@10,,,,dialogue,player,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_11,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER4>.,@11,TRA:l#igb6.tra:@11,,,,dialogue,player,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_12,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER5>.,@12,TRA:l#igb6.tra:@12,,,,dialogue,player,
+PLAYER,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_13,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_SAY_7,<PLAYER6>.,@13,TRA:l#igb6.tra:@13,,,,dialogue,player,
+L#IGB6,L#IGB6_b5fccee1::L#IGB6:201_INITIAL_0_SAY_14,L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_8;L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_9;L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_10;L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_11;L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_12;L#IGB6_b5fccee1::L#IGB6:200_BLOCK_0_ELEMENT_0_REPLY_13,So this is who shall receive the gift. So be it.,@14,TRA:l#igb6.tra:@14,,,,dialogue,MALE,

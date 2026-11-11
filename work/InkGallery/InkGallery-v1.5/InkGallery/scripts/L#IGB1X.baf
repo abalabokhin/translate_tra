@@ -1,0 +1,7 @@
+IF
+Global("L#IGRatAnimation","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGRatAnimation","LOCALS",1)
+CreateVisualEffectObject("L#IGBOOM",Myself)
+END

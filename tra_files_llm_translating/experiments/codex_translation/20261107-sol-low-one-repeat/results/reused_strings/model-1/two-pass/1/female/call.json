@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "low",
+  "started_utc": "2026-11-07T22:55:02.860217+00:00",
+  "wall_seconds": 4.657,
+  "usage": {
+    "input_tokens": 15952,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 67,
+    "reasoning_output_tokens": 0
+  },
+  "error": null,
+  "command": [
+    "codex",
+    "exec",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6.1-sol",
+    "--color",
+    "never",
+    "--json",
+    "--output-schema",
+    "/tmp/tra-codex-7ojdugk4/schema.json",
+    "--output-last-message",
+    "/tmp/tra-codex-7ojdugk4/response.txt",
+    "-"
+  ],
+  "returncode": 0,
+  "finished_utc": "2026-11-07T22:55:07.516748+00:00"
+}

@@ -1,0 +1,31 @@
+﻿model,prompt,scope,think,temperature,repeat,Line_ID,status,reason,male,female
+mistral-small3.2:24b,production,full,default,default,1,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,1,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production,full,default,default,1,403,not_applicable,Original female source differs in meaning or form,Я принес серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,1,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production,full,default,default,1,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,2,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,2,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя вернуть его печать.,Герцогиня послала тебя вернуть её печать.
+mistral-small3.2:24b,production,full,default,default,2,403,not_applicable,Original female source differs in meaning or form,Я принёс серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,2,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production,full,default,default,2,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.
+mistral-small3.2:24b,production,full,default,default,3,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production,full,default,default,3,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production,full,default,default,3,403,not_applicable,Original female source differs in meaning or form,Я принес серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production,full,default,default,3,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production,full,default,default,3,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.
+mistral-small3.2:24b,production-nouns,full,default,default,1,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production-nouns,full,default,default,1,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production-nouns,full,default,default,1,403,not_applicable,Original female source differs in meaning or form,Я принес серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production-nouns,full,default,default,1,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production-nouns,full,default,default,1,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.
+mistral-small3.2:24b,production-nouns,full,default,default,2,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production-nouns,full,default,default,2,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production-nouns,full,default,default,2,403,not_applicable,Original female source differs in meaning or form,Я принес серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production-nouns,full,default,default,2,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production-nouns,full,default,default,2,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.
+mistral-small3.2:24b,production-nouns,full,default,default,3,401,not_applicable,Original female source differs in meaning or form,Я был его учеником.,Я была её ученицей.
+mistral-small3.2:24b,production-nouns,full,default,default,3,402,not_applicable,Original female source differs in meaning or form,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.
+mistral-small3.2:24b,production-nouns,full,default,default,3,403,not_applicable,Original female source differs in meaning or form,Я принес серебряный ключ.,Я принесла бронзовый ключ.
+mistral-small3.2:24b,production-nouns,full,default,default,3,404,not_applicable,Original female source differs in meaning or form,Дверь открыта.,
+mistral-small3.2:24b,production-nouns,full,default,default,3,405,pass,Exact equality after listed gender edits,Я подожду здесь.,Я подожду здесь.

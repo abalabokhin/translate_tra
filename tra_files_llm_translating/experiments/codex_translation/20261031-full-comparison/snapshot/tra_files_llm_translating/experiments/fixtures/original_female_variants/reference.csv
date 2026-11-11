@@ -1,0 +1,6 @@
+Line_ID,Russian_Male,Russian_Female,Review_Notes
+401,Я был его учеником.,Я была её ученицей.,Female source changes his to her; not just Player1 morphology.
+402,Герцог послал тебя забрать его печать.,Герцогиня послала тебя забрать её печать.,Female English changes patron gender and possessive; fixed NPC speaker.
+403,Я принёс серебряный ключ.,Я принесла бронзовый ключ.,Female source changes material; semantic preservation required.
+404,Дверь открыта.,,"Explicit empty female literal is intentional, not an omission."
+405,Я подожду здесь.,Я подожду здесь.,No original female variant; fallback to male source.

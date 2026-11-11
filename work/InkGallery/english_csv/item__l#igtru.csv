@@ -1,0 +1,13 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Horn,@62,TRA:setup.tra:@62,,,item_name,unknown,,InkGallery/items/l#igtru.itm,NAME1,InkGallery.tp2:707 SAY NAME1,
+NARRATOR,2,,Trumpet of Delirious Celebrations,@63,TRA:setup.tra:@63,,,item_name,unknown,,InkGallery/items/l#igtru.itm,NAME2,InkGallery.tp2:708 SAY NAME2,
+NARRATOR,3,,"Tales say that this trumpet once belonged to one of Kwan Ying's archons, a fellow of Chin Yi, another archon that later became the source of the Celestial Fury's true power. People say that when the Trumpet of Delirious Celebrations is blown, people around start acting as if they were drunk and find it difficult to hit the user of this instrument.
+
+STATISTICS:
+
+Charge abilities:
+– Delirious Celebration once per day
+  Special: Enemies in the radius must pass a save vs. spells at -4 or suffer from powerful magical drunkenness that lasts 5 turns. For those that fail the save, there is also a 5% chance to fall onto the ground unconscious for 2 rounds. The character that blows the instrument is also granted +1 Armor Class and +1 Charisma bonuses for the whole duration.
+  Area of Effect: 15-ft. radius
+
+Weight: 2",@64,TRA:setup.tra:@64,,,item_description,unknown,,InkGallery/items/l#igtru.itm,DESC,InkGallery.tp2:709 SAY DESC,

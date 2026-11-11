@@ -1,0 +1,16 @@
+IF
+Dead("L#IGB6E")
+Global("L#IGKillMyself","LOCALS",0)
+THEN
+  RESPONSE #100
+    Kill(Myself)
+    SetGlobal("L#IGKillMyself","LOCALS",1)
+END
+
+IF
+Allegiance(Myself,NEUTRAL)
+Global("L#IGB6StartBattle","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Enemy()
+END

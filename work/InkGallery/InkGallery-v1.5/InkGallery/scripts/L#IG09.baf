@@ -1,0 +1,68 @@
+
+
+//dead magic
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player1,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player2,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla3","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player3,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla4","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player4,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla5","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player5,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","L#IG09")  
+	Global("L#IGBook9RewPla6","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Player6,DEAD_MAGIC_AREA)  
+		SetGlobalTimer("AntimagicTimer","L#IG09",14)  
+END
+
+IF
+Dead("L#IGB9E")
+Global("L#IGActivateExit","L#IG09",0)
+THEN 
+RESPONSE #100
+TriggerActivation("Leave",TRUE)
+AmbientActivate("Leaveani",TRUE)
+DisplayStringHead("LEAVE",@164)
+SetGlobal("L#IGActivateExit","L#IG09",1)
+END

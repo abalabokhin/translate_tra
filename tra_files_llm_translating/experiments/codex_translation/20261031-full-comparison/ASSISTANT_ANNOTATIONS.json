@@ -1,0 +1,1486 @@
+{
+  "f9cc8e2bdcae286f": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "9acb0abc51781b06": {
+    "status": "gender_error",
+    "note": "Male Player1 is addressed as хотела; female version is correct."
+  },
+  "10af1c7dfa37686b": {
+    "status": "meaning_review",
+    "note": "Awkward conditional: Если только ты заглянул не просто узнать. Exception/negation scope should be reviewed against Unless you popped in only to see how I am doing; not counted as a proven gender error."
+  },
+  "4343bc948cd966fc": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "ec6c3d69078b65af": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "06b52db130fd6a27": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "a8f1ff3d695ec928": {
+    "status": "spelling_error",
+    "note": "Кормирa ends in Latin a; correct Cyrillic form Кормира. NPC gender correctly fixed."
+  },
+  "9cfab30c69a5ff38": {
+    "status": "editorial_review",
+    "note": "усвою всё из этих книг is awkward and may overstate learning from all books as mastering everything."
+  },
+  "88da55c3afe50b0b": {
+    "status": "terminology_review",
+    "note": "Cowled Wizards rendered literally; canonical faction wording pending."
+  },
+  "042324786f315097": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "0c58a795955c75e9": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "b1e3beb9b6527b8b": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "7aee78a32243ab50": {
+    "status": "format_error",
+    "note": "Added quotation marks around Gallery absent from source; entire response rejected by unchanged validator."
+  },
+  "5f7f50aecda24af4": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "d5396265c03dc2aa": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "6ad28739252c383b": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "0c4532f4d1dc2494": {
+    "status": "format_spelling_error",
+    "note": "Added quotation marks absent from source and Latin a in Кормирa."
+  },
+  "c49c3eeb896fa1db": {
+    "status": "terminology_review",
+    "note": "Cowled Wizards rendered literally; canonical wording pending."
+  },
+  "e3e0f54d8fd773d4": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "3d105830e6c05b40": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "7488fbcee77fed39": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "8eaff5a6d064be53": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "633678ea9ce5058c": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "047d4eef2a82e4ad": {
+    "status": "spelling_error",
+    "note": "Кормирa ends in Latin a; should be Кормира."
+  },
+  "915ba3aab209e5a4": {
+    "status": "terminology_review",
+    "note": "Named faction rendered descriptively; canonical wording pending."
+  },
+  "93cccdbc2434f8ed": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "57e5a222e3e123b1": {
+    "status": "gender_error",
+    "note": "Female Player1 retains masculine искатель приключений; увлекательные is an added adjective."
+  },
+  "e091ede6610055b9": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "50a0e923eeefc24c": {
+    "status": "gender_error",
+    "note": "Female Player1 retains masculine посмотрел, though пришла changes correctly."
+  },
+  "dd7b50a8e7df2f99": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "01e741bfbbd0c4aa": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "9f1a18a4acced6b3": {
+    "status": "meaning_terminology_review",
+    "note": "Present existing problems becomes future возникнет; named faction wording pending."
+  },
+  "8395d6dc9960b693": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "d9509478140c632e": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "af661c2826574507": {
+    "status": "gender_error",
+    "note": "Female Player1 retains masculine искатель приключений."
+  },
+  "ead9f254bc408bd7": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "b458f567f833f6a6": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "0651d7bbdac11791": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "9f884651df45129e": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "18968b3eb6a39d7c": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "ed00583ec04299b8": {
+    "status": "grammar_error",
+    "note": "Incorrect declension Кормири (male) and Кормир (female); should be Кормира. Female pass adds unrelated difference."
+  },
+  "b86a4c4e3a957f45": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "a4210ec5ae843431": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "3ca3738e9f2b8bab": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "99bdd5583ccdca9d": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "244a0c82434921d3": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "bff9df9f8be1317e": {
+    "status": "pass",
+    "note": "Faithful and natural enough in context; Player1/NPC agreement checked."
+  },
+  "1eaf97c2b0f2da25": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "c41938a03ad4c293": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "579065c1b448a497": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "21ca7b36e1f43a42": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "8a712c341b8768ca": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "f02f1602f8ed5548": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "c40d65fdc194bd28": {
+    "status": "terminology_review",
+    "note": "Named faction rendered Волшебники в рясах; canonical wording pending."
+  },
+  "09239da13bbf2bc7": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "1cd0464e6c2d47ca": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "271081ff4381b8d8": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "f844b6f81374b6df": {
+    "status": "terminology_review",
+    "note": "Named faction rendered Волшебники в рясах; canonical wording pending."
+  },
+  "4671e77d04f22c55": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "d0ed6c40a84d54ea": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "716ee1a69fb50557": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "d27291b81a752124": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "7d6d6a53714b3aba": {
+    "status": "pass",
+    "note": "Reviewed against English: complete meaning and appropriate Player1/NPC gender; no substantive issue found."
+  },
+  "d1a966dd719e130e": {
+    "status": "terminology_review",
+    "note": "Named faction rendered Волшебники в рясах; canonical wording pending."
+  },
+  "af620beb03e8d0c4": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "d06c7fa9116d56b0": {
+    "status": "terminology_review",
+    "note": "Named faction wording requires canonical terminology review."
+  },
+  "9d698f8c2ef16f88": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "ecfed023c45ec9e0": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "22326408d5da9ce7": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "1a002449cf475679": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "3d0ab2633a616ef4": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "353d7cca1fc060ff": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "2ec9d20d91b971ab": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "e947116b134b88ac": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "9063bf618c204e8a": {
+    "status": "addressee_gender_error",
+    "note": "Player1 is speaking to an unresolved listener or listeners, yet должен/должна follows Player1 gender. Prefer unmarked wording rather than changing recipient gender with protagonist."
+  },
+  "12ed6e5a08246ce8": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "01538fa6c9ee6bce": {
+    "status": "pass",
+    "note": "Reviewed against English and dialogue context; no substantive issue found."
+  },
+  "53c9682d549662a6": {
+    "status": "addressee_gender_error",
+    "note": "Player1 is speaking to an unresolved listener or listeners, yet должен/должна follows Player1 gender. Prefer unmarked wording rather than changing recipient gender with protagonist."
+  },
+  "360592cf752b3abe": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "6818b420a063e2fd": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "f1c7c5d4015a67de": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "107aada58275f162": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "b3a7636f5c4768a2": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "728b9417f09454cc": {
+    "status": "pass",
+    "note": "Reviewed against source. Group address or neutral wording is acceptable for unresolved addressees; no protagonist-dependent recipient gender introduced."
+  },
+  "1c3e49dbd07570fb": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "3ecfc7affedce4e0": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "a70960bff4854280": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "3a8d6ed369ced35a": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "62aaffcbef36cd71": {
+    "status": "editorial_review",
+    "note": "Орин должен ей извинения is an awkward calque; prefer Орину стоит перед ней извиниться / Орин должен перед ней извиниться."
+  },
+  "e0f536c6052426dc": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "d51e6be842c9dea4": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "8c9caa95f0441142": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "f2232c09e8f8d2f0": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "5d7abebd7d9dcf8b": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "48f27fab30f7427d": {
+    "status": "gender_error",
+    "note": "Male protagonist receives спасла despite masculine путник. Female version is correctly feminine."
+  },
+  "acf6dc570fb78062": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "16b7844f1c34fdf1": {
+    "status": "gender_error",
+    "note": "Male Player1 receives вернулась; the female pass is unchanged."
+  },
+  "f8bd88ee37d7b742": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "fb2432d58144ce74": {
+    "status": "gender_error",
+    "note": "Female Player1 retains masculine спас and путник; two-pass failed to edit both."
+  },
+  "42a80fc64362f250": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "d48c5b9405bd5ccd": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "b011f7405df34f5d": {
+    "status": "editorial_review",
+    "note": "Орин должен ей извинение is an awkward calque; prefer должен перед ней извиниться."
+  },
+  "0d7b87e407187376": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "698c64b27069f456": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "07d2c80fab8af79a": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "ea5eafc2d327148f": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "e1877a61f6dd398e": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "6762785057050132": {
+    "status": "pass",
+    "note": "Reviewed source meaning and fixed NPC versus protagonist agreement; no substantive issue found."
+  },
+  "530dfaa7ab8206ee": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "4e937fd4269e18dd": {
+    "status": "third_person_error",
+    "note": "Female pass changes original him / его to её even though female English source is unchanged; fixed third-person referent was not to change."
+  },
+  "bc055e0fd6b17188": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "32f0c583dc7fd2b6": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "273a0c5345625990": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "58a0334ca4e61062": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "5d14e68d614f0b77": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "92fdbf5faa108a2f": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "71c40ee08c75345c": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "72ce9ddff1a1f174": {
+    "status": "meaning_error",
+    "note": "Male source duke replaced by Selene, who is the speaker; invented subject and lost duke."
+  },
+  "08870485fb9c7066": {
+    "status": "female_source_error",
+    "note": "Male source duke/his is replaced by female-source duchess/her; wrong male meaning."
+  },
+  "e9fa07dd9ff9c813": {
+    "status": "pass",
+    "note": "Reviewed both English sources and gender agreement; original female differences/empty source preserved where applicable."
+  },
+  "bf55d40107588a0a": {
+    "status": "female_source_error",
+    "note": "Female original says bronze key, but output preserves silver from male instead."
+  },
+  "8bc6112854c8f83d": {
+    "status": "female_source_error",
+    "note": "Female original says her apprentice, but female pass retains его from male instead of её."
+  },
+  "2a1f73a25a2afc2d": {
+    "status": "female_source_error",
+    "note": "Female original says duchess/her, but female pass retains male duke/his."
+  },
+  "b3bf3b8f2fad5b6c": {
+    "status": "shared_string_error",
+    "note": "Shared string is spoken by female Selene and Player1. Male version Я готов misgenders Selene; it needs wording suitable for all speakers."
+  },
+  "53bef831ea8702cb": {
+    "status": "pass",
+    "note": "Reviewed against source; stage directions, line break and placeholders preserved; no substantive issue found."
+  },
+  "22a11330cf4960b0": {
+    "status": "shared_string_error",
+    "note": "Same reused TRA entry as 301_a: male Я готов also serves female Selene and therefore fails shared-string agreement."
+  },
+  "01a60d65a6911ca3": {
+    "status": "pass",
+    "note": "Reviewed against source; stage directions, line break and placeholders preserved; no substantive issue found."
+  },
+  "e474f483075307de": {
+    "status": "pass",
+    "note": "Reviewed against source; stage directions, line break and placeholders preserved; no substantive issue found."
+  },
+  "8419d94b7c8acfe9": {
+    "status": "pass",
+    "note": "Reviewed against source; stage directions, line break and placeholders preserved; no substantive issue found."
+  },
+  "1e157a2d4e0ea212": {
+    "status": "editorial_review",
+    "note": "Gender-neutral but Я могу идти narrows generic readiness to being able to go; check in context."
+  },
+  "74958a8a7b61b83f": {
+    "status": "editorial_review",
+    "note": "Gender-neutral but generic readiness becomes ability to go; same shared string as 301_a."
+  },
+  "d355734b610dce9e": {
+    "status": "pass",
+    "note": "Reviewed against source; stage directions, line break and placeholders preserved; no substantive issue found."
+  },
+  "136329d79d3eec8e": {
+    "status": "address_form_review",
+    "note": "Plural imperatives Ждите / Не трогайте versus singular default; no explicit group established in prompt. Needs addressee review."
+  },
+  "bff100d3c61f935c": {
+    "status": "shared_string_error",
+    "note": "Male output Я готов(а) uses parenthetical gender alternatives rather than one natural complete wording suitable for all shared speakers."
+  },
+  "d90a854b0a6f954b": {
+    "status": "shared_string_error",
+    "note": "Same shared TRA entry: Я готов(а) is parenthetical gender markup rather than natural shared wording."
+  },
+  "149763c04a52a4a5": {
+    "status": "pass",
+    "note": "Reviewed: natural neutral shared-speaker wording, or correct preserved placeholders and literal line break."
+  },
+  "dade73fca798df12": {
+    "status": "pass",
+    "note": "Reviewed: natural neutral shared-speaker wording, or correct preserved placeholders and literal line break."
+  },
+  "fcec2c6ec784eccf": {
+    "status": "pass",
+    "note": "Reviewed: natural neutral shared-speaker wording, or correct preserved placeholders and literal line break."
+  },
+  "9a431ffe44a6e9fd": {
+    "status": "pass",
+    "note": "Reviewed: natural neutral shared-speaker wording, or correct preserved placeholders and literal line break."
+  },
+  "26fb3ec4d7a91ecd": {
+    "status": "pass",
+    "note": "Reviewed: natural neutral shared-speaker wording, or correct preserved placeholders and literal line break."
+  },
+  "369d6dd36b8227ef": {
+    "status": "editorial_review",
+    "note": "Нежить и дикарь is an awkward anthropomorphic rendering of undead and wild; rest of narration retains the facts."
+  },
+  "6e67ca2f05236385": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "3b685564e87b1e5d": {
+    "status": "meaning_review",
+    "note": "Тот же человек узнает из этой книги has an incomplete/unclear узнает predicate; source says the selected fighter also learns from the book."
+  },
+  "22aad41aacb13677": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "95234cf11e364bfc": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "2acd754b37880797": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "8c0d8ccb6fb6a8e8": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "a33a1135049f05cf": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "8dbb39e2d8e9bcd8": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "c8020c0fa0966daf": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "2ba05f171948c329": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "378099d418e16e68": {
+    "status": "format_error",
+    "note": "Outer quotation marks of narrative were dropped; full reply rejected by unchanged validator."
+  },
+  "770f5bb0d88670d2": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "d3f00eb9bc2c8d48": {
+    "status": "meaning_error",
+    "note": "Тот же человек узнает об этом из книги invents learning about this, rather than the same selected person learning from the book."
+  },
+  "4bebbc289f3d0529": {
+    "status": "gender_error",
+    "note": "Female protagonist remains изначальный предводитель; full reply also rejected for narrative quotes elsewhere."
+  },
+  "1afba321343146bb": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "2b4f144a64ea4711": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "413fc336a61160ba": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "db1daa6250b89187": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "1b33e6ae68f2d6d3": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "9000075c2a6f0a00": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "2462282193afd6d6": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "0952e77200d2aa51": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "30e6b907a2556184": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "053c847b62e8f22b": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "e476459c5425c852": {
+    "status": "gendered_role_review",
+    "note": "Female protagonist is called изначальный лидер. Masculine job/title nouns can refer to women, but this does not demonstrate the requested feminine role wording; review versus предводительница or a neutral restructuring."
+  },
+  "1f6eb6026d12f66a": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "5c9912eb1e90850a": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "15e33db29b3b709b": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "d24ff39c75957db5": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "1bdef8c7d37db12c": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "39da8be074f702c8": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "a239f816b5b78c3b": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "70ea7880dddd6224": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "b960c41d4aa31554": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "ee03c91f23d6cc75": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "580b3fc1f95c79f0": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "baafdfe0578b372d": {
+    "status": "pass",
+    "note": "Reviewed against English: narration/fees or party-member choice preserved; fixed referents and Player1 variants appropriate."
+  },
+  "6eab3e99dba0a6ef": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "35ef1fba1a5c8892": {
+    "status": "meaning_error",
+    "note": "Female pass reverses the fee: source and male say not 3500 but 3000; female says 3500, not 3000. Major unrelated rewrite."
+  },
+  "b217e2860dae0f5b": {
+    "status": "gender_error",
+    "note": "Female protagonist retains masculine изначальный предводитель."
+  },
+  "c168293005dfbca1": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "1982264c32537638": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "d6020116a6003154": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "c55f04fd321e4dab": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "0d034288b86191f3": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "951ff9a10e8ad9a7": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "0e69c5ab39bbc7cb": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "f77fc9608b2f5727": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "b53df6cf8e02bc55": {
+    "status": "numeric_format_review",
+    "note": "Correct amounts and relations, but English comma thousands separators 3,500 / 3,000 should be reviewed for Russian typography."
+  },
+  "95631ce6f6fe6065": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "008c6a305428750c": {
+    "status": "pass",
+    "note": "Reviewed complete English narration or dialogue; facts, fees, choices and gender agreement retained."
+  },
+  "2d9d3cd31be61c4f": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "4d6caf0edc62f630": {
+    "status": "editorial_review",
+    "note": "наверняка strengthens most likely to near-certainty; consider скорее всего."
+  },
+  "28ba61733c1f97d8": {
+    "status": "numeric_format_review",
+    "note": "Correct amounts/fee relation; comma thousands separators retained from English rather than localized Russian typography."
+  },
+  "300f62a39c9af721": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "1778bc5c3e791e34": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "3ee30a21e46a016a": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "446278417dec5bdf": {
+    "status": "numeric_format_review",
+    "note": "Correct amounts/fee relation; comma thousands separators retained from English rather than localized Russian typography."
+  },
+  "6c527dd64bad83ef": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "ed4e103d5c4cc922": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "e1cef7aa7f000701": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "c923b96de0957dc0": {
+    "status": "numeric_format_review",
+    "note": "Correct amounts/fee relation; comma thousands separators retained from English rather than localized Russian typography."
+  },
+  "785d2d2de4e9158d": {
+    "status": "pass",
+    "note": "Reviewed full narration/dialogue against source; facts and gender variants retained."
+  },
+  "9ccb97eff853eba8": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "6859778ce33c86af": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "b03a2187c243070f": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "52fa36c7e7df42c0": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "1de5aaa30126184e": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "6bf29e3b445c9b22": {
+    "status": "numeric_format_review",
+    "note": "Correct fee relation; review English comma thousands separators for Russian typography."
+  },
+  "14bcf58707191b50": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "71fcd9ecf6dd05eb": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "84e64bf9270e311c": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "9d60922510c2f731": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "be6392b064deaed2": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "0a92023fc78ac9fb": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "6aaf57f5d538651b": {
+    "status": "addressee_gender_error",
+    "note": "Male Player1 says ты увидел to a fixed female Moon Sister; recipient incorrectly changes gender with Player1. Female version correctly uses увидела."
+  },
+  "ec769db525c1c4ea": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "6ae8ce2daa2a3269": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "32d523937d435263": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "7fbd0ba29a5fd717": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "ebbff72a25f7626f": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "a63c0914d22bcac6": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "69f09e4a7721f4fc": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "b7045b1b40eec10e": {
+    "status": "editorial_review",
+    "note": "пришёл за судом is awkward; idiomatic пришёл на суд retains judgement meaning more clearly."
+  },
+  "3adb9e1a240e81d1": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "2104e622313e02cb": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "eec64e1148377254": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "c96dcd31b24f40cc": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "fc5f27a448e88b28": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "81f15941d8f3a5e5": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "9828de91f77d8f37": {
+    "status": "pass",
+    "note": "Reviewed against English: complete narration/dialogue, fixed female Sisters and Player1 agreement, imagery and conditions retained."
+  },
+  "77f6c5c0aea9b041": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "910fb692e62928b0": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "920f7188f74c845d": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "c6aba23db55676b9": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "c4b5cf9e56f0c7f0": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "5be41a56018cb71c": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "599a6b29da0903b2": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "d5bc222109631f62": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "4513eec4fdb03810": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "e92b92e71d49b405": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "1b3709c7dadf2276": {
+    "status": "meaning_review",
+    "note": "у которой должно быть другое лицо replaces future shall have with should/must have; review prophecy meaning."
+  },
+  "57078f7e03a8f862": {
+    "status": "addressee_gender_error",
+    "note": "Male Player1 says ты увидел to fixed female Moon Sister; female pass changes recipient gender along with Player1."
+  },
+  "3f5bf9e6cc244c75": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "398523a79b8c0bfd": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "b21239884a2c2625": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "dfc79a82663dd584": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "0356b039cde00f18": {
+    "status": "omission_error",
+    "note": "One that shall have a different face becomes simply С другим лицом, losing the future transformation/prediction."
+  },
+  "e9d45a573a1478b7": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "49d5a60b1178b3ac": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "5d975aa913f4ffcf": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "687e2c55779c5611": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "a2710591973a750f": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "533f6aba93e2b4e3": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "151d51df9b2172a2": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "09ce8245a394de46": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "7ee1b89db6756f0c": {
+    "status": "addressee_gender_error",
+    "note": "Male version misgenders female recipient with увидел; female увидела is correct."
+  },
+  "fddf4a0415f965eb": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "a62e4728f34cc18c": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "753166946c58abfa": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "39b3bae0cacc7b9e": {
+    "status": "pass",
+    "note": "Reviewed against English and fixed female Sisters; complete relevant meaning and gender agreement retained. Group вы is acceptable when addressing the Sisters together."
+  },
+  "dbce75406397021e": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "ee4ca66c65f34233": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "6f25e35cd97ccc81": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "767ca28f3c6f5542": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "f01f8b1a91b99fe2": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "7f1ea5f7c7def915": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "53dfb2df35a39139": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "4f715129e976b832": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "d433955fe260b4ba": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "36a859c83ed1f12b": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "3ca6ef138b9a27de": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "81f5c6a4fd1b6763": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "c0b0bc3e0a331774": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "edd7b1d770bdeeb9": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "0799f4fe711d7b23": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "8b73e8c0b0f7d3a9": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "dd78ee3601189d4e": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "de398bd102ebdcea": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "f3d1dd545209f64f": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "5cc4892d78ecc8e1": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "97a062c7273ed936": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "0e67b81b542d9203": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "ab754e041b1f0cad": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "4508b8e0de9ebee0": {
+    "status": "pass",
+    "note": "Reviewed against full English dialogue: fixed female Sisters, group addressee, protagonist agreement and future-face/marked-path meanings preserved. Neutral formulations are acceptable."
+  },
+  "3899d220db897ec8": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "78938c723ce2a08d": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "9b011a71a7ca12b8": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "aadd99cac75c81cd": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "2e8a14613a30f111": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "df84b3bc1a54a7bb": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "8b9528ca27946777": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "a3a7164ef0b23608": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "7494604e4955cbd0": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "d8e2b6a62b0960a4": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "58e49f6ecfc3ac54": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "4655d107e65fdda0": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "c69c9b30b5826d4c": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "b1ac7be9e56224d6": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "cdfffc7c6cdaa0a2": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "3bba102f180ed27a": {
+    "status": "third_person_error",
+    "note": "Jan refers to a female cousin (she/her), but output first calls her one of his male cousins кузенов, then ей."
+  },
+  "2823ba2b08b40de6": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "fe41ca9baa624c06": {
+    "status": "gender_error",
+    "note": "Female protagonist retains первоначальный предводитель."
+  },
+  "61801d85d7daa212": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "1680af3efac71292": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "d16f616e1080202b": {
+    "status": "third_person_error",
+    "note": "Female version changes the explicitly male third-person adventurer throughout the entire narration into a woman, although English female source is identical."
+  },
+  "571dc2c8796b078c": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "abc9f51ecde6fe62": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "6ac95d1046ab909c": {
+    "status": "placeholder_attachment_review",
+    "note": "PLAYER1 is moved from apposition to the leader to the end after существами, reading like a vocative rather than identifying the fighter. Token count validation cannot assess this attachment."
+  },
+  "c143dba22564af03": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "a16cc2e79be36140": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "f18ec9440dafe256": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "892392130de7a6ea": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "1eb9b73df243eb2b": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "cc2e4e1ef4881b5b": {
+    "status": "pass",
+    "note": "Reviewed full source: male narrated adventurer/female cousin or selected party member, fees, choices and protagonist agreement retained."
+  },
+  "37af17e8a72ed6f4": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "250a944c1c6e37a0": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "91ea07ea6bdc9032": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "de3efa9423ac088d": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "b4c0d019623889fa": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "4cd2ff8acca6a813": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "87f27eb3dd3c7094": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "f31300d5a0311ac6": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "9a9eb66e2e0d81bc": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "b1b71712f0982ecd": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "12cdb78022386897": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "ced13e123868e9a3": {
+    "status": "meaning_review",
+    "note": "Learning from the books becomes experiencing their events. Plausible in game context, but the explicit learning outcome is no longer stated."
+  },
+  "15b98ab7c4f6a2c4": {
+    "status": "gender_error",
+    "note": "Female protagonist retains первоначальный предводитель."
+  },
+  "0d5968415dfc219a": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "0deefdd702c2c3cf": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "0229e7e7dc379de1": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "4fce90b38585ff3d": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "2d1cb43d3b6d49cb": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "bf995e77aa012e78": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "bed1d78e1a7234a8": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "a9352b8ea06281d5": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "07c209897baecabb": {
+    "status": "third_person_error",
+    "note": "Explicitly female cousin called одним из моих кузенов, then referred to as ей; source cousin is female."
+  },
+  "4ba5d63c5fbdad59": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "698087ff407641c6": {
+    "status": "editorial_review",
+    "note": "Только справедливо, чтобы is a calque of only fair; prefer Будет вполне справедливо, если. Gender forms themselves correct."
+  },
+  "9bf31d1e97f7f636": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "ec2487e80d6dae04": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "4757f03e1dd71849": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "5b7362032d1a43dc": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "8cdc9ca81dee72ab": {
+    "status": "numeric_format_review",
+    "note": "Correct prices; review comma thousands separators for Russian typography."
+  },
+  "e6502435bd9b42ba": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "7e244fea1b872e6d": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "eb165c36e644931e": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "592c6858eb0c0c48": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "d8ac49a759caeb28": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "a106041102273570": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "55e53875767fc67f": {
+    "status": "pass",
+    "note": "Reviewed full narration/source: third-person adventurer stays male, cousin stays female, party choices/fees and protagonist agreement retained."
+  },
+  "d7b0c58306069ab5": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "21ead34dfca3007a": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "e5d4313e2f5a7dba": {
+    "status": "numeric_format_review",
+    "note": "Correct prices/relations; review English comma thousands separators for Russian typography."
+  },
+  "6b18770d5e73e162": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "1d7986aa064cb817": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "a6ca3fb1d67f3d1c": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "7bc15bed1f3049d5": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "32a9a6f12932b8fd": {
+    "status": "numeric_format_review",
+    "note": "Correct prices/relations; review English comma thousands separators for Russian typography."
+  },
+  "6ac8778f4df1644d": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "36d7f2305c088be5": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "84499e40b67320d8": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "2e7effc5ab34b432": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "6b0a6a18c4c6b09a": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "d9ccc2cfab6f53d7": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "d4788ec7b7f330fd": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "436ec594b5957c89": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "176f193b71718901": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "479ce6bc1b570b56": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  },
+  "f58002f0c62d50de": {
+    "status": "pass",
+    "note": "Reviewed full English narration/dialogue: male adventurer, female cousin, fees, party choices, placeholders and protagonist agreement retained."
+  }
+}

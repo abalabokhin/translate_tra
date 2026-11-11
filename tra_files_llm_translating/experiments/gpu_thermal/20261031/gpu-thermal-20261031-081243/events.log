@@ -1,0 +1,5 @@
+2026-10-31T08:12:43.915355-04:00 LOG DIRECTORY: /home/paladin/source/translate_tra/results/gpu-thermal-20261031-081243
+2026-10-31T08:12:43.915930-04:00 10-second idle baseline; then qwen2.5:14b starts. Watch the GPU fans.
+2026-10-31T08:12:54.018667-04:00 STARTING qwen2.5:14b NOW: comparison 4096 context, batch 64, maximum 256 output tokens.
+2026-10-31T08:13:06.138442-04:00 REQUEST EXIT 0; temperatures mC=[66000, 67000, 52000]. Stopping request and unloading model.
+2026-10-31T08:13:21.297110-04:00 TEST FINISHED: REQUEST EXIT 0

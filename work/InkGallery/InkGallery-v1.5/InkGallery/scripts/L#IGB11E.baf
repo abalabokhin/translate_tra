@@ -1,0 +1,70 @@
+IF
+Global("L#IGBook11RewPla1","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player1)
+END
+
+IF
+Global("L#IGBook11RewPla2","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player2)
+END
+
+IF
+Global("L#IGBook11RewPla3","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player3)
+END
+
+IF
+Global("L#IGBook11RewPla4","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player4)
+END
+
+IF
+Global("L#IGBook11RewPla5","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player5)
+END
+
+IF
+Global("L#IGBook11RewPla6","GLOBAL",1)
+Global("L#IGInnitialAttack10","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("L#IGInnitialAttack10","LOCALS",1)
+Attack(Player6)
+END
+
+IF
+	ActionListEmpty()
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+
+IF
+	ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END

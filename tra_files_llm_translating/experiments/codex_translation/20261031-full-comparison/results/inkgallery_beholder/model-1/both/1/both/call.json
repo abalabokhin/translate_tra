@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "model": "gpt-6-luna",
+  "started_utc": "2026-10-31T19:19:36.247963+00:00",
+  "wall_seconds": 8.624,
+  "usage": {
+    "input_tokens": 16133,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 760,
+    "reasoning_output_tokens": 0
+  },
+  "error": null,
+  "command": [
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-6-luna",
+    "--color",
+    "never",
+    "--json",
+    "--output-schema",
+    "/tmp/tra-codex-zzd38icq/schema.json",
+    "--output-last-message",
+    "/tmp/tra-codex-zzd38icq/response.txt",
+    "-"
+  ],
+  "returncode": 0,
+  "finished_utc": "2026-10-31T19:19:44.871974+00:00"
+}

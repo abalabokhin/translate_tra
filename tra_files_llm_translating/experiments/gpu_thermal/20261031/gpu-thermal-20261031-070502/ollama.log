@@ -1,0 +1,22 @@
+Oct 31 07:05:12 paladin-desktop ollama[2030]: srv  server_strea: conv_id= (empty=1)
+Oct 31 07:05:12 paladin-desktop ollama[2030]: slot get_availabl: id  0 | task -1 |  - checking sim = 0.308 (506/1645) > 0.100
+Oct 31 07:05:12 paladin-desktop ollama[2030]: slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.308 (> 0.100 thold), f_keep = 0.137
+Oct 31 07:05:12 paladin-desktop ollama[2030]: srv  get_availabl: updating prompt cache
+Oct 31 07:05:12 paladin-desktop ollama[2030]: srv   prompt_save:  - saving prompt with length 3696, total state size = 577.543 MiB (draft: 0.000 MiB)
+Oct 31 07:05:13 paladin-desktop ollama[2030]: srv          load:  - looking for better prompt, base f_keep = 0.137, f_sim = 0.308
+Oct 31 07:05:13 paladin-desktop ollama[2030]: srv          load:    - prompt with length    3696, lcp =     506, f_keep = 0.137, f_sim = 0.308
+Oct 31 07:05:13 paladin-desktop ollama[2030]: srv        update:  - cache state: 1 prompts, 577.543 MiB (limits: 8192.000 MiB, 4096 tokens, 52424 est)
+Oct 31 07:05:13 paladin-desktop ollama[2030]: srv        update:    - prompt 0x1be135a0:    3696 tokens, checkpoints:  0,   577.543 MiB
+Oct 31 07:05:13 paladin-desktop ollama[2030]: srv  get_availabl: prompt cache update took 385.25 ms
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot launch_slot_: id  0 | task -1 | sampler params:
+Oct 31 07:05:13 paladin-desktop ollama[2030]:         repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+Oct 31 07:05:13 paladin-desktop ollama[2030]:         dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+Oct 31 07:05:13 paladin-desktop ollama[2030]:         top_k = 40, top_p = 0.900, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.150
+Oct 31 07:05:13 paladin-desktop ollama[2030]:         mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot launch_slot_: id  0 | task 2938 | processing task, is_child = 0
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot   operator(): id  0 | task 2938 | new prompt, n_ctx_slot = 4096, n_keep = 4, task.n_tokens = 1645
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot   operator(): id  0 | task 2938 | cached n_tokens = 506, memory_seq_rm [506, end)
+Oct 31 07:05:13 paladin-desktop ollama[2030]: slot   operator(): id  0 | task 2938 | cached n_tokens = 1018, memory_seq_rm [1018, end)
+Oct 31 07:05:13 paladin-desktop ollama[2030]: [GIN] 2026/10/31 - 07:05:13 | 500 | 758.84ms |       127.0.0.1 | POST     "/api/chat"
+Oct 31 07:05:13 paladin-desktop ollama[2030]: [GIN] 2026/10/31 - 07:05:13 | 200 |  62.65ms |       127.0.0.1 | POST     "/api/generate"

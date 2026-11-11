@@ -1,0 +1,89 @@
+IF
+    Die()
+THEN
+  RESPONSE #100
+    DropInventory()
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+    CreateCreature("L#IGB1X",[-1.-1],0)
+END
+
+IF
+ NumTimesTalkedTo(0)
+THEN
+ RESPONSE #100
+  StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#IGPrepare","LOCALS",0)
+See(NearestEnemyOf(Myself))
+THEN
+RESPONSE #100
+SetGlobal("L#IGPrepare","LOCALS",1)
+SetGlobalTimer("L#IGPrepareTime","LOCALS",72)
+ApplySpell(Myself,CLERIC_CHANT)
+END
+
+
+IF
+!Dead("L#IGB1E")
+Global("L#IGPrepare","LOCALS",1)
+See(NearestEnemyOf(Myself))
+GlobalTimerExpired("L#IGPrepareTime","LOCALS")
+THEN
+RESPONSE #100
+SetGlobal("L#IGPrepare","LOCALS",2)
+DisplayStringHead(Myself,@170)
+ForceSpell(NearestEnemyOf(Myself),CLERIC_INSECT_PLAGUE)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself,20)
+	HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heal)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	!StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
+	!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+END
+
+IF
+	ActionListEmpty()
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	ActionListEmpty()
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END

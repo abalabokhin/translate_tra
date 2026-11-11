@@ -1,0 +1,714 @@
+/*
+wed file structure
+1. Header
+2. Overlay
+3. Secondary Header
+4. Door
+5. Tilemap overlay 0-5
+6. Tilemap Doors 0-x
+7. Tilemap index overlay 0-5
+8. Wallgroup
+9. Wall polygons
+10. Door polygons 0-x
+11. Wall & Door polygon index
+12. Wall polygon vertex
+13. Door polygon vertex
+*/
+
+
+/////////////////////////////////////////////
+// input to get the right wall groups for the wall 
+// and door polygons
+/////////////////////////////////////////////
+DEFINE_PATCH_MACRO wall_group_counter
+BEGIN
+	PATCH_IF (xmax < col*64 && ymax < row*64) BEGIN
+		PATCH_IF ((xmin MODULO 640) = 0) BEGIN
+			xmin = xmin MODULO 640
+		END ELSE BEGIN
+			xmin = (xmin + 640 - (xmin MODULO 640)) / 640 - 1
+		END
+		PATCH_IF ((xmax MODULO 640) = 0) BEGIN
+			xmax = xmax MODULO 640
+		END ELSE BEGIN
+			xmax = (xmax + 640 - (xmax MODULO 640)) / 640 - 1
+		END
+		PATCH_IF ((ymin MODULO 480) = 0) BEGIN
+			ymin = ymin MODULO 480
+		END ELSE BEGIN
+			ymin = (ymin + 480 - (ymin MODULO 480)) / 480 - 1
+		END
+		PATCH_IF ((ymax MODULO 480) = 0) BEGIN
+			ymax = ymax MODULO 480
+		END ELSE BEGIN
+			ymax = (ymax + 480 - (ymax MODULO 480)) / 480 - 1
+		END
+		FOR (cnt=ymin; cnt<(ymax + 1);cnt+=1) BEGIN
+			FOR (cnt1=xmin;cnt1< (xmax + 1);cnt1+=1) BEGIN
+				SET wallgroupcnt = wall_group_col * cnt + cnt1
+				TEXT_SPRINT $wallgroup("%wg_index%" "%num_polygon%" ) ~%wallgroupcnt%~
+				SET wg_index +=1
+				PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~wall/door %value%(%num%):polygon(%num_polygon%) row(%cnt%) col(%cnt1%) => wallgroup: %wallgroupcnt%~ END
+			END
+		END
+	END
+END
+
+
+///////////////////////////////////////
+// Begin of the wed function
+///////////////////////////////////////
+
+DEFINE_PATCH_FUNCTION wg_wed_structure
+
+	INT_VAR
+
+	// these are internal variables, not to be used as input
+	wg_position			      = 0x20
+	off                       = 0
+	num                       = 0
+	off1                      = 0
+	num1                      = 0
+	off2				      = 0
+	num2				      = 0
+	key                       = 0
+	value                     = 0
+	key1                      = 0
+	value1                    = 0
+	value2				      = 0
+	new_overlay				  = ` 0
+	count_tile				  = 0
+	overlay_exist 			  = ` 0
+	wg_tilemap_idx_sec        = 0
+	wg_door_idx               = 0
+	wg_overlay_idx            = 0
+	wg_index_wallgroup        = 0
+	wg_vertex_index           = 0
+	wg_num_poly_open          = 0
+	wg_num_poly_closed        = 0
+	wg_tile_idx_0         	  = ` 0
+	wg_deleted          	  = 0
+	wg_tile_idx_count	  	  = 0
+	wg_tilemap_idx_count	  = 0
+	wg_tis_path				  = 0
+	wg_return_offset		  = 0
+
+	//spam code with various nonens infosrmations
+	wg_debug                  = 0
+	wg_debug_inhalt           = 0
+	wg_debug_input            = 0
+
+	// instead of adding wg_structure_type, delete if num == wg_delete_mode
+	wg_delete_mode            = ` 0
+	wg_replace_mode			  = ` 0
+	wg_remove_overlay_0		  = 0
+
+	// door
+	wg_state_door			  = 1
+
+	// overlay
+	wg_width					= 1
+	wg_height					= 1
+	wg_unique_tiles			  = 0
+	wg_movement_type		  = 0
+
+
+	// wall polygon
+	wg_poly_flag			  = 0
+	wg_poly_height			  = 0xff
+	
+	// wall group sorting
+	wg_wall_group_sort		 = 0
+
+	STR_VAR
+
+	// variables
+	wg_structure_type    = ~~
+	wg_name              = ~~
+
+	// overlay
+	wg_tileset			 = ~~
+	// door
+	wg_tis_path  	 		 = 0
+	wg_tilemap_file  		 = 0
+	wg_pvrz_name             = 0
+
+
+	RET
+	//wg_return_offset
+
+BEGIN
+
+// we must set $num(0) == num_0 when using function input
+// otherwise WeiDU won't recognize that they're synonymous
+PATCH_FOR_EACH value IN
+	open_box_xmin open_box_xmax open_box_ymin open_box_ymax 			// door open
+	closed_box_xmin closed_box_xmax closed_box_ymin closed_box_ymax		// door closed
+	vert																// wall
+BEGIN
+	FOR( num = 0 ; VARIABLE_IS_SET EVAL ~wg_poly_%value%_%num%~ ; ++num )BEGIN
+		SET $EVAL ~wg_poly_%value%~(~%num%~) = EVAL ~wg_poly_%value%_%num%~
+		PATCH_IF( ~%value%~ STR_EQ "open_box_xmin" ) BEGIN
+			SET wg_num_poly_open += 1
+		END ELSE
+		PATCH_IF( ~%value%~ STR_EQ "closed_box_xmin" ) BEGIN
+			SET wg_num_poly_closed += 1
+		END
+	END
+END
+
+CLEAR_ARRAY struct
+// input for structure in second header
+READ_LONG 0x14 sec_hdr
+SET poly_offset = (sec_hdr + 4)
+SET vert_offset = (sec_hdr + 8)
+SPRINTF polygon_offset "%x" ("%poly_offset%")
+SPRINTF wall_polygon_num "%x" ("%sec_hdr%")
+SPRINTF vertex_offset "%x" ("%vert_offset%")
+
+// offset header
+TEXT_SPRINT $struct(0x10 0x08 0x04 0x18) overlay
+TEXT_SPRINT $struct(0x14 0x00 0x00 0x14) second_header
+TEXT_SPRINT $struct(0x18 0x0c 0x04 0x1a) door
+// offset with fake key_0 because there is no num, but we need it for the correct sequence
+TEXT_SPRINT $struct(0x21 0x00 0x00 0x0a) overlay_tilemap_structur
+TEXT_SPRINT $struct(0x22 0x00 0x00 0x02) door_tile_index
+TEXT_SPRINT $struct(0x23 0x00 0x00 0x02) overlay_tile_index
+// offset second header
+TEXT_SPRINT $struct("%polygon_offset%" "%wall_polygon_num%" 0x04 0x12) wall_polygon
+TEXT_SPRINT $struct("%vertex_offset%" 0x00 0x00 0x04) vertex
+
+PHP_EACH struct AS key => value BEGIN
+	PATCH_IF ~%value%~ STRING_EQUAL_CASE ~%wg_structure_type%~ BEGIN
+		SET wg_structure_type = key_0
+	END
+END
+
+
+PATCH_IF wg_debug_input BEGIN PATCH_PRINT ~Beginning unmarshalling.~ END
+PHP_EACH struct AS key => value BEGIN
+	PATCH_IF wg_debug_inhalt BEGIN  PATCH_PRINT "key_0: %key_0%; key_1: %key_1%; key_2: %key_2%; key_3: %key_3%" END
+	PATCH_IF( LONG_AT key_0 )BEGIN // skip it if the header offset points at 0
+		GET_OFFSET_ARRAY ~%value%~ key_0 0x04 key_1 key_2 0x00 0x00 key_3
+		PATCH_IF wg_debug_input BEGIN PATCH_PRINT ~Reading %value%.~ END
+		PHP_EACH ~%value%~ AS num => off BEGIN
+			CLEAR_ARRAY array
+			CLEAR_ARRAY array1
+
+			// overlay
+			PATCH_IF( key_0 == 0x10 ) BEGIN
+				PATCH_IF wg_debug_input BEGIN SPRINTF var ~Overlay_%d => offset: %x~ ("%num%" "%off%") PATCH_PRINT "  %var%" END
+				// load overlay tilemap structure
+				FOR (cnt = 0; cnt<(SHORT_AT off)*(SHORT_AT (off + 0x02)); cnt+=1) BEGIN
+					READ_ASCII (LONG_AT (off + 0x10) + cnt * 0x0a) $EVAL ~wed_overlay_%num%_tilemap_structure~(~%cnt%~) (0x0a)  // overlay tilemap structure: wed_overlay_%num%_tilemap_structure
+				END
+				// load overlay tile index
+				FOR (num1=0; num1<(SHORT_AT off)*(SHORT_AT (off + 0x02)); num1+=1) BEGIN
+					READ_SHORT LONG_AT (off + 0x10) + num1 * 0xa wg_tile_offset				//tilemap index
+					READ_SHORT LONG_AT (off + 0x10) + num1 * 0xa + 0x02 wg_tilemap_idx_sec	//tilemap count
+					FOR (cnt1=0;cnt1<wg_tilemap_idx_sec;cnt1+=1) BEGIN
+						READ_SHORT (LONG_AT (off + 0x14) + (wg_tile_offset + cnt1) * 0x02) $EVAL ~wed_overlay_%num%_tilemap_structure_%num1%_tile_index~(~%cnt1%~)  // overlay tile index: wed_overlay_%num%_tile_index
+					END
+				END
+				// read overlay structure
+				READ_ASCII off $EVAL ~wed_%value%~(~%num%~) (key_3)  // overlay: wed_%value% - wed_overlay
+				SET wg_tilemap_idx_sec = 0
+			END ELSE
+
+			// door
+			PATCH_IF( key_0 == 0x18 ) BEGIN
+				PATCH_IF wg_debug_input BEGIN SPRINTF var ~Door_%d => offset: %x~ ("%num%" "%off%") PATCH_PRINT "  %var%" END
+				// load door tile index
+				GET_OFFSET_ARRAY2 array off 0x1c 0x04 0x0c 0x02 0x0a 0x02 0x02
+				PHP_EACH array AS num1 => off1 BEGIN
+					PATCH_IF (SHORT_AT (off + 0x0c) = 0) BEGIN
+						SET $EVAL ~wed_door_%num%_tile_index~(0) = 0
+					END
+					READ_SHORT off1 $EVAL ~wed_door_%num%_tile_index~(~%num1%~)  //door tile index: wed_door_%num%_tile_index
+				END
+				CLEAR_ARRAY array
+				// load door open polygons
+				GET_OFFSET_ARRAY array off+0x12 0x04 off+0x0e 0x02 0x00 0x00 0x12
+				PHP_EACH array AS num1 => off1 BEGIN
+					GET_OFFSET_ARRAY2 array1 off1 (LONG_AT 0x14 + 0x08) 0x04 0x04 0x04 0x00 0x04 0x04
+					PHP_EACH array1 AS num2 => off2 BEGIN
+						READ_LONG off2 $EVAL ~wed_door_%num%_pol_%num1%_vertex_open~(~%num2%~)  // door vertex open: wed_door_%num%_vertex_open
+					END
+					READ_ASCII off1 $EVAL ~wed_door_%num%_polygon_open~(~%num1%~) (0x12)  // door polygon open: wed_door_%num%_polygon_open
+				END
+				WRITE_SHORT (LONG_AT 0x18) + num * 0x1a + 0x0e 0x00  // # open
+				CLEAR_ARRAY array
+				CLEAR_ARRAY array1
+				// load door closed polygons
+				GET_OFFSET_ARRAY array off+0x16 0x04 off+0x10 0x02 0x00 0x00 0x12
+				PHP_EACH array AS num1 => off1 BEGIN
+					GET_OFFSET_ARRAY2 array1 off1 (LONG_AT 0x14 + 0x08) 0x04 0x04 0x04 0x00 0x04 0x04
+					PHP_EACH array1 AS num2 => off2 BEGIN
+						READ_LONG off2 $EVAL ~wed_door_%num%_pol_%num1%_vertex_closed~(~%num2%~) // door vertex closed: wed_door_%num%_vertex_closed
+					END
+					READ_ASCII off1 $EVAL ~wed_door_%num%_polygon_closed~(~%num1%~) (0x12) // door polygon closed: wed_door_%num%_polygon_closed
+				END
+				WRITE_SHORT (LONG_AT 0x18) + num * 0x1a + 0x10 0x00  // # closed
+				// read door structure
+				READ_ASCII off $EVAL ~wed_%value%~(~%num%~) (key_3)  // door: wed_%value% - wed_door
+			END ELSE
+
+			// wall polygon
+			PATCH_IF( key_0 == polygon_offset) BEGIN
+			/*
+				PATCH_IF wg_debug_input BEGIN SPRINTF var ~wall_polygon_%d => offset: %x~ ("%num%" "%off%") PATCH_PRINT "  %var%" END
+				// load wall polygon vertices
+				GET_OFFSET_ARRAY2 array off (sec_hdr + 0x08) 0x04 0x04 0x04 0x00 0x04 0x04
+				PHP_EACH array AS num1 => off1 BEGIN
+					READ_LONG off1 $EVAL ~wed_wall_polygon_%num%_vertex~(~%num1%~)  //wall polygon vertex: wed_wall_polygon_%num%_vertex
+				END
+				CLEAR_ARRAY array
+			*/
+				READ_LONG off vertex_idx
+				READ_LONG off + 0x04 vertex_num
+				SET len = vertex_num * 0x04
+				PATCH_IF (vertex_num>0) BEGIN
+					READ_ASCII LONG_AT (sec_hdr + 0x08) + vertex_idx * 0x04 $EVAL ~wed_wall_polygon_%num%_vertex~(~%vertex_num%~) (len)
+				END
+				//wall polygons infos
+				WRITE_LONG LONG_AT 0x14 0x00
+				READ_ASCII off $EVAL ~wed_%value%~(~%num%~) (key_3)  //wall polygon: wed_%value% - wed_wall_polygon
+			END
+
+		END // php_each ~%value%~
+		CLEAR_ARRAY array
+		CLEAR_ARRAY array1
+		CLEAR_ARRAY EVAL ~%value%~
+
+		// single structures
+
+		// second header
+		PATCH_IF( key_0 == 0x14 )BEGIN
+			READ_ASCII LONG_AT 0x14  $wed_second_header(0) (0x14)
+		END
+
+		// debug
+		PATCH_IF wg_debug_inhalt BEGIN PHP_EACH ~wed_%value%~ AS key1 => value1 BEGIN
+			SPRINTF var "Inhalt %s_%d: %d => %s" ("%value%" "%key1%" "%key1%" "%value1%") PATCH_PRINT "  %var%" END
+		END
+	END // skip if key_0 points to 0
+END  // end php_each $structure: all extended structures now loaded in buffer
+
+// file with header
+PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Trimming %SOURCE_FILE% down to the header.~ END
+DELETE_BYTES 0x20 BUFFER_LENGTH - 0x20
+PHP_EACH struct AS key => value BEGIN
+	PATCH_IF (key_0 == 0x10 || key_0 == 0x18) BEGIN
+		WRITE_LONG  key_1 0x00
+	END
+END
+
+
+PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reassembling %SOURCE_FILE%.~ END
+PHP_EACH struct AS key => value BEGIN
+
+	// Overlays
+	PATCH_IF( key_0 == 0x10 )BEGIN
+		PHP_EACH ~wed_overlay~ AS key1 => value1 BEGIN
+			PATCH_IF( (key1 != wg_delete_mode && wg_structure_type == 0x10) || wg_structure_type != 0x10 )BEGIN
+				PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+				WRITE_LONG  key_1 THIS + 0x01
+				INSERT_BYTES wg_position key_3
+				WRITE_ASCIIE wg_position ~%value1%~
+				SET wg_position += key_3
+			END
+		END
+		// replace overlay tis file
+		PATCH_IF( wg_structure_type == 0x10 && wg_replace_mode != ` 0 && key_0 != vertex_offset )BEGIN // if you only want to change the tis name
+			PATCH_IF (~%wg_tileset%~ STR_EQ ~~ = 0) BEGIN
+				WRITE_ASCIIE (LONG_AT 0x10 + wg_replace_mode * 0x18) + 0x04 ~%wg_tileset%~ (8)
+			END
+		END
+	END
+
+
+	// Second header
+	PATCH_IF( key_0 == 0x14  )BEGIN
+		WRITE_LONG 0x14 0x00
+		PHP_EACH ~wed_second_header~ AS key1 => value1 BEGIN
+			PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+			INSERT_BYTES wg_position key_3
+			WRITE_LONG 0x14 wg_position
+			SET wg_position += key_3
+		END
+	END
+
+
+	// Doors
+	PATCH_IF(key_0 == 0x18  )BEGIN
+		WRITE_LONG 0x18 wg_position
+		PHP_EACH ~wed_door~ AS key1 => value1 BEGIN
+			PATCH_IF( (key1 != wg_delete_mode && wg_structure_type == 0x18) || wg_structure_type != 0x18 )BEGIN
+				PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+				WRITE_LONG  key_1 THIS + 0x01
+				INSERT_BYTES wg_position key_3
+				WRITE_ASCIIE wg_position ~%value1%~
+				SET wg_position += key_3
+			END
+		END
+	END
+
+
+	// add overlay tilemap structure
+	PATCH_IF( key_0 == 0x21 ) BEGIN
+		PHP_EACH wed_overlay AS num => structure BEGIN
+			WRITE_LONG (LONG_AT 0x10) + 0x18 *  num  + 0x10 wg_position
+			
+				// overlay tilemap structure
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x10) || wg_structure_type != 0x10 )BEGIN
+					PHP_EACH ~wed_overlay_%num%_tilemap_structure~ AS num1 => value1 BEGIN
+						INSERT_BYTES wg_position 0x0a
+						WRITE_ASCIIE wg_position ~%value1%~ (0x0a)
+						SET wg_position += 0x0a
+					END
+				END
+						
+
+		END
+	END
+
+
+
+	// add door tile index
+	PATCH_IF( key_0 == 0x22 ) BEGIN
+		WRITE_LONG 0x1c wg_position
+		PHP_EACH wed_door AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == 0x18 && wg_delete_mode == num && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x18) || wg_structure_type != 0x18 )BEGIN
+					WRITE_SHORT (LONG_AT 0x18) + 0x1a * ( num - wg_deleted ) + 0x0a wg_door_idx
+					PHP_EACH ~wed_door_%num%_tile_index~ AS num1 => value1 BEGIN
+						PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting door(%num%) tile index number %num1%.~ END
+						INSERT_BYTES wg_position 0x02
+						WRITE_SHORT wg_position ~%value1%~
+						SET wg_position += key_3
+						SET wg_door_idx += 0x01
+						WRITE_SHORT (LONG_AT 0x18) + 0x1a * ( num - wg_deleted ) + 0x0c (num1 + 1)
+					END
+					//WRITE_SHORT (LONG_AT 0x18) + 0x1a * ( num - wg_deleted ) + 0x0c (num1 + 1)
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		
+	END
+
+
+	// add overlay tile index
+	PATCH_IF( key_0 == 0x23 ) BEGIN
+		PHP_EACH wed_overlay AS num => structure BEGIN
+			WRITE_LONG ( LONG_AT 0x10 ) + 0x18 * num + 0x14 wg_position
+			SET wg_overlay_idx = 0x00
+				// overlay tile index
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x10) || wg_structure_type != 0x10 )BEGIN
+					PHP_EACH ~wed_overlay_%num%_tilemap_structure~ AS num1 => structure1 BEGIN
+						WRITE_SHORT  LONG_AT (( LONG_AT 0x10 ) + 0x18 * num + 0x10) + num1 * 0x0a  wg_overlay_idx
+						PHP_EACH ~wed_overlay_%num%_tilemap_structure_%num1%_tile_index~ AS num2 => value2 BEGIN
+							PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting overlay tile index %num%.~ END
+							INSERT_BYTES wg_position 0x02
+							WRITE_SHORT wg_position ~%value2%~
+							SET wg_position += key_3
+							SET wg_overlay_idx += 0x01
+						END
+						WRITE_SHORT LONG_AT (( LONG_AT 0x10 ) + 0x18 * num + 0x10) + num1 * 0x0a + 0x02 (num2 + 1)
+					END
+				END
+
+		END
+		
+	END
+
+
+	// add wall_polygons + wall_group + door_open & door_closed polygons + wall_polygon_index
+	PATCH_IF( key_0 == polygon_offset ) BEGIN
+		// insert empty wall groups and calculate number of groups
+		WRITE_LONG (LONG_AT 0x14) + 0x0c wg_position
+		READ_SHORT LONG_AT 0x10 col
+		READ_SHORT LONG_AT 0x10 + 0x02 row
+		PATCH_IF ((row MODULO 15) = 0) BEGIN
+			wall_group_row = row * 2 / 15
+		END ELSE BEGIN
+			wall_group_row = (row * 2 + 15 - ((2 * row) MODULO 15)) / 15
+		END
+		PATCH_IF ((col MODULO 10) = 0) BEGIN
+			wall_group_col = col / 10
+		END ELSE BEGIN
+			wall_group_col = (col + 10 - (col MODULO 10)) / 10
+		END
+		SET wall_group_cnt = wall_group_col * wall_group_row
+		INSERT_BYTES wg_position wall_group_cnt * 0x04
+		SET wg_position += wall_group_cnt * 0x04
+
+
+		// insert wall polygons
+		WRITE_LONG (LONG_AT 0x14) + 0x04 wg_position
+		PHP_EACH wed_wall_polygon AS num => structure BEGIN
+			PATCH_IF( (num != wg_delete_mode && wg_structure_type == polygon_offset) || wg_structure_type != polygon_offset )BEGIN
+				WRITE_LONG (LONG_AT 0x14) THIS + 0x01
+				INSERT_BYTES wg_position key_3
+				WRITE_ASCIIE wg_position ~%structure%~ (key_3)
+				SET wg_position += key_3
+				PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting wall polygons %num%.~ END
+			END
+		END
+		// add new wall polygons
+		PATCH_IF( polygon_offset == wg_structure_type && wg_delete_mode == ` 0 && key_0 != vertex_offset && wg_wall_group_sort = 0)BEGIN
+			PATCH_IF wg_debug BEGIN PATCH_PRINT ~Adding new %value% structure.~ END
+			WRITE_LONG (LONG_AT 0x14) THIS + 0x01
+			SET wg_return_offset = wg_position
+			INSERT_BYTES wg_position key_3
+			WRITE_BYTE  wg_position + 0x08 wg_poly_flag
+			WRITE_BYTE  wg_position + 0x09 wg_poly_height
+			WRITE_SHORT wg_position + 0x0a wg_poly_xmin
+			WRITE_SHORT wg_position + 0x0c wg_poly_xmax
+			WRITE_SHORT wg_position + 0x0e wg_poly_ymin
+			WRITE_SHORT wg_position + 0x10 wg_poly_ymax
+			SET wg_position += key_3
+			PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting wall polygons %num%.~ END
+		END
+
+
+		// insert door polygons ( open + closed )
+		PHP_EACH wed_door AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == 0x18 && wg_delete_mode == num && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x18) || wg_structure_type != 0x18 )BEGIN
+					PATCH_FOR_EACH value IN open closed BEGIN
+						PATCH_IF ~%value%~ STR_EQ ~open~ BEGIN SET pos1 = 0x0e SET pos2 = 0x12 END ELSE BEGIN SET pos1 = 0x10 SET pos2 = 0x16 END
+						WRITE_LONG (LONG_AT 0x18) + ( num - wg_deleted ) * 0x1a + pos2 wg_position
+						PHP_EACH ~wed_door_%num%_polygon_%value%~ AS num1 => value1 BEGIN
+							WRITE_SHORT (LONG_AT 0x18) + ( num - wg_deleted ) * 0x1a + pos1 THIS + 0x01
+							INSERT_BYTES wg_position key_3
+							WRITE_ASCIIE wg_position ~%value1%~ (key_3)
+							SET wg_position += key_3
+							PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting door %value% polygons %num%.~ END
+						END
+					END
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		// add new door polygon ( open + closed )
+		PATCH_IF( 0x18 == wg_structure_type && wg_delete_mode == ` 0 && key_0 != vertex_offset )BEGIN
+			PATCH_IF wg_debug BEGIN PATCH_PRINT ~Adding new %value% structure.~ END
+			PATCH_FOR_EACH value IN open closed BEGIN
+				PATCH_IF ~%value%~ STR_EQ ~open~ BEGIN SET pos1 = 0x0e SET pos2 = 0x12 END ELSE BEGIN SET pos1 = 0x10 SET pos2 = 0x16 END
+				WRITE_LONG wg_return_offset + pos2 wg_position
+				FOR( num = 0; num < EVAL ~wg_num_poly_%value%~; ++num) BEGIN
+					INSERT_BYTES wg_position 0x12
+					WRITE_BYTE  wg_position + 0x08 $EVAL ~wg_poly_%value%_flag~(~%num%~)
+					WRITE_BYTE  wg_position + 0x09 $EVAL ~wg_poly_%value%_height~(~%num%~)
+					WRITE_SHORT wg_position + 0x0a $EVAL ~wg_poly_%value%_box_xmin~(~%num%~)
+					WRITE_SHORT wg_position + 0x0c $EVAL ~wg_poly_%value%_box_xmax~(~%num%~)
+					WRITE_SHORT wg_position + 0x0e $EVAL ~wg_poly_%value%_box_ymin~(~%num%~)
+					WRITE_SHORT wg_position + 0x10 $EVAL ~wg_poly_%value%_box_ymax~(~%num%~)
+					SET wg_position += 0x12
+					WRITE_SHORT wg_return_offset + pos1 THIS + 0x01
+				END
+			END
+		END
+
+
+		// preparing wall_groups wall_polygon
+		SET wg_index = 0
+		SET num_polygon = 0
+		PHP_EACH wed_wall_polygon AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == polygon_offset && wg_delete_mode == num && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == polygon_offset) || wg_structure_type != polygon_offset )BEGIN
+					READ_SHORT LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x0a xmin
+					READ_SHORT LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x0c xmax
+					READ_SHORT LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x0e ymin
+					READ_SHORT LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x10 ymax
+					LPM wall_group_counter
+					SET num_polygon +=1
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		// preparing wall_groups new wall_polygons
+		PATCH_IF( polygon_offset == wg_structure_type && wg_delete_mode == ` 0 && key_0 != vertex_offset && wg_wall_group_sort = 0 )BEGIN
+			SET xmin = wg_poly_xmin
+			SET xmax = wg_poly_xmax
+			SET ymin = wg_poly_ymin
+			SET ymax = wg_poly_ymax
+			LPM wall_group_counter
+			SET num_polygon +=1
+		END
+
+
+		// preparing wall_groups door polygon ( open + closed )
+		PHP_EACH wed_door AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == 0x18 && wg_delete_mode == num && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x18) || wg_structure_type != 0x18 )BEGIN
+					PATCH_FOR_EACH value IN open closed BEGIN
+						PHP_EACH ~wed_door_%num%_polygon_%value%~ AS num1 => structure1 BEGIN
+							PATCH_IF ~%value%~ STR_EQ ~open~ BEGIN SET pos2 = 0x12 END ELSE BEGIN SET pos2 = 0x16 END
+							READ_SHORT LONG_AT (LONG_AT 0x18 + pos2 + ( num - wg_deleted ) * 0x1a) + num1 * 0x12 + 0x0a xmin
+							READ_SHORT LONG_AT (LONG_AT 0x18 + pos2 + ( num - wg_deleted ) * 0x1a) + num1 * 0x12 + 0x0c xmax
+							READ_SHORT LONG_AT (LONG_AT 0x18 + pos2 + ( num - wg_deleted ) * 0x1a) + num1 * 0x12 + 0x0e ymin
+							READ_SHORT LONG_AT (LONG_AT 0x18 + pos2 + ( num - wg_deleted ) * 0x1a) + num1 * 0x12 + 0x10 ymax
+							LPM wall_group_counter
+							SET num_polygon +=1
+						END
+					END
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		// preparing new door polygons ( open + closed )
+		PATCH_FOR_EACH value IN open closed BEGIN
+			PATCH_IF( 0x18 == wg_structure_type && wg_delete_mode == ` 0 && key_0 != vertex_offset )BEGIN
+				PHP_EACH ~wg_poly_%value%_box_xmin~ AS num => structure BEGIN
+					PATCH_FOR_EACH value1 IN xmin xmax ymin ymax BEGIN
+						SET EVAL ~%value1%~ = $EVAL ~wg_poly_%value%_box_%value1%~(~%num%~)
+					END
+					LPM wall_group_counter
+					SET num_polygon +=1
+				END
+			END
+		END
+
+
+		// wallgroup: load number of polygons
+		PHP_EACH wallgroup AS num => count BEGIN
+			PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Idx: %num_0% polygon: %num_1%; wallgroup: %count%~ END
+			WRITE_SHORT LONG_AT (LONG_AT 0x14 + 0x0c) + count * 0x04 + 0x02 THIS + 0x01
+		END
+
+		// index count wall groups + add polygon index
+		WRITE_LONG LONG_AT 0x14 + 0x10 wg_position
+		FOR (cnt=0; cnt<wall_group_cnt; cnt +=1) BEGIN
+			WRITE_SHORT LONG_AT (LONG_AT 0x14 + 0x0c) + cnt * 0x04 wg_index_wallgroup
+			READ_SHORT LONG_AT (LONG_AT 0x14 + 0x0c) + cnt * 0x04 + 0x02 num_polygon1
+			SET wg_index_wallgroup += num_polygon1
+			PHP_EACH wallgroup AS num => value BEGIN
+				PATCH_IF (cnt = value) BEGIN
+					INSERT_BYTES wg_position 0x02
+					WRITE_SHORT wg_position num_1
+					SET wg_position += 0x02
+					PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting wallgroup and door index %num%.~ END
+				END
+			END
+		END
+	END
+
+
+	// vertices associated with walls and doors
+	PATCH_IF( key_0 == vertex_offset ) BEGIN
+
+		// new offset vertices
+		WRITE_LONG (LONG_AT 0x14 + 0x08) wg_position
+
+		// walls
+		PHP_EACH wed_wall_polygon AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == polygon_offset && num == wg_delete_mode && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == polygon_offset) || wg_structure_type != polygon_offset )BEGIN
+				//	WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + num * 0x12 wg_vertex_index
+				//	WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + num * 0x12 + 0x04 0x00
+				//	PHP_EACH ~wed_wall_polygon_%num%_vertex~ AS num1 => value1 BEGIN
+				//		INSERT_BYTES wg_position key_3
+				//		WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + num * 0x12 + 0x04 THIS + 0x01
+				//		WRITE_LONG wg_position value1
+				//		SET wg_vertex_index +=1
+				//		SET wg_position += key_3
+				//	END
+					WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 wg_vertex_index
+					WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x04 0x00
+					PHP_EACH ~wed_wall_polygon_%num%_vertex~ AS num1 => value1 BEGIN
+						INSERT_BYTES wg_position num1*0x04
+						WRITE_LONG LONG_AT (LONG_AT 0x14 + 0x04) + ( num - wg_deleted ) * 0x12 + 0x04 THIS + num1
+						WRITE_ASCIIE wg_position ~%value1%~ (num1*0x04)
+						SET wg_vertex_index +=num1
+						SET wg_position += num1*0x04
+					END
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting %wg_vertex_index% wall vertices.~ END
+		// new walls
+		PATCH_IF( wg_structure_type == polygon_offset && wg_delete_mode == ` 0 )BEGIN
+			PATCH_IF wg_debug BEGIN PATCH_PRINT ~Adding vertices to new wall.~ END
+			WRITE_LONG wg_return_offset wg_vertex_index
+			PHP_EACH wg_poly_vert AS num => value BEGIN
+				INSERT_BYTES wg_position key_3
+				//WRITE_LONG wg_return_offset wg_vertex_index
+				WRITE_LONG wg_return_offset + 0x04 THIS + 0x01
+				WRITE_LONG wg_position value
+				SET wg_vertex_index +=1
+				SET wg_position += key_3
+			END
+		END
+		PHP_EACH wed_wall_polygon AS num => structure BEGIN
+			CLEAR_ARRAY EVAL ~wed_wall_polygon_%num%_vertex~
+		END
+
+		// doors ( open + closed )
+		PHP_EACH wed_door AS num => structure BEGIN
+			PATCH_IF( wg_structure_type == 0x18 && num == wg_delete_mode && wg_deleted == 0x00 )BEGIN
+				SET wg_deleted = 0x01
+			END ELSE BEGIN
+				PATCH_IF( (num != wg_delete_mode && wg_structure_type == 0x18) || wg_structure_type != 0x18 )BEGIN
+					PATCH_FOR_EACH value IN open closed BEGIN
+						PATCH_IF ~%value%~ STR_EQ ~open~ BEGIN SET pos2 = 0x12 END ELSE BEGIN SET pos2 = 0x16 END
+						PHP_EACH ~wed_door_%num%_polygon_%value%~ AS num1 => value1 BEGIN
+							WRITE_LONG LONG_AT((LONG_AT 0x18) + ( num - wg_deleted ) * 0x1a + pos2) + num1 * 0x12 wg_vertex_index
+							WRITE_LONG LONG_AT((LONG_AT 0x18) + ( num - wg_deleted ) * 0x1a + pos2) + num1 * 0x12 + 0x04 0x00
+							PHP_EACH ~wed_door_%num%_pol_%num1%_vertex_%value%~ AS num2 => value2 BEGIN
+								INSERT_BYTES wg_position key_3
+								WRITE_LONG LONG_AT((LONG_AT 0x18) + ( num - wg_deleted ) * 0x1a + pos2)  + num1 * 0x12 + 0x04 THIS + 0x01
+								WRITE_LONG wg_position value2
+								SET wg_vertex_index +=1
+								SET wg_position += key_3
+							END
+						END
+					END
+				END
+			END
+		END
+		SET wg_deleted = 0x00
+		// new door ( open + closed )
+		PATCH_IF( wg_structure_type == 0x18 && wg_delete_mode == ` 0 )BEGIN
+			PATCH_IF wg_debug BEGIN PATCH_PRINT ~Adding vertices to new door.~ END
+			PATCH_FOR_EACH value IN open closed BEGIN
+				PATCH_IF ~%value%~ STR_EQ ~open~ BEGIN SET pos2 = 0x12 END ELSE BEGIN SET pos2 = 0x16 END
+				FOR( num=0; num < EVAL ~wg_num_poly_%value%~; num+=1 ) BEGIN
+					WRITE_LONG LONG_AT (wg_return_offset + pos2) + num * 0x12 wg_vertex_index
+					PHP_EACH ~wg_poly_%value%_vert_%num%~ AS num1 => value1 BEGIN
+						INSERT_BYTES wg_position key_3
+						WRITE_LONG LONG_AT(wg_return_offset + pos2)  + num * 0x12 + 0x04 THIS + 0x01
+						WRITE_LONG wg_position value1
+						SET wg_vertex_index +=1
+						SET wg_position += key_3
+					END
+				END
+			END
+		END
+		PATCH_IF wg_debug_inhalt BEGIN PATCH_PRINT ~Reinserting %wg_vertex_index% door vertices.~ END
+		PHP_EACH wed_door AS num => structure BEGIN
+			PHP_EACH ~wed_door_%num%_polygon_open~ AS num1 => value1 BEGIN
+				CLEAR_ARRAY EVAL ~wed_door_%num%_pol_%num1%_vertex_open~
+			END
+			PHP_EACH ~wed_door_%num%_polygon_closed~ AS num1 => value1 BEGIN
+				CLEAR_ARRAY EVAL ~wed_door_%num%_pol_%num1%_vertex_closed~
+			END
+		END
+	END
+
+END // struct
+
+
+END // end function

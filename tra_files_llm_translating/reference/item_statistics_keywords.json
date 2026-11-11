@@ -1,0 +1,638 @@
+{
+  "paired_items": 615,
+  "skipped_unpaired": [],
+  "english": [
+    {
+      "keyword": "Acid Resistance",
+      "normalized": "acid resistance",
+      "items": 1
+    },
+    {
+      "keyword": "Active abilities",
+      "normalized": "active abilities",
+      "items": 1
+    },
+    {
+      "keyword": "Anti-magic",
+      "normalized": "anti-magic",
+      "items": 1
+    },
+    {
+      "keyword": "Area of Effect",
+      "normalized": "area of effect",
+      "items": 31
+    },
+    {
+      "keyword": "Armor Class",
+      "normalized": "armor class",
+      "items": 115
+    },
+    {
+      "keyword": "Casting failure",
+      "normalized": "casting failure",
+      "items": 1
+    },
+    {
+      "keyword": "Chance",
+      "normalized": "chance",
+      "items": 11
+    },
+    {
+      "keyword": "Charge abilities",
+      "normalized": "charge abilities",
+      "items": 40
+    },
+    {
+      "keyword": "Charisma",
+      "normalized": "charisma",
+      "items": 7
+    },
+    {
+      "keyword": "Cold Resistance",
+      "normalized": "cold resistance",
+      "items": 6
+    },
+    {
+      "keyword": "Combat",
+      "normalized": "combat",
+      "items": 9
+    },
+    {
+      "keyword": "Combat abilities",
+      "normalized": "combat abilities",
+      "items": 30
+    },
+    {
+      "keyword": "Constitution",
+      "normalized": "constitution",
+      "items": 7
+    },
+    {
+      "keyword": "Critical Hit",
+      "normalized": "critical hit",
+      "items": 2
+    },
+    {
+      "keyword": "Cursed",
+      "normalized": "cursed",
+      "items": 1
+    },
+    {
+      "keyword": "Damage",
+      "normalized": "damage",
+      "items": 227
+    },
+    {
+      "keyword": "Damage Resistance",
+      "normalized": "damage resistance",
+      "items": 1
+    },
+    {
+      "keyword": "Damage type",
+      "normalized": "damage type",
+      "items": 32
+    },
+    {
+      "keyword": "Detect Illusion",
+      "normalized": "detect illusion",
+      "items": 1
+    },
+    {
+      "keyword": "Dexterity",
+      "normalized": "dexterity",
+      "items": 10
+    },
+    {
+      "keyword": "Duration",
+      "normalized": "duration",
+      "items": 60
+    },
+    {
+      "keyword": "Electrical Resistance",
+      "normalized": "electrical resistance",
+      "items": 7
+    },
+    {
+      "keyword": "Equipped abilities",
+      "normalized": "equipped abilities",
+      "items": 153
+    },
+    {
+      "keyword": "Etherealness",
+      "normalized": "etherealness",
+      "items": 1
+    },
+    {
+      "keyword": "Find Traps",
+      "normalized": "find traps",
+      "items": 6
+    },
+    {
+      "keyword": "Fire Resistance",
+      "normalized": "fire resistance",
+      "items": 8
+    },
+    {
+      "keyword": "Hide In Shadows",
+      "normalized": "hide in shadows",
+      "items": 10
+    },
+    {
+      "keyword": "Hit Points",
+      "normalized": "hit points",
+      "items": 19
+    },
+    {
+      "keyword": "Intelligence",
+      "normalized": "intelligence",
+      "items": 28
+    },
+    {
+      "keyword": "Launcher",
+      "normalized": "launcher",
+      "items": 26
+    },
+    {
+      "keyword": "Luck",
+      "normalized": "luck",
+      "items": 1
+    },
+    {
+      "keyword": "Magic Damage Resistance",
+      "normalized": "magic damage resistance",
+      "items": 1
+    },
+    {
+      "keyword": "Magic Resistance",
+      "normalized": "magic resistance",
+      "items": 16
+    },
+    {
+      "keyword": "Maximum Hit Points",
+      "normalized": "maximum hit points",
+      "items": 3
+    },
+    {
+      "keyword": "Missile Damage Resistance",
+      "normalized": "missile damage resistance",
+      "items": 1
+    },
+    {
+      "keyword": "Move Silently",
+      "normalized": "move silently",
+      "items": 9
+    },
+    {
+      "keyword": "Open Locks",
+      "normalized": "open locks",
+      "items": 5
+    },
+    {
+      "keyword": "Passive abilities",
+      "normalized": "passive abilities",
+      "items": 1
+    },
+    {
+      "keyword": "Pick Pockets",
+      "normalized": "pick pockets",
+      "items": 8
+    },
+    {
+      "keyword": "Proficiency Type",
+      "normalized": "proficiency type",
+      "items": 175
+    },
+    {
+      "keyword": "Range",
+      "normalized": "range",
+      "items": 35
+    },
+    {
+      "keyword": "Requires",
+      "normalized": "requires",
+      "items": 230
+    },
+    {
+      "keyword": "Save",
+      "normalized": "save",
+      "items": 3
+    },
+    {
+      "keyword": "Save vs. Breath",
+      "normalized": "save vs. breath",
+      "items": 11
+    },
+    {
+      "keyword": "Save vs. Death",
+      "normalized": "save vs. death",
+      "items": 12
+    },
+    {
+      "keyword": "Save vs. Petrification/Polymorph",
+      "normalized": "save vs. petrification/polymorph",
+      "items": 2
+    },
+    {
+      "keyword": "Save vs. Polymorph",
+      "normalized": "save vs. polymorph",
+      "items": 4
+    },
+    {
+      "keyword": "Save vs. Spell",
+      "normalized": "save vs. spell",
+      "items": 22
+    },
+    {
+      "keyword": "Save vs. Wand",
+      "normalized": "save vs. wand",
+      "items": 11
+    },
+    {
+      "keyword": "Saving Throws",
+      "normalized": "saving throws",
+      "items": 19
+    },
+    {
+      "keyword": "Set Traps",
+      "normalized": "set traps",
+      "items": 1
+    },
+    {
+      "keyword": "Special",
+      "normalized": "special",
+      "items": 29
+    },
+    {
+      "keyword": "Special Abilities",
+      "normalized": "special abilities",
+      "items": 8
+    },
+    {
+      "keyword": "Speed Factor",
+      "normalized": "speed factor",
+      "items": 177
+    },
+    {
+      "keyword": "Stealth",
+      "normalized": "stealth",
+      "items": 1
+    },
+    {
+      "keyword": "Strength",
+      "normalized": "strength",
+      "items": 223
+    },
+    {
+      "keyword": "THAC0",
+      "normalized": "thac0",
+      "items": 149
+    },
+    {
+      "keyword": "Type",
+      "normalized": "type",
+      "items": 175
+    },
+    {
+      "keyword": "Usage",
+      "normalized": "usage",
+      "items": 6
+    },
+    {
+      "keyword": "Weight",
+      "normalized": "weight",
+      "items": 606
+    },
+    {
+      "keyword": "Wisdom",
+      "normalized": "wisdom",
+      "items": 4
+    }
+  ],
+  "russian": [
+    {
+      "keyword": "THAC0",
+      "normalized": "thac0",
+      "items": 138
+    },
+    {
+      "keyword": "Бесплотность",
+      "normalized": "бесплотность",
+      "items": 1
+    },
+    {
+      "keyword": "Боевые возможности",
+      "normalized": "боевые возможности",
+      "items": 31
+    },
+    {
+      "keyword": "Бой",
+      "normalized": "бой",
+      "items": 8
+    },
+    {
+      "keyword": "Вероятность критического попадания",
+      "normalized": "вероятность критического попадания",
+      "items": 1
+    },
+    {
+      "keyword": "вероятность провала чтения заклинания",
+      "normalized": "вероятность провала чтения заклинания",
+      "items": 1
+    },
+    {
+      "keyword": "Вес",
+      "normalized": "вес",
+      "items": 606
+    },
+    {
+      "keyword": "взлом замков",
+      "normalized": "взлом замков",
+      "items": 5
+    },
+    {
+      "keyword": "Дистанция",
+      "normalized": "дистанция",
+      "items": 29
+    },
+    {
+      "keyword": "Длительность",
+      "normalized": "длительность",
+      "items": 61
+    },
+    {
+      "keyword": "здоровье",
+      "normalized": "здоровье",
+      "items": 12
+    },
+    {
+      "keyword": "Зона действия",
+      "normalized": "зона действия",
+      "items": 32
+    },
+    {
+      "keyword": "интеллект",
+      "normalized": "интеллект",
+      "items": 6
+    },
+    {
+      "keyword": "Использование",
+      "normalized": "использование",
+      "items": 5
+    },
+    {
+      "keyword": "карманная кража",
+      "normalized": "карманная кража",
+      "items": 6
+    },
+    {
+      "keyword": "класс защиты",
+      "normalized": "класс защиты",
+      "items": 115
+    },
+    {
+      "keyword": "ловкость",
+      "normalized": "ловкость",
+      "items": 10
+    },
+    {
+      "keyword": "Мудрость",
+      "normalized": "мудрость",
+      "items": 3
+    },
+    {
+      "keyword": "Навык",
+      "normalized": "навык",
+      "items": 175
+    },
+    {
+      "keyword": "обнаружение иллюзий",
+      "normalized": "обнаружение иллюзий",
+      "items": 1
+    },
+    {
+      "keyword": "Оружие",
+      "normalized": "оружие",
+      "items": 26
+    },
+    {
+      "keyword": "Особенности",
+      "normalized": "особенности",
+      "items": 26
+    },
+    {
+      "keyword": "Особые возможности",
+      "normalized": "особые возможности",
+      "items": 8
+    },
+    {
+      "keyword": "поиск ловушек",
+      "normalized": "поиск ловушек",
+      "items": 5
+    },
+    {
+      "keyword": "Применение",
+      "normalized": "применение",
+      "items": 1
+    },
+    {
+      "keyword": "Проклятие",
+      "normalized": "проклятие",
+      "items": 1
+    },
+    {
+      "keyword": "пункты здоровья",
+      "normalized": "пункты здоровья",
+      "items": 4
+    },
+    {
+      "keyword": "Свойства зарядов",
+      "normalized": "свойства зарядов",
+      "items": 41
+    },
+    {
+      "keyword": "Свойства экипировки",
+      "normalized": "свойства экипировки",
+      "items": 155
+    },
+    {
+      "keyword": "сила",
+      "normalized": "сила",
+      "items": 13
+    },
+    {
+      "keyword": "скрытность",
+      "normalized": "скрытность",
+      "items": 1
+    },
+    {
+      "keyword": "скрыться в тенях",
+      "normalized": "скрыться в тенях",
+      "items": 7
+    },
+    {
+      "keyword": "Создаёт сферу антимагии вокруг цели",
+      "normalized": "создаёт сферу антимагии вокруг цели",
+      "items": 1
+    },
+    {
+      "keyword": "сопротивление магии",
+      "normalized": "сопротивление магии",
+      "items": 16
+    },
+    {
+      "keyword": "сопротивление магическому урону",
+      "normalized": "сопротивление магическому урону",
+      "items": 1
+    },
+    {
+      "keyword": "сопротивление метательному урону",
+      "normalized": "сопротивление метательному урону",
+      "items": 1
+    },
+    {
+      "keyword": "сопротивление огню",
+      "normalized": "сопротивление огню",
+      "items": 8
+    },
+    {
+      "keyword": "Сопротивление урону",
+      "normalized": "сопротивление урону",
+      "items": 1
+    },
+    {
+      "keyword": "сопротивление холоду",
+      "normalized": "сопротивление холоду",
+      "items": 5
+    },
+    {
+      "keyword": "сопротивление электричеству",
+      "normalized": "сопротивление электричеству",
+      "items": 6
+    },
+    {
+      "keyword": "спасброски",
+      "normalized": "спасброски",
+      "items": 18
+    },
+    {
+      "keyword": "спасброски против дыхания",
+      "normalized": "спасброски против дыхания",
+      "items": 5
+    },
+    {
+      "keyword": "спасброски против жезлов",
+      "normalized": "спасброски против жезлов",
+      "items": 3
+    },
+    {
+      "keyword": "спасброски против заклинаний",
+      "normalized": "спасброски против заклинаний",
+      "items": 3
+    },
+    {
+      "keyword": "спасброски против окаменения/превращения",
+      "normalized": "спасброски против окаменения/превращения",
+      "items": 2
+    },
+    {
+      "keyword": "спасброски против превращения",
+      "normalized": "спасброски против превращения",
+      "items": 3
+    },
+    {
+      "keyword": "спасброски против смерти",
+      "normalized": "спасброски против смерти",
+      "items": 6
+    },
+    {
+      "keyword": "телосложение",
+      "normalized": "телосложение",
+      "items": 7
+    },
+    {
+      "keyword": "Тип",
+      "normalized": "тип",
+      "items": 175
+    },
+    {
+      "keyword": "Тип урона",
+      "normalized": "тип урона",
+      "items": 28
+    },
+    {
+      "keyword": "Тип урона (бросок)",
+      "normalized": "тип урона (бросок)",
+      "items": 5
+    },
+    {
+      "keyword": "Тип урона (рукопашная)",
+      "normalized": "тип урона (рукопашная)",
+      "items": 5
+    },
+    {
+      "keyword": "тихое движение",
+      "normalized": "тихое движение",
+      "items": 7
+    },
+    {
+      "keyword": "Требования",
+      "normalized": "требования",
+      "items": 232
+    },
+    {
+      "keyword": "удача",
+      "normalized": "удача",
+      "items": 1
+    },
+    {
+      "keyword": "Урон",
+      "normalized": "урон",
+      "items": 213
+    },
+    {
+      "keyword": "урон использующему",
+      "normalized": "урон использующему",
+      "items": 1
+    },
+    {
+      "keyword": "установка ловушек",
+      "normalized": "установка ловушек",
+      "items": 1
+    },
+    {
+      "keyword": "Фактор скорости",
+      "normalized": "фактор скорости",
+      "items": 177
+    },
+    {
+      "keyword": "харизма",
+      "normalized": "харизма",
+      "items": 6
+    },
+    {
+      "keyword": "Цель получает добавку к сопротивлению кислоте",
+      "normalized": "цель получает добавку к сопротивлению кислоте",
+      "items": 1
+    },
+    {
+      "keyword": "Цель получает добавку к сопротивлению огню",
+      "normalized": "цель получает добавку к сопротивлению огню",
+      "items": 1
+    },
+    {
+      "keyword": "Цель получает добавку к сопротивлению холоду",
+      "normalized": "цель получает добавку к сопротивлению холоду",
+      "items": 1
+    },
+    {
+      "keyword": "Цель получает добавку к сопротивлению электричеству",
+      "normalized": "цель получает добавку к сопротивлению электричеству",
+      "items": 1
+    },
+    {
+      "keyword": "Эффект",
+      "normalized": "эффект",
+      "items": 1
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "version": "inkgallery_beholder-v1",
+  "provenance": "InkGallery v1.5, L#IGB9.d / l#igb9.tra. Assistant-authored/reviewed 2026-10-29 at user request; human review pending. New to these experiments; not independent human gold data.",
+  "input": "input.csv",
+  "actors": "actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    }
+  ],
+  "allowed_latin": [],
+  "pair_review": {
+    "allowed_changes": [
+      [
+        "сразился",
+        "сразилась"
+      ],
+      [
+        "первоначальный",
+        "первоначальная"
+      ],
+      [
+        "предводитель",
+        "предводительница"
+      ],
+      [
+        "выбрал",
+        "выбрала"
+      ]
+    ]
+  },
+  "lines": {
+    "100_INITIAL_0_SAY_0": {
+      "both": [
+        {
+          "name": "dead magic preserved",
+          "require": "мёртв\\w*\\s+маги|мертв\\w*\\s+маги"
+        },
+        {
+          "name": "century retained",
+          "require": "век|столет|сто\\s+лет"
+        }
+      ]
+    },
+    "100_BLOCK_0_ELEMENT_0_SAY_1": {},
+    "100_BLOCK_1_ELEMENT_0_SAY_2": {
+      "both": [
+        {
+          "name": "both prices retained",
+          "require": "(?=[\\s\\S]*(?:3[\\s,]?500|три\\s+тысячи\\s+пятьсот|три\\s+с\\s+половиной\\s+тысячи))(?=[\\s\\S]*(?:3[\\s,]?000|три\\s+тысячи))"
+        }
+      ]
+    },
+    "100_BLOCK_1_ELEMENT_0_REPLY_3": {
+      "male": [
+        {
+          "name": "male original leader",
+          "forbid": "\\b(?:сразилась|предводительница|первая)\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "no masculine original leader agreement",
+          "forbid": "\\b(?:сразился|предводитель|первый)\\b"
+        }
+      ]
+    },
+    "100_BLOCK_1_ELEMENT_0_REPLY_4": {},
+    "100_BLOCK_1_ELEMENT_0_REPLY_5": {},
+    "100_BLOCK_1_ELEMENT_0_REPLY_6": {},
+    "100_BLOCK_1_ELEMENT_0_REPLY_7": {},
+    "100_BLOCK_1_ELEMENT_0_REPLY_8": {},
+    "100_BLOCK_1_ELEMENT_0_REPLY_9": {},
+    "101_INITIAL_0_SAY_10": {}
+  }
+}

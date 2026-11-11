@@ -1,0 +1,10 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB1,L#IGB1_e30fe31b::L#IGB1:200_INITIAL_0_SAY_7,,"""The drider fanatics and her evil allies died, and the heroes endured. Exposure to the Demonweb Pits taught the heroes how to withstand toxins; how to deal with venoms and toxins.""",@7,TRA:l#igb1.tra:@7,,,,dialogue,MALE,
+L#IGB1,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,L#IGB1_e30fe31b::L#IGB1:200_INITIAL_0_SAY_7,Who shall be granted this knowledge?,@8,TRA:l#igb1.tra:@8,,,,dialogue,MALE,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_9,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER1>.,@9,TRA:l#igb1.tra:@9,,,,dialogue,player,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_10,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER2>.,@10,TRA:l#igb1.tra:@10,,,,dialogue,player,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_11,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER3>.,@11,TRA:l#igb1.tra:@11,,,,dialogue,player,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_12,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER4>.,@12,TRA:l#igb1.tra:@12,,,,dialogue,player,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_13,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER5>.,@13,TRA:l#igb1.tra:@13,,,,dialogue,player,
+PLAYER,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_14,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_SAY_8,<PLAYER6>.,@14,TRA:l#igb1.tra:@14,,,,dialogue,player,
+L#IGB1,L#IGB1_e30fe31b::L#IGB1:201_INITIAL_0_SAY_15,L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_9;L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_10;L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_11;L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_12;L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_13;L#IGB1_e30fe31b::L#IGB1:200_BLOCK_0_ELEMENT_0_REPLY_14,It shall be as you've decided.,@15,TRA:l#igb1.tra:@15,,,,dialogue,MALE,

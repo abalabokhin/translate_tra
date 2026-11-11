@@ -1,0 +1,35 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+Player1,1,,"The Ink Gallery
+I found an interesting place in Athkatla's Government District: The Ink Gallery. If I understood the owner of the place right, it's a place where some powerful tomes are kept; tomes that allow their readers to relive some moments immortalized in the stories and learn from them.",@112,TRA:setup.tra:@112,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:8; scripts/JournalEntries.baf:154; scripts/JournalEntries.baf:186,
+Player1,2,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled Tale of Eight-Legged Strider.",@113,TRA:setup.tra:@113,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:18; scripts/JournalEntries.baf:155; scripts/JournalEntries.baf:187,
+Player1,3,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Birth of the Fury.",@114,TRA:setup.tra:@114,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:28; scripts/JournalEntries.baf:156; scripts/JournalEntries.baf:188,
+Player1,4,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Deathly Groans.",@115,TRA:setup.tra:@115,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:38; scripts/JournalEntries.baf:157; scripts/JournalEntries.baf:189,
+Player1,5,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The War Below.",@116,TRA:setup.tra:@116,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:48; scripts/JournalEntries.baf:158; scripts/JournalEntries.baf:190,
+Player1,6,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Grasp of the Glabrezu.",@117,TRA:setup.tra:@117,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:58; scripts/JournalEntries.baf:159; scripts/JournalEntries.baf:191,
+Player1,7,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Dance of the Swords.",@118,TRA:setup.tra:@118,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:68; scripts/JournalEntries.baf:160; scripts/JournalEntries.baf:192,
+Player1,8,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled Of Seed & Fire.",@119,TRA:setup.tra:@119,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:78; scripts/JournalEntries.baf:161; scripts/JournalEntries.baf:193,
+Player1,9,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Story of the Moon Sisters.",@120,TRA:setup.tra:@120,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:88; scripts/JournalEntries.baf:162; scripts/JournalEntries.baf:194,
+Player1,10,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled Tale of the Dead Eye.",@121,TRA:setup.tra:@121,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:98; scripts/JournalEntries.baf:163; scripts/JournalEntries.baf:195,
+Player1,11,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Waves of Flesheaters.",@122,TRA:setup.tra:@122,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:108; scripts/JournalEntries.baf:164; scripts/JournalEntries.baf:196,
+Player1,12,,"The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Light in the Snow.",@123,TRA:setup.tra:@123,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:118; scripts/JournalEntries.baf:165; scripts/JournalEntries.baf:197,
+Player1,13,,"The Ink Gallery
+Viscountess asked me to meet her in the basement of the Ink Gallery. She would like to discuss something with me down there.",@124,TRA:setup.tra:@124,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:127; scripts/JournalEntries.baf:166; scripts/JournalEntries.baf:198,
+Player1,14,,"The Ink Gallery
+Viscountess asked me to help her investigate The Blood Pages of Bhaal. I told her that I'll think about it.",@125,TRA:setup.tra:@125,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:136; scripts/JournalEntries.baf:167; scripts/JournalEntries.baf:199,
+Player1,15,,"The Ink Gallery
+I was asked to investigate The Blood Pages of Bhaal, held in the basement of the Ink Gallery in Athkatla. I've accepted the job. Let's see if it's truly as impressive as it seems.",@126,TRA:setup.tra:@126,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:145; scripts/JournalEntries.baf:168; scripts/JournalEntries.baf:200,
+Player1,16,,"The Ink Gallery
+The Ink Gallery is a place filled with powerful books. I was allowed to learn from them; face all the struggles that were immortalized on their pages. One of them was a tome called The Blood Pages of Bhaal. It showed me scenes and characters from my own story. It was a truly bizarre mission, but I managed to finish the job.",@127,TRA:setup.tra:@127,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:169,
+Player1,17,,"The Ink Gallery
+The Ink Gallery is a place filled with powerful books. I was allowed to learn from them; face all the struggles that were immortalized on their pages. One of them was a tome called The Blood Pages of Bhaal. The Viscountess asked me to help her investigate that book, but I declined the job. She took it pretty well, though.",@128,TRA:setup.tra:@128,,,journal,player,,,,InkGallery.tp2:963; scripts/JournalEntries.baf:201,

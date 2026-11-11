@@ -1,0 +1,12 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female
+L#IGB11,100_INITIAL_0_SAY_0,,"""The lone adventurer, left and betrayed by his own group, was wading through layers of slime and sewage. All of his former friends thought he was dead, but he has always been a stubborn one, and he still had a few aces up his sleeve. He survived. But the sewers weren't a safe place, or at least not these tunnels. Lately, they were taken over by strange worm-like creatures. They already knew he was there, and they were preparing for an attack.""",@0,TRA:l#igb11.tra:@0,,
+JANJ,100_BLOCK_0_ELEMENT_0_SAY_1,100_INITIAL_0_SAY_0,"Ah, that sounds like something that happened to one of my cousins, and—perhaps she should actually write her story down. Perhaps it could become a recognized piece of writing, just like some of those books around us. Mmm, I believe I should tell her that, or maybe even offer some help.",@1,TRA:l#igb11.tra:@1,,
+L#IGSTA,100_BLOCK_1_ELEMENT_0_SAY_2,100_BLOCK_0_ELEMENT_0_SAY_1,"This one is a one-on-one fight for survival. The fee for learning from most of those books is 3,500 gold pieces, but using this one costs only 3,000 gold pieces.",@2,TRA:l#igb11.tra:@2,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_3,100_BLOCK_1_ELEMENT_0_SAY_2,"Fine. It's only fair for the original leader, <PLAYER1>, to face these creatures.",@3,TRA:l#igb11.tra:@3,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_4,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER2> shall face these things.,@4,TRA:l#igb11.tra:@4,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_5,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER3> shall face these things.,@5,TRA:l#igb11.tra:@5,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_6,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER4> shall face these things.,@6,TRA:l#igb11.tra:@6,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_7,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER5> shall face these things.,@7,TRA:l#igb11.tra:@7,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_8,100_BLOCK_1_ELEMENT_0_SAY_2,Fine. <PLAYER6> shall face these things.,@8,TRA:l#igb11.tra:@8,,
+PLAYER,100_BLOCK_1_ELEMENT_0_REPLY_9,100_BLOCK_1_ELEMENT_0_SAY_2,No. I'll pass. At least for now.,@9,TRA:l#igb11.tra:@9,,
+L#IGSTA,101_INITIAL_0_SAY_10,100_BLOCK_1_ELEMENT_0_REPLY_3;100_BLOCK_1_ELEMENT_0_REPLY_4;100_BLOCK_1_ELEMENT_0_REPLY_5;100_BLOCK_1_ELEMENT_0_REPLY_6;100_BLOCK_1_ELEMENT_0_REPLY_7;100_BLOCK_1_ELEMENT_0_REPLY_8,"Right! Well, I hope you picked the right person to go through this test.",@10,TRA:l#igb11.tra:@10,,

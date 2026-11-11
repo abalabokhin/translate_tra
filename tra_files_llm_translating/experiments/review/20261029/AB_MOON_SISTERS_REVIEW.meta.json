@@ -1,0 +1,10 @@
+{
+  "run": "tra_files_llm_translating/experiments/prompt_ab/20261029-220151-recovered",
+  "dataset": "inkgallery_moon_sisters",
+  "rows": 84,
+  "human_review": "pending",
+  "source_log_sha256": "3469c89b8225fee2c93c2f26eee3127546c807fe13ad96ea73b1b585ba5a75ee",
+  "source_reference_sha256": "befdca092ede09875f07c66a7487f737395ec0fa825bd3f55165257be3fa8421",
+  "review_sha256_before_user_edits": "51ec094c0002f3949f029d0acef16f03f5841729d50bc8eb3a832d20cb9cdabe",
+  "note": "Unlisted wording flags are review prompts, not automatic errors. Raw rejected replies remain in runs.jsonl."
+}

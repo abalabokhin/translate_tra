@@ -1,0 +1,17 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	!Global("L#IGBooksCompleted","GLOBAL",7)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@171)  
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("L#IGBooksCompleted","GLOBAL",7)
+THEN
+	RESPONSE #100
+    StartCutScene("L#IGBK1")
+END

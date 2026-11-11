@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19363-8217-7611-b6da-c4bca86e5069"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Ты вернулась, <CHARNAME>. Орин ждал внизу.\",\"2\":\"Селена, ты была права. Я слишком поспешил обвинить её.\",\"3\":\"Я обещала Селене, что помогу ей. Орин должен перед ней извиниться.\",\"4\":\"Орин, ты был ранен? Я за тебя волновалась.\",\"5\":\"Ты спасла её, путница. Я обязан тебе жизнью.\",\"6\":\"Тогда сдержи своё обещание, Орин. Встреться с нами на рассвете.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15769,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":151,"reasoning_output_tokens":17}}

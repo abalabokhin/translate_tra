@@ -1,0 +1,66 @@
+{
+  "allocation": {
+    "models": [
+      {
+        "name": "qwen3.5:9b",
+        "model": "qwen3.5:9b",
+        "size": 14326295428,
+        "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-25T18:38:12.137887027-04:00",
+        "size_vram": 14326295428,
+        "context_length": 262144,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "male": {
+    "elapsed_seconds": 164.75,
+    "final_event": {
+      "model": "qwen3.5:9b",
+      "created_at": "2026-10-25T22:10:56.89527026Z",
+      "message": {
+        "role": "assistant",
+        "content": ""
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 164751864725,
+      "load_duration": 793051,
+      "prompt_eval_count": 619,
+      "prompt_eval_cached_count": 0,
+      "prompt_eval_duration": 593758000,
+      "eval_count": 9778,
+      "eval_duration": 164150136000
+    }
+  },
+  "female": {
+    "elapsed_seconds": 248.96,
+    "final_event": {
+      "model": "qwen3.5:9b",
+      "created_at": "2026-10-25T22:15:05.854612381Z",
+      "message": {
+        "role": "assistant",
+        "content": ""
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 248958366365,
+      "load_duration": 706558,
+      "prompt_eval_count": 1118,
+      "prompt_eval_cached_count": 107,
+      "prompt_eval_duration": 750093000,
+      "eval_count": 14550,
+      "eval_duration": 247569028000
+    }
+  }
+}

@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB11,L#IGB11_be3c841a::L#IGB11:300_INITIAL_0_SAY_13,,You've already faced the battle this book describes.,@13,TRA:l#igb11.tra:@13,,,,dialogue,MALE,

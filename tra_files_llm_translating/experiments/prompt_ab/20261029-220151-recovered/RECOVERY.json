@@ -1,0 +1,18 @@
+{
+  "recovery_utc": "2026-10-29T22:27:11.393703+00:00",
+  "reason": "Codex server restart ended the experiment client process.",
+  "original": "tra_files_llm_translating/experiments/prompt_ab/20261029-220151",
+  "saved_records": 1,
+  "reused_male_request": {
+    "model": "mistral-small3.2:24b",
+    "prompt": "production",
+    "scope": "full",
+    "think": "default",
+    "temperature": "default",
+    "repeat": 1
+  },
+  "in_flight_female": "No completed record survived; output unavailable and unscored. May have reached server before interruption.",
+  "planned_new_requests": 35,
+  "completed_records_not_rerun": true,
+  "ordinary_runner_changed": false
+}

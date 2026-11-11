@@ -1,0 +1,29 @@
+IF
+Global("L#IGStart","GLOBAL",0)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#IGBooksCompleted","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+AreaCheck("L#IG13")
+Global("L#IGBooksCompleted","GLOBAL",4)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",14)
+AreaCheck("L#IG13")
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

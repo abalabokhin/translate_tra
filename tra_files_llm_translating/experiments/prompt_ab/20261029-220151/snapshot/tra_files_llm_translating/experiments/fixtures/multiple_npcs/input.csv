@@ -1,0 +1,7 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Addressee,Source_Female_Text,Source_Has_Female
+Selene,101,,"You came back, <CHARNAME>. Orin was waiting downstairs.",@101,TRA:multiple_npcs.tra:@101,Player1,,
+Orin,102,101,"Selene, you were right. I was too quick to blame him.",@102,TRA:multiple_npcs.tra:@102,Selene,,
+Player1,103,102,I promised Selene that I would help her. Orin owes her an apology.,@103,TRA:multiple_npcs.tra:@103,Orin,,
+Selene,104,103,"Orin, were you injured? I was worried about you.",@104,TRA:multiple_npcs.tra:@104,Orin,,
+Orin,105,104,"You saved her, traveler. I owe you my life.",@105,TRA:multiple_npcs.tra:@105,Player1,,
+Player1,106,105,"Then keep your promise, Orin. Meet us at dawn.",@106,TRA:multiple_npcs.tra:@106,Orin,,

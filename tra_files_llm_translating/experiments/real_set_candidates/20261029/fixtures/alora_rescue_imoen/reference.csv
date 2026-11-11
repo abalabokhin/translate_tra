@@ -1,0 +1,13 @@
+Line_ID,Actor,English,English_Female,Russian_Male,Russian_Female,Review_Notes
+apc_chat1_SAY_0,BCMALOR,"Don't be so sad, <CHARNAME>, we'll rescue Imoen from that nasty, nasty evil mage! Don't you worry about a thing!",,,,
+apc_chat1_REPLY_0,PLAYER,"I know we will get her back, I just don't like the idea of her being captured and being far away from us.",,,,
+apc_chat1_REPLY_1,PLAYER,I really don't feel like talking about it right now.,,,,
+chatmore_SAY_0,BCMALOR,"Fear not, <CHARNAME>! I will be there for you to help out! There is no jail, prison or lock that I can't pick. Yes sir indeed! There is not a lock I can't bypass! Heh that rhymed.",,,,
+chatmore_REPLY_2,PLAYER,"Well, that is good to hear, Alora. But I do recall one lock you could not break open.",,,,
+chatmore_REPLY_3,PLAYER,"That's nice, Alora, we really should get going.",,,,
+notalk_SAY_0,BCMALOR,"If ya wish it, <CHARNAME>.",,,,
+rustlock_SAY_0,BCMALOR,"You don't mean that rusty lock? It was a triple combination lock that was all rusty and beyond picking. If I remember right, you couldn't even break it open with your sword. What ya gotta say about that?",,,,
+rustlock_REPLY_4,PLAYER,"True, but you were *unable* to pick it. Lil Miss I Can Pick Anything could not even do that. Ha ha!",,,,
+rustlock_REPLY_5,PLAYER,I suppose you are right about that. Hey we should get going.,,,,
+meany_SAY_0,BCMALOR,Oh fine be that way you big meany! Hurt my feelings you did!,,,,
+okdokey_SAY_0,BCMALOR,Okay dokey. There is a lot to do.,,,,

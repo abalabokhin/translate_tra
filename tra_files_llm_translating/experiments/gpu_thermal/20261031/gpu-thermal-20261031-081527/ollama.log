@@ -1,0 +1,250 @@
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=server.go:107 msg="using llama-server for model" model=/home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=llama_server.go:457 msg="starting llama-server" cmd="/usr/local/lib/ollama/llama-server --model /home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca --port 45521 --host 127.0.0.1 --no-webui --offline -c 131072 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj /home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=sched.go:658 msg="system memory" total="31.3 GiB" free="27.6 GiB" free_swap="246.9 MiB"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=sched.go:665 msg="gpu memory" id=0 library=ROCm available="15.5 GiB" free="15.9 GiB" minimum="457.0 MiB" overhead="0 B"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=llama_server.go:1088 msg="loading model via llama-server" model=/home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.563-04:00 level=INFO source=llama_server.go:1341 msg="waiting for llama-server to start responding"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.564-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server not responding"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv  llama_server: initializing ...
+Oct 31 08:15:37 paladin-desktop ollama[2030]: load_backend: loaded CPU backend from /usr/local/lib/ollama/libggml-cpu-haswell.so
+Oct 31 08:15:37 paladin-desktop ollama[2030]: ggml_cuda_init: found 1 ROCm devices (Total VRAM: 16368 MiB):
+Oct 31 08:15:37 paladin-desktop ollama[2030]:   Device 0: AMD Radeon RX 6900 XT, gfx1030 (0x1030), VMM: no, Wave Size: 32, VRAM: 16368 MiB
+Oct 31 08:15:37 paladin-desktop ollama[2030]: load_backend: loaded ROCm backend from /usr/local/lib/ollama/rocm_v7_2/libggml-hip.so
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param: common_params_print_info: build 1 (9ff0d7e90) with GNU 13.3.1 for Linux x86_64
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param: device_info:
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param:   - CPU     : AMD Ryzen 5 5600X3D 6-Core Processor (32013 MiB, 32013 MiB free)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param:   - ROCm0   : AMD Radeon RX 6900 XT (16368 MiB, 16316 MiB free)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_param: system_info: n_threads = 6 (n_threads_batch = 6) / 12 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | REPACK = 1 | ROCm : NO_VMM = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv  init_listene: The UI is disabled
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv          init: using 11 threads for HTTP server
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: handle_mistral3_clip: detected Ollama-format mistral3 GGUF used as mmproj; translating
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: model name:
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: description:
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: GGUF version: 3
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: alignment:    32
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: n_tensors:    585
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: n_kv:         59
+Oct 31 08:15:37 paladin-desktop ollama[2030]: clip_model_loader: has vision encoder
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv    load_model: loading model '/home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca'
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv    load_model: local path '/home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca'
+Oct 31 08:15:37 paladin-desktop ollama[2030]: handle_mistral3_clip: detected Ollama-format mistral3 GGUF used as mmproj; translating
+Oct 31 08:15:37 paladin-desktop ollama[2030]: srv    load_model: [mtmd] estimated worst-case memory usage of mmproj is 880.24 MiB (took 55.46 ms)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_init_: fitting params to device memory ...
+Oct 31 08:15:37 paladin-desktop ollama[2030]: cmn  common_init_: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: getting device memory data for initial parameters:
+Oct 31 08:15:37 paladin-desktop ollama[2030]: time=2026-10-31T08:15:37.815-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server loading model"
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - ROCm0 (RX 6900 XT) | 16368 = 16170 + (34139 = 13299 +   20480 +     360) +      -33941 |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - Host               |                    528 =   360 +       0 +     168                |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: projected to use 34139 MiB of device memory vs. 16170 MiB of free device memory
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: cannot meet free memory target of 1839 MiB, need to reduce device memory by 19808 MiB
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: context size set by user to 131072 -> no change
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: id=0, target=14330 MiB
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - ROCm0 (RX 6900 XT) | 16368 = 16170 + (  688 =     0 +       0 +     688) +        -490 |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - Host               |                  34307 = 13659 +   20480 +     168                |
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: memory for test allocation by device:
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: id=0, n_layer= 0, n_part= 0, overflow_type=4, mem=   688 MiB
+Oct 31 08:15:37 paladin-desktop ollama[2030]: common_params_fit_impl: filling dense layers back-to-front:
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - ROCm0 (RX 6900 XT) | 16368 = 16170 + (34139 = 13299 +   20480 +     360) +      -33941 |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - Host               |                    528 =   360 +       0 +     168                |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: memory for test allocation by device:
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: id=0, n_layer=41, n_part= 0, overflow_type=4, mem= 34139 MiB
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: start filling device 0, delta=41
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - ROCm0 (RX 6900 XT) | 16368 = 16170 + (13743 =  5375 +    7680 +     688) +      -13545 |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - Host               |                  21252 =  8284 +   12800 +     168                |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: memory for test allocation by device:
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: id=0, n_layer=16, n_part= 0, overflow_type=4, mem= 13743 MiB
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: set ngl_per_device[0].n_layer=16
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - ROCm0 (RX 6900 XT) | 16368 = 16170 + (14553 =  5673 +    8192 +     688) +      -14355 |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_memory_breakdown_print: |   - Host               |                  20442 =  7986 +   12288 +     168                |
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: memory for test allocation by device:
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: id=0, n_layer=17, n_part= 0, overflow_type=4, mem= 14553 MiB
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl: set ngl_per_device_high[0].n_layer=17
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_params_fit_impl:   - ROCm0 (AMD Radeon RX 6900 XT): 16 layers,  13743 MiB used,   2426 MiB free
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_fit_params: successfully fit params to free device memory
+Oct 31 08:15:38 paladin-desktop ollama[2030]: common_fit_params: fitting params to free memory took 0.63 seconds
+Oct 31 08:15:38 paladin-desktop ollama[2030]: handle_mistral3: detected Ollama-format mistral3 GGUF; applying compatibility fixes
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: loaded meta data with 43 key-value pairs and 363 tensors from /home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca (version GGUF V3 (latest))
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   0:                       general.architecture str              = mistral3
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   1:                          general.file_type u32              = 15
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   2:                    general.parameter_count u64              = 24011361280
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   3:               general.quantization_version u32              = 2
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   4:              mistral3.attention.head_count u32              = 32
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   5:           mistral3.attention.head_count_kv u32              = 8
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   6:              mistral3.attention.key_length u32              = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   7:  mistral3.attention.layer_norm_rms_epsilon f32              = 0.000010
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   8:            mistral3.attention.value_length u32              = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv   9:                       mistral3.block_count u32              = 40
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  10:                    mistral3.context_length u32              = 131072
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  11:                  mistral3.embedding_length u32              = 5120
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  12:               mistral3.feed_forward_length u32              = 32768
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  13:                 mistral3.image_token_index u32              = 10
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  14:                 mistral3.mm.projector_bias bool             = false
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  15:           mistral3.mm.projector_hidden_act str              = gelu
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  16:              mistral3.rope.dimension_count u32              = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  17:                    mistral3.rope.freq_base f32              = 1000000000.000000
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  18:                mistral3.spatial_merge_size u32              = 2
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  19:       mistral3.vision.attention.head_count u32              = 16
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  20:       mistral3.vision.attention.key_length u32              = 64
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  21:                mistral3.vision.block_count u32              = 24
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  22:           mistral3.vision.embedding_length u32              = 1024
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  23:        mistral3.vision.feed_forward_length u32              = 4096
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  24:                 mistral3.vision.image_size u32              = 1540
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  25:               mistral3.vision.num_channels u32              = 3
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  26:                 mistral3.vision.patch_size u32              = 14
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  27:             mistral3.vision.rope.freq_base f32              = 10000.000000
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  28:                        mistral3.vocab_size u32              = 131072
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  29:               tokenizer.ggml.add_bos_token bool             = true
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  30:               tokenizer.ggml.add_eos_token bool             = false
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  31:           tokenizer.ggml.add_padding_token bool             = false
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  32:           tokenizer.ggml.add_unknown_token bool             = false
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  33:                tokenizer.ggml.bos_token_id u32              = 1
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  34:                tokenizer.ggml.eos_token_id u32              = 2
+Oct 31 08:15:38 paladin-desktop ollama[2030]: [132B blob data]
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  36:                       tokenizer.ggml.model str              = gpt2
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  37:            tokenizer.ggml.padding_token_id u32              = 11
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  38:                         tokenizer.ggml.pre str              = llama-bpe
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  39:                      tokenizer.ggml.scores arr[f32,131072]  = [0.000000, 1.000000, 2.000000, 3.0000...
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  40:                  tokenizer.ggml.token_type arr[i32,131072]  = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  41:                      tokenizer.ggml.tokens arr[str,131072]  = ["<unk>", "<s>", "</s>", "[INST]", "[...
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - kv  42:            tokenizer.ggml.unknown_token_id u32              = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - type  f32:   81 tensors
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - type q4_K:  243 tensors
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_model_loader: - type q6_K:   39 tensors
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: file format = GGUF V3 (latest)
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: file type   = Q4_K - Medium
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: file size   = 13.34 GiB (4.86 BPW)
+Oct 31 08:15:38 paladin-desktop ollama[2030]: llama_prepare_model_devices: using device ROCm0 (AMD Radeon RX 6900 XT) (0000:0c:00.0) - 16170 MiB free
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load: 0 unused tokens
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load: printing all EOG tokens:
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load:   - 2 ('</s>')
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load: special tokens cache size = 1000
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load: token to piece cache size = 0.8498 MB
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: arch                  = mistral3
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: vocab_only            = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: no_alloc              = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_ctx_train           = 131072
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_inp            = 5120
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd                = 5120
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_out            = 5120
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_layer               = 40
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_layer_all           = 40
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_head                = 32
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_head_kv             = 8
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_rot                 = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_swa                 = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: is_swa_any            = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: non_causal_type       = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_head_k         = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_head_v         = 128
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_gqa                 = 4
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_k_gqa          = 1024
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_embd_v_gqa          = 1024
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_norm_eps            = 0.0e+00
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_norm_rms_eps        = 1.0e-05
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_clamp_kqv           = 0.0e+00
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_max_alibi_bias      = 0.0e+00
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_logit_scale         = 0.0e+00
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_attn_scale          = 0.0e+00
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: f_attn_value_scale    = 0.0000
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_ff                  = 32768
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_expert              = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_expert_used         = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_expert_groups       = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_group_used          = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: causal attn           = 1
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: pooling type          = -1
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: rope type             = 0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: rope scaling          = linear
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: freq_base_train       = 1000000000.0
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: freq_scale_train      = 1
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_ctx_orig_yarn       = 131072
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: rope_yarn_log_mul     = 0.0000
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: rope_finetuned        = unknown
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: model type            = 14B
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: model params          = 23.57 B
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: general.name          = n/a
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: vocab type            = BPE
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_vocab               = 131072
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: n_merges              = 269443
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: BOS token             = 1 '<s>'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: EOS token             = 2 '</s>'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: UNK token             = 0 '<unk>'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: PAD token             = 11 '<pad>'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: LF token              = 1010 'Ċ'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: EOG token             = 2 '</s>'
+Oct 31 08:15:38 paladin-desktop ollama[2030]: print_info: max token length      = 150
+Oct 31 08:15:38 paladin-desktop ollama[2030]: load_tensors: loading model tensors, this can take a while... (load_mode = mmap)
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors: offloading output layer to GPU
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors: offloading 15 repeating layers to GPU
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors: offloaded 16/41 layers to GPU
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors:   CPU_Mapped model buffer size =  7924.61 MiB
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors:   CPU_Mapped model buffer size =   360.00 MiB
+Oct 31 08:15:47 paladin-desktop ollama[2030]: load_tensors:        ROCm0 model buffer size =  5375.18 MiB
+Oct 31 08:15:47 paladin-desktop ollama[2030]: ROCm error: an illegal memory access was encountered
+Oct 31 08:15:47 paladin-desktop ollama[2030]:   current device: -1, in function ggml_backend_cuda_buffer_set_tensor at /build/llama-server-rocm_v7_2/_deps/llama_cpp-src/ggml/src/ggml-cuda/ggml-cuda.cu:848
+Oct 31 08:15:47 paladin-desktop ollama[2030]:   hipMemcpyAsync((char *) tensor->data + offset, data, size, hipMemcpyHostToDevice, ((hipStream_t)2))
+Oct 31 08:15:47 paladin-desktop ollama[2030]: /build/llama-server-rocm_v7_2/_deps/llama_cpp-src/ggml/src/ggml-cuda/ggml-cuda.cu:110: ROCm error
+Oct 31 08:15:47 paladin-desktop ollama[2030]: ⚠️ warning: The current terminal doesn't support styling.  Styled output might not appear as expected.
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12364]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12363]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12362]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12361]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12360]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12359]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12358]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12357]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12356]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12355]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12354]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12353]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12351]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12350]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12349]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: [New LWP 12348]
+Oct 31 08:15:47 paladin-desktop ollama[2030]: time=2026-10-31T08:15:47.835-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server not responding"
+Oct 31 08:15:48 paladin-desktop ollama[2030]: [Thread debugging using libthread_db enabled]
+Oct 31 08:15:48 paladin-desktop ollama[2030]: Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+Oct 31 08:15:48 paladin-desktop ollama[2030]: __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+Oct 31 08:15:48 paladin-desktop ollama[2030]: ⚠️ warning: 56        ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S: No such file or directory
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+Oct 31 08:15:48 paladin-desktop ollama[2030]: 56        in ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #1  0x00007017fdd1cc2c in internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=0, a6=0, nr=61) at ../sysdeps/unix/sysv/linux/sysdep-cancel.h:53
+Oct 31 08:15:48 paladin-desktop ollama[2030]: ⚠️ warning: 53        ../sysdeps/unix/sysv/linux/sysdep-cancel.h: No such file or directory
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #2  syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=0, a6=0, nr=61) at ../sysdeps/unix/sysv/linux/sysdep-cancel.h:79
+Oct 31 08:15:48 paladin-desktop ollama[2030]: 79        in ../sysdeps/unix/sysv/linux/sysdep-cancel.h
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #3  __GI___wait4 (pid=<optimized out>, stat_loc=<optimized out>, options=<optimized out>, usage=<optimized out>) at ../sysdeps/unix/sysv/linux/wait4.c:30
+Oct 31 08:15:48 paladin-desktop ollama[2030]: ⚠️ warning: 30        ../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #4  0x00007017ff14dc7b in ?? () from /usr/local/lib/ollama/libggml-base.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #5  0x00007017ff14ddce in ggml_abort () from /usr/local/lib/ollama/libggml-base.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #6  0x00007017f74a4f12 in ggml_cuda_error(char const*, char const*, char const*, int, char const*) () from /usr/local/lib/ollama/rocm_v7_2/libggml-hip.so
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #7  0x00007017f74a81e7 in ?? () from /usr/local/lib/ollama/rocm_v7_2/libggml-hip.so
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #8  0x00007017fe6e8122 in llama_model_loader::load_all_data(ggml_context*, std::vector<ggml_backend_buffer*, std::allocator<ggml_backend_buffer*> >&, std::vector<std::unique_ptr<llama_mlock, std::default_delete<llama_mlock> >, std::allocator<std::unique_ptr<llama_mlock, std::default_delete<llama_mlock> > > >*, bool (*)(float, void*), void*) () from /usr/local/lib/ollama/libllama.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #9  0x00007017fe71088e in llama_model_base::load_tensors(llama_model_loader&) () from /usr/local/lib/ollama/libllama.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #10 0x00007017fe606a62 in ?? () from /usr/local/lib/ollama/libllama.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #11 0x00007017fe607aa5 in ?? () from /usr/local/lib/ollama/libllama.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #12 0x00007017fe607dea in llama_model_load_from_file () from /usr/local/lib/ollama/libllama.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #13 0x00007017fee31f4f in common_init_result::common_init_result(common_params&, bool) () from /usr/local/lib/ollama/libllama-common.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #14 0x00007017fee33b09 in common_init_from_params(common_params&, bool) () from /usr/local/lib/ollama/libllama-common.so.0
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #15 0x00007017ff387cd8 in server_context_impl::load_model(common_params&) () from /usr/local/lib/ollama/libllama-server-impl.so
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #16 0x00007017ff2c4006 in llama_server(common_params&, int, char**, server_child&) () from /usr/local/lib/ollama/libllama-server-impl.so
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #17 0x00007017ff2c5079 in llama_server(int, char**) () from /usr/local/lib/ollama/libllama-server-impl.so
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #18 0x00007017fdc2a641 in __libc_start_call_main (main=main@entry=0x401040, argc=argc@entry=31, argv=argv@entry=0x7fff6d986728) at ../sysdeps/nptl/libc_start_call_main.h:59
+Oct 31 08:15:48 paladin-desktop ollama[2030]: ⚠️ warning: 59        ../sysdeps/nptl/libc_start_call_main.h: No such file or directory
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #19 0x00007017fdc2a758 in __libc_start_main_impl (main=0x401040, argc=31, argv=0x7fff6d986728, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fff6d986718) at ../csu/libc-start.c:372
+Oct 31 08:15:48 paladin-desktop ollama[2030]: ⚠️ warning: 372        ../csu/libc-start.c: No such file or directory
+Oct 31 08:15:48 paladin-desktop ollama[2030]: #20 0x000000000040107e in ?? ()
+Oct 31 08:15:48 paladin-desktop ollama[2030]: time=2026-10-31T08:15:48.544-04:00 level=INFO source=llama_server.go:1396 msg="waiting for llama-server to become available" status="llm server loading model"
+Oct 31 08:15:48 paladin-desktop ollama[2030]: [Inferior 1 (process 12346) detached]
+Oct 31 08:15:48 paladin-desktop ollama[2030]: time=2026-10-31T08:15:48.784-04:00 level=ERROR source=llama_server.go:1063 msg="llama-server terminated" error="signal: aborted (core dumped)" exit=unknown
+Oct 31 08:15:48 paladin-desktop ollama[2030]: time=2026-10-31T08:15:48.796-04:00 level=INFO source=sched.go:686 msg="Load failed" model=/home/paladin/amd-ai-stack/models/ollama/blobs/sha256-41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca error="llama-server process has terminated: ROCm error: an illegal memory access was encountered\nROCm error: ROCm error: an illegal memory access was encountered\nROCm error"
+Oct 31 08:15:48 paladin-desktop ollama[2030]: [GIN] 2026/10/31 - 08:15:48 | 500 |   11.47s |       127.0.0.1 | POST     "/api/chat"
+Oct 31 08:15:48 paladin-desktop ollama[2030]: [GIN] 2026/10/31 - 08:15:48 | 200 |  11.32ms |       127.0.0.1 | POST     "/api/generate"

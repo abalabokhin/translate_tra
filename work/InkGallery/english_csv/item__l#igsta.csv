@@ -1,0 +1,28 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Quarterstaff,@88,TRA:setup.tra:@88,,,item_name,unknown,,InkGallery/items/l#igsta.itm,NAME1,InkGallery.tp2:752 SAY NAME1,
+NARRATOR,2,,Caterpillar-Covered Staff +3,@89,TRA:setup.tra:@89,,,item_name,unknown,,InkGallery/items/l#igsta.itm,NAME2,InkGallery.tp2:753 SAY NAME2,
+NARRATOR,3,,"This staff is covered with green and quite hungry caterpillars. The staff itself seems magical and able to keep these little things alive, but perhaps their hunger can somehow be... weaponized?
+
+STATISTICS:
+
+Charge abilities:
+– May summon hungry caterpillars for 1 turn once per day
+  Special: Caterpillars deal 1d4+1 damage, but their attacks deal 6x more damage vs. myconids, which seem to be their favorite food
+
+Equipped abilities:
+– Armor Class and Saving Throws vs. beetles, ankhegs, and carrion crawlers: +2
+
+Combat abilities:
+– May be used both as a melee weapon and a ranged one: swing it to throw one of the caterpillars at the enemy
+– Ranged attacks have a 10% chance to deal an additional 1 acid damage on hit
+
+THAC0: +3
+Melee damage: 1d6+3 (crushing)
+Ranged damage: 1d2+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 2",@90,TRA:setup.tra:@90,,,item_description,unknown,,InkGallery/items/l#igsta.itm,DESC,InkGallery.tp2:754 SAY DESC,

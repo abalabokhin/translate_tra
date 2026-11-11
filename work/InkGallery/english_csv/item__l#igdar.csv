@@ -1,0 +1,19 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Dart,@85,TRA:setup.tra:@85,,,item_name,unknown,,InkGallery/items/l#igdar.itm,NAME1,InkGallery.tp2:747 SAY NAME1,
+NARRATOR,2,,Little Rascal's Tooth +2,@86,TRA:setup.tra:@86,,,item_name,unknown,,InkGallery/items/l#igdar.itm,NAME2,InkGallery.tp2:748 SAY NAME2,
+NARRATOR,3,,"This dart is actually a polished and enchanted vampiric tooth turned into a weapon. If tales are to be believed, the tooth still has some interesting vampiric properties.
+
+STATISTICS:
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– Each successful hit heals the owner's 1 Hit Point
+– Each successful hit has a 3% chance to drain 1 level from the target (Save vs. Death -2 to negate)
+
+THAC0: +2
+Damage: 1d3+2 (missile)
+Speed Factor: 0
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0",@87,TRA:setup.tra:@87,,,item_description,unknown,,InkGallery/items/l#igdar.itm,DESC,InkGallery.tp2:749 SAY DESC,

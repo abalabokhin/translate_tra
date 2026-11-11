@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Maggot Bite,@50,TRA:setup.tra:@50,,,item_name,unknown,,InkGallery/items/l#igb11e.itm,NAME1; NAME2,InkGallery.tp2:675 SAY NAME1; InkGallery.tp2:676 SAY NAME2,

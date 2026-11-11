@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Gained +5% Piercing Damage Resistance,@107,TRA:setup.tra:@107,,,spell_name,unknown,,InkGallery/spells/l#igb10r.spl,NAME1; NAME2,InkGallery.tp2:813 SAY NAME1; InkGallery.tp2:814 SAY NAME2,

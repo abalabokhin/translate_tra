@@ -1,0 +1,62 @@
+{
+  "both": {
+    "historical": {
+      "pairs": 24,
+      "valid": 24,
+      "checks_ok": 1014,
+      "checks_total": 1020,
+      "calls": 24,
+      "seconds": 283.17900000000003,
+      "usage": {
+        "input_tokens": 390647,
+        "cached_input_tokens": 12544,
+        "output_tokens": 12710,
+        "reasoning_output_tokens": 1338
+      }
+    },
+    "explicit low": {
+      "pairs": 8,
+      "valid": 8,
+      "checks_ok": 338,
+      "checks_total": 340,
+      "calls": 8,
+      "seconds": 120.8,
+      "usage": {
+        "input_tokens": 133149,
+        "cached_input_tokens": 0,
+        "output_tokens": 4552,
+        "reasoning_output_tokens": 452
+      }
+    }
+  },
+  "two-pass": {
+    "historical": {
+      "pairs": 24,
+      "valid": 24,
+      "checks_ok": 1002,
+      "checks_total": 1020,
+      "calls": 48,
+      "seconds": 360.172,
+      "usage": {
+        "input_tokens": 763369,
+        "cached_input_tokens": 28928,
+        "output_tokens": 11718,
+        "reasoning_output_tokens": 732
+      }
+    },
+    "explicit low": {
+      "pairs": 8,
+      "valid": 8,
+      "checks_ok": 333,
+      "checks_total": 340,
+      "calls": 16,
+      "seconds": 143.165,
+      "usage": {
+        "input_tokens": 258886,
+        "cached_input_tokens": 0,
+        "output_tokens": 3927,
+        "reasoning_output_tokens": 244
+      }
+    }
+  }
+}

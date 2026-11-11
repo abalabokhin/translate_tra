@@ -1,0 +1,6 @@
+IF
+Global("L#IGB9StartBattle","GLOBAL",0)
+THEN
+ RESPONSE #100
+  StartDialogueNoSet([PC])
+END

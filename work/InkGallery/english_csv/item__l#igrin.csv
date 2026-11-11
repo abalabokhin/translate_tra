@@ -1,0 +1,16 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Ring,@76,TRA:setup.tra:@76,,,item_name,unknown,,InkGallery/items/l#igrin.itm,NAME1,InkGallery.tp2:732 SAY NAME1,
+NARRATOR,2,,Fire Rowan Ring,@77,TRA:setup.tra:@77,,,item_name,unknown,,InkGallery/items/l#igrin.itm,NAME2,InkGallery.tp2:733 SAY NAME2,
+NARRATOR,3,,"This ring was made using dried fire rowan, and enchanted with powerful magic. Tales say it was created by a powerful yet quite mad druid, a fire giant that tried to claim part of the bog for himself.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+
+Charge abilities:
+– Fire Seed once per day
+  Effect: Creates 4 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 2d8 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage.
+
+Weight: 1",@78,TRA:setup.tra:@78,,,item_description,unknown,,InkGallery/items/l#igrin.itm,DESC,InkGallery.tp2:734 SAY DESC,

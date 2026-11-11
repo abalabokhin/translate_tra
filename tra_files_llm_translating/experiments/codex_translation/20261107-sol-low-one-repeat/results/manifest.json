@@ -1,0 +1,6260 @@
+{
+  "status": "finished",
+  "started_utc": "2026-11-07T22:53:02.492014+00:00",
+  "settings": {
+    "models": [
+      "gpt-6.1-sol"
+    ],
+    "modes": [
+      "both",
+      "two-pass"
+    ],
+    "datasets": "all",
+    "repeats": 1,
+    "effort": "low",
+    "out": "/home/paladin/source/translate_tra/tra_files_llm_translating/experiments/codex_translation/20261107-sol-low-one-repeat/results",
+    "codex_bin": "codex",
+    "dry_run": false
+  },
+  "datasets": [
+    "inkgallery",
+    "ambiguous_addressees",
+    "multiple_npcs",
+    "original_female_variants",
+    "reused_strings",
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "runs": [
+    {
+      "dataset": "inkgallery",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "видела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "feminine address noun for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "feminine verb for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "видел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "masculine address noun for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "masculine verb for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery-v3",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:02.844599+00:00",
+          "wall_seconds": 17.521,
+          "usage": {
+            "input_tokens": 17097,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 668,
+            "reasoning_output_tokens": 63
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-m7seabj_/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-m7seabj_/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:53:20.366055+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "@16",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И снова здравствуй, искатель приключений. Наша Чернильная галерея приветствует тебя своими историями.",
+          "female": "И снова здравствуй, искательница приключений. Наша Чернильная галерея приветствует тебя своими историями."
+        },
+        {
+          "line": "@23",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хочешь узнать что-нибудь ещё?",
+          "female": "Хочешь узнать что-нибудь ещё?"
+        },
+        {
+          "line": "@48",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нам стоит поговорить внизу. Если только ты не заглянул просто узнать, как у меня дела.",
+          "female": "Нам стоит поговорить внизу. Если только ты не заглянула просто узнать, как у меня дела."
+        },
+        {
+          "line": "@51",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Надеюсь, твой день проходит хорошо.",
+          "female": "Надеюсь, твой день проходит хорошо."
+        },
+        {
+          "line": "@100",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Здравствуй, <CHARNAME>! Ты уже видел все мои книги—но, быть может, ты пришёл за одним из сувениров?",
+          "female": "Здравствуй, <CHARNAME>! Ты уже видела все мои книги—но, быть может, ты пришла за одним из сувениров?"
+        },
+        {
+          "line": "@17",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Итак, насколько я понял, заплатив, я смогу испытать себя в битвах, описанных в этих книгах. Всё верно?",
+          "female": "Итак, насколько я поняла, заплатив, я смогу испытать себя в битвах, описанных в этих книгах. Всё верно?"
+        },
+        {
+          "line": "@18",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты говорила, что приехала сюда из Кормира, верно? Чтобы открыть Чернильную галерею?",
+          "female": "Ты говорила, что приехала сюда из Кормира, верно? Чтобы открыть Чернильную галерею?"
+        },
+        {
+          "line": "@19",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Что произойдёт, если я успешно усвою уроки всех этих книг?",
+          "female": "Что произойдёт, если я успешно усвою уроки всех этих книг?"
+        },
+        {
+          "line": "@20",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "У тебя не возникает проблем с Магами в рясах? Разве эти книги не волшебные?",
+          "female": "У тебя не возникает проблем с Магами в рясах? Разве эти книги не волшебные?"
+        },
+        {
+          "line": "@21",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Мне бы хотелось купить несколько сувениров.",
+          "female": "Мне бы хотелось купить несколько сувениров."
+        },
+        {
+          "line": "@22",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Думаю, мне пора идти.",
+          "female": "Думаю, мне пора идти."
+        },
+        {
+          "line": "@24",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Да. Насколько я понял, заплатив, я смогу испытать себя в битвах, описанных в этих книгах. Всё верно?",
+          "female": "Да. Насколько я поняла, заплатив, я смогу испытать себя в битвах, описанных в этих книгах. Всё верно?"
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "видела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "feminine address noun for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "feminine verb for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "видел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "masculine address noun for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "masculine verb for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery-v3",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:20.709553+00:00",
+          "wall_seconds": 9.399,
+          "usage": {
+            "input_tokens": 15833,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 291,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-au0uslm1/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-au0uslm1/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:53:30.108916+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:30.449023+00:00",
+          "wall_seconds": 9.565,
+          "usage": {
+            "input_tokens": 16209,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 295,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-kez8rzrh/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-kez8rzrh/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:53:40.013792+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "@16",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И снова здравствуй, искатель приключений. Наша Чернильная галерея приветствует тебя своими историями.",
+          "female": "И снова здравствуй, искательница приключений. Наша Чернильная галерея приветствует тебя своими историями."
+        },
+        {
+          "line": "@23",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хочешь узнать что-нибудь ещё?",
+          "female": "Хочешь узнать что-нибудь ещё?"
+        },
+        {
+          "line": "@48",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нам стоит поговорить внизу. Если только ты не заглянул просто узнать, как у меня дела.",
+          "female": "Нам стоит поговорить внизу. Если только ты не заглянула просто узнать, как у меня дела."
+        },
+        {
+          "line": "@51",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Надеюсь, твой день проходит хорошо.",
+          "female": "Надеюсь, твой день проходит хорошо."
+        },
+        {
+          "line": "@100",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Здравствуй, <CHARNAME>! Ты уже видел все мои книги — но, быть может, ты пришёл за одним из сувениров?",
+          "female": "Здравствуй, <CHARNAME>! Ты уже видела все мои книги — но, быть может, ты пришла за одним из сувениров?"
+        },
+        {
+          "line": "@17",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Итак, насколько я понял, заплатив за вход, я смогу испытать себя в битвах, описанных в этих книгах. Верно?",
+          "female": "Итак, насколько я поняла, заплатив за вход, я смогу испытать себя в битвах, описанных в этих книгах. Верно?"
+        },
+        {
+          "line": "@18",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты говорила, что приехала сюда из Кормира, да? Чтобы открыть Чернильную галерею?",
+          "female": "Ты говорила, что приехала сюда из Кормира, да? Чтобы открыть Чернильную галерею?"
+        },
+        {
+          "line": "@19",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Что будет, если я успешно усвою уроки всех этих книг?",
+          "female": "Что будет, если я успешно усвою уроки всех этих книг?"
+        },
+        {
+          "line": "@20",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "У тебя не возникает проблем с Волшебниками в рясах? Разве эти книги не волшебные?",
+          "female": "У тебя не возникает проблем с Волшебниками в рясах? Разве эти книги не волшебные?"
+        },
+        {
+          "line": "@21",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Мне бы хотелось купить несколько сувениров.",
+          "female": "Мне бы хотелось купить несколько сувениров."
+        },
+        {
+          "line": "@22",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Думаю, мне пора идти.",
+          "female": "Думаю, мне пора идти."
+        },
+        {
+          "line": "@24",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Да. Насколько я понял, заплатив за вход, я смогу испытать себя в битвах, описанных в этих книгах. Верно?",
+          "female": "Да. Насколько я поняла, заплатив за вход, я смогу испытать себя в битвах, описанных в этих книгах. Верно?"
+        }
+      ]
+    },
+    {
+      "dataset": "ambiguous_addressees",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "both names retained",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "ferryman retained",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "male",
+          "check": "hearing retained",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "male",
+          "check": "Selene retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "current retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "current/strong agreement",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "bank retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "rope condition retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "until-condition keeps пока … не",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "ambiguous listener not gendered",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "both names retained",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "ferryman retained",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "female",
+          "check": "hearing retained",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "female",
+          "check": "Selene retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "current retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "current/strong agreement",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "bank retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "rope condition retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "until-condition keeps пока … не",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "ambiguous listener not gendered",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "ambiguous_addressees-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:40.277749+00:00",
+          "wall_seconds": 8.718,
+          "usage": {
+            "input_tokens": 16171,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 256,
+            "reasoning_output_tokens": 76
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-wbyo208m/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-wbyo208m/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:53:48.995780+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "201",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Паромщик пропал. Брам и Селена оба на дальнем берегу.",
+          "female": "Паромщик пропал. Брам и Селена оба на дальнем берегу."
+        },
+        {
+          "line": "202",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Вы меня слышите?",
+          "female": "Вы меня слышите?"
+        },
+        {
+          "line": "203",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я тебя слышу, а Селена — нет.",
+          "female": "Я тебя слышу, а Селена — нет."
+        },
+        {
+          "line": "204",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Течение слишком сильное.",
+          "female": "Течение слишком сильное."
+        },
+        {
+          "line": "205",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Вам нужно оставаться на том берегу, пока верёвка не будет надёжно закреплена.",
+          "female": "Вам нужно оставаться на том берегу, пока верёвка не будет надёжно закреплена."
+        }
+      ]
+    },
+    {
+      "dataset": "ambiguous_addressees",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "both names retained",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "male",
+          "check": "ferryman retained",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "male",
+          "check": "hearing retained",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "male",
+          "check": "Selene retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "current retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "male",
+          "check": "current/strong agreement",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "bank retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "rope condition retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "until-condition keeps пока … не",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "male",
+          "check": "ambiguous listener not gendered",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "both names retained",
+          "ok": true
+        },
+        {
+          "line": "201",
+          "gender": "female",
+          "check": "ferryman retained",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "202",
+          "gender": "female",
+          "check": "hearing retained",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "203",
+          "gender": "female",
+          "check": "Selene retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "current retained",
+          "ok": true
+        },
+        {
+          "line": "204",
+          "gender": "female",
+          "check": "current/strong agreement",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "bank retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "rope condition retained",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "until-condition keeps пока … не",
+          "ok": true
+        },
+        {
+          "line": "205",
+          "gender": "female",
+          "check": "ambiguous listener not gendered",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "ambiguous_addressees-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:49.253697+00:00",
+          "wall_seconds": 6.067,
+          "usage": {
+            "input_tokens": 15308,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 36
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-35s4necc/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-35s4necc/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:53:55.321188+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:53:55.584020+00:00",
+          "wall_seconds": 5.98,
+          "usage": {
+            "input_tokens": 16014,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-rl8syh6x/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-rl8syh6x/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:01.563594+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "201",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Паромщик пропал. Брам и Селена — оба на дальнем берегу.",
+          "female": "Паромщик пропал. Брам и Селена — оба на дальнем берегу."
+        },
+        {
+          "line": "202",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Вы меня слышите?",
+          "female": "Вы меня слышите?"
+        },
+        {
+          "line": "203",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я тебя слышу, а Селена — нет.",
+          "female": "Я тебя слышу, а Селена — нет."
+        },
+        {
+          "line": "204",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Течение слишком сильное.",
+          "female": "Течение слишком сильное."
+        },
+        {
+          "line": "205",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Вы должны оставаться на том берегу, пока верёвка не будет надёжно закреплена.",
+          "female": "Вы должны оставаться на том берегу, пока верёвка не будет надёжно закреплена."
+        }
+      ]
+    },
+    {
+      "dataset": "multiple_npcs",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "Orin remains male",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "downstairs",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "Selene feminine",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "no masculine listener",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "narrated man stays male",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "narrated man not made female",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "Orin injured masculine",
+          "ok": false
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "Selene worried feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "Orin never feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "feminine address noun for male Player1",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "Orin remains male",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "downstairs",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "Selene feminine",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "no masculine listener",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "narrated man stays male",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "narrated man not made female",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "Orin injured masculine",
+          "ok": false
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "Selene worried feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "Orin never feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "masculine address noun for female Player1",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "multiple_npcs-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:01.844191+00:00",
+          "wall_seconds": 9.699,
+          "usage": {
+            "input_tokens": 16320,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 305,
+            "reasoning_output_tokens": 36
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-3yx6i4oe/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-3yx6i4oe/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:11.543496+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "101",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты вернулся, <CHARNAME>. Орин ждал внизу.",
+          "female": "Ты вернулась, <CHARNAME>. Орин ждал внизу."
+        },
+        {
+          "line": "102",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Селена, ты была права. Я слишком поспешил обвинить его.",
+          "female": "Селена, ты была права. Я слишком поспешил обвинить его."
+        },
+        {
+          "line": "103",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я обещал Селене, что помогу ей. Орин должен перед ней извиниться.",
+          "female": "Я обещала Селене, что помогу ей. Орин должен перед ней извиниться."
+        },
+        {
+          "line": "104",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Орин, тебя ранили? Я беспокоилась о тебе.",
+          "female": "Орин, тебя ранили? Я беспокоилась о тебе."
+        },
+        {
+          "line": "105",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты спас её, странник. Я обязан тебе жизнью.",
+          "female": "Ты спасла её, странница. Я обязан тебе жизнью."
+        },
+        {
+          "line": "106",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда сдержи своё обещание, Орин. Встреться с нами на рассвете.",
+          "female": "Тогда сдержи своё обещание, Орин. Встреться с нами на рассвете."
+        }
+      ]
+    },
+    {
+      "dataset": "multiple_npcs",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "Orin remains male",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "downstairs",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "Selene feminine",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "no masculine listener",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "narrated man stays male",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "male",
+          "check": "narrated man not made female",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "Orin injured masculine",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "male",
+          "check": "Selene worried feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "Orin never feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "male",
+          "check": "feminine address noun for male Player1",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "Orin remains male",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "downstairs",
+          "ok": true
+        },
+        {
+          "line": "101",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "Selene feminine",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "no masculine listener",
+          "ok": true
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "narrated man stays male",
+          "ok": false
+        },
+        {
+          "line": "102",
+          "gender": "female",
+          "check": "narrated man not made female",
+          "ok": false
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "103",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "Orin injured masculine",
+          "ok": true
+        },
+        {
+          "line": "104",
+          "gender": "female",
+          "check": "Selene worried feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "Orin never feminine",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "105",
+          "gender": "female",
+          "check": "masculine address noun for female Player1",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "106",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "multiple_npcs-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:11.816197+00:00",
+          "wall_seconds": 7.585,
+          "usage": {
+            "input_tokens": 15930,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 132,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-f15cv5rt/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-f15cv5rt/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:19.400863+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:19.685941+00:00",
+          "wall_seconds": 6.768,
+          "usage": {
+            "input_tokens": 16137,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 154,
+            "reasoning_output_tokens": 19
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-hzy6sfi_/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-hzy6sfi_/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:26.453818+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "101",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты вернулся, <CHARNAME>. Орин ждал внизу.",
+          "female": "Ты вернулась, <CHARNAME>. Орин ждал внизу."
+        },
+        {
+          "line": "102",
+          "status": "review",
+          "reason": "Unlisted wording, case or punctuation edit",
+          "male": "Селена, ты была права. Я слишком поспешно обвинил его.",
+          "female": "Селена, ты была права. Я слишком поспешно обвинил её."
+        },
+        {
+          "line": "103",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я обещал Селене, что помогу ей. Орин должен перед ней извиниться.",
+          "female": "Я обещала Селене, что помогу ей. Орин должен перед ней извиниться."
+        },
+        {
+          "line": "104",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Орин, ты был ранен? Я за тебя волновалась.",
+          "female": "Орин, ты был ранен? Я за тебя волновалась."
+        },
+        {
+          "line": "105",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты спас её, путник. Я обязан тебе жизнью.",
+          "female": "Ты спасла её, путница. Я обязан тебе жизнью."
+        },
+        {
+          "line": "106",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда сдержи своё обещание, Орин. Встретимся на рассвете.",
+          "female": "Тогда сдержи своё обещание, Орин. Встретимся на рассвете."
+        }
+      ]
+    },
+    {
+      "dataset": "original_female_variants",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "male apprentice",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "key brought, not led",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "male door statement",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "waiting retained",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "female apprentice",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "key brought, not led",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "female form",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "no misspelled female verb",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "explicit empty source remains empty",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "waiting retained",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "original_female_variants-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:26.716768+00:00",
+          "wall_seconds": 5.757,
+          "usage": {
+            "input_tokens": 16120,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 125,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-31z_nn1u/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-31z_nn1u/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:32.474147+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "401",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Я был его учеником.",
+          "female": "Я была её ученицей."
+        },
+        {
+          "line": "402",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Герцог послал тебя забрать его печать.",
+          "female": "Герцогиня послала тебя забрать её печать."
+        },
+        {
+          "line": "403",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Я принёс серебряный ключ.",
+          "female": "Я принесла бронзовый ключ."
+        },
+        {
+          "line": "404",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Дверь открыта.",
+          "female": ""
+        },
+        {
+          "line": "405",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я подожду здесь.",
+          "female": "Я подожду здесь."
+        }
+      ]
+    },
+    {
+      "dataset": "original_female_variants",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "male",
+          "check": "male apprentice",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "key brought, not led",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "male",
+          "check": "male form",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "male",
+          "check": "male door statement",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "male",
+          "check": "waiting retained",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "female form",
+          "ok": false
+        },
+        {
+          "line": "401",
+          "gender": "female",
+          "check": "female apprentice",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "402",
+          "gender": "female",
+          "check": "female form",
+          "ok": false
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "key brought, not led",
+          "ok": true
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "female form",
+          "ok": false
+        },
+        {
+          "line": "403",
+          "gender": "female",
+          "check": "no misspelled female verb",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "404",
+          "gender": "female",
+          "check": "explicit empty source remains empty",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "405",
+          "gender": "female",
+          "check": "waiting retained",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "original_female_variants-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:32.727311+00:00",
+          "wall_seconds": 7.156,
+          "usage": {
+            "input_tokens": 15819,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 63,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-92ps8epn/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-92ps8epn/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:39.883027+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:40.138009+00:00",
+          "wall_seconds": 5.613,
+          "usage": {
+            "input_tokens": 15882,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 96,
+            "reasoning_output_tokens": 39
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-zopv5pw0/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-zopv5pw0/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:45.751010+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "401",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Я был его учеником.",
+          "female": "Я была его ученицей."
+        },
+        {
+          "line": "402",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Герцог послал тебя забрать его печать.",
+          "female": "Герцог послал тебя забрать его печать."
+        },
+        {
+          "line": "403",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Я принёс серебряный ключ.",
+          "female": "Я принесла серебряный ключ."
+        },
+        {
+          "line": "404",
+          "status": "not_applicable",
+          "reason": "Original female source differs in meaning or form",
+          "male": "Дверь открыта.",
+          "female": ""
+        },
+        {
+          "line": "405",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я подожду здесь.",
+          "female": "Я подожду здесь."
+        }
+      ]
+    },
+    {
+      "dataset": "reused_strings",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "no form incompatible with male Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "no form incompatible with male Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "female stage subject",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "no masculine form for female Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "no masculine form for female Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "female stage subject",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "reused_strings-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:46.004230+00:00",
+          "wall_seconds": 7.938,
+          "usage": {
+            "input_tokens": 16137,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 194,
+            "reasoning_output_tokens": 62
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-xg8nl18x/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-xg8nl18x/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:54:53.942144+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "301_a",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я наготове.",
+          "female": "Я наготове."
+        },
+        {
+          "line": "302_a",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда открой ворота.",
+          "female": "Тогда открой ворота."
+        },
+        {
+          "line": "301_b",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я наготове.",
+          "female": "Я наготове."
+        },
+        {
+          "line": "303",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "*Она проверяет замок.* Ворота открыты.",
+          "female": "*Она проверяет замок.* Ворота открыты."
+        },
+        {
+          "line": "302_b",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда открой ворота.",
+          "female": "Тогда открой ворота."
+        },
+        {
+          "line": "304",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Дождись <CHARNAME>.\nНе трогай %gate_lock%.",
+          "female": "Дождись <CHARNAME>.\nНе трогай %gate_lock%."
+        }
+      ]
+    },
+    {
+      "dataset": "reused_strings",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "male",
+          "check": "no form incompatible with male Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "male",
+          "check": "no form incompatible with male Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "male",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "male",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "male",
+          "check": "female stage subject",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "male",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_a",
+          "gender": "female",
+          "check": "no masculine form for female Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "301_b",
+          "gender": "female",
+          "check": "no masculine form for female Player1 and female Selene",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_a",
+          "gender": "female",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "302_b",
+          "gender": "female",
+          "check": "gate retained",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "303",
+          "gender": "female",
+          "check": "female stage subject",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "304",
+          "gender": "female",
+          "check": "singular listener uses ты, not вы",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "reused_strings-v2",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:54:54.195908+00:00",
+          "wall_seconds": 8.412,
+          "usage": {
+            "input_tokens": 15864,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 159,
+            "reasoning_output_tokens": 90
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-68lv7vnr/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-68lv7vnr/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:55:02.608272+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:55:02.860217+00:00",
+          "wall_seconds": 4.657,
+          "usage": {
+            "input_tokens": 15952,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-7ojdugk4/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-7ojdugk4/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:55:07.516748+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "301_a",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я в полной готовности.",
+          "female": "Я в полной готовности."
+        },
+        {
+          "line": "302_a",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда открой ворота.",
+          "female": "Тогда открой ворота."
+        },
+        {
+          "line": "301_b",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Я в полной готовности.",
+          "female": "Я в полной готовности."
+        },
+        {
+          "line": "303",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "*Она проверяет замок.* Ворота открыты.",
+          "female": "*Она проверяет замок.* Ворота открыты."
+        },
+        {
+          "line": "302_b",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Тогда открой ворота.",
+          "female": "Тогда открой ворота."
+        },
+        {
+          "line": "304",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Подожди <CHARNAME>.\nНе трогай %gate_lock%.",
+          "female": "Подожди <CHARNAME>.\nНе трогай %gate_lock%."
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "male original leader",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "dead magic preserved",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "century retained",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no masculine original leader agreement",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "dead magic preserved",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "century retained",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_beholder-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:55:07.897457+00:00",
+          "wall_seconds": 23.626,
+          "usage": {
+            "input_tokens": 16644,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 972,
+            "reasoning_output_tokens": 77
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-4zg350ma/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-4zg350ma/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:55:31.523052+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "\"Гниющий шар парил в центре сырой пещеры. Созерцатель-зомби, которого считали мёртвым уже целое столетие, а быть может, и дольше. Нежить и дикий зверь одновременно. Завидев любое живое существо, он кусал его своей могучей пастью. Здесь мёртвая магия, так что он привык сражаться с несчастными при помощи острых зубов.\"",
+          "female": "\"Гниющий шар парил в центре сырой пещеры. Созерцатель-зомби, которого считали мёртвым уже целое столетие, а быть может, и дольше. Нежить и дикий зверь одновременно. Завидев любое живое существо, он кусал его своей могучей пастью. Здесь мёртвая магия, так что он привык сражаться с несчастными при помощи острых зубов.\""
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Созерцатель-зомби? И, скорее всего, разъярённый. Он заслуживает уничтожения, и именно это мы и должны с ним сделать.",
+          "female": "Созерцатель-зомби? И, скорее всего, разъярённый. Он заслуживает уничтожения, и именно это мы и должны с ним сделать."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "С ним можно сразиться только один на один. Поэтому плата за этот бой составляет не 3,500 золотых, а чуть меньше: 3,000 монет, и можешь сразиться с ним. Учиться по этой книге будет тот же человек.",
+          "female": "С ним можно сразиться только один на один. Поэтому плата за этот бой составляет не 3,500 золотых, а чуть меньше: 3,000 монет, и можешь сразиться с ним. Учиться по этой книге будет тот же человек."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "status": "review",
+          "reason": "Unlisted wording, case or punctuation edit",
+          "male": "Хорошо. Будет справедливо, если с этой тварью сражусь я, <PLAYER1>, изначальный предводитель.",
+          "female": "Хорошо. Будет справедливо, если с этой тварью сражусь я, <PLAYER1>, изначальная предводительница."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER2>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER2>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER3>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER3>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER4>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER4>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER5>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER5>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER6>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER6>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нет. Я откажусь. По крайней мере, пока.",
+          "female": "Нет. Я откажусь. По крайней мере, пока."
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Конечно! Итак, приступим.",
+          "female": "Конечно! Итак, приступим."
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_beholder",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "male original leader",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "dead magic preserved",
+          "ok": false
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "century retained",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no masculine original leader agreement",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "dead magic preserved",
+          "ok": false
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "century retained",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_beholder-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:55:31.904335+00:00",
+          "wall_seconds": 12.305,
+          "usage": {
+            "input_tokens": 16440,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 447,
+            "reasoning_output_tokens": 60
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-08_t8bj0/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-08_t8bj0/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:55:44.208989+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:55:44.592320+00:00",
+          "wall_seconds": 11.379,
+          "usage": {
+            "input_tokens": 16912,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 386,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-yjvb7wy5/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-yjvb7wy5/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:55:55.971553+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "\"Гниющий шар парил в центре сырой пещеры. Созерцатель-зомби, который, как считалось, был мёртв уже целый век, а то и больше. Нежить и дикий зверь одновременно. Завидев любое живое существо, он пускал в ход свою мощную пасть. Здесь мёртвая зона магии, так что он привык сражаться с несчастными своими острыми зубами.\"",
+          "female": "\"Гниющий шар парил в центре сырой пещеры. Созерцатель-зомби, который, как считалось, был мёртв уже целый век, а то и больше. Нежить и дикий зверь одновременно. Завидев любое живое существо, он пускал в ход свою мощную пасть. Здесь мёртвая зона магии, так что он привык сражаться с несчастными своими острыми зубами.\""
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Созерцатель-зомби? И, скорее всего, разъярённый. Он заслуживает уничтожения, и именно это нам и следует с ним сделать.",
+          "female": "Созерцатель-зомби? И, скорее всего, разъярённый. Он заслуживает уничтожения, и именно это нам и следует с ним сделать."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "С ним можно сразиться только один на один. Поэтому плата за него составляет не 3 500 золотых, а чуть меньше: 3 000 монет, и можно вступать в бой. Знания из этой книги получит тот же, кто с ним сразится.",
+          "female": "С ним можно сразиться только один на один. Поэтому плата за него составляет не 3 500 золотых, а чуть меньше: 3 000 монет, и можно вступать в бой. Знания из этой книги получит тот же, кто с ним сразится."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "status": "review",
+          "reason": "Unlisted wording, case or punctuation edit",
+          "male": "Хорошо. Будет справедливо, если с этой тварью сражусь я, <PLAYER1>, изначальный предводитель.",
+          "female": "Хорошо. Будет справедливо, если с этой тварью сражусь я, <PLAYER1>, изначальная предводительница."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER2>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER2>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER3>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER3>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER4>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER4>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER5>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER5>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этой тварью сразится <PLAYER6>.",
+          "female": "Хорошо. Пусть с этой тварью сразится <PLAYER6>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нет. Я откажусь. По крайней мере, пока.",
+          "female": "Нет. Я откажусь. По крайней мере, пока."
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Конечно! Итак, приступим.",
+          "female": "Конечно! Итак, приступим."
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "male",
+          "check": "no feminine arrival",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no feminine arrival",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "male",
+          "check": "path remains marked masculine",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "male",
+          "check": "sisters remain plural female",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "female",
+          "check": "no masculine arrival",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no masculine real self",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "female",
+          "check": "no masculine marked player",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no masculine arrival",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "female",
+          "check": "path remains marked masculine",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "female",
+          "check": "sisters remain plural female",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_moon_sisters-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:55:56.332111+00:00",
+          "wall_seconds": 21.25,
+          "usage": {
+            "input_tokens": 17396,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 898,
+            "reasoning_output_tokens": 51
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-fimyp1vk/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-fimyp1vk/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:56:17.581894+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты пришёл сюда. Ты пришёл на суд Лунных Сестёр! Мы — КОСМОС, что наполняет это место.",
+          "female": "Ты пришла сюда. Ты пришла на суд Лунных Сестёр! Мы — КОСМОС, что наполняет это место."
+        },
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Мы — МЕЧТЫ, что даруют надежду тем, кто объят страхом.",
+          "female": "Мы — МЕЧТЫ, что даруют надежду тем, кто объят страхом."
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И наконец, мы — ЛЮБОВЬ, что способна пронзить даже самые тёмные ночи!",
+          "female": "И наконец, мы — ЛЮБОВЬ, что способна пронзить даже самые тёмные ночи!"
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты пришёл сюда не без причины, но—странно. Ты не та душа, которую мы ожидали. Нет. Ты — нечто иное.",
+          "female": "Ты пришла сюда не без причины, но—странно. Ты не та душа, которую мы ожидали. Нет. Ты — нечто иное."
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты — Окровавленное Дитя.",
+          "female": "Ты — Окровавленное Дитя."
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты отмечен кровавыми слезами; страхом. Хаосом. Почему мы видим другую душу? Ту, у которой будет иное лицо?!",
+          "female": "Ты отмечена кровавыми слезами; страхом. Хаосом. Почему мы видим другую душу? Ту, у которой будет иное лицо?!"
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Это странно. Как будто вы увидели меня настоящего, а не персонажа из этой книги.",
+          "female": "Это странно. Как будто вы увидели меня настоящую, а не персонажа из этой книги."
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Это просто вздор. Я не собираюсь это слушать!",
+          "female": "Это просто вздор. Я не собираюсь это слушать!"
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Молчать! Всё это неправильно!",
+          "female": "Молчать! Всё это неправильно!"
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Но мы по-прежнему Лунные Сёстры, и мы можем видеть сквозь КОСМОС. Твой путь отмечен кровью. Этого нам довольно, чтобы знать: твою руку должно остановить.",
+          "female": "Но мы по-прежнему Лунные Сёстры, и мы можем видеть сквозь КОСМОС. Твой путь отмечен кровью. Этого нам довольно, чтобы знать: твою руку должно остановить."
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Сёстры! Беритесь за оружие!",
+          "female": "Сёстры! Беритесь за оружие!"
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "За МЕЧТЫ!",
+          "female": "За МЕЧТЫ!"
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "За всю ЛЮБОВЬ!",
+          "female": "За всю ЛЮБОВЬ!"
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И против тех, кто не несёт ничего, кроме смерти!",
+          "female": "И против тех, кто не несёт ничего, кроме смерти!"
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_moon_sisters",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "male",
+          "check": "no feminine arrival",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no feminine arrival",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "male",
+          "check": "path remains marked masculine",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "male",
+          "check": "sisters remain plural female",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "gender": "female",
+          "check": "no masculine arrival",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no masculine real self",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "gender": "female",
+          "check": "no masculine marked player",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no masculine arrival",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "gender": "female",
+          "check": "path remains marked masculine",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "gender": "female",
+          "check": "sisters remain plural female",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_moon_sisters-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:56:17.944614+00:00",
+          "wall_seconds": 11.589,
+          "usage": {
+            "input_tokens": 16604,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 343,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-1nbc3akw/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-1nbc3akw/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:56:29.533418+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:56:29.891097+00:00",
+          "wall_seconds": 10.558,
+          "usage": {
+            "input_tokens": 16492,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 343,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-iyj5zhyn/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-iyj5zhyn/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:56:40.449427+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "000_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты пришёл сюда. Ты пришёл на суд Лунных Сестёр! Мы — КОСМОС, наполняющий это место.",
+          "female": "Ты пришла сюда. Ты пришла на суд Лунных Сестёр! Мы — КОСМОС, наполняющий это место."
+        },
+        {
+          "line": "000_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Мы — ГРЁЗЫ, дарующие надежду тем, кто объят страхом.",
+          "female": "Мы — ГРЁЗЫ, дарующие надежду тем, кто объят страхом."
+        },
+        {
+          "line": "000_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И наконец, мы — ЛЮБОВЬ, способная пронзить даже самые тёмные ночи!",
+          "female": "И наконец, мы — ЛЮБОВЬ, способная пронзить даже самые тёмные ночи!"
+        },
+        {
+          "line": "000_BLOCK_2_ELEMENT_0_SAY_3",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты пришёл сюда не без причины, но—странно. Ты не та душа, которую мы ожидали увидеть. Нет. Ты нечто иное.",
+          "female": "Ты пришла сюда не без причины, но—странно. Ты не та душа, которую мы ожидали увидеть. Нет. Ты нечто иное."
+        },
+        {
+          "line": "000_BLOCK_3_ELEMENT_0_SAY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты — Окровавленное Дитя.",
+          "female": "Ты — Окровавленное Дитя."
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_SAY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты отмечен кровавыми слезами; страхом. Хаосом. Почему мы видим иную душу? Ту, у которой будет другое лицо?!",
+          "female": "Ты отмечена кровавыми слезами; страхом. Хаосом. Почему мы видим иную душу? Ту, у которой будет другое лицо?!"
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Это странно. Вы словно увидели меня настоящего, а не персонажа из этой книги.",
+          "female": "Это странно. Вы словно увидели меня настоящую, а не персонажа из этой книги."
+        },
+        {
+          "line": "000_BLOCK_4_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Это просто вздор. Я не собираюсь это слушать!",
+          "female": "Это просто вздор. Я не собираюсь это слушать!"
+        },
+        {
+          "line": "001_INITIAL_0_SAY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Молчать! Всё это неправильно!",
+          "female": "Молчать! Всё это неправильно!"
+        },
+        {
+          "line": "001_BLOCK_0_ELEMENT_0_SAY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Но мы по-прежнему Лунные Сёстры, и наш взор проникает сквозь КОСМОС. Твой путь отмечен кровью. Этого нам довольно, чтобы знать: твою руку надлежит остановить.",
+          "female": "Но мы по-прежнему Лунные Сёстры, и наш взор проникает сквозь КОСМОС. Твой путь отмечен кровью. Этого нам довольно, чтобы знать: твою руку надлежит остановить."
+        },
+        {
+          "line": "001_BLOCK_1_ELEMENT_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Сёстры! Беритесь за оружие!",
+          "female": "Сёстры! Беритесь за оружие!"
+        },
+        {
+          "line": "001_BLOCK_2_ELEMENT_0_SAY_11",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "За ГРЁЗЫ!",
+          "female": "За ГРЁЗЫ!"
+        },
+        {
+          "line": "001_BLOCK_3_ELEMENT_0_SAY_12",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "За всю ЛЮБОВЬ!",
+          "female": "За всю ЛЮБОВЬ!"
+        },
+        {
+          "line": "001_BLOCK_4_ELEMENT_0_SAY_13",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "И против тех, кто не несёт ничего, кроме смерти!",
+          "female": "И против тех, кто не несёт ничего, кроме смерти!"
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_sewers",
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "Jans cousin stays female",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "male original leader",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "narrated adventurer stays male",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "worms remain creatures",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "Jans cousin stays female",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no masculine original leader agreement",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "narrated adventurer stays male",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "worms remain creatures",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "female player choice",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_sewers-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:56:40.851427+00:00",
+          "wall_seconds": 26.291,
+          "usage": {
+            "input_tokens": 17264,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1134,
+            "reasoning_output_tokens": 87
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-inxwzegi/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-inxwzegi/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:57:07.142171+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "\"Одинокий искатель приключений, брошенный и преданный собственным отрядом, брёл сквозь слои слизи и нечистот. Все его бывшие друзья считали его мёртвым, но он всегда был упрямцем, и у него ещё оставалось несколько тузов в рукаве. Он выжил. Но канализация была небезопасным местом, по крайней мере эти туннели. Недавно их захватили странные червеобразные существа. Они уже знали, что он здесь, и готовились к нападению.\"",
+          "female": "\"Одинокий искатель приключений, брошенный и преданный собственным отрядом, брёл сквозь слои слизи и нечистот. Все его бывшие друзья считали его мёртвым, но он всегда был упрямцем, и у него ещё оставалось несколько тузов в рукаве. Он выжил. Но канализация была небезопасным местом, по крайней мере эти туннели. Недавно их захватили странные червеобразные существа. Они уже знали, что он здесь, и готовились к нападению.\""
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "А, похоже на то, что случилось с одной из моих кузин, и—пожалуй, ей и впрямь стоит записать свою историю. Возможно, она станет признанным литературным произведением, как некоторые из книг вокруг нас. Ммм, думаю, стоит ей об этом сказать, а может, даже предложить помощь.",
+          "female": "А, похоже на то, что случилось с одной из моих кузин, и—пожалуй, ей и впрямь стоит записать свою историю. Возможно, она станет признанным литературным произведением, как некоторые из книг вокруг нас. Ммм, думаю, стоит ей об этом сказать, а может, даже предложить помощь."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "В этой книге предстоит сражаться за выживание один на один. Обучение по большинству этих книг стоит 3,500 золотых монет, но использование этой обойдётся всего в 3,000 золотых монет.",
+          "female": "В этой книге предстоит сражаться за выживание один на один. Обучение по большинству этих книг стоит 3,500 золотых монет, но использование этой обойдётся всего в 3,000 золотых монет."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "status": "review",
+          "reason": "Unlisted wording, case or punctuation edit",
+          "male": "Хорошо. Будет справедливо, если с этими существами сразится изначальный предводитель, <PLAYER1>.",
+          "female": "Хорошо. Будет справедливо, если с этими существами сразится изначальная предводительница, <PLAYER1>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER2>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER2>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER3>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER3>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER4>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER4>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER5>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER5>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER6>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER6>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нет. Я откажусь. По крайней мере пока.",
+          "female": "Нет. Я откажусь. По крайней мере пока."
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Отлично! Что ж, надеюсь, ты выбрал подходящего человека для этого испытания.",
+          "female": "Отлично! Что ж, надеюсь, ты выбрала подходящего человека для этого испытания."
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery_sewers",
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "male",
+          "check": "Jans cousin stays female",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "male",
+          "check": "male original leader",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "male",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "narrated adventurer stays male",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "male",
+          "check": "worms remain creatures",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "gender": "female",
+          "check": "Jans cousin stays female",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "gender": "female",
+          "check": "no masculine original leader agreement",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "gender": "female",
+          "check": "both prices retained",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "narrated adventurer stays male",
+          "ok": true
+        },
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "gender": "female",
+          "check": "worms remain creatures",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "gender": "female",
+          "check": "female player choice",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery_sewers-v1",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:57:07.538791+00:00",
+          "wall_seconds": 12.908,
+          "usage": {
+            "input_tokens": 16469,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 467,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-zty5cghs/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-zty5cghs/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:57:20.447040+00:00"
+        },
+        {
+          "status": "completed",
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "low",
+          "started_utc": "2026-11-07T22:57:20.838413+00:00",
+          "wall_seconds": 13.224,
+          "usage": {
+            "input_tokens": 17021,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 468,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "-c",
+            "model_reasoning_effort=\"low\"",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6.1-sol",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-y7trebwl/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-y7trebwl/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-11-07T22:57:34.062894+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "100_INITIAL_0_SAY_0",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "\"Одинокий искатель приключений, брошенный и преданный собственным отрядом, брёл сквозь слои слизи и нечистот. Все его бывшие друзья считали его мёртвым, но он всегда был упрямцем, и у него всё ещё оставалось несколько тузов в рукаве. Он выжил. Но канализация была небезопасным местом — во всяком случае, эти туннели. В последнее время их захватили странные червеобразные существа. Они уже знали, что он здесь, и готовились напасть.\"",
+          "female": "\"Одинокий искатель приключений, брошенный и преданный собственным отрядом, брёл сквозь слои слизи и нечистот. Все его бывшие друзья считали его мёртвым, но он всегда был упрямцем, и у него всё ещё оставалось несколько тузов в рукаве. Он выжил. Но канализация была небезопасным местом — во всяком случае, эти туннели. В последнее время их захватили странные червеобразные существа. Они уже знали, что он здесь, и готовились напасть.\""
+        },
+        {
+          "line": "100_BLOCK_0_ELEMENT_0_SAY_1",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "А, это похоже на то, что случилось с одной из моих кузин, и... пожалуй, ей и впрямь стоит записать свою историю. Возможно, она станет признанным литературным произведением, как некоторые из книг вокруг нас. М-м-м, думаю, мне стоит сказать ей об этом, а может, даже предложить помощь.",
+          "female": "А, это похоже на то, что случилось с одной из моих кузин, и... пожалуй, ей и впрямь стоит записать свою историю. Возможно, она станет признанным литературным произведением, как некоторые из книг вокруг нас. М-м-м, думаю, мне стоит сказать ей об этом, а может, даже предложить помощь."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_SAY_2",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "В этой книге предстоит сражаться за выживание один на один. За возможность поучиться у большинства этих книг нужно заплатить 3 500 золотых монет, но использование этой стоит всего 3 000 золотых монет.",
+          "female": "В этой книге предстоит сражаться за выживание один на один. За возможность поучиться у большинства этих книг нужно заплатить 3 500 золотых монет, но использование этой стоит всего 3 000 золотых монет."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_3",
+          "status": "review",
+          "reason": "Unlisted wording, case or punctuation edit",
+          "male": "Хорошо. Будет справедливо, если с этими тварями сражусь я, <PLAYER1>, изначальный предводитель отряда.",
+          "female": "Хорошо. Будет справедливо, если с этими тварями сражусь я, <PLAYER1>, изначальная предводительница отряда."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_4",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER2>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER2>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_5",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER3>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER3>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_6",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER4>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER4>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_7",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER5>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER5>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_8",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Хорошо. Пусть с этими тварями сразится <PLAYER6>.",
+          "female": "Хорошо. Пусть с этими тварями сразится <PLAYER6>."
+        },
+        {
+          "line": "100_BLOCK_1_ELEMENT_0_REPLY_9",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нет. Я откажусь. По крайней мере, пока.",
+          "female": "Нет. Я откажусь. По крайней мере, пока."
+        },
+        {
+          "line": "101_INITIAL_0_SAY_10",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ладно! Что ж, надеюсь, ты выбрал подходящего человека для этого испытания.",
+          "female": "Ладно! Что ж, надеюсь, ты выбрала подходящего человека для этого испытания."
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "tra_files_llm_translating/experiments/run_codex_translation.py": "0b26ddb0d538987823034e97bca4c436610129c4ff758602ab9921048290f64e",
+    "tra_files_llm_translating/experiments/diagnose_translation.py": "a246c32c0850455b2c72230cba022d18c1cea8ced60ac1acd84a9574b42ffce4",
+    "tra_files_llm_translating/experiments/run_translate_verify.py": "4755d15d61c31a82d8376d6315e55fb84631037348aa0e2578097638f422e60c",
+    "tra_files_llm_translating/translate_dialogs.py": "07a9f13c85e1d86335a20e523021d42fb4529190f263c9f69a7a2adf81669fb0",
+    "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+    "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+    "tra_files_llm_translating/experiments/inkgallery_checks.json": "5404c7db61f417bf22e2564d9018ea3d63221fbc6bc282422c17bdb04a1d413a",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/checks.json": "b6652119e9d7acb8860f4455fdd25f7f10061ccac2a3b1d3a7829cbd64b89328",
+    "tra_files_llm_translating/experiments/fixtures/ambiguous_addressees/input.csv": "d452bfe208a2b5f08917a63d330369f6845bf124a5880c3f8f1e4f84ffb14a0c",
+    "tra_files_llm_translating/experiments/fixtures/actors.csv": "f2280cd532353724de2bc0468d3920a2676e702cc1aaccbe061e8403d5f854aa",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/checks.json": "5ba8e4bc62a05c696eab975e4d8c01af4e2636257fdeaee69e718af97f3aec47",
+    "tra_files_llm_translating/experiments/fixtures/multiple_npcs/input.csv": "e15c5cbb19ec29b1e35d2f9d219c5e441694a2fed76d6972987b30551e80fd51",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/checks.json": "47d2433a15d316d6768fb5a0e032f7790ff88ff80502a2b7fbb7b8ddfd5ffac0",
+    "tra_files_llm_translating/experiments/fixtures/original_female_variants/input.csv": "45b33ad59a039aa5806f589d5ecfb6536c14e6f4a80d1fc5667441c7466e47ce",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/checks.json": "24d420be73167da41df980a5d68dd033d07fb2dbc5c59abf27e5b01ca99ed417",
+    "tra_files_llm_translating/experiments/fixtures/reused_strings/input.csv": "13f2a74e8d14b20dd2f13a97320bca8dae663a90754c70c5dba2ec5dcd68db37",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_beholder/checks.json": "4cdf194ab6db1dc1889d6d258929662c22c27f49a1bda612155bb510065534dc",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_beholder/input.csv": "fd636045ce21a7516868d510aa4e631e0c2a7d7ef52e0c9d236c395212d505d5",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_beholder/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_moon_sisters/checks.json": "86e7f5fb641e76a4103a349f0e9f9d0d752f103104c42bc160bf21bb9fcdefa9",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_moon_sisters/input.csv": "913105077a04598735e4c67f9532b838e8dcc7860235674d359326e2521de0ce",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_moon_sisters/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_sewers/checks.json": "3d9c598a4c2c0158b4dccfc4294598585af932a78539894766f20d6838eac7ca",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_sewers/input.csv": "8eeaa091cada9dcd09d7531659edc747d09c6ef8ffef5f49fee417ad538041f5",
+    "tra_files_llm_translating/experiments/real_set/inkgallery_sewers/actors.csv": "91f5629739c629512dd2f8b6df8e785e2fe27161c013b2a8840fa504ee2add62"
+  },
+  "manual_review": "pending",
+  "provider": "Codex CLI; existing login; no API calls from Python",
+  "codex_version": "codex-cli 0.167.0",
+  "finished_utc": "2026-11-07T22:57:34.066410+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "version": "alora_missing_boo-v1",
+  "provenance": "AloraEE v1.9, commit 6e324a40a0dc804e94aa0dbdaa4f431102ca4735; alora/d/BCMALOR.D and alora/English/BCMALOR.tra. CANDIDATE ONLY: no human-reviewed reference yet.",
+  "input": "input.csv",
+  "actors": "actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    }
+  ],
+  "allowed_latin": [],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "missingboo_INITIAL_0_SAY_196": {},
+    "missingboo_BLOCK_0_ELEMENT_0_SAY_197": {},
+    "missingboo_BLOCK_1_ELEMENT_0_SAY_198": {},
+    "missingboo_BLOCK_2_ELEMENT_0_SAY_199": {},
+    "missingboo_BLOCK_3_ELEMENT_0_SAY_200": {},
+    "missingboo_BLOCK_4_ELEMENT_0_SAY_201": {},
+    "missingboo_BLOCK_5_ELEMENT_0_SAY_202": {},
+    "missingboo_BLOCK_6_ELEMENT_0_SAY_203": {},
+    "missingboo_BLOCK_7_ELEMENT_0_SAY_204": {},
+    "missingboo_BLOCK_8_ELEMENT_0_SAY_205": {},
+    "missingboo_BLOCK_9_ELEMENT_0_SAY_206": {},
+    "missingboo_BLOCK_10_ELEMENT_0_SAY_207": {},
+    "missingboo_BLOCK_11_ELEMENT_0_SAY_208": {},
+    "missingboo_BLOCK_12_ELEMENT_0_SAY_209": {},
+    "missingboo_BLOCK_13_ELEMENT_0_SAY_210": {},
+    "missingboo_BLOCK_14_ELEMENT_0_SAY_211": {},
+    "missingboo_BLOCK_14_ELEMENT_1_SAY_212": {},
+    "missingboo_BLOCK_15_ELEMENT_0_SAY_213": {}
+  }
+}

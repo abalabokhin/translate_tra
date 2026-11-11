@@ -1,0 +1,426 @@
+@0    = ~Requires an Enhanced Edition version of the game.~
+@1    = ~Athkatlan Grounds: The Ink Gallery~
+@2    = ~The Ink Gallery~
+@3    = ~Tale of the Eight-Legged Strider~
+@4    = ~The Birth of the Fury~
+@5    = ~The Deathly Groans~
+@6    = ~The War Below~
+@7    = ~The Grasp of the Glabrezu~
+@8    = ~The Dance of the Swords~
+@9    = ~Of Seed & Fire~
+@10   = ~The Story of the Moon Sisters~
+@11   = ~Tale of the Dead Eye~
+@12   = ~The Three Thirsty Rascals~
+@13   = ~The Waves of Flesheaters~
+@14   = ~The Light in the Snow~
+@15   = ~Viscountess Velcealle~
+@16   = ~Vsnaa, The Midwife of Spiders~
+@17   = ~Grotesque Drow~
+@18   = ~Underdeveloped Spider~
+@19   = ~Shou Swordsman~
+@20   = ~Chin Yi~
+@21   = ~Oammanf, the Xvart Necromancer~
+@22   = ~Zombie Xvart~
+@23   = ~Titanic Lava Ankheg~
+@24   = ~Uumo'elë, the Angered Glabrezu~
+@25   = ~Bow-Wielding Brachina~
+@26   = ~Maestro~
+@27   = ~Dancing Sword~
+@28   = ~Tomkuast, the Giant Druid~
+@29   = ~Saviaa Moonrift~
+@30   = ~Safima Moonrift~
+@31   = ~Saba Moonrift~
+@32   = ~Zombie Beholder - Rotting~
+@33   = ~Oozm, the Slurper~
+@34   = ~Aba-Kamp, the Gulper~
+@35   = ~Czo, the Licker~
+@36   = ~Green Maggot~
+@37   = ~Elder Remorhaz~
+@38   = ~Lesser Air Elemental~
+@39   = ~Alaundo~
+@40   = ~Gorion~
+@41   = ~Sarevok~
+@42   = ~Imoen~
+@43   = ~Jon Irenicus~
+@44   = ~Blood Figure~
+@45   = ~Hungry Caterpillar~
+@46   = ~The Ink Gallery Souvenir Shop~
+@47   = ~The Fury~
+@48   = ~Lava Spit~
+@49   = ~Lava Bite~
+@50   = ~Maggot Bite~
+@51   = ~Remorhaz - Bite~
+@52   = ~Angry Remorhaz - Bite~
+@53   = ~Quiet Slippers~
+@54   = ~These slippers are very comfortable and, because of how soft they are, they allow one to move without making too much noise. But they also look quite neat; they are somewhat fluffy.
+
+STATISTICS:
+
+Equipped abilities:
+– Move Silently: +5%
+
+Weight: 2~
+@55   = ~Ink Gallery: The List of Exhibits~
+@56   = ~The list includes all books that are currently presented to people. These are:
+
+– Tale of the Eight-Legged Strider: a story about a group wading through the Demonweb Pits, trying to leave the domain of the Spider Queen.
+
+– The Birth of the Fury: a tale from far Kara-Tur, about Chin Yi, as well as a swordsman from Shou Lung, and their love.
+
+– The Deathly Groans: this novella presents a dreadful tale of a necromancer and an army of undead xvarts he decided to raise from their slumber.
+
+– The War Below: this tale tells the story of one of the lesser-known adventures of the Heroes of Icewind Dale and how, during their attempt to stop a war between strange beings, they discovered a cave, home to a huge and quite dangerous creature.
+
+– The Grasp of the Glabrezu: this cautionary tale describes a fight between a glabrezu, protected by bow-wielding devilesses, and a group of adventurers that were sent to Avernus to find and kill that glabrezu.
+
+– The Dance of the Swords: the book describes a ball organized by a mysterious Maestro, and an unusual dance of literal swords, controlled by the bard.
+
+– Of Seed & Fire: a story about an angry fire giant druid, who claimed a significant part of the bog and attacks those that dare to enter it.
+
+– The Story of the Moon Sisters: a tale about three celestial sisters, the judges that live in a strange moon-like place, covered with silver sands.
+
+– Tale of the Dead Eye: a novel in which a lone traveler has to travel through a strange place, a dead magic zone, and encounters a zombie beholder, hungry and angered, ready to attack.
+
+– The Three Thirsty Rascals: a somewhat experimental story, a macabre comedy about three kobold vampires that terrorize a nearby village.
+
+– The Waves of Flesheaters: a book that describes the struggle of a lone survivor walking down an old sewer system, where he has to face dozens of flesh-eating maggots hiding in the murky water and shadows.
+
+– The Light in the Snow: a story of an old remorhaz roaming the far north, accompanied by creatures that seem like sentient winds.
+
+All interested in learning more from these tales are welcome to visit the Ink Gallery and check the books with their own eyes.
+
+STATISTICS:
+
+Weight: 1~
+@57   = ~Ink Gallery: Testimonials~
+@58   = ~This pamphlet shows some drawings of the Ink Gallery located in Athkatla, in the Government District. It also includes some testimonials left by other customers: 
+
+"Some of those stories are truly marvelous! While they are a great opportunity to learn, remember to prepare yourself first!"
+- Brienda Falcontrade, Shield-Bearer from Neverwinter
+
+"The Ink Gallery taught me that literature may come with many thrills and excitements! Thank you for that!"
+- Al'Mand Silloan, Priest of Helm from Calimport
+
+"I never liked books and now—I think they're great!"
+- John Bubblovich, a fashion figure from... somewhere!
+
+STATISTICS:
+
+Weight: 1~
+@59   = ~Flail~
+@60   = ~Priestess' Emasculator +3~
+@61   = ~This weapon was once a favorite weapon of a drow priestess. She was a cruel matron, known for her hatred of men—even for drow standards. She liked to torture them, and make it all a spectacle for other men to observe. They say it was her way to emasculate not just one man, but all of them, all at once.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to Poison
+
+THAC0: +3
+Damage: 1d6+4, +1d4+1 Acid vs. Males
+Damage type: Crushing
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 10~
+@62   = ~Horn~
+@63   = ~Trumpet of Delirious Celebrations~
+@64   = ~Tales say that this trumpet once belonged to one of Kwan Ying's archons, a fellow of Chin Yi, another archon that later became the source of the Celestial Fury's true power. People say that when the Trumpet of Delirious Celebrations is blown, people around start acting as if they were drunk and find it difficult to hit the user of this instrument.
+
+STATISTICS:
+
+Charge abilities:
+– Delirious Celebration once per day
+  Special: Enemies in the radius must pass a save vs. spells at -4 or suffer from powerful magical drunkenness that lasts 5 turns. For those that fail the save, there is also a 5% chance to fall onto the ground unconscious for 2 rounds. The character that blows the instrument is also granted +1 Armor Class and +1 Charisma bonuses for the whole duration.
+  Area of Effect: 15-ft. radius
+
+Weight: 2~
+@65   = ~Bracers~
+@66   = ~Bracelets of the Xvart Necromancer~
+@67   = ~These bracelets used to belong to a powerful xvart necromancer. It's hard to say how it was possible for someone like him to become a true master of dark magic, but it happened. He managed to raise many of his fallen kin by turning them into the living dead.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 7
+– Constitution: +1
+– Can memorize one extra arcane spell of each level from 1st to 3rd (necromancer only)
+
+Weight: 1~
+@68   = ~Titanic Lava Ankheg Plate~
+@69   = ~This plate armor was created from a titanic lava ankheg shell. While lava ankhegs are quite rare, the titanic version of the creature must have been somewhat unique. It was huge and powerful, and it could spit some corrosive substance. But even that could not save it from death.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +30%
+– Physical Damage Resistance: +5%
+
+Armor Class: 0 (-3 vs. slashing, -1 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25~
+@70   = ~Belt~
+@71   = ~Glabrezu's Arousal~
+@72   = ~If tales are to be believed, this belt was created from the skin and bones of a powerful glabrezu, feared by both mortals and other devils. He was said to feel sadistic arousal from killing all those that were ready to stand in his way.
+
+It looks like this belt also has some parasitic properties, and that it is blood that channels the belt's magic. The diabolical nature of this weapon does not allow paladins to wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +8%
+– Attacks per round: +1/2
+– THAC0: +1
+– Constitution: -1
+– May only be removed with a Remove Curse spell
+
+Weight: 2~
+@73   = ~Scimitar~
+@74   = ~Maestro's Aeon +3~
+@75   = ~There are many magical scimitars that would be happily used by bards and other artists. This one, however, has quite a reputation. It is not only a well-crafted weapon, but also one that was enchanted with quite interesting magic. It allows the user to regenerate and affect both the wielder's and the target's ability to withstand magic attacks.
+
+STATISTICS:
+
+Equipped abilities:
+– Regenerates 1 Hit Point every two rounds
+
+Combat abilities:
+– Each successful hit drains Saving Throws vs. Magic for 1 round (each hit lowers the target's Save vs. Magic by 1 point, and that same Save of the weapon wielder is improved by 1; the effect stacks)
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 3~
+@76   = ~Ring~
+@77   = ~Fire Rowan Ring~
+@78   = ~This ring was made using dried fire rowan, and enchanted with powerful magic. Tales say it was created by a powerful yet quite mad druid, a fire giant that tried to claim part of the bog for himself.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+
+Charge abilities:
+– Fire Seed once per day
+  Effect: Creates 4 fire seeds that will appear in the caster's inventory. The seeds will remain in existence for 3 turns after the spell is cast. If they are thrown at an enemy, a fireball will ensue, causing 2d8 points of damage to all within a 7-ft. radius unless they make a Saving Throw vs. Spell for half damage.
+
+Weight: 1~
+@79   = ~Small Shield~
+@80   = ~Three Moon Phases +3~
+@81   = ~This small shield was created by winged celestial beings, the Moon Sisters. If legends are true, each of them was responsible for one part of this shield, and then they were put together, creating an unusual piece of gear that's even more impressive during the nighttime.
+
+The shield, while it does not protect from missiles in the usual way, can weaken projectiles by burning them with moonlight.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– Does not provide an Armor Class bonus against missile attacks
+– Missile Damage Resistance: 50%
+– Magic Resistance: +3%
+
+Special abilities:
+– During nighttime, each round, the wielder of the shield gains one of three additional bonuses at random: +1 Luck, Regeneration (3 Hit Points over 1 round), or Protection from Petrification.
+
+Requires:
+ 4 Strength
+
+Weight: 2~
+@82   = ~Ioun Stone~
+@83   = ~Dead Levitating Eye~
+@84   = ~This unusual ioun stone was shaped to look like a glass eye, or dead eye, thus its name: Dead Levitating Eye. It can magically help one see what's usually hard to spot, thus rogues will get the most from using it.
+
+STATISTICS:
+
+Equipped abilities:
+– Detect Traps: +10%
+– Detect Illusion: +10%
+– Ranged THAC0: +1
+
+Weight: 0~
+@85   = ~Dart~
+@86   = ~Little Rascal's Tooth +2~
+@87   = ~This dart is actually a polished and enchanted vampiric tooth turned into a weapon. If tales are to be believed, the tooth still has some interesting vampiric properties.
+
+STATISTICS:
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– Each successful hit heals the owner's 1 Hit Point
+– Each successful hit has a 3% chance to drain 1 level from the target (Save vs. Death -2 to negate)
+
+THAC0: +2
+Damage: 1d3+2 (missile)
+Speed Factor: 0
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0~
+@88   = ~Quarterstaff~
+@89   = ~Caterpillar-Covered Staff +3~
+@90   = ~This staff is covered with green and quite hungry caterpillars. The staff itself seems magical and able to keep these little things alive, but perhaps their hunger can somehow be... weaponized?
+
+STATISTICS:
+
+Charge abilities:
+– May summon hungry caterpillars for 1 turn once per day
+  Special: Caterpillars deal 1d4+1 damage, but their attacks deal 6x more damage vs. myconids, which seem to be their favorite food
+
+Equipped abilities:
+– Armor Class and Saving Throws vs. beetles, ankhegs, and carrion crawlers: +2
+
+Combat abilities:
+– May be used both as a melee weapon and a ranged one: swing it to throw one of the caterpillars at the enemy
+– Ranged attacks have a 10% chance to deal an additional 1 acid damage on hit
+
+THAC0: +3
+Melee damage: 1d6+3 (crushing)
+Ranged damage: 1d2+3 (crushing)
+Speed Factor: 1
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+@91   = ~Helmet~
+@92   = ~Remorhaz Shell Helm~
+@93   = ~Crafted from chitinous scales, this heavy helmet retains some of the natural resistances of the remorhaz from which it was made.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Armor Class: +1
+– Magic Resistance: +10%
+– Magic Damage Resistance: +20%
+
+Weight: 10~
+@94   = ~Bite~
+@95   = ~Mask of Three Sublime Rubies~
+@96   = ~This item used to be a burial mask, but when it was found by a curious bard, he turned it into a headgear that could be used by the living to enhance their ability to control magic. Some say that when worn, the rubies whisper secrets and hints regarding everything around the one who wears it.
+
+While it must have been difficult to change it from a burial mask to a normal one, it clearly was worth all the effort and resources.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+– Lore: +50%
+– Wisdom: +1
+– Intelligence: +1
+– Improves casting speed by 1
+
+Weight: 1~
+@97   = ~Gained +1 Save vs. Death/Poison~
+@98   = ~Gained +5% Electric Resistance~
+@99   = ~Gained +3% Magic Resistance~
+@100  = ~Gained +5% Fire Resistance~
+@101  = ~Gained +5 Lore~
+@102  = ~Gained +5% Missile Damage Resistance~
+@103  = ~Gained +5% Slashing Damage Resistance~
+@104  = ~Gained +2 Hit Points~
+@105  = ~Gained +5% Cold Resistance~
+@106  = ~Gained +1 Save vs. Spells~
+@107  = ~Gained +5% Piercing Damage Resistance~
+@108  = ~Gained +5% Acid Resistance~
+@109  = ~Gained +5% Crushing Damage Resistance~
+@110  = ~No free creature animation slot found.~
+@111  = ~Ink Gallery~
+@112  = ~The Ink Gallery
+I found an interesting place in Athkatla's Government District: The Ink Gallery. If I understood the owner of the place right, it's a place where some powerful tomes are kept; tomes that allow their readers to relive some moments immortalized in the stories and learn from them.~
+@113  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled Tale of Eight-Legged Strider.~
+@114  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Birth of the Fury.~
+@115  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Deathly Groans.~
+@116  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The War Below.~
+@117  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Grasp of the Glabrezu.~
+@118  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Dance of the Swords.~
+@119  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled Of Seed & Fire.~
+@120  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Story of the Moon Sisters.~
+@121  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled Tale of the Dead Eye.~
+@122  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Waves of Flesheaters.~
+@123  = ~The Ink Gallery
+I've relived and survived a challenge offered by a book titled The Light in the Snow.~
+@124  = ~The Ink Gallery
+Viscountess asked me to meet her in the basement of the Ink Gallery. She would like to discuss something with me down there.~
+@125  = ~The Ink Gallery
+Viscountess asked me to help her investigate The Blood Pages of Bhaal. I told her that I'll think about it.~
+@126  = ~The Ink Gallery
+I was asked to investigate The Blood Pages of Bhaal, held in the basement of the Ink Gallery in Athkatla. I've accepted the job. Let's see if it's truly as impressive as it seems.~
+@127  = ~The Ink Gallery
+The Ink Gallery is a place filled with powerful books. I was allowed to learn from them; face all the struggles that were immortalized on their pages. One of them was a tome called The Blood Pages of Bhaal. It showed me scenes and characters from my own story. It was a truly bizarre mission, but I managed to finish the job.~
+@128  = ~The Ink Gallery
+The Ink Gallery is a place filled with powerful books. I was allowed to learn from them; face all the struggles that were immortalized on their pages. One of them was a tome called The Blood Pages of Bhaal. The Viscountess asked me to help her investigate that book, but I declined the job. She took it pretty well, though.~
+@129  = ~Ah, so you're in one piece. I am glad that you survived the battle with the Midwife. Well done!~
+@130  = ~(Gained +1 Saving Throw vs. Death/Poison. A new souvenir has been added to the Ink Gallery shop.)~
+@131  = ~You won the battle against our poor swordsman. Well done!~
+@132  = ~(Gained Special Ability: Enrage. A new souvenir has been added to the Ink Gallery shop.)~
+@133  = ~(Gained +5% Electric Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@134  = ~I always hated zombies, but... well, you clearly know how to deal with their kind!~
+@135  = ~(Gained +3% Magic Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@136  = ~You've slain that titanic thing, hmm? You must admit, that was quite an enormous beast.~
+@137  = ~(Gained +5% Fire Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@138  = ~It looks like you're not afraid even of the strongest enemies, like devils!~
+@139  = ~(Gained +5 Lore. A new souvenir has been added to the Ink Gallery shop.)~
+@140  = ~(Gained +5% Missile Damage Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@141  = ~Ah, it must have been quite a ball. I wish I could see your performance. Anyway, I'm glad to see you alive.~
+@142  = ~(Gained +5% Slashing Damage Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@143  = ~You're back already? Impressive!~
+@144  = ~(Gained +2 Hit Points. A new souvenir has been added to the Ink Gallery shop.)~
+@145  = ~This is strange... I felt the book react to you in a strange manner. I'm sorry for that. It must have been some anomaly. I'll investigate this, I promise.~
+@146  = ~(Gained +5% Cold Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@147  = ~And here is our hero! Welcome back!~
+@148  = ~(Gained +1 Saving Throw vs. Spells. A new souvenir has been added to the Ink Gallery shop.)~
+@149  = ~Ah! I can see you defeated these crazy kobolds! Good!~
+@150  = ~(Gained +5% Piercing Damage Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@151  = ~It must have been quite an extermination. Mhm. It's good you survived the attacks.~
+@152  = ~(Gained +5% Acid Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@153  = ~So, you defeated the remorhaz, hmm? That must have been quite a challenge!~
+@154  = ~(Gained +5% Crushing Damage Resistance. A new souvenir has been added to the Ink Gallery shop.)~
+@155  = ~(A secret passage to the basement opens... A new souvenir has been added to the Ink Gallery shop.)~
+@156  = ~(The main enemy and her minions are dead. You may now leave.)~
+@157  = ~(The battle is over. The swordsman is dead and the archon disappeared.)~
+@158  = ~(The necromancer and his minions were stopped. You are free to leave.)~
+@159  = ~(The creature is dead. You may leave now.)~
+@160  = ~(The glabrezu and the bow-wielders were defeated. You may leave this place.)~
+@161  = ~(The ball is over. You may leave this place.)~
+@162  = ~(The swamps start to shift. Perhaps the sooner you leave, the better.)~
+@163  = ~(The Moon Sisters have fallen. You may leave this unusual place.)~
+@164  = ~(The monster is gone. You may leave now.)~
+@165  = ~(You need to make sure the kobold vampires won't rise again before you can leave this area.)~
+@166  = ~(By stabbing the kobolds' hearts with wooden stakes, you open the way out of this realm.)~
+@167  = ~(The swarms have been killed, and you survived the attack. You may now leave.)~
+@168  = ~(The remorhaz and the elementals are gone.)~
+@169  = ~The protrusions on the back of this remorhaz flare up, as if lit by flint on steel, as you draw near.~
+@170  = ~Lolth! Let me call your children and the other creeping things, and defeat your enemies! Against all odds!~
+@171  = ~(This huge book is looking quite ominous.)~
+@172  = ~(The book feels warm when you touch it. Then, suddenly, you feel the ink gather around your hand.)~
+@173  = ~(The ink reaches a small cut on your hand and mixes with your blood. Then, you feel the urge to turn the page.)~
+@174  = ~(This primitive coffin is empty.)~
+@175  = ~(Kobold vampire is regenerating in this coffin. If you have a wooden stake, you may now kill him.)~
+@176  = ~(You stab the kobold's heart with a wooden stake, and the little vampire meets its final end.)~
+@177  = ~(You need a wooden stake to destroy the kobold vampire.)~
+@178  = ~(The little fella is dead.)~
+@179  = ~Lava Ankheg~
+@180  = ~Spitting Beetle~

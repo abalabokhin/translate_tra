@@ -1,0 +1,12 @@
+IF
+Dead("L#IGB12E")
+NumDead("L#IGB12M",5)
+CombatCounter(0)
+Global("L#IGActivateExit","L#IG12",0)
+THEN 
+RESPONSE #100
+TriggerActivation("Leave",TRUE)
+AmbientActivate("Leaveani",TRUE)
+DisplayStringHead("LEAVE",@168)
+SetGlobal("L#IGActivateExit","L#IG12",1)
+END

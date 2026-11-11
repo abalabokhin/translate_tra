@@ -1,0 +1,963 @@
+BACKUP ~InkGallery/backup~
+AUTHOR ~Lava Del'Vortel~
+VERSION ~v1.5~
+README ~InkGallery/readme.txt~
+
+AUTO_TRA ~InkGallery/languages/%s~
+
+ALWAYS
+ INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+END
+
+LANGUAGE ~English~
+         ~English~
+         ~InkGallery/languages/english/setup.tra~
+
+LANGUAGE ~Spanish (by Quasart)~
+         ~spanish~
+         ~InkGallery/languages/spanish/setup.tra~
+
+LANGUAGE ~Chinese (by Scarecrow)~
+         ~schinese~
+         ~InkGallery/languages/schinese/setup.tra~
+         
+LANGUAGE ~Polish (by my_summertime, SoM Membress, part of CoB Clan)~
+         ~polish~
+         ~InkGallery/languages/polish/setup.tra~
+
+BEGIN @1
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @0
+LABEL L#-INKG
+
+// AREA UPDATE
+
+COPY_EXISTING ar1000.are override // Goverment Disctirct
+  LPF fj_are_structure INT_VAR
+    fj_type = 2 // travel
+    fj_box_left = 4455
+    fj_box_top = 443
+    fj_box_right = 4501
+    fj_box_bottom = 525
+    fj_cursor_idx = 42
+    fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+    fj_alt_x = 4475
+    fj_alt_y = 500
+    fj_loc_x = 4475
+    fj_loc_y = 500
+    fj_vertex_0 = 4472 + (443 << 16)
+    fj_vertex_1 = 4455 + (473 << 16)
+    fj_vertex_2 = 4459 + (525 << 16)
+    fj_vertex_3 = 4501 + (493 << 16)
+    fj_vertex_4 = 4486 + (453 << 16)
+  STR_VAR
+    fj_structure_type = region
+    fj_name = L#IG_DOOR
+    fj_destination_area = L#IG00
+    fj_destination_name = En1
+  END
+  LPF fj_are_structure INT_VAR
+    fj_type = 2 // travel
+    fj_box_left = 4187
+    fj_box_top = 641
+    fj_box_right = 4285
+    fj_box_bottom = 723
+    fj_cursor_idx = 42
+    fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+    fj_alt_x = 4260
+    fj_alt_y = 660
+    fj_loc_x = 4260
+    fj_loc_y = 660
+    fj_vertex_0 = 4187 + (667 << 16)
+    fj_vertex_1 = 4220 + (641 << 16)
+    fj_vertex_2 = 4285 + (697 << 16)
+    fj_vertex_3 = 4251 + (723 << 16)
+  STR_VAR
+    fj_structure_type = region
+    fj_name = L#IG_C_DOOR
+    fj_destination_area = AR1002
+    fj_destination_name = L#IGC
+  END
+  LPF fj_are_structure INT_VAR
+    fj_loc_x = 4530
+    fj_loc_y = 550
+    fj_orientation = 14 // facing direction (0-15 where 0=south, 4=west, 8=north, 12=east)*;
+  STR_VAR
+    fj_structure_type = entrance
+    fj_name = L#IG
+  END
+  LPF fj_are_structure INT_VAR
+    fj_loc_x = 4270
+    fj_loc_y = 600
+    fj_orientation = 10 // facing direction (0-15 where 0=south, 4=west, 8=north, 12=east)*;
+  STR_VAR
+    fj_structure_type = entrance
+    fj_name = L#IG_CE
+  END
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 4437
+    fj_loc_y       = 419
+    fj_flags       = 0b00000000000000000001000101000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGDOOR
+    fj_bam_resref     = ~L#IGDOOR~
+  END
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 4696
+    fj_loc_y       = 436
+    fj_flags       = 0b00000000000000000001000100000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGWI1
+    fj_bam_resref     = ~L#IGWI1~
+  END
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 4848
+    fj_loc_y       = 423
+    fj_flags       = 0b00000000000000000001000100000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGWI1
+    fj_bam_resref     = ~L#IGWI1~
+  END
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 4420
+    fj_loc_y       = 466
+    fj_flags       = 0b00000000000000000001000101000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGSYM
+    fj_bam_resref     = ~L#IGSYM~
+  END
+  LPF fj_are_structure INT_VAR //INFO STARTS HERE
+    fj_type = 1 // info
+    fj_box_left = 4418
+    fj_box_top = 462
+    fj_box_right = 4452
+    fj_box_bottom = 523
+    fj_cursor_idx = 22
+    fj_flags = 0 // nothing special
+    fj_alt_x = 4420
+    fj_alt_y = 460
+    fj_loc_x = 4420
+    fj_loc_y = 460
+    fj_vertex_0 = 4418 + (462 << 16)
+    fj_vertex_1 = 4449 + (477 << 16)
+    fj_vertex_2 = 4452 + (523 << 16)
+    fj_vertex_3 = 4419 + (501 << 16)
+    fj_info_point_strref  = RESOLVE_STR_REF(@2) 
+    STR_VAR
+    fj_structure_type = region
+    fj_name = L#IGInk
+END
+
+
+COPY_EXISTING ar1002.are override // Goverment Disctirct - Building of Six
+  LPF fj_are_structure INT_VAR
+    fj_type = 2 // travel
+    fj_box_left = 1309
+    fj_box_top = 609
+    fj_box_right = 1353
+    fj_box_bottom = 717
+    fj_cursor_idx = 42
+    fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+    fj_alt_x = 1310
+    fj_alt_y = 720
+    fj_loc_x = 1310
+    fj_loc_y = 720
+    fj_vertex_0 = 1309 + (686 << 16)
+    fj_vertex_1 = 1309 + (609 << 16)
+    fj_vertex_2 = 1353 + (638 << 16)
+    fj_vertex_3 = 1351 + (717 << 16)
+  STR_VAR
+    fj_structure_type = region
+    fj_name = L#IG_CDOOR
+    fj_destination_area = AR1000
+    fj_destination_name = L#IG_CE
+  END
+  LPF fj_are_structure INT_VAR
+    fj_loc_x = 1240
+    fj_loc_y = 770
+    fj_orientation = 1 // facing direction (0-15 where 0=south, 4=west, 8=north, 12=east)*;
+  STR_VAR
+    fj_structure_type = entrance
+    fj_name = L#IGC
+  END
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 1276
+    fj_loc_y       = 735
+    fj_flags       = 0b00000000000000000001000101000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGCBP_E
+    fj_bam_resref     = ~L#IGCBP~
+  END
+  READ_LONG 0xac anim_num
+  READ_LONG 0xb0 anim_off
+  FOR (index = 0 ; index < anim_num ; ++index) BEGIN 
+    READ_ASCII (anim_off + 0x00 + (index * 0x4c)) name
+    READ_SHORT (anim_off + 0x20 + (index * 0x4c)) x_coord
+    READ_SHORT (anim_off + 0x22 + (index * 0x4c)) y_coord
+    PATCH_IF ((x_coord = 1332) AND (y_coord = 632) AND 
+              ("%name%" STRING_COMPARE_CASE "FIRE_4" = 0)) BEGIN 
+      WRITE_LONG  (anim_off + 0x24 + (index * 0x4c)) 0 // disable at all times
+      SET index = anim_num // kill loop
+    END
+  END
+  BUT_ONLY 
+
+COPY_EXISTING AR0069.are override // Goverment Disctirct - Building of Six (CutScene)
+  LPF fj_are_structure
+    INT_VAR
+    fj_loc_x       = 1276
+    fj_loc_y       = 735
+    fj_flags       = 0b00000000000000000001000101000001
+    STR_VAR
+    fj_structure_type = animation
+    fj_name           = L#IGCBP_E
+    fj_bam_resref     = ~L#IGCBP~
+  END
+
+// AUDIO
+
+LAF HANDLE_AUDIO END
+  
+// AREAS & GRAPHICS
+
+INCLUDE ~InkGallery/lib/NewAnimation-AnkhegLava.tph~
+INCLUDE ~InkGallery/lib/NewAnimation-AnkhegLavaT.tph~
+INCLUDE ~InkGallery/lib/NewAnimation-ZombieBeholder.tph~
+INCLUDE ~InkGallery/lib/NewAnimation-GMaggot.tph~
+
+COPY ~InkGallery/areas~                         override
+COPY ~InkGallery/bams~                          override
+COPY ~InkGallery/vvc~                           override
+COPY ~InkGallery/animations/drider_f~           override
+COPY ~InkGallery/animations/remorhaz~           override
+COPY ~InkGallery/animations/beetle~             override
+
+// searchmap SR.bmp
+INCLUDE ~%MOD_FOLDER%/lib/alter_searchmap.tpa~
+  LAF ALTER_SEARCHMAP
+    STR_VAR
+    path_to_2da_file = EVAL ~%MOD_FOLDER%/area-bmp/AR1000SR_changes.2da~ // full path to the *changes.2da file, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
+    areaname = EVAL ~AR1000~                            			// area name, e.g. ~AR3700~
+  END
+  LAF ALTER_SEARCHMAP
+    STR_VAR
+    path_to_2da_file = EVAL ~%MOD_FOLDER%/area-bmp/AR1002SR_changes.2da~ // full path to the *changes.2da file, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
+    areaname = EVAL ~AR1002~                            			// area name, e.g. ~AR3700~
+  END
+
+// wed file patching
+INCLUDE ~%MOD_FOLDER%/lib/wg_wed_struct.tpa~
+
+COPY_EXISTING + ~AR1000.wed~ ~override~
+				~AR1000N.wed~ ~override~
+
+// INK GALLERY - THERE ARE SO MANY BACK WALLS:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 4713
+		wg_poly_xmax   	 = 4970
+		wg_poly_ymin   	 = 209
+		wg_poly_ymax   	 = 529
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4902 + ( 529 << 16)
+		wg_poly_vert_1   = 4949 + ( 528 << 16)
+		wg_poly_vert_2   = 4951 + ( 464 << 16)
+		wg_poly_vert_3   = 4951 + ( 442 << 16)
+		wg_poly_vert_4   = 4960 + ( 438 << 16)
+		wg_poly_vert_5   = 4960 + ( 412 << 16)
+		wg_poly_vert_6   = 4970 + ( 407 << 16)
+		wg_poly_vert_7   = 4947 + ( 385 << 16)
+		wg_poly_vert_8   = 4948 + ( 350 << 16)
+		wg_poly_vert_9   = 4964 + ( 348 << 16)
+		wg_poly_vert_10  = 4965 + ( 338 << 16)
+		wg_poly_vert_11  = 4787 + ( 209 << 16)
+		wg_poly_vert_12  = 4713 + ( 244 << 16)
+		wg_poly_vert_13  = 4880 + ( 365 << 16)
+		wg_poly_vert_14  = 4904 + ( 393 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// HAND RAIL NEXT TO PATH:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 4615
+		wg_poly_xmax   	 = 5102
+		wg_poly_ymin   	 = 493
+		wg_poly_ymax   	 = 867
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 5102 + ( 526 << 16)
+		wg_poly_vert_1   = 4616 + ( 867 << 16)
+		wg_poly_vert_2   = 4615 + ( 835 << 16)
+		wg_poly_vert_3   = 5101 + ( 493 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// INK GALLERY ENTRANCE - even-more-back wall:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 4177
+		wg_poly_xmax   	 = 4321
+		wg_poly_ymin   	 = 0
+		wg_poly_ymax   	 = 148
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4256 + ( 148 << 16)
+		wg_poly_vert_1   = 4200 + ( 146 << 16)
+		wg_poly_vert_2   = 4198 + ( 74 << 16)
+		wg_poly_vert_3   = 4177 + ( 60 << 16)
+		wg_poly_vert_4   = 4182 + ( 48 << 16)
+		wg_poly_vert_5   = 4223 + ( 2 << 16)
+		wg_poly_vert_6   = 4321 + ( 0 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// INK GALLERY ENTRANCE - back wall:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag     = EVAL BIT0        // shade wall
+		wg_poly_xmin   	 = 4194
+		wg_poly_xmax   	 = 4380
+		wg_poly_ymin   	 = 182
+		wg_poly_ymax   	 = 397
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4273 + ( 397 << 16)
+		wg_poly_vert_1   = 4229 + ( 397 << 16)
+		wg_poly_vert_2   = 4229 + ( 343 << 16)
+		wg_poly_vert_3   = 4194 + ( 321 << 16)
+		wg_poly_vert_4   = 4322 + ( 224 << 16)
+		wg_poly_vert_5   = 4337 + ( 214 << 16)
+		wg_poly_vert_6   = 4338 + ( 182 << 16)
+		wg_poly_vert_7   = 4364 + ( 183 << 16)
+		wg_poly_vert_8   = 4362 + ( 229 << 16)
+		wg_poly_vert_9   = 4380 + ( 237 << 16)
+		wg_poly_vert_10  = 4318 + ( 307 << 16)
+		wg_poly_vert_11  = 4309 + ( 312 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+//INK GALLERY ENTRANCE:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag     = EVAL BIT0        // shade wall
+		wg_poly_xmin   	 = 4418
+		wg_poly_xmax   	 = 4507
+		wg_poly_ymin   	 = 342
+		wg_poly_ymax   	 = 506
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4418 + ( 506 << 16)
+		wg_poly_vert_1   = 4456 + ( 506 << 16)
+		wg_poly_vert_2   = 4458 + ( 480 << 16)
+		wg_poly_vert_3   = 4461 + ( 464 << 16)
+		wg_poly_vert_4   = 4472 + ( 449 << 16)
+		wg_poly_vert_5   = 4483 + ( 441 << 16)
+		wg_poly_vert_6   = 4495 + ( 437 << 16)
+		wg_poly_vert_7   = 4507 + ( 439 << 16)
+		wg_poly_vert_8   = 4505 + ( 342 << 16)
+		wg_poly_vert_9   = 4420 + ( 401 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// BACK OF THE SIX BUILDING - Part 3:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 3149
+		wg_poly_xmax   	 = 3814
+		wg_poly_ymin   	 = 0
+		wg_poly_ymax   	 = 247
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 3372 + ( 245 << 16)
+		wg_poly_vert_1   = 3814 + ( 247 << 16)
+		wg_poly_vert_2   = 3810 + ( 194 << 16)
+		wg_poly_vert_3   = 3792 + ( 150 << 16)
+		wg_poly_vert_4   = 3758 + ( 94 << 16)
+		wg_poly_vert_5   = 3705 + ( 51 << 16)
+		wg_poly_vert_6   = 3655 + ( 30 << 16)
+		wg_poly_vert_7   = 3611 + ( 20 << 16)
+		wg_poly_vert_8   = 3580 + ( 20 << 16)
+		wg_poly_vert_9   = 3554 + ( 0 << 16)
+		wg_poly_vert_10  = 3224 + ( 0 << 16)
+		wg_poly_vert_11  = 3149 + ( 39 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// BACK OF THE SIX BUILDING - Part 2:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 3737
+		wg_poly_xmax   	 = 4196
+		wg_poly_ymin   	 = 1
+		wg_poly_ymax   	 = 426
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4023 + ( 426 << 16)
+		wg_poly_vert_1   = 4173 + ( 425 << 16)
+		wg_poly_vert_2   = 4173 + ( 281 << 16)
+		wg_poly_vert_3   = 4196 + ( 267 << 16)
+		wg_poly_vert_4   = 4196 + ( 260 << 16)
+		wg_poly_vert_5   = 4028 + ( 145 << 16)
+		wg_poly_vert_6   = 4013 + ( 115 << 16)
+		wg_poly_vert_7   = 3985 + ( 75 << 16)
+		wg_poly_vert_8   = 3958 + ( 47 << 16)
+		wg_poly_vert_9   = 3946 + ( 42 << 16)
+		wg_poly_vert_10  = 3925 + ( 14 << 16)
+		wg_poly_vert_11  = 3912 + ( 1 << 16)
+		wg_poly_vert_12  = 3823 + ( 1 << 16)
+		wg_poly_vert_13  = 3778 + ( 35 << 16)
+		wg_poly_vert_14  = 3754 + ( 58 << 16)
+		wg_poly_vert_15  = 3737 + ( 72 << 16)
+		wg_poly_vert_16  = 3739 + ( 188 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// BACK OF THE SIX BUILDING:
+LPF wg_wed_structure
+	INT_VAR
+		wg_poly_flag   	 = EVAL BIT0 + BIT3		// shade wall + cover animations
+		wg_poly_xmin   	 = 3768
+		wg_poly_xmax   	 = 4403
+		wg_poly_ymin   	 = 305
+		wg_poly_ymax   	 = 808
+		wg_poly_height   = 255
+		wg_poly_vert_0   = 4192 + ( 808 << 16)
+		wg_poly_vert_1   = 4393 + ( 808 << 16)
+		wg_poly_vert_2   = 4392 + ( 621 << 16)
+		wg_poly_vert_3   = 4401 + ( 614 << 16)
+		wg_poly_vert_4   = 4403 + ( 598 << 16)
+		wg_poly_vert_5   = 4229 + ( 475 << 16)
+		wg_poly_vert_6   = 4218 + ( 456 << 16)
+		wg_poly_vert_7   = 4190 + ( 413 << 16)
+		wg_poly_vert_8   = 4161 + ( 385 << 16)
+		wg_poly_vert_9   = 4142 + ( 363 << 16)
+		wg_poly_vert_10  = 4106 + ( 337 << 16)
+		wg_poly_vert_11  = 4080 + ( 331 << 16)
+		wg_poly_vert_12  = 4036 + ( 335 << 16)
+		wg_poly_vert_13  = 4019 + ( 314 << 16)
+		wg_poly_vert_14  = 4007 + ( 306 << 16)
+		wg_poly_vert_15  = 3983 + ( 305 << 16)
+		wg_poly_vert_16  = 3969 + ( 317 << 16)
+		wg_poly_vert_17  = 3964 + ( 321 << 16)
+		wg_poly_vert_18  = 3769 + ( 462 << 16)
+		wg_poly_vert_19  = 3768 + ( 498 << 16)
+	STR_VAR
+		wg_structure_type 	    = wall_polygon
+END
+
+// EFFECTS
+
+COPY ~InkGallery/effects~                       override
+
+// COPY
+
+COPY ~InkGallery/creatures/l#igb1.cre~ ~override~
+SAY NAME1 @3
+SAY NAME2 @3
+
+COPY ~InkGallery/creatures/l#igb2.cre~ ~override~
+SAY NAME1 @4
+SAY NAME2 @4
+
+COPY ~InkGallery/creatures/l#igb3.cre~ ~override~
+SAY NAME1 @5
+SAY NAME2 @5
+
+COPY ~InkGallery/creatures/l#igb4.cre~ ~override~
+SAY NAME1 @6
+SAY NAME2 @6
+
+COPY ~InkGallery/creatures/l#igb5.cre~ ~override~
+SAY NAME1 @7
+SAY NAME2 @7
+
+COPY ~InkGallery/creatures/l#igb6.cre~ ~override~
+SAY NAME1 @8
+SAY NAME2 @8
+
+COPY ~InkGallery/creatures/l#igb7.cre~ ~override~
+SAY NAME1 @9
+SAY NAME2 @9
+
+COPY ~InkGallery/creatures/l#igb8.cre~ ~override~
+SAY NAME1 @10
+SAY NAME2 @10
+
+COPY ~InkGallery/creatures/l#igb9.cre~ ~override~
+SAY NAME1 @11
+SAY NAME2 @11
+
+COPY ~InkGallery/creatures/l#igb10.cre~ ~override~
+SAY NAME1 @12
+SAY NAME2 @12
+
+COPY ~InkGallery/creatures/l#igb11.cre~ ~override~
+SAY NAME1 @13
+SAY NAME2 @13
+
+COPY ~InkGallery/creatures/l#igb12.cre~ ~override~
+SAY NAME1 @14
+SAY NAME2 @14
+
+COPY ~InkGallery/creatures/l#igsta.cre~ ~override~
+SAY NAME1 @15
+SAY NAME2 @15
+
+COPY ~InkGallery/creatures/l#igb1e.cre~ ~override~
+SAY NAME1 @16
+SAY NAME2 @16
+
+COPY ~InkGallery/creatures/l#igb1m.cre~ ~override~
+SAY NAME1 @17
+SAY NAME2 @17
+
+COPY ~InkGallery/creatures/l#igb1x.cre~ ~override~
+SAY NAME1 @18
+SAY NAME2 @18
+
+COPY ~InkGallery/creatures/l#igb2e1.cre~ ~override~
+SAY NAME1 @19
+SAY NAME2 @19
+
+COPY ~InkGallery/creatures/l#igb2e2.cre~ ~override~
+SAY NAME1 @20
+SAY NAME2 @20
+
+COPY ~InkGallery/creatures/l#igb3e.cre~ ~override~
+SAY NAME1 @21
+SAY NAME2 @21
+
+COPY ~InkGallery/creatures/l#igb3m.cre~ ~override~
+SAY NAME1 @22
+SAY NAME2 @22
+
+COPY ~InkGallery/creatures/l#igb4e.cre~ ~override~
+SAY NAME1 @23
+SAY NAME2 @23
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~L#ANKHEG_LAVA_TITAN~))
+
+COPY ~InkGallery/creatures/l#igb4m.cre~ ~override~
+SAY NAME1 @179
+SAY NAME2 @179
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~L#ANKHEG_LAVA~))
+
+COPY ~InkGallery/creatures/l#igb5e.cre~ ~override~
+SAY NAME1 @24
+SAY NAME2 @24
+
+COPY ~InkGallery/creatures/l#igb5m.cre~ ~override~
+SAY NAME1 @25
+SAY NAME2 @25
+
+COPY ~InkGallery/creatures/l#igb6e.cre~ ~override~
+SAY NAME1 @26
+SAY NAME2 @26
+
+COPY ~InkGallery/creatures/l#igb6m.cre~ ~override~
+SAY NAME1 @27
+SAY NAME2 @27
+
+COPY ~InkGallery/creatures/l#igb7e.cre~ ~override~
+SAY NAME1 @28
+SAY NAME2 @28
+
+COPY ~InkGallery/creatures/l#igb7m.cre~ ~override~
+SAY NAME1 @180
+SAY NAME2 @180
+
+COPY ~InkGallery/creatures/l#igb8e1.cre~ ~override~
+SAY NAME1 @29
+SAY NAME2 @29
+
+COPY ~InkGallery/creatures/l#igb8e2.cre~ ~override~
+SAY NAME1 @30
+SAY NAME2 @30
+
+COPY ~InkGallery/creatures/l#igb8e3.cre~ ~override~
+SAY NAME1 @31
+SAY NAME2 @31
+
+COPY ~InkGallery/creatures/l#igb9e.cre~ ~override~
+SAY NAME1 @32
+SAY NAME2 @32
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~L#_BEHOLDER_PURPLE~))
+
+COPY ~InkGallery/creatures/l#igb10a.cre~ ~override~
+SAY NAME1 @33
+SAY NAME2 @33
+
+COPY ~InkGallery/creatures/l#igb10b.cre~ ~override~
+SAY NAME1 @34
+SAY NAME2 @34
+
+COPY ~InkGallery/creatures/l#igb10c.cre~ ~override~
+SAY NAME1 @35
+SAY NAME2 @35
+
+COPY ~InkGallery/creatures/l#igb11e.cre~ ~override~
+SAY NAME1 @36
+SAY NAME2 @36
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~L#G_MAGGOT~))
+
+COPY ~InkGallery/creatures/l#igb12e.cre~ ~override~
+SAY NAME1 @37
+SAY NAME2 @37
+
+COPY ~InkGallery/creatures/l#igb12m.cre~ ~override~
+SAY NAME1 @38
+SAY NAME2 @38
+
+COPY ~InkGallery/creatures/l#igcs1.cre~ ~override~
+SAY NAME1 @39
+SAY NAME2 @39
+
+COPY ~InkGallery/creatures/l#igcs2.cre~ ~override~
+SAY NAME1 @40
+SAY NAME2 @40
+
+COPY ~InkGallery/creatures/l#igcs3.cre~ ~override~
+SAY NAME1 @41
+SAY NAME2 @41
+
+COPY ~InkGallery/creatures/l#igcs4.cre~ ~override~
+SAY NAME1 @42
+SAY NAME2 @42
+
+COPY ~InkGallery/creatures/l#igcs5.cre~ ~override~
+SAY NAME1 @43
+SAY NAME2 @43
+
+COPY ~InkGallery/creatures/l#igcs6.cre~ ~override~
+SAY NAME1 @44
+SAY NAME2 @44
+
+COPY ~InkGallery/creatures/l#igstaw.cre~ ~override~
+SAY NAME1 @45
+SAY NAME2 @45
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~L#G_MAGGOT~))
+
+//STORE
+
+COPY ~InkGallery/sto/l#igsto.sto~ ~override/l#igsto.sto~
+SAY 0xc @46
+
+//ITEMS
+
+COPY ~InkGallery/items/l#igb2e2.itm~ ~override~
+SAY NAME1 @47
+SAY NAME2 @47
+
+COPY ~InkGallery/items/l#igb4e1.itm~ ~override~
+SAY NAME1 @48
+SAY NAME2 @48
+
+COPY ~InkGallery/items/l#igb4e2.itm~ ~override~
+SAY NAME1 @49
+SAY NAME2 @49
+
+COPY ~InkGallery/items/l#igb11e.itm~ ~override~
+SAY NAME1 @50
+SAY NAME2 @50
+
+COPY ~InkGallery/items/l#ig12r1.itm~ ~override~
+SAY NAME1 @51
+SAY NAME2 @51
+
+COPY ~InkGallery/items/l#ig12r2.itm~ ~override~
+SAY NAME1 @52
+SAY NAME2 @52
+
+COPY ~InkGallery/items/l#igbts.itm~ ~override~
+SAY NAME1 @53
+SAY NAME2 @53
+SAY DESC @54
+
+COPY ~InkGallery/items/l#igbb.itm~ ~override/l#igbb1.itm~
+SAY NAME1 @55
+SAY NAME2 @55
+SAY DESC @56
+
+COPY ~InkGallery/items/l#igbb.itm~ ~override/l#igbb2.itm~
+SAY NAME1 @57
+SAY NAME2 @57
+SAY DESC @58
+
+COPY ~InkGallery/items/l#igfla.itm~ ~override~
+SAY NAME1 @59
+SAY NAME2 @60
+SAY DESC @61
+
+COPY ~InkGallery/items/l#igtru.itm~ ~override~
+SAY NAME1 @62
+SAY NAME2 @63
+SAY DESC @64
+
+COPY ~InkGallery/items/l#igbra.itm~ ~override~
+SAY NAME1 @65
+SAY NAME2 @66
+SAY DESC @67
+
+COPY ~InkGallery/items/l#igaar.itm~ ~override~
+SAY NAME1 @68
+SAY NAME2 @68
+SAY DESC @69
+
+COPY ~InkGallery/items/l#igbel.itm~ ~override~
+SAY NAME1 @70
+SAY NAME2 @71
+SAY DESC @72
+
+COPY ~InkGallery/items/l#igsci.itm~ ~override~
+SAY NAME1 @73
+SAY NAME2 @74
+SAY DESC @75
+
+COPY ~InkGallery/items/l#igrin.itm~ ~override~
+SAY NAME1 @76
+SAY NAME2 @77
+SAY DESC @78
+
+COPY ~InkGallery/items/l#igshi.itm~ ~override~
+SAY NAME1 @79
+SAY NAME2 @80
+SAY DESC @81
+
+COPY ~InkGallery/items/l#igiou.itm~ ~override~
+SAY NAME1 @82
+SAY NAME2 @83
+SAY DESC @84
+
+COPY ~InkGallery/items/l#igdar.itm~ ~override~
+SAY NAME1 @85
+SAY NAME2 @86
+SAY DESC @87
+
+COPY ~InkGallery/items/l#igsta.itm~ ~override~
+SAY NAME1 @88
+SAY NAME2 @89
+SAY DESC @90
+
+COPY ~InkGallery/items/l#ighel.itm~ ~override~
+SAY NAME1 @91
+SAY NAME2 @92
+SAY DESC @93
+
+COPY ~InkGallery/items/l#igstaw.itm~ ~override~
+SAY NAME1 @94
+SAY NAME2 @94
+
+COPY ~InkGallery/items/l#igmas.itm~ ~override~
+SAY NAME1 @91
+SAY NAME2 @95
+SAY DESC @96
+
+//SPELLS
+
+COPY ~InkGallery/spells/l#igb1r.spl~ ~override~
+SAY NAME1 @97
+SAY NAME2 @97
+
+COPY ~InkGallery/spells/l#igb2r.spl~ ~override~
+SAY NAME1 @98
+SAY NAME2 @98
+
+COPY ~InkGallery/spells/l#igb3r.spl~ ~override~
+SAY NAME1 @99
+SAY NAME2 @99
+
+COPY ~InkGallery/spells/l#igb4r.spl~ ~override~
+SAY NAME1 @100
+SAY NAME2 @100
+
+COPY ~InkGallery/spells/l#igb5r.spl~ ~override~
+SAY NAME1 @101
+SAY NAME2 @101
+
+COPY ~InkGallery/spells/l#igb5rb.spl~ ~override~
+SAY NAME1 @102
+SAY NAME2 @102
+
+COPY ~InkGallery/spells/l#igb6r.spl~ ~override~
+SAY NAME1 @103
+SAY NAME2 @103
+
+COPY ~InkGallery/spells/l#igb7r.spl~ ~override~
+SAY NAME1 @104
+SAY NAME2 @104
+
+COPY ~InkGallery/spells/l#igb8r.spl~ ~override~
+SAY NAME1 @105
+SAY NAME2 @105
+
+COPY ~InkGallery/spells/l#igb9r.spl~ ~override~
+SAY NAME1 @106
+SAY NAME2 @106
+
+COPY ~InkGallery/spells/l#igb10r.spl~ ~override~
+SAY NAME1 @107
+SAY NAME2 @107
+
+COPY ~InkGallery/spells/l#igb11r.spl~ ~override~
+SAY NAME1 @108
+SAY NAME2 @108
+
+COPY ~InkGallery/spells/l#igb12r.spl~ ~override~
+SAY NAME1 @109
+SAY NAME2 @109
+
+COPY ~InkGallery/spells/l#igtru.spl~ ~override~
+SAY NAME1 ~~
+SAY NAME2 ~~
+
+COPY ~InkGallery/spells/l#igshi1.spl~ ~override~
+SAY NAME1 ~~
+SAY NAME2 ~~
+
+//DIALOGUE
+
+COMPILE ~InkGallery/dialogue/L#IGSTA.d~
+COMPILE ~InkGallery/dialogue/L#IGB1.d~
+COMPILE ~InkGallery/dialogue/L#IGB1E.d~
+COMPILE ~InkGallery/dialogue/L#IGB2.d~
+COMPILE ~InkGallery/dialogue/L#IGB2E1.d~
+COMPILE ~InkGallery/dialogue/L#IGB2E2.d~
+COMPILE ~InkGallery/dialogue/L#IGB3.d~
+COMPILE ~InkGallery/dialogue/L#IGB3E.d~
+COMPILE ~InkGallery/dialogue/L#IGB4.d~
+COMPILE ~InkGallery/dialogue/L#IGB5.d~
+COMPILE ~InkGallery/dialogue/L#IGB5e.d~
+COMPILE ~InkGallery/dialogue/L#IGB6.d~
+COMPILE ~InkGallery/dialogue/L#IGB6e.d~
+COMPILE ~InkGallery/dialogue/L#IGB7.d~
+COMPILE ~InkGallery/dialogue/L#IGB7e.d~
+COMPILE ~InkGallery/dialogue/L#IGB8.d~
+COMPILE ~InkGallery/dialogue/L#IGB8e.d~
+COMPILE ~InkGallery/dialogue/L#IGB9.d~
+COMPILE ~InkGallery/dialogue/L#IGB9e.d~
+COMPILE ~InkGallery/dialogue/L#IGB10.d~
+COMPILE ~InkGallery/dialogue/L#IGB10e.d~
+COMPILE ~InkGallery/dialogue/L#IGB11.d~
+COMPILE ~InkGallery/dialogue/L#IGB12.d~
+COMPILE ~InkGallery/dialogue/L#IGCS.d~
+COMPILE ~InkGallery/dialogue/L#IGCS6.d~
+COMPILE ~InkGallery/dialogue/L#IGSTAW.d~
+
+//SCRIPTS
+
+COMPILE ~InkGallery/scripts/L#IGL1.baf~
+COMPILE ~InkGallery/scripts/L#IGL2.baf~
+COMPILE ~InkGallery/scripts/L#IGL3.baf~
+COMPILE ~InkGallery/scripts/L#IG00.baf~
+COMPILE ~InkGallery/scripts/L#IG01.baf~
+COMPILE ~InkGallery/scripts/L#IG02.baf~
+COMPILE ~InkGallery/scripts/L#IG03.baf~
+COMPILE ~InkGallery/scripts/L#IG04.baf~
+COMPILE ~InkGallery/scripts/L#IG05.baf~
+COMPILE ~InkGallery/scripts/L#IG06.baf~
+COMPILE ~InkGallery/scripts/L#IG07.baf~
+COMPILE ~InkGallery/scripts/L#IG08.baf~
+COMPILE ~InkGallery/scripts/L#IG09.baf~
+COMPILE ~InkGallery/scripts/L#IG10.baf~
+COMPILE ~InkGallery/scripts/L#IG11.baf~
+COMPILE ~InkGallery/scripts/L#IG12.baf~
+COMPILE ~InkGallery/scripts/L#IG13.baf~
+COMPILE ~InkGallery/scripts/L#IG14.baf~
+
+COMPILE ~InkGallery/scripts/L#IGSTA.baf~
+COMPILE ~InkGallery/scripts/L#IGBHA.baf~
+COMPILE ~InkGallery/scripts/L#IGBK1.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB1E.baf~
+COMPILE ~InkGallery/scripts/L#IGB1M.baf~
+COMPILE ~InkGallery/scripts/L#IGB1S.baf~
+COMPILE ~InkGallery/scripts/L#IGB1X.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB2E1.baf~
+COMPILE ~InkGallery/scripts/L#IGB2E2.baf~
+COMPILE ~InkGallery/scripts/L#IGB2S.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB3E.baf~
+COMPILE ~InkGallery/scripts/L#IGB3M.baf~
+COMPILE ~InkGallery/scripts/L#IGB3S.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB4S.baf~
+COMPILE ~InkGallery/scripts/L#IGB4E.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB5S.baf~
+COMPILE ~InkGallery/scripts/L#IGB5E.baf~
+COMPILE ~InkGallery/scripts/L#IGB5M.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB6S.baf~
+COMPILE ~InkGallery/scripts/L#IGB6E.baf~
+COMPILE ~InkGallery/scripts/L#IGB6M.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB7S.baf~
+COMPILE ~InkGallery/scripts/L#IGB7E.baf~
+COMPILE ~InkGallery/scripts/L#IGB7M.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB8S.baf~
+COMPILE ~InkGallery/scripts/L#IGB8E1.baf~
+COMPILE ~InkGallery/scripts/L#IGB8E2.baf~
+COMPILE ~InkGallery/scripts/L#IGB8E3.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB9S1.baf~
+COMPILE ~InkGallery/scripts/L#IGB9S2.baf~
+COMPILE ~InkGallery/scripts/L#IGB9S3.baf~
+COMPILE ~InkGallery/scripts/L#IGB9S4.baf~
+COMPILE ~InkGallery/scripts/L#IGB9S5.baf~
+COMPILE ~InkGallery/scripts/L#IGB9S6.baf~
+COMPILE ~InkGallery/scripts/L#IGB9E.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB10S.baf~
+COMPILE ~InkGallery/scripts/L#IGB10A.baf~
+COMPILE ~InkGallery/scripts/L#IGB10B.baf~
+COMPILE ~InkGallery/scripts/L#IGB10C.baf~
+COMPILE ~InkGallery/scripts/L#IGCOFa.baf~
+COMPILE ~InkGallery/scripts/L#IGCOFb.baf~
+COMPILE ~InkGallery/scripts/L#IGCOFc.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB111.baf~
+COMPILE ~InkGallery/scripts/L#IGB112.baf~
+COMPILE ~InkGallery/scripts/L#IGB113.baf~
+COMPILE ~InkGallery/scripts/L#IGB114.baf~
+COMPILE ~InkGallery/scripts/L#IGB115.baf~
+COMPILE ~InkGallery/scripts/L#IGB116.baf~
+COMPILE ~InkGallery/scripts/L#IGB11E.baf~
+
+COMPILE ~InkGallery/scripts/L#IGB12E.baf~
+COMPILE ~InkGallery/scripts/L#IGB12S.baf~
+
+COMPILE ~InkGallery/scripts/L#IGCS1.baf~
+COMPILE ~InkGallery/scripts/L#IGCS2.baf~
+COMPILE ~InkGallery/scripts/L#IGCS3.baf~
+COMPILE ~InkGallery/scripts/L#IGCS4.baf~
+COMPILE ~InkGallery/scripts/L#IGCS5.baf~
+COMPILE ~InkGallery/scripts/L#IGCS6.baf~
+
+COMPILE ~InkGallery/scripts/L#IGCNT1.baf~
+COMPILE ~InkGallery/scripts/L#IGCNT2.baf~
+COMPILE ~InkGallery/scripts/L#IGCNT3.baf~
+
+EXTEND_TOP   ~AR1000.bcs~    ~InkGallery/scripts/AR1000.baf~
+EXTEND_TOP   ~BALDUR.bcs~    ~InkGallery/scripts/JournalEntries.baf~
+
+//JOURNAL
+
+  LOAD_TRA ~InkGallery\languages\%LANGUAGE%\setup.TRA~
+  ADD_JOURNAL @112	@113	@114	@115	@116	@117	@118	@119	@120	@121	@122	@123	@124	@125	@126	@127	@128  USING ~InkGallery\languages\%LANGUAGE%\setup.TRA~

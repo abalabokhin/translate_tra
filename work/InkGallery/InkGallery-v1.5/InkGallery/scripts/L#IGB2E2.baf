@@ -1,0 +1,23 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+    SetGlobal("L#IGB2E2Died","GLOBAL",1)
+		CreateVisualEffectObject("SPHOLY",Myself)
+		DestroySelf()
+END
+
+IF
+ Global("L#IGB2E2Start","GLOBAL",1)
+THEN
+ RESPONSE #100
+  StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#IGB2E2Prepare","LOCALS",0)
+THEN
+RESPONSE #100
+ApplySpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+SetGlobal("L#IGB2E2Prepare","LOCALS",1)
+END

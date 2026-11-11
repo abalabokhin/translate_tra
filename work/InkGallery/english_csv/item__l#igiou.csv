@@ -1,0 +1,13 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Ioun Stone,@82,TRA:setup.tra:@82,,,item_name,unknown,,InkGallery/items/l#igiou.itm,NAME1,InkGallery.tp2:742 SAY NAME1,
+NARRATOR,2,,Dead Levitating Eye,@83,TRA:setup.tra:@83,,,item_name,unknown,,InkGallery/items/l#igiou.itm,NAME2,InkGallery.tp2:743 SAY NAME2,
+NARRATOR,3,,"This unusual ioun stone was shaped to look like a glass eye, or dead eye, thus its name: Dead Levitating Eye. It can magically help one see what's usually hard to spot, thus rogues will get the most from using it.
+
+STATISTICS:
+
+Equipped abilities:
+– Detect Traps: +10%
+– Detect Illusion: +10%
+– Ranged THAC0: +1
+
+Weight: 0",@84,TRA:setup.tra:@84,,,item_description,unknown,,InkGallery/items/l#igiou.itm,DESC,InkGallery.tp2:744 SAY DESC,

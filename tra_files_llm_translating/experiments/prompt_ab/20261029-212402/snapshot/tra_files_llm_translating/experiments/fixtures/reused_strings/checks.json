@@ -1,0 +1,74 @@
+{
+  "version": "reused_strings-v2",
+  "provenance": "Synthetic dialogue authored for evaluation; not extracted game text. References are illustrative, not unique correct translations.",
+  "input": "input.csv",
+  "actors": "../actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    },
+    {
+      "name": "singular listener uses ты, not вы",
+      "forbid": "\\b(вы|вас|вам|вами|ваш\\w*)\\b"
+    }
+  ],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "301_a": {
+      "male": [
+        {
+          "name": "no form incompatible with male Player1 and female Selene",
+          "forbid": "\\bготов\\b|\\bготова\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "no masculine form for female Player1 and female Selene",
+          "forbid": "\\bготов\\b"
+        }
+      ]
+    },
+    "302_a": {
+      "both": [
+        {
+          "name": "gate retained",
+          "require": "ворот"
+        }
+      ]
+    },
+    "301_b": {
+      "male": [
+        {
+          "name": "no form incompatible with male Player1 and female Selene",
+          "forbid": "\\bготов\\b|\\bготова\\b"
+        }
+      ],
+      "female": [
+        {
+          "name": "no masculine form for female Player1 and female Selene",
+          "forbid": "\\bготов\\b"
+        }
+      ]
+    },
+    "303": {
+      "both": [
+        {
+          "name": "female stage subject",
+          "require": "\\*Она\\s+проверяет\\s+замок\\.\\*"
+        }
+      ]
+    },
+    "302_b": {
+      "both": [
+        {
+          "name": "gate retained",
+          "require": "ворот"
+        }
+      ]
+    },
+    "304": {}
+  }
+}

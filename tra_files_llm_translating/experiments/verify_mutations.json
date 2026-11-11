@@ -1,0 +1,42 @@
+{
+  "version": "verify-mutations-v1",
+  "description": "Known errors planted into copies of the synthetic reference translations. Each case is sent to the verifier separately; the unmodified reference is also sent once per fixture to count false alarms. 'line' is the fixture Line_ID; 'from' must occur exactly once in that column of reference.csv.",
+  "fixtures": {
+    "multiple_npcs": [
+      {"name": "female traveler noun left masculine", "mutations": [
+        {"line": "105", "column": "female", "from": "путница", "to": "путник", "category": "player_gender"}]},
+      {"name": "narrated man becomes female", "mutations": [
+        {"line": "102", "column": "female", "from": "обвинить его", "to": "обвинить её", "category": "third_person"}]},
+      {"name": "player verb and NPC gender", "mutations": [
+        {"line": "101", "column": "female", "from": "Ты вернулась", "to": "Ты вернулся", "category": "player_gender"},
+        {"line": "104", "column": "male", "from": "ты был ранен", "to": "ты была ранена", "category": "npc_gender"}]},
+      {"name": "changed time and place", "mutations": [
+        {"line": "106", "column": "male", "from": "на рассвете", "to": "в полночь", "category": "meaning"},
+        {"line": "101", "column": "male", "from": "внизу", "to": "наверху", "category": "meaning"}]},
+      {"name": "formal address to one NPC", "mutations": [
+        {"line": "106", "column": "female", "from": "сдержи обещание", "to": "сдержите обещание", "category": "address_form"}]}
+    ],
+    "ambiguous_addressees": [
+      {"name": "ferryman becomes guide", "mutations": [
+        {"line": "201", "column": "male", "from": "Паромщик", "to": "Проводник", "category": "meaning"}]},
+      {"name": "inverted condition and agreement", "mutations": [
+        {"line": "205", "column": "male", "from": "пока верёвка не будет закреплена", "to": "пока верёвка закреплена", "category": "meaning"},
+        {"line": "204", "column": "female", "from": "Течение слишком сильное", "to": "Течение слишком сильный", "category": "grammar"}]}
+    ],
+    "original_female_variants": [
+      {"name": "original female text ignored", "mutations": [
+        {"line": "402", "column": "female", "from": "Герцогиня послала тебя забрать её печать", "to": "Герцог послал тебя забрать его печать", "category": "female_source"},
+        {"line": "403", "column": "female", "from": "бронзовый", "to": "серебряный", "category": "female_source"}]},
+      {"name": "player gender and spelling", "mutations": [
+        {"line": "401", "column": "female", "from": "Я была её ученицей", "to": "Я был её учеником", "category": "player_gender"},
+        {"line": "403", "column": "female", "from": "принесла", "to": "принёсла", "category": "grammar"}]}
+    ],
+    "reused_strings": [
+      {"name": "shared string masculine though a female NPC also says it", "mutations": [
+        {"line": "301_a", "column": "male", "from": "Можно начинать.", "to": "Я готов.", "category": "shared_string"}]},
+      {"name": "formal address and reversed action", "mutations": [
+        {"line": "304", "column": "male", "from": "Подожди <CHARNAME>.", "to": "Подождите <CHARNAME>.", "category": "address_form"},
+        {"line": "302_a", "column": "female", "from": "Тогда открой ворота.", "to": "Тогда закрой ворота.", "category": "meaning"}]}
+    ]
+  }
+}

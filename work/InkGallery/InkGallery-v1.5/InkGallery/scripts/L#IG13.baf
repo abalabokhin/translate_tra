@@ -1,0 +1,47 @@
+IF
+Global("L#IGBooksCompleted","GLOBAL",3)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+SmallWait(3)
+ActionOverride(Player1,MoveToPoint([585.485]))
+Wait(2)
+SetGlobal("L#IGBooksCompleted","GLOBAL",4)
+EndCutSceneMode()
+END
+
+IF
+Global("L#IGDestroyBook","GLOBAL",1)
+THEN
+RESPONSE #100
+GiveItemCreate("scrl8r",Player1,1,1,0)
+GiveItemCreate("scrl8y",Player1,1,1,0)
+GiveItemCreate("scrl8n",Player1,1,1,0)
+GiveItemCreate("scrl9z",Player1,1,1,0)
+GiveItemCreate("scrl9t",Player1,1,1,0)
+CreateVisualEffect("L#IGBM",[610.550])
+Wait(1)
+AmbientActivate("BURN",TRUE)
+SetGlobal("L#IGDestroyBook","GLOBAL",2)
+END
+
+IF
+Global("L#IGStudyBook","GLOBAL",1)
+THEN
+RESPONSE #100
+ReputationInc(2)
+GiveItemCreate("scrl8r",Player1,1,1,0)
+GiveItemCreate("scrl8y",Player1,1,1,0)
+GiveItemCreate("scrl9z",Player1,1,1,0)
+GiveItemCreate("scrl9h",Player1,1,1,0)
+GiveItemCreate("scrl6w",Player1,1,1,0)
+SetGlobal("L#IGStudyBook","GLOBAL",2)
+END
+
+IF
+Global("L#IGStudyBookFee","GLOBAL",1)
+THEN
+RESPONSE #100
+GiveItemCreate("L#IGMAS",Player1,1,1,0)
+SetGlobal("L#IGStudyBookFee","GLOBAL",2)
+END

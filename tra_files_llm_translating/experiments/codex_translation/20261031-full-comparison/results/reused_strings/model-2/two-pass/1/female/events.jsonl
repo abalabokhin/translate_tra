@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19366-b331-7a31-b16c-6d8634782ffe"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"translations\":{\"1\":\"Я наготове.\",\"2\":\"Тогда открой ворота.\",\"3\":\"*Она проверяет замок.* Ворота открыты.\",\"4\":\"Подожди <CHARNAME>.\\nНе трогай %gate_lock%.\"}}"}}
+{"type":"turn.completed","usage":{"input_tokens":15582,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":66,"reasoning_output_tokens":0}}

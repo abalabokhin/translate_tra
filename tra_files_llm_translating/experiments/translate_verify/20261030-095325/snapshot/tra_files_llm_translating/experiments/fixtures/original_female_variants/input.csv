@@ -1,0 +1,6 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Addressee,Source_Female_Text,Source_Has_Female
+Player1,401,,I was his apprentice.,@401,TRA:original_female_variants.tra:@401,Selene,I was her apprentice.,1
+Selene,402,401,The duke sent you to retrieve his seal.,@402,TRA:original_female_variants.tra:@402,Player1,The duchess sent you to retrieve her seal.,1
+Player1,403,402,I brought the silver key.,@403,TRA:original_female_variants.tra:@403,Selene,I brought the bronze key.,1
+Orin,404,403,The door is open.,@404,TRA:original_female_variants.tra:@404,Player1,,1
+Player1,405,404,I will wait here.,@405,TRA:original_female_variants.tra:@405,Orin,,

@@ -1,0 +1,25 @@
+﻿model,mode,dataset,repeat,Line_ID,gender,check,assistant_assessment,reason
+gpt-6.1-sol,both,multiple_npcs,3,104,male,Orin injured masculine,false_alarm,Тебя ранили preserves the injury question without a gender-marked adjective; valid neutral Russian.
+gpt-6.1-sol,both,multiple_npcs,3,104,female,Orin injured masculine,false_alarm,Тебя ранили preserves the injury question without a gender-marked adjective; valid neutral Russian.
+gpt-6.1-sol,two-pass,multiple_npcs,1,102,female,narrated man stays male,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,multiple_npcs,1,102,female,narrated man not made female,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,multiple_npcs,2,102,female,narrated man stays male,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,multiple_npcs,2,102,female,narrated man not made female,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,multiple_npcs,3,104,male,Orin injured masculine,false_alarm,Тебя ранили preserves the injury question without a gender-marked adjective; valid neutral Russian.
+gpt-6.1-sol,two-pass,multiple_npcs,3,104,female,Orin injured masculine,false_alarm,Тебя ранили preserves the injury question without a gender-marked adjective; valid neutral Russian.
+gpt-6.1-sol,two-pass,original_female_variants,1,401,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,original_female_variants,1,402,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,original_female_variants,1,403,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,original_female_variants,3,401,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,original_female_variants,3,402,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,two-pass,original_female_variants,3,403,female,female form,real_error,Actual female-source or fixed third-person error; see assistant annotation for this line.
+gpt-6.1-sol,both,inkgallery_beholder,1,100_INITIAL_0_SAY_0,male,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,both,inkgallery_beholder,1,100_INITIAL_0_SAY_0,female,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,both,inkgallery_beholder,2,100_INITIAL_0_SAY_0,male,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,both,inkgallery_beholder,2,100_INITIAL_0_SAY_0,female,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,1,100_INITIAL_0_SAY_0,male,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,1,100_INITIAL_0_SAY_0,female,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,2,100_INITIAL_0_SAY_0,male,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,2,100_INITIAL_0_SAY_0,female,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,3,100_INITIAL_0_SAY_0,male,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."
+gpt-6.1-sol,two-pass,inkgallery_beholder,3,100_INITIAL_0_SAY_0,female,dead magic preserved,false_alarm,"Здесь магия не действует / магия мертва preserves the dead-magic meaning, but regex misses this paraphrase."

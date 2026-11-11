@@ -1,0 +1,7 @@
+Line_ID,Russian_Male,Russian_Female,Review_Notes
+101,"Ты вернулся, <CHARNAME>. Орин ждал внизу.","Ты вернулась, <CHARNAME>. Орин ждал внизу.",Only Player1 changes; Orin remains male.
+102,"Селена, ты была права. Я слишком поспешил обвинить его.","Селена, ты была права. Я слишком поспешил обвинить его.",Speaker male; named listener female; third person male.
+103,Я обещал Селене помочь ей. Орин должен перед ней извиниться.,Я обещала Селене помочь ей. Орин должен перед ней извиниться.,Only promised changes; her refers to Selene.
+104,"Орин, ты был ранен? Я волновалась за тебя.","Орин, ты был ранен? Я волновалась за тебя.",Both NPC genders fixed despite player preceding this line.
+105,"Ты спас её, путник. Я обязан тебе жизнью.","Ты спасла её, путница. Я обязан тебе жизнью.",Addressed Player1 varies; Orin remains obliged in masculine.
+106,"Тогда сдержи обещание, Орин. Встреться с нами на рассвете.","Тогда сдержи обещание, Орин. Встреться с нами на рассвете.",No gender edit needed; us must stay plural.

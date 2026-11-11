@@ -1,0 +1,64 @@
+IF
+Global("L#IGCosmicScene","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS1",[740.250],0)
+SmallWait(1)
+ActionOverride("L#IGCS1",DialogueInterrupt(FALSE))
+CreateVisualEffectObject("SPFLESHS","L#IGCS1")
+SetGlobal("L#IGCosmicScene","GLOBAL",1)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",2)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS2",[800.600],7)
+SmallWait(1)
+ActionOverride("L#IGCS2",DialogueInterrupt(FALSE))
+CreateVisualEffectObject("SPFLESHS","L#IGCS2")
+SetGlobal("L#IGCosmicScene","GLOBAL",3)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",4)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS3",[310.480],12)
+SmallWait(1)
+ActionOverride("L#IGCS3",DialogueInterrupt(FALSE))
+CreateVisualEffectObject("SPFLESHS","L#IGCS3")
+SetGlobal("L#IGCosmicScene","GLOBAL",5)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",6)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS4",[580.660],6)
+SmallWait(1)
+ActionOverride("L#IGCS4",DialogueInterrupt(FALSE))
+CreateVisualEffectObject("SPFLESHS","L#IGCS4")
+SetGlobal("L#IGCosmicScene","GLOBAL",7)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",8)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS5",[710.350],0)
+SmallWait(1)
+ActionOverride("L#IGCS5",DialogueInterrupt(FALSE))
+CreateVisualEffectObject("SPFLESHS","L#IGCS5")
+SetGlobal("L#IGCosmicScene","GLOBAL",9)
+END
+
+IF
+Global("L#IGCosmicScene","GLOBAL",10)
+THEN
+RESPONSE #100
+CreateCreature("L#IGCS6",[600.480],0)
+SmallWait(1)
+CreateVisualEffectObject("SPFLESHS","L#IGCS6")
+SetGlobal("L#IGCosmicScene","GLOBAL",11)
+END

@@ -1,0 +1,8 @@
+IF
+Allegiance(Myself,NEUTRAL)
+Global("L#IGB7StartBattle","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Enemy()
+END
+

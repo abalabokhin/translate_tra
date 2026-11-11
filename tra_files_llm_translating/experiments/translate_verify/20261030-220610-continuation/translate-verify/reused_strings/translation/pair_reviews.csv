@@ -1,0 +1,25 @@
+﻿model,prompt,scope,think,temperature,repeat,Line_ID,status,reason,male,female
+mistral-small3.2:24b,production,full,default,default,1,301_a,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,1,302_a,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,301_b,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,1,303,pass,Exact equality after listed gender edits,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,1,302_b,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,1,304,pass,Exact equality after listed gender edits,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,2,301_a,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,2,302_a,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,301_b,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,2,303,pass,Exact equality after listed gender edits,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,2,302_b,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,2,304,pass,Exact equality after listed gender edits,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подождите <CHARNAME>.
+Не трогайте %gate_lock%."
+mistral-small3.2:24b,production,full,default,default,3,301_a,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,3,302_a,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,301_b,review,"Unlisted wording, case or punctuation edit",Я готов.,Я готова.
+mistral-small3.2:24b,production,full,default,default,3,303,pass,Exact equality after listed gender edits,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.
+mistral-small3.2:24b,production,full,default,default,3,302_b,pass,Exact equality after listed gender edits,Тогда откройте ворота.,Тогда откройте ворота.
+mistral-small3.2:24b,production,full,default,default,3,304,pass,Exact equality after listed gender edits,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подождите <CHARNAME>.
+Не трогайте %gate_lock%."

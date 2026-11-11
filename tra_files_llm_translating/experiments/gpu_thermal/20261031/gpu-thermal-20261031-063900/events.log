@@ -1,0 +1,5 @@
+2026-10-31T06:39:00.466050-04:00 LOG DIRECTORY: /home/paladin/source/translate_tra/results/gpu-thermal-20261031-063900
+2026-10-31T06:39:00.466647-04:00 10-second idle baseline; then Mistral starts. Watch the GPU fans.
+2026-10-31T06:39:10.570277-04:00 STARTING MISTRAL NOW: native 131072 context, batch 512, maximum 256 output tokens.
+2026-10-31T06:39:35.164259-04:00 TEMPERATURE CUTOFF; temperatures mC=[75000, 95000, 42000]. Stopping request and unloading model.
+2026-10-31T06:39:50.386444-04:00 TEST FINISHED: TEMPERATURE CUTOFF

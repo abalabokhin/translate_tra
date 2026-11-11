@@ -1,0 +1,2 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,l1,,(A secret passage to the basement opens... A new souvenir has been added to the Ink Gallery shop.),@155,TRA:setup.tra:@155,,,notification,unknown,REGION:Secretb,,,"scripts/L#IG00.baf:1622; block 144, RESPONSE #100; conditions: Global ( ""L#IGBooksCompleted"" , ""GLOBAL"" , 2 ); action: DisplayStringHead; actions: TriggerActivation, PlaySound, DisplayStringHead, SetGlobal",

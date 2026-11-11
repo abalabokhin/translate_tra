@@ -1,0 +1,119 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "translations"
+  ],
+  "properties": {
+    "translations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "properties": {
+        "1": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "2": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "4": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "5": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        },
+        "6": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "string"
+            },
+            "female": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,730 @@
+{
+  "status": "failed",
+  "started_utc": "2026-10-31T18:26:05.918733+00:00",
+  "settings": {
+    "models": [
+      "gpt-6-luna",
+      "gpt-6.1-sol"
+    ],
+    "modes": [
+      "both",
+      "two-pass"
+    ],
+    "datasets": "all",
+    "repeats": 3,
+    "out": "/home/paladin/source/translate_tra/tra_files_llm_translating/experiments/codex_translation/20261031-full-comparison/results",
+    "codex_bin": "codex",
+    "dry_run": false
+  },
+  "datasets": [
+    "inkgallery",
+    "ambiguous_addressees",
+    "multiple_npcs",
+    "original_female_variants",
+    "reused_strings",
+    "inkgallery_beholder",
+    "inkgallery_moon_sisters",
+    "inkgallery_sewers"
+  ],
+  "runs": [
+    {
+      "dataset": "inkgallery",
+      "model": "gpt-6-luna",
+      "mode": "both",
+      "repeat": 1,
+      "status": "completed",
+      "checks": [
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "male",
+          "check": "видела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "male",
+          "check": "feminine address noun for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": false
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "male",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "male",
+          "check": "хотела for male Player1",
+          "ok": false
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "male",
+          "check": "поняла for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "male",
+          "check": "feminine verb for male Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "male",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "seen, not read",
+          "ok": true
+        },
+        {
+          "line": "@100",
+          "gender": "female",
+          "check": "видел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "second sentence kept",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@16",
+          "gender": "female",
+          "check": "masculine address noun for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@17",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": false
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as masculine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Velcealle addressed as feminine",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "glossary stem Кормир",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "no extra consonant (Кормирр)",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "Ink Gallery name retains ink and gallery",
+          "ok": true
+        },
+        {
+          "line": "@18",
+          "gender": "female",
+          "check": "known invented gallery names absent",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@19",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@20",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@21",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@22",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@23",
+          "gender": "female",
+          "check": "хотел for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@24",
+          "gender": "female",
+          "check": "понял for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: not 'как я делаю'",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "idiom: how I'm doing",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs location retained",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "downstairs not an invented kitchen",
+          "ok": true
+        },
+        {
+          "line": "@48",
+          "gender": "female",
+          "check": "masculine verb for female Player1",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "singular ты, not вы",
+          "ok": true
+        },
+        {
+          "line": "@51",
+          "gender": "female",
+          "check": "no untranslated Latin text outside engine tokens",
+          "ok": true
+        }
+      ],
+      "evaluation_version": "inkgallery-v3",
+      "calls": [
+        {
+          "status": "completed",
+          "model": "gpt-6-luna",
+          "started_utc": "2026-10-31T18:26:06.277187+00:00",
+          "wall_seconds": 8.555,
+          "usage": {
+            "input_tokens": 16036,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 607,
+            "reasoning_output_tokens": 0
+          },
+          "error": null,
+          "command": [
+            "codex",
+            "exec",
+            "--ignore-user-config",
+            "--ephemeral",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--model",
+            "gpt-6-luna",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            "/tmp/tra-codex-owxiiots/schema.json",
+            "--output-last-message",
+            "/tmp/tra-codex-owxiiots/response.txt",
+            "-"
+          ],
+          "returncode": 0,
+          "finished_utc": "2026-10-31T18:26:14.831987+00:00"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "line": "@16",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Снова здравствуй, искатель приключений. В нашей Галерее чернил тебя ждут истории.",
+          "female": "Снова здравствуй, искательница приключений. В нашей Галерее чернил тебя ждут истории."
+        },
+        {
+          "line": "@23",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Есть ещё что-нибудь, о чём ты хотела бы узнать?",
+          "female": "Есть ещё что-нибудь, о чём ты хотела бы узнать?"
+        },
+        {
+          "line": "@48",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Нам стоит поговорить внизу. Если только ты заглянул не просто узнать, как у меня дела.",
+          "female": "Нам стоит поговорить внизу. Если только ты заглянула не просто узнать, как у меня дела."
+        },
+        {
+          "line": "@51",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Надеюсь, у тебя хороший день.",
+          "female": "Надеюсь, у тебя хороший день."
+        },
+        {
+          "line": "@100",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Здравствуй, <CHARNAME>! Ты уже видел все мои книги — но, может быть, пришёл за каким-нибудь сувениром?",
+          "female": "Здравствуй, <CHARNAME>! Ты уже видела все мои книги — но, может быть, пришла за каким-нибудь сувениром?"
+        },
+        {
+          "line": "@17",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Итак, насколько я понял, заплатив за вход, я смогу испытать себя в сражениях, описанных в этих книгах. Всё верно?",
+          "female": "Итак, насколько я поняла, заплатив за вход, я смогу испытать себя в сражениях, описанных в этих книгах. Всё верно?"
+        },
+        {
+          "line": "@18",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Ты говорила, что приехала сюда из Кормирa, верно? Чтобы открыть Галерею чернил?",
+          "female": "Ты говорила, что приехала сюда из Кормирa, верно? Чтобы открыть Галерею чернил?"
+        },
+        {
+          "line": "@19",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Что будет, если я успешно усвою всё из этих книг?",
+          "female": "Что будет, если я успешно усвою всё из этих книг?"
+        },
+        {
+          "line": "@20",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "У тебя не бывает проблем с Магами в капюшонах? Разве эти книги не магические?",
+          "female": "У тебя не бывает проблем с Магами в капюшонах? Разве эти книги не магические?"
+        },
+        {
+          "line": "@21",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Мне бы хотелось купить сувениры.",
+          "female": "Мне бы хотелось купить сувениры."
+        },
+        {
+          "line": "@22",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Думаю, я пойду.",
+          "female": "Думаю, я пойду."
+        },
+        {
+          "line": "@24",
+          "status": "pass",
+          "reason": "Exact equality after listed gender edits",
+          "male": "Да. Насколько я понял, заплатив за вход, я смогу испытать себя в сражениях, описанных в этих книгах. Всё верно?",
+          "female": "Да. Насколько я поняла, заплатив за вход, я смогу испытать себя в сражениях, описанных в этих книгах. Всё верно?"
+        }
+      ]
+    },
+    {
+      "dataset": "inkgallery",
+      "model": "gpt-6-luna",
+      "mode": "both",
+      "repeat": 2,
+      "status": "failed",
+      "checks": [],
+      "evaluation_version": "inkgallery-v3",
+      "error": "line 1: changed number of quotation marks"
+    }
+  ],
+  "sha256": {
+    "tra_files_llm_translating/experiments/run_codex_translation.py": "f09d17c1151576f993f2ee37f90c7bced9dfb477225e7b4c130cb54513320cbd",
+    "tra_files_llm_translating/experiments/diagnose_translation.py": "a246c32c0850455b2c72230cba022d18c1cea8ced60ac1acd84a9574b42ffce4",
+    "tra_files_llm_translating/experiments/run_translate_verify.py": "4755d15d61c31a82d8376d6315e55fb84631037348aa0e2578097638f422e60c",
+    "tra_files_llm_translating/translate_dialogs.py": "07a9f13c85e1d86335a20e523021d42fb4529190f263c9f69a7a2adf81669fb0",
+    "tra_files_llm_translating/translation_common.py": "051543ca23cb13c73d1b8a52ef40a5b426533814cd0518a3a608a98850b75824",
+    "tra_files_llm_translating/dict.csv": "0084b745ccea0bfe1f74f48bc7e88cdc687c08478b21f0e659297a5b65e4190c",
+    "tra_files_llm_translating/experiments/inkgallery_checks.json": "5404c7db61f417bf22e2564d9018ea3d63221fbc6bc282422c17bdb04a1d413a",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/input.csv": "2eb96da4ad95d158a0dfb81f3848c9db31f5e2035e44afcf549555f3f5af72b1",
+    "tra_files_llm_translating/examples/inkgallery-json-two-pass/actors.csv": "ee49d4ac38d0c9249415031ddfc9942659b36e1d20e33c438beb5018fc2392c8"
+  },
+  "manual_review": "pending",
+  "provider": "Codex CLI; existing login; no API calls from Python",
+  "codex_version": "codex-cli 0.166.0",
+  "error": "line 1: changed number of quotation marks",
+  "finished_utc": "2026-10-31T18:26:23.442900+00:00"
+}

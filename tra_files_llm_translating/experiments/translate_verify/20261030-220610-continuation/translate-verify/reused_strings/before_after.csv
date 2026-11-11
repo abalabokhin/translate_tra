@@ -1,0 +1,37 @@
+﻿repeat,Line_ID,gender,translated,verified,changed,failed_checks_before,failed_checks_after
+1,301_a,male,Я готов.,Я готов.,False,no form incompatible with male Player1 and female Selene,no form incompatible with male Player1 and female Selene
+1,301_a,female,Я готова.,Я готова.,False,,
+1,302_a,male,Тогда откройте ворота.,Тогда открой ворота.,True,,
+1,302_a,female,Тогда откройте ворота.,Тогда открой ворота.,True,,
+1,303,male,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+1,303,female,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+1,304,male,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,
+1,304,female,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,
+2,301_a,male,Я готов.,Я готова.,True,no form incompatible with male Player1 and female Selene,no form incompatible with male Player1 and female Selene
+2,301_a,female,Я готова.,Я готова.,False,,
+2,302_a,male,Тогда откройте ворота.,Тогда откройте ворота.,False,,
+2,302_a,female,Тогда откройте ворота.,Тогда откройте ворота.,False,,
+2,303,male,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+2,303,female,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+2,304,male,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,
+2,304,female,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,
+3,301_a,male,Я готов.,Я готова.,True,no form incompatible with male Player1 and female Selene,no form incompatible with male Player1 and female Selene
+3,301_a,female,Я готова.,Я готова.,False,,
+3,302_a,male,Тогда откройте ворота.,Тогда открой ворота.,True,,
+3,302_a,female,Тогда откройте ворота.,Тогда открой ворота.,True,,
+3,303,male,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+3,303,female,*Она проверяет замок.* Ворота открыты.,*Она проверяет замок.* Ворота открыты.,False,,
+3,304,male,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,
+3,304,female,"Подождите <CHARNAME>.
+Не трогайте %gate_lock%.","Подожди <CHARNAME>.
+Не трогай %gate_lock%.",True,,

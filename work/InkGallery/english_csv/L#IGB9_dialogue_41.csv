@@ -1,0 +1,3 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Source_Context,Text_Type,Speaker_Gender,Usage_Context
+L#IGB9,L#IGB9_7e1bd08e::L#IGB9:200_INITIAL_0_SAY_11,,"""After years of haunting the cave system, the grotesque zombie beholder is finally dead, and no creatures shall become victims of its insatiable appetite.""",@11,TRA:l#igb9.tra:@11,,,,dialogue,MALE,
+L#IGB9,L#IGB9_7e1bd08e::L#IGB9:200_BLOCK_0_ELEMENT_0_SAY_12,L#IGB9_7e1bd08e::L#IGB9:200_INITIAL_0_SAY_11,The one who fought this monster shall be the one to receive the gift.,@12,TRA:l#igb9.tra:@12,,,,dialogue,MALE,

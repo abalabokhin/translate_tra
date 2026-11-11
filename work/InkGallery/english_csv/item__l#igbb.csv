@@ -1,0 +1,48 @@
+Actor,Line_ID,Predecessors,Dialogue_Text,TRA_Reference,Additional_Info,Source_Female_Text,Source_Has_Female,Text_Type,Speaker_Gender,Display_Target,Resource,Field,Source_Context,Usage_Context
+NARRATOR,1,,Ink Gallery: The List of Exhibits,@55,TRA:setup.tra:@55,,,item_name,unknown,,InkGallery/items/l#igbb.itm,NAME1; NAME2,InkGallery.tp2:692 SAY NAME1; InkGallery.tp2:693 SAY NAME2,
+NARRATOR,2,,"The list includes all books that are currently presented to people. These are:
+
+– Tale of the Eight-Legged Strider: a story about a group wading through the Demonweb Pits, trying to leave the domain of the Spider Queen.
+
+– The Birth of the Fury: a tale from far Kara-Tur, about Chin Yi, as well as a swordsman from Shou Lung, and their love.
+
+– The Deathly Groans: this novella presents a dreadful tale of a necromancer and an army of undead xvarts he decided to raise from their slumber.
+
+– The War Below: this tale tells the story of one of the lesser-known adventures of the Heroes of Icewind Dale and how, during their attempt to stop a war between strange beings, they discovered a cave, home to a huge and quite dangerous creature.
+
+– The Grasp of the Glabrezu: this cautionary tale describes a fight between a glabrezu, protected by bow-wielding devilesses, and a group of adventurers that were sent to Avernus to find and kill that glabrezu.
+
+– The Dance of the Swords: the book describes a ball organized by a mysterious Maestro, and an unusual dance of literal swords, controlled by the bard.
+
+– Of Seed & Fire: a story about an angry fire giant druid, who claimed a significant part of the bog and attacks those that dare to enter it.
+
+– The Story of the Moon Sisters: a tale about three celestial sisters, the judges that live in a strange moon-like place, covered with silver sands.
+
+– Tale of the Dead Eye: a novel in which a lone traveler has to travel through a strange place, a dead magic zone, and encounters a zombie beholder, hungry and angered, ready to attack.
+
+– The Three Thirsty Rascals: a somewhat experimental story, a macabre comedy about three kobold vampires that terrorize a nearby village.
+
+– The Waves of Flesheaters: a book that describes the struggle of a lone survivor walking down an old sewer system, where he has to face dozens of flesh-eating maggots hiding in the murky water and shadows.
+
+– The Light in the Snow: a story of an old remorhaz roaming the far north, accompanied by creatures that seem like sentient winds.
+
+All interested in learning more from these tales are welcome to visit the Ink Gallery and check the books with their own eyes.
+
+STATISTICS:
+
+Weight: 1",@56,TRA:setup.tra:@56,,,item_description,unknown,,InkGallery/items/l#igbb.itm,DESC,InkGallery.tp2:694 SAY DESC,
+NARRATOR,3,,Ink Gallery: Testimonials,@57,TRA:setup.tra:@57,,,item_name,unknown,,InkGallery/items/l#igbb.itm,NAME1; NAME2,InkGallery.tp2:697 SAY NAME1; InkGallery.tp2:698 SAY NAME2,
+NARRATOR,4,,"This pamphlet shows some drawings of the Ink Gallery located in Athkatla, in the Government District. It also includes some testimonials left by other customers: 
+
+""Some of those stories are truly marvelous! While they are a great opportunity to learn, remember to prepare yourself first!""
+- Brienda Falcontrade, Shield-Bearer from Neverwinter
+
+""The Ink Gallery taught me that literature may come with many thrills and excitements! Thank you for that!""
+- Al'Mand Silloan, Priest of Helm from Calimport
+
+""I never liked books and now—I think they're great!""
+- John Bubblovich, a fashion figure from... somewhere!
+
+STATISTICS:
+
+Weight: 1",@58,TRA:setup.tra:@58,,,item_description,unknown,,InkGallery/items/l#igbb.itm,DESC,InkGallery.tp2:699 SAY DESC,

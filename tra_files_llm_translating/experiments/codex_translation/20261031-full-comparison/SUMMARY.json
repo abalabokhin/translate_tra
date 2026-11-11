@@ -1,0 +1,83 @@
+{
+  "status": "finished",
+  "groups": [
+    {
+      "model": "gpt-6-luna",
+      "mode": "both",
+      "attempted": 24,
+      "completed": 22,
+      "rejected": 2,
+      "checks_ok": 876,
+      "checks_total": 1020,
+      "accepted_checks_ok": 876,
+      "accepted_checks_total": 900,
+      "cli_calls": 24,
+      "wall_seconds": 160.244,
+      "usage": {
+        "input_tokens": 374047,
+        "cached_input_tokens": 27776,
+        "output_tokens": 11864,
+        "reasoning_output_tokens": 902
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "mode": "two-pass",
+      "attempted": 24,
+      "completed": 24,
+      "rejected": 0,
+      "checks_ok": 986,
+      "checks_total": 1020,
+      "accepted_checks_ok": 986,
+      "accepted_checks_total": 1020,
+      "cli_calls": 48,
+      "wall_seconds": 232.247,
+      "usage": {
+        "input_tokens": 728920,
+        "cached_input_tokens": 93952,
+        "output_tokens": 11076,
+        "reasoning_output_tokens": 425
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "mode": "both",
+      "attempted": 24,
+      "completed": 24,
+      "rejected": 0,
+      "checks_ok": 1014,
+      "checks_total": 1020,
+      "accepted_checks_ok": 1014,
+      "accepted_checks_total": 1020,
+      "cli_calls": 24,
+      "wall_seconds": 283.179,
+      "usage": {
+        "input_tokens": 390647,
+        "cached_input_tokens": 12544,
+        "output_tokens": 12710,
+        "reasoning_output_tokens": 1338
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "mode": "two-pass",
+      "attempted": 24,
+      "completed": 24,
+      "rejected": 0,
+      "checks_ok": 1002,
+      "checks_total": 1020,
+      "accepted_checks_ok": 1002,
+      "accepted_checks_total": 1020,
+      "cli_calls": 48,
+      "wall_seconds": 360.172,
+      "usage": {
+        "input_tokens": 763369,
+        "cached_input_tokens": 28928,
+        "output_tokens": 11718,
+        "reasoning_output_tokens": 732
+      }
+    }
+  ],
+  "total_calls": 144,
+  "total_seconds": 1035.842
+}

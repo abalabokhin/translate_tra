@@ -1,0 +1,12 @@
+IF
+Dead("L#IGB4E")
+NumDead("L#IGB4M",4)
+CombatCounter(0)
+Global("L#IGActivateExit","L#IG04",0)
+THEN 
+RESPONSE #100
+TriggerActivation("Leave",TRUE)
+AmbientActivate("Leaveani",TRUE)
+DisplayStringHead(Player1,@159)
+SetGlobal("L#IGActivateExit","L#IG04",1)
+END

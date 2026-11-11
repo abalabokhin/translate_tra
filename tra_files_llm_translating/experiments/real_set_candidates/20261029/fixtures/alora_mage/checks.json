@@ -1,0 +1,33 @@
+{
+  "version": "alora_mage-v1",
+  "provenance": "AloraEE v1.9, commit 6e324a40a0dc804e94aa0dbdaa4f431102ca4735; alora/d/BCMALOR.D and alora/English/BCMALOR.tra. CANDIDATE ONLY: no human-reviewed reference yet.",
+  "input": "input.csv",
+  "actors": "actors.csv",
+  "all": [
+    {
+      "name": "no untranslated Latin text outside engine tokens",
+      "no_latin": true
+    }
+  ],
+  "allowed_latin": [],
+  "pair_review": {
+    "allowed_changes": []
+  },
+  "lines": {
+    "apc_chat2_SAY_0": {},
+    "apc_chat2_REPLY_6": {},
+    "apc_chat2_REPLY_7": {},
+    "apc_chat2_REPLY_8": {},
+    "yes_really_SAY_0": {},
+    "mage_talk_SAY_0": {},
+    "mage_talk_REPLY_9": {},
+    "mage_talk_REPLY_10": {},
+    "yes_silly_SAY_0": {},
+    "yes_silly_REPLY_11": {},
+    "yes_silly_REPLY_12": {},
+    "yes_silly_REPLY_13": {},
+    "yes_stuffy_SAY_0": {},
+    "bye_bye_SAY_0": {},
+    "it_is_SAY_0": {}
+  }
+}
