@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import html
 import xml.etree.ElementTree as ET
 import re
 import argparse
@@ -146,24 +147,23 @@ class TSTranslator:
                                 self.test_count += 1
 
                     if new_translation:
-                        source_pattern = re.escape(source_text).replace(r'\ ', r'\s*')
-                        # Use (?:(?!</message>)[\s\S])*? to prevent matching across message boundaries
+                        # Match all unfinished messages generically, then identify by decoded source
                         no_msg_end = r'(?:(?!</message>)[\s\S])*?'
-                        message_pattern = (r'(<message\b' + no_msg_end + r'<source[^>]*>)' +
-                                         source_pattern +
-                                         r'(</source>' + no_msg_end + r'<translation[^>]*type=(["\'])unfinished\3[^>]*>)([^<]*)(</translation>' + no_msg_end + r'</message>)')
+                        message_pattern = (r'(<message\b' + no_msg_end + r'<source[^>]*>)([^<]*)(</source>' + no_msg_end +
+                                         r'<translation[^>]*type=(["\'])unfinished\4[^>]*>)([^<]*)(</translation>' + no_msg_end + r'</message>)')
 
-                        match = re.search(message_pattern, modified_content)
-                        if match:
-                            replacement = (match.group(1) + source_text + match.group(2) +
-                                         new_translation + match.group(5))
-                            if should_remove_tag:
-                                replacement = re.sub(r'\s*type=(["\'])unfinished\1', '', replacement)
-                            modified_content = modified_content.replace(match.group(0), replacement)
-                            translations_updated += 1
-                            if self.test_mode and self.test_count >= 3:
-                                print("Test mode: reached 3 DeepL calls, stopping (exception will be raised to trigger save)")
-                                raise Exception("Test mode limit reached")
+                        for match in re.finditer(message_pattern, modified_content):
+                            if html.unescape(match.group(2)) == source_text:
+                                xml_translation = html.escape(new_translation, quote=False)
+                                replacement = match.group(1) + match.group(2) + match.group(3) + xml_translation + match.group(6)
+                                if should_remove_tag:
+                                    replacement = re.sub(r'\s*type=(["\'])unfinished\1', '', replacement)
+                                modified_content = modified_content.replace(match.group(0), replacement)
+                                translations_updated += 1
+                                break
+                        if self.test_mode and self.test_count >= 3:
+                            print("Test mode: reached 3 DeepL calls, stopping (exception will be raised to trigger save)")
+                            raise Exception("Test mode limit reached")
 
         except deepl.exceptions.QuotaExceededException:
             raise  # propagates after finally saves the file
